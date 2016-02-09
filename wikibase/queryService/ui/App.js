@@ -60,6 +60,12 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	SELF.prototype._editor = null;
 
 	/**
+	 * @property {bool}
+	 * @private
+	 **/
+	SELF.prototype._autoExecuteQuery = false;
+
+	/**
 	 * Initialize private members and call delegate to specific init methods
 	 * @private
 	 **/
@@ -77,6 +83,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 			this._editor = new wikibase.queryService.ui.Editor();
 		}
 
+		this._initApp();
 		this._initEditor();
 		this._initExamples();
 		this._initDataUpdated();
@@ -84,6 +91,22 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 		this._initRdfNamespaces();
 		this._initHandlers();
 
+		if( this._autoExecuteQuery ){
+			$( '#execute-button' ).click();
+		}
+	};
+
+	/**
+	 * @private
+	 **/
+	SELF.prototype._initApp = function() {
+
+/* SM: disabled direct results for now
+		if( location.hash.indexOf( '#result#' ) === 0 ){
+			this._toggleCollapse( true );
+			this._autoExecuteQuery = true;
+		}
+*/
 	};
 
 	/**
@@ -142,6 +165,11 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 **/
 	SELF.prototype._initQuery = function() {
 		if ( window.location.hash !== '' ) {
+
+			if( location.hash.indexOf( '#result#' ) === 0 ){
+				location.hash = location.hash.replace( '#result#', '#' );
+			}
+
 			this._editor.setValue( decodeURIComponent( window.location.hash.substr( 1 ) ) );
 			this._editor.refresh();
 		}
@@ -186,14 +214,49 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
 
+		this._initPopovers();
+		this._initHandlersDownloads();
+	};
+
+	/**
+	 * @private
+	 **/
+	SELF.prototype._initPopovers= function() {
+		var self = this;
+
+		//Closes popover when clicked somewhere else
 		$('body').on('click', function (e) {
 		    if ($(e.target).data('toggle') !== 'popover'
 		        && $(e.target).parents('.popover.in').length === 0) {
-		        $('[data-toggle="popover"]').popover('hide');
+		        //$('[data-toggle="popover"]').popover('hide');
+		        $('.popover').remove();
 		    }
 		});
 
-		this._initHandlersDownloads();
+
+		$( '.shortUrlTrigger' ).click( function( e ){
+			var $target = $( e.target );
+			self._updateQueryUrl();
+			$target.attr( 'href', SHORTURL + encodeURIComponent( window.location ) );
+
+			var sharedLocation = new URL( window.location );
+/*
+SM: disabled direct results for now
+		if( $target.hasClass( 'result' ) ){
+				sharedLocation.hash =  '#result' + sharedLocation.hash;
+			}
+*/
+			$target.popover({
+	    		placement : 'left',
+	    		'html':true,
+	    		'content':function(){
+	    			return '<iframe class="shortUrl" src="' + SHORTURL_API + encodeURIComponent( sharedLocation.toString() ) +   '">';
+	    		}
+	    	});
+			$target.popover('show');
+
+			return false;
+		} );
 	};
 
 	/**
@@ -259,25 +322,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 
 		e.preventDefault();
 		this._editor.save();
-
-		var hash = encodeURIComponent( this._editor.getValue() );
-		if ( window.location.hash !== hash ) {
-			window.location.hash = hash;
-		}
-		$( '#shorturl' ).attr( 'href', SHORTURL + encodeURIComponent( window.location ) );
-
-		$( '#shorturl' ).click( function(){
-
-	    	$( '#shorturl' ).popover({
-	    		placement : 'left',
-	    		'html':true,
-	    		'content':function(){
-	    			return '<iframe class="shortUrl" src="' + SHORTURL_API + encodeURIComponent( window.location )  +   '">';
-	    		}
-	    	});
-	    	$( '#shorturl' ).popover('show');
-			return false;
-		} );
+		this._updateQueryUrl();
 
 		$( '#query-result' ).empty( '' );
 		$( '#query-result' ).hide();
@@ -357,6 +402,36 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 		EXPLORER( $, mw, $( '.explorer' ) );
 
 		return false;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._updateQueryUrl = function() {
+		var hash = encodeURIComponent( this._editor.getValue() );
+		if ( window.location.hash !== hash ) {
+			window.location.hash = hash;
+		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._toggleCollapse = function( collapse ) {
+		if( collapse === true ){
+			$( '#query-box' ).hide();
+			$( '#header-navbar-collapse' ).css('visibility', 'hidden');
+			$( '.navbar-toggle' ).show();
+
+			$( '.navbar-toggle' ).click( $.proxy(this._toggleCollapse, this) );
+		}else{
+			$( '#query-box' ).show();
+			this._editor.refresh();
+			$( '#header-navbar-collapse' ).css('visibility', 'visible');
+			if ( $( '#header-navbar-collapse' ).is(':visible') ) {
+				$( '.navbar-toggle.collapsed ' ).hide();
+			}
+		}
 	};
 
 	return SELF;
