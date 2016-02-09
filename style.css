@@ -61,6 +61,18 @@ iframe.shortUrl {
 	visibility: hidden;
 	padding: 0;
 }
+
+#query-box {
+	position: relative;
+}
+.shareQuery {
+	z-index: 100;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 25px;
+}
+
 /**
 	Bootstrap Styles
 **/

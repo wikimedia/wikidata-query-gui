@@ -74,7 +74,7 @@
 								<button type="submit" class="btn btn-info" id="execute-button" value="Execute">
 									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Execute
 								</button>
-								<input class="btn btn-default" type="reset" id="clear-button" value="Clear"> 
+								<input class="btn btn-default" type="reset" id="clear-button" value="Clear">
 								<span class="query-total"><span class="label label-default"><span id="total-results"></span> Results</span> <span>
 										<span class="label label-default">in <span id="query-time"></span> ms
 									</span> &nbsp;
@@ -92,17 +92,18 @@
 									<li><a id="downloadFull-JSON" href="#">Full JSON</a></li>
 								</ul></li>
 							<li>
-								  <a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+							<a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
 								    <span class="glyphicon glyphicon-link" aria-hidden="true">Link</span><span class="caret"></span>
 								  </a>
 								  <ul class="dropdown-menu">
-									<li><a href="#" target="_blank" title="Short URL to this page" data-toggle="popover" id="shorturl">Create Short URL</a></li>
-									<li><a target="_blank" title="SPARQL endpoint REST request" class="queryUri">SPARQL Query</a></li>
+									<li><a href="#" class="shortUrlTrigger result" target="_blank" title="Short URL to this query" data-toggle="popover">Short URL</a></li>
+									<li><a target="_blank" title="SPARQL endpoint REST request" class="queryUri">REST Endpoint</a></li>
 								  </ul>
 							</li>
 						</ul>
 					</nav>
 				</form>
+				<a href="#" class="shareQuery shortUrlTrigger query" target="_blank" title="Short URL to this page" data-toggle="popover"> <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
 			</div>
 		</div>
 		<div class="row">
