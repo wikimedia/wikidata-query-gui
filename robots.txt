@@ -1,0 +1,5 @@
+# robots.txt for http:/query.wikidata.org/
+User-agent: *
+Disallow: /sparql
+Disallow: /bigdata
+
