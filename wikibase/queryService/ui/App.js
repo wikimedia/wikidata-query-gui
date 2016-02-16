@@ -9,6 +9,8 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	var SHORTURL = '//tinyurl.com/create.php?url=';
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
+	var COMMONS_FILE_PATH = "http://commons.wikimedia.org/wiki/special:filepath/";
+	var COMMONS_SPECIAL_RESIZE = "http://commons.wikimedia.org/wiki/Special:FilePath/";
 
 	/**
 	 * A ui application for the Wikibase query service
@@ -352,6 +354,14 @@ SM: disabled direct results for now
 		$( '.actionMessage' ).hide();
 		$( '#query-error' ).hide();
 
+		this._handleQueryResultAddExploreLinks();
+		this._handleQueryResultAddGalleryLinks();
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._handleQueryResultAddExploreLinks = function() {
 		var $linkableItems = $( '#query-result' ).find('a').filter( function() {
 			return this.href.match( EXPLORE_URL + '(.+)' );
 		} );
@@ -359,8 +369,33 @@ SM: disabled direct results for now
 		var $exploreLink = $( '<a href="#" title="Explore item" class="glyphicon glyphicon-search" aria-hidden="true"></a>' );
 		$exploreLink.click( $.proxy( this._handleExploreItem, this ) );
 		$linkableItems.after( $exploreLink );
+	};
 
-		//$linkableItems.attr( 'href', '#');
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._handleQueryResultAddGalleryLinks = function() {
+		var link = '<a title="Show Gallery" class="glyphicon glyphicon-picture" aria-hidden="true"></a>',
+		$imageLinks = $( '#query-result' ).find( 'a' ).filter( function() {
+			return this.href.toLowerCase().startsWith( COMMONS_FILE_PATH );
+		} ),
+
+		triggerGallery = function( event ) {
+			$( this ).ekkoLightbox( { "scale_height" : true } );
+			return false;
+		};
+
+		$imageLinks.after( function() {
+			var regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),
+				fileName = $( this ).attr( 'href' ).replace( regEx, '' ),
+				thumbnail = COMMONS_SPECIAL_RESIZE + fileName + '?width=900';
+
+			return $( link ).attr( 'href', thumbnail )
+				.attr( 'data-gallery', 'G_' + $( this ).index() )
+				.attr( 'data-title', decodeURIComponent( fileName ) )
+				.click( triggerGallery );
+		} );
 	};
 
 	/**
