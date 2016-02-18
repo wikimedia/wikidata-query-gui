@@ -123,7 +123,6 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 **/
 	SELF.prototype._initExamples = function() {
 		var self = this;
-
 		new wikibase.queryService.ui.QueryExampleDialog( $( '#QueryExamples' ), this._querySamplesApi, function( query ){
 			if ( !query || !query.trim() ) {
 				return;
@@ -433,4 +432,4 @@ SM: disabled direct results for now
 	};
 
 	return SELF;
-}( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki, download, EXPLORER ) );
