@@ -1,0 +1,6 @@
+[gerrit]
+host=gerrit.wikimedia.org
+port=29418
+project=wikidata/query/gui.git
+defaultbranch=master
+defaultrebase=0
