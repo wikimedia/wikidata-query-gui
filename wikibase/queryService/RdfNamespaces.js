@@ -47,8 +47,8 @@ wikibase.queryService.RdfNamespaces = {};
 		'PREFIX wdt: <http://www.wikidata.org/prop/direct/>',
 		'PREFIX wikibase: <http://wikiba.se/ontology#>',
 		'PREFIX p: <http://www.wikidata.org/prop/>',
-		'PREFIX v: <http://www.wikidata.org/prop/statement/>',
-		'PREFIX q: <http://www.wikidata.org/prop/qualifier/>',
+		'PREFIX ps: <http://www.wikidata.org/prop/statement/>',
+		'PREFIX pq: <http://www.wikidata.org/prop/qualifier/>',
 		'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>'
  		];
 
