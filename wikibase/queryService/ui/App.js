@@ -350,12 +350,15 @@ SM: disabled direct results for now
 		$( '#total-results' ).text( api.getResultLength() );
 		$( '#query-time' ).text( api.getExecutionTime() );
 		$( '.query-total' ).show();
-		$( '#query-result' ).append( api.getResultAsTable() ).show();
+		$( '#query-result' ).html( api.getResultAsTable() ).show();
 		$( '.actionMessage' ).hide();
 		$( '#query-error' ).hide();
 
 		this._handleQueryResultAddExploreLinks();
 		this._handleQueryResultAddGalleryLinks();
+		this._handleQueryResultBrowsers();
+
+		return false;
 	};
 
 	/**
@@ -396,6 +399,30 @@ SM: disabled direct results for now
 				.attr( 'data-title', decodeURIComponent( fileName ) )
 				.click( triggerGallery );
 		} );
+	};
+
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._handleQueryResultBrowsers = function() {
+		$( '.result-browser' ).click( function(){ $(this).closest( '.open' ).removeClass('open'); } );
+
+		//table
+		$( '.result-browser.default' ).click( $.proxy( this._handleQueryResult, this )  );
+
+		//image
+		var imageBrowser = new wikibase.queryService.ui.resultBrowser.ImageResultBrowser();
+		imageBrowser.setResult( this._sparqlApi.getResultRawData() );
+		if( imageBrowser.isDrawable() ){
+			$( '.result-browser.gallery' ).css( 'opacity', 1 ).attr( 'href', '#' );
+			$( '.result-browser.gallery' ).click( function(){
+				imageBrowser.draw( $( '#query-result' ) );
+				return false;
+			} );
+		}else{
+			$( '.result-browser.gallery' ).css( 'opacity', 0.5 ).removeAttr( 'href' );
+		}
 	};
 
 	/**
