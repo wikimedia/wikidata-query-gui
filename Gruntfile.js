@@ -1,5 +1,6 @@
 /*jshint node:true */
 module.exports = function ( grunt ) {
+	'use strict';
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
@@ -11,9 +12,6 @@ module.exports = function ( grunt ) {
 			},
 			all: [
 				'**/*.js',
-				'!vendor/**',
-                                '!node_modules/**',
-				'!**/*.js'
 			]
 		},
 		jscs: {
@@ -21,9 +19,8 @@ module.exports = function ( grunt ) {
 		},
 		jsonlint: {
 			all: [
-				'*.json',
 				'**/*.json',
-                                '!node_modules/**',
+				'!node_modules/**',
 				'!vendor/**'
 			]
 		}

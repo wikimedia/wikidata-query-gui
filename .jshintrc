@@ -1,20 +1,39 @@
 {
-	// Enforcing
-	"bitwise": true,
+	"camelcase": true,
+	"curly": true,
 	"eqeqeq": true,
-	"es3": true,
+	"immed": true,
 	"latedef": true,
+	"newcap": true,
+	"supernew": true,
+	"shadow": false,
 	"noarg": true,
-	"nonew": true,
+	"noempty": true,
+	"nonew": false, //TODO fix code to adhere
+	"quotmark": false, // sometimes double quotes make sense, e.g. "foo's" is better readable than 'foo\'s'
+	"trailing": true,
 	"undef": true,
-	"unused": true,
-	"strict": false,
+	"unused": "vars", // we want to allow unused function parameters
+	"laxbreak": true,
+	"laxcomma": false,
+	"onevar": false,
+	"bitwise": true,
+	"forin": false,
+	"regexp": true,
+	"strict": true,
+	"scripturl": true,
 
 	// Environment
 	"browser": true,
 
 	"globals": {
-		"mw": false,
-		"$": false
+		"mediaWiki": true,
+		"jQuery": false,
+		"wikibase": true,
+		"CodeMirror": false,
+		"WikibaseRDFTooltip": false,
+		"download": false,
+		"EXPLORER": false,
+		"JSON": false
 	}
 }
