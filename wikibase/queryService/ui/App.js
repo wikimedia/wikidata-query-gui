@@ -130,8 +130,6 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 			}
 
 			self._editor.setValue( query );
-			var prefixes = wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES.join( '\n' );
-			self._editor.prepandValue( prefixes + '\n\n' );
 		} );
 	};
 
