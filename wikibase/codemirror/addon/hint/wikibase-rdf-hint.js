@@ -52,8 +52,8 @@
 			return;
 		}
 
-		prefix = getPrefixFromWord( currentWord.word );
-		term = getTermFromWord( currentWord.word );
+		prefix = getPrefixFromWord( currentWord.word.trim() );
+		term = getTermFromWord( currentWord.word.trim() );
 		entityPrefixes = extractPrefixes( editor.doc.getValue() );
 
 		if ( !entityPrefixes[ prefix ] ) { // unknown prefix
@@ -153,7 +153,7 @@
 	}
 
 	function extractPrefixes( text ) {
-		var prefixes = {},
+		var prefixes = wikibase.queryService.RdfNamespaces.getPrefixMap(ENTITY_TYPES),
 			lines = text.split( '\n' ),
 			matches;
 

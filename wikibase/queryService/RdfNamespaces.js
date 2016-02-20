@@ -42,6 +42,10 @@ wikibase.queryService.RdfNamespaces = {};
 		}
 	};
 
+	RdfNamespaces.ALL_PREFIXES = $.map(RdfNamespaces.NAMESPACE_SHORTCUTS,
+			function(n) { return n }
+	).reduce(function(p, v, i) { return $.extend(p, v) }, {})
+
 	RdfNamespaces.STANDARD_PREFIXES = [
 		'PREFIX wd: <http://www.wikidata.org/entity/>',
 		'PREFIX wdt: <http://www.wikidata.org/prop/direct/>',
@@ -51,6 +55,16 @@ wikibase.queryService.RdfNamespaces = {};
 		'PREFIX pq: <http://www.wikidata.org/prop/qualifier/>',
 		'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>'
  		];
+
+	RdfNamespaces.getPrefixMap = function(entityTypes) {
+		var prefixes = {};
+		$.each( RdfNamespaces.ALL_PREFIXES, function ( prefix, url ) {
+			if ( entityTypes[ url ] ) {
+				prefixes[ prefix ] = entityTypes[ url ];
+			}
+		});
+		return prefixes;
+	};
 
 })(wikibase.queryService.RdfNamespaces);
 

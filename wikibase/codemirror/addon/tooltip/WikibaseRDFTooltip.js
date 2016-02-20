@@ -93,7 +93,7 @@ var WikibaseRDFTooltip = ( function ( CodeMirror, $ ) {
 	};
 
 	SELF.prototype._extractPrefixes = function ( text ) {
-		var prefixes = {},
+		var prefixes = wikibase.queryService.RdfNamespaces.getPrefixMap(ENTITY_TYPES),
 			lines = text.split( '\n' ),
 			matches;
 
