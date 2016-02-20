@@ -153,7 +153,7 @@
 	}
 
 	function extractPrefixes( text ) {
-		var prefixes = {},
+		var prefixes = wikibase.queryService.RdfNamespaces.getPrefixMap(ENTITY_TYPES),
 			lines = text.split( '\n' ),
 			matches;
 
