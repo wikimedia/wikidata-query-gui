@@ -1,7 +1,6 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-window.mediaWiki = window.mediaWiki || {};
 
 wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	"use strict";
@@ -50,8 +49,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._init = function() {
-		var self = this;
-
 		if( !this._querySamplesApi ){
 			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
 		}
@@ -64,8 +61,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._initFilter = function() {
-		var self = this;
-
 		this._$element.find( '.tableFilter' ).keyup( $.proxy( this._filterTable, this ));
 
 		//tags
@@ -207,7 +202,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var link = $( '<a title="Select this query" data-dismiss="modal">' ).text(title).attr( 'href', '#' ).click( function(){
 			self._callback( query );
 			} ),
-			tags = $( '<td/>' ).text( tags.join( '|' ) ).hide(),
 			edit = $( '<a title="Edit this Query">' ).attr( 'href', href ).attr( 'target', '_blank' )
 						.append( '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>' ),
 			preview = $( '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>' ).popover({
@@ -219,6 +213,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		        html: true
 		    });
 
+		tags = $( '<td/>' ).text( tags.join( '|' ) ).hide();
 		var example = $( '<tr/>' );
 		example.append( $( '<td/>' ).append( link ) );
 		example.append( $( '<td/>' ).append( preview ) );
@@ -250,13 +245,12 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			});
 
 			return matches;
-		}
+		};
 
         this._$element.find( '.searchable tr' ).hide();
         this._$element.find( '.searchable tr' ).filter( function () {
-            return filterRegex.test( $(this).text() )
-            		&& tagFilter( $(this).text() );
-        }).show();
+            return filterRegex.test( $(this).text() ) && tagFilter( $(this).text() );
+        } ).show();
 
 	};
 

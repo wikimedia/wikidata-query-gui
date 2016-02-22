@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
 wikibase.queryService.api.QuerySamples = ( function( $ ) {
-	"use strict";
+	'use strict';
 
 	/**
 	 * QuerySamples API for the Wikibase query service
@@ -23,7 +23,8 @@ wikibase.queryService.api.QuerySamples = ( function( $ ) {
 	 **/
 	SELF.prototype.getExamples = function() {
 
-		var examples = [], deferred = $.Deferred();
+		var examples = [],
+			deferred = $.Deferred();
 
 		$.ajax( {
 			url: 'https://www.mediawiki.org/w/api.php?action=query&prop=revisions&titles=Wikibase/'	+
@@ -34,28 +35,31 @@ wikibase.queryService.api.QuerySamples = ( function( $ ) {
 			dataType: 'jsonp'
 		} ).done( function ( data ) {
 
-			var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
+			var wikitext = data.query.pages[ Object.keys( data.query.pages ) ].revisions[ 0 ][ '*' ];
 				wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
 
-			var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\|[\s\S]*?}}\n){1}/g, m,
+			var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\|[\s\S]*?}}\n){1}/g,
 				regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
 				regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
-				regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g;
+				regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
+				m;
 
-			while ( m = re.exec( wikitext ) ) {
-				var paragraph = m[0],
-					title = m[1].trim(),
-					tags = [], tag,
-					href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#' + encodeURIComponent(title.replace( / /g, "_" )).replace( /%/g, "." ) ,
-					sparqlTemplate = m[2],
-					query = sparqlTemplate.match( regexQuery )[1].trim();
+			while ( ( m = re.exec( wikitext ) ) !== null ) {
+				var paragraph = m[ 0 ],
+					title = m[ 1 ].trim(),
+					tags = [],
+					tag,
+					href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#' +
+						encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
+					sparqlTemplate = m[ 2 ],
+					query = sparqlTemplate.match( regexQuery )[ 1 ].trim();
 
-					if(sparqlTemplate.match( regexExtraPrefix )){
-						query = sparqlTemplate.match(regexExtraPrefix)[1] + '\n\n' + query;
+					if ( sparqlTemplate.match( regexExtraPrefix ) ) {
+						query = sparqlTemplate.match( regexExtraPrefix )[ 1 ] + '\n\n' + query;
 					}
-					if( paragraph.match( regexTags ) ) {
-						while(tag = regexTags.exec( paragraph ) ) {
-							tags.push(tag[2].trim() + ' (' + tag[1].trim() + ')');
+					if ( paragraph.match( regexTags ) ) {
+						while( ( tag = regexTags.exec( paragraph )  ) !== null ) {
+							tags.push(tag[ 2 ].trim() + ' (' + tag[ 1 ].trim() + ')');
 						}
 					}
 

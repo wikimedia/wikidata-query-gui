@@ -2,8 +2,8 @@ var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
-wikibase.queryService.api.Sparql = (function($) {
-	"use strict";
+wikibase.queryService.api.Sparql = ( function($) {
+	'use strict';
 
 	var SERVICE = '/bigdata/namespace/wdq/sparql';
 
@@ -50,7 +50,6 @@ wikibase.queryService.api.Sparql = (function($) {
 	 **/
 	SELF.prototype._queryUri = null;
 
-
 	/**
 	 * Submit a query to the API
 	 *
@@ -59,20 +58,20 @@ wikibase.queryService.api.Sparql = (function($) {
 	SELF.prototype.queryDataUpdatedTime = function() {
 
 		var deferred = $.Deferred(),
-		query = encodeURI('prefix schema: <http://schema.org/> ' +
-				'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}'),
+		query = encodeURI( 'prefix schema: <http://schema.org/> ' +
+				'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ),
 		url = SERVICE + '?query=' + query, settings = {
 			'headers' : {
 				'Accept' : 'application/sparql-results+json'
-			},
+			}
 		};
 
-		$.ajax( url, settings ).done(function( data ){
-			if(!data.results.bindings[0]) {
+		$.ajax( url, settings ).done(function( data, textStatus, jqXHR ){
+			if(!data.results.bindings[ 0 ]) {
 				deferred.reject();
 				return;
 			}
-			var updateDate = new Date( data.results.bindings[0][data.head.vars[0]].value ),
+			var updateDate = new Date( data.results.bindings[ 0 ][ data.head.vars[ 0 ] ].value ),
 			dateText = updateDate.toLocaleTimeString(
 				navigator.language,
 				{ timeZoneName: 'short' }
@@ -100,7 +99,7 @@ wikibase.queryService.api.Sparql = (function($) {
 		var deferred = $.Deferred(), self = this, settings = {
 			'headers' : {
 				'Accept' : 'application/sparql-results+json'
-			},
+			}
 		};
 
 		this._queryUri = SERVICE + '?' + query;
@@ -112,7 +111,7 @@ wikibase.queryService.api.Sparql = (function($) {
 			self._rawData = data;
 
 			deferred.resolve();
-		}).fail(function( jqXHR, textStatus, errorThrown ) {
+		}).fail(function( jqXHR ) {
 			self._executionTime = null;
 			self._rawData = null;
 			self._resultLength = null;
@@ -204,7 +203,7 @@ wikibase.queryService.api.Sparql = (function($) {
 	 * @return {jQuery}
 	 */
 	SELF.prototype.getResultAsTable = function() {
-		var data = this._rawData, thead, tr, td, binding,
+		var data = this._rawData, thead, tr, td, binding, i,
 		table = $( '<table>' ).attr( 'class', 'table' );
 
 		if ( typeof data.boolean !== 'undefined' ) {
@@ -221,7 +220,7 @@ wikibase.queryService.api.Sparql = (function($) {
 		thead.append( tr );
 		table.append( thead );
 
-		for (var i = 0; i < this._resultLength; i++ ) {
+		for (i = 0; i < this._resultLength; i++ ) {
 			tr = $( '<tr>' ) ;
 			for ( var j = 0; j < data.head.vars.length; j++ ) {
 				td = $( '<td>' ) ;
