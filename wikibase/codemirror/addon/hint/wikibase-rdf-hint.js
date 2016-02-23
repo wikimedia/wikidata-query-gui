@@ -127,29 +127,26 @@
 	}
 
 	function getCurrentWord( line, position ) {
-		// TODO This will not work for terms containing a slash, for example 'TCP/IP'
-		var leftColon = line.substring( 0, position ).lastIndexOf( ':' ),
-			left = line.substring( 0, leftColon ).lastIndexOf( ' ' ),
-			rightSlash = line.indexOf( '/', position ),
-			rightSpace = line.indexOf( ' ', position ),
-			right,
-			word;
+		var pos = position -1,
+			colon = false;
 
-		if ( rightSlash === -1 || rightSlash > rightSpace ) {
-			right = rightSpace;
-		} else {
-			right = rightSlash;
-		}
+		while( line.charAt( pos ).match( /\w/ ) ||
+			( line.charAt( pos ) === ' ' && colon === false ) ||
+			( line.charAt( pos ) === ':' && colon === false ) ){
 
-		if ( left === -1 ) {
-			left = 0;
-		} else {
-			left += 1;
+			if( line.charAt( pos ) === ':' )
+				colon = true;
+			pos--;
 		}
-		if ( right === -1 ) {
-			right = line.length;
+		var left = pos + 1;
+
+		pos = position;
+		while( line.charAt( pos ).match( /\w/ ) ){
+			pos++;
 		}
-		word = line.substring( left, right );
+		var right = pos;
+
+		var word = line.substring( left, right );
 		return { word: word, start: left, end: right };
 	}
 
