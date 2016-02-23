@@ -304,6 +304,15 @@ wikibase.queryService.api.Sparql = ( function($) {
 	};
 
 	/**
+	 * Get the raw result
+	 *
+	 * @return {object} result
+	 */
+	SELF.prototype.getResultRawData= function() {
+		return this._rawData;
+	};
+
+	/**
 	 * Get the result of the submitted query as CSV
 	 *
 	 * @return {string} csv
