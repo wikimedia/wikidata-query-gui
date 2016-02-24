@@ -2,7 +2,7 @@ var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 
-wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip ) {
+wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip, localStorage ) {
 	"use strict";
 
 	var CODEMIRROR_DEFAULTS = {
@@ -14,6 +14,8 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip ) {
 		},
 		ERROR_LINE_MARKER = null,
 		ERROR_CHARACTER_MARKER = null;
+
+	var LOCAL_STORAGE_KEY = 'wikibase.queryService.ui.Editor';
 
 	/**
 	 * An ui this._editor for the Wikibase query service
@@ -45,6 +47,7 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip ) {
 
 		this._editor = CodeMirror.fromTextArea( element, CODEMIRROR_DEFAULTS );
 		this._editor.on( 'change', function ( editor, changeObj ) {
+			self.storeValue( self.getValue() );
 			self.clearError();
 			if( changeObj.text[0] === '?' ){
 				editor.showHint({closeCharacters: /[\s]/});
@@ -131,6 +134,30 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip ) {
 		}
 	};
 
+	/**
+	 * Stores the given value in the local storage
+	 * @param {string} value
+	 */
+	SELF.prototype.storeValue = function( value ) {
+		if( localStorage ){
+			localStorage.setItem( LOCAL_STORAGE_KEY, value );
+		}
+
+	};
+
+	/**
+	 * Restores the value from the local storage
+	 */
+	SELF.prototype.restoreValue = function() {
+		if( localStorage ){
+			var value = localStorage.getItem( LOCAL_STORAGE_KEY );
+			if( value ){
+				this.setValue( value );
+				this.refresh();
+			}
+		}
+	};
+
 	return SELF;
 
-}( CodeMirror, WikibaseRDFTooltip ) );
+}( CodeMirror, WikibaseRDFTooltip, window.localStorage ) );
