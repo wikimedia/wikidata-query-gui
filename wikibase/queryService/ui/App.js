@@ -211,6 +211,11 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 			$( '.explorer-panel' ).hide();
 		} );
 
+
+		//result browser
+		$( '.result-browser' ).click( function(){ $(this).closest( '.open' ).removeClass('open'); } );
+		$( '.result-browser.default' ).click( $.proxy( this._handleQueryResult, this )  );
+
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
 
 		this._initPopovers();
@@ -406,11 +411,6 @@ SM: disabled direct results for now
 	 * @private
 	 */
 	SELF.prototype._handleQueryResultBrowsers = function() {
-		$( '.result-browser' ).click( function(){ $(this).closest( '.open' ).removeClass('open'); } );
-
-		//table
-		$( '.result-browser.default' ).click( $.proxy( this._handleQueryResult, this )  );
-
 		//image
 		var imageBrowser = new wikibase.queryService.ui.resultBrowser.ImageResultBrowser();
 		imageBrowser.setResult( this._sparqlApi.getResultRawData() );
@@ -421,6 +421,7 @@ SM: disabled direct results for now
 				return false;
 			} );
 		}else{
+			$( '.result-browser.gallery' ).off( 'click' );
 			$( '.result-browser.gallery' ).css( 'opacity', 0.5 ).removeAttr( 'href' );
 		}
 	};
