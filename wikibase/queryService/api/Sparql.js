@@ -5,7 +5,7 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.Sparql = ( function($) {
 	'use strict';
 
-	var SERVICE = '/bigdata/namespace/wdq/sparql';
+	var SPARQL_SERVICE_URI = '//query.wikidata.org/bigdata/namespace/wdq/sparql';
 
 	/**
 	 * SPARQL API for the Wikibase query service
@@ -16,9 +16,23 @@ wikibase.queryService.api.Sparql = ( function($) {
 	 * @author Stanislav Malyshev
 	 * @author Jonas Kress
 	 * @constructor
+	 *
+	 * @param {string} (optional) serviceUri URI to the SPARQL service endpoint
 	 */
-	function SELF() {
+	function SELF( serviceUri ) {
+
+		if( serviceUri ){
+			this._serviceUri = serviceUri;
+		}else{
+			this._serviceUri = SPARQL_SERVICE_URI;
+		}
 	}
+
+	/**
+	 * @property {int}
+	 * @private
+	 **/
+	SELF.prototype._serviceUri = null;
 
 	/**
 	 * @property {int}
@@ -60,7 +74,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 		var deferred = $.Deferred(),
 		query = encodeURI( 'prefix schema: <http://schema.org/> ' +
 				'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ),
-		url = SERVICE + '?query=' + query, settings = {
+		url = this._serviceUri + '?query=' + query, settings = {
 			'headers' : {
 				'Accept' : 'application/sparql-results+json'
 			}
@@ -102,7 +116,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 			}
 		};
 
-		this._queryUri = SERVICE + '?' + query;
+		this._queryUri = this._serviceUri + '?query=' + encodeURIComponent( query );
 
 		this._executionTime = Date.now();
 		$.ajax( this._queryUri, settings ).done(function( data, textStatus, jqXHR ) {
