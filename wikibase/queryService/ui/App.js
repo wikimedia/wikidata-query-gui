@@ -171,6 +171,9 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 
 			this._editor.setValue( decodeURIComponent( window.location.hash.substr( 1 ) ) );
 			this._editor.refresh();
+		}else{
+
+			this._editor.restoreValue();
 		}
 	};
 
