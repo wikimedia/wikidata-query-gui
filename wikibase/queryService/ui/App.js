@@ -6,6 +6,8 @@ window.mediaWiki = window.mediaWiki || {};
 wikibase.queryService.ui.App = ( function( $, mw ) {
 	"use strict";
 
+	var SPARQL_SERVICE_URI = '/bigdata/namespace/wdq/sparql';
+
 	var SHORTURL = '//tinyurl.com/create.php?url=';
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
@@ -74,7 +76,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	SELF.prototype._init = function() {
 
 		if( !this._sparqlApi ){
-			this._sparqlApi = new wikibase.queryService.api.Sparql();
+			this._sparqlApi = new wikibase.queryService.api.Sparql( SPARQL_SERVICE_URI );
 		}
 
 		if( !this._querySamplesApi ){
@@ -329,8 +331,7 @@ SM: disabled direct results for now
 		$( '.actionMessage' ).show();
 		$( '.actionMessage' ).text( 'Running query...' );
 
-		var query = $( '#query-form' ).serialize();
-		this._sparqlApi.query(query)
+		this._sparqlApi.query( this._editor.getValue() )
 		.done( $.proxy( this._handleQueryResult, this ) )
 		.fail(function(){
 			$( '.actionMessage' ).hide();
