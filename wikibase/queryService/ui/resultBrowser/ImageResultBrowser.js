@@ -49,7 +49,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 						regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),
 						fileName = decodeURIComponent( url.replace( regEx, '' ) );
 
-					self._grid.append( self._getItem( self._getThumbnail( url ), fileName ) );
+					self._grid.append( self._getItem( self._getThumbnail( url ),  self._getThumbnail( url, 1000 ), fileName ) );
 				}
 			} );
 		} );
@@ -80,7 +80,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	/**
 	 * @private
 	 **/
-	SELF.prototype._getItem = function( url, title ) {
+	SELF.prototype._getItem = function( thumbnailUrl, url, title ) {
 
 		var triggerGallery = function(event) {
 			event.preventDefault();
@@ -91,7 +91,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 			image = $( '<a href="' + url +'" data-gallery="g">' )
 			.click( triggerGallery )
 			.attr( 'data-title',  title )
-			.append( $( '<img src="' + url +'"></div>' ) );
+			.append( $( '<img src="' + thumbnailUrl +'"></div>' ) );
 
 		return $( '<div class="item">' ).append( heading, image );
 
