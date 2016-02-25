@@ -47,6 +47,10 @@
 	min-height: 300px;
 }
 
+pre.CodeMirror-placeholder {
+	color: #777777;
+}
+
 .exampleQueries {
 	width: 160px;
 }
@@ -130,8 +134,8 @@ iframe.shortUrl {
 }
 
 .QueryExamples  .exampleTable {
-	max-height: 500px; 
-	overflow-y: auto; 
+	max-height: 500px;
+	overflow-y: auto;
 	overflow-x: hidden;
 	border: 1px solid #ccc;
 }
