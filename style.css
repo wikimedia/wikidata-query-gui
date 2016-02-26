@@ -168,6 +168,14 @@ iframe.shortUrl {
     }
 }
 
+/*
+	editor hint style
+*/
+.wikibase-rdf-hint{
+  border-bottom: 1px solid gray;
+  white-space: normal;
+}
+
 /**
 	Query example dialog
 **/
