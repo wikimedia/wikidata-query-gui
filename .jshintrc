@@ -34,6 +34,8 @@
 		"WikibaseRDFTooltip": false,
 		"download": false,
 		"EXPLORER": false,
-		"JSON": false
+		"JSON": false,
+		"QUnit": false,
+		"sinon": false
 	}
 }

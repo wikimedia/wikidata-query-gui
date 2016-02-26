@@ -9,6 +9,7 @@
     "grunt-cli": "0.1.13",
     "grunt-contrib-jshint": "0.11.2",
     "grunt-jscs": "2.1.0",
-    "grunt-jsonlint": "1.0.4"
+    "grunt-jsonlint": "1.0.4",
+    "sinon": "~1.17.3"
   }
 }

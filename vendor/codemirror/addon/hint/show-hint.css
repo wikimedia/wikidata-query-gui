@@ -36,8 +36,3 @@ li.CodeMirror-hint-active {
   background: #08f;
   color: white;
 }
-
-.wikibase-rdf-hint{
-  border-bottom: 1px solid gray;
-  white-space: normal;
-}

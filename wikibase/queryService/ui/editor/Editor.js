@@ -1,8 +1,9 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
+wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 
-wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip, localStorage ) {
+wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFTooltip, localStorage ) {
 	"use strict";
 
 	var CODEMIRROR_DEFAULTS = {
@@ -10,7 +11,8 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip, lo
 			"matchBrackets": true,
 			"mode": 'sparql',
 			"extraKeys": { 'Ctrl-Space': 'autocomplete' },
-			"viewportMargin": Infinity
+			"viewportMargin": Infinity,
+			"hintOptions": { closeCharacters: /[]/, completeSingle: false}
 		},
 		ERROR_LINE_MARKER = null,
 		ERROR_CHARACTER_MARKER = null;
@@ -38,6 +40,18 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip, lo
 	SELF.prototype._editor = null;
 
 	/**
+	 * @property {wikibase.queryService.ui.editor.hint.Sparql}
+	 * @private
+	 **/
+	SELF.prototype._sparqlHint = null;
+
+	/**
+	 * @property {wikibase.queryService.ui.editor.hint.Rdf}
+	 * @private
+	 **/
+	SELF.prototype._rdfHint = null;
+
+	/**
 	 * Construct an this._editor on the given textarea DOM element
 	 *
 	 * @param {Element} element
@@ -56,6 +70,56 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip, lo
 		this._editor.focus();
 
 		new WikibaseRDFTooltip(this._editor);
+
+		this._registerHints();
+	};
+
+	SELF.prototype._registerHints = function() {
+		var self = this;
+
+		CodeMirror.registerHelper( 'hint', 'sparql', function ( editor, callback, options ) {
+			if( editor !== self._editor ){
+				return;
+			}
+			var lineContent = editor.getLine( editor.getCursor().line ),
+				editorContent = editor.doc.getValue(),
+				cursorPos = editor.getCursor().ch,
+				lineNum = editor.getCursor().line;
+
+			self._getHints( editorContent, lineContent, lineNum, cursorPos ).done( function( hint ){
+				callback( hint );
+			} );
+		} );
+
+		CodeMirror.hint.sparql.async = true;
+	};
+
+	SELF.prototype._getHints = function( editorContent, lineContent, lineNum, cursorPos ) {
+		var deferred = new $.Deferred(),
+			self = this;
+		if( !this._sparqlHint ){
+			this._sparqlHint = new wikibase.queryService.ui.editor.hint.Sparql();
+		}
+		if( !this._rdfHint ){
+			this._rdfHint = new wikibase.queryService.ui.editor.hint.Rdf();
+		}
+
+		this._rdfHint.getHint( editorContent, lineContent, lineNum, cursorPos ).done( function( hint ){
+		hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
+		hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
+
+		deferred.resolve( hint );
+
+		} ).fail( function(){//if rdf hint is rejected try sparql hint
+			self._sparqlHint.getHint( editorContent, lineContent, lineNum, cursorPos ).done( function( hint ){
+				hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
+				hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
+
+				deferred.resolve( hint );
+			} );
+		} );
+
+		return deferred.promise();
 	};
 
 	/**
@@ -160,4 +224,4 @@ wikibase.queryService.ui.Editor = ( function( CodeMirror, WikibaseRDFTooltip, lo
 
 	return SELF;
 
-}( CodeMirror, WikibaseRDFTooltip, window.localStorage ) );
+}( jQuery, CodeMirror, WikibaseRDFTooltip, window.localStorage ) );

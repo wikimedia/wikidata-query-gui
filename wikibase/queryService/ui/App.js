@@ -25,7 +25,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 * @constructor
 	 *
 	 * @param {jQuery} $element
-	 * @param {wikibase.queryService.ui.Editor}
+	 * @param {wikibase.queryService.ui.editor.Editor}
 	 * @param {wikibase.queryService.api.Sparql}
 	 */
 	function SELF( $element, editor, sparqlApi, querySamplesApi ) {
@@ -57,8 +57,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	SELF.prototype._querySamplesApi = null;
 
 	/**
-	 * @property {wikibase.queryService.ui.Editor}
-	 * @type wikibase.queryService.ui.Editor
+	 * @property {wikibase.queryService.ui.editor.Editor}
 	 * @private
 	 **/
 	SELF.prototype._editor = null;
@@ -84,7 +83,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 		}
 
 		if( !this._editor ){
-			this._editor = new wikibase.queryService.ui.Editor();
+			this._editor = new wikibase.queryService.ui.editor.Editor();
 		}
 
 		this._initApp();
