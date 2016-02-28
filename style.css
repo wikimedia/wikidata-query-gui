@@ -34,6 +34,10 @@
 	background-color: inherit;
 }
 
+#result-browser-menu .glyphicon {
+	padding: 0 .5em 0 0;
+}
+
 .cm-s-default .cm-bracket {
 	color: #000;
 }
