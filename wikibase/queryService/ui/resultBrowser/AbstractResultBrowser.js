@@ -35,7 +35,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 
 	/**
 	 * Checks whether the result browser can draw the given result
-	 * @return {bool}
+	 * @return {boolean}
 	 **/
 	SELF.prototype.isDrawable = function() {
 		jQuery.error( 'Method isDrawable() needs to be implemented!' );
