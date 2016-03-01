@@ -36,6 +36,7 @@
 		"EXPLORER": false,
 		"JSON": false,
 		"QUnit": false,
-		"sinon": false
+		"sinon": false,
+		"L": false
 	}
 }

@@ -431,6 +431,7 @@ SM: disabled direct results for now
 		//image
 		var imageBrowser = new wikibase.queryService.ui.resultBrowser.ImageResultBrowser();
 		imageBrowser.setResult( this._sparqlApi.getResultRawData() );
+
 		if( imageBrowser.isDrawable() ){
 			$( '.result-browser.gallery' ).css( 'opacity', 1 ).attr( 'href', '#' );
 			$( '.result-browser.gallery' ).click( function(){
@@ -440,6 +441,22 @@ SM: disabled direct results for now
 		}else{
 			$( '.result-browser.gallery' ).off( 'click' );
 			$( '.result-browser.gallery' ).css( 'opacity', 0.5 ).removeAttr( 'href' );
+		}
+
+
+		//maps
+		var coordinateBrowser = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser();
+		coordinateBrowser.setResult( this._sparqlApi.getResultRawData() );
+
+		if( coordinateBrowser.isDrawable() ){
+			$( '.result-browser.map' ).css( 'opacity', 1 ).attr( 'href', '#' );
+			$( '.result-browser.map' ).click( function(){
+				coordinateBrowser.draw( $( '#query-result' ) );
+				return false;
+			} );
+		}else{
+			$( '.result-browser.map' ).off( 'click' );
+			$( '.result-browser.map' ).css( 'opacity', 0.5 ).removeAttr( 'href' );
 		}
 	};
 

@@ -34,7 +34,7 @@
 	background-color: inherit;
 }
 #query-result {
-	width: 100vw;
+	width: 100%;
 	overflow: auto;
 }
 
