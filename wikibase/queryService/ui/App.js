@@ -63,7 +63,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	SELF.prototype._editor = null;
 
 	/**
-	 * @property {bool}
+	 * @property {boolean}
 	 * @private
 	 **/
 	SELF.prototype._autoExecuteQuery = false;
@@ -358,7 +358,13 @@ SM: disabled direct results for now
 		$( '#total-results' ).text( api.getResultLength() );
 		$( '#query-time' ).text( api.getExecutionTime() );
 		$( '.query-total' ).show();
-		$( '#query-result' ).html( api.getResultAsTable() ).show();
+
+		var $queryResult = $( '#query-result' );
+		var tableBrowser = new wikibase.queryService.ui.resultBrowser.TableResultBrowser();
+		tableBrowser.setResult( api.getResultRawData() );
+		tableBrowser.draw( $queryResult );
+		$queryResult.show();
+
 		$( '.actionMessage' ).hide();
 		$( '#query-error' ).hide();
 
