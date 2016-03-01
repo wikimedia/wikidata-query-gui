@@ -18,8 +18,6 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 *
 	 * @author Jonas Kress
 	 * @constructor
-	 *
-	 * @param {Object} result set
 	 */
 	function SELF() {
 	}
@@ -59,7 +57,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 	/**
 	 * Checks whether the browser can draw the given result
-	 * @return {bool}
+	 * @return {boolean}
 	 **/
 	SELF.prototype.isDrawable = function() {
 
