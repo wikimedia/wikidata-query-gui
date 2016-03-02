@@ -121,7 +121,12 @@ wikibase.queryService.api.Sparql = ( function($) {
 		this._executionTime = Date.now();
 		$.ajax( this._queryUri, settings ).done(function( data, textStatus, jqXHR ) {
 			self._executionTime = Date.now() - self._executionTime;
-			self._resultLength = data.results.bindings.length || 0;
+
+			if ( typeof  data.boolean === 'boolean' ) {
+					self._resultLength = 1;
+				} else {
+					self._resultLength = data.results.bindings.length || 0;
+				}
 			self._rawData = data;
 
 			deferred.resolve();
