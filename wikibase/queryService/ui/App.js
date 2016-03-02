@@ -358,15 +358,23 @@ SM: disabled direct results for now
 		$( '#total-results' ).text( api.getResultLength() );
 		$( '#query-time' ).text( api.getExecutionTime() );
 		$( '.query-total' ).show();
+		$( '.actionMessage' ).hide();
+		$( '#query-error' ).hide();
 
-		var $queryResult = $( '#query-result' );
+		var $queryResult = $( '#query-result' ),
+			result = api.getResultRawData();
+
+		if ( typeof  result.boolean === 'boolean' ){
+			$queryResult.text( result.boolean );
+			$queryResult.show();
+			return false;
+		}
+
 		var tableBrowser = new wikibase.queryService.ui.resultBrowser.TableResultBrowser();
 		tableBrowser.setResult( api.getResultRawData() );
 		tableBrowser.draw( $queryResult );
 		$queryResult.show();
 
-		$( '.actionMessage' ).hide();
-		$( '#query-error' ).hide();
 
 		this._handleQueryResultAddExploreLinks();
 		this._handleQueryResultAddGalleryLinks();
