@@ -9,7 +9,7 @@ wikibase.queryService.api.QuerySamples = ( function( $ ) {
 	 * QuerySamples API for the Wikibase query service
 	 *
 	 * @class wikibase.queryService.api.QuerySamples
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 *
 	 * @author Stanislav Malyshev
 	 * @author Jonas Kress

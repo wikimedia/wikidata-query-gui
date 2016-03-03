@@ -11,7 +11,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	 * Abstract result browser
 	 *
 	 * @class wikibase.queryService.ui.App
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
