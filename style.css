@@ -34,8 +34,12 @@
 	background-color: inherit;
 }
 #query-result {
-	width: 100vw;
+	width: 100%;
 	overflow: auto;
+}
+#query-box .navbar-left,
+#query-box .navbar-right {
+	margin-right: 0;
 }
 
 #result-browser-menu .glyphicon {

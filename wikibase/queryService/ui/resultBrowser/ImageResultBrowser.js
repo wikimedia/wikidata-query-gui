@@ -14,7 +14,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * A result browser for images
 	 *
 	 * @class wikibase.queryService.ui.resultBrowser.ImageResultBrowser
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
@@ -42,7 +42,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 		$.each( this._result.results.bindings, function(){
 			$.each( this, function( key, field ){
-				if( self._isCommonsRessource( field.value ) ){
+				if( self._isCommonsResource( field.value ) ){
 					var url = field.value,
 						regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),
 						fileName = decodeURIComponent( url.replace( regEx, '' ) );
@@ -52,7 +52,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 			} );
 		} );
 
-		$( $element ).html( this._grid );
+		$element.html( this._grid );
 	};
 
 	/**
@@ -98,7 +98,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	/**
 	 * @private
 	 **/
-	SELF.prototype._isCommonsRessource = function( url ) {
+	SELF.prototype._isCommonsResource = function( url ) {
 		return url.toLowerCase().startsWith( COMMONS_FILE_PATH.toLowerCase() );
 
 	};
@@ -107,7 +107,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._getThumbnail = function( url, width ) {
-		if( !this._isCommonsRessource(url) ){
+		if( !this._isCommonsResource(url) ){
 			return url;
 		}
 		if( !width ){
