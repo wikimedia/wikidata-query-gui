@@ -97,13 +97,13 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 				$( '<a>' ).attr( 'href', href ).append( $linkText ).appendTo( $td );
 
 				if ( this.isExploreUrl( href ) ) {
-					$td.append( ' ' );
-					$td.append( this.createExploreButton() );
+					$td.prepend( ' ' );
+					$td.prepend( this.createExploreButton() );
 				}
 
 				if ( this.isCommonsResource( href ) ) {
-					$td.append( ' ' );
-					$td.append( this.createGalleryButton( href, column ) );
+					$td.prepend( ' ' );
+					$td.prepend( this.createGalleryButton( href, column ) );
 				}
 
 				break;
@@ -124,7 +124,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 
 		if ( data.type === 'uri' ) {
 			if ( this.isCommonsResource( label ) ) {
-				label = decodeURIComponent( this.getCommonsResourceFileName( label ) );
+				label = 'commons:' + decodeURIComponent( this.getCommonsResourceFileName( label ) );
 			} else {
 				label = this.abbreviateUri( label );
 			}
