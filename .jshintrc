@@ -37,6 +37,7 @@
 		"JSON": false,
 		"QUnit": false,
 		"sinon": false,
-		"L": false
+		"L": false,
+		"CONFIG": true
 	}
 }
