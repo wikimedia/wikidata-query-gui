@@ -77,6 +77,10 @@ iframe.shortUrl {
 #query-box {
 	position: relative;
 }
+
+#query-box .nav {
+	margin-left: 0;
+}
 .shareQuery {
 	z-index: 100;
 	position: absolute;
@@ -96,6 +100,8 @@ iframe.shortUrl {
 .navbar-right {
 	margin-right: 0;
 }
+
+
 
 .label {
 	font-size: 100%;
