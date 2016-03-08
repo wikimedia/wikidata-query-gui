@@ -98,7 +98,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 
 				if ( this.isExploreUrl( href ) ) {
 					$td.prepend( ' ' );
-					$td.prepend( this.createExploreButton() );
+					$td.prepend( this.createExploreButton( href ) );
 				}
 
 				if ( this.isCommonsResource( href ) ) {
@@ -171,8 +171,8 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 	 * @private
 	 * @returns {jQuery}
 	 */
-	BootstrapTable.prototype.createExploreButton = function () {
-		return $( '<a href="#" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
+	BootstrapTable.prototype.createExploreButton = function ( url ) {
+		return $( '<a href="' + url + '" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
 	};
 
 	/**
@@ -254,11 +254,12 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 	 * @private
 	 */
 	BootstrapTable.prototype.handleExploreItem = function ( e ) {
-		var id, url = $( e.target ).prev().attr( 'href' ) || '', match;
+		var id, url = $( e.target ).attr( 'href' ) || '', match;
+		e.preventDefault();
 
 		match = url.match( EXPLORE_URL + '(.+)' );
 		if ( !match ) {
-			return;
+			return false;
 		}
 
 		var $explorer = $( '.explorer' );
