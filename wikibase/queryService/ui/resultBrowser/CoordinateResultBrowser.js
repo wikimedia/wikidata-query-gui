@@ -95,13 +95,21 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				}
 		    	if( field.datatype === MAP_DATATYPE ){
 		    		var longLat = self._extractLongLat( field.value );
-		    		if( !longLat[0] || !longLat[1] ){
+
+					// FIXME: if the coordinates are for another globe (e.g. Mars),
+					// then the array order is different and longLat[0] is NaN.
+					if( !longLat[0] || !longLat[1] || isNaN( longLat[0] ) ){
 		    			return true;
 		    		}
 		    		var info = self._getItemDescription( rowKey );
 
 		    		markers.push(
-						L.marker( [ longLat[0], longLat[1] ] ).bindPopup( info[0] )
+						L.circle( [ longLat[0], longLat[1] ], 50, {
+							color: '#e04545',
+							opacity: 0.9,
+							fillColor: '#e04545',
+							fillOpacity: 0.9
+						} ).bindPopup( info[0] )
 					);
 		    	}
 			} );
