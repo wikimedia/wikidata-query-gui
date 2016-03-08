@@ -89,10 +89,6 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		$.each( result, function( rowKey){
 			$.each( this, function( key, field ){
-				if( key >= 300 ){
-					window.alert( 'Sorry, at the moment this map can only display 300 markers!' );
-					return false;
-				}
 		    	if( field.datatype === MAP_DATATYPE ){
 		    		var longLat = self._extractLongLat( field.value );
 
