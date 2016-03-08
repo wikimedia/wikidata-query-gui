@@ -5,7 +5,7 @@ var WikibaseRDFTooltip = ( function ( CodeMirror, $ ) {
 	 * Wikibase RDF tooltip for codemirror editor
 	 *
 	 * @class WikibaseRdfTooltip
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 * @author Jonas Kress
 	 * @constructor
 	 */

@@ -23,7 +23,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 	 * An ui this._editor for the Wikibase query service
 	 *
 	 * @class wikibase.queryService.ui.this._editor
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 *
 	 * @author Stanislav Malyshev
 	 * @author Jonas Kress

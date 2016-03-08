@@ -9,7 +9,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * A ui dialog for selecting a query example
 	 *
 	 * @class wikibase.queryService.ui.App
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
