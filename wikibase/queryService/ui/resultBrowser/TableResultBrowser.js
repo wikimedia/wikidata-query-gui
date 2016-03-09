@@ -85,50 +85,11 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 		var $td = $( '<td>' );
 		var data = row[ column ];
 
-		var $linkText = this.createLabel( data );
 		$td.attr( this.getAttributes( data ) );
 
-		switch ( data.type ) {
-			case 'uri':
-				var href = data.value;
-
-				$( '<a>' ).attr( 'href', href ).append( $linkText ).appendTo( $td );
-
-				if ( this.contentHelper.isExploreUrl( href ) ) {
-					$td.prepend( ' ' );
-					$td.prepend( this.contentHelper.createExploreButton( href ) );
-				}
-
-				if ( this.contentHelper.isCommonsResource( href ) ) {
-					$td.prepend( ' ' );
-					$td.prepend( this.contentHelper.createGalleryButton( href, column ) );
-				}
-
-				break;
-			default:
-				$td.append( $linkText );
-		}
+		$td.append( this.contentHelper.formatValue( data ) );
 
 		return $td;
-	};
-
-	/**
-	 * @private
-	 * @param {Object} data
-	 * @returns {jQuery}
-	 * */
-	BootstrapTable.prototype.createLabel = function ( data ) {
-		var label = data.value;
-
-		if ( data.type === 'uri' ) {
-			if ( this.contentHelper.isCommonsResource( label ) ) {
-				label = 'commons:' + decodeURIComponent( this.contentHelper.getCommonsResourceFileName( label ) );
-			} else {
-				label = this.contentHelper.abbreviateUri( label );
-			}
-		}
-
-		return $( '<span>' ).text( label.trim() );
 	};
 
 	/**

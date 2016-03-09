@@ -24,6 +24,62 @@ wikibase.queryService.ui.resultBrowser.helper.ContentHelper = ( function( $, mw 
 	}
 
 	/**
+	 * Format a data row
+	 * @param {object} row
+	 * @returns {jQuery} element
+	 */
+	SELF.prototype.formatRow = function ( row ) {
+		var self = this;
+
+		var $result = $( '<div/>' );
+
+		$.each( row, function( key, value ){
+			$result.prepend( $( '<div/>' ).text( key + ': ' )
+					.append( self.formatValue( value, key ) ) );
+		} );
+
+		return $result;
+	};
+
+
+	/**
+	 * Format a data value
+	 * @param {object} data
+	 * @param {string} key
+	 * @returns {jQuery} element
+	 */
+	SELF.prototype.formatValue = function ( data, key ) {
+		var value = data.value,
+			$html = $( '<span/>' );
+
+		if( !data.type ){
+			return value;
+		}
+
+		if ( data.type === 'uri' ) {
+			var $link = $( '<a/>' ).attr( 'href', value );
+			$html.append( $link );
+
+			if ( this.isCommonsResource( value ) ) {
+				$link.text( 'commons:' + decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
+				$html.prepend( this.createGalleryButton( value, key ), ' ' );
+
+			} else {
+				$link.text( this.abbreviateUri( value ) );
+				if( this.isExploreUrl( value ) ){
+					$html.prepend( this.createExploreButton( value ), ' ' );
+				}
+			}
+
+		} else {
+			$html.text( value );
+		}
+
+		return $html;
+	};
+
+
+	/**
 	 * Checks whether given URL is available for explorer
 	 * @param {string} url
 	 * @returns {boolean}
@@ -37,7 +93,10 @@ wikibase.queryService.ui.resultBrowser.helper.ContentHelper = ( function( $, mw 
 	 * @returns {jQuery}
 	 */
 	SELF.prototype.createExploreButton = function ( url ) {
-		return $( '<a href="' + url + '" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
+		var $button = $( '<a href="' + url + '" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
+		$button.click( $.proxy( this.handleExploreItem, this ) );
+
+		return $button;
 	};
 
 
@@ -89,10 +148,14 @@ wikibase.queryService.ui.resultBrowser.helper.ContentHelper = ( function( $, mw 
 		var fileName = this.getCommonsResourceFileName( url ),
 			thumbnail = this.getCommonsResourceFileNameThumbnail( url, 900 );
 
-		return $( '<a title="Show Gallery" class="gallery glyphicon glyphicon-picture" aria-hidden="true">' )
+		var $button = $( '<a title="Show Gallery" class="gallery glyphicon glyphicon-picture" aria-hidden="true">' )
 			.attr( 'href', thumbnail )
 			.attr( 'data-gallery', 'G_' + galleryId )
 			.attr( 'data-title', decodeURIComponent( fileName ) );
+
+		$button.click( this.handleCommonResourceItem );
+
+		return $button;
 	};
 
 
