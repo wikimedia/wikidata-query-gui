@@ -4,12 +4,8 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw ) {
+wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 	"use strict";
-
-	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
-	var COMMONS_FILE_PATH = "http://commons.wikimedia.org/wiki/special:filepath/";
-	var COMMONS_SPECIAL_RESIZE = "http://commons.wikimedia.org/wiki/Special:FilePath/";
 
 	/**
 	 * Represents a Bootstrap Table
@@ -19,9 +15,11 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 	 * @author Jonas Keinholz
 	 * @constructor
 	 */
-	function BootstrapTable( columns, rows ) {
+	function BootstrapTable( columns, rows, contentHelper ) {
 		this.columns = columns;
 		this.rows = rows;
+
+		this.contentHelper = contentHelper;
 	}
 
 	/**
@@ -96,14 +94,14 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 
 				$( '<a>' ).attr( 'href', href ).append( $linkText ).appendTo( $td );
 
-				if ( this.isExploreUrl( href ) ) {
+				if ( this.contentHelper.isExploreUrl( href ) ) {
 					$td.prepend( ' ' );
-					$td.prepend( this.createExploreButton( href ) );
+					$td.prepend( this.contentHelper.createExploreButton( href ) );
 				}
 
-				if ( this.isCommonsResource( href ) ) {
+				if ( this.contentHelper.isCommonsResource( href ) ) {
 					$td.prepend( ' ' );
-					$td.prepend( this.createGalleryButton( href, column ) );
+					$td.prepend( this.contentHelper.createGalleryButton( href, column ) );
 				}
 
 				break;
@@ -123,10 +121,10 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 		var label = data.value;
 
 		if ( data.type === 'uri' ) {
-			if ( this.isCommonsResource( label ) ) {
-				label = 'commons:' + decodeURIComponent( this.getCommonsResourceFileName( label ) );
+			if ( this.contentHelper.isCommonsResource( label ) ) {
+				label = 'commons:' + decodeURIComponent( this.contentHelper.getCommonsResourceFileName( label ) );
 			} else {
-				label = this.abbreviateUri( label );
+				label = this.contentHelper.abbreviateUri( label );
 			}
 		}
 
@@ -158,83 +156,10 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 		return attr;
 	};
 
-	/**
-	 * @private
-	 * @param {string} url
-	 * @returns {boolean}
-	 */
-	BootstrapTable.prototype.isExploreUrl = function ( url ) {
-		return url.match( EXPLORE_URL + '(.+)' );
-	};
-
-	/**
-	 * @private
-	 * @returns {jQuery}
-	 */
-	BootstrapTable.prototype.createExploreButton = function ( url ) {
-		return $( '<a href="' + url + '" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
-	};
-
-	/**
-	 * @private
-	 * @param {string} url
-	 * @returns {boolean}
-	 */
-	BootstrapTable.prototype.isCommonsResource = function ( url ) {
-		return url.toLowerCase().startsWith( COMMONS_FILE_PATH.toLowerCase() );
-	};
-
-	/**
-	 * @private
-	 * @param {string} url
-	 * @returns {string}
-	 */
-	BootstrapTable.prototype.getCommonsResourceFileName = function ( url ) {
-		var regExp = new RegExp( COMMONS_FILE_PATH, 'ig' );
-
-		return url.replace( regExp, '' );
-	};
-
-	/**
-	 * @private
-	 * @param {string} url
-	 * @param {string} column
-	 * @returns {jQuery}
-	 */
-	BootstrapTable.prototype.createGalleryButton = function ( url, column ) {
-		var fileName = this.getCommonsResourceFileName( url ),
-			thumbnail = COMMONS_SPECIAL_RESIZE + fileName + '?width=900';
-
-		return $( '<a title="Show Gallery" class="gallery glyphicon glyphicon-picture" aria-hidden="true">' )
-			.attr( 'href', thumbnail )
-			.attr( 'data-gallery', 'G_' + column )
-			.attr( 'data-title', decodeURIComponent( fileName ) );
-	};
-
-	/**
-	 * Produce abbreviation of the URI.
-	 *
-	 * @private
-	 * @param {string} uri
-	 * @returns {string}
-	 */
-	BootstrapTable.prototype.abbreviateUri = function ( uri ) {
-		var nsGroup, ns, NAMESPACE_SHORTCUTS = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS;
-
-		for ( nsGroup in NAMESPACE_SHORTCUTS ) {
-			for ( ns in NAMESPACE_SHORTCUTS[ nsGroup ] ) {
-				if ( uri.indexOf( NAMESPACE_SHORTCUTS[ nsGroup ][ ns ] ) === 0 ) {
-					return uri.replace( NAMESPACE_SHORTCUTS[ nsGroup ][ ns ], ns + ':' );
-				}
-			}
-		}
-		return '<' + uri + '>';
-	};
-
 	BootstrapTable.prototype.initializeBootstrapTable = function () {
 		var events = {
-			'click .explore': $.proxy( this.handleExploreItem, this ),
-			'click .gallery': this.handleCommonResourceItem
+			'click .explore': $.proxy( this.contentHelper.handleExploreItem, this ),
+			'click .gallery': this.contentHelper.handleCommonResourceItem
 		};
 
 		this.$table.bootstrapTable( {
@@ -248,39 +173,6 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 			} ),
 			mobileResponsive: true
 		} );
-	};
-
-	/**
-	 * @private
-	 */
-	BootstrapTable.prototype.handleExploreItem = function ( e ) {
-		var id, url = $( e.target ).attr( 'href' ) || '', match;
-		e.preventDefault();
-
-		match = url.match( EXPLORE_URL + '(.+)' );
-		if ( !match ) {
-			return false;
-		}
-
-		var $explorer = $( '.explorer' );
-
-		$explorer.empty();
-		$( '.explorer-panel' ).show();
-
-		id = match[ 1 ];
-		mw.config = {
-			get: function () {
-				return 'Q' + id;
-			}
-		};
-		EXPLORER( $, mw, $explorer );
-
-		return false;
-	};
-
-	BootstrapTable.prototype.handleCommonResourceItem = function ( e ) {
-		e.preventDefault();
-		$( this ).ekkoLightbox( { 'scale_height': true } );
 	};
 
 	/**
@@ -312,7 +204,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 			return;
 		}
 
-		var bootstrapTable = new BootstrapTable( data.head.vars, data.results.bindings );
+		var bootstrapTable = new BootstrapTable( data.head.vars, data.results.bindings, this._contentHelper );
 		bootstrapTable.createTable( $element );
 	};
 
@@ -325,4 +217,4 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, mw )
 	};
 
 	return SELF;
-}( jQuery, mediaWiki ) );
+}( jQuery ) );
