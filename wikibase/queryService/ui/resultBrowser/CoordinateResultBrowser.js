@@ -65,25 +65,6 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	/**
-	 * Checks whether the browser can draw the given result
-	 * @return {boolean}
-	 */
-	SELF.prototype.isDrawable = function() {
-
-		var result = this._result.results.bindings[0] || {},
-		isDrawable = false;
-
-		$.each( result, function( key, field ){
-			if( field.datatype === MAP_DATATYPE ){
-				isDrawable = true;
-				return false;
-			}
-		} );
-
-		return isDrawable;
-	};
-
-	/**
 	 * @private
 	 */
 	SELF.prototype._getMarkerGroup = function() {
@@ -169,6 +150,23 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		    return container;
 		  }
 		});
+
+	/**
+	 * Receiving data from the a visit
+	 * @param data
+	 */
+	SELF.prototype.visit = function( data ) {
+		this._checkCoordinate( data );
+	};
+
+	/**
+	 * Check if this value contains an coordinate value.
+	 */
+	SELF.prototype._checkCoordinate = function ( value ) {
+		if( value && value.datatype === MAP_DATATYPE ) {
+			this._drawable = true;
+		}
+	};
 
 	return SELF;
 }( jQuery, L ) );

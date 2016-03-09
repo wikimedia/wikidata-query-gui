@@ -388,12 +388,16 @@ SM: disabled direct results for now
 		}
 
 		var tableBrowser = new wikibase.queryService.ui.resultBrowser.TableResultBrowser();
+		var imageBrowser = new wikibase.queryService.ui.resultBrowser.ImageResultBrowser();
+		var coordinateBrowser = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser();
+
 		tableBrowser.setResult( api.getResultRawData() );
+		tableBrowser.addVisitor( imageBrowser );
+		tableBrowser.addVisitor( coordinateBrowser );
 		tableBrowser.draw( $queryResult );
 		$queryResult.show();
 
-
-		this._handleQueryResultBrowsers();
+		this._handleQueryResultBrowsers( imageBrowser, coordinateBrowser );
 
 		return false;
 	};
@@ -401,9 +405,8 @@ SM: disabled direct results for now
 	/**
 	 * @private
 	 */
-	SELF.prototype._handleQueryResultBrowsers = function() {
+	SELF.prototype._handleQueryResultBrowsers = function( imageBrowser, coordinateBrowser ) {
 		//image
-		var imageBrowser = new wikibase.queryService.ui.resultBrowser.ImageResultBrowser();
 		imageBrowser.setResult( this._sparqlApi.getResultRawData() );
 
 		if( imageBrowser.isDrawable() ){
@@ -419,7 +422,6 @@ SM: disabled direct results for now
 
 
 		//maps
-		var coordinateBrowser = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser();
 		coordinateBrowser.setResult( this._sparqlApi.getResultRawData() );
 
 		if( coordinateBrowser.isDrawable() ){

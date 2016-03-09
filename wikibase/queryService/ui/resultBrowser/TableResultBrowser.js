@@ -15,11 +15,12 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 	 * @author Jonas Keinholz
 	 * @constructor
 	 */
-	function BootstrapTable( columns, rows, contentHelper ) {
+	function BootstrapTable( columns, rows, contentHelper, browser ) {
 		this.columns = columns;
 		this.rows = rows;
 
 		this.contentHelper = contentHelper;
+		this.browser = browser;
 	}
 
 	/**
@@ -84,6 +85,8 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 
 		var $td = $( '<td>' );
 		var data = row[ column ];
+
+		this.browser.processVisitors( data );
 
 		$td.attr( this.getAttributes( data ) );
 
@@ -165,7 +168,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 			return;
 		}
 
-		var bootstrapTable = new BootstrapTable( data.head.vars, data.results.bindings, this._contentHelper );
+		var bootstrapTable = new BootstrapTable( data.head.vars, data.results.bindings, this._contentHelper, this );
 		bootstrapTable.createTable( $element );
 	};
 
