@@ -18,6 +18,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	function SELF() {
 
 		this._contentHelper = new wikibase.queryService.ui.resultBrowser.helper.ContentHelper();
+		this._visitors = [];
 	}
 
 	/**
@@ -33,6 +34,20 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	SELF.prototype._result = null;
 
 	/**
+	 * @property {function}
+	 * List of visitor callbacks
+	 */
+	SELF.prototype._visitors = null;
+
+	/**
+	 * @property {boolean}
+	 * @protected
+	 * Is the browser drawable?
+	 * Not drawable by default.
+	 */
+	SELF.prototype._drawable = false;
+
+	/**
 	 * Sets the result to be browsed
 	 * @param {Object} result set
 	 **/
@@ -41,11 +56,39 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	};
 
 	/**
+	 * Add visitor function.
+	 * @param {function} callback
+	 */
+	SELF.prototype.addVisitor = function( callback ) {
+		this._visitors.push( callback );
+	};
+
+	/**
+	 * Call all visitors for the piece of data
+	 * @param data
+	 */
+	SELF.prototype.processVisitors = function( data ) {
+		this._visitors.forEach( function ( v ) {
+			if( v.visit && typeof v.visit === 'function' ){
+				$.proxy( v.visit( data ), v );
+			}
+		} );
+	};
+
+	/**
+	 * Receiving data from the a visit
+	 * @param data
+	 */
+	SELF.prototype.visit = function( data ) {
+	};
+
+
+	/**
 	 * Checks whether the result browser can draw the given result
 	 * @return {boolean}
 	 **/
 	SELF.prototype.isDrawable = function() {
-		jQuery.error( 'Method isDrawable() needs to be implemented!' );
+		return this._drawable;
 	};
 
 	/**

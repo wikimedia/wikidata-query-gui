@@ -58,26 +58,6 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	};
 
 	/**
-	 * Checks whether the browser can draw the given result
-	 * @return {boolean}
-	 **/
-	SELF.prototype.isDrawable = function() {
-
-		var result = this._result.results.bindings[0] || {},
-		isDrawable = false;
-
-		$.each( result, function( key, field ){
-
-			if( field.value.startsWith( COMMONS_FILE_PATH ) ){
-				isDrawable = true;
-				return false;
-			}
-		} );
-
-		return isDrawable;
-	};
-
-	/**
 	 * @private
 	 **/
 	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
@@ -114,6 +94,24 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 		thumbnail = COMMONS_SPECIAL_RESIZE + fileName + '?width=' + width;
 
 		return thumbnail;
+	};
+
+	/**
+	 * Receiving data from the a visit
+	 * @param data
+	 */
+	SELF.prototype.visit = function( data ) {
+		this._checkImage( data );
+	};
+
+
+	/**
+	 * Check if this value contains an image.
+	 */
+	SELF.prototype._checkImage = function ( data ) {
+		if( data && data.value && data.value.startsWith( COMMONS_FILE_PATH ) ){
+			this._drawable = true;
+		}
 	};
 
 	return SELF;
