@@ -334,12 +334,14 @@ SM: disabled direct results for now
 		$( '.query-total' ).hide();
 		$( '.actionMessage' ).show();
 		$( '.actionMessage' ).text( 'Running query...' );
+		$( '#execute-button' ).prop('disabled', true);
 
 		this._sparqlApi.query( this._editor.getValue() )
 		.done( $.proxy( this._handleQueryResult, this ) )
 		.fail(function(){
 			$( '.actionMessage' ).hide();
 			$( '#query-error' ).html( $( '<pre>' ).text( self._sparqlApi.getErrorMessage() ) ).show();
+			$( '#execute-button' ).prop('disabled', false);
 			self._editor.highlightError( self._sparqlApi.getErrorMessage() );
 		} );
 
@@ -357,6 +359,7 @@ SM: disabled direct results for now
 		$( '.query-total' ).show();
 		$( '.actionMessage' ).hide();
 		$( '#query-error' ).hide();
+		$( '#execute-button' ).prop('disabled', false);
 
 		var $queryResult = $( '#query-result' ),
 			result = api.getResultRawData();
