@@ -39,14 +39,17 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 		this._grid = $( '<div class="masonry">' );
 
 
-		$.each( this._result.results.bindings, function(){
+		$.each( this._result.results.bindings, function( rowNum, row ){
 			$.each( this, function( key, field ){
 				if( self._isCommonsResource( field.value ) ){
 					var url = field.value,
 						regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),
 						fileName = decodeURIComponent( url.replace( regEx, '' ) );
 
-					self._grid.append( self._getItem( self._getThumbnail( url ),  self._getThumbnail( url, 1000 ), fileName ) );
+					self._grid.append( self._getItem( self._getThumbnail( url ),
+							self._getThumbnail( url, 1000 ),
+							fileName,
+							row ) );
 				}
 			} );
 		} );
@@ -77,21 +80,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	/**
 	 * @private
 	 **/
-	SELF.prototype._getItem = function( thumbnailUrl, url, title ) {
-
-		var triggerGallery = function(event) {
-			event.preventDefault();
-			$(this).ekkoLightbox( { 'scale_height' : true } );
-			return false;
-		},
-			heading = $( '<div>' ).text( title ),
-			image = $( '<a href="' + url +'" data-gallery="g">' )
-			.click( triggerGallery )
+	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
+		var $image = $( '<a href="' + url +'" data-gallery="g">' )
+			.click( this._contentHelper.handleCommonResourceItem )
 			.attr( 'data-title',  title )
-			.append( $( '<img src="' + thumbnailUrl +'"></div>' ) );
+			.append( $( '<img src="' + thumbnailUrl +'"></div>' ) ),
+			$summary = this._contentHelper.formatRow( row );
 
-		return $( '<div class="item">' ).append( heading, image );
-
+		return $( '<div class="item">' ).append( $image, $summary );
 	};
 
 	/**

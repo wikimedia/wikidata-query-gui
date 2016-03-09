@@ -128,11 +128,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._getItemDescription = function( rowKey ) {
 		var row = this._result.results.bindings[rowKey],
-		$result = $( '<div/>' );
-
-		$.each( row, function( key, value ){
-			$result.append( $( '<div/>' ).text( key + ': ' + value.value ) );
-		} );
+		$result = $( '<div/>' ).append( this._contentHelper.formatRow( row ) );
 
 		return $result;
 	};
