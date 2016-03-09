@@ -213,6 +213,8 @@ wikibase.queryService.api.Sparql = ( function($) {
 			for ( var j = 0; j < data.head.vars.length; j++ ) {
 				if ( data.head.vars[j] in data.results.bindings[i] ) {
 					rowBindings[data.head.vars[j]] = data.results.bindings[i][data.head.vars[j]];
+				} else {
+					rowBindings[data.head.vars[j]] = undefined;
 				}
 			}
 			context = rowHandler( rowBindings, context );
@@ -253,16 +255,22 @@ wikibase.queryService.api.Sparql = ( function($) {
 		var out = data.head.vars.map( this._encodeCsv ).join( ',' ) + '\n';
 		out = this._processData( data, function ( row, out ) {
 			var rowOut = '';
+			var first = true;
+			var rowCSV;
 			for ( var rowVar in row ) {
-				var rowCSV = self._encodeCsv( row[rowVar].value );
-				if ( rowOut.length > 0 ) {
+				if ( row[rowVar] === undefined ) {
+					rowCSV = '';
+				} else {
+					rowCSV = self._encodeCsv( row[rowVar].value );
+				}
+				if ( !first ) {
 					rowOut += ',';
+				} else {
+					first = false;
 				}
 				rowOut += rowCSV;
 			}
-			if ( rowOut.length > 0 ) {
-				rowOut += '\n';
-			}
+			rowOut += '\n';
 			return out + rowOut;
 		}, out );
 		return out;
@@ -278,7 +286,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 		out = this._processData( data, function ( row, out ) {
 			var extractRow = {};
 			for ( var rowVar in row ) {
-				extractRow[rowVar] = row[rowVar].value;
+				extractRow[rowVar] = (row[rowVar] || {}).value;
 			}
 			out.push( extractRow );
 			return out;
@@ -287,7 +295,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	};
 
 	/**
-	 * Get the result of the submitted query as JSON
+	 * Get the result of the submitted query as raw JSON
 	 *
 	 * @return {string}
 	 */
@@ -328,7 +336,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	};
 
 	/**
-	 * Get the result of the submitted query as TSV
+	 * Get the result of the submitted query as SPARQL TSV
 	 *
 	 * @return {string}
 	 */
@@ -339,23 +347,29 @@ wikibase.queryService.api.Sparql = ( function($) {
 		} ).join( '\t' ) + '\n';
 		out = this._processData( data, function ( row, out ) {
 			var rowOut = '';
+			var first = true;
+			var rowTSV;
 			for ( var rowVar in row ) {
-				var rowTSV = self._renderValueTSV( row[rowVar] );
-				if ( rowOut.length > 0 ) {
+				if ( row[rowVar] === undefined ) {
+					rowTSV = '';
+				} else {
+					rowTSV = self._renderValueTSV( row[rowVar] );
+				}
+				if ( !first ) {
 					rowOut += '\t';
+				} else {
+					first = false;
 				}
 				rowOut += rowTSV;
 			}
-			if ( rowOut.length > 0 ) {
-				rowOut += '\n';
-			}
+			rowOut += '\n';
 			return out + rowOut;
 		}, out );
 		return out;
 	};
 
 	/**
-	 * Get the result of the submitted query as TSV
+	 * Get the result of the submitted query as simplified TSV
 	 *
 	 * @return {string}
 	 */
@@ -364,16 +378,22 @@ wikibase.queryService.api.Sparql = ( function($) {
 			out = data.head.vars.join( '\t' ) + '\n';
 		out = this._processData( data, function ( row, out ) {
 			var rowOut = '';
+			var first = true;
+			var rowTSV;
 			for ( var rowVar in row ) {
-				var rowTSV = row[rowVar].value.replace( /\t/g, '' );
-				if ( rowOut.length > 0 ) {
+				if ( row[rowVar] === undefined ) {
+					rowTSV = '';
+				} else {
+					rowTSV = row[rowVar].value.replace( /\t/g, '' );
+				}
+				if ( !first ) {
 					rowOut += '\t';
+				} else {
+					first = false;
 				}
 				rowOut += rowTSV;
 			}
-			if ( rowOut.length > 0 ) {
-				rowOut += '\n';
-			}
+			rowOut += '\n';
 			return out + rowOut;
 		}, out );
 		return out;
