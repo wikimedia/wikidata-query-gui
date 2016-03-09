@@ -2,7 +2,6 @@ var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
-window.mediaWiki = window.mediaWiki || {};
 
 wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	"use strict";
@@ -10,14 +9,22 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	/**
 	 * Abstract result browser
 	 *
-	 * @class wikibase.queryService.ui.App
+	 * @class wikibase.queryService.ui.resultBrowser.AbstractResultBrowser
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
 	 */
 	function SELF() {
+
+		this._contentHelper = new wikibase.queryService.ui.resultBrowser.helper.ContentHelper();
 	}
+
+	/**
+	 * @property {wikibase.queryService.ui.resultBrowser.helper.ContentHelper}
+	 * @private
+	 **/
+	SELF.prototype._formattingHelper = null;
 
 	/**
 	 * @property {object}
