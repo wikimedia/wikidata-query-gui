@@ -50,7 +50,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			map = L.map( 'map', {
 				center: [0, 0],
 				maxZoom: 18,
-				minZoom: 2
+				minZoom: 2,
+				fullscreenControl: true
 			} ).fitBounds( markerGroup.getBounds() );
 
 
@@ -157,6 +158,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		    $( container ).append( $(' <span class="glyphicon glyphicon-chevron-up"/> ') );
 
 		    container.onclick = function(){
+		    		if( map.isFullscreen() ){
+		    			map.toggleFullscreen();
+		    		}
 		        $( window ).scrollTop( 0, 0 );
 		      };
 
