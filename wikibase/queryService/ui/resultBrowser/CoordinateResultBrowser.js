@@ -49,8 +49,10 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		var	markerGroup = this._getMarkerGroup(),
 			map = L.map( 'map', {
 				center: [0, 0],
-				zoom: 3
+				maxZoom: 18,
+				minZoom: 2
 			} ).fitBounds( markerGroup.getBounds() );
+
 
 		this._setTileLayer( map );
 		map.addControl( new ScrollToTopButton() );
@@ -138,7 +140,6 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._setTileLayer = function( map ) {
 		L.tileLayer( MAP_SERVER + MAP_STYLE + '/{z}/{x}/{y}.png', {
-	        maxZoom: 18,
 	        id: 'wikipedia-map-01',
 	        attribution: 'Wikimedia maps beta | Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
 	    }).addTo( map );
