@@ -56,6 +56,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 
 		this._setTileLayer( map );
+
+		map.addControl( L.control.zoomBox( { modal: false, className: "glyphicon glyphicon-zoom-in" } ) );
 		map.addControl( new ScrollToTopButton() );
 		markerGroup.addTo( map );
 
