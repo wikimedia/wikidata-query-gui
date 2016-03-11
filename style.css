@@ -15,7 +15,7 @@
 	display: none;
 }
 
-#query-error {
+#query-error, #query-error-short {
 	display: none;
 }
 

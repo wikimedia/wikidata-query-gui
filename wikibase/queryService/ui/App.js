@@ -335,17 +335,35 @@ SM: disabled direct results for now
 		$( '.actionMessage' ).show();
 		$( '.actionMessage' ).text( 'Running query...' );
 		$( '#execute-button' ).prop('disabled', true);
+		$( '#query-error' ).hide();
+		$( '#query-error-short' ).hide();
+
 
 		this._sparqlApi.query( this._editor.getValue() )
 		.done( $.proxy( this._handleQueryResult, this ) )
 		.fail(function(){
-			$( '.actionMessage' ).hide();
-			$( '#query-error' ).html( $( '<pre>' ).text( self._sparqlApi.getErrorMessage() ) ).show();
-			$( '#execute-button' ).prop('disabled', false);
-			self._editor.highlightError( self._sparqlApi.getErrorMessage() );
+			self._handleQueryError( self._sparqlApi.getErrorMessage() );
 		} );
 
 		$( '.queryUri' ).attr( 'href',self._sparqlApi.getQueryUri() );
+	};
+
+
+	/**
+	 * @private
+	 **/
+	SELF.prototype._handleQueryError = function( error ) {
+		$( '.actionMessage' ).hide();
+		$( '#query-error' ).html( $( '<pre>' ).text( error ) ).show();
+
+		try {
+			var shortError = error.match( /(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop();
+			$( '#query-error-short' ).show().text( shortError.trim() );
+		} catch (e) {}
+
+		$( '#execute-button' ).prop('disabled', false);
+
+		this._editor.highlightError( error );
 	};
 
 	/**
@@ -358,7 +376,6 @@ SM: disabled direct results for now
 		$( '#query-time' ).text( api.getExecutionTime() );
 		$( '.query-total' ).show();
 		$( '.actionMessage' ).hide();
-		$( '#query-error' ).hide();
 		$( '#execute-button' ).prop('disabled', false);
 
 		var $queryResult = $( '#query-result' ),

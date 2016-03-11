@@ -173,6 +173,10 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 			// highlight character at error position
 			line = match[1] - 1;
 			character = match[2] - 1;
+			if( character >= this._editor.doc.getLine( line ).length -1 ){
+				character =  this._editor.doc.getLine( line ).length -1 ;
+			}
+
 			ERROR_LINE_MARKER = this._editor.doc.markText(
 				{ 'line': line, 'ch': 0 },
 				{ 'line': line },
