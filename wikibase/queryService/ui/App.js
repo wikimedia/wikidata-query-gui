@@ -162,7 +162,6 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 **/
 	SELF.prototype._initQuery = function() {
 		if ( window.location.hash !== '' ) {
-
 			if( location.hash.indexOf( '#result#' ) === 0 ){
 				location.hash = location.hash.replace( '#result#', '#' );
 			}
@@ -171,6 +170,9 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 			this._editor.refresh();
 		}else{
 
+			if( location.search === ( '?new' )){
+				return;
+			}
 			this._editor.restoreValue();
 		}
 	};
