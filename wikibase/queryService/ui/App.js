@@ -123,12 +123,12 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 **/
 	SELF.prototype._initExamples = function() {
 		var self = this;
-		new wikibase.queryService.ui.QueryExampleDialog( $( '#QueryExamples' ), this._querySamplesApi, function( query ){
+		new wikibase.queryService.ui.QueryExampleDialog( $( '#QueryExamples' ), this._querySamplesApi, function( query, title ){
 			if ( !query || !query.trim() ) {
 				return;
 			}
 
-			self._editor.setValue( query );
+			self._editor.setValue( '#' + title + '\n' + query );
 		} );
 	};
 

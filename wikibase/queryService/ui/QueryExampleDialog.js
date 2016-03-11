@@ -200,7 +200,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var self = this;
 
 		var link = $( '<a title="Select this query" data-dismiss="modal">' ).text(title).attr( 'href', '#' ).click( function(){
-			self._callback( query );
+			self._callback( query, title );
 			} ),
 			edit = $( '<a title="Edit this Query">' ).attr( 'href', href ).attr( 'target', '_blank' )
 						.append( '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>' ),
