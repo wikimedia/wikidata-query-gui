@@ -38,7 +38,7 @@ wikibase.queryService.api.QuerySamples = ( function( $ ) {
 			var wikitext = data.query.pages[ Object.keys( data.query.pages ) ].revisions[ 0 ][ '*' ];
 				wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
 
-			var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\|[\s\S]*?}}\n){1}/g,
+			var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
 				regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
 				regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
 				regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
