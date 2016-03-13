@@ -82,12 +82,16 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					if( !longLat[0] || !longLat[1] || isNaN( longLat[0] ) ){
 		    			return true;
 		    		}
-		    		var info = self._getItemDescription( rowKey );
 
-		    		markers.push(
-						L.circle( [ longLat[0], longLat[1] ], 10 )
-							.bindPopup( info[0] )
-					);
+		  		    var popup = L.popup(),
+		  		    	marker = L.circle( [ longLat[0], longLat[1] ], 10 ).bindPopup( popup );
+
+		    		marker.on( 'click', function() {
+		    			var info = self._getItemDescription( rowKey );
+		    			popup.setContent( info[0] );
+		    		} );
+
+		    		markers.push( marker );
 		    	}
 			} );
 		} );
