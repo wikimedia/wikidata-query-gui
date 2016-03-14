@@ -6,8 +6,6 @@ window.mediaWiki = window.mediaWiki || {};
 wikibase.queryService.ui.App = ( function( $, mw ) {
 	"use strict";
 
-	var SPARQL_SERVICE_URI = '/bigdata/namespace/wdq/sparql';
-
 	var SHORTURL = '//tinyurl.com/create.php?url=';
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 
@@ -72,7 +70,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	SELF.prototype._init = function() {
 
 		if( !this._sparqlApi ){
-			this._sparqlApi = new wikibase.queryService.api.Sparql( SPARQL_SERVICE_URI );
+			this._sparqlApi = new wikibase.queryService.api.Sparql();
 		}
 
 		if( !this._querySamplesApi ){
