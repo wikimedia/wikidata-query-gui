@@ -8,150 +8,33 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 	"use strict";
 
 	/**
-	 * Represents a Bootstrap Table
-	 *
-	 * @license GNU GPL v2+
-	 *
-	 * @author Jonas Keinholz
-	 * @constructor
-	 */
-	function BootstrapTable( columns, rows, contentHelper, browser ) {
-		this.columns = columns;
-		this.rows = rows;
-
-		this.contentHelper = contentHelper;
-		this.browser = browser;
-	}
-
-	/**
-	 * @param {jQuery} $wrapper
-	 */
-	BootstrapTable.prototype.createTable = function ( $wrapper ) {
-		this.$table = $( '<table>' ).attr( 'class', 'table' );
-
-		$wrapper.html( this.$table );
-
-		this.createTableHeader().appendTo( this.$table );
-		this.createTableBody().appendTo( this.$table );
-		this.initializeBootstrapTable();
-	};
-
-	/**
-	 * @private
-	 * @returns {jQuery}
-	 */
-	BootstrapTable.prototype.createTableHeader = function () {
-		var $thead = $( '<thead>' );
-		var $tr = $( '<tr>' );
-
-		this.columns.forEach( function ( column ) {
-			$( '<th>' ).text( column ).appendTo( $tr );
-		} );
-
-		$thead.append( $tr );
-
-		return $thead;
-	};
-
-	/**
-	 * @private
-	 * @returns {jQuery}
-	 */
-	BootstrapTable.prototype.createTableBody = function () {
-		var $tbody = $( '<tbody>' );
-		var self = this;
-
-		self.rows.forEach( function ( row ) {
-			var $tr = $( '<tr>' ).appendTo( $tbody );
-
-			self.columns.forEach( function ( column ) {
-				self.createTableCell( row, column ).appendTo( $tr );
-			} );
-		} );
-
-		return $tbody;
-	};
-
-	/**
-	 * @private
-	 * @param {Object} row
-	 * @param {string} column
-	 * @returns {jQuery}
-	 */
-	BootstrapTable.prototype.createTableCell = function ( row, column ) {
-		if ( !( column in row ) ) {
-			return $( '<td>' ).attr( 'class', 'unbound' );
-		}
-
-		var $td = $( '<td>' );
-		var data = row[ column ];
-
-		this.browser.processVisitors( data );
-
-		$td.attr( this.getAttributes( data ) );
-
-		$td.append( this.contentHelper.formatValue( data ) );
-
-		return $td;
-	};
-
-	/**
-	 * @private
-	 * @param {Object} data
-	 * @returns {Object}
-	 */
-	BootstrapTable.prototype.getAttributes = function ( data ) {
-		if ( data.type === 'typed-literal' ) {
-			return {
-				'class': 'literal',
-				'data-datatype': data.datatype
-			};
-		}
-
-		var attr = {
-			'class': data.type
-		};
-
-		if ( data[ 'xml:lang' ] ) {
-			attr[ 'data-lang' ] = data[ 'xml:lang' ];
-			attr.title = data.value + '@' + data[ 'xml:lang' ];
-		}
-
-		return attr;
-	};
-
-	BootstrapTable.prototype.initializeBootstrapTable = function () {
-		var events = {
-			'click .explore': $.proxy( this.contentHelper.handleExploreItem, this ),
-			'click .gallery': this.contentHelper.handleCommonResourceItem
-		};
-
-		this.$table.bootstrapTable( {
-			columns: this.columns.map( function ( column ) {
-				return {
-					title: column,
-					field: column,
-					events: events,
-					sortable: true
-				};
-			} ),
-			mobileResponsive: true
-		} );
-	};
-
-	/**
 	 * A result browser for tables
 	 *
 	 * @class wikibase.queryService.ui.resultBrowser.TableResultBrowser
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
+	 * @author Jonas Keinholz
+	 *
 	 * @constructor
 	 */
 	function SELF() {
 	}
 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractResultBrowser();
+
+	/**
+	 * @property {object}
+	 * @private
+	 **/
+	SELF.prototype._columns = null;
+
+	/**
+	 * @property {object}
+	 * @private
+	 **/
+	SELF.prototype._rows = null;
+
 
 	/**
 	 * Draw browser to the given element
@@ -168,8 +51,54 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 			return;
 		}
 
-		var bootstrapTable = new BootstrapTable( data.head.vars, data.results.bindings, this._contentHelper, this );
-		bootstrapTable.createTable( $element );
+
+		this.columns =  data.head.vars;
+		this.rows = data.results.bindings;
+
+		var $wrapper = $( '<table/>' ).attr( 'class', 'table' );
+		$element.html( $wrapper );
+		this.drawBootstrapTable( $wrapper );
+	};
+
+	/**
+	 * Draw browser to the given element
+	 * @param {jQuery} $element to draw at
+	 **/
+	SELF.prototype.drawBootstrapTable = function ( $element ) {
+		var self = this;
+
+		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data ){
+			if( !data ){
+				return '';
+			}
+			self.processVisitors( data );
+			return self._contentHelper.formatValue( data ).html();
+		};
+
+		var stringSorter = function( data1, data2 ){
+			return data1.value.localeCompare( data2.value );
+		};
+
+		var events = {
+				'click .explore': $.proxy( this._contentHelper.handleExploreItem, this ),
+				'click .gallery': this._contentHelper.handleCommonResourceItem
+		};
+
+		$element.bootstrapTable( {
+			columns: this.columns.map( function ( column ) {
+				return {
+					title: column,
+					field: column,
+					events: events,
+					sortable: true,
+					sorter: stringSorter
+				};
+			} ),
+			data: this.rows,
+			mobileResponsive: true,
+			pagination: true
+		} );
+
 	};
 
 	/**
