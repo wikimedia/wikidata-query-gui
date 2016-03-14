@@ -1,3 +1,6 @@
+body {
+	overflow-y:scroll;
+}
 .error {
 	margin: 20px;
 	overflow-x: scroll;
@@ -92,6 +95,22 @@ iframe.shortUrl {
 	right: 10px;
 	font-size: 25px;
 	background: rgba(255,255,255,0.5);
+}
+
+.actionMessage .progress {
+    height: 30px;
+    font-size: 30px;
+}
+.actionMessage .progress-bar {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.actionMessage .label {
+	display: block;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 /**
