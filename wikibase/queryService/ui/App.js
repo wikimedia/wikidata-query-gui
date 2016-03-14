@@ -64,6 +64,16 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	SELF.prototype._autoExecuteQuery = false;
 
 	/**
+	 * @property {Object}
+	 * @private
+	 **/
+	SELF.prototype._resultBrowsers = {
+			TableResultBrowser: {icon: 'th', label: 'Table', object: null, $element: null },
+			ImageResultBrowser: {icon: 'picture', label: 'Image Grid', object: null, $element: null },
+			CoordinateResultBrowser: {icon: 'map-marker', label: 'Map', object: null, $element: null }
+	};
+
+	/**
 	 * Initialize private members and call delegate to specific init methods
 	 * @private
 	 **/
@@ -88,6 +98,7 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 		this._initQuery();
 		this._initRdfNamespaces();
 		this._initHandlers();
+		this._initResultBrowserMenu();
 
 		if( this._autoExecuteQuery ){
 			$( '#execute-button' ).click();
@@ -212,11 +223,6 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 			$( '.explorer-panel' ).hide();
 		} );
 
-
-		//result browser
-		$( '.result-browser' ).click( function(){ $(this).closest( '.open' ).removeClass('open'); } );
-		$( '.result-browser.default' ).click( $.proxy( this._handleQueryResult, this )  );
-
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
 
 		this._initPopovers();
@@ -319,6 +325,21 @@ SM: disabled direct results for now
 		}
 	};
 
+
+	/**
+	 * @private
+	 **/
+	SELF.prototype._initResultBrowserMenu = function() {
+
+		$.each( this._resultBrowsers, function( key, b ){
+			var $element = $( '<li><a class="result-browser" href="#">' +
+				'<span class="glyphicon glyphicon-'+ b.icon +'"></span>' + b.label + '</a></li>' );
+			$element.appendTo( $( '#result-browser-menu' ) );
+			b.$element = $element;
+		} );
+
+	};
+
 	/**
 	 * @private
 	 **/
@@ -387,53 +408,48 @@ SM: disabled direct results for now
 			return false;
 		}
 
-		var tableBrowser = new wikibase.queryService.ui.resultBrowser.TableResultBrowser();
-		var imageBrowser = new wikibase.queryService.ui.resultBrowser.ImageResultBrowser();
-		var coordinateBrowser = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser();
+		var defaultBrowser = null;
+		$.each( this._resultBrowsers, function( className, b ){
+			var instance = new wikibase.queryService.ui.resultBrowser[ className ]();
+			instance.setResult ( api.getResultRawData() );
 
-		tableBrowser.setResult( api.getResultRawData() );
-		tableBrowser.addVisitor( imageBrowser );
-		tableBrowser.addVisitor( coordinateBrowser );
-		tableBrowser.draw( $queryResult );
+			if( !defaultBrowser ){
+				defaultBrowser = instance;
+			} else {
+				defaultBrowser.addVisitor( instance );
+			}
+
+			b.object = instance;
+		} );
+
+		defaultBrowser.draw( $queryResult );
 		$queryResult.show();
 
-		this._handleQueryResultBrowsers( imageBrowser, coordinateBrowser );
-
+		this._handleQueryResultBrowsers();
 		return false;
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._handleQueryResultBrowsers = function( imageBrowser, coordinateBrowser ) {
-		//image
-		imageBrowser.setResult( this._sparqlApi.getResultRawData() );
+	SELF.prototype._handleQueryResultBrowsers = function() {
+		$.each( this._resultBrowsers, function( key, b ){
+			if( b.object.isDrawable() ){
+				b.$element.css( 'opacity', 1 ).attr( 'href', '#' );
+				b.$element.click( function(){
+					$(this).closest( '.open' ).removeClass( 'open' );
 
-		if( imageBrowser.isDrawable() ){
-			$( '.result-browser.gallery' ).css( 'opacity', 1 ).attr( 'href', '#' );
-			$( '.result-browser.gallery' ).click( function(){
-				imageBrowser.draw( $( '#query-result' ) );
-				return false;
-			} );
-		}else{
-			$( '.result-browser.gallery' ).off( 'click' );
-			$( '.result-browser.gallery' ).css( 'opacity', 0.5 ).removeAttr( 'href' );
-		}
-
-
-		//maps
-		coordinateBrowser.setResult( this._sparqlApi.getResultRawData() );
-
-		if( coordinateBrowser.isDrawable() ){
-			$( '.result-browser.map' ).css( 'opacity', 1 ).attr( 'href', '#' );
-			$( '.result-browser.map' ).click( function(){
-				coordinateBrowser.draw( $( '#query-result' ) );
-				return false;
-			} );
-		}else{
-			$( '.result-browser.map' ).off( 'click' );
-			$( '.result-browser.map' ).css( 'opacity', 0.5 ).removeAttr( 'href' );
-		}
+					$( '#query-result' ).html( 'Loading...' );
+					window.setTimeout( function() {
+						b.object.draw( $( '#query-result' ) );
+					}, 20 );
+					return false;
+				} );
+			} else {
+				b.$element.off( 'click' );
+				b.$element.css( 'opacity', 0.5 ).removeAttr( 'href' );
+			}
+		} );
 	};
 
 	/**
