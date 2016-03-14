@@ -349,15 +349,13 @@ SM: disabled direct results for now
 		e.preventDefault();
 		this._editor.save();
 		this._updateQueryUrl();
+		this._showActionMessage( 'Running Query', 'info', 100);
 
 		$( '#query-result' ).empty( '' );
 		$( '#query-result' ).hide();
 		$( '.query-total' ).hide();
-		$( '.actionMessage' ).show();
-		$( '.actionMessage' ).text( 'Running query...' );
 		$( '#execute-button' ).prop('disabled', true);
 		$( '#query-error' ).hide();
-		$( '#query-error-short' ).hide();
 
 
 		this._sparqlApi.query( this._editor.getValue() )
@@ -374,12 +372,11 @@ SM: disabled direct results for now
 	 * @private
 	 **/
 	SELF.prototype._handleQueryError = function( error ) {
-		$( '.actionMessage' ).hide();
 		$( '#query-error' ).html( $( '<pre>' ).text( error ) ).show();
 
 		try {
 			var shortError = error.match( /(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop();
-			$( '#query-error-short' ).show().text( shortError.trim() );
+			this._showActionMessage( shortError.trim(), 'danger' );
 		} catch (e) {}
 
 		$( '#execute-button' ).prop('disabled', false);
@@ -391,12 +388,12 @@ SM: disabled direct results for now
 	 * @private
 	 */
 	SELF.prototype._handleQueryResult = function() {
+		var api = this._sparqlApi,
+			self = this;
 
-		var api = this._sparqlApi;
 		$( '#total-results' ).text( api.getResultLength() );
 		$( '#query-time' ).text( api.getExecutionTime() );
 		$( '.query-total' ).show();
-		$( '.actionMessage' ).hide();
 		$( '#execute-button' ).prop('disabled', false);
 
 		var $queryResult = $( '#query-result' ),
@@ -422,10 +419,14 @@ SM: disabled direct results for now
 			b.object = instance;
 		} );
 
-		defaultBrowser.draw( $queryResult );
-		$queryResult.show();
+		this._showActionMessage( 'Generating View' , 'success', 100);
+		window.setTimeout( function() {
+			defaultBrowser.draw( $queryResult );
+			self._hideActionMessage();
+			$queryResult.show();
+			self._handleQueryResultBrowsers();
+		}, 20 );
 
-		this._handleQueryResultBrowsers();
 		return false;
 	};
 
@@ -433,15 +434,19 @@ SM: disabled direct results for now
 	 * @private
 	 */
 	SELF.prototype._handleQueryResultBrowsers = function() {
+		var self = this;
+
 		$.each( this._resultBrowsers, function( key, b ){
 			if( b.object.isDrawable() ){
 				b.$element.css( 'opacity', 1 ).attr( 'href', '#' );
 				b.$element.click( function(){
 					$(this).closest( '.open' ).removeClass( 'open' );
 
-					$( '#query-result' ).html( 'Loading...' );
+					$( '#query-result' ).html( '' );
+					self._showActionMessage( 'Generating View' , 'success', 100);
 					window.setTimeout( function() {
 						b.object.draw( $( '#query-result' ) );
+						self._hideActionMessage();
 					}, 20 );
 					return false;
 				} );
@@ -496,6 +501,41 @@ SM: disabled direct results for now
 			}
 		}
 	};
+
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._showActionMessage = function( text, labelType, progress ) {
+		if( !labelType ){
+			labelType = 'info';
+		}
+		if( !progress ){
+			progress = false;
+		}
+		$( '.actionMessage' ).html( '' );
+
+		if( progress !== false ){
+			$( '<div class="progress"><div class="progress-bar progress-bar-' +
+					labelType + ' progress-bar-striped active" role="progressbar" style="width: '+
+					progress +'%">' + text + '</div></div>' )
+				.appendTo( $( '.actionMessage' ) );
+		} else {
+			$( '<div class="label label-' + labelType + '"/>' ).text( text )
+				.appendTo( $( '.actionMessage' ) );
+		}
+
+		$( '.actionMessage' ).show();
+	};
+
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._hideActionMessage = function() {
+		$( '.actionMessage' ).hide();
+	};
+
 
 	return SELF;
 }( jQuery, mediaWiki, download, EXPLORER ) );
