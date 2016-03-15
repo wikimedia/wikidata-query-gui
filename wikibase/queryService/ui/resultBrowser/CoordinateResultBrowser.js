@@ -85,18 +85,19 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		    		var info = self._getItemDescription( rowKey );
 
 		    		markers.push(
-						L.circle( [ longLat[0], longLat[1] ], 50, {
-							color: '#e04545',
-							opacity: 0.9,
-							fillColor: '#e04545',
-							fillOpacity: 0.9
-						} ).bindPopup( info[0] )
+						L.circle( [ longLat[0], longLat[1] ], 50 )
+							.bindPopup( info[0] )
 					);
 		    	}
 			} );
 		} );
 
-		return L.featureGroup( markers );
+		return L.featureGroup( markers ).setStyle( {
+			color: '#e04545',
+			opacity: 0.9,
+			fillColor: '#e04545',
+			fillOpacity: 0.9
+		} );
 	};
 
 	/**
