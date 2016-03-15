@@ -85,7 +85,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		    		var info = self._getItemDescription( rowKey );
 
 		    		markers.push(
-						L.circle( [ longLat[0], longLat[1] ], 50 )
+						L.circle( [ longLat[0], longLat[1] ], 10 )
 							.bindPopup( info[0] )
 					);
 		    	}
