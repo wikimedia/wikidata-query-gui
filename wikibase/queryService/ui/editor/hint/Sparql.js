@@ -20,7 +20,9 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	                       'SERVICE',
 	                       'SERVICE wikibase:label {\n bd:serviceParam wikibase:language "en" .\n}',
 	                       'BASE', 'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING',
-	                       'UNION' ];
+	                       'UNION',
+	                       '#defaultView:Map', '#defaultView:ImageGrid'
+	                       ];
 
 	/**
 	 * Code completion for Wikibase entities RDF prefixes in SPARQL

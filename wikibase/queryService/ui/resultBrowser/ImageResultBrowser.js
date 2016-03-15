@@ -41,6 +41,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 		$.each( this._result.results.bindings, function( rowNum, row ){
 			$.each( this, function( key, field ){
+				self.processVisitors( field );
 				if( self._isCommonsResource( field.value ) ){
 					var url = field.value,
 						regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),

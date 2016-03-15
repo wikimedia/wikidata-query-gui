@@ -68,9 +68,9 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 * @private
 	 **/
 	SELF.prototype._resultBrowsers = {
-			TableResultBrowser: {icon: 'th', label: 'Table', object: null, $element: null },
-			ImageResultBrowser: {icon: 'picture', label: 'Image Grid', object: null, $element: null },
-			CoordinateResultBrowser: {icon: 'map-marker', label: 'Map', object: null, $element: null }
+			Table: {icon: 'th', label: 'Table', class: 'TableResultBrowser', object: null, $element: null },
+			ImageGrid: {icon: 'picture', label: 'Image Grid', class: 'ImageResultBrowser', object: null, $element: null },
+			Map: {icon: 'map-marker', label: 'Map', class: 'CoordinateResultBrowser', object: null, $element: null }
 	};
 
 	/**
@@ -405,29 +405,55 @@ SM: disabled direct results for now
 			return false;
 		}
 
-		var defaultBrowser = null;
-		$.each( this._resultBrowsers, function( className, b ){
-			var instance = new wikibase.queryService.ui.resultBrowser[ className ]();
-			instance.setResult ( api.getResultRawData() );
-
-			if( !defaultBrowser ){
-				defaultBrowser = instance;
-			} else {
-				defaultBrowser.addVisitor( instance );
-			}
-
-			b.object = instance;
-		} );
-
+		var defaultBrowser = this._createResultBrowsers( api.getResultRawData() );
 		this._showActionMessage( 'Generating View' , 'success', 100);
 		window.setTimeout( function() {
+			$queryResult.show();
 			defaultBrowser.draw( $queryResult );
 			self._hideActionMessage();
-			$queryResult.show();
 			self._handleQueryResultBrowsers();
 		}, 20 );
 
 		return false;
+	};
+
+	/**
+	 * @private
+	 * @return {object} default result browser
+	 */
+	SELF.prototype._createResultBrowsers = function( resultData ) {
+
+		var defaultBrowser = this._getDefaultResultBrowser();
+
+		//instantiate
+		$.each( this._resultBrowsers, function( key, b ){
+			var instance = new wikibase.queryService.ui.resultBrowser[ b.class ]();
+			if( defaultBrowser === null || defaultBrowser === key ){
+				defaultBrowser = instance;
+			}
+			b.object = instance;
+		} );
+
+		//wire up
+		$.each( this._resultBrowsers, function( key, b ){
+			defaultBrowser.addVisitor( b.object );
+			b.object.setResult( resultData );
+		} );
+
+		return defaultBrowser;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getDefaultResultBrowser = function() {
+		var match = this._editor.getValue().match(/\#defaultView:(.*)/);
+
+		if( match && this._resultBrowsers[ match[1] ] ){
+			return  match[1];
+		}
+
+		return null;
 	};
 
 	/**
