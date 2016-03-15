@@ -113,26 +113,30 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._getCurrentWord = function( line, position ) {
-		var words = line.split( ' ' ), matchedWord = '', scannedPostion = 0;
+		var pos = position -1;
 
-		$.each( words, function ( key, word ) {
-			scannedPostion += word.length;
+		if( pos < 0 ){
+			pos = 0;
+		}
 
-			if ( key > 0 ) { // add spaces to position
-				scannedPostion++;
+		while( line.charAt( pos ) !== ' ' ){
+			pos--;
+			if( pos < 0 ){
+				break;
 			}
+		}
+		var left = pos + 1;
 
-			if ( scannedPostion >= position ) {
-				matchedWord = word;
-				return;
+		pos = position;
+		while( line.charAt( pos ) !== ' ' ){
+			pos++;
+			if( pos >= line.length ){
+				break;
 			}
-		} );
-
-		return {
-			word: matchedWord,
-			start: scannedPostion - matchedWord.length,
-			end: scannedPostion
-		};
+		}
+		var right = pos;
+		var word = line.substring( left, right );
+		return { word: word, start: left, end: right };
 	};
 
 
