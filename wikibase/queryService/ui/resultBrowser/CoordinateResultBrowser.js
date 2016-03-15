@@ -74,6 +74,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		$.each( result, function( rowKey){
 			$.each( this, function( key, field ){
+				self.processVisitors( field );
+
 		    	if( field.datatype === MAP_DATATYPE ){
 		    		var longLat = self._extractLongLat( field.value );
 
