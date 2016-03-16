@@ -63,10 +63,10 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 **/
 	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
 		var $image = $( '<a href="' + url +'" data-gallery="g">' )
-			.click( this._contentHelper.handleCommonResourceItem )
+			.click( this._getFormatter().handleCommonResourceItem )
 			.attr( 'data-title',  title )
 			.append( $( '<img src="' + thumbnailUrl +'"></div>' ) ),
-			$summary = this._contentHelper.formatRow( row );
+			$summary = this._getFormatter().formatRow( row );
 
 		return $( '<div class="item">' ).append( $image, $summary );
 	};

@@ -77,7 +77,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 				return '';
 			}
 			self.processVisitors( data );
-			return self._contentHelper.formatValue( data ).html();
+			return self._getFormatter().formatValue( data ).html();
 		};
 
 		var stringSorter = function( data1, data2 ){
@@ -85,8 +85,8 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 		};
 
 		var events = {
-				'click .explore': $.proxy( this._contentHelper.handleExploreItem, this ),
-				'click .gallery': this._contentHelper.handleCommonResourceItem
+				'click .explore': $.proxy( this._getFormatter().handleExploreItem, this ),
+				'click .gallery': this._getFormatter().handleCommonResourceItem
 		};
 
 		$element.bootstrapTable( {
