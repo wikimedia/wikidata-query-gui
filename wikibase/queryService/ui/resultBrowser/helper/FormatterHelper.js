@@ -5,7 +5,7 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultBrowser.helper || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.helper.ContentHelper = ( function( $, mw ) {
+wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, mw ) {
 	"use strict";
 
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
@@ -14,7 +14,7 @@ wikibase.queryService.ui.resultBrowser.helper.ContentHelper = ( function( $, mw 
 	/**
 	 * Formatting helper provides methods useful for formatting results
 	 *
-	 * @class wikibase.queryService.ui.resultBrowser.helper.ContentHelper
+	 * @class wikibase.queryService.ui.resultBrowser.helper.FormatterHelper
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress

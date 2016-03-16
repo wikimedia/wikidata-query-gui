@@ -130,7 +130,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._getItemDescription = function( rowKey ) {
 		var row = this._result.results.bindings[rowKey],
-		$result = $( '<div/>' ).append( this._contentHelper.formatRow( row ) );
+		$result = $( '<div/>' ).append( this._getFormatter().formatRow( row ) );
 
 		return $result;
 	};
