@@ -141,7 +141,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype._setTileLayer = function( map ) {
 		var layer = TILE_LAYER.osm;
 		if ( window.location.host === 'query.wikidata.org' ||
-				window.location.host === 'localhost' ) {
+				window.location.host === 'localhost' ||
+				window.location.host.endsWith('.wmflabs.org') ) {
 			layer = TILE_LAYER.wikimedia;
 		}
 
