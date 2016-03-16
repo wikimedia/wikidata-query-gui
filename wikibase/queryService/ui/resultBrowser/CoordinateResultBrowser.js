@@ -3,12 +3,21 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L ) {
+wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, window ) {
 	"use strict";
 
 	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
-	var MAP_SERVER = 'https://maps.wikimedia.org/';
-    var MAP_STYLE = 'osm-intl';
+
+    var TILE_LAYER = {
+    	wikimedia: {
+    			url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
+    			options: {
+    					id: 'wikipedia-map-01',
+    					attribution: 'Wikimedia maps | Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+    				}
+    			},
+       	osm: { url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png', options: { attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' } }
+    };
 
 
     var ScrollToTopButton = null;
@@ -130,10 +139,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._setTileLayer = function( map ) {
-		L.tileLayer( MAP_SERVER + MAP_STYLE + '/{z}/{x}/{y}.png', {
-	        id: 'wikipedia-map-01',
-	        attribution: 'Wikimedia maps beta | Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-	    }).addTo( map );
+		var layer = TILE_LAYER.osm;
+		if ( window.location.host === 'query.wikidata.org' ||
+				window.location.host === 'localhost' ) {
+			layer = TILE_LAYER.wikimedia;
+		}
+
+		L.tileLayer( layer.url , layer.options ).addTo( map );
 	};
 
 
@@ -176,4 +188,4 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	return SELF;
-}( jQuery, L ) );
+}( jQuery, L, window ) );
