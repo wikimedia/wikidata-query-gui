@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
+wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wikibase ) {
 	"use strict";
 
 	/**
@@ -16,16 +16,15 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	 * @constructor
 	 */
 	function SELF() {
-
-		this._contentHelper = new wikibase.queryService.ui.resultBrowser.helper.ContentHelper();
 		this._visitors = [];
 	}
 
 	/**
-	 * @property {wikibase.queryService.ui.resultBrowser.helper.ContentHelper}
+	 * @property {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper}
 	 * @private
-	 **/
-	SELF.prototype._formattingHelper = null;
+	 */
+	SELF.prototype._formatter = null;
+
 
 	/**
 	 * @property {object}
@@ -56,6 +55,22 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	};
 
 	/**
+	 * Checks whether the result browser can draw the given result
+	 * @return {boolean}
+	 **/
+	SELF.prototype.isDrawable = function() {
+		return this._drawable;
+	};
+
+	/**
+	 * Draws the result browser to the given element
+	 * @param {jQuery} $element to draw at
+	 **/
+	SELF.prototype.draw = function( $element ) {
+		jQuery.error( 'Method draw() needs to be implemented!' );
+	};
+
+	/**
 	 * Add visitor function.
 	 * @param {function} callback
 	 */
@@ -82,22 +97,28 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $ ) {
 	SELF.prototype.visit = function( data ) {
 	};
 
-
 	/**
-	 * Checks whether the result browser can draw the given result
-	 * @return {boolean}
-	 **/
-	SELF.prototype.isDrawable = function() {
-		return this._drawable;
+	 * Set a formatter in order to replace the default formatter
+	 * @param formatter {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper}
+	 */
+	SELF.prototype.setFormatter = function( formatter ) {
+		this._formatter = formatter;
 	};
 
+
 	/**
-	 * Draws the result browser to the given element
-	 * @param {jQuery} $element to draw at
-	 **/
-	SELF.prototype.draw = function( $element ) {
-		jQuery.error( 'Method draw() needs to be implemented!' );
+	 * Get the formatter
+	 * @protected
+	 * @return {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper}
+	 */
+	SELF.prototype._getFormatter = function() {
+		if( this._formatter === null ){
+			this._formatter = new wikibase.queryService.ui.resultBrowser.helper.FormatterHelper();
+		}
+
+		return this._formatter;
 	};
+
 
 	return SELF;
-}( jQuery ) );
+}( jQuery, wikibase ) );
