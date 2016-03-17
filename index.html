@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<title>Wikidata Query Service (Beta)</title>
 
-	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="vendor/jqcloud/jqcloud.css">
 	<link rel="stylesheet" href="vendor/bootstrap-tags/css/bootstrap-tags.css">
 	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css">
@@ -86,11 +87,8 @@
 								<button type="submit" class="btn btn-info" id="execute-button" title="Execute query (<CTRL> + <ENTER>)" value="Execute">
 									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Execute
 								</button>
-								<input class="btn btn-default" type="reset" id="clear-button" value="Clear">
-								<span class="query-total"><span class="label label-default"><span id="total-results"></span> Results</span> <span>
-										<span class="label label-default">in <span id="query-time"></span> ms
-									</span> &nbsp;
-								</span> </span>
+								<input class="btn btn-default" type="reset" id="clear-button" value="Clear"> <span class="query-total">
+								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
 							</div>
 						</div>
 						<ul class="nav navbar-nav navbar-right query-total">
@@ -101,13 +99,15 @@
 							<li>
 							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"> <span class="glyphicon glyphicon-download-alt" aria-hidden="true">Download</span><span class="caret"></span>
 							</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a id="downloadCSV" href="#">CSV</a></li>
-									<li><a id="downloadTSV" href="#">TSV</a></li>
-									<li><a id="downloadJSON" href="#">JSON</a></li>
-									<li><a id="downloadSimple-TSV" href="#">Simple TSV</a></li>
-									<li><a id="downloadFull-JSON" href="#">Full JSON</a></li>
-								</ul></li>
+							<ul class="dropdown-menu" role="menu">
+								<li><a id="downloadJSON" href="#">JSON</a></li>
+								<li><a id="downloadFull-JSON" href="#">Full JSON</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a id="downloadTSV" href="#">TSV</a></li>
+								<li><a id="downloadSimple-TSV" href="#">Simple TSV</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a id="downloadCSV" href="#">CSV</a></li>
+							</ul></li>
 							<li>
 							<a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
 								    <span class="glyphicon glyphicon-link" aria-hidden="true">Link</span><span class="caret"></span>
@@ -154,7 +154,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h3 class="modal-title" id="QueryExamplesModalLabel">SPARQL Query Examples</h3>
+					<div class="modal-title" id="QueryExamplesModalLabel">SPARQL Query Examples</div>
 				</div>
 				<div class="modal-body">
 					<div class="input-group">
