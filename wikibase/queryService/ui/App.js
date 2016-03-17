@@ -67,9 +67,11 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @private
 	 **/
 	SELF.prototype._resultBrowsers = {
-			Table: {icon: 'th', label: 'Table', class: 'TableResultBrowser', object: null, $element: null },
+			Table: {icon: 'th-list', label: 'Table', class: 'TableResultBrowser', object: null, $element: null },
 			ImageGrid: {icon: 'picture', label: 'Image Grid', class: 'ImageResultBrowser', object: null, $element: null },
-			Map: {icon: 'map-marker', label: 'Map', class: 'CoordinateResultBrowser', object: null, $element: null }
+			Map: {icon: 'map-marker', label: 'Map', class: 'CoordinateResultBrowser', object: null, $element: null },
+			BubbleChart: {icon: 'tint', label: 'Bubble Chart', class: 'BubbleChartResultBrowser', object: null, $element: null },
+			TreeMap: {icon: 'th', label: 'Tree Map', class: 'TreeMapResultBrowser', object: null, $element: null },
 	};
 
 	/**
