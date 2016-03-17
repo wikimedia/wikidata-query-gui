@@ -402,14 +402,7 @@ SM: disabled direct results for now
 		$( '.query-total' ).show();
 		$( '#execute-button' ).prop('disabled', false);
 
-		var $queryResult = $( '#query-result' ),
-			result = api.getResultRawData();
-
-		if ( typeof  result.boolean === 'boolean' ){
-			$queryResult.text( result.boolean );
-			$queryResult.show();
-			return false;
-		}
+		var $queryResult = $( '#query-result' );
 
 		var defaultBrowser = this._createResultBrowsers( api.getResultRawData() );
 		this._showActionMessage( 'Generating View' , 'success', 100);
