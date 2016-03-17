@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
+wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, window ) {
 	"use strict";
 
 	/**
@@ -59,9 +59,13 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 		this.columns =  data.head.vars;
 		this.rows = data.results.bindings;
 
-		var $wrapper = $( '<table/>' ).attr( 'class', 'table' );
+		var $wrapper = $( '<table/>' );
 		$element.html( $wrapper );
 		this.drawBootstrapTable( $wrapper );
+
+		if( $wrapper.children().width() > $( window ).width() ) {
+			$wrapper.bootstrapTable('toggleView');
+		}
 	};
 
 	/**
@@ -133,4 +137,4 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 	};
 
 	return SELF;
-}( jQuery ) );
+}( jQuery, window ) );
