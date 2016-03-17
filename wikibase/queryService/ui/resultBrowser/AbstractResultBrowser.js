@@ -83,16 +83,27 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @param data
 	 */
 	SELF.prototype.processVisitors = function( data ) {
-		this._visitors.forEach( function ( v ) {
+		var self = this,
+		removeVisitors = [];
+
+
+		$.each( this._visitors, function ( key, v ) {
 			if( v.visit && typeof v.visit === 'function' ){
-				$.proxy( v.visit( data ), v );
+				if( v.visit( data ) === false ){
+					removeVisitors.push( key );
+				}
 			}
+		} );
+
+		$.each( removeVisitors, function( key, visitorIndex ){
+			self._visitors.splice( removeVisitors, 1 );
 		} );
 	};
 
 	/**
 	 * Receiving data from the a visit
 	 * @param data
+	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {
 	};

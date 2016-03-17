@@ -123,5 +123,14 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $ ) {
 		return true;
 	};
 
+	/**
+	 * Receiving data from the a visit
+	 * @param data
+	 * @return {boolean} false if there is no revisit needed
+	 */
+	SELF.prototype.visit = function( data ) {
+		return false;
+	};
+
 	return SELF;
 }( jQuery ) );

@@ -161,9 +161,10 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * Receiving data from the a visit
 	 * @param data
+	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {
-		this._checkCoordinate( data );
+		return this._checkCoordinate( data );
 	};
 
 	/**
@@ -172,7 +173,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype._checkCoordinate = function ( value ) {
 		if( value && value.datatype === MAP_DATATYPE ) {
 			this._drawable = true;
+			return false;
 		}
+		return true;
 	};
 
 	return SELF;
