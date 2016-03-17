@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.App = ( function( $, mw ) {
+wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	"use strict";
 
 	var SHORTURL = '//tinyurl.com/create.php?url=';
@@ -109,6 +109,13 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 	 * @private
 	 **/
 	SELF.prototype._initApp = function() {
+
+		//ctr + enter executes query
+		$( window ).keydown( function( e ){
+		  if (e.ctrlKey && e.keyCode === 13) {
+			  $( '#execute-button' ).click();
+		    }
+		} );
 
 /* SM: disabled direct results for now
 		if( location.hash.indexOf( '#result#' ) === 0 ){
@@ -237,9 +244,8 @@ wikibase.queryService.ui.App = ( function( $, mw ) {
 
 		//Closes popover when clicked somewhere else
 		$('body').on('click', function (e) {
-		    if ($(e.target).data('toggle') !== 'popover'
-		        && $(e.target).parents('.popover.in').length === 0) {
-		        //$('[data-toggle="popover"]').popover('hide');
+		    if ( $( e.target ).data('toggle') !== 'popover'
+		        && $( e.target ).parents( '.popover.in' ).length === 0) {
 		        $('.popover').remove();
 		    }
 		});
@@ -557,4 +563,4 @@ SM: disabled direct results for now
 
 
 	return SELF;
-}( jQuery, mediaWiki, download, EXPLORER ) );
+}( jQuery, mediaWiki, download, EXPLORER, window ) );
