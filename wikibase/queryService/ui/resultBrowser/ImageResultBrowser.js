@@ -100,9 +100,10 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	/**
 	 * Receiving data from the a visit
 	 * @param data
+	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {
-		this._checkImage( data );
+		return this._checkImage( data );
 	};
 
 
@@ -112,7 +113,10 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	SELF.prototype._checkImage = function ( data ) {
 		if( data && data.value && data.value.startsWith( COMMONS_FILE_PATH ) ){
 			this._drawable = true;
+			return false;
 		}
+
+		return true;
 	};
 
 	return SELF;
