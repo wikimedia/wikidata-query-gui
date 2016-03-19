@@ -6,9 +6,6 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	"use strict";
 
-	var COMMONS_FILE_PATH = "http://commons.wikimedia.org/wiki/Special:FilePath/";
-	var COMMONS_SPECIAL_RESIZE = "http://commons.wikimedia.org/wiki/Special:FilePath/";
-
 	/**
 	 * A result browser for images
 	 *
@@ -44,8 +41,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 				self.processVisitors( field );
 				if( self._isCommonsResource( field.value ) ){
 					var url = field.value,
-						regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),
-						fileName = decodeURIComponent( url.replace( regEx, '' ) );
+						fileName = self._getFormatter().getCommonsResourceFileName( url );
 
 					self._grid.append( self._getItem( self._getThumbnail( url ),
 							self._getThumbnail( url, 1000 ),
@@ -62,10 +58,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
-		var $image = $( '<a href="' + url +'" data-gallery="g">' )
+		var $image = $( '<a data-gallery="g">' )
 			.click( this._getFormatter().handleCommonResourceItem )
 			.attr( 'data-title',  title )
-			.append( $( '<img src="' + thumbnailUrl +'"></div>' ) ),
+			.attr( 'href', url )
+			.append(
+				$( '<img>' )
+				.attr( 'src', thumbnailUrl )
+			),
 			$summary = this._getFormatter().formatRow( row );
 
 		return $( '<div class="item">' ).append( $image, $summary );
@@ -75,26 +75,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._isCommonsResource = function( url ) {
-		return url.toLowerCase().startsWith( COMMONS_FILE_PATH.toLowerCase() );
-
+		return this._getFormatter().isCommonsResource( url );
 	};
 
 	/**
 	 * @private
 	 **/
 	SELF.prototype._getThumbnail = function( url, width ) {
-		if( !this._isCommonsResource(url) ){
-			return url;
-		}
-		if( !width ){
-			width = 400;
-		}
-
-		var regEx = new RegExp( COMMONS_FILE_PATH, "ig" ),
-		fileName = url.replace( regEx, '' ),
-		thumbnail = COMMONS_SPECIAL_RESIZE + fileName + '?width=' + width;
-
-		return thumbnail;
+		return this._getFormatter().getCommonsResourceFileNameThumbnail( url, width );
 	};
 
 	/**
@@ -111,7 +99,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * Check if this value contains an image.
 	 */
 	SELF.prototype._checkImage = function ( data ) {
-		if( data && data.value && data.value.startsWith( COMMONS_FILE_PATH ) ){
+		if( data && data.value && this._isCommonsResource( data.value ) ){
 			this._drawable = true;
 			return false;
 		}

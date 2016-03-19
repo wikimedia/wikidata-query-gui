@@ -117,7 +117,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	SELF.prototype.getCommonsResourceFileName = function ( url ) {
 		var regExp = new RegExp( COMMONS_FILE_PATH, 'ig' );
 
-		return url.replace( regExp, '' );
+		return decodeURIComponent( url.replace( regExp, '' ) );
 	};
 
 	/**
@@ -132,6 +132,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		}
 		if( !width ){
 			width = 400;
+		}
+
+		if( url.match( /^http\:\/\//i) ){
+			url = url.replace( /^http\:\/\//, 'https://');
 		}
 
 		return url + '?width=' + width;
