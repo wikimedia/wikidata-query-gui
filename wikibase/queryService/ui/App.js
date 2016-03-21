@@ -462,6 +462,8 @@ SM: disabled direct results for now
 		var self = this;
 
 		$.each( this._resultBrowsers, function( key, b ){
+			b.$element.off( 'click' );
+
 			if( b.object.isDrawable() ){
 				b.$element.css( 'opacity', 1 ).attr( 'href', '#' );
 				b.$element.click( function(){
@@ -476,7 +478,6 @@ SM: disabled direct results for now
 					return false;
 				} );
 			} else {
-				b.$element.off( 'click' );
 				b.$element.css( 'opacity', 0.5 ).removeAttr( 'href' );
 			}
 		} );

@@ -7,6 +7,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	"use strict";
 
 	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
+	var GLOBE_EARTH = 'Q2';
 
     var TILE_LAYER = {
     	wikimedia: {
@@ -88,9 +89,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		    	if( field.datatype === MAP_DATATYPE ){
 		    		var longLat = self._extractLongLat( field.value );
 
-					// FIXME: if the coordinates are for another globe (e.g. Mars),
-					// then the array order is different and longLat[0] is NaN.
-					if( !longLat[0] || !longLat[1] || isNaN( longLat[0] ) ){
+					if( longLat === null || !longLat[0] || !longLat[1]  ){
 		    			return true;
 		    		}
 
@@ -119,11 +118,30 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._extractLongLat = function( point ) {
-		point = point.replace('Point(', '' );
-		point = point.replace( ')', '' );
+
+		var globe = this._extractGlobe( point );
+		if ( globe !== null && globe !== GLOBE_EARTH ){
+			return null;
+		}
+
+		point = point.match(/Point\((.*)\)/).pop();
 
 		return point.split( ' ' );
 	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._extractGlobe = function( point ) {
+		var globe = null;
+
+		if ( ( globe = point.match(/<http\:\/\/www\.wikidata\.org\/entity\/(.+)>/i) ) ){
+			globe = globe.pop();
+		}
+
+		return globe;
+	};
+
 
 	/**
 	 * @private
@@ -185,8 +203,11 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._checkCoordinate = function ( value ) {
 		if( value && value.datatype === MAP_DATATYPE ) {
-			this._drawable = true;
-			return false;
+			var globe = this._extractGlobe( value.value );
+			if ( globe === null || globe === GLOBE_EARTH ){
+				this._drawable = true;
+				return false;
+			}
 		}
 		return true;
 	};
