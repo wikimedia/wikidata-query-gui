@@ -63,7 +63,8 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 		this._editor.on( 'change', function ( editor, changeObj ) {
 			self.storeValue( self.getValue() );
 			self.clearError();
-			if( changeObj.text[0] === '?' ){
+			if( changeObj.text[0] === '?' ||
+					changeObj.text[0] === '#' ){
 				editor.showHint({closeCharacters: /[\s]/});
 			}
 		} );
