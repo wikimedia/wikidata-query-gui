@@ -12,15 +12,34 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	var SPARQL_KEYWORDS = [
 	                       'SELECT',
 	                       'OPTIONAL',
+	                       'OPTIONAL {\n\n}',
 	                       'WHERE',
+	                       'WHERE {\n\n}',
 	                       'ORDER',
 	                       'ORDER BY',
 	                       'DISTINCT',
-	                       'WHERE {\n\n}',
 	                       'SERVICE',
 	                       'SERVICE wikibase:label {\n bd:serviceParam wikibase:language "en" .\n}',
 	                       'BASE', 'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING',
 	                       'UNION',
+	                       'SAMPLE',
+	                       '(SAMPLE() AS )',
+	                       'COUNT',
+	                       '(COUNT() AS )',
+	                       'DESC',
+	                       'DESC()',
+	                       'ASC',
+	                       'ASC()',
+	                       'FILTER ()',
+	                       'FILTER NOT EXISTS',
+	                       'FILTER NOT EXISTS {\n\n}',
+	                       'UNION',
+	                       'UNION {\n\n}',
+	                       'BIND',
+	                       'BIND ()',
+	                       'GROUP_CONCAT',
+	                       '(GROUP_CONCAT() as )',
+	                       'ORDER BY',
 	                       '#defaultView:Map', '#defaultView:ImageGrid'
 	                       ];
 
@@ -67,7 +86,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		var list = [];
 
 		$.each( SPARQL_KEYWORDS, function ( key, keyword ) {
-			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
+			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) >= 0 ) {
 				list.push( keyword );
 			}
 		} );
@@ -119,7 +138,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			pos = 0;
 		}
 
-		while( line.charAt( pos ) !== ' ' ){
+		while( line.charAt( pos ).match(/[\w?#]/) ){
 			pos--;
 			if( pos < 0 ){
 				break;
@@ -128,7 +147,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		var left = pos + 1;
 
 		pos = position;
-		while( line.charAt( pos ) !== ' ' ){
+		while( line.charAt( pos ).match(/[\w]/) ){
 			pos++;
 			if( pos >= line.length ){
 				break;
