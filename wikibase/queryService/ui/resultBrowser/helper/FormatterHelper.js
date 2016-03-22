@@ -57,7 +57,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		}
 
 		if ( data.type === 'uri' ) {
-			var $link = $( '<a/>' ).attr( 'href', value );
+			var $link = $( '<a/>' ).attr( 'href', value ).attr( 'target', '_blank' );
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
