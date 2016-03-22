@@ -227,6 +227,15 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 		}
 	};
 
+	/**
+	 * Register callback handler
+	 * @param {string} type
+	 * @param {funciton} callback
+	 */
+	SELF.prototype.registerCallback = function( type, callback ) {
+		this._editor.on( type, callback );
+	};
+
 	return SELF;
 
 }( jQuery, CodeMirror, WikibaseRDFTooltip, window.localStorage ) );
