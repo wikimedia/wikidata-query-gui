@@ -6,7 +6,6 @@ window.mediaWiki = window.mediaWiki || {};
 wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	"use strict";
 
-	var SHORTURL = '//tinyurl.com/create.php?url=';
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 
 	/**
@@ -109,29 +108,23 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @private
 	 **/
 	SELF.prototype._initApp = function() {
-
 		//ctr + enter executes query
 		$( window ).keydown( function( e ){
 		  if (e.ctrlKey && e.keyCode === 13) {
 			  $( '#execute-button' ).click();
 		    }
 		} );
-
-/* SM: disabled direct results for now
-		if( location.hash.indexOf( '#result#' ) === 0 ){
-			this._toggleCollapse( true );
-			this._autoExecuteQuery = true;
-		}
-*/
 	};
 
 	/**
 	 * @private
 	 **/
 	SELF.prototype._initEditor = function() {
-
 		this._editor.fromTextArea( this._$element.find( '.queryEditor' )[0] );
-		this._editor.addKeyMap( 'Ctrl-Enter',  $.proxy( this._handleQuerySubmit, this ) );
+
+		if(window.history.pushState) {//this works only in modern browser
+			this._editor.registerCallback( 'change', $.proxy( this._updateQueryUrl, this) );
+		}
 	};
 
 	/**
@@ -184,12 +177,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 
 			this._editor.setValue( decodeURIComponent( window.location.hash.substr( 1 ) ) );
 			this._editor.refresh();
-		}else{
-
-			if( location.search === ( '?new' )){
-				return;
-			}
-			this._editor.restoreValue();
 		}
 	};
 
@@ -250,28 +237,15 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 		    }
 		});
 
-
-		$( '.shortUrlTrigger' ).click( function( e ){
-			var $target = $( e.target );
-			self._updateQueryUrl();
-			$target.attr( 'href', SHORTURL + encodeURIComponent( window.location ) );
-
-			var sharedLocation = new URL( window.location );
-/*
-SM: disabled direct results for now
-		if( $target.hasClass( 'result' ) ){
-				sharedLocation.hash =  '#result' + sharedLocation.hash;
+		$( '.shortUrlTrigger' ).popover({
+			placement : 'left',
+			'html':true,
+			'content':function(){
+				self._updateQueryUrl();
+				return '<iframe class="shortUrl" src="' + SHORTURL_API + encodeURIComponent( window.location ) +   '">';
 			}
-*/
-			$target.popover({
-	    		placement : 'left',
-	    		'html':true,
-	    		'content':function(){
-	    			return '<iframe class="shortUrl" src="' + SHORTURL_API + encodeURIComponent( sharedLocation.toString() ) +   '">';
-	    		}
-	    	});
-			$target.popover('show');
-
+		}).click( function( e ){
+			$( e.target ).popover('show');
 			return false;
 		} );
 	};
@@ -502,31 +476,17 @@ SM: disabled direct results for now
 	 */
 	SELF.prototype._updateQueryUrl = function() {
 		var hash = encodeURIComponent( this._editor.getValue() );
+
 		if ( window.location.hash !== hash ) {
-			window.location.hash = hash;
-		}
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._toggleCollapse = function( collapse ) {
-		if( collapse === true ){
-			$( '#query-box' ).hide();
-			$( '#header-navbar-collapse' ).css('visibility', 'hidden');
-			$( '.navbar-toggle' ).show();
-
-			$( '.navbar-toggle' ).click( $.proxy(this._toggleCollapse, this) );
-		}else{
-			$( '#query-box' ).show();
-			this._editor.refresh();
-			$( '#header-navbar-collapse' ).css('visibility', 'visible');
-			if ( $( '#header-navbar-collapse' ).is(':visible') ) {
-				$( '.navbar-toggle.collapsed ' ).hide();
+			if(window.history.pushState) {
+				window.history.pushState(null, null, '#'+hash);
+			}
+			else {
+			    window.location.hash = hash;
 			}
 		}
-	};
 
+	};
 
 	/**
 	 * @private
