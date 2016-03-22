@@ -106,6 +106,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			} );
 		} );
 
+		if( markers.length === 0 ){
+			var marker =  L.marker([0, 0])
+		    .bindPopup('Nothing found!')
+		    .openPopup();
+			markers.push( marker );
+		}
+
 		return L.featureGroup( markers ).setStyle( {
 			color: '#e04545',
 			opacity: 0.9,
