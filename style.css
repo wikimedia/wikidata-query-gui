@@ -272,7 +272,6 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 }
 .item > a > img {
 	width: 100%;
-	max-height: 500px;
 	display: inline-block;;
 }
 .item {
