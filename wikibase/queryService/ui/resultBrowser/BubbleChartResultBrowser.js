@@ -5,7 +5,7 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 window.mediaWiki = window.mediaWiki || {};
 
 wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $, d3, window ) {
-	"use strict";
+	'use strict';
 
 	/**
 	 * A bubble chart result browser
@@ -41,20 +41,30 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	SELF.prototype.draw = function ( $element ) {
 		var self = this;
 
-		var data = { "name": "bubblechart", "children": [] };
+		var data = { 'name': 'bubblechart', 'children': [] };
 
 		var labelKey = this._getLabelColumns()[0],
 			numberKey = this._getNumberColumns()[0];
 
 		$.each( this._getRows(), function( index, row ){
 
+			var item = {};
 			if( row[labelKey] && row[numberKey] ){
-				data.children.push( { name:row[labelKey].value , size:row[numberKey].value  } );
+				item.name = row[labelKey].value;
+				item.size = row[numberKey].value;
 			}
 
-			$.each( row, function ( key, col ) {
-				self.processVisitors( col );
+			$.each( self._getColumns(), function ( key, col ) {
+				var value = row[col].value;
+
+				if( self._getFormatter().isExploreUrl( value ) ){
+					item.url = value;
+				}
+
+				self.processVisitors( value );
 			} );
+
+			data.children.push( item );
 		} );
 
 		var $wrapper = $( '<div/>' )
@@ -68,11 +78,8 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 
 	SELF.prototype._drawBubbleChart = function ( $element, root ) {
 
-		// Returns a flattened hierarchy containing all leaf nodes under the
-		// root.
 		function classes(root) {
 			var classes = [];
-
 			function recurse(name, node) {
 				if (node.children){
 					node.children.forEach(function(child) {
@@ -83,11 +90,11 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 					classes.push({
 						packageName : name,
 						className : node.name,
-						value : node.size
+						value : node.size,
+						url : node.url
 					});
 				}
 			}
-
 			recurse(null, root);
 			return {
 				children : classes
@@ -96,37 +103,41 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 
 
 		var diameter = Math.min( $(window).height(), $(window).width() ),
-			format = d3.format(",d"), color = d3.scale
+			format = d3.format(',d'), color = d3.scale
 				.category20c();
 
 		var bubble = d3.layout.pack().sort(null).size([ diameter, diameter ])
 				.padding(1.5);
 
-		var svg = d3.select( $element[0] ).append("svg").attr("width", diameter).attr(
-				"height", diameter).attr("class", "bubble");
+		var svg = d3.select( $element[0] ).append('svg').attr('width', diameter).attr(
+				'height', diameter).attr('class', 'bubble');
 
-		var node = svg.selectAll(".node").data(
+		var node = svg.selectAll('.node').data(
 				bubble.nodes(classes(root)).filter(function(d) {
 					return !d.children;
-				})).enter().append("g").attr("class", "node").attr("transform",
+				})).enter().append('g').attr('class', 'node').attr('transform',
 				function(d) {
-					return "translate(" + d.x + "," + d.y + ")";
+					return 'translate(' + d.x + ',' + d.y + ')';
 				});
 
-		node.append("title").text(function(d) {
-			return d.className + ": " + format(d.value);
+		node.append('title').text(function(d) {
+			return d.className + ': ' + format(d.value);
 		});
 
-		node.append("circle").attr("r", function(d) {
+		node.append('circle').attr('r', function(d) {
 			return d.r;
-		}).style("fill", function(d) {
+		}).style('fill', function(d) {
 			return color(d.className);
 		});
 
-		node.append("text").attr("dy", ".3em").style("text-anchor", "middle")
+		node.append( 'text' ).attr('dy', '.3em').style('text-anchor', 'middle')
 				.text(function(d) {
 					return d.className.substring(0, d.r / 3);
-				});
+				}).on( 'click', function( d ){
+					if( d.url ){
+						window.open( d.url , '_blank' );
+					}
+				} ).style( 'cursor', 'hand' );
 
 	};
 
