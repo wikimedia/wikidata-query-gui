@@ -60,7 +60,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @property {boolean}
 	 * @private
 	 **/
-	SELF.prototype._autoExecuteQuery = false;
+	SELF.prototype._isHistoryDisabled = false;
 
 	/**
 	 * @property {Object}
@@ -100,10 +100,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 		this._initRdfNamespaces();
 		this._initHandlers();
 		this._initResultBrowserMenu();
-
-		if( this._autoExecuteQuery ){
-			$( '#execute-button' ).click();
-		}
 	};
 
 	/**
@@ -177,8 +173,10 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 				location.hash = location.hash.replace( '#result#', '#' );
 			}
 
+			this._isHistoryDisabled = true;
 			this._editor.setValue( decodeURIComponent( window.location.hash.substr( 1 ) ) );
 			this._editor.refresh();
+			this._isHistoryDisabled = false;
 		}
 	};
 
@@ -478,6 +476,10 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @private
 	 */
 	SELF.prototype._updateQueryUrl = function() {
+		if( this._isHistoryDisabled ){
+			return;
+		}
+
 		var hash = encodeURIComponent( this._editor.getValue() );
 
 		if ( window.location.hash !== hash ) {
