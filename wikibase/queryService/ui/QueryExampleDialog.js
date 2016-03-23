@@ -61,12 +61,17 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._initFilter = function() {
+		var self = this;
+
 		this._$element.find( '.tableFilter' ).keyup( $.proxy( this._filterTable, this ));
 
 		//tags
 		this._$element.find( '.tagFilter' ).tags({
 			afterAddingTag: $.proxy( this._filterTable, this ),
-			afterDeletingTag: $.proxy( this._filterTable, this )
+			afterDeletingTag: function(){
+				self._filterTable();
+				self._drawTagCloud();
+			}
 		});
 
 	};
@@ -94,18 +99,14 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	SELF.prototype._initTagCloud = function() {
 		var self = this;
 
-		this._$element.find( '.tagCloudPopover' ).popover({
-			placement: 'bottom',
-			trigger: 'click',
-			container: 'body',
-	        content: '<div class="tagCloud" style="height:400px; width:400px;"></div>',
-	        html: true
-	    });
+		var interval = window.setInterval(function(){
+			if( self._$element.is( ':visible') ){
+				self._drawTagCloud();
+				clearInterval( interval );
+			}
 
-		this._$element.find( '.tagCloudPopover' ).click(function () {
-			self._drawTagCloud();
+		}, 300 );
 
-        });
 	};
 
 	/**
@@ -124,6 +125,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 		$(".tagCloud").empty();
 		$(".tagCloud").jQCloud(jQCloudTags, {
+			delayedMode: true,
 			afterCloudRender: function( e ){
 			$(".tagCloud").find('a').click( function( e ){
 				e.preventDefault();
