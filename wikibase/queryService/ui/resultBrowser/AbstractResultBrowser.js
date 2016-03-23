@@ -80,6 +80,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Call all visitors for the piece of data
+	 * @protected
 	 * @param data
 	 */
 	SELF.prototype.processVisitors = function( data ) {

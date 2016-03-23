@@ -38,6 +38,7 @@
 		"QUnit": false,
 		"sinon": false,
 		"L": false,
-		"CONFIG": true
+		"CONFIG": true,
+		"d3": false
 	}
 }
