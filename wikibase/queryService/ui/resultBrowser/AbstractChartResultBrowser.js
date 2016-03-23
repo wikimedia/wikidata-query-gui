@@ -106,6 +106,10 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function (
 	 * @return {boolean}
 	 **/
 	SELF.prototype._isNumber = function ( cell ) {
+		if( !cell || !cell.datatype ){
+			return false;
+		}
+
 		return NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
 	};
 
