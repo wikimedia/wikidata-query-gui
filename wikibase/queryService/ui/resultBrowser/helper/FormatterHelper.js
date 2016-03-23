@@ -85,7 +85,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @returns {boolean}
 	 */
 	SELF.prototype.isExploreUrl = function ( url ) {
-		return url.match( EXPLORE_URL + '(.+)' );
+		if( url && url.match ){
+			return url.match( EXPLORE_URL + '(.+)' );
+		}
+		return false;
 	};
 
 	/**

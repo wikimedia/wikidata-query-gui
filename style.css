@@ -323,3 +323,13 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
         width: 1260px;
     }
 }
+
+
+/*
+Treemap
+*/
+#query-result .labelbody {
+	background: transparent;
+	overflow: hidden;
+	cursor: pointer;
+}
