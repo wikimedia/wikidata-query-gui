@@ -446,8 +446,12 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 					$( '#query-result' ).html( '' );
 					self._showActionMessage( 'Generating View' , 'success', 100);
 					window.setTimeout( function() {
-						b.object.draw( $( '#query-result' ) );
-						self._hideActionMessage();
+						try{
+							b.object.draw( $( '#query-result' ) );
+							self._hideActionMessage();
+						} catch( e ){
+							self._showActionMessage( 'Unable to display ' + b.label , 'warning' );
+						}
 					}, 20 );
 					return false;
 				} );
