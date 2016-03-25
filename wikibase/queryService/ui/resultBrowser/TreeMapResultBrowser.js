@@ -110,7 +110,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 		//copied from http://www.billdwhite.com/wordpress/wp-content/js/treemap_headers_03.html
 		//with little modification
 
-		 var supportsForeignObject = Modernizr.svgforeignobject;
+		 var supportsForeignObject = false;//FIXME:Modernizr.svgforeignobject;
 		    var chartWidth = $(window).width();
 		    var chartHeight = $(window).height();
 		    var xscale = d3.scale.linear().range([0, chartWidth]);
