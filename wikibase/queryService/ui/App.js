@@ -120,9 +120,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	SELF.prototype._initEditor = function() {
 		this._editor.fromTextArea( this._$element.find( '.queryEditor' )[0] );
 
-		if(window.history.pushState) {//this works only in modern browser
-			this._editor.registerCallback( 'change', $.proxy( this._updateQueryUrl, this) );
-		}
+//		if(window.history.pushState) {//this works only in modern browser
+//			this._editor.registerCallback( 'change', $.proxy( this._updateQueryUrl, this) );
+//		}
 	};
 
 	/**
