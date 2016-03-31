@@ -368,24 +368,15 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @private
 	 */
 	SELF.prototype._handleQueryResult = function() {
-		var api = this._sparqlApi,
-			self = this;
+		var api = this._sparqlApi;
 
 		$( '#total-results' ).text( api.getResultLength() );
 		$( '#query-time' ).text( api.getExecutionTime() );
 		$( '.query-total' ).show();
 		$( '#execute-button' ).prop('disabled', false);
 
-		var $queryResult = $( '#query-result' );
-
 		var defaultBrowser = this._createResultBrowsers( api.getResultRawData() );
-		this._showActionMessage( 'Generating View' , 'success', 100);
-		window.setTimeout( function() {
-			$queryResult.show();
-			defaultBrowser.draw( $queryResult );
-			self._hideActionMessage();
-			self._handleQueryResultBrowsers();
-		}, 20 );
+		this._drawResult( defaultBrowser );
 
 		return false;
 	};
@@ -444,15 +435,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 					$(this).closest( '.open' ).removeClass( 'open' );
 
 					$( '#query-result' ).html( '' );
-					self._showActionMessage( 'Generating View' , 'success', 100);
-					window.setTimeout( function() {
-						try{
-							b.object.draw( $( '#query-result' ) );
-							self._hideActionMessage();
-						} catch( e ){
-							self._showActionMessage( 'Unable to display ' + b.label , 'warning' );
-						}
-					}, 20 );
+					self._drawResult( b.object );
 					return false;
 				} );
 			} else {
@@ -461,6 +444,27 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 		} );
 	};
 
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._drawResult = function( resultBrowser ) {
+		var self = this;
+
+		this._showActionMessage( 'Generating View' , 'success', 100);
+		window.setTimeout( function() {
+			try{
+				resultBrowser.draw( $( '#query-result' ) );
+				self._hideActionMessage();
+				$( '#query-result' ).show();
+			} catch( e ){
+				self._showActionMessage( 'Unable to display result' , 'warning' );
+				window.console.log( e.stack );
+			}
+			self._handleQueryResultBrowsers();
+
+		}, 20 );
+	};
 	/**
 	 * @private
 	 */

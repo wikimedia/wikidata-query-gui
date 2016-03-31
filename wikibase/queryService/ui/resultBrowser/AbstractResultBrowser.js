@@ -55,6 +55,35 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	};
 
 	/**
+	 * Iterate the result set and calls the visitors
+	 * @protected
+	 * @param {resultCallback} cb - called for every column of the resultset
+	 **/
+	SELF.prototype._iterateResult = function( cb ) {
+		var self = this;
+
+		$.each( this._result.results.bindings, function( rowNum, row ){
+			$.each( self._result.head.vars, function( rowNum1, key ){
+				var field = null;
+				if( row[key] ){
+					field = row[key];
+				}
+				self.processVisitors( field );
+
+				cb( field, key, row );
+			} );
+		} );
+	};
+
+	/**
+	 * Callback used by _iterateResult
+	 * @callback resultCallback
+	 * @param {object} field
+	 * @param {string} key of the field
+	 * @param {object} row
+	 */
+
+	/**
 	 * Checks whether the result browser can draw the given result
 	 * @return {boolean}
 	 **/
