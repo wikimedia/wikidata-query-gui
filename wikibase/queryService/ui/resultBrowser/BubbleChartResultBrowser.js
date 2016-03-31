@@ -40,36 +40,34 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	 **/
 	SELF.prototype.draw = function ( $element ) {
 		var self = this;
+		var data = { 'name': 'bubblechart', 'children': [] },
+			labelKey = this._getLabelColumns()[0],
+			numberKey = this._getNumberColumns()[0],
+			prevRow = null,
+			url = null;
 
-		var data = { 'name': 'bubblechart', 'children': [] };
+		this._iterateResult( function( field, key, row ) {
 
-		var labelKey = this._getLabelColumns()[0],
-			numberKey = this._getNumberColumns()[0];
-
-		$.each( this._getRows(), function( index, row ){
-
-			var item = {};
-			if( row[labelKey] && row[numberKey] ){
-				item.name = row[labelKey].value;
-				item.size = row[numberKey].value;
+			if( field && field.value
+					&& self._getFormatter().isExploreUrl( field.value ) ){
+				url = field.value;
 			}
 
-			$.each( self._getColumns(), function ( key, col ) {
-				var value = row[col].value;
+			if( row !== prevRow ){
+				var item = { url: url };
+				url = null;
+				prevRow = row;
 
-				if( self._getFormatter().isExploreUrl( value ) ){
-					item.url = value;
+				if( row[labelKey] && row[numberKey] ){
+					item.name = row[labelKey].value;
+					item.size = row[numberKey].value;
+					data.children.push( item );
 				}
+			}
 
-				self.processVisitors( value );
-			} );
-
-			data.children.push( item );
 		} );
 
-		var $wrapper = $( '<div/>' )
-			.css( 'margin', 'auto' )
-			.css( 'width', '60%' );
+		var $wrapper = $( '<center>' );
 		$element.html( $wrapper );
 
 		this._drawBubbleChart( $wrapper, data );

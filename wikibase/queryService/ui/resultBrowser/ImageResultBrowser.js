@@ -32,23 +32,20 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 **/
 	SELF.prototype.draw = function( $element ) {
 		var self = this;
-
 		this._grid = $( '<div class="masonry">' );
 
+		this._iterateResult( function( field, key, row ) {
 
-		$.each( this._result.results.bindings, function( rowNum, row ){
-			$.each( this, function( key, field ){
-				self.processVisitors( field );
-				if( self._isCommonsResource( field.value ) ){
-					var url = field.value,
-						fileName = self._getFormatter().getCommonsResourceFileName( url );
+			if( field && self._isCommonsResource( field.value ) ){
+				var url = field.value,
+					fileName = self._getFormatter().getCommonsResourceFileName( url );
 
-					self._grid.append( self._getItem( self._getThumbnail( url ),
-							self._getThumbnail( url, 1000 ),
-							fileName,
-							row ) );
-				}
-			} );
+				self._grid.append( self._getItem( self._getThumbnail( url ),
+						self._getThumbnail( url, 1000 ),
+						fileName,
+						row ) );
+			}
+
 		} );
 
 		$element.html( this._grid );

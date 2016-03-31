@@ -79,16 +79,11 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._getMarkerGroup = function() {
 		var self = this,
-			result = this._result.results.bindings || {},
 			markers = [];
 
-		$.each( result, function( rowKey){
-			$.each( this, function( key, field ){
-				self.processVisitors( field );
-
-		    	if( field.datatype === MAP_DATATYPE ){
+			this._iterateResult( function( field, key, row ) {
+		    	if( field && field.datatype === MAP_DATATYPE ){
 		    		var longLat = self._extractLongLat( field.value );
-
 					if( longLat === null || !longLat[0] || !longLat[1]  ){
 		    			return true;
 		    		}
@@ -97,14 +92,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		  		    	marker = L.circle( [ longLat[0], longLat[1] ], 10 ).bindPopup( popup );
 
 		    		marker.on( 'click', function() {
-		    			var info = self._getItemDescription( rowKey );
+		    			var info = self._getItemDescription( row );
 		    			popup.setContent( info[0] );
 		    		} );
 
 		    		markers.push( marker );
 		    	}
 			} );
-		} );
 
 		if( markers.length === 0 ){
 			var marker =  L.marker([0, 0])
@@ -153,9 +147,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getItemDescription = function( rowKey ) {
-		var row = this._result.results.bindings[rowKey],
-		$result = $( '<div/>' ).append( this._getFormatter().formatRow( row ) );
+	SELF.prototype._getItemDescription = function( row ) {
+		var $result = $( '<div/>' ).append( this._getFormatter().formatRow( row ) );
 
 		return $result;
 	};

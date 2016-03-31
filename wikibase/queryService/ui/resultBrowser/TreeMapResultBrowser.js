@@ -36,35 +36,41 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 	SELF.prototype.draw = function ( $element ) {
 		var self = this;
 
-		var data = {};
+		var data = {},
+			layer = data,
+			size = null,
+			url = null,
+			prevRow = null;
 
-		$.each( this._getRows(), function( index, row ){
-			var layer = data,
-				size = null,
-				url = null;
+		this._iterateResult( function( field, key, row ) {
 
-			$.each( self._getColumns(), function ( key, col ) {
-				col = row[col];
-				var value = col && col.value ? col.value : null;
-
-
-				if( self._getFormatter().isLabel( col ) ){
-					if( !layer[ value ] ){
-						layer[ value ] = {};
-					}
-					layer = layer[ value ];
-				}
-				if( self._getFormatter().isNumber( value ) ){
-					size = value;
-				}
-				if( self._getFormatter().isExploreUrl( value ) ){
-					url = value;
+			if( row !== prevRow ){
+				if( prevRow !== null ){
+					layer.data = { size: size, url:url };
+					size = null;
+					url = null;
+					layer = data;
 				}
 
-				self.processVisitors( col );
-			} );
-			layer.data = { size: size, url:url };
+				prevRow = row;
+			}
+
+			if( self._getFormatter().isLabel( field ) ){
+				if( !layer[ field.value ] ){
+					layer[ field.value ] = {};
+				}
+				layer = layer[ field.value ];
+			}
+			if( self._getFormatter().isNumber( field ) ){
+				size = field.value;
+			}
+			if( field && field.value
+					&& self._getFormatter().isExploreUrl( field.value ) ){
+				url = field.value;
+			}
+
 		} );
+		layer.data = { size: size, url:url };
 
 		var children = this._createTreeData( data );
 		var treeData = { name: 'treeMap', children:children };
