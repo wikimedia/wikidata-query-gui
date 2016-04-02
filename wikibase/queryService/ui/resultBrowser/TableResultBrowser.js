@@ -39,6 +39,45 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 	 **/
 	SELF.prototype._rows = null;
 
+	/**
+	 * @property {object}
+	 * @private
+	 */
+	SELF.prototype._sorter = {
+
+			string: function( val1, val2 ){
+				return val1.localeCompare( val2 );
+			},
+
+			number: function( val1, val2 ){
+				if( val1 >= val2 ){
+					return -1;
+				}
+
+				return 1;
+			},
+
+			generic: function ( data1, data2 ){
+				if( !data2 ){
+					return 1;
+				}
+				if( !data1 ){
+					return -1;
+				}
+
+				var f = this._getFormatter();
+				if( f.isNumber( data1 ) && f.isNumber( data2 ) ){
+					return this._sorter.number( Number( data1.value ), Number( data2.value ) );
+				}
+
+				if( f.isExploreUrl( data1.value ) && f.isExploreUrl( data2.value ) ){
+					return this._sorter.number( Number( data1.value.replace(/[^0-9]/gi, '') ),
+								Number( data2.value.replace(/[^0-9]/gi, '') ) );
+				}
+				//default is string sorter
+				return this._sorter.string( data1.value, data2.value );
+			}
+		};
 
 	/**
 	 * Draw browser to the given element
@@ -84,9 +123,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 			return self._getFormatter().formatValue( data ).html();
 		};
 
-		var stringSorter = function( data1, data2 ){
-			return data1.value.localeCompare( data2.value );
-		};
+
 
 		var events = {
 				'click .explore': $.proxy( this._getFormatter().handleExploreItem, this ),
@@ -100,7 +137,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 					field: column,
 					events: events,
 					sortable: true,
-					sorter: stringSorter
+					sorter: $.proxy( self._sorter.generic, self )
 				};
 			} ),
 			data: this.rows,

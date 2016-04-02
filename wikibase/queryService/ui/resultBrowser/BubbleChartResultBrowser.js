@@ -10,7 +10,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	/**
 	 * A bubble chart result browser
 	 *
-	 * @class wikibase.queryService.ui.resultBrowser.TreeResultBrowser
+	 * @class wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
@@ -169,11 +169,11 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	 */
 	SELF.prototype._checkColumn = function ( value ) {
 
-		if( this._isNumber( value ) ){
+		if( this._getFormatter().isNumber( value ) ){
 			this._hasNumber = true;
 		}
 
-		if( this._isLabel( value ) ){
+		if( this._getFormatter().isLabel( value ) ){
 			this._hasLabel = true;
 		}
 

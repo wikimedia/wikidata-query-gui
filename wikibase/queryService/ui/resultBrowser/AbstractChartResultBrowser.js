@@ -7,23 +7,6 @@ window.mediaWiki = window.mediaWiki || {};
 wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function ( $, window ) {
 	"use strict";
 
-	var NUMBER_TYPES = [
-	            		'http://www.w3.org/2001/XMLSchema#double',
-	            		'http://www.w3.org/2001/XMLSchema#float',
-	            		'http://www.w3.org/2001/XMLSchema#decimal',
-	            		'http://www.w3.org/2001/XMLSchema#integer',
-	            		'http://www.w3.org/2001/XMLSchema#long',
-	            		'http://www.w3.org/2001/XMLSchema#int',
-	            		'http://www.w3.org/2001/XMLSchema#short',
-	            		'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
-	            		'http://www.w3.org/2001/XMLSchema#positiveInteger',
-	            		'http://www.w3.org/2001/XMLSchema#unsignedLong',
-	            		'http://www.w3.org/2001/XMLSchema#unsignedInt',
-	            		'http://www.w3.org/2001/XMLSchema#unsignedShort',
-	            		'http://www.w3.org/2001/XMLSchema#nonPositiveInteger',
-	            		'http://www.w3.org/2001/XMLSchema#negativeInteger'
-	            	];
-
 	/**
 	 * An abstract result browser for charts
 	 *
@@ -49,7 +32,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function (
 		var row = self._getRows()[ 0 ];
 
 		return self._getColumns().filter( function ( column ) {
-			return self._isLabel( row[ column ] );
+			return self._getFormatter().isLabel( row[ column ] );
 		} );
 	};
 
@@ -63,7 +46,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function (
 		var row = self._getRows()[ 0 ];
 
 		return self._getColumns().filter( function ( column ) {
-			return self._isNumber( row[ column ] );
+			return self._getFormatter().isNumber( row[ column ] );
 		} );
 	};
 
@@ -84,34 +67,6 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function (
 		return this._result.results.bindings;
 	};
 
-
-	/**
-	 * Checks whether the current cell contains a label
-	 * @private
-	 * @param {Object} cell
-	 * @return {boolean}
-	 **/
-	SELF.prototype._isLabel = function ( cell ) {
-		if( !cell || !cell.hasOwnProperty ){
-			return false;
-		}
-
-		return cell.hasOwnProperty( 'xml:lang' );
-	};
-
-	/**
-	 * Checks whether the current cell contains a number
-	 * @private
-	 * @param {Object} cell
-	 * @return {boolean}
-	 **/
-	SELF.prototype._isNumber = function ( cell ) {
-		if( !cell || !cell.datatype ){
-			return false;
-		}
-
-		return NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
-	};
 
 	return SELF;
 }( jQuery, window ) );
