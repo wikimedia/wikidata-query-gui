@@ -48,13 +48,13 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 				var value = col && col.value ? col.value : null;
 
 
-				if( self._isLabel( col ) ){
+				if( self._getFormatter().isLabel( col ) ){
 					if( !layer[ value ] ){
 						layer[ value ] = {};
 					}
 					layer = layer[ value ];
 				}
-				if( self._isNumber( value ) ){
+				if( self._getFormatter().isNumber( value ) ){
 					size = value;
 				}
 				if( self._getFormatter().isExploreUrl( value ) ){
@@ -441,7 +441,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 	 */
 	SELF.prototype._checkColumn = function ( value ) {
 
-		if( this._isLabel( value ) ){
+		if( this._getFormatter().isLabel( value ) ){
 			this._hasLabel = true;
 			return false;
 		}

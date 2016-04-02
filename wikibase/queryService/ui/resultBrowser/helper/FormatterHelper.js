@@ -11,6 +11,23 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
 	var COMMONS_FILE_PATH = "http://commons.wikimedia.org/wiki/special:filepath/";
 
+	var NUMBER_TYPES = [
+	            		'http://www.w3.org/2001/XMLSchema#double',
+	            		'http://www.w3.org/2001/XMLSchema#float',
+	            		'http://www.w3.org/2001/XMLSchema#decimal',
+	            		'http://www.w3.org/2001/XMLSchema#integer',
+	            		'http://www.w3.org/2001/XMLSchema#long',
+	            		'http://www.w3.org/2001/XMLSchema#int',
+	            		'http://www.w3.org/2001/XMLSchema#short',
+	            		'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
+	            		'http://www.w3.org/2001/XMLSchema#positiveInteger',
+	            		'http://www.w3.org/2001/XMLSchema#unsignedLong',
+	            		'http://www.w3.org/2001/XMLSchema#unsignedInt',
+	            		'http://www.w3.org/2001/XMLSchema#unsignedShort',
+	            		'http://www.w3.org/2001/XMLSchema#nonPositiveInteger',
+	            		'http://www.w3.org/2001/XMLSchema#negativeInteger'
+	            	];
+
 	/**
 	 * Formatting helper provides methods useful for formatting results
 	 *
@@ -222,6 +239,33 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		$( this ).ekkoLightbox( { 'scale_height': true } );
 	};
 
+	/**
+	 * Checks whether the current cell contains a label
+	 * @private
+	 * @param {Object} cell
+	 * @return {boolean}
+	 **/
+	SELF.prototype.isLabel = function ( cell ) {
+		if( !cell || !cell.hasOwnProperty ){
+			return false;
+		}
+
+		return cell.hasOwnProperty( 'xml:lang' );
+	};
+
+	/**
+	 * Checks whether the current cell contains a number
+	 * @private
+	 * @param {Object} cell
+	 * @return {boolean}
+	 **/
+	SELF.prototype.isNumber = function ( cell ) {
+		if( !cell || !cell.datatype ){
+			return false;
+		}
+
+		return NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
+	};
 
 	return SELF;
 }( jQuery, mediaWiki ) );

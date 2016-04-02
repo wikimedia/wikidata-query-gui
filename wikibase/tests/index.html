@@ -9,10 +9,34 @@
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
-  <script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
-  <script src="../../vendor/jquery/jquery-1.12.0.min.js"></script>
-  <script src="../../node_modules/sinon/pkg/sinon-1.17.3.js"></script>
-  <script src="../queryService/ui/editor/hint/Rdf.js"></script>
-  <script src="queryService/ui/editor/hint/Rdf.test.js"></script>
+ 
+ <!-- Vendor -->
+	<script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
+	<script src="../../vendor/jquery/jquery-1.12.0.min.js"></script>
+	<script src="../../node_modules/sinon/pkg/sinon-1.17.3.js"></script>
+	<script src="../../vendor/lightbox/ekko-lightbox.min.js"></script>
+	<script src="../../vendor/leaflet/leaflet.js"></script>
+	<script src="../../vendor/leaflet/addon/fullscreen/Leaflet.fullscreen.min.js"></script>
+	<script src="../../vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.min.js"></script>
+	<script src="../../vendor/d3/d3.min.js"></script>
+	<script src="../../vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>
+	<script src="../../vendor/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="../../vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js"></script>
+	<script src="../../vendor/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js"></script>
+	<script src="../../vendor/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js"></script>
+ <!-- wikibase -->
+	<script src="../queryService/ui/editor/hint/Rdf.js"></script>
+	<script src="../queryService/RdfNamespaces.js"></script>
+	<script src="../queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
+	<script src="../queryService/ui/resultBrowser/AbstractResultBrowser.js"></script>
+	<script src="../queryService/ui/resultBrowser/AbstractChartResultBrowser.js"></script>
+	<script src="../queryService/ui/resultBrowser/BubbleChartResultBrowser.js"></script>
+	<script src="../queryService/ui/resultBrowser/CoordinateResultBrowser.js"></script>
+	<script src="../queryService/ui/resultBrowser/ImageResultBrowser.js"></script>
+	<script src="../queryService/ui/resultBrowser/TableResultBrowser.js"></script>
+	<script src="../queryService/ui/resultBrowser/TreeMapResultBrowser.js"></script>
+<!-- Tests -->
+	<script src="queryService/ui/editor/hint/Rdf.test.js"></script>
+	<script src="queryService/ui/resultBrowser/ResultBrowser.test.js"></script>
 </body>
 </html>
