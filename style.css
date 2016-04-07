@@ -57,8 +57,11 @@ body {
 	height: auto !important;
 }
 
-.CodeMirror-scroll, .queryEditor {
+.CodeMirror-scroll {
 	min-height: 300px;
+}
+.queryEditor {
+	min-height: 273px;
 }
 
 pre.CodeMirror-placeholder {
@@ -82,6 +85,11 @@ iframe.shortUrl {
 
 #query-box {
 	position: relative;
+}
+
+#query-box .alert {
+	padding: 3px;
+	font-size: 13px;
 }
 
 #query-box .nav {
@@ -143,13 +151,12 @@ iframe.shortUrl {
 }
 
 .navbar-brand {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin: auto;
+	line-height: 35px;
+	padding: 5px 15px;
 }
-
+.navbar-brand img{
+	padding-right: 5px;
+}
 .navbar-toggle {
 	  z-index: 100;
 }
@@ -162,7 +169,7 @@ iframe.shortUrl {
 	float: left;
 }
 /* change navbar breakpoint */
-@media (max-width: 950px) {
+@media (max-width: 800px) {
     .navbar-header {
         float: none;
     }
