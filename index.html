@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 	<link rel="stylesheet" href="vendor/leaflet/addon/fullscreen/leaflet.fullscreen.css">
 	<link rel="stylesheet" href="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.css">
+	<link rel="stylesheet" href="vendor/select2/dist/css/select2.min.css">
 	<link rel="stylesheet" href="style.css">
 
 	<link rel="shortcut icon" href="//www.wikidata.org/static/favicon/testwikidata.ico">
@@ -79,6 +80,18 @@
 					<textarea class="queryEditor" name="query" placeholder="(Input a SPARQL query or choose a query example)"></textarea>
 					<div class="alert alert-success alert-dismissible" role="alert">
 						Press <i>[CTRL-SPACE]</i> to activate auto completion. Data last updated: <span id="dbUpdated">[connecting]</span>
+					</div>
+					<div class="visual-editor">
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								Query explanation
+								<a href="#" class="help"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+								<button type="button" class="close" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="panel-body"></div>
+						</div>
 					</div>
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
@@ -174,13 +187,16 @@
 	</div>
 <!-- JS files -->
 	<script src="mediawiki.js"></script>
-	
+
 	<script src="vendor/jquery/jquery-1.12.0.min.js"></script>
+	<script src="vendor/underscore/underscore-min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
 	<script src="vendor/codemirror/lib/codemirror.js"></script>
 	<script src="vendor/codemirror/mode/sparql.js"></script>
 	<script src="vendor/codemirror/addon/hint/show-hint.js"></script>
 	<script src="vendor/codemirror/addon/display/placeholder.js"></script>
+	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
 	<script src="vendor/jqcloud/jqcloud-1.0.4.min.js"></script>
 	<script src="vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>
 	<script src="vendor/bootstrap-table/bootstrap-table.min.js"></script>
@@ -196,7 +212,7 @@
 	<script src="vendor/leaflet/addon/fullscreen/Leaflet.fullscreen.min.js"></script>
 	<script src="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.min.js"></script>
 	<script src="vendor/d3/d3.min.js"></script>
-
+	<script src="vendor/select2/dist/js/select2.min.js"></script>
 
 	<script src="wikibase/codemirror/addon/tooltip/WikibaseRDFTooltip.js"></script>
 
@@ -204,6 +220,8 @@
 	<script src="wikibase/queryService/ui/editor/hint/Sparql.js"></script>
 	<script src="wikibase/queryService/ui/editor/hint/Rdf.js"></script>
 	<script src="wikibase/queryService/ui/editor/Editor.js"></script>
+	<script src="wikibase/queryService/ui/visualEditor/VisualEditor.js"></script>
+	<script src="wikibase/queryService/ui/visualEditor/SelectorBox.js"></script>
 	<script src="wikibase/queryService/ui/QueryExampleDialog.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/AbstractResultBrowser.js"></script>

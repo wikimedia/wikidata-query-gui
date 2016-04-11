@@ -1,22 +1,26 @@
 /* exported CONFIG */
-var CONFIG = ( function ( window ) {
+var CONFIG = ( function ( window, $ ) {
 	'use strict';
 
-	var configLocal = {
+	var configDeploy = {
+			api : {
+				sparql : {
+					uri : '/bigdata/namespace/wdq/sparql'
+				}
+			},
+			visualEditor: {
+				entitySearchEndpointPath : 'https://www.wikidata.org/w/'
+			}
+	};
+
+	var configLocal = $.extend(true, configDeploy,  {
 		api : {
 			sparql : {
 				uri : 'https://query.wikidata.org/bigdata/namespace/wdq/sparql'
 			}
 		}
-	};
+	} );
 
-	var configDeploy = {
-		api : {
-			sparql : {
-				uri : '/bigdata/namespace/wdq/sparql'
-			}
-		}
-	};
 
 	var hostname = window.location.hostname.toLowerCase();
 
@@ -28,4 +32,4 @@ var CONFIG = ( function ( window ) {
 
 	return configDeploy;
 
-} )( window );
+} )( window, jQuery );
