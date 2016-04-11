@@ -20,9 +20,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 	var LOCAL_STORAGE_KEY = 'wikibase.queryService.ui.Editor';
 
 	/**
-	 * An ui this._editor for the Wikibase query service
+	 * An ui editor for the Wikibase query service
 	 *
-	 * @class wikibase.queryService.ui.this._editor
+	 * @class wikibase.queryService.ui.editor
 	 * @license GNU GPL v2+
 	 *
 	 * @author Stanislav Malyshev

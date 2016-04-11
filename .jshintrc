@@ -39,6 +39,8 @@
 		"sinon": false,
 		"L": false,
 		"CONFIG": true,
-		"d3": false
+		"d3": false,
+		"sparqljs": false,
+		"_": false
 	}
 }

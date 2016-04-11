@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
+wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ ) {
 	"use strict";
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
@@ -22,10 +22,11 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @param {wikibase.queryService.ui.editor.Editor}
 	 * @param {wikibase.queryService.api.Sparql}
 	 */
-	function SELF( $element, editor, sparqlApi, querySamplesApi ) {
+	function SELF( $element, editor, visualEditor, sparqlApi, querySamplesApi ) {
 
 		this._$element = $element;
 		this._editor = editor;
+		this._visualEditor = visualEditor;
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
 
@@ -55,6 +56,13 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	 * @private
 	 **/
 	SELF.prototype._editor = null;
+
+	/**
+	 * @property {wikibase.queryService.ui.visualEditor.VisualEditor}
+	 * @private
+	 **/
+	SELF.prototype._visualEditor = null;
+
 
 	/**
 	 * @property {boolean}
@@ -94,6 +102,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 
 		this._initApp();
 		this._initEditor();
+		this._initVisualEditor();
 		this._initExamples();
 		this._initDataUpdated();
 		this._initQuery();
@@ -124,6 +133,47 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 //			this._editor.registerCallback( 'change', $.proxy( this._updateQueryUrl, this) );
 //		}
 	};
+
+	/**
+	 * @private
+	 **/
+	SELF.prototype._initVisualEditor = function() {
+		var self = this;
+
+		if( !this._visualEditor ){
+			this._visualEditor = new wikibase.queryService.ui.visualEditor.VisualEditor();
+		}
+
+		this._visualEditor.setChangeListener(function( ve ){
+			self._editor.setValue( ve.getQuery() );
+		});
+
+		if( this._editor ){
+			this._editor.registerCallback( 'change', _.debounce( function(){
+				if( $('.visual-editor' ).length === 0 ||
+						self._editor.getValue() === self._visualEditor.getQuery() ){
+					return;
+				}
+				$('.visual-editor' ).hide();
+
+				try {
+					self._visualEditor.setQuery( self._editor.getValue() );
+					self._visualEditor.draw( $('.visual-editor .panel-body' ) );
+
+					$('.visual-editor' ).delay( 500 ).fadeIn();
+				} catch (e) {
+					if( e.stack ){
+						window.console.log( e.stack );
+					}
+				}
+			}, 500 ) );
+		}
+
+		 $('.visual-editor .panel-heading .close' ).click( function(){
+			 $('.visual-editor' ).remove();
+		 } );
+	};
+
 
 	/**
 	 * @private
@@ -229,25 +279,25 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 	SELF.prototype._initPopovers= function() {
 		var self = this;
 
-		//Closes popover when clicked somewhere else
-		$('body').on('click', function (e) {
-		    if ( $( e.target ).data('toggle') !== 'popover'
-		        && $( e.target ).parents( '.popover.in' ).length === 0) {
-		        $('.popover').remove();
-		    }
+		$( '.visual-editor .help' ).clickover({
+			placement : 'bottom',
+			'global_close': true,
+			'html':true,
+			'content':function(){
+				return $( '<div>' ).append( $( '<span>' ).html( 'This is a basic textual representation of the SPARQL query.<br/>If your query doesn\'t work well, please give ' ),
+					$('<a>').text( 'feedback here!' ).attr( 'href', 'https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new' ).attr( 'target', '_B' ) );
+			}
 		});
 
-		$( '.shortUrlTrigger' ).popover({
+		$( '.shortUrlTrigger' ).clickover({
 			placement : 'left',
+			'global_close': true,
 			'html':true,
 			'content':function(){
 				self._updateQueryUrl();
 				return '<iframe class="shortUrl" src="' + SHORTURL_API + encodeURIComponent( window.location ) +   '">';
 			}
-		}).click( function( e ){
-			$( e.target ).popover('show');
-			return false;
-		} );
+		});
 	};
 
 	/**
@@ -536,4 +586,4 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window ) {
 
 
 	return SELF;
-}( jQuery, mediaWiki, download, EXPLORER, window ) );
+}( jQuery, mediaWiki, download, EXPLORER, window, _ ) );
