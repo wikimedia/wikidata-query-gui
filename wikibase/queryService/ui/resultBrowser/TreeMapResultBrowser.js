@@ -18,15 +18,16 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 	 * @constructor
 	 */
 	function SELF() {
+		this._labelColumns = {};
 	}
 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser();
 
 	/**
-	 * @property {boolean}
+	 * @property {object}
 	 * @private
 	 **/
-	SELF.prototype._hasLabel = false;
+	SELF.prototype._labelColumns = null;
 
 
 	/**
@@ -103,7 +104,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 					id = url;
 				}
 
-				node = {id:id, name: key, size:size, url:url};
+				node = {id:id + Math.random(), name: key, size:size, url:url};
 			}
 			nodes.push( node );
 		} );
@@ -426,10 +427,9 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 	 */
 	SELF.prototype.isDrawable = function () {
 
-		if( this._hasLabel ){
+		if( Object.keys( this._labelColumns ).length > 1 ){
 			return true;
 		}
-
 		return false;
 	};
 
@@ -438,18 +438,21 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 	 * @param data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
-		return this._checkColumn( data );
+	SELF.prototype.visit = function( data, key ) {
+		return this._checkColumn( data, key );
 	};
 
 	/**
 	 * Check if this value contains an coordinate value.
 	 */
-	SELF.prototype._checkColumn = function ( value ) {
+	SELF.prototype._checkColumn = function ( value, key ) {
 
-		if( this._getFormatter().isLabel( value ) ){
-			this._hasLabel = true;
-			return false;
+		if( this._getFormatter().isLabel( value, key ) ){
+			this._labelColumns[key] = true;
+
+			if( Object.keys( this._labelColumns ).length > 1 ){
+				return false;
+			}
 		}
 
 		return true;
