@@ -350,3 +350,33 @@ Treemap
 	overflow: hidden;
 	cursor: pointer;
 }
+
+/*
+Visual Editor
+*/
+.visual-editor {
+	display: none;
+	min-width: 300px;
+	max-width: 500px;
+    z-index: 100;
+    position: absolute;
+    top: 5px;
+    right: 45px;
+    font-size: 15px;
+    padding-left: 35px;
+}
+.visual-editor .panel-info {
+    background: rgba(255,255,255,0.9);
+}
+
+.select2-container {
+	z-index: 2000;
+	min-width: 200px;
+}
+.visual-editor .popover {
+	min-width: 250px;
+}
+
+.visual-editor .spacer {
+	min-height: 0.5em;
+}
