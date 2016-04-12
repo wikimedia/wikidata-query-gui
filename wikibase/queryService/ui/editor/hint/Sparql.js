@@ -11,6 +11,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 	var SPARQL_KEYWORDS = [
 	                       'SELECT',
+	                       'SELECT * WHERE {\n\n}',
 	                       'OPTIONAL',
 	                       'OPTIONAL {\n\n}',
 	                       'WHERE',
