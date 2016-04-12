@@ -68,7 +68,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 				if( row[key] ){
 					field = row[key];
 				}
-				self.processVisitors( field );
+				self.processVisitors( field, key );
 
 				cb( field, key, row );
 			} );
@@ -112,14 +112,14 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @protected
 	 * @param data
 	 */
-	SELF.prototype.processVisitors = function( data ) {
+	SELF.prototype.processVisitors = function( data, columnKey ) {
 		var self = this,
 		removeVisitors = [];
 
 
 		$.each( this._visitors, function ( key, v ) {
 			if( v.visit && typeof v.visit === 'function' ){
-				if( v.visit( data ) === false ){
+				if( v.visit( data, columnKey ) === false ){
 					removeVisitors.push( key );
 				}
 			}

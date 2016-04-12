@@ -115,11 +115,11 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 		var self = this,
 			showPagination = (this.rows.length > TABLE_PAGE_SIZE);
 
-		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data ){
+		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data, row, index ){
 			if( !data ){
 				return '';
 			}
-			self.processVisitors( data );
+			self.processVisitors( data, this.field );
 			return self._getFormatter().formatValue( data ).html();
 		};
 
