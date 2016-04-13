@@ -9,20 +9,6 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 	var MODULE = wb.queryService.ui.editor.hint;
 
-	var ENTITY_TYPES = {
-			'http://www.wikidata.org/prop/direct/': 'property',
-			'http://www.wikidata.org/prop/': 'property',
-			'http://www.wikidata.org/prop/novalue/': 'property',
-			'http://www.wikidata.org/prop/statement/': 'property',
-			'http://www.wikidata.org/prop/statement/value/': 'property',
-			'http://www.wikidata.org/prop/qualifier/': 'property',
-			'http://www.wikidata.org/prop/qualifier/value/': 'property',
-			'http://www.wikidata.org/prop/reference/': 'property',
-			'http://www.wikidata.org/prop/reference/value/': 'property',
-			'http://www.wikidata.org/wiki/Special:EntityData/': 'item',
-			'http://www.wikidata.org/entity/': 'item'
-	};
-
 	/**
 	 * Code completion for Wikibase entities RDF prefixes in SPARQL
 	 * completes SPARQL keywords and ?variables
@@ -173,15 +159,16 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._extractPrefixes = function( text ) {
-		var prefixes = this._rdfNamespaces.getPrefixMap(ENTITY_TYPES),
+		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES),
+			types = this._rdfNamespaces.ENTITY_TYPES,
 			lines = text.split( '\n' ),
 			matches;
 
 		$.each( lines, function ( index, line ) {
 			// PREFIX wd: <http://www.wikidata.org/entity/>
 			if ( ( matches = line.match( /(PREFIX) (\S+): <([^>]+)>/ ) ) ) {
-				if ( ENTITY_TYPES[ matches[ 3 ] ] ) {
-					prefixes[ matches[ 2 ] ] = ENTITY_TYPES[ matches[ 3 ] ];
+				if ( types[ matches[ 3 ] ] ) {
+					prefixes[ matches[ 2 ] ] =  types[ matches[ 3 ] ];
 				}
 			}
 		} );
