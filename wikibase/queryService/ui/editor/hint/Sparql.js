@@ -48,6 +48,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 * Code completion for Wikibase entities RDF prefixes in SPARQL
 	 * completes SPARQL keywords and ?variables
 	 *
+	 * @class wikibase.queryService.ui.editor.hint.Sparql
 	 * licence GNU GPL v2+
 	 *
 	 * @author Jonas Kress

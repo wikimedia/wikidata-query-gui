@@ -3,12 +3,8 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
 
-wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $ ) {
+wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	"use strict";
-
-	var ENTITY_SEARCH_API_ENDPOINT_REQUEST = 'api.php?action=wbsearchentities&search={term}&format=json&language=en&uselang=en&type={entityType}&continue=0';
-
-	var ENTITY_SEARCH_API_ENDPOINT_PATH = 'https://www.wikidata.org/w/';
 
 	var FILTER_PREDICATES = {
 			'http://www.w3.org/2000/01/rdf-schema#label': true,
@@ -25,21 +21,21 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $ ) {
 	 *
 	 * @author Jonas Kress
 	 * @constructor
-	 * @param {string} entitySearchEndpoint
+	 * @param {wikibase.queryService.api.Wikibase} api
 	 */
-	function SELF( entitySearchEndpointPath ) {
-		if ( entitySearchEndpointPath ){
-			this._entitySearchEndpoint = entitySearchEndpointPath + ENTITY_SEARCH_API_ENDPOINT_REQUEST;
-		}else{
-			this._entitySearchEndpoint = ENTITY_SEARCH_API_ENDPOINT_PATH + ENTITY_SEARCH_API_ENDPOINT_REQUEST;
+	function SELF( api ) {
+		this._api = api;
+
+		if ( !this._api ){
+			this._api = new wikibase.queryService.api.Wikibase();
 		}
 	}
 
 	/**
-	 * @property {string}
+	 * @property {wikibase.queryService.api.Wikibase}
 	 * @private
 	 */
-	SELF.prototype._entitySearchEndpoint = null;
+	SELF.prototype._api = null;
 
 	/**
 	 * @property {function}
@@ -384,11 +380,9 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $ ) {
 	};
 
 	/**
-	 * TODO: Implement inversion of control
 	 * @private
 	 */
 	SELF.prototype._getLabel = function( url ) {
-		var self = this;
 		var deferred = $.Deferred();
 
 		var entity = url.match(/(Q|P)([0-9]+)/);//TODO: make use of Rdf namespaces
@@ -400,10 +394,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $ ) {
 		type = type[entity[1]];
 		var term = entity[0];
 
-		$.ajax( {
-			url: self._entitySearchEndpoint.replace( '{term}', term ).replace( '{entityType}', type ),
-			dataType: 'jsonp'
-		} ).done( function ( data ) {
+		this._api.searchEntities( term, type ).done( function ( data ) {
 			$.each( data.search, function ( key, value ) {
 					deferred.resolve( value.label, value.id, value.description, type );
 					return false;
@@ -420,7 +411,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $ ) {
 	SELF.prototype._valuleChanger = function( $element ) {
 		var deferred = $.Deferred();
 
-		var $selector = new wikibase.queryService.ui.visualEditor.SelectorBox( $element );
+		//TODO Use only one instance and make that instance injectable
+		var $selector = new wikibase.queryService.ui.visualEditor.SelectorBox( $element, this._api );
 
 		$selector.setEntitySearchEndpoint( this._entitySearchEndpoint );
 		$selector.setChangeListener( function( id ){
@@ -431,4 +423,4 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $ ) {
 	};
 
 	return SELF;
-}( jQuery) );
+}( jQuery, wikibase ) );

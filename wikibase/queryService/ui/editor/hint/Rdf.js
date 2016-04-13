@@ -21,22 +21,27 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'http://www.wikidata.org/prop/reference/value/': 'property',
 			'http://www.wikidata.org/wiki/Special:EntityData/': 'item',
 			'http://www.wikidata.org/entity/': 'item'
-	},
-	ENTITY_SEARCH_API_ENDPOINT = 'https://www.wikidata.org/w/api.php?action=wbsearchentities&' +
-		'search={term}&format=json&language=en&uselang=en&type={entityType}&continue=0';
+	};
 
 	/**
 	 * Code completion for Wikibase entities RDF prefixes in SPARQL
 	 * completes SPARQL keywords and ?variables
 	 *
+	 * @class wikibase.queryService.ui.editor.hint.Rdf
 	 * licence GNU GPL v2+
 	 *
 	 * @author Jonas Kress
+	 * @param {wikibase.queryService.api.Wikibase} api
 	 * @param {wikibase.queryService.RdfNamespace} rdfNamespace
 	 * @constructor
 	 */
-	var SELF = MODULE.Rdf = function( rdfNamespaces ) {
+	var SELF = MODULE.Rdf = function( api, rdfNamespaces ) {
+		this._api = api;
 		this._rdfNamespaces = rdfNamespaces;
+
+		if( !this._api ){
+			this._api = new wikibase.queryService.api.Wikibase();
+		}
 
 		if( !this._rdfNamespaces ){
 			this._rdfNamespaces = wikibase.queryService.RdfNamespaces;
@@ -48,6 +53,12 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 * @private
 	 **/
 	SELF.prototype._rdfNamespaces = null;
+
+	/**
+	 * @property {wikibase.queryService.api.Wikibase}
+	 * @private
+	 **/
+	SELF.prototype._api = null;
 
 	/**
 	 * Get list of hints
@@ -111,10 +122,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		var entityList = [],
 			deferred = $.Deferred();
 
-		$.ajax( {
-			url: ENTITY_SEARCH_API_ENDPOINT.replace( '{term}', term ).replace( '{entityType}', type ),
-			dataType: 'jsonp'
-		} ).done( function ( data ) {
+		this._api.searchEntities( term, type ).done( function ( data ) {
 			$.each( data.search, function ( key, value ) {
 				entityList.push( {
 					className: 'wikibase-rdf-hint',

@@ -6,10 +6,10 @@ var CONFIG = ( function ( window, $ ) {
 			api : {
 				sparql : {
 					uri : '/bigdata/namespace/wdq/sparql'
+				},
+				wikibase: {
+					uri : 'https://www.wikidata.org/w/api.php'
 				}
-			},
-			visualEditor: {
-				entitySearchEndpointPath : 'https://www.wikidata.org/w/'
 			}
 	};
 

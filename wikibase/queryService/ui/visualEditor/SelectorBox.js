@@ -3,13 +3,8 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
 
-wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $ ) {
+wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	"use strict";
-
-	var ENTITY_SEARCH_API_ENDPOINT_REQUEST = 'api.php?action=wbsearchentities&search={term}&format=json&language=en&uselang=en&type={entityType}&continue=0';
-
-	var ENTITY_SEARCH_API_ENDPOINT_PATH = 'https://www.wikidata.org/w/';
-
 
 	/**
 	 * A selector box for selecting and changing properties and items
@@ -20,13 +15,25 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $ ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 * @param {jQuery} $element
+	 * @param {wikibase.queryService.api.Wikibase} api
 	 */
-	function SELF( $element ) {
-		this._entitySearchEndpoint = ENTITY_SEARCH_API_ENDPOINT_PATH + ENTITY_SEARCH_API_ENDPOINT_REQUEST;
+	function SELF( $element, api ) {
 		this._$element = $element;
+
+		if ( api ){
+			this._api = api;
+		}else{
+			this._api = new wikibase.queryService.api.Wikibase();
+		}
 
 		this._create();
 	}
+
+	/**
+	 * @property {wikibase.queryService.api.Wikibase}
+	 * @private
+	 */
+	SELF.prototype._api = null;
 
 	/**
 	 * @property {function}
@@ -134,35 +141,31 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $ ) {
 					'</span><br/><small>' + item.data.description + '</small>' );
 		};
 
+		var transport = function( params, success, failure ) {
+			self._api.searchEntities( params.data.term, type ).done( function( data ){
+				var r = data.search.map( function( d ) {
+					return {
+						id : d.id,
+						text : d.label,
+						data : d
+					};
+				} );
+				success( { results:r } );
+			}).fail( failure );
+		};
+
 		$select.select2({
-			  placeholder: 'Select an option',
-			  width: 'auto',
-			  minimumInputLength: 1,
-			  templateResult: formatter,
-			  ajax: {//TODO: implement inversion of control
-				    url: self._entitySearchEndpoint.replace( '&search={term}', '' ).replace( '{entityType}', type ),
-				    dataType: 'jsonp',
-				    delay: 250,
-				    data: function (params) {
-				      return {
-				        search: params.term, // search term
-				      };
-				    },
-				    processResults: function (data, params) {
-				      return {
-				        results: data.search.map( function( d ){
-				        	return {
-				        		id: d.id,
-				        		text: d.label,
-				        		data: d
-				        	};
-				        } ),
-				      };
-				    },
-				    cache: true
-				  }
+			placeholder : 'Select an option',
+			width : 'auto',
+			minimumInputLength : 1,
+			templateResult : formatter,
+			ajax : {
+			    delay: 250,
+				transport : transport
+			},
+			cache : true
 		});
 	};
 
 	return SELF;
-}( jQuery) );
+}( jQuery, wikibase ) );
