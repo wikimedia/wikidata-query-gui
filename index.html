@@ -81,18 +81,6 @@
 					<div class="alert alert-success alert-dismissible" role="alert">
 						Press <i>[CTRL-SPACE]</i> to activate auto completion. Data last updated: <span id="dbUpdated">[connecting]</span>
 					</div>
-					<div class="visual-editor">
-						<div class="panel panel-info">
-							<div class="panel-heading">
-								Query explanation
-								<a href="#" class="help"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
-								<button type="button" class="close" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="panel-body"></div>
-						</div>
-					</div>
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
@@ -132,6 +120,19 @@
 						</ul>
 					</nav>
 				</form>
+
+				<a href="#" class="visual-editor-trigger" target="_blank" title="Show query explanation"> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+				<div class="visual-editor">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							Query explanation <a href="#" class="help"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+							<button type="button" class="close" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="panel-body"></div>
+					</div>
+				</div>
 				<a href="#" class="shareQuery shortUrlTrigger query" target="_blank" title="Short URL to this page" data-toggle="popover"> <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
 			</div>
 		</div>

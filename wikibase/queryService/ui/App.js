@@ -139,45 +139,56 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 	 **/
 	SELF.prototype._initVisualEditor = function() {
 		var self = this;
-
-		if( !this._visualEditor ){
+		if (!this._visualEditor) {
 			this._visualEditor = new wikibase.queryService.ui.visualEditor.VisualEditor();
 		}
-
-		this._visualEditor.setChangeListener(function( ve ){
-			self._editor.setValue( ve.getQuery() );
+		this._visualEditor.setChangeListener(function(ve) {
+			self._editor.setValue(ve.getQuery());
 		});
 
-		if( this._editor ){
-			this._editor.registerCallback( 'change', _.debounce( function(){
-				if( $('.visual-editor' ).length === 0 ||
-						self._editor.getValue() === self._visualEditor.getQuery() ){
+		if (this._editor) {
+			this._editor.registerCallback('change', _.debounce(function() {
+				if ($('.visual-editor-trigger').is(':visible') ||
+						self._editor.getValue() === self._visualEditor.getQuery()) {
 					return;
 				}
-				$('.visual-editor' ).hide();
-
-				try {
-					self._visualEditor.setQuery( self._editor.getValue() );
-					self._visualEditor.draw( $('.visual-editor .panel-body' ) );
-
-					$('.visual-editor' ).delay( 500 ).fadeIn();
-				} catch (e) {
-					if( e.stack ){
-						window.console.log( e.stack );
-					}
-				}
-			}, 500 ) );
+				$('.visual-editor').hide();
+				self._drawVisualEditor();
+			}, 500));
 		}
 
-		 $('.visual-editor .panel-heading .close' ).click( function(){
-			 $('.visual-editor' ).remove();
-		 } );
-	};
+		$('.visual-editor .panel-heading .close').click(function() {
+			$('.visual-editor').hide();
+			$('.visual-editor-trigger').show();
+			return false;
+		});
 
+		$('.visual-editor-trigger').click(function() {
+			$('.visual-editor-trigger').hide();
+			self._drawVisualEditor();
+			return false;
+		});
+	};
 
 	/**
 	 * @private
 	 **/
+	SELF.prototype._drawVisualEditor = function() {
+		try {
+			this._visualEditor.setQuery( this._editor.getValue() );
+			this._visualEditor.draw( $('.visual-editor .panel-body') );
+
+			$('.visual-editor').delay(500).fadeIn();
+		} catch (e) {
+			if (e.stack) {
+				window.console.log(e.stack);
+			}
+		}
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._initExamples = function() {
 		var self = this;
 		new wikibase.queryService.ui.QueryExampleDialog( $( '#QueryExamples' ), this._querySamplesApi, function( query, title ){
