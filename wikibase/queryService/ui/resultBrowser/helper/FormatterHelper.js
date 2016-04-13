@@ -67,14 +67,14 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.formatValue = function ( data, key ) {
 		var value = data.value,
-			$html = $( '<span/>' );
+			$html = $( '<span>' );
 
 		if( !data.type ){
 			return value;
 		}
 
 		if ( data.type === 'uri' ) {
-			var $link = $( '<a/>' ).attr( 'href', value ).attr( 'target', '_blank' );
+			var $link = $( '<a>' ).attr( 'href', value ).attr( 'target', '_blank' );
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
@@ -89,7 +89,11 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			}
 
 		} else {
-			$html.text( value );
+			var $label = $( '<span>' ).text( value );
+			if( data['xml:lang'] ){
+				$label.attr( 'title', value + '@'+ data['xml:lang'] );
+			}
+			$html.append( $label );
 		}
 
 		return $html;
