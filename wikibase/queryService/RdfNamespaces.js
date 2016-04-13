@@ -42,6 +42,20 @@ wikibase.queryService.RdfNamespaces = {};
 		}
 	};
 
+	RdfNamespaces.ENTITY_TYPES = {
+			'http://www.wikidata.org/prop/direct/': 'property',
+			'http://www.wikidata.org/prop/': 'property',
+			'http://www.wikidata.org/prop/novalue/': 'property',
+			'http://www.wikidata.org/prop/statement/': 'property',
+			'http://www.wikidata.org/prop/statement/value/': 'property',
+			'http://www.wikidata.org/prop/qualifier/': 'property',
+			'http://www.wikidata.org/prop/qualifier/value/': 'property',
+			'http://www.wikidata.org/prop/reference/': 'property',
+			'http://www.wikidata.org/prop/reference/value/': 'property',
+			'http://www.wikidata.org/wiki/Special:EntityData/': 'item',
+			'http://www.wikidata.org/entity/': 'item'
+		};
+
 	RdfNamespaces.ALL_PREFIXES = $.map(RdfNamespaces.NAMESPACE_SHORTCUTS,
 			function(n) { return n; }
 	).reduce(function(p, v, i) { return $.extend(p, v); }, {});
