@@ -1,17 +1,28 @@
-var WikibaseRDFTooltip = ( function ( CodeMirror, $ ) {
+var wikibase = wikibase || {};
+wikibase.queryService = wikibase.queryService || {};
+wikibase.queryService.ui = wikibase.queryService.ui || {};
+wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
+wikibase.queryService.ui.editor.tooltip = wikibase.queryService.ui.editor.tooltip || {};
+
+wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $ ) {
 	'use strict';
 
 	/**
 	 * Wikibase RDF tooltip for codemirror editor
 	 *
-	 * @class WikibaseRdfTooltip
 	 * @license GNU GPL v2+
+	 * @class wikibase.queryService.ui.editor.tooltip.Rdf
+	 *
 	 * @author Jonas Kress
 	 * @constructor
+	 * @param {wikibase.queryService.api.Wikibase} api
 	 */
-	function SELF( editor ) {
-		this.editor = editor;
-		this._registerHandler();
+	function SELF( api ) {
+		this._api = api;
+
+		if ( !this._api ){
+			this._api = new wikibase.queryService.api.Wikibase();
+		}
 	}
 
 	SELF.prototype.editor = null;
@@ -31,11 +42,19 @@ var WikibaseRDFTooltip = ( function ( CodeMirror, $ ) {
 		'http://www.wikidata.org/entity/': 'item'
 	};
 
-	var ENTITY_SEARCH_API_ENDPOINT = 'https://www.wikidata.org/w/api.php?action=wbsearchentities&search={term}&format=json&language=en&uselang=en&type={entityType}&continue=0';
+	/**
+	 * Set the editor the onmouseover callback is registered to
+	 *
+	 * @param {wikibase.queryService.ui.editor.Editor} editor
+	 */
+	SELF.prototype.setEditor = function ( editor ) {
+		this.editor = editor;
+		this._registerHandler();
+	};
 
 	SELF.prototype._registerHandler = function () {
 		CodeMirror.on( this.editor.getWrapperElement(), 'mouseover', $.proxy( this._triggerTooltip, this ) );
-	};
+	};//TODO: Remove CodeMirror dependency
 
 	SELF.prototype._triggerTooltip = function ( e ) {
 		clearTimeout( this.tooltipTimeoutHandler );
@@ -99,7 +118,7 @@ var WikibaseRDFTooltip = ( function ( CodeMirror, $ ) {
 
 		$.each( lines, function ( index, line ) {
 			// PREFIX wd: <http://www.wikidata.org/entity/>
-			if ( matches = line.match( /(PREFIX) (\S+): <([^>]+)>/ ) ) {
+			if ( ( matches = line.match( /(PREFIX) (\S+): <([^>]+)>/ ) ) ) {
 				if ( ENTITY_TYPES[ matches[ 3 ] ] ) {
 					prefixes[ matches[ 2 ] ] = ENTITY_TYPES[ matches[ 3 ] ];
 				}
@@ -113,14 +132,11 @@ var WikibaseRDFTooltip = ( function ( CodeMirror, $ ) {
 		var entityList = [],
 			deferred = $.Deferred();
 
-		$.ajax( {
-			url: ENTITY_SEARCH_API_ENDPOINT.replace( '{term}', term ).replace( '{entityType}', type ),
-			dataType: 'jsonp'
-		} ).done( function ( data ) {
+		this._api.searchEntities( term, type ).done( function ( data ) {
 
 			$.each( data.search, function ( key, value ) {
-				entityList.push( value.label + ' (' + value.id + ')\n'
-									+ (value.description?value.description:'') );
+				entityList.push( value.label + ' (' + value.id + ')\n' +
+								( value.description ? value.description: '' ) );
 			} );
 
 			deferred.resolve( entityList );

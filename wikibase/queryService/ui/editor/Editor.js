@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 
-wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFTooltip, localStorage ) {
+wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, WikibaseRDFTooltip, localStorage ) {
 	"use strict";
 
 	var CODEMIRROR_DEFAULTS = {
@@ -28,8 +28,24 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 	 * @author Stanislav Malyshev
 	 * @author Jonas Kress
 	 * @constructor
+	 * @param {wikibase.queryService.ui.editor.hint.Rdf} rdfHint
+	 * @param {wikibase.queryService.ui.editor.hint.Sparql} sparqlHint
+	 * @param {wikibase.queryService.ui.editor.tooltip.Rdf} rdfTooltip
 	 */
-	function SELF() {
+	function SELF( rdfHint, sparqlHint, rdfTooltip ) {
+		this._rdfHint = rdfHint;
+		this._sparqlHint = sparqlHint;
+		this._rdfTooltip = rdfTooltip;
+
+		if( !this._sparqlHint ){
+			this._sparqlHint = new wikibase.queryService.ui.editor.hint.Sparql();
+		}
+		if( !this._rdfHint ){
+			this._rdfHint = new wikibase.queryService.ui.editor.hint.Rdf();
+		}
+		if ( !this._rdfTooltip ){
+			this._rdfTooltip = new wikibase.queryService.ui.editor.tooltip.Rdf();
+		}
 	}
 
 	/**
@@ -52,6 +68,12 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 	SELF.prototype._rdfHint = null;
 
 	/**
+	 * @property {wikibase.queryService.ui.editor.tooltip.Rdf}
+	 * @private
+	 **/
+	SELF.prototype._rdfTooltip = null;
+
+	/**
 	 * Construct an this._editor on the given textarea DOM element
 	 *
 	 * @param {Element} element
@@ -65,12 +87,12 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 			self.clearError();
 			if( changeObj.text[0] === '?' ||
 					changeObj.text[0] === '#' ){
-				editor.showHint({closeCharacters: /[\s]/});
+				editor.showHint( {closeCharacters: /[\s]/} );
 			}
 		} );
 		this._editor.focus();
 
-		new WikibaseRDFTooltip(this._editor);
+		this._rdfTooltip.setEditor( this._editor );
 
 		this._registerHints();
 	};
@@ -98,12 +120,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 	SELF.prototype._getHints = function( editorContent, lineContent, lineNum, cursorPos ) {
 		var deferred = new $.Deferred(),
 			self = this;
-		if( !this._sparqlHint ){
-			this._sparqlHint = new wikibase.queryService.ui.editor.hint.Sparql();
-		}
-		if( !this._rdfHint ){
-			this._rdfHint = new wikibase.queryService.ui.editor.hint.Rdf();
-		}
 
 		this._rdfHint.getHint( editorContent, lineContent, lineNum, cursorPos ).done( function( hint ){
 		hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
@@ -238,4 +254,4 @@ wikibase.queryService.ui.editor.Editor = ( function( $, CodeMirror, WikibaseRDFT
 
 	return SELF;
 
-}( jQuery, CodeMirror, WikibaseRDFTooltip, window.localStorage ) );
+}( jQuery, wikibase, CodeMirror, window.localStorage ) );

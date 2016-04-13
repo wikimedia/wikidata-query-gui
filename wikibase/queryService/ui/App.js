@@ -19,8 +19,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 	 * @constructor
 	 *
 	 * @param {jQuery} $element
-	 * @param {wikibase.queryService.ui.editor.Editor}
-	 * @param {wikibase.queryService.api.Sparql}
+	 * @param {wikibase.queryService.ui.editor.Editor} editor
+	 * @param {wikibase.queryService.api.Sparql} visualEditor
 	 */
 	function SELF( $element, editor, visualEditor, sparqlApi, querySamplesApi ) {
 
