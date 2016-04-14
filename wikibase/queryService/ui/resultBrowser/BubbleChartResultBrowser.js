@@ -130,7 +130,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 
 		node.append( 'text' ).attr('dy', '.3em').style('text-anchor', 'middle')
 				.text(function(d) {
-					return d.className.substring(0, d.r / 3);
+					return d.className.substring(0, d.r / 4);
 				}).on( 'click', function( d ){
 					if( d.url ){
 						window.open( d.url , '_blank' );
