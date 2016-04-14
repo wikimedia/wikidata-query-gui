@@ -4,10 +4,10 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {};
 
-( function( $, wb ) {
+( function( $, wikibase ) {
 	'use strict';
 
-	var MODULE = wb.queryService.ui.editor.hint;
+	var MODULE = wikibase.queryService.ui.editor.hint;
 
 	/**
 	 * Code completion for Wikibase entities RDF prefixes in SPARQL
