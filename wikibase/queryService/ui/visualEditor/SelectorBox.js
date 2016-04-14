@@ -48,12 +48,6 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	SELF.prototype._changeListener = null;
 
 	/**
-	 * @property {string}
-	 * @private
-	 */
-	SELF.prototype._entitySearchEndpoint = null;
-
-	/**
 	 * Set the change listener
 	 *
 	 * @param {function} listener a function called when value selected
@@ -61,17 +55,6 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	SELF.prototype.setChangeListener = function( listener ) {
 		this._changeListener = listener;
 	};
-
-
-	/**
-	 * Set the change listener
-	 *
-	 * @param {function} listener a function called when value selected
-	 */
-	SELF.prototype.setEntitySearchEndpoint = function( e ) {
-		this._entitySearchEndpoint = e;
-	};
-
 
 	/**
 	 * @private

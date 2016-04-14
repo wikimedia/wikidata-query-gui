@@ -209,8 +209,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 
 	/**
 	 * Clear SPARQL error in editor window.
-	 *
-	 * @param {string} description
 	 */
 	SELF.prototype.clearError = function() {
 		if ( ERROR_LINE_MARKER ) {
