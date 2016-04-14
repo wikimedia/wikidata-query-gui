@@ -515,9 +515,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 		this._showActionMessage( 'Generating View' , 'success', 100);
 		window.setTimeout( function() {
 			try{
+				$( '#query-result' ).show();
 				resultBrowser.draw( $( '#query-result' ) );
 				self._hideActionMessage();
-				$( '#query-result' ).show();
 			} catch( e ){
 				self._showActionMessage( 'Unable to display result' , 'warning' );
 				window.console.log( e.stack );
