@@ -9,7 +9,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * A selector box for selecting and changing properties and items
 	 *
-	 * @class wikibase.queryService.ui.this._editor
+	 * @class wikibase.queryService.ui.visualEditor.SelectorBox
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
@@ -36,13 +36,13 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	SELF.prototype._api = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
 	 */
 	SELF.prototype._$element = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
 	 */
 	SELF.prototype._changeListener = null;
@@ -50,11 +50,21 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * Set the change listener
 	 *
-	 * @param {function} listener a function called when value selected
+	 * @param {Function} listener a function called when value selected
 	 */
 	SELF.prototype.setChangeListener = function( listener ) {
 		this._changeListener = listener;
 	};
+
+	/**
+	 * Set the change listener
+	 *
+	 * @param {Function} listener a function called when value selected
+	 */
+	SELF.prototype.setEntitySearchEndpoint = function( e ) {
+		this._entitySearchEndpoint = e;
+	};
+
 
 	/**
 	 * @private

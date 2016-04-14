@@ -22,7 +22,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	/**
 	 * An ui editor for the Wikibase query service
 	 *
-	 * @class wikibase.queryService.ui.editor
+	 * @class wikibase.queryService.ui.editor.Editor
 	 * @license GNU GPL v2+
 	 *
 	 * @author Stanislav Malyshev
@@ -76,7 +76,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	/**
 	 * Construct an this._editor on the given textarea DOM element
 	 *
-	 * @param {Element} element
+	 * @param {HTMLElement} element
 	 **/
 	SELF.prototype.fromTextArea = function( element ) {
 		var self = this;
@@ -143,7 +143,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	 * Construct an this._editor on the given textarea DOM element
 	 *
 	 * @param {string} keyMap
-	 * @throws {function} callback
+	 * @throws {Function} callback
 	 **/
 	SELF.prototype.addKeyMap = function( keyMap, callback ) {
 		this._editor.addKeyMap( { keyMap : callback } );
@@ -244,7 +244,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	/**
 	 * Register callback handler
 	 * @param {string} type
-	 * @param {funciton} callback
+	 * @param {Function} callback
 	 */
 	SELF.prototype.registerCallback = function( type, callback ) {
 		this._editor.on( type, callback );

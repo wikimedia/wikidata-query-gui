@@ -38,32 +38,32 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._api = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
 	 */
 	SELF.prototype._changeListener = null;
 
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 */
 	SELF.prototype._query = null;
 
 	/**
-	 * @property {array}
+	 * @property {Array}
 	 * @private
 	 */
 	SELF.prototype._queryComments = null;
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 */
 	SELF.prototype._triples = [];
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 */
 	SELF.prototype._isSimpleMode = false;
@@ -104,7 +104,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	/**
 	 * Draw visual editor to given element
 	 *
-	 * @param {$jQuery} $element
+	 * @param {jQuery} $element
 	 */
 	SELF.prototype.draw = function( $element ) {
 		this._extractTriples();
@@ -115,7 +115,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	/**
 	 * Set the change listener
 	 *
-	 * @param {function} listener a function called when query changed
+	 * @param {Function} listener a function called when query changed
 	 */
 	SELF.prototype.setChangeListener = function( listener ) {
 		this._changeListener = listener;

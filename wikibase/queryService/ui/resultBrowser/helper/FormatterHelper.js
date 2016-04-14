@@ -42,7 +42,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 	/**
 	 * Format a data row
-	 * @param {object} row
+	 * @param {Object} row
 	 * @returns {jQuery} element
 	 */
 	SELF.prototype.formatRow = function ( row ) {
@@ -61,7 +61,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 	/**
 	 * Format a data value
-	 * @param {object} data
+	 * @param {Object} data
 	 * @param {string} key
 	 * @returns {jQuery} element
 	 */
