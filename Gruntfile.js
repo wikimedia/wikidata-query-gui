@@ -2,6 +2,7 @@
 module.exports = function ( grunt ) {
 	'use strict';
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
 
@@ -23,9 +24,12 @@ module.exports = function ( grunt ) {
 				'!node_modules/**',
 				'!vendor/**'
 			]
-		}
+		},
+	    qunit: {
+	        all: ['wikibase/tests/*.html']
+	      }
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint' ] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'qunit' ] );
 	grunt.registerTask( 'default', 'test' );
 };

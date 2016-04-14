@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>QUnit Tests</title>
-  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
+  <link rel="stylesheet" href="../../node_modules/qunitjs/qunit/qunit.css">
+  <script src="../../node_modules/qunitjs/qunit/qunit.js"></script>
 </head>
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
  
  <!-- Vendor -->
-	<script src="//code.jquery.com/qunit/qunit-1.22.0.js"></script>
+ 	<script src="../../vendor/es6-shim/es6-shim.min.js"></script>
 	<script src="../../vendor/jquery/jquery-1.12.0.min.js"></script>
 	<script src="../../node_modules/sinon/pkg/sinon-1.17.3.js"></script>
 	<script src="../../vendor/lightbox/ekko-lightbox.min.js"></script>
@@ -25,6 +26,7 @@
 	<script src="../../vendor/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js"></script>
 	<script src="../../vendor/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js"></script>
  <!-- wikibase -->
+ 	<script src="../queryService/api/Wikibase.js"></script>
 	<script src="../queryService/ui/editor/hint/Rdf.js"></script>
 	<script src="../queryService/RdfNamespaces.js"></script>
 	<script src="../queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
