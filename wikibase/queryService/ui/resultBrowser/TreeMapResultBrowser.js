@@ -24,7 +24,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser();
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 **/
 	SELF.prototype._labelColumns = null;

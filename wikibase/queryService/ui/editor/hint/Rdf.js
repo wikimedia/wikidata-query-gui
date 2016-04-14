@@ -18,7 +18,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 *
 	 * @author Jonas Kress
 	 * @param {wikibase.queryService.api.Wikibase} api
-	 * @param {wikibase.queryService.RdfNamespace} rdfNamespace
+	 * @param {wikibase.queryService.RdfNamespaces} rdfNamespace
 	 * @constructor
 	 */
 	var SELF = MODULE.Rdf = function( api, rdfNamespaces ) {
@@ -35,7 +35,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	/**
-	 * @property {wikibase.queryService.RdfNamespace}
+	 * @property {wikibase.queryService.RdfNamespaces}
 	 * @private
 	 **/
 	SELF.prototype._rdfNamespaces = null;
@@ -49,7 +49,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	/**
 	 * Get list of hints
 	 *
-	 * @return {jQuery.promise} Returns the completion as promise ({list:[], from:, to:})
+	 * @return {jQuery.Promise} Returns the completion as promise ({list:[], from:, to:})
 	 **/
 	SELF.prototype.getHint = function( editorContent, lineContent, lineNum, cursorPos ) {
 		var deferred = new $.Deferred(),

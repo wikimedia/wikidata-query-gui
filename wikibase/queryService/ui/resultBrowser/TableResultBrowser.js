@@ -28,19 +28,19 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractResultBrowser();
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 **/
 	SELF.prototype._columns = null;
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 **/
 	SELF.prototype._rows = null;
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 */
 	SELF.prototype._sorter = {

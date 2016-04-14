@@ -27,13 +27,13 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 
 	/**
-	 * @property {object}
+	 * @property {Object}
 	 * @private
 	 **/
 	SELF.prototype._result = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * List of visitor callbacks
 	 */
 	SELF.prototype._visitors = null;
@@ -57,7 +57,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	/**
 	 * Iterate the result set and calls the visitors
 	 * @protected
-	 * @param {resultCallback} cb - called for every column of the resultset
+	 * @param {AbstractResultBrowser~resultCallback} cb - called for every column of the resultset
 	 **/
 	SELF.prototype._iterateResult = function( cb ) {
 		var self = this;
@@ -77,10 +77,10 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Callback used by _iterateResult
-	 * @callback resultCallback
-	 * @param {object} field
+	 * @callback AbstractResultBrowser~resultCallback
+	 * @param {Object} field
 	 * @param {string} key of the field
-	 * @param {object} row
+	 * @param {Object} row
 	 */
 
 	/**
@@ -101,7 +101,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Add visitor function.
-	 * @param {function} callback
+	 * @param {Function} callback
 	 */
 	SELF.prototype.addVisitor = function( callback ) {
 		this._visitors.push( callback );

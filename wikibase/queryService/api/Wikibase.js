@@ -48,7 +48,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @param {string} type entity type to search for
 	 * @param {string} language of search string default:en
 	 *
-	 * @return {jQuery.Deferred}
+	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.searchEntities = function( term, type, language ) {
 		var query = SEARCH_ENTITES;

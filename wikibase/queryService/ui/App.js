@@ -46,7 +46,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 	SELF.prototype._sparqlApi = null;
 
 	/**
-	 * @property {wikibase.queryService.api.QuerySamplesApi}
+	 * @property {wikibase.queryService.api.QuerySamples}
 	 * @private
 	 **/
 	SELF.prototype._querySamplesApi = null;
@@ -444,7 +444,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 
 	/**
 	 * @private
-	 * @return {object} default result browser
+	 * @return {Object} default result browser
 	 */
 	SELF.prototype._createResultBrowsers = function( resultData ) {
 

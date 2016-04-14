@@ -15,7 +15,8 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @constructor
 	 *
 	 * @param {jQuery} $element
-	 * @param {ikibase.queryService.api.QuerySamples}
+	 * @param {wikibase.queryService.api.QuerySamples} jQuery.Deferred
+	 * @param {Function} callback that is called when selecting an example
 	 */
 	function SELF( $element, querySamplesApi, callback ) {
 
@@ -27,19 +28,19 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	}
 
 	/**
-	 * @property {wikibase.queryService.api.QuerySamplesApi}
+	 * @property {wikibase.queryService.api.QuerySamples}
 	 * @private
 	 **/
 	SELF.prototype._querySamplesApi = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
 	 **/
 	SELF.prototype._callback = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
 	 **/
 	SELF.prototype._examples = null;

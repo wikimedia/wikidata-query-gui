@@ -31,7 +31,7 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 	}
 
 	/**
-	 * @property {wikibase.queryService.RdfNamespace}
+	 * @property {wikibase.queryService.RdfNamespaces}
 	 * @private
 	 **/
 	SELF.prototype._rdfNamespaces = null;

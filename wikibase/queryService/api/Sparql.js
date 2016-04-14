@@ -17,7 +17,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	 * @author Jonas Kress
 	 * @constructor
 	 *
-	 * @param {string} (optional) serviceUri URI to the SPARQL service endpoint
+	 * @param {string} serviceUri (optional) serviceUri URI to the SPARQL service endpoint
 	 */
 	function SELF( serviceUri ) {
 
@@ -29,13 +29,13 @@ wikibase.queryService.api.Sparql = ( function($) {
 	}
 
 	/**
-	 * @property {int}
+	 * @property {Number}
 	 * @private
 	 **/
 	SELF.prototype._serviceUri = null;
 
 	/**
-	 * @property {int}
+	 * @property {Number}
 	 * @private
 	 **/
 	SELF.prototype._executionTime = null;
@@ -47,7 +47,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	SELF.prototype._errorMessage = null;
 
 	/**
-	 * @property {int}
+	 * @property {Number}
 	 * @private
 	 **/
 	SELF.prototype._resultLength = null;
@@ -105,11 +105,10 @@ wikibase.queryService.api.Sparql = ( function($) {
 	/**
 	 * Submit a query to the API
 	 *
-	 * @param {string[]}
-	 *            query
-	 * @return {jQuery.Promise}
+	 * @param {string[]} query
+	 * @return {jQuery.Promise} query
 	 */
-	SELF.prototype.query = function(query) {
+	SELF.prototype.query = function( query ) {
 		var deferred = $.Deferred(), self = this, settings = {
 			'headers' : {
 				'Accept' : 'application/sparql-results+json'
@@ -145,7 +144,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	/**
 	 * Get execution time in ms of the submitted query
 	 *
-	 * @return {int}
+	 * @return {Number}
 	 */
 	SELF.prototype._generateErrorMessage = function( jqXHR ) {
 		var message = 'ERROR: ';
@@ -164,7 +163,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	/**
 	 * Get execution time in seconds of the submitted query
 	 *
-	 * @return {int}
+	 * @return {Number}
 	 */
 	SELF.prototype.getExecutionTime = function() {
 		return this._executionTime;
@@ -173,7 +172,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	/**
 	 * Get error message of the submitted query if it has failed
 	 *
-	 * @return {int}
+	 * @return {Number}
 	 */
 	SELF.prototype.getErrorMessage = function() {
 		return this._errorMessage;
@@ -182,7 +181,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	/**
 	 * Get result length of the submitted query if it has failed
 	 *
-	 * @return {int}
+	 * @return {Number}
 	 */
 	SELF.prototype.getResultLength = function() {
 		return this._resultLength;
@@ -239,7 +238,7 @@ wikibase.queryService.api.Sparql = ( function($) {
 	/**
 	 * Get the raw result
 	 *
-	 * @return {object} result
+	 * @return {Object} result
 	 */
 	SELF.prototype.getResultRawData= function() {
 		return this._rawData;
