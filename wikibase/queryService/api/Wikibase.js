@@ -9,13 +9,12 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	var LANGUAGE = 'en';
 
 	var SEARCH_ENTITES = {
-			action: 'wbsearchentities',
-			format: 'json',
-			contiunue: 0,
-			language: LANGUAGE,
-			uselang: LANGUAGE
+		action: 'wbsearchentities',
+		format: 'json',
+		contiunue: 0,
+		language: LANGUAGE,
+		uselang: LANGUAGE
 	};
-
 
 	/**
 	 * API for the Wikibase API
@@ -30,7 +29,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	function SELF( endpoint, defaultLanguage ) {
 		this._endpoint = API_ENDPOINT;
 
-		if( endpoint ){
+		if ( endpoint ) {
 			this._endpoint = endpoint;
 		}
 	}
@@ -39,7 +38,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @property {string}
 	 * @private
 	 */
-	SELF.prototype._endpoint= null;
+	SELF.prototype._endpoint = null;
 
 	/**
 	 * Search an entity with using wbsearchentities
@@ -54,11 +53,11 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		var query = SEARCH_ENTITES;
 		query.search = term;
 
-		if( type ){
+		if ( type ) {
 			query.type = type;
 		}
 
-		if( language ){
+		if ( language ) {
 			query.type = type;
 		}
 
