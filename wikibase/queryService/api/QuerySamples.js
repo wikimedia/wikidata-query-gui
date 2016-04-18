@@ -2,7 +2,7 @@ var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
-wikibase.queryService.api.QuerySamples = ( function( $ ) {
+wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	'use strict';
 
 	/**
@@ -19,54 +19,64 @@ wikibase.queryService.api.QuerySamples = ( function( $ ) {
 	}
 
 	/**
-	 * @return {jQuery.Promise} Object taking list of example queries  { title:, query: }
-	 **/
-	SELF.prototype.getExamples = function() {
+	 * @return {jQuery.Promise} Object taking list of example queries { title:, query: }
+	 */
+	SELF.prototype.getExamples = function () {
 
 		var examples = [],
 			deferred = $.Deferred();
 
-		$.ajax( {
-			url: 'https://www.mediawiki.org/w/api.php?action=query&prop=revisions&titles=Wikibase/'	+
-			'Indexing/SPARQL_Query_Examples&rvprop=content',
-			data: {
-				format: 'json'
-			},
-			dataType: 'jsonp'
-		} ).done( function ( data ) {
+		$.ajax(
+				{
+					url: 'https://www.mediawiki.org/w/api.php?action=query&prop=revisions&titles=Wikibase/'
+							+ 'Indexing/SPARQL_Query_Examples&rvprop=content',
+					data: {
+						format: 'json'
+					},
+					dataType: 'jsonp'
+				} )
+		.done(
+				function ( data ) {
 
-			var wikitext = data.query.pages[ Object.keys( data.query.pages ) ].revisions[ 0 ][ '*' ];
-				wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
+					var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
+					wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
 
-			var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
-				regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
-				regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
-				regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
-				m;
+					var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
+						regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
+						regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
+						regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
+						m;
 
-			while ( ( m = re.exec( wikitext ) ) !== null ) {
-				var paragraph = m[ 0 ],
-					title = m[ 1 ].trim(),
-					tags = [],
-					tag,
-					href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#' +
-						encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
-					sparqlTemplate = m[ 2 ],
-					query = sparqlTemplate.match( regexQuery )[ 1 ].trim();
+					while ( ( m = re.exec( wikitext ) ) !== null ) {
+						var paragraph = m[0],
+							title = m[1].trim( ),
+							tags = [],
+							tag,
+							href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#'
+								+ encodeURIComponent( title.replace( / /g, '_' ) ).replace(
+										/%/g, '.' ),
+							sparqlTemplate = m[2],
+							query = sparqlTemplate.match( regexQuery )[1].trim();
 
-					if ( sparqlTemplate.match( regexExtraPrefix ) ) {
-						query = sparqlTemplate.match( regexExtraPrefix )[ 1 ] + '\n\n' + query;
-					}
-					if ( paragraph.match( regexTags ) ) {
-						while( ( tag = regexTags.exec( paragraph )  ) !== null ) {
-							tags.push(tag[ 2 ].trim() + ' (' + tag[ 1 ].trim() + ')');
+						if ( sparqlTemplate.match( regexExtraPrefix ) ) {
+							query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n'
+									+ query;
 						}
-					}
+						if ( paragraph.match( regexTags ) ) {
+							while ( ( tag = regexTags.exec( paragraph ) ) !== null ) {
+								tags.push( tag[2].trim() + ' (' + tag[1].trim() + ')' );
+							}
+						}
 
-				examples.push( {title: title, query: query, href: href, tags: tags} );
-			}
-			deferred.resolve( examples );
-		} );
+						examples.push( {
+							title: title,
+							query: query,
+							href: href,
+							tags: tags
+						} );
+					}
+					deferred.resolve( examples );
+				} );
 
 		return deferred;
 	};

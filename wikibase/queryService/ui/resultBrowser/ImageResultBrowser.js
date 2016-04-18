@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
 wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
-	"use strict";
+	'use strict';
 
 	/**
 	 * A result browser for images
@@ -36,14 +36,12 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 		this._iterateResult( function( field, key, row ) {
 
-			if( field && self._isCommonsResource( field.value ) ){
-				var url = field.value,
-					fileName = self._getFormatter().getCommonsResourceFileName( url );
+			if ( field && self._isCommonsResource( field.value ) ) {
+				var url = field.value, fileName = self._getFormatter().getCommonsResourceFileName(
+						url );
 
-				self._grid.append( self._getItem( self._getThumbnail( url ),
-						self._getThumbnail( url, 1000 ),
-						fileName,
-						row ) );
+				self._grid.append( self._getItem( self._getThumbnail( url ), self._getThumbnail(
+						url, 1000 ), fileName, row ) );
 			}
 
 		} );
@@ -55,15 +53,10 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
-		var $image = $( '<a data-gallery="g">' )
-			.click( this._getFormatter().handleCommonResourceItem )
-			.attr( 'data-title',  title )
-			.attr( 'href', url )
-			.append(
-				$( '<img>' )
-				.attr( 'src', thumbnailUrl )
-			),
-			$summary = this._getFormatter().formatRow( row );
+		var $image = $( '<a data-gallery="g">' ).click(
+				this._getFormatter().handleCommonResourceItem ).attr( 'data-title', title ).attr(
+				'href', url ).append( $( '<img>' ).attr( 'src', thumbnailUrl ) ), $summary = this
+				._getFormatter().formatRow( row );
 
 		return $( '<div class="item">' ).append( $image, $summary );
 	};
@@ -84,19 +77,19 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 	/**
 	 * Receiving data from the a visit
-	 * @param data
+	 *
+	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {
 		return this._checkImage( data );
 	};
 
-
 	/**
 	 * Check if this value contains an image.
 	 */
-	SELF.prototype._checkImage = function ( data ) {
-		if( data && data.value && this._isCommonsResource( data.value ) ){
+	SELF.prototype._checkImage = function( data ) {
+		if ( data && data.value && this._isCommonsResource( data.value ) ) {
 			this._drawable = true;
 			return false;
 		}

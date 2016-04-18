@@ -4,8 +4,8 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, window ) {
-	"use strict";
+wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, window ) {
+	'use strict';
 
 	/**
 	 * A result browser for tables
@@ -22,8 +22,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 	}
 
 	var TABLE_PAGE_SIZE = 200;
-	var TABLE_PAGE_SIZE_LIST = [10, 50, 100, 200, 500, 1000];
-
+	var TABLE_PAGE_SIZE_LIST = [ 10, 50, 100, 200, 500, 1000 ];
 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractResultBrowser();
 
@@ -45,45 +44,47 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 	 */
 	SELF.prototype._sorter = {
 
-			string: function( val1, val2 ){
-				return val1.localeCompare( val2 );
-			},
+		string: function( val1, val2 ) {
+			return val1.localeCompare( val2 );
+		},
 
-			number: function( val1, val2 ){
-				if( val1 >= val2 ){
-					return -1;
-				}
-
-				return 1;
-			},
-
-			generic: function ( data1, data2 ){
-				if( !data2 ){
-					return 1;
-				}
-				if( !data1 ){
-					return -1;
-				}
-
-				var f = this._getFormatter();
-				if( f.isNumber( data1 ) && f.isNumber( data2 ) ){
-					return this._sorter.number( Number( data1.value ), Number( data2.value ) );
-				}
-
-				if( f.isExploreUrl( data1.value ) && f.isExploreUrl( data2.value ) ){
-					return this._sorter.number( Number( data1.value.replace(/[^0-9]/gi, '') ),
-								Number( data2.value.replace(/[^0-9]/gi, '') ) );
-				}
-				//default is string sorter
-				return this._sorter.string( data1.value, data2.value );
+		number: function( val1, val2 ) {
+			if ( val1 >= val2 ) {
+				return -1;
 			}
-		};
+
+			return 1;
+		},
+
+		generic: function( data1, data2 ) {
+			if ( !data2 ) {
+				return 1;
+			}
+			if ( !data1 ) {
+				return -1;
+			}
+
+			var f = this._getFormatter();
+			if ( f.isNumber( data1 ) && f.isNumber( data2 ) ) {
+				return this._sorter.number( Number( data1.value ), Number( data2.value ) );
+			}
+
+			if ( f.isExploreUrl( data1.value ) && f.isExploreUrl( data2.value ) ) {
+				return this._sorter.number( Number( data1.value.replace( /[^0-9]/gi, '' ) ),
+						Number( data2.value.replace( /[^0-9]/gi, '' ) ) );
+			}
+
+			// default is string sorter
+			return this._sorter.string( data1.value, data2.value );
+		}
+	};
 
 	/**
 	 * Draw browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
-	SELF.prototype.draw = function ( $element ) {
+	 */
+	SELF.prototype.draw = function( $element ) {
 		var data = this._result;
 
 		if ( typeof data.boolean !== 'undefined' ) {
@@ -94,44 +95,41 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 			return;
 		}
 
-
-		this.columns =  data.head.vars;
+		this.columns = data.head.vars;
 		this.rows = data.results.bindings;
 
 		var $wrapper = $( '<table/>' );
 		$element.html( $wrapper );
 		this.drawBootstrapTable( $wrapper );
 
-		if( $wrapper.children().width() > $( window ).width() ) {
-			$wrapper.bootstrapTable('toggleView');
+		if ( $wrapper.children().width() > $( window ).width() ) {
+			$wrapper.bootstrapTable( 'toggleView' );
 		}
 	};
 
 	/**
 	 * Draw browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
-	SELF.prototype.drawBootstrapTable = function ( $element ) {
-		var self = this,
-			showPagination = (this.rows.length > TABLE_PAGE_SIZE);
+	 */
+	SELF.prototype.drawBootstrapTable = function( $element ) {
+		var self = this, showPagination = ( this.rows.length > TABLE_PAGE_SIZE );
 
-		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data, row, index ){
-			if( !data ){
+		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data, row, index ) {
+			if ( !data ) {
 				return '';
 			}
 			self.processVisitors( data, this.field );
 			return self._getFormatter().formatValue( data ).html();
 		};
 
-
-
 		var events = {
-				'click .explore': $.proxy( this._getFormatter().handleExploreItem, this ),
-				'click .gallery': this._getFormatter().handleCommonResourceItem
+			'click .explore': $.proxy( this._getFormatter().handleExploreItem, this ),
+			'click .gallery': this._getFormatter().handleCommonResourceItem
 		};
 
 		$element.bootstrapTable( {
-			columns: this.columns.map( function ( column ) {
+			columns: this.columns.map( function( column ) {
 				return {
 					title: column,
 					field: column,
@@ -151,22 +149,24 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 			cookie: true,
 			cookieIdTable: '1',
 			cookieExpire: '1y',
-			cookiesEnabled: ['bs.table.pageList']
+			cookiesEnabled: [ 'bs.table.pageList' ]
 		} );
 
 	};
 
 	/**
 	 * Checks whether the browser can draw the given result
+	 *
 	 * @return {boolean}
 	 **/
-	SELF.prototype.isDrawable = function () {
+	SELF.prototype.isDrawable = function() {
 		return true;
 	};
 
 	/**
 	 * Receiving data from the a visit
-	 * @param data
+	 *
+	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {

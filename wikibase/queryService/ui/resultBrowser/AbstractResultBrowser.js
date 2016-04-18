@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
 wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wikibase ) {
-	"use strict";
+	'use strict';
 
 	/**
 	 * Abstract result browser
@@ -25,11 +25,10 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 */
 	SELF.prototype._formatter = null;
 
-
 	/**
 	 * @property {Object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._result = null;
 
 	/**
@@ -39,8 +38,8 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	SELF.prototype._visitors = null;
 
 	/**
-	 * @property {boolean}
 	 * @protected
+	 * @property {boolean}
 	 * Is the browser drawable?
 	 * Not drawable by default.
 	 */
@@ -48,24 +47,26 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Sets the result to be browsed
+	 *
 	 * @param {Object} result set
-	 **/
+	 */
 	SELF.prototype.setResult = function( result ) {
 		this._result = result;
 	};
 
 	/**
 	 * Iterate the result set and calls the visitors
+	 *
 	 * @protected
 	 * @param {AbstractResultBrowser~resultCallback} cb - called for every column of the resultset
-	 **/
+	 */
 	SELF.prototype._iterateResult = function( cb ) {
 		var self = this;
 
-		$.each( this._result.results.bindings, function( rowNum, row ){
-			$.each( self._result.head.vars, function( rowNum1, key ){
+		$.each( this._result.results.bindings, function( rowNum, row ) {
+			$.each( self._result.head.vars, function( rowNum1, key ) {
 				var field = null;
-				if( row[key] ){
+				if ( row[key] ) {
 					field = row[key];
 				}
 				self.processVisitors( field, key );
@@ -77,7 +78,6 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Callback used by _iterateResult
-	 * @callback AbstractResultBrowser~resultCallback
 	 * @param {Object} field
 	 * @param {string} key of the field
 	 * @param {Object} row
@@ -85,22 +85,25 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Checks whether the result browser can draw the given result
+	 *
 	 * @return {boolean}
-	 **/
+	 */
 	SELF.prototype.isDrawable = function() {
 		return this._drawable;
 	};
 
 	/**
 	 * Draws the result browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
+	 */
 	SELF.prototype.draw = function( $element ) {
 		jQuery.error( 'Method draw() needs to be implemented!' );
 	};
 
 	/**
 	 * Add visitor function.
+	 *
 	 * @param {Function} callback
 	 */
 	SELF.prototype.addVisitor = function( callback ) {
@@ -109,57 +112,59 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 	/**
 	 * Call all visitors for the piece of data
+	 *
 	 * @protected
-	 * @param data
+	 * @param {Object} data
+	 * @param {String} columnKey
 	 */
 	SELF.prototype.processVisitors = function( data, columnKey ) {
-		var self = this,
-		removeVisitors = [];
+		var self = this, removeVisitors = [];
 
-
-		$.each( this._visitors, function ( key, v ) {
-			if( v.visit && typeof v.visit === 'function' ){
-				if( v.visit( data, columnKey ) === false ){
+		$.each( this._visitors, function( key, v ) {
+			if ( v.visit && typeof v.visit === 'function' ) {
+				if ( v.visit( data, columnKey ) === false ) {
 					removeVisitors.push( key );
 				}
 			}
 		} );
 
-		$.each( removeVisitors, function( key, visitorIndex ){
+		$.each( removeVisitors, function( key, visitorIndex ) {
 			self._visitors.splice( removeVisitors, 1 );
 		} );
 	};
 
 	/**
 	 * Receiving data from the a visit
-	 * @param data
+	 *
+	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {
+		return false;
 	};
 
 	/**
 	 * Set a formatter in order to replace the default formatter
-	 * @param formatter {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper}
+	 *
+	 * @param {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper} formatter
 	 */
 	SELF.prototype.setFormatter = function( formatter ) {
 		this._formatter = formatter;
 	};
 
-
 	/**
 	 * Get the formatter
+	 *
 	 * @protected
 	 * @return {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper}
 	 */
 	SELF.prototype._getFormatter = function() {
-		if( this._formatter === null ){
+		if ( this._formatter === null ) {
 			this._formatter = new wikibase.queryService.ui.resultBrowser.helper.FormatterHelper();
 		}
 
 		return this._formatter;
 	};
-
 
 	return SELF;
 }( jQuery, wikibase ) );

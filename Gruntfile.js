@@ -1,8 +1,8 @@
 /*jshint node:true */
-module.exports = function ( grunt ) {
+module.exports = function( grunt ) {
 	'use strict';
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-	grunt.loadNpmTasks('grunt-contrib-qunit');
+	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
 
@@ -11,23 +11,17 @@ module.exports = function ( grunt ) {
 			options: {
 				jshintrc: true
 			},
-			all: [
-				'**/*.js',
-			]
+			all: [ '**/*.js' ]
 		},
 		jscs: {
 			src: '<%= jshint.all %>'
 		},
 		jsonlint: {
-			all: [
-				'**/*.json',
-				'!node_modules/**',
-				'!vendor/**'
-			]
+			all: [ '**/*.json', '!node_modules/**', '!vendor/**' ]
 		},
-	    qunit: {
-	        all: ['wikibase/tests/*.html']
-	      }
+		qunit: {
+			all: [ 'wikibase/tests/*.html' ]
+		}
 	} );
 
 	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'qunit' ] );

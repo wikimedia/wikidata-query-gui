@@ -4,13 +4,13 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
 
 wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
-	"use strict";
+	'use strict';
 
 	var FILTER_PREDICATES = {
-			'http://www.w3.org/2000/01/rdf-schema#label': true,
-			'http://schema.org/description': true,
-			'http://www.bigdata.com/queryHints#optimizer': true,
-			'http://www.w3.org/1999/02/22-rdf-syntax-ns#type': true
+		'http://www.w3.org/2000/01/rdf-schema#label': true,
+		'http://schema.org/description': true,
+		'http://www.bigdata.com/queryHints#optimizer': true,
+		'http://www.w3.org/1999/02/22-rdf-syntax-ns#type': true
 	};
 
 	/**
@@ -26,7 +26,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	function SELF( api ) {
 		this._api = api;
 
-		if ( !this._api ){
+		if ( !this._api ) {
 			this._api = new wikibase.queryService.api.Wikibase();
 		}
 	}
@@ -42,7 +42,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._changeListener = null;
-
 
 	/**
 	 * @property {Object}
@@ -76,14 +75,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype.setQuery = function( query ) {
 		var self = this;
 		this._queryComments = [];
-		$.each( query.split('\n'), function( k, v ){
-			if( v.indexOf('#') === 0 ){
+		$.each( query.split( '\n' ), function( k, v ) {
+			if ( v.indexOf( '#' ) === 0 ) {
 				self._queryComments.push( v );
 			}
 		} );
 
 		var parser = new sparqljs.Parser( wikibase.queryService.RdfNamespaces.ALL_PREFIXES );
-		this._query  = parser.parse( query );
+		this._query = parser.parse( query );
 	};
 
 	/**
@@ -93,10 +92,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype.getQuery = function() {
 		try {
-			var q =  new sparqljs.Generator().stringify( this._query );
+			var q = new sparqljs.Generator().stringify( this._query );
 			q = this._queryComments.join( '\n' ) + '\n' + q;
 			return q;
-		} catch (e) {
+		} catch ( e ) {
 			return null;
 		}
 	};
@@ -121,33 +120,30 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		this._changeListener = listener;
 	};
 
-
 	/**
 	 * @private
 	 */
 	SELF.prototype._getHtml = function() {
 		var self = this;
-		var $html = $( '<div>' ),
-			$find = $( '<div>' ).text( 'Find ' ),
-			$show = $( '<div>' ).text( 'Show ' ),
-			$spacer = $('<div>').addClass( 'spacer' );
+		var $html = $( '<div>' ), $find = $( '<div>' ).text( 'Find ' ), $show = $( '<div>' ).text(
+				'Show ' ), $spacer = $( '<div>' ).addClass( 'spacer' );
 
 		$html.append( $find, $spacer, $show );
 
-		$.each( this._triples, function( k, triple ){
-			if( self._isNotRelevant( triple ) ){
+		$.each( this._triples, function( k, triple ) {
+			if ( self._isNotRelevant( triple ) ) {
 				return;
 			}
 
-			if( self._isInShowSection( triple ) ){
-				if( $show.children().length > 0 ){
+			if ( self._isInShowSection( triple ) ) {
+				if ( $show.children().length > 0 ) {
 					$show.append( ', ' );
 				}
 				$show.append( self._getTripleHtml( triple ) );
 				return;
 			}
-			if( $find.children().length > 0 ){
-				if( $find.children().length === 1 ){
+			if ( $find.children().length > 0 ) {
+				if ( $find.children().length === 1 ) {
 					$find.append( ' with ' );
 				} else {
 					$find.append( ' and ' );
@@ -158,12 +154,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		} );
 
 		$find.prepend( '<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ' ' );
-		$show.prepend( '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ' ' );
+		$show
+				.prepend( '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>',
+						' ' );
 
-		if( $find.children().length === 1 ){
+		if ( $find.children().length === 1 ) {
 			$find.append( 'anything' );
 		}
-		if( $show.children().length === 1 ){
+		if ( $show.children().length === 1 ) {
 			$show.remove();
 		}
 
@@ -175,14 +173,12 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._isNotRelevant = function( triple ) {
 
-		if( FILTER_PREDICATES[triple.predicate] ){
+		if ( FILTER_PREDICATES[triple.predicate] ) {
 			return true;
 		}
 
-		if( this._isSimpleMode &&
-			this._query.variables[0] !== '*' &&
-			this._isInShowSection( triple ) &&
-			this._isVariableSelected( triple.object ) ){
+		if ( this._isSimpleMode && this._query.variables[0] !== '*'
+				&& this._isInShowSection( triple ) && this._isVariableSelected( triple.object ) ) {
 			return true;
 		}
 
@@ -195,14 +191,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._isVariableSelected = function( variable ) {
 
 		var isSelected = false;
-		$.each( this._query.variables, function( k, v ){
+		$.each( this._query.variables, function( k, v ) {
 
-			if( v.variable && v.variable === variable ){
+			if ( v.variable && v.variable === variable ) {
 				isSelected = true;
 				return false;
 			}
 
-			if( v === variable ){
+			if ( v === variable ) {
 				isSelected = true;
 				return false;
 			}
@@ -216,9 +212,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._isInShowSection = function( triple ) {
 
-		//Must match ?value wdt:Pxx ?item
-		if( this._isVariable( triple.subject ) &&
-			this._isVariable( triple.object ) ){
+		// Must match ?value wdt:Pxx ?item
+		if ( this._isVariable( triple.subject ) && this._isVariable( triple.object ) ) {
 			return true;
 		}
 
@@ -232,29 +227,27 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var self = this;
 
 		var $triple = $( '<span>' );
-		$.each( triple, function( k, entity ){
+		$.each( triple, function( k, entity ) {
 
-			if( self._isSimpleMode && self._isVariable( entity ) ){
+			if ( self._isSimpleMode && self._isVariable( entity ) ) {
 				return;
 			}
 
-			if( entity.type && entity.type === 'path' ){
-				$triple.append( self._getTripleEntityPathHtml( entity ) , ' ' );
+			if ( entity.type && entity.type === 'path' ) {
+				$triple.append( self._getTripleEntityPathHtml( entity ), ' ' );
 			} else {
-				$triple.append( self._getTripleEntityHtml( entity, triple, k ) , ' ' );
+				$triple.append( self._getTripleEntityHtml( entity, triple, k ), ' ' );
 			}
 		} );
 
 		return $triple;
 	};
 
-
 	/**
 	 * @private
 	 */
 	SELF.prototype._isVariable = function( entity ) {
-		if( typeof entity === 'string' &&
-				entity.startsWith( '?') ){
+		if ( typeof entity === 'string' && entity.startsWith( '?' ) ) {
 			return true;
 		}
 		return false;
@@ -267,16 +260,17 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var boundVariables = {};
 
 		var self = this;
-		$.each( this._triples, function( k, triple ){
-			//Must match ?value wdt:Pxx ?item
-			if( self._isVariable( triple.subject ) &&
-				self._isVariable( triple.object ) === false ){
-				boundVariables[triple.subject] = true;
-			}
+		$.each( this._triples,
+				function( k, triple ) {
+					// Must match ?value wdt:Pxx ?item
+					if ( self._isVariable( triple.subject )
+							&& self._isVariable( triple.object ) === false ) {
+						boundVariables[triple.subject] = true;
+					}
 
-		} );
+				} );
 
-		if( Object.keys( boundVariables ).length > 1 ){
+		if ( Object.keys( boundVariables ).length > 1 ) {
 			return false;
 		}
 
@@ -287,18 +281,17 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getTripleEntityPathHtml = function( path ) {
-		var self = this,
-			$path = $('<span>');
-		$.each( path.items, function( k, v ){
-			if( v.type && v.type === 'path' ){
+		var self = this, $path = $( '<span>' );
+		$.each( path.items, function( k, v ) {
+			if ( v.type && v.type === 'path' ) {
 				$path.append( self._getTripleEntityPathHtml( v ) );
 				return;
 			}
 
-			if( k > 0 && path.pathType === '/' ){
+			if ( k > 0 && path.pathType === '/' ) {
 				$path.append( ' or subtype ' );
 			}
-			if( path.pathType === '*' ){
+			if ( path.pathType === '*' ) {
 				$path.append( ' any ' );
 			}
 
@@ -316,31 +309,32 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var $label = $( '<span>' );
 
 		var self = this;
-		this._getLabel( entity ).done( function( label, id, description, type ){
+		this._getLabel( entity ).done( function( label, id, description, type ) {
 			var $link = $( '<a>' ).attr( 'href', '#' );
-			$link.text( label  );
-			$link.attr( 'data-type',  type );
+			$link.text( label );
+			$link.attr( 'data-type', type );
 			$link.attr( 'data-id', id );
 			$link.appendTo( $label );
 
-			$label.tooltip( { 'title': '('+ id + ') ' + description } );
-			$( $label ).on('show.bs.tooltip', function() {
-			   if( $('.tooltip').is(":visible") ){
-				   $('.tooltip').not( this ).hide();
-			   }
-			});
-
-			self._valuleChanger( $link ).done( function( selectedId ){
-				var newEntity = entity.replace(new RegExp( id + '$'), '') + selectedId;//TODO: technical debt
-
-				$label.replaceWith( self._getTripleEntityHtml( newEntity , triple, key ) );
-				triple[key] = newEntity;
-
-				if( self._changeListener ){
-					self._changeListener( self );
+			$label.tooltip( {
+				'title': '(' + id + ') ' + description
+			} );
+			$( $label ).on( 'show.bs.tooltip', function() {
+				if ( $( '.tooltip' ).is( ':visible' ) ) {
+					$( '.tooltip' ).not( this ).hide();
 				}
 			} );
 
+			self._valuleChanger( $link ).done( function( selectedId ) {
+				var newEntity = entity.replace( new RegExp( id + '$' ), '' ) + selectedId;// TODO: technical debt
+
+				$label.replaceWith( self._getTripleEntityHtml( newEntity, triple, key ) );
+				triple[key] = newEntity;
+
+				if ( self._changeListener ) {
+					self._changeListener( self );
+				}
+			} );
 
 		} ).fail( function() {
 			$label.text( entity );
@@ -353,26 +347,26 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._extractTriples = function( object ) {
-		if( !object ){
+		if ( !object ) {
 			object = this._query.where;
 			this._triples = [];
 		}
 
 		var self = this;
-		$.each( object, function( key, value ){
+		$.each( object, function( key, value ) {
 
-			if( value.triples && value.type && value.type === 'bgp' ){
+			if ( value.triples && value.type && value.type === 'bgp' ) {
 
-				$.each( value.triples, function( k, triple){
+				$.each( value.triples, function( k, triple ) {
 					self._triples.push( triple );
 				} );
 			}
 
-			if( value.type && value.type === 'service' ){
+			if ( value.type && value.type === 'service' ) {
 				return;
 			}
 
-			if( typeof value === 'object' ){
+			if ( typeof value === 'object' ) {
 				self._extractTriples( value );
 			}
 		} );
@@ -385,25 +379,27 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._getLabel = function( url ) {
 		var deferred = $.Deferred();
 
-		var entity = url.match(/(Q|P)([0-9]+)/);//TODO: make use of Rdf namespaces
-		if( !entity ){
+		var entity = url.match( /(Q|P)([0-9]+)/ );// TODO: make use of Rdf namespaces
+		if ( !entity ) {
 			return deferred.reject().promise();
 		}
 
-		var type = { P:'property', Q:'item' };
+		var type = {
+			P: 'property',
+			Q: 'item'
+		};
 		type = type[entity[1]];
 		var term = entity[0];
 
-		this._api.searchEntities( term, type ).done( function ( data ) {
-			$.each( data.search, function ( key, value ) {
-					deferred.resolve( value.label, value.id, value.description, type );
-					return false;
+		this._api.searchEntities( term, type ).done( function( data ) {
+			$.each( data.search, function( key, value ) {
+				deferred.resolve( value.label, value.id, value.description, type );
+				return false;
 			} );
 		} );
 
 		return deferred.promise();
 	};
-
 
 	/**
 	 * @private
@@ -411,11 +407,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._valuleChanger = function( $element ) {
 		var deferred = $.Deferred();
 
-		//TODO Use only one instance and make that instance injectable
+		// TODO Use only one instance and make that instance injectable
 		var $selector = new wikibase.queryService.ui.visualEditor.SelectorBox( $element, this._api );
 
-		$selector.setEntitySearchEndpoint( this._entitySearchEndpoint );
-		$selector.setChangeListener( function( id ){
+		$selector.setChangeListener( function( id ) {
 			deferred.resolve( id );
 		} );
 

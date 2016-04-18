@@ -31,7 +31,7 @@
 		//"checkReturnTypes": true,
 		"checkRedundantReturns": true,
 		"requireReturnTypes": true,
-		"checkTypes": "strictNativeCase",
+		//"checkTypes": "strictNativeCase",
 		"checkRedundantAccess": true,
 		"requireNewlineAfterDescription": true
 	},
@@ -56,6 +56,10 @@
 		"typeof"
 	],
 
-	// TODO ** disable jscs
-	"excludeFiles": [ "node_modules/**", "vendor/**", "wikibase/codemirror/addon/**", "**" ]
+	//TODO: Fix the this rules
+	"requireLineBreakAfterVariableAssignment": false,
+	"disallowQuotedKeysInObjects": false,
+	"requireSpaceAfterLineComment": false,
+
+	"excludeFiles": [ "node_modules/**", "vendor/**", "wikibase/codemirror/addon/**", "wikibase/tests/**"]
 }
