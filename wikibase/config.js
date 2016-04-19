@@ -13,7 +13,7 @@ var CONFIG = ( function ( window, $ ) {
 		}
 	};
 
-	var configLocal = $.extend( true, configDeploy, {
+	var configLocal = $.extend( true, {}, configDeploy, {
 		api: {
 			sparql: {
 				uri: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql'
