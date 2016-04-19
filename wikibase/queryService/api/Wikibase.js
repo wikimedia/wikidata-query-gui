@@ -16,6 +16,13 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		uselang: LANGUAGE
 	};
 
+	var QUERY_LANGUGES = {
+		action: 'query',
+		meta: 'siteinfo',
+		format: 'json',
+		siprop: 'languages'
+	};
+
 	/**
 	 * API for the Wikibase API
 	 *
@@ -41,6 +48,12 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	SELF.prototype._endpoint = null;
 
 	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._language = null;
+
+	/**
 	 * Search an entity with using wbsearchentities
 	 *
 	 * @param {string} term search string
@@ -56,15 +69,40 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		if ( type ) {
 			query.type = type;
 		}
-
-		if ( language ) {
-			query.type = type;
+		if ( this._language || language ) {
+			query.language = language ? language : this._language;
+			query.uselang = language ? language : this._language;
 		}
 
+		return this._query( query );
+	};
+
+	/**
+	 * List of supported languages
+	 *
+	 * @return {jQuery.Promise}
+	 */
+	SELF.prototype.getLanguages = function() {
+		return this._query( QUERY_LANGUGES );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._query = function( query ) {
 		return $.ajax( {
 			url: this._endpoint + '?' + jQuery.param( query ),
 			dataType: 'jsonp'
 		} );
+	};
+
+	/**
+	 * Set the default language
+	 *
+	 * @param {string} language of search string default:en
+	 */
+	SELF.prototype.setLanguage = function( language ) {
+		this._language = language;
 	};
 
 	return SELF;

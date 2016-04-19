@@ -3,6 +3,7 @@ var CONFIG = ( function ( window, $ ) {
 	'use strict';
 
 	var configDeploy = {
+		language: 'en',
 		api: {
 			sparql: {
 				uri: '/bigdata/namespace/wdq/sparql'
