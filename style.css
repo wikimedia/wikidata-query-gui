@@ -169,7 +169,7 @@ iframe.shortUrl {
 	float: left;
 }
 /* change navbar breakpoint */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .navbar-header {
         float: none;
     }
@@ -333,7 +333,7 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 
 
 /*
-Treemap
+	Treemap
 */
 #query-result .labelbody {
 	background: transparent;
@@ -342,7 +342,7 @@ Treemap
 }
 
 /*
-Visual Editor
+	Visual Editor
 */
 .visual-editor-trigger {
 	display: none;
@@ -378,4 +378,13 @@ Visual Editor
 
 .visual-editor .spacer {
 	min-height: 0.5em;
+}
+
+/*
+	ULS
+*/
+
+.nav .uls-trigger  {
+	display: none;
+	padding-left: 30px;
 }
