@@ -18,6 +18,11 @@
 	<link rel="stylesheet" href="vendor/leaflet/addon/fullscreen/leaflet.fullscreen.css">
 	<link rel="stylesheet" href="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.css">
 	<link rel="stylesheet" href="vendor/select2/dist/css/select2.min.css">
+	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.css">
+	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.grid.css">
+	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.lcd.css">
+	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.mobile.css">
+
 	<link rel="stylesheet" href="style.css">
 
 	<link rel="shortcut icon" href="//www.wikidata.org/static/favicon/testwikidata.ico">
@@ -71,6 +76,11 @@
 								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format">RDF Data Model</a></li>
 								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Full_list_of_prefixes">List of prefixes</a></li>
 							</ul></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#" class="uls-trigger" title="Sorry, at the moment we only have rudimentary arbitrary language support!" data-toggle="tooltip"></a>
+						</li>					
 					</ul>
 				</div>
 			</nav>
@@ -209,8 +219,15 @@
 	<script src="vendor/select2/dist/js/select2.min.js"></script>
 	<script src="vendor/js-cookie/js.cookie.js"></script>
 
+	<script src="vendor/jquery.uls/src/jquery.uls.data.js"></script>
+	<script src="vendor/jquery.uls/src/jquery.uls.data.utils.js"></script>
+	<script src="vendor/jquery.uls/src/jquery.uls.lcd.js"></script>
+	<script src="vendor/jquery.uls/src/jquery.uls.languagefilter.js"></script>
+	<script src="vendor/jquery.uls/src/jquery.uls.regionfilter.js"></script>
+	<script src="vendor/jquery.uls/src/jquery.uls.core.js"></script>
 
 	<script src="wikibase/queryService/ui/App.js"></script>
+	<script src="wikibase/queryService/ui/i18n/LanguageSelector.js"></script>
 	<script src="wikibase/queryService/ui/editor/hint/Sparql.js"></script>
 	<script src="wikibase/queryService/ui/editor/hint/Rdf.js"></script>
 	<script src="wikibase/queryService/ui/editor/tooltip/Rdf.js"></script>
