@@ -41,6 +41,7 @@
 		"CONFIG": true,
 		"d3": false,
 		"sparqljs": false,
-		"_": false
+		"_": false,
+		"Cookies": false
 	}
 }

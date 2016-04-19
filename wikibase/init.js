@@ -2,7 +2,11 @@
 	'use strict';
 
 	$( document ).ready( function () {
+		var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language;
+
 		var wikibaseApi = new wikibase.queryService.api.Wikibase( config.api.wikibase.uri );
+		wikibaseApi.setLanguage( lang );
+
 		var rdfHint = new wikibase.queryService.ui.editor.hint.Rdf( wikibaseApi );
 		var rdfTooltip = new wikibase.queryService.ui.editor.tooltip.Rdf( wikibaseApi );
 
