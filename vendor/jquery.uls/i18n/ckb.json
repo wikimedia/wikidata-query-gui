@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Calak",
+			"Asoxor"
+		]
+	},
+	"uls-select-language": "زمان ھەڵبژێرە",
+	"uls-region-WW": "لە گشت جیھاندا",
+	"uls-region-SP": "تایبەت",
+	"uls-region-AM": "ئەمریکا",
+	"uls-region-AF": "ئەفریقا",
+	"uls-region-EU": "ئەورووپا",
+	"uls-region-AS": "ئاسیا",
+	"uls-region-ME": "ڕۆژھەڵاتی ناوین",
+	"uls-region-PA": "ئۆقیانووسی ئارام",
+	"uls-no-results-found": "ھیچ ئاکامێک نەدۆزرایەوە",
+	"uls-common-languages": "زمانە ھاوبەشەکان",
+	"uls-no-results-suggestion-title": "ڕەنگە ئەمانەت پێ خۆش بێت:",
+	"uls-search-help": "دەتوانیت بە پێی ناوی زمان، جۆری ئەلفوبێ، کۆدی ISOی زمان یان بە پێی ناوچە بگەڕێی.",
+	"uls-search-placeholder": "گەڕانی زمان"
+}

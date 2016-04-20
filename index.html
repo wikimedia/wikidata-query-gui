@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,19 +44,18 @@
 				<div class="collapse navbar-collapse" id="header-navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li>
-							<button type="button" class="btn btn navbar-btn" data-toggle="modal" data-target="#QueryExamples">
-								Examples
+							<button type="button" class="btn btn navbar-btn" data-toggle="modal" data-target="#QueryExamples" data-i18n="wdqs-app-button-examples">
 							</button>
 						</li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>Prefixes<span class="caret"></span></a>
+							<span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span><span data-i18n="wdqs-app-button-prefixes"></span><span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><div class="namespace-shortcuts"></div></li>
 								<li role="separator" class="divider"></li>
 								<li><a class="addPrefixes">Add Standard Prefixes</a></li>
 							</ul></li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Tools<span class="caret"></span></a>
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span data-i18n="wdqs-app-button-tools"></span><span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a target="_blank" href="https://tools.wmflabs.org/hay/propbrowse/">Properties Browser</a></li>
 								<li><a target="_blank" href="https://tools.wmflabs.org/wikidata-exports/miga/">Classes and Properties</a></li>
@@ -66,7 +65,7 @@
 								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual#SPARQL_endpoint">SPARQL REST Endpoint</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>Help<span class="caret"></span></a>
+							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="wdqs-app-button-help"></span><span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a target="_blank" href="https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new">Give Feedback!</a></li>
 								<li role="separator" class="divider"></li>
@@ -94,20 +93,23 @@
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
-								<button type="submit" class="btn btn-info" id="execute-button" title="Execute query (<CTRL> + <ENTER>)" value="Execute">
-									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> Execute
+								<button type="submit" class="btn btn-info" id="execute-button" title="Execute query (<CTRL> + <ENTER>)">
+									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run"></span>
 								</button>
-								<input class="btn btn-default" type="reset" id="clear-button" value="Clear"> <span class="query-total">
+								<button type="button" class="btn btn-default" id="clear-button">
+									<span data-i18n="wdqs-app-button-clear"></span>
+								</button>
+								<span class="query-total">
 								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
 							</div>
 						</div>
 						<ul class="nav navbar-nav navbar-right query-total">
-							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Display<span class="caret"></span>
+							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span data-i18n="wdqs-app-button-display"></span><span class="caret"></span>
 							</a>
 								<ul id="result-browser-menu" class="dropdown-menu" role="menu">
 								</ul></li>
 							<li>
-							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>Download<span class="caret"></span>
+							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span data-i18n="wdqs-app-button-download"></span><span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a id="downloadJSON" href="#">JSON</a></li>
@@ -120,7 +122,7 @@
 							</ul></li>
 							<li>
 							<a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-								    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>Link<span class="caret"></span>
+								    <span class="glyphicon glyphicon-link" aria-hidden="true"></span><span data-i18n="wdqs-app-button-link"></span><span class="caret"></span>
 								  </a>
 								  <ul class="dropdown-menu">
 									<li><a href="#" class="shortUrlTrigger result" target="_blank" title="Short URL to this query" data-toggle="popover">Short URL</a></li>
@@ -232,6 +234,12 @@
 	<script src="vendor/jquery.uls/src/jquery.uls.languagefilter.js"></script>
 	<script src="vendor/jquery.uls/src/jquery.uls.regionfilter.js"></script>
 	<script src="vendor/jquery.uls/src/jquery.uls.core.js"></script>
+	<script src="vendor/jquery.i18n/jquery.i18n.js"></script>
+	<script src="vendor/jquery.i18n/jquery.i18n.messagestore.js"></script>
+	<script src="vendor/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+	<script src="vendor/jquery.i18n/jquery.i18n.parser.js"></script>
+	<script src="vendor/jquery.i18n/jquery.i18n.emitter.js"></script>
+	<script src="vendor/jquery.i18n/jquery.i18n.language.js"></script>
 
 	<script src="wikibase/queryService/ui/App.js"></script>
 	<script src="wikibase/queryService/ui/i18n/LanguageSelector.js"></script>
