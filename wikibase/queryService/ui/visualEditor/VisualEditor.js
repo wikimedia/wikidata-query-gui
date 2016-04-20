@@ -13,6 +13,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		'http://www.w3.org/1999/02/22-rdf-syntax-ns#type': true
 	};
 
+	var I18N_PREFIX = 'wdqs-ve-';
+
 	/**
 	 * A visual SPARQL editor for the Wikibase query service
 	 *
@@ -66,6 +68,21 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._isSimpleMode = false;
+
+	/**
+	 * @property {Object}
+	 * @private
+	 */
+	SELF.prototype._labels = {
+		find: 'Find',
+		show: 'Show',
+		anything: 'anything',
+		'with': 'with',
+		and: 'and',
+		any: 'any',
+		or: 'or',
+		subtype: 'subtype'
+	};
 
 	/**
 	 * Set the SPARQL query string
@@ -123,10 +140,22 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
+	SELF.prototype._i18n = function( key ) {
+
+		if ( !$.i18n ) {
+			return this._labels[ key ];
+		}
+
+		return $.i18n( I18N_PREFIX + key );
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._getHtml = function() {
 		var self = this;
-		var $html = $( '<div>' ), $find = $( '<div>' ).text( 'Find ' ), $show = $( '<div>' ).text(
-				'Show ' ), $spacer = $( '<div>' ).addClass( 'spacer' );
+		var $html = $( '<div>' ), $find = $( '<div>' ).text( this._i18n( 'find' ) + ' ' ),
+			$show = $( '<div>' ).text( this._i18n( 'show' ) + ' ' ), $spacer = $( '<div>' ).addClass( 'spacer' );
 
 		$html.append( $find, $spacer, $show );
 
@@ -144,9 +173,9 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			}
 			if ( $find.children().length > 0 ) {
 				if ( $find.children().length === 1 ) {
-					$find.append( ' with ' );
+					$find.append( ' ' + self._i18n( 'with' ) + ' ' );
 				} else {
-					$find.append( ' and ' );
+					$find.append( ' ' + self._i18n( 'and' ) + ' ' );
 				}
 			}
 			$find.append( self._getTripleHtml( triple ) );
@@ -159,7 +188,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 						' ' );
 
 		if ( $find.children().length === 1 ) {
-			$find.append( 'anything' );
+			$find.append( ' ' + this._i18n( 'anything' ) + ' ' );
 		}
 		if ( $show.children().length === 1 ) {
 			$show.remove();
@@ -177,8 +206,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			return true;
 		}
 
-		if ( this._isSimpleMode && this._query.variables[0] !== '*'
-				&& this._isInShowSection( triple ) && this._isVariableSelected( triple.object ) ) {
+		if ( this._isSimpleMode && this._query.variables[0] !== '*' &&
+				this._isInShowSection( triple ) && this._isVariableSelected( triple.object ) ) {
 			return true;
 		}
 
@@ -263,8 +292,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		$.each( this._triples,
 				function( k, triple ) {
 					// Must match ?value wdt:Pxx ?item
-					if ( self._isVariable( triple.subject )
-							&& self._isVariable( triple.object ) === false ) {
+					if ( self._isVariable( triple.subject ) &&
+							self._isVariable( triple.object ) === false ) {
 						boundVariables[triple.subject] = true;
 					}
 
@@ -289,10 +318,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			}
 
 			if ( k > 0 && path.pathType === '/' ) {
-				$path.append( ' or subtype ' );
+				$path.append( ' ' + this._i18n( 'or' ) + ' ' + this._i18n( 'subtype' ) + ' ' );
 			}
 			if ( path.pathType === '*' ) {
-				$path.append( ' any ' );
+				$path.append( ' ' + this._i18n( 'any' ) + ' ' );
 			}
 
 			$path.append( self._getTripleEntityHtml( v, path.items, k ) );

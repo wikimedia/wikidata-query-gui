@@ -1,6 +1,7 @@
-/*jshint node:true */
+/* jshint node:true */
 module.exports = function( grunt ) {
 	'use strict';
+	grunt.loadNpmTasks( 'grunt-banana-checker' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
@@ -11,19 +12,30 @@ module.exports = function( grunt ) {
 			options: {
 				jshintrc: true
 			},
-			all: [ '**/*.js' ]
+			all: [
+				'**/*.js'
+			]
 		},
 		jscs: {
 			src: '<%= jshint.all %>'
 		},
 		jsonlint: {
-			all: [ '**/*.json', '!node_modules/**', '!vendor/**' ]
+			all: [
+					'**/*.json', '!node_modules/**', '!vendor/**'
+			]
 		},
 		qunit: {
-			all: [ 'wikibase/tests/*.html' ]
+			all: [
+				'wikibase/tests/*.html'
+			]
+		},
+		banana: {
+			all: 'i18n/'
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jscs', 'jsonlint', 'qunit' ] );
+	grunt.registerTask( 'test', [
+			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
+	] );
 	grunt.registerTask( 'default', 'test' );
 };
