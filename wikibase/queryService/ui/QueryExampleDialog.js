@@ -1,22 +1,22 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-window.mediaWiki = window.mediaWiki || {};
 
 wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
-	"use strict";
+	'use strict';
 
 	/**
 	 * A ui dialog for selecting a query example
 	 *
 	 * @class wikibase.queryService.ui.App
-	 * @licence GNU GPL v2+
+	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
 	 *
 	 * @param {jQuery} $element
-	 * @param {ikibase.queryService.api.QuerySamples}
+	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
+	 * @param {Function} callback that is called when selecting an example
 	 */
 	function SELF( $element, querySamplesApi, callback ) {
 
@@ -28,31 +28,30 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	}
 
 	/**
-	 * @property {wikibase.queryService.api.QuerySamplesApi}
+	 * @property {wikibase.queryService.api.QuerySamples}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._querySamplesApi = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._callback = null;
 
 	/**
-	 * @property {function}
+	 * @property {Function}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._examples = null;
 
 	/**
 	 * Initialize private members and call delegate to specific init methods
+	 *
 	 * @private
-	 **/
+	 */
 	SELF.prototype._init = function() {
-		var self = this;
-
-		if( !this._querySamplesApi ){
+		if ( !this._querySamplesApi ) {
 			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
 		}
 
@@ -62,48 +61,48 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._initFilter = function() {
 		var self = this;
 
-		this._$element.find( '.tableFilter' ).keyup( $.proxy( this._filterTable, this ));
+		this._$element.find( '.tableFilter' ).keyup( $.proxy( this._filterTable, this ) );
 
-		//tags
-		this._$element.find( '.tagFilter' ).tags({
+		// tags
+		this._$element.find( '.tagFilter' ).tags( {
 			afterAddingTag: $.proxy( this._filterTable, this ),
-			afterDeletingTag: function(){
+			afterDeletingTag: function() {
 				self._filterTable();
 				self._drawTagCloud();
 			}
-		});
+		} );
 
 	};
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._initExamples = function() {
 		var self = this;
 
-		this._querySamplesApi.getExamples().done( function( examples ){
+		this._querySamplesApi.getExamples().done( function( examples ) {
 			self._examples = examples;
 			self._initTagCloud();
 
 			$.each( examples, function( key, example ) {
 				self._addExample( example.title, example.query, example.href, example.tags );
-			});
+			} );
 
 		} );
 	};
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._initTagCloud = function() {
 		var self = this;
 
-		var interval = window.setInterval(function(){
-			if( self._$element.is( ':visible') ){
+		var interval = window.setInterval( function() {
+			if ( self._$element.is( ':visible' ) ) {
 				self._drawTagCloud();
 				clearInterval( interval );
 			}
@@ -114,49 +113,52 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._drawTagCloud = function() {
 		var self = this;
 
-
 		var jQCloudTags = [];
 		$.each( this._getCloudTags(), function( tag, weight ) {
-			jQCloudTags.push( { text: tag, weight: weight,
+			jQCloudTags.push( {
+				text: tag,
+				weight: weight,
 				link: '#',
-				html: {title: weight + " match(es)"} } );
-		});
+				html: {
+					title: weight + ' match(es)'
+				}
+			} );
+		} );
 
-		$(".tagCloud").empty();
-		$(".tagCloud").jQCloud(jQCloudTags, {
+		$( '.tagCloud' ).empty();
+		$( '.tagCloud' ).jQCloud( jQCloudTags, {
 			delayedMode: true,
-			afterCloudRender: function( e ){
-			$(".tagCloud").find('a').click( function( e ){
-				e.preventDefault();
-				self._$element.find( '.tagFilter' ).tags().addTag( $(this).text() );
-				self._drawTagCloud();
-				return false;
-			});
-		}});
+			afterCloudRender: function( e ) {
+				$( '.tagCloud' ).find( 'a' ).click( function( e ) {
+					e.preventDefault();
+					self._$element.find( '.tagFilter' ).tags().addTag( $( this ).text() );
+					self._drawTagCloud();
+					return false;
+				} );
+			}
+		} );
 
 	};
 
-
 	/**
 	 * @private
-	 **/
-	SELF.prototype._getCloudTags= function() {
+	 */
+	SELF.prototype._getCloudTags = function() {
 		var self = this;
 
-		//filter tags that don't effect the filter for examples
-		var tagsFilter = function( tags ){
-			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags(),
-			matches = true;
-			if( selectedTags.length === 0 ){
+		// filter tags that don't effect the filter for examples
+		var tagsFilter = function( tags ) {
+			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags(), matches = true;
+			if ( selectedTags.length === 0 ) {
 				return true;
 			}
 
-			$.each( selectedTags, function (key, selectedTag){
-				if( tags.indexOf( selectedTag ) === -1 ){
+			$.each( selectedTags, function( key, selectedTag ) {
+				if ( tags.indexOf( selectedTag ) === -1 ) {
 					matches = false;
 				}
 			} );
@@ -164,11 +166,11 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			return matches;
 		};
 
-		//filter selected tags from tag cloud
-		var tagFilter = function( tag ){
+		// filter selected tags from tag cloud
+		var tagFilter = function( tag ) {
 			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags();
-			if( selectedTags.indexOf( tag ) === -1 ){
-				return  false;
+			if ( selectedTags.indexOf( tag ) === -1 ) {
+				return false;
 			}
 
 			return true;
@@ -177,48 +179,50 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var tagCloud = {};
 		$.each( self._examples, function( key, example ) {
 
-			if( !tagsFilter( example.tags ) ){
+			if ( !tagsFilter( example.tags ) ) {
 				return;
 			}
 
 			$.each( example.tags, function( key, tag ) {
 
-				if( tagFilter( tag ) ){
+				if ( tagFilter( tag ) ) {
 					return;
 				}
 
-				if( !tagCloud[tag] ){
+				if ( !tagCloud[tag] ) {
 					tagCloud[tag] = 1;
-				}else{
+				} else {
 					tagCloud[tag]++;
 				}
-			});
-		});
+			} );
+		} );
 
 		return tagCloud;
 	};
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._addExample = function( title, query, href, tags ) {
 		var self = this;
 
-		var link = $( '<a title="Select this query" data-dismiss="modal">' ).text(title).attr( 'href', '#' ).click( function(){
-			self._callback( query );
-			} ),
-			tags = $( '<td/>' ).text( tags.join( '|' ) ).hide(),
-			edit = $( '<a title="Edit this Query">' ).attr( 'href', href ).attr( 'target', '_blank' )
-						.append( '<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>' ),
-			preview = $( '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>' ).popover({
-				placement: 'bottom',
-				trigger: 'hover',
-				container: 'body',
-		        title: 'Preview',
-		        content: $( '<pre/>' ).text( query ),
-		        html: true
-		    });
+		var link = $( '<a title="Select this query" data-dismiss="modal">' ).text( title ).attr(
+				'href', '#' ).click( function() {
+			self._callback( query, title );
+		} ), edit = $( '<a title="Edit this Query">' ).attr( 'href', href ).attr( 'target',
+				'_blank' ).append(
+				'<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>' ), preview = $(
+				'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>' ).popover(
+				{
+					placement: 'bottom',
+					trigger: 'hover',
+					container: 'body',
+					title: 'Preview',
+					content: $( '<pre/>' ).text( query ),
+					html: true
+				} );
 
+		tags = $( '<td/>' ).text( tags.join( '|' ) ).hide();
 		var example = $( '<tr/>' );
 		example.append( $( '<td/>' ).append( link ) );
 		example.append( $( '<td/>' ).append( preview ) );
@@ -228,35 +232,33 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		this._$element.find( '.searchable' ).append( example );
 	};
 
-
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._filterTable = function() {
 
-		var filter = this._$element.find( '.tableFilter' ),
-			filterRegex = new RegExp( filter.val(), 'i');
+		var filter = this._$element.find( '.tableFilter' ), filterRegex = new RegExp( filter.val(),
+				'i' );
 
 		var tags = this._$element.find( '.tagFilter' ).tags().getTags();
 
-		var tagFilter = function( text ){
+		var tagFilter = function( text ) {
 			var matches = true;
 			text = text.toLowerCase();
 
-			$.each( tags, function( key, tag ){
-				if( text.indexOf( tag.toLowerCase() ) === -1 ){
+			$.each( tags, function( key, tag ) {
+				if ( text.indexOf( tag.toLowerCase() ) === -1 ) {
 					matches = false;
 				}
-			});
+			} );
 
 			return matches;
-		}
+		};
 
-        this._$element.find( '.searchable tr' ).hide();
-        this._$element.find( '.searchable tr' ).filter( function () {
-            return filterRegex.test( $(this).text() )
-            		&& tagFilter( $(this).text() );
-        }).show();
+		this._$element.find( '.searchable tr' ).hide();
+		this._$element.find( '.searchable tr' ).filter( function() {
+			return filterRegex.test( $( this ).text() ) && tagFilter( $( this ).text() );
+		} ).show();
 
 	};
 
