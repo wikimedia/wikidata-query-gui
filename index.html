@@ -6,27 +6,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<title>Wikidata Query Service (Beta)</title>
 
+    <!-- build:css css/style.min.css -->
+	<link rel="stylesheet" href="vendor/select2/dist/css/select2.css">
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="vendor/jqcloud/jqcloud.css">
 	<link rel="stylesheet" href="vendor/bootstrap-tags/css/bootstrap-tags.css">
 	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css">
+	<link rel="stylesheet" href="vendor/jqcloud/jqcloud.css">
 	<link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="vendor/codemirror/addon/hint/show-hint.css">
 	<link rel="stylesheet" href="vendor/lightbox/ekko-lightbox.min.css">
-	<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-	<link rel="stylesheet" href="vendor/leaflet/addon/fullscreen/leaflet.fullscreen.css">
-	<link rel="stylesheet" href="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.css">
-	<link rel="stylesheet" href="vendor/select2/dist/css/select2.min.css">
+	<link rel="stylesheet" href="style.css">
+ 	<!-- endbuild -->
 	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.css">
 	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.grid.css">
 	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.lcd.css">
 	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.mobile.css">
-
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+	<link rel="stylesheet" href="vendor/leaflet/addon/fullscreen/leaflet.fullscreen.css">
+	<link rel="stylesheet" href="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.css">
 
 	<link rel="shortcut icon" href="//www.wikidata.org/static/favicon/testwikidata.ico">
+	<!-- build:js js/shim.min.js -->
 	<script src="vendor/es6-shim/es6-shim.min.js"></script>
+ 	<!-- endbuild -->
 </head>
 <body>
 	<div class="wikibase-queryservice container-fluid">
@@ -196,10 +199,11 @@
 	<script>L_PREFER_CANVAS = true;</script>
 
 	<!-- JS files -->
+	<!-- build:js js/vendor.min.js -->
 	<script src="mediawiki.js"></script>
 
 	<script src="vendor/jquery/jquery-1.12.0.min.js"></script>
-	<script src="vendor/underscore/underscore-min.js"></script>
+	<script src="vendor/underscore/underscore.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
 	<script src="vendor/codemirror/lib/codemirror.js"></script>
@@ -224,7 +228,6 @@
 	<script src="vendor/d3/d3.min.js"></script>
 	<script src="vendor/select2/dist/js/select2.min.js"></script>
 	<script src="vendor/js-cookie/js.cookie.js"></script>
-
 	<script src="vendor/jquery.uls/src/jquery.uls.data.js"></script>
 	<script src="vendor/jquery.uls/src/jquery.uls.data.utils.js"></script>
 	<script src="vendor/jquery.uls/src/jquery.uls.lcd.js"></script>
@@ -237,7 +240,9 @@
 	<script src="vendor/jquery.i18n/jquery.i18n.parser.js"></script>
 	<script src="vendor/jquery.i18n/jquery.i18n.emitter.js"></script>
 	<script src="vendor/jquery.i18n/jquery.i18n.language.js"></script>
+	<!-- endbuild -->
 
+	<!-- build:js js/wdqs.min.js -->
 	<script src="wikibase/queryService/ui/App.js"></script>
 	<script src="wikibase/queryService/ui/i18n/LanguageSelector.js"></script>
 	<script src="wikibase/queryService/ui/editor/hint/Sparql.js"></script>
@@ -262,5 +267,6 @@
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
 	<script src="wikibase/config.js"></script>
 	<script src="wikibase/init.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

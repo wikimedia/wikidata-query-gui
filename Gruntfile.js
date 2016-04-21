@@ -6,14 +6,24 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
+	grunt.loadNpmTasks( 'grunt-usemin' );
+	grunt.loadNpmTasks( 'grunt-filerev' );
+	grunt.loadNpmTasks( 'grunt-contrib-clean' );
+	grunt.loadNpmTasks( 'grunt-contrib-concat' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+
+	var pkg = grunt.file.readJSON( 'package.json' );
 
 	grunt.initConfig( {
+		pkg: pkg,
 		jshint: {
 			options: {
 				jshintrc: true
 			},
 			all: [
-				'**/*.js'
+					'**/*.js', '!dist/**'
 			]
 		},
 		jscs: {
@@ -21,7 +31,7 @@ module.exports = function( grunt ) {
 		},
 		jsonlint: {
 			all: [
-					'**/*.json', '!node_modules/**', '!vendor/**'
+					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**'
 			]
 		},
 		qunit: {
@@ -31,11 +41,85 @@ module.exports = function( grunt ) {
 		},
 		banana: {
 			all: 'i18n/'
+		},
+		clean: {
+			release: [
+				'dist'
+			]
+		},
+		useminPrepare: {
+			html: 'index.html',
+			options: {
+				dest: 'dist'
+			}
+		},
+		concat: {
+			options: {
+				separator: ';'
+			},
+			dist: {}
+		},
+		uglify: {
+			options: {},
+			dist: {}
+		},
+		copy: {
+			release: {
+				files: [
+						{
+							expand: true,
+							flatten: true,
+							src: [
+								'vendor/bootstrap/fonts/*'
+							],
+							dest: 'dist/fonts/',
+							filter: 'isFile'
+						},
+						{
+							expand: true,
+							cwd: './',
+							src: [
+									'vendor/leaflet/**', 'i18n/**', 'vendor/jquery.uls/**',
+									'*.html', 'logo.png', 'robots.txt'
+							],
+							dest: 'dist'
+						}
+				]
+			}
+		},
+		cssmin: {
+			options: {
+				debug: true
+			}
+		},
+		filerev: {
+			options: {
+				encoding: 'utf8',
+				algorithm: 'md5',
+				length: 20
+			},
+			release: {
+				files: [
+					{
+						src: [
+								'dist/js/*.js', 'dist/css/*.css'
+						]
+					}
+				]
+			}
+		},
+		usemin: {
+			html: [
+				'dist/index.html'
+			]
 		}
 	} );
 
 	grunt.registerTask( 'test', [
 			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
+	] );
+	grunt.registerTask( 'build', [
+			'clean', 'copy', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'filerev', 'usemin'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };
