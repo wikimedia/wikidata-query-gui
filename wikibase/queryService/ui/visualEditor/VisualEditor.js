@@ -318,10 +318,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			}
 
 			if ( k > 0 && path.pathType === '/' ) {
-				$path.append( ' ' + this._i18n( 'or' ) + ' ' + this._i18n( 'subtype' ) + ' ' );
+				$path.append( ' ' + self._i18n( 'or' ) + ' ' + self._i18n( 'subtype' ) + ' ' );
 			}
 			if ( path.pathType === '*' ) {
-				$path.append( ' ' + this._i18n( 'any' ) + ' ' );
+				$path.append( ' ' + self._i18n( 'any' ) + ' ' );
 			}
 
 			$path.append( self._getTripleEntityHtml( v, path.items, k ) );
