@@ -11,17 +11,19 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
 	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/';
 
-	var NUMBER_TYPES = [ 'http://www.w3.org/2001/XMLSchema#double',
-			'http://www.w3.org/2001/XMLSchema#float', 'http://www.w3.org/2001/XMLSchema#decimal',
-			'http://www.w3.org/2001/XMLSchema#integer', 'http://www.w3.org/2001/XMLSchema#long',
-			'http://www.w3.org/2001/XMLSchema#int', 'http://www.w3.org/2001/XMLSchema#short',
+	var NUMBER_TYPES = [
+			'http://www.w3.org/2001/XMLSchema#double', 'http://www.w3.org/2001/XMLSchema#float',
+			'http://www.w3.org/2001/XMLSchema#decimal', 'http://www.w3.org/2001/XMLSchema#integer',
+			'http://www.w3.org/2001/XMLSchema#long', 'http://www.w3.org/2001/XMLSchema#int',
+			'http://www.w3.org/2001/XMLSchema#short',
 			'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
 			'http://www.w3.org/2001/XMLSchema#positiveInteger',
 			'http://www.w3.org/2001/XMLSchema#unsignedLong',
 			'http://www.w3.org/2001/XMLSchema#unsignedInt',
 			'http://www.w3.org/2001/XMLSchema#unsignedShort',
 			'http://www.w3.org/2001/XMLSchema#nonPositiveInteger',
-			'http://www.w3.org/2001/XMLSchema#negativeInteger' ];
+			'http://www.w3.org/2001/XMLSchema#negativeInteger'
+	];
 
 	/**
 	 * Formatting helper provides methods useful for formatting results
@@ -73,8 +75,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
-				$link.text( 'commons:'
-						+ decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
+				$link.text( 'commons:' +
+						decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
 				$html.prepend( this.createGalleryButton( value, key ), ' ' );
 
 			} else {
@@ -114,9 +116,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {jQuery}
 	 */
 	SELF.prototype.createExploreButton = function( url ) {
-		var $button = $( '<a href="'
-				+ url
-				+ '" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
+		var $button = $( '<a href="' + url +
+				'" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
 		$button.click( $.proxy( this.handleExploreItem, this ) );
 
 		return $button;
@@ -250,7 +251,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
-	 **/
+	 */
 	SELF.prototype.isLabel = function( cell ) {
 		if ( !cell || !cell.hasOwnProperty ) {
 			return false;
@@ -265,7 +266,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
-	 **/
+	 */
 	SELF.prototype.isNumber = function( cell ) {
 		if ( !cell || !cell.datatype ) {
 			return false;

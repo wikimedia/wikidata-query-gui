@@ -71,37 +71,36 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 */
 	SELF.prototype.queryDataUpdatedTime = function() {
 
-		var deferred = $.Deferred(), query = encodeURI( 'prefix schema: <http://schema.org/> '
-				+ 'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ), url = this._serviceUri
-				+ '?query=' + query, settings = {
+		var deferred = $.Deferred(), query = encodeURI( 'prefix schema: <http://schema.org/> ' +
+				'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ), url = this._serviceUri +
+				'?query=' + query, settings = {
 			headers: {
 				Accept: 'application/sparql-results+json'
 			}
 		};
 
-		$
-				.ajax( url, settings )
-				.done(
-						function( data, textStatus, jqXHR ) {
-							if ( !data.results.bindings[0] ) {
-								deferred.reject();
-								return;
-							}
-							var updateDate = new Date(
-									data.results.bindings[0][data.head.vars[0]].value ), dateText = updateDate
-									.toLocaleTimeString( navigator.language, {
-										timeZoneName: 'short'
-									} )
-									+ ', ' + updateDate.toLocaleDateString( navigator.language, {
-										month: 'short',
-										day: 'numeric',
-										year: 'numeric'
-									} );
+		$.ajax( url, settings )
+			.done(
+					function( data, textStatus, jqXHR ) {
+						if ( !data.results.bindings[0] ) {
+							deferred.reject();
+							return;
+						}
+						var updateDate = new Date(
+								data.results.bindings[0][data.head.vars[0]].value ), dateText = updateDate
+								.toLocaleTimeString( navigator.language, {
+									timeZoneName: 'short'
+								} ) +
+								', ' + updateDate.toLocaleDateString( navigator.language, {
+									month: 'short',
+									day: 'numeric',
+									year: 'numeric'
+								} );
 
-							deferred.resolve( dateText );
-						} ).fail( function() {
-					deferred.reject();
-				} );
+						deferred.resolve( dateText );
+					} ).fail( function() {
+				deferred.reject();
+			} );
 
 		return deferred;
 	};
@@ -323,9 +322,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 				return lvalue + '@' + binding['xml:lang'];
 			}
 			if ( binding.datatype ) {
-				if ( binding.datatype === 'http://www.w3.org/2001/XMLSchema#integer'
-						|| binding.datatype === 'http://www.w3.org/2001/XMLSchema#decimal'
-						|| binding.datatype === 'http://www.w3.org/2001/XMLSchema#double' ) {
+				if ( binding.datatype === 'http://www.w3.org/2001/XMLSchema#integer' ||
+						binding.datatype === 'http://www.w3.org/2001/XMLSchema#decimal' ||
+						binding.datatype === 'http://www.w3.org/2001/XMLSchema#double' ) {
 					return value;
 				}
 				return lvalue + '^^<' + binding.datatype + '>';
