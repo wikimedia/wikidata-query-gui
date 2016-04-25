@@ -28,8 +28,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 
 		$.ajax(
 				{
-					url: 'https://www.mediawiki.org/w/api.php?action=query&prop=revisions&titles=Wikibase/'
-							+ 'Indexing/SPARQL_Query_Examples&rvprop=content',
+					url: 'https://www.mediawiki.org/w/api.php?action=query&prop=revisions&titles=Wikibase/' +
+							'Indexing/SPARQL_Query_Examples&rvprop=content',
 					data: {
 						format: 'json'
 					},
@@ -52,15 +52,14 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 							title = m[1].trim( ),
 							tags = [],
 							tag,
-							href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#'
-								+ encodeURIComponent( title.replace( / /g, '_' ) ).replace(
+							href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#' +
+								encodeURIComponent( title.replace( / /g, '_' ) ).replace(
 										/%/g, '.' ),
 							sparqlTemplate = m[2],
 							query = sparqlTemplate.match( regexQuery )[1].trim();
 
 						if ( sparqlTemplate.match( regexExtraPrefix ) ) {
-							query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n'
-									+ query;
+							query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n' + query;
 						}
 						if ( paragraph.match( regexTags ) ) {
 							while ( ( tag = regexTags.exec( paragraph ) ) !== null ) {

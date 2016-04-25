@@ -46,7 +46,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @property {jQuery}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._grid = null;
 
 	/**
@@ -62,7 +62,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		$element.html( container );
 
 		var markerGroup = this._getMarkerGroup(), map = L.map( 'map', {
-			center: [ 0, 0 ],
+			center: [
+					0, 0
+			],
 			maxZoom: 18,
 			minZoom: 2,
 			fullscreenControl: true
@@ -93,8 +95,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					return true;
 				}
 
-				var popup = L.popup(), marker = L.circle( [ longLat[0], longLat[1] ], 10 )
-						.bindPopup( popup );
+				var popup = L.popup(), marker = L.circle( [
+						longLat[0], longLat[1]
+				], 10 ).bindPopup( popup );
 
 				marker.on( 'click', function() {
 					var info = self._getItemDescription( row );
@@ -106,7 +109,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		} );
 
 		if ( markers.length === 0 ) {
-			var marker = L.marker( [ 0, 0 ] ).bindPopup( 'Nothing found!' ).openPopup();
+			var marker = L.marker( [
+					0, 0
+			] ).bindPopup( 'Nothing found!' ).openPopup();
 			markers.push( marker );
 		}
 
@@ -160,8 +165,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._setTileLayer = function( map ) {
 		var layer = TILE_LAYER.osm;
-		if ( window.location.host === 'query.wikidata.org' || window.location.host === 'localhost'
-				|| window.location.host.endsWith( '.wmflabs.org' ) ) {
+		if ( window.location.host === 'query.wikidata.org' ||
+				window.location.host === 'localhost' ||
+				window.location.host.endsWith( '.wmflabs.org' ) ) {
 			layer = TILE_LAYER.wikimedia;
 		}
 
