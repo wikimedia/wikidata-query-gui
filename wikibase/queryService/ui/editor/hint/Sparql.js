@@ -9,21 +9,33 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 	var MODULE = wb.queryService.ui.editor.hint;
 
-	var SPARQL_KEYWORDS = [ 'SELECT', 'SELECT * WHERE {\n\n}', 'OPTIONAL', 'OPTIONAL {\n\n}',
-			'WHERE', 'WHERE {\n\n}', 'ORDER', 'ORDER BY', 'DISTINCT', 'SERVICE',
+	var SPARQL_KEYWORDS = [
+			'SELECT', 'SELECT * WHERE {\n\n}', 'OPTIONAL', 'OPTIONAL {\n\n}', 'WHERE',
+			'WHERE {\n\n}', 'ORDER', 'ORDER BY', 'DISTINCT', 'SERVICE',
 			'SERVICE wikibase:label {\n bd:serviceParam wikibase:language "en" .\n}', 'BASE',
 			'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING', 'UNION', 'SAMPLE',
 			'(SAMPLE() AS )', 'COUNT', '(COUNT() AS )', 'DESC', 'DESC()', 'ASC', 'ASC()',
 			'FILTER ()', 'FILTER NOT EXISTS', 'FILTER NOT EXISTS {\n\n}', 'UNION', 'UNION {\n\n}',
 			'BIND', 'BIND ()', 'GROUP_CONCAT', '(GROUP_CONCAT() as )', 'ORDER BY',
-			'#defaultView:Map', '#defaultView:ImageGrid' ];
+			'#defaultView:Map', '#defaultView:ImageGrid'
+	];
+
+	var SPARQL_PREDICATES = [
+			'wikibase:rank', 'wikibase:badge', 'wikibase:propertyType', 'wikibase:directClaim',
+			'wikibase:claim', 'wikibase:statementProperty', 'wikibase:statementValue',
+			'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:referenceValue',
+			'wikibase:Reference', 'wikibase:TimeValue', 'wikibase:QuantityValue',
+			'wikibase:GlobecoordinateValue', 'wikibase:Dump', 'wikibase:PreferredRank',
+			'wikibase:NormalRank', 'wikibase:DeprecatedRank', 'wikibase:BestRank',
+			'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:Globecoordinate',
+			'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
+			'wikibase:Url', 'rdfs:about', 'schema:name', 'schema:description', 'rdfs:label'
+	];
 
 	/**
-	 * Code completion for Wikibase entities RDF prefixes in SPARQL
-	 * completes SPARQL keywords and ?variables
+	 * Code completion for Wikibase entities RDF prefixes in SPARQL completes SPARQL keywords and ?variables
 	 *
-	 * @class wikibase.queryService.ui.editor.hint.Sparql
-	 * licence GNU GPL v2+
+	 * @class wikibase.queryService.ui.editor.hint.Sparql licence GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
@@ -59,6 +71,12 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 		$.each( SPARQL_KEYWORDS, function( key, keyword ) {
 			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) >= 0 ) {
+				list.push( keyword );
+			}
+		} );
+
+		$.each( SPARQL_PREDICATES, function( key, keyword ) {
+			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
 				list.push( keyword );
 			}
 		} );
