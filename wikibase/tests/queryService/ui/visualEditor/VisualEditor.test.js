@@ -13,6 +13,20 @@
 				text: 'Find instance of cat'
 			},
 			{
+				name: 'Any cat query',
+				sparqlIn: 'SELECT ?item ?itemLabel WHERE { ?item wdt:P31* wd:Q146 . SERVICE wikibase:label { bd:serviceParam wikibase:language "en" } }',
+				sparqlOut: PREFIXES
+						+ 'SELECT ?item ?itemLabel WHERE {\n  ?item <http://www.wikidata.org/prop/direct/P31>* <http://www.wikidata.org/entity/Q146>.\n  SERVICE <http://wikiba.se/ontology#label> { <http://www.bigdata.com/rdf#serviceParam> <http://wikiba.se/ontology#language> "en". }\n}',
+				text: 'Find  any instance of cat'
+			},
+			{
+				name: 'Subtype cat query',
+				sparqlIn: 'SELECT * WHERE {?c  p:P31/ps:P31 wd:Q146 .}',
+				sparqlOut: PREFIXES
+						+ 'SELECT * WHERE { ?c (<http://www.wikidata.org/prop/P31>/<http://www.wikidata.org/prop/statement/P31>) <http://www.wikidata.org/entity/Q146>. }',
+				text: 'Find instance of or subtype instance of cat'
+			},
+			{
 				name: 'List of presidents with causes of death',
 				sparqlIn: 'SELECT ?h ?cause ?hl ?causel WHERE { ?h wdt:P39 wd:Q11696 . ?h wdt:P509 ?cause . OPTIONAL {    ?h rdfs:label ?hl filter (lang(?hl) = "en") . } OPTIONAL {   ?cause rdfs:label ?causel filter (lang(?causel) = "en").  }}',
 				sparqlOut: PREFIXES
@@ -26,7 +40,6 @@
 						+ 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE {\n  ?human <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>.\n  ?human <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999>.\n  ?human <http://www.wikidata.org/prop/direct/P18> ?picture.\n  OPTIONAL {\n    ?human <http://www.wikidata.org/prop/direct/P569> ?dob.\n    ?human <http://www.wikidata.org/prop/direct/P570> ?dod.\n  }\n  BIND(YEAR(?dob) AS ?yob)\n  BIND(YEAR(?dod) AS ?yod)\n  SERVICE <http://wikiba.se/ontology#label> { <http://www.bigdata.com/rdf#serviceParam> <http://wikiba.se/ontology#language> "en". }\n}\nLIMIT 88',
 				text: 'Find instance of cat  with occupation actor  Show image , date of birth , date of birth'
 			}
-
 	];
 
 	var LABELS = {
