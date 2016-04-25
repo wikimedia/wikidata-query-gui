@@ -24,12 +24,18 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 * @param {wikibase.queryService.api.Wikibase} api
+	 * @param {wikibase.queryService.ui.visualEditor.SelectorBox} selectorBox
 	 */
-	function SELF( api ) {
+	function SELF( api, selectorBox ) {
 		this._api = api;
 
 		if ( !this._api ) {
 			this._api = new wikibase.queryService.api.Wikibase();
+		}
+
+		this._selectorBox = selectorBox;
+		if ( !this._selectorBox ) {
+			this._selectorBox = new wikibase.queryService.ui.visualEditor.SelectorBox( this._api );
 		}
 	}
 
@@ -38,6 +44,12 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._api = null;
+
+	/**
+	 * @property {wikibase.queryService.ui.visualEditor.SelectorBox}
+	 * @private
+	 */
+	SELF.prototype._selectorBox = null;
 
 	/**
 	 * @property {Function}
@@ -143,7 +155,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._i18n = function( key ) {
 
 		if ( !$.i18n ) {
-			return this._labels[ key ];
+			return this._labels[key];
 		}
 
 		return $.i18n( I18N_PREFIX + key );
@@ -154,8 +166,9 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._getHtml = function() {
 		var self = this;
-		var $html = $( '<div>' ), $find = $( '<div>' ).text( this._i18n( 'find' ) + ' ' ),
-			$show = $( '<div>' ).text( this._i18n( 'show' ) + ' ' ), $spacer = $( '<div>' ).addClass( 'spacer' );
+		var $html = $( '<div>' ), $find = $( '<div>' ).text( this._i18n( 'find' ) + ' ' ), $show = $(
+				'<div>' ).text( this._i18n( 'show' ) + ' ' ), $spacer = $( '<div>' ).addClass(
+				'spacer' );
 
 		$html.append( $find, $spacer, $show );
 
@@ -436,10 +449,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._valuleChanger = function( $element ) {
 		var deferred = $.Deferred();
 
-		// TODO Use only one instance and make that instance injectable
-		var $selector = new wikibase.queryService.ui.visualEditor.SelectorBox( $element, this._api );
-
-		$selector.setChangeListener( function( id ) {
+		this._selectorBox.add( $element, function( id ) {
 			deferred.resolve( id );
 		} );
 

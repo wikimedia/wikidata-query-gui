@@ -14,19 +14,15 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 *
 	 * @author Jonas Kress
 	 * @constructor
-	 * @param {jQuery} $element
 	 * @param {wikibase.queryService.api.Wikibase} api
 	 */
-	function SELF( $element, api ) {
-		this._$element = $element;
+	function SELF( api ) {
 
 		if ( api ) {
 			this._api = api;
 		} else {
 			this._api = new wikibase.queryService.api.Wikibase();
 		}
-
-		this._create();
 	}
 
 	/**
@@ -36,37 +32,26 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	SELF.prototype._api = null;
 
 	/**
-	 * @property {Function}
-	 * @private
-	 */
-	SELF.prototype._$element = null;
-
-	/**
-	 * @property {Function}
-	 * @private
-	 */
-	SELF.prototype._changeListener = null;
-
-	/**
-	 * Set the change listener
+	 * Add selector box to element
 	 *
+	 * @param {jQuery} $element
 	 * @param {Function} listener a function called when value selected
 	 */
-	SELF.prototype.setChangeListener = function( listener ) {
-		this._changeListener = listener;
+	SELF.prototype.add = function( $element, listener ) {
+		this._create( $element, listener );
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._create = function() {
+	SELF.prototype._create = function( $element, listener ) {
 		var self = this;
 
-		var $select = this._getSelectBox();
+		var $select = this._getSelectBox( $element );
 		var $close = this._getCloseButton();
 		var $content = $( '<div>' ).append( $select, $close );
 
-		this._$element.clickover( {
+		$element.clickover( {
 			placement: 'bottom',
 			'global_close': false,
 			'html': true,
@@ -74,16 +59,16 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 				return $content;
 			}
 		} ).click( function( e ) {
-			$.proxy( self._renderSelect2( $select ), self );
+			$.proxy( self._renderSelect2( $select, $element ), self );
 			return false;
 		} );
 
 		$select.change( function( e ) {
 			$select.remove();
-			self._$element.clickover( 'hide' );
+			$element.clickover( 'hide' );
 
-			if ( self._changeListener ) {
-				self._changeListener( $select.val() );
+			if ( listener ) {
+				listener( $select.val() );
 			}
 		} );
 	};
@@ -91,9 +76,9 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getSelectBox = function() {
-		var id = this._$element.data( 'id' );
-		var label = this._$element.text();
+	SELF.prototype._getSelectBox = function( $element ) {
+		var id = $element.data( 'id' );
+		var label = $element.text();
 
 		var $select = $( '<select>' ).append( $( '<option>' ).attr( 'value', id ).text( label ) )
 				.append( $( '<option>' ).attr( 'value', id ).text( label ) );
@@ -113,16 +98,16 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._renderSelect2 = function( $select ) {
+	SELF.prototype._renderSelect2 = function( $select, $element ) {
 		var self = this;
-		var type = this._$element.data( 'type' );
+		var type = $element.data( 'type' );
 
 		var formatter = function( item ) {
 			if ( !item.data ) {
 				return item.text;
 			}
-			return $( '<span>' + item.text + ' (' + item.data.id + ')' + '</span><br/><small>'
-					+ item.data.description + '</small>' );
+			return $( '<span>' + item.text + ' (' + item.data.id + ')' + '</span><br/><small>' +
+					item.data.description + '</small>' );
 		};
 
 		var transport = function( params, success, failure ) {
