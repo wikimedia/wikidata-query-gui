@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $, d3, window ) {
+wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $, d3, window ) {
 	'use strict';
 
 	/**
@@ -38,23 +38,23 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	 * Draw browser to the given element
 	 * @param {jQuery} $element to draw at
 	 **/
-	SELF.prototype.draw = function ( $element ) {
+	SELF.prototype.draw = function( $element ) {
 		var self = this;
-		var data = { 'name': 'bubblechart', 'children': [] },
-			labelKey = this._getLabelColumns()[0],
-			numberKey = this._getNumberColumns()[0],
-			prevRow = null,
-			url = null;
+		var data = {
+			'name': 'bubblechart',
+			'children': []
+		}, labelKey = this._getLabelColumns()[0], numberKey = this._getNumberColumns()[0], prevRow = null, url = null;
 
 		this._iterateResult( function( field, key, row ) {
 
-			if ( field && field.value
-					&& self._getFormatter().isExploreUrl( field.value ) ) {
+			if ( field && field.value && self._getFormatter().isExploreUrl( field.value ) ) {
 				url = field.value;
 			}
 
 			if ( row !== prevRow ) {
-				var item = { url: url };
+				var item = {
+					url: url
+				};
 				url = null;
 				prevRow = row;
 
@@ -73,7 +73,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 		this._drawBubbleChart( $wrapper, data );
 	};
 
-	SELF.prototype._drawBubbleChart = function ( $element, root ) {
+	SELF.prototype._drawBubbleChart = function( $element, root ) {
 
 		function classes( root ) {
 			var classes = [];
@@ -97,12 +97,12 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 			};
 		}
 
-		var diameter = Math.min( $( window ).height(), $( window ).width() ),
-			format = d3.format( ',d' ), color = d3.scale
-				.category20c();
+		var diameter = Math.min( $( window ).height(), $( window ).width() ), format = d3
+				.format( ',d' ), color = d3.scale.category20c();
 
-		var bubble = d3.layout.pack().sort( null ).size( [ diameter, diameter ] )
-				.padding( 1.5 );
+		var bubble = d3.layout.pack().sort( null ).size( [
+				diameter, diameter
+		] ).padding( 1.5 );
 
 		var svg = d3.select( $element[0] ).append( 'svg' ).attr( 'width', diameter ).attr(
 				'height', diameter ).attr( 'class', 'bubble' );
@@ -125,14 +125,14 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 			return color( d.className );
 		} );
 
-		node.append( 'text' ).attr( 'dy', '.3em' ).style( 'text-anchor', 'middle' )
-				.text( function( d ) {
+		node.append( 'text' ).attr( 'dy', '.3em' ).style( 'text-anchor', 'middle' ).text(
+				function( d ) {
 					return d.className.substring( 0, d.r / 4 );
 				} ).on( 'click', function( d ) {
-					if ( d.url ) {
-						window.open( d.url, '_blank' );
-					}
-				} ).style( 'cursor', 'hand' );
+			if ( d.url ) {
+				window.open( d.url, '_blank' );
+			}
+		} ).style( 'cursor', 'hand' );
 
 	};
 
@@ -141,7 +141,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function () {
+	SELF.prototype.isDrawable = function() {
 
 		if ( this._hasLabel && this._hasNumber ) {
 			return true;
@@ -163,7 +163,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 	/**
 	 * Check if this value contains an coordinate value.
 	 */
-	SELF.prototype._checkColumn = function ( value ) {
+	SELF.prototype._checkColumn = function( value ) {
 
 		if ( this._getFormatter().isNumber( value ) ) {
 			this._hasNumber = true;

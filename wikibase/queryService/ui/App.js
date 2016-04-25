@@ -178,8 +178,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 
 		if ( this._editor ) {
 			this._editor.registerCallback( 'change', _.debounce( function() {
-				if ( $( '.visual-editor-trigger' ).is( ':visible' )
-						|| self._editor.getValue() === self._visualEditor.getQuery() ) {
+				if ( $( '.visual-editor-trigger' ).is( ':visible' ) ||
+						self._editor.getValue() === self._visualEditor.getQuery() ) {
 					return;
 				}
 				$( '.visual-editor' ).hide();
@@ -343,8 +343,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 					'html': true,
 					'content': function() {
 						self._updateQueryUrl();
-						return '<iframe class="shortUrl" src="' + SHORTURL_API
-								+ encodeURIComponent( window.location ) + '">';
+						return '<iframe class="shortUrl" src="' + SHORTURL_API +
+								encodeURIComponent( window.location ) + '">';
 					}
 				} );
 	};
@@ -409,9 +409,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 	SELF.prototype._initResultBrowserMenu = function() {
 
 		$.each( this._resultBrowsers, function( key, b ) {
-			var $element = $( '<li><a class="result-browser" href="#">'
-					+ '<span class="glyphicon glyphicon-' + b.icon + '"></span>' + b.label
-					+ '</a></li>' );
+			var $element = $( '<li><a class="result-browser" href="#">' +
+					'<span class="glyphicon glyphicon-' + b.icon + '"></span>' + b.label +
+					'</a></li>' );
 			$element.appendTo( $( '#result-browser-menu' ) );
 			b.$element = $element;
 		} );
@@ -610,9 +610,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 
 		if ( progress !== false ) {
 			$(
-					'<div class="progress"><div class="progress-bar progress-bar-' + labelType
-							+ ' progress-bar-striped active" role="progressbar" style="width: '
-							+ progress + '%">' + text + '</div></div>' ).appendTo(
+					'<div class="progress"><div class="progress-bar progress-bar-' + labelType +
+							' progress-bar-striped active" role="progressbar" style="width: ' +
+							progress + '%">' + text + '</div></div>' ).appendTo(
 					$( '.actionMessage' ) );
 		} else {
 			$( '<div class="label label-' + labelType + '"/>' ).text( text ).appendTo(
