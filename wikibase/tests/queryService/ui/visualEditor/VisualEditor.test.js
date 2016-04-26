@@ -38,7 +38,7 @@
 				sparqlIn: 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE{ ?human wdt:P31 wd:Q5 ; wdt:P106 wd:Q33999 . ?human wdt:P18 ?picture . OPTIONAL { ?human wdt:P569 ?dob . ?human wdt:P570 ?dod }. BIND(YEAR(?dob) as ?yob) . BIND(YEAR(?dod) as ?yod) . SERVICE wikibase:label {  bd:serviceParam wikibase:language "en" . }}LIMIT 88',
 				sparqlOut: PREFIXES
 						+ 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE {\n  ?human <http://www.wikidata.org/prop/direct/P31> <http://www.wikidata.org/entity/Q5>.\n  ?human <http://www.wikidata.org/prop/direct/P106> <http://www.wikidata.org/entity/Q33999>.\n  ?human <http://www.wikidata.org/prop/direct/P18> ?picture.\n  OPTIONAL {\n    ?human <http://www.wikidata.org/prop/direct/P569> ?dob.\n    ?human <http://www.wikidata.org/prop/direct/P570> ?dod.\n  }\n  BIND(YEAR(?dob) AS ?yob)\n  BIND(YEAR(?dod) AS ?yod)\n  SERVICE <http://wikiba.se/ontology#label> { <http://www.bigdata.com/rdf#serviceParam> <http://wikiba.se/ontology#language> "en". }\n}\nLIMIT 88',
-				text: 'Find instance of cat  with occupation actor  Show image , date of birth , date of birth'
+				text: 'Find instance of cat  with occupation actor  Show image'
 			}
 	];
 
