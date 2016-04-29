@@ -291,7 +291,10 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 				$.proxy( this._handleNamespaceSelected, this ) );
 
 		$( '.addPrefixes' ).click( function() {
-			var prefixes = wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES.join( '\n' );
+			var standardPrefixes = wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES;
+			var prefixes = Object.keys( standardPrefixes ).map( function( x ) {
+				return standardPrefixes[x];
+			} ).join( '\n' );
 			self._editor.prepandValue( prefixes + '\n\n' );
 		} );
 

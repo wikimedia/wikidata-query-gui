@@ -124,13 +124,41 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype.getQuery = function() {
 		try {
 			var q = this._query.getQueryString();
+			q = this._cleanQueryPrefixes( q ).trim();
 			q = this._queryComments.join( '\n' ) + '\n' + q;
-			return q;
+			return q.trim();
 		} catch ( e ) {
 			return null;
 		}
 	};
 
+	/**
+	 * Workaround for https://phabricator.wikimedia.org/T133316
+	 *
+	 * @private
+	 */
+	SELF.prototype._cleanQueryPrefixes = function( query ) {
+		var prefixRegex = /PREFIX ([a-z]+): <(.*)>/gi, m;
+		var prefixes = {}, cleanQuery = query.replace( prefixRegex, '' ).trim();
+
+		while ( ( m = prefixRegex.exec( query ) ) ) {
+			var prefix = m[1];
+			var uri = m[2].replace( /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&' );
+
+			var newQuery = cleanQuery.replace( new RegExp( '<' + uri + '([^/>#]+?)>', 'gi' ), prefix +
+					':$1' );
+
+			if ( cleanQuery !== newQuery ) {
+				cleanQuery = newQuery;
+				if ( !wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES[prefix] ) {
+					prefixes[m[0]] = true;
+				}
+			}
+		}
+
+		cleanQuery = Object.keys( prefixes ).join( '\n' ) + '\n\n' + cleanQuery.trim();
+		return cleanQuery;
+	};
 	/**
 	 * Draw visual editor to given element
 	 *
@@ -176,9 +204,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._getHtml = function() {
 		var self = this;
-		var $html = $( '<div>' ), $find = $( '<div>' ).text( this._i18n( 'find' ) + ' ' ), $show = $(
-				'<div>' ).text( this._i18n( 'show' ) + ' ' ), $spacer = $( '<div>' ).addClass(
-				'spacer' );
+		var $html = $( '<div>' ), $find = this._getFindSection(), $show = this._getShowSection(), $spacer = $(
+				'<div>' ).addClass( 'spacer' );
 
 		$html.append( $find, $spacer, $show );
 
@@ -188,14 +215,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			}
 
 			if ( self._isInShowSection( triple.triple ) ) {
-				if ( $show.children().length > 0 ) {
+				if ( $show.children().length > 1 ) {
 					$show.append( ', ' );
 				}
 				$show.append( self._getTripleHtml( triple.triple ) );
 				return;
 			}
-			if ( $find.children().length > 0 ) {
-				if ( $find.children().length === 1 ) {
+			if ( $find.children().length > 1 ) {
+				if ( $find.children().length === 2 ) {
 					$find.append( ' ' + self._i18n( 'with' ) + ' ' );
 				} else {
 					$find.append( ' ' + self._i18n( 'and' ) + ' ' );
@@ -205,19 +232,92 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		} );
 
-		$find.prepend( '<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ' ' );
-		$show
-				.prepend( '<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>',
-						' ' );
-
 		if ( $find.children().length === 1 ) {
 			$find.append( ' ' + this._i18n( 'anything' ) + ' ' );
 		}
-		if ( $show.children().length === 1 ) {
-			$show.remove();
-		}
 
 		return $html;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getFindSection = function() {
+		var $findSection = $( '<div>' );
+		// Show link
+		var $link = $( '<a class="btn btn-default">' ).text( this._i18n( 'find' ) );
+		$link.attr( 'href', '#' ).prepend(
+				'<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ' ' )
+				.tooltip( {
+					title: 'Click to add new item'
+				} ).attr( 'data-type', 'item' ).attr( 'data-auto_open', true );
+
+		// SelectorBox
+		var self = this;
+		this._selectorBox.add( $link, function( id, name ) {
+			var entity = 'http://www.wikidata.org/entity/' + id;// FIXME technical debt
+
+			var variable = self._query.getBoundVariables().shift();
+			if ( !variable ) {
+				variable = '?' + '_' + Math.floor( Math.random() * 9999 );
+			}
+
+			var prop = 'http://www.wikidata.org/prop/direct/P31';// FIXME technical debt
+			var triple = self._query.addTriple( variable, prop, entity, false );
+
+			if ( $findSection.children().length === 2 ) {
+				$findSection.append( ' ' + self._i18n( 'with' ) + ' ' );
+			} else {
+				$findSection.append( ' ' + self._i18n( 'and' ) + ' ' );
+			}
+			$findSection.append( self._getTripleHtml( triple ) );
+
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+		} );
+
+		return $findSection.append( $link, ' ' );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getShowSection = function() {
+		var $showSection = $( '<div>' );
+		// Show link
+		var $link = $( '<a class="btn btn-default">' ).text( this._i18n( 'show' ) );
+		$link.attr( 'href', '#' ).prepend(
+				'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ' ' )
+				.tooltip( {
+					title: 'Click to add new property'
+				} ).attr( 'data-type', 'property' ).attr( 'data-auto_open', true );
+
+		// SelectorBox
+		var self = this;
+		this._selectorBox.add( $link, function( id, name ) {
+			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
+
+			var subject = self._query.getBoundVariables().shift();
+			if ( !subject ) {
+				return;
+			}
+			var variable2 = '?_' + name.replace( / /gi, '_' );// FIXME generate nice variable that does collide with
+																// existing
+			var triple = self._query.addTriple( subject, prop, variable2, true );
+			self._query.addVariable( variable2 );
+
+			if ( $showSection.children().length > 2 ) {
+				$showSection.append( ', ' );
+			}
+			$showSection.append( self._getTripleHtml( triple ) );
+
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+		} );
+
+		return $showSection.append( $link, ' ' );
 	};
 
 	/**
@@ -229,7 +329,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			return true;
 		}
 
-		if ( this._isSimpleMode && this._isInShowSection( triple ) && this._query.hasVariable( triple.object ) === false ) {
+		if ( this._isSimpleMode && this._isInShowSection( triple ) &&
+				this._query.hasVariable( triple.object ) === false ) {
 			return true;
 		}
 
@@ -289,15 +390,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var boundVariables = {};
 
 		var self = this;
-		$.each( this._triples,
-				function( k, t ) {
-					// Must match ?value wdt:Pxx ?item
-					if ( self._isVariable( t.triple.subject ) &&
-							self._isVariable( t.triple.object ) === false ) {
-						boundVariables[t.triple.subject] = true;
-					}
+		$.each( this._triples, function( k, t ) {
+			// Must match ?value wdt:Pxx ?item
+			if ( self._isVariable( t.triple.subject ) &&
+					self._isVariable( t.triple.object ) === false ) {
+				boundVariables[t.triple.subject] = true;
+			}
 
-				} );
+		} );
 
 		if ( Object.keys( boundVariables ).length > 1 ) {
 			return false;
@@ -354,7 +454,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				}
 			} );
 
-			self._valuleChanger( $link ).done( function( selectedId ) {
+			self._selectorBox.add( $link, function( selectedId ) {
 				var newEntity = entity.replace( new RegExp( id + '$' ), '' ) + selectedId;// TODO: technical debt
 
 				$label.replaceWith( self._getTripleEntityHtml( newEntity, triple, key ) );
@@ -398,19 +498,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		} );
 
 		return deferred.promise();
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._valuleChanger = function( $element ) {
-		var deferred = $.Deferred();
-
-		this._selectorBox.add( $element, function( id ) {
-			deferred.resolve( id );
-		} );
-
-		return deferred;
 	};
 
 	return SELF;

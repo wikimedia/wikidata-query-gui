@@ -378,6 +378,10 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
     background: rgba(255,255,255,0.9);
 }
 
+.visual-editor .panel-body {
+	font-size: 120%;
+}
+
 .select2-container {
 	z-index: 2000;
 	min-width: 200px;
@@ -387,7 +391,7 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 }
 
 .visual-editor .spacer {
-	min-height: 0.5em;
+	min-height: 0.8em;
 }
 
 /*
