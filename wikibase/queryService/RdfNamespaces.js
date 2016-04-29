@@ -62,13 +62,16 @@ wikibase.queryService.RdfNamespaces = {};
 		return $.extend( p, v );
 	}, {} );
 
-	RdfNamespaces.STANDARD_PREFIXES = [ 'PREFIX wd: <http://www.wikidata.org/entity/>',
-			'PREFIX wdt: <http://www.wikidata.org/prop/direct/>',
-			'PREFIX wikibase: <http://wikiba.se/ontology#>',
-			'PREFIX p: <http://www.wikidata.org/prop/>',
-			'PREFIX ps: <http://www.wikidata.org/prop/statement/>',
-			'PREFIX pq: <http://www.wikidata.org/prop/qualifier/>',
-			'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>' ];
+	RdfNamespaces.STANDARD_PREFIXES = {
+		wd: 'PREFIX wd: <http://www.wikidata.org/entity/>',
+		wdt: 'PREFIX wdt: <http://www.wikidata.org/prop/direct/>',
+		wikibase: 'PREFIX wikibase: <http://wikiba.se/ontology#>',
+		p: 'PREFIX p: <http://www.wikidata.org/prop/>',
+		ps: 'PREFIX ps: <http://www.wikidata.org/prop/statement/>',
+		pq: 'PREFIX pq: <http://www.wikidata.org/prop/qualifier/>',
+		rdfs: 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>',
+		bd: 'PREFIX bd: <http://www.bigdata.com/rdf#>'
+	};
 
 	RdfNamespaces.getPrefixMap = function ( entityTypes ) {
 		var prefixes = {};

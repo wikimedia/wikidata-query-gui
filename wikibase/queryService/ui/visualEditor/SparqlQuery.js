@@ -90,6 +90,10 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 */
 	SELF.prototype.hasVariable = function( name ) {
 
+		if ( this._query.variables.length === 0 ) {
+			return false;
+		}
+
 		if ( this._query.variables[0] === '*' && name.startsWith( '?' ) ) {
 			return true;
 		}
@@ -99,6 +103,24 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 		}
 
 		return false;
+	};
+
+	/**
+	 * Add a variable to the query SELECT
+	 *
+	 * @param {string} name
+	 */
+	SELF.prototype.addVariable = function( name ) {
+
+		if ( !name.startsWith( '?' ) ) {
+			return;
+		}
+
+		if ( this._query.variables.length === 1 && this._query.variables[0] === '*' ) {
+			return;
+		}
+
+		this._query.variables.push( name );
 	};
 
 	/**
@@ -118,12 +140,35 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 		var self = this;
 		$.each( node, function( k, v ) {
 			if ( v.type && v.type === 'bgp' ) {
-				triples = triples.concat( self._extractTriples( v.triples, isOptional ) );
+				triples = triples.concat( self._createTriples( v.triples, isOptional ) );
 			}
 			if ( v.type && v.type === 'optional' ) {
 				triples = triples.concat( self.getTriples( v.patterns, true ) );
 			}
+			if ( v.type && v.type === 'union' ) {
+				triples = triples.concat( self.getTriples( v.patterns, false ) );
+			}
+		} );
 
+		return triples;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createTriples = function( triplesData, isOptional ) {
+		var triples = [];
+
+		var self = this;
+		$.each( triplesData, function( i, triple ) {
+			triples.push( {
+				optional: isOptional,
+				query: self,
+				triple: triple,
+				remove: function() {
+					triplesData.splice( i );
+				}
+			} );
 		} );
 
 		return triples;
@@ -147,24 +192,59 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	};
 
 	/**
-	 * @private
+	 * Add a triple to the query
+	 *
+	 * @param {String} subject
+	 * @param {String} predicate
+	 * @param {String} object
+	 * @param {Boolean} isOptional
 	 */
-	SELF.prototype._extractTriples = function( triplesData, isOptional ) {
-		var triples = [];
-
-		var self = this;
-		$.each( triplesData, function( i, triple ) {
-			triples.push( {
-				optional: isOptional,
-				query: self,
-				triple: triple,
-				remove: function() {
-					triplesData.splice( i );
+	SELF.prototype.addTriple = function( subject, predicate, object, isOptional ) {
+		var triple = {
+			type: 'bgp',
+			triples: [
+				{
+					subject: subject,
+					predicate: predicate,
+					object: object
 				}
-			} );
+			]
+		};
+		if ( isOptional ) {
+			var optionalTriple = {
+				type: 'optional',
+				patterns: [
+					triple
+				]
+
+			};
+			this._query.where.push( optionalTriple );
+		} else {
+			this._query.where.push( triple );
+		}
+
+		return this._createTriples( triple.triples, isOptional )[0].triple;
+	};
+
+	/**
+	 * Get variables that are bound to a certain value
+	 *
+	 * @return {String[]}
+	 */
+	SELF.prototype.getBoundVariables = function() {
+		var variables = {};
+
+		$.each( this.getTriples(), function( i, t ) {
+			if ( t.triple.subject.startsWith( '?' ) && !t.triple.object.startsWith( '?' ) ) {
+				variables[t.triple.subject] = true;
+			}
+
+			if ( !t.triple.subject.startsWith( '?' ) && t.triple.object.startsWith( '?' ) ) {
+				variables[t.triple.object] = true;
+			}
 		} );
 
-		return triples;
+		return Object.keys( variables );
 	};
 
 	return SELF;
