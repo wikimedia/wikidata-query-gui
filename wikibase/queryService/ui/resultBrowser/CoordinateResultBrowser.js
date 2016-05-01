@@ -95,9 +95,12 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					return true;
 				}
 
-				var popup = L.popup(), marker = L.circle( [
-						longLat[0], longLat[1]
-				], 10 ).bindPopup( popup );
+				var popup = L.popup(),
+					lon = longLat[0],
+					lat = longLat[1];
+
+				var marker = L.circle( [ lat, lon ], 10 )
+					.bindPopup( popup );
 
 				marker.on( 'click', function() {
 					var info = self._getItemDescription( row );
