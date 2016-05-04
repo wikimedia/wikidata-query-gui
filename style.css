@@ -388,6 +388,7 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 }
 .visual-editor .popover {
 	min-width: 250px;
+	white-space: nowrap;
 }
 
 .visual-editor .spacer {

@@ -216,24 +216,24 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 			if ( self._isInShowSection( triple.triple ) ) {
 				if ( $show.children().length > 1 ) {
-					$show.append( ', ' );
+					$show.append( $( '<span>' ).text( ', ' ) );
 				}
-				$show.append( self._getTripleHtml( triple.triple ) );
+				$show.append( self._getTripleHtml( triple ) );
 				return;
 			}
 			if ( $find.children().length > 1 ) {
 				if ( $find.children().length === 2 ) {
-					$find.append( ' ' + self._i18n( 'with' ) + ' ' );
+					$find.append( $( '<span>' ).text( self._i18n( 'with' ) + ' ' ) );
 				} else {
-					$find.append( ' ' + self._i18n( 'and' ) + ' ' );
+					$find.append(  $( '<span>' ).text( self._i18n( 'and' ) + ' ' ) );
 				}
 			}
-			$find.append( self._getTripleHtml( triple.triple ) );
+			$find.append( self._getTripleHtml( triple ) );
 
 		} );
 
 		if ( $find.children().length === 1 ) {
-			$find.append( ' ' + this._i18n( 'anything' ) + ' ' );
+			$find.append( $( '<span>' ).text( this._i18n( 'anything' ) + ' ' ) );
 		}
 
 		return $html;
@@ -294,16 +294,19 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 			var variable = self._query.getBoundVariables().shift();
 			if ( !variable ) {
-				variable = '?' + '_' + Math.floor( Math.random() * 9999 );
+				variable = '?' + '_' + name.replace( /( |[^a-z0-9])/gi, '_' );
 			}
 
 			var prop = 'http://www.wikidata.org/prop/direct/P31';// FIXME technical debt
 			var triple = self._query.addTriple( variable, prop, entity, false );
+			self._query.addVariable( variable );
 
-			if ( $findSection.children().length === 2 ) {
-				$findSection.append( ' ' + self._i18n( 'with' ) + ' ' );
-			} else {
-				$findSection.append( ' ' + self._i18n( 'and' ) + ' ' );
+			if ( $findSection.children().length >= 4 ) {
+				if ( $findSection.children().length === 4 ) {
+					$findSection.append( ' ' + self._i18n( 'with' ) + ' ' );
+				} else {
+					$findSection.append( ' ' + self._i18n( 'and' ) + ' ' );
+				}
 			}
 			$findSection.append( self._getTripleHtml( triple ) );
 
@@ -337,13 +340,13 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			if ( !subject ) {
 				return;
 			}
-			var variable2 = '?_' + name.replace( / /gi, '_' );// FIXME technical debt
+			var variable2 = '?_' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
 
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );
 
 			if ( $showSection.children().length > 2 ) {
-				$showSection.append( ', ' );
+				$showSection.append( $( '<span>' ).text( ', ' ) );
 			}
 			$showSection.append( self._getTripleHtml( triple ) );
 
@@ -392,14 +395,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var self = this;
 
 		var $triple = $( '<span>' );
-		$.each( triple, function( k, entity ) {
+		$.each( triple.triple, function( k, entity ) {
 
 			if ( self._isSimpleMode && self._isVariable( entity ) ) {
 				return;
 			}
 
 			if ( entity.type && entity.type === 'path' ) {
-				$triple.append( self._getTripleEntityPathHtml( entity ), ' ' );
+				$triple.append( self._getTripleEntityPathHtml( entity, triple, k ), ' ' );
 			} else {
 				$triple.append( self._getTripleEntityHtml( entity, triple, k ), ' ' );
 			}
@@ -444,7 +447,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getTripleEntityPathHtml = function( path ) {
+	SELF.prototype._getTripleEntityPathHtml = function( path, triple ) {
 		var self = this, $path = $( '<span>' );
 		$.each( path.items, function( k, v ) {
 			if ( v.type && v.type === 'path' ) {
@@ -459,7 +462,16 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				$path.append( ' ' + self._i18n( 'any' ) + ' ' );
 			}
 
-			$path.append( self._getTripleEntityHtml( v, path.items, k ) );
+			// FIXME: Do not fake triple here
+			var newTriple = path.items.reduce( function( o, v, i ) {
+				o[i] = v;
+				return o;
+			}, {} );
+			newTriple = $.extend( newTriple, triple.triple );
+			triple = $.extend( {}, triple );
+			triple.triple = newTriple;
+
+			$path.append( self._getTripleEntityHtml( v, triple, k ) );
 
 		} );
 
@@ -493,13 +505,37 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				var newEntity = entity.replace( new RegExp( id + '$' ), '' ) + selectedId;// TODO: technical debt
 
 				$label.replaceWith( self._getTripleEntityHtml( newEntity, triple, key ) );
-				triple[key] = newEntity;
+				triple.triple[key] = newEntity;
 
 				if ( self._changeListener ) {
 					self._changeListener( self );
 				}
-			} );
+			}, {
+				trash: function() {
+					triple.remove();
 
+					var variable = triple.triple.object;
+					if ( triple.triple.object === entity ||
+							( triple.triple.object.startsWith( '?' ) === false && triple.triple.predicate === entity ) ) {
+						variable = triple.triple.subject;
+					}
+					if ( $label.parent().next( 'span' ).length ) {
+						$label.parent().next( 'span' ).remove();
+					} else {
+						$label.parent().prev( 'span' ).remove();
+					}
+					$label.parent().remove();
+
+					self._query.removeVariable( variable );
+					self._query.removeVariable( variable + 'Label' );
+
+					if ( self._changeListener ) {
+						self._changeListener( self );
+					}
+					$( '.tooltip' ).hide();
+					return true;//close popover
+				}
+			} );
 		} ).fail( function() {
 			$label.text( entity );
 		} );
