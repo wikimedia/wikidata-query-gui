@@ -78,7 +78,22 @@
 		assert.ok( q.hasVariable( '?x3' ), '?x1 must be a variable' );
 
 		assert.notOk( q.hasVariable( 'x4' ), 'x1 must not be a variable' );
-		assert.notOk( q.hasVariable( '?x4' ), '?x1 must npt be a variable' );
+		assert.notOk( q.hasVariable( '?x4' ), '?x1 must not be a variable' );
+	} );
+
+
+	QUnit.test( 'When query is \'' + QUERY.VARIABLES + '\' and I delete ?x2 then', function( assert ) {
+		assert.expect( 4 );
+
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.VARIABLES );
+		q.removeVariable( '?x2' );
+
+		assert.ok( q.hasVariable( '?x1' ), '?x1 must be a variable' );
+		assert.ok( q.hasVariable( '?x3' ), '?x3 must be a variable' );
+
+		assert.notOk( q.hasVariable( 'x4' ), 'x1 must not be a variable' );
+		assert.notOk( q.hasVariable( '?x2' ), '?x1 must not be a variable' );
 	} );
 
 	QUnit.test( 'When query is \'' + QUERY.SIMPLE + '\' THEN', function( assert ) {

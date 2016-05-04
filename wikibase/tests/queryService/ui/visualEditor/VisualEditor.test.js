@@ -32,7 +32,7 @@
 				name: 'List of actors with pictures with year of birth and/or death',
 				sparqlIn: 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE{ ?human wdt:P31 wd:Q5 ; wdt:P106 wd:Q33999 . ?human wdt:P18 ?picture . OPTIONAL { ?human wdt:P569 ?dob . ?human wdt:P570 ?dod }. BIND(YEAR(?dob) as ?yob) . BIND(YEAR(?dod) as ?yod) . SERVICE wikibase:label {  bd:serviceParam wikibase:language "en" . }}LIMIT 88',
 				sparqlOut: 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE {\n  ?human wdt:P31 wd:Q5.\n  ?human wdt:P106 wd:Q33999.\n  ?human wdt:P18 ?picture.\n  OPTIONAL {\n    ?human wdt:P569 ?dob.\n    ?human wdt:P570 ?dod.\n  }\n  BIND(YEAR(?dob) AS ?yob)\n  BIND(YEAR(?dod) AS ?yod)\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n}\nLIMIT 88',
-				text: 'Find instance of cat  with occupation actor  Show image Limit 88'
+				text: 'Find instance of cat with occupation actor  Show image Limit 88'
 			}
 	];
 
