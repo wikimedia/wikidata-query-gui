@@ -124,6 +124,27 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	};
 
 	/**
+	 * Remove a variable from the query SELECT
+	 *
+	 * @param {string} name
+	 */
+	SELF.prototype.removeVariable = function( name ) {
+
+		if ( !name.startsWith( '?' ) ) {
+			return;
+		}
+
+		if ( this._query.variables.length === 1 && this._query.variables[0] === '*' ) {
+			return;
+		}
+
+		var index = this._query.variables.indexOf( name );
+		if ( index >= 0 ) {
+			this._query.variables.splice( index, 1 );
+		}
+	};
+
+	/**
 	 * Get triples defined in this query
 	 *
 	 * @return {Object}
@@ -166,7 +187,7 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 				query: self,
 				triple: triple,
 				remove: function() {
-					triplesData.splice( i );
+					triplesData.splice( i, 1 );
 				}
 			} );
 		} );
@@ -223,7 +244,7 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 			this._query.where.push( triple );
 		}
 
-		return this._createTriples( triple.triples, isOptional )[0].triple;
+		return this._createTriples( triple.triples, isOptional )[0];
 	};
 
 	/**
