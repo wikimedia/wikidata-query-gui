@@ -145,8 +145,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			var prefix = m[1];
 			var uri = m[2].replace( /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&' );
 
-			var newQuery = cleanQuery.replace( new RegExp( '<' + uri + '([^/>#]+?)>', 'gi' ), prefix +
-					':$1' );
+			var newQuery = cleanQuery.replace( new RegExp( '<' + uri + '([^/>#]+?)>', 'gi' ),
+					prefix + ':$1' );
 
 			if ( cleanQuery !== newQuery ) {
 				cleanQuery = newQuery;
@@ -207,7 +207,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var $html = $( '<div>' ), $find = this._getFindSection(), $show = this._getShowSection(), $spacer = $(
 				'<div>' ).addClass( 'spacer' );
 
-		$html.append( $find, $spacer, $show );
+		$html.append( $find, $spacer.clone(), $show, $spacer.clone(), this._getLimitSection() );
 
 		$.each( this._triples, function( k, triple ) {
 			if ( self._isNotRelevant( triple.triple ) ) {
@@ -237,6 +237,41 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		}
 
 		return $html;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getLimitSection = function() {
+		var $limitSection = $( '<div>' ), $limit = $( '<a data-type="number">' ).attr( 'href', '#' )
+				.text( 'Limit' ).data( 'value', this._query.getLimit() ), $value = $( '<span>' )
+				.text( this._query.getLimit() ? this._query.getLimit() : '' );
+
+		var self = this;
+		this._selectorBox.add( $limit, function( value ) {
+			if ( value === '0' ) {
+				value = null;
+			}
+
+			$value.text( value ? value : '' );
+			self._query.setLimit( value );
+
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+		}, {
+			trash: function() {
+				self._query.setLimit( null );
+				$limit.data( 'value', '' );
+				$value.text( '' );
+				if ( self._changeListener ) {
+					self._changeListener( self );
+				}
+				return true;//close popover
+			}
+		} );
+
+		return $limitSection.append( $limit.append( ' ', $value ) );
 	};
 
 	/**
@@ -302,8 +337,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			if ( !subject ) {
 				return;
 			}
-			var variable2 = '?_' + name.replace( / /gi, '_' );// FIXME generate nice variable that does collide with
-																// existing
+			var variable2 = '?_' + name.replace( / /gi, '_' );// FIXME technical debt
+
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );
 
