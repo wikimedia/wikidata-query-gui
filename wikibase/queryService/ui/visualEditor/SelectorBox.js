@@ -73,7 +73,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 			}
 		} );
 
-		$input.on( 'keyup', function() {
+		$input.on( 'keyup mouseup', function() {
 			if ( listener ) {
 				listener( $input.val() );
 			}

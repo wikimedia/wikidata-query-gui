@@ -120,6 +120,10 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 			return;
 		}
 
+		if ( this._query.variables.indexOf( name ) >= 0 ) {
+			return;
+		}
+
 		this._query.variables.push( name );
 	};
 
