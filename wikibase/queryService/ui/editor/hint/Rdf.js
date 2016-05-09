@@ -135,12 +135,15 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 	SELF.prototype._getCurrentWord = function( line, position ) {
 		var pos = position - 1, colon = false;
+		var wordSeparator = [
+				'/', '*', '+', ' ', ';', '.', '\n', '\t', '(', ')', '{', '}', '[', ']'
+		];
 
 		if ( pos < 0 ) {
 			pos = 0;
 		}
 
-		while ( line.charAt( pos ).match( /\w/ )
+		while ( wordSeparator.indexOf( line.charAt( pos ) ) === -1
 				|| ( line.charAt( pos ) === ' ' && colon === false )
 				|| ( line.charAt( pos ) === ':' && colon === false ) ) {
 
@@ -155,7 +158,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		var left = pos + 1;
 
 		pos = position;
-		while ( line.charAt( pos ).match( /\w/ ) ) {
+		while ( wordSeparator.indexOf( line.charAt( pos ) ) === -1 ) {
 			pos++;
 			if ( pos >= line.length ) {
 				break;
