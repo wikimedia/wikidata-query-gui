@@ -299,13 +299,15 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 			var prop = 'http://www.wikidata.org/prop/direct/P31';// FIXME technical debt
 			var triple = self._query.addTriple( variable, prop, entity, false );
-			self._query.addVariable( variable );
+			if ( !self._query.hasVariable( variable ) ) {
+				self._query.addVariable( variable );
+			}
 
-			if ( $findSection.children().length >= 4 ) {
-				if ( $findSection.children().length === 4 ) {
-					$findSection.append( ' ' + self._i18n( 'with' ) + ' ' );
+			if ( $findSection.children().length >= 3 ) {
+				if ( $findSection.children().length === 3 ) {
+					$findSection.append( $( '<span>' ).text( self._i18n( 'with' ) + ' ' ) );
 				} else {
-					$findSection.append( ' ' + self._i18n( 'and' ) + ' ' );
+					$findSection.append( $( '<span>' ).text( self._i18n( 'and' ) + ' ' ) );
 				}
 			}
 			$findSection.append( self._getTripleHtml( triple ) );
@@ -368,7 +370,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		}
 
 		if ( this._isSimpleMode && this._isInShowSection( triple ) &&
-				this._query.hasVariable( triple.object ) === false ) {
+				( this._query.hasVariable( triple.object ) === false &&
+						this._query.hasVariable( triple.object + 'Label' ) === false ) ) {
 			return true;
 		}
 
@@ -451,7 +454,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var self = this, $path = $( '<span>' );
 		$.each( path.items, function( k, v ) {
 			if ( v.type && v.type === 'path' ) {
-				$path.append( self._getTripleEntityPathHtml( v ) );
+				$path.append( self._getTripleEntityPathHtml( v, triple ) );
 				return;
 			}
 
@@ -501,6 +504,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				}
 			} );
 
+			//TODO: refactor method
 			self._selectorBox.add( $link, function( selectedId ) {
 				var newEntity = entity.replace( new RegExp( id + '$' ), '' ) + selectedId;// TODO: technical debt
 
@@ -534,8 +538,24 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 					}
 					$( '.tooltip' ).hide();
 					return true;//close popover
+				},
+				tag: function() {
+					if ( triple.triple.object.startsWith( '?' ) ) {
+						self._query
+								.addVariable( triple.triple.object +
+										'Label' );
+					} else {
+						self._query
+								.addVariable( triple.triple.subject +
+										'Label' );
+					}
+					if ( self._changeListener ) {
+						self._changeListener( self );
+					}
+					return true;
 				}
-			} );
+			}
+			);
 		} ).fail( function() {
 			$label.text( entity );
 		} );
