@@ -4,8 +4,8 @@
 	QUnit.module( 'wikibase.queryService.ui.editor.hint.Rdf' );
 	var Rdf = wb.queryService.ui.editor.hint.Rdf;
 
-	var HINT_UNKNOWN_PREFIX = {'list':[{'text':'','displayText':'Unknown prefix \'XXX:\''}],'from':{'line':1,'char':4},'to':{'line':1,'char':4}};
-	var HINT_START_SEARCH = { 'from' : {	'char' : 7,	'line' : 1	},	'list' : [ {'displayText' : 'Type to search for an entity',	'text' : ''	} ],'to' : {'char' : 7,	'line' : 1}};
+	var HINT_UNKNOWN_PREFIX = {'list':[{'text':'','displayText':'Unknown prefix \'XXX:\''}],'from':{'line':1,'char':4},'to':{'line':1,'char':5}};
+	var HINT_START_SEARCH = { 'from' : {	'char' : 7,	'line' : 1	},	'list' : [ {'displayText' : 'Type to search for an entity',	'text' : ''	} ],'to' : {'char' : 8,	'line' : 1}};
 
 	var VALID_SCENARIOS = [
             { scenario:'PREFIX0:TERM', prefix:'PREFIX0', content:'PREFIX0:TERM', line:'PREFIX0:TERM', y:1, x:8,
@@ -27,12 +27,11 @@
            		result: {'from':{'char':10,'line':1},'list':[{'className':'wikibase-rdf-hint','displayText':'LABEL (ID) DESCRIPTION\n','text':'ID'}],'to':{'char':14,'line':1}}},
 
             { scenario:'?p wdt:P31/PREFIX1:TERM',prefix:'PREFIX1', content:'?p wdt:P31/PREFIX1:TERM', line:'?p wdt:P31/PREFIX1:TERM', y:1, x:19,
+          		result: {'from':{'char':19,'line':1},'list':[{'className':'wikibase-rdf-hint','displayText':'LABEL (ID) DESCRIPTION\n','text':'ID'}],'to':{'char':23,'line':1}}},
+
+            { scenario:'?p wdt:P31/PREFIXß:TERM',prefix:'PREFIXß', content:'?p wdt:P31/PREFIXß:TERM', line:'?p wdt:P31/PREFIXß:TERM', y:1, x:19,
           		result: {'from':{'char':19,'line':1},'list':[{'className':'wikibase-rdf-hint','displayText':'LABEL (ID) DESCRIPTION\n','text':'ID'}],'to':{'char':23,'line':1}}}
-        	];
-
-
-
-
+       		];
 
 	QUnit.test( 'is constructable', function( assert ) {
 		assert.expect( 1 );
@@ -43,7 +42,7 @@
 		assert.expect( 1 );
 
 		var rdf = new Rdf( null, {getPrefixMap:sinon.stub().returns({})} );
-		rdf.getHint('XXX', 'XXX:', 1, 3).done( function( hint ){
+		rdf.getHint('XXX', 'XXX', 1, 3).done( function( hint ){
 			assert.notOk( true, 'Hinting should not succed');
 		} ).fail( function(){
 			assert.ok( true, 'Hinting must fail' );
