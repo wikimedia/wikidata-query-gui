@@ -85,15 +85,16 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._getDefinedVariables = function( text ) {
-		var variables = [];
+		var variables = {};
 
-		$.each( text.split( ' ' ), function( key, word ) {
+		$.each( text.split( /\s/ ), function( key, word ) {
+			word = word.trim();
 			if ( word.match( /^\?\w+$/ ) ) {
-				variables.push( word );
+				variables[ word ] = true;
 			}
 		} );
 
-		return $.unique( variables );
+		return Object.keys( variables );
 	};
 
 	SELF.prototype._getVariableHints = function( term, variables ) {
