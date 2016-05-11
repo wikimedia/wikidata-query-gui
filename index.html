@@ -5,28 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 	<title>Wikidata Query Service (Beta)</title>
-
-	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="vendor/jqcloud/jqcloud.css">
-	<link rel="stylesheet" href="vendor/bootstrap-tags/css/bootstrap-tags.css">
-	<link rel="stylesheet" href="vendor/bootstrap-table/bootstrap-table.min.css">
-	<link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css">
-	<link rel="stylesheet" href="vendor/codemirror/addon/hint/show-hint.css">
-	<link rel="stylesheet" href="vendor/lightbox/ekko-lightbox.min.css">
-	<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
-	<link rel="stylesheet" href="vendor/leaflet/addon/fullscreen/leaflet.fullscreen.css">
-	<link rel="stylesheet" href="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.css">
-	<link rel="stylesheet" href="vendor/select2/dist/css/select2.min.css">
-	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.css">
-	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.grid.css">
-	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.lcd.css">
-	<link rel="stylesheet" href="vendor/jquery.uls/css/jquery.uls.mobile.css">
-
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bundle.min.css">
 
 	<link rel="shortcut icon" href="//www.wikidata.org/static/favicon/testwikidata.ico">
-	<script src="vendor/es6-shim/es6-shim.min.js"></script>
 </head>
 <body>
 	<div class="wikibase-queryservice container-fluid">
@@ -79,7 +60,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<a href="#" class="uls-trigger" title="Sorry, at the moment we only have rudimentary arbitrary language support!" data-toggle="tooltip"></a>
-						</li>					
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -179,7 +160,7 @@
 				<div class="tagCloud"></div>
 					 <div class="tagFilter"></div>
 					<div class="input-group">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></span> <input type="text" class="tableFilter form-control" placeholder="Type to filter"> 
+						<span class="input-group-addon"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></span> <input type="text" class="tableFilter form-control" placeholder="Type to filter">
 					</div>
 					<div class="exampleTable">
 						<table class="table table-striped">
@@ -191,72 +172,6 @@
 			</div>
 		</div>
 	</div>
-<!-- JS files -->
-	<script src="mediawiki.js"></script>
-
-	<script src="vendor/jquery/jquery-1.12.0.min.js"></script>
-	<script src="vendor/underscore/underscore-min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
-	<script src="vendor/codemirror/lib/codemirror.js"></script>
-	<script src="vendor/codemirror/mode/sparql.js"></script>
-	<script src="vendor/codemirror/addon/hint/show-hint.js"></script>
-	<script src="vendor/codemirror/addon/display/placeholder.js"></script>
-	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
-	<script src="vendor/jqcloud/jqcloud-1.0.4.min.js"></script>
-	<script src="vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>
-	<script src="vendor/bootstrap-table/bootstrap-table.min.js"></script>
-	<script src="vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js"></script>
-	<script src="vendor/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js"></script>
-	<script src="vendor/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js"></script>
-	<script src="vendor/danml/download.min.js"></script>
-	<script src="vendor/wdqs-explorer/vis.js"></script>
-	<script src="vendor/wdqs-explorer/wdqs.js"></script>
-	<script src="vendor/wdqs-explorer/wdqs-explorer.js"></script>
-	<script src="vendor/lightbox/ekko-lightbox.min.js"></script>
-	<script src="vendor/leaflet/leaflet.js"></script>
-	<script src="vendor/leaflet/addon/fullscreen/Leaflet.fullscreen.min.js"></script>
-	<script src="vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.min.js"></script>
-	<script src="vendor/d3/d3.min.js"></script>
-	<script src="vendor/select2/dist/js/select2.min.js"></script>
-	<script src="vendor/js-cookie/js.cookie.js"></script>
-
-	<script src="vendor/jquery.uls/src/jquery.uls.data.js"></script>
-	<script src="vendor/jquery.uls/src/jquery.uls.data.utils.js"></script>
-	<script src="vendor/jquery.uls/src/jquery.uls.lcd.js"></script>
-	<script src="vendor/jquery.uls/src/jquery.uls.languagefilter.js"></script>
-	<script src="vendor/jquery.uls/src/jquery.uls.regionfilter.js"></script>
-	<script src="vendor/jquery.uls/src/jquery.uls.core.js"></script>
-	<script src="vendor/jquery.i18n/jquery.i18n.js"></script>
-	<script src="vendor/jquery.i18n/jquery.i18n.messagestore.js"></script>
-	<script src="vendor/jquery.i18n/jquery.i18n.fallbacks.js"></script>
-	<script src="vendor/jquery.i18n/jquery.i18n.parser.js"></script>
-	<script src="vendor/jquery.i18n/jquery.i18n.emitter.js"></script>
-	<script src="vendor/jquery.i18n/jquery.i18n.language.js"></script>
-
-	<script src="wikibase/queryService/ui/App.js"></script>
-	<script src="wikibase/queryService/ui/i18n/LanguageSelector.js"></script>
-	<script src="wikibase/queryService/ui/editor/hint/Sparql.js"></script>
-	<script src="wikibase/queryService/ui/editor/hint/Rdf.js"></script>
-	<script src="wikibase/queryService/ui/editor/tooltip/Rdf.js"></script>
-	<script src="wikibase/queryService/ui/editor/Editor.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/VisualEditor.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/SparqlQuery.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/SelectorBox.js"></script>
-	<script src="wikibase/queryService/ui/QueryExampleDialog.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/AbstractResultBrowser.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/ImageResultBrowser.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/TableResultBrowser.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/CoordinateResultBrowser.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/AbstractChartResultBrowser.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/TreeMapResultBrowser.js"></script>
-	<script src="wikibase/queryService/ui/resultBrowser/BubbleChartResultBrowser.js"></script>
-	<script src="wikibase/queryService/api/Sparql.js"></script>
-	<script src="wikibase/queryService/api/QuerySamples.js"></script>
-	<script src="wikibase/queryService/api/Wikibase.js"></script>
-	<script src="wikibase/queryService/RdfNamespaces.js"></script>
-	<script src="wikibase/config.js"></script>
-	<script src="wikibase/init.js"></script>
+ <script src="bundle.min.js"></script>
 </body>
 </html>

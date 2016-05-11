@@ -1,0 +1,123 @@
+#!/usr/bin/env sh
+
+rm ./bundle.* 2> /dev/null ;
+
+alias uglifycss=./node_modules/uglifycss/uglifycss
+alias uglifyjs=./node_modules/uglifyjs/bin/uglifyjs
+
+bundle(){
+  cat $1 >> ./bundle.$2 ;
+  # Prevent 2 libs to have their lines concatenated
+  # which may trigger parsing errors
+  # Example:
+  #   //# sourceMappingURL=underscore-min.map/*!
+  #   * Bootstrap v3.3.6 (http://getbootstrap.com)
+  echo '\n' >> ./bundle.$2
+}
+
+bundleCss(){ bundle $1 'css' ; }
+bundleJs(){ bundle $1 'js' ; }
+
+echo 'bundling css...'
+bundleCss ./vendor/bootstrap/css/bootstrap.min.css
+bundleCss ./vendor/bootstrap/css/bootstrap-theme.min.css
+bundleCss ./vendor/jqcloud/jqcloud.css
+bundleCss ./vendor/bootstrap-tags/css/bootstrap-tags.css
+bundleCss ./vendor/bootstrap-table/bootstrap-table.min.css
+bundleCss ./vendor/codemirror/lib/codemirror.css
+bundleCss ./vendor/codemirror/addon/hint/show-hint.css
+bundleCss ./vendor/lightbox/ekko-lightbox.min.css
+bundleCss ./vendor/leaflet/leaflet.css
+bundleCss ./vendor/leaflet/addon/fullscreen/leaflet.fullscreen.css
+bundleCss ./vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.css
+bundleCss ./vendor/select2/dist/css/select2.min.css
+bundleCss ./vendor/jquery.uls/css/jquery.uls.css
+bundleCss ./vendor/jquery.uls/css/jquery.uls.grid.css
+bundleCss ./vendor/jquery.uls/css/jquery.uls.lcd.css
+bundleCss ./vendor/jquery.uls/css/jquery.uls.mobile.css
+bundleCss ./style.css
+
+echo 'minifying css...'
+uglifycss ./bundle.css > ./bundle.min.css
+
+echo 'bundling and minifying js...'
+bundleJs ./vendor/es6-shim/es6-shim.min.js
+bundleJs ./mediawiki.js
+bundleJs ./vendor/jquery/jquery-1.12.0.min.js
+bundleJs ./vendor/underscore/underscore-min.js
+bundleJs ./vendor/bootstrap/js/bootstrap.min.js
+bundleJs ./vendor/bootstrapx-clickover/bootstrapx-clickover.js
+bundleJs ./vendor/codemirror/lib/codemirror.js
+bundleJs ./vendor/codemirror/mode/sparql.js
+bundleJs ./vendor/codemirror/addon/hint/show-hint.js
+bundleJs ./vendor/codemirror/addon/display/placeholder.js
+bundleJs ./vendor/sparqljs/dist/sparqljs-browser-min.js
+bundleJs ./vendor/jqcloud/jqcloud-1.0.4.min.js
+bundleJs ./vendor/bootstrap-tags/js/bootstrap-tags.min.js
+bundleJs ./vendor/bootstrap-table/bootstrap-table.min.js
+bundleJs ./vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js
+bundleJs ./vendor/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js
+bundleJs ./vendor/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js
+bundleJs ./vendor/danml/download.min.js
+bundleJs ./vendor/wdqs-explorer/vis.js
+bundleJs ./vendor/wdqs-explorer/wdqs.js
+bundleJs ./vendor/wdqs-explorer/wdqs-explorer.js
+bundleJs ./vendor/lightbox/ekko-lightbox.min.js
+bundleJs ./vendor/leaflet/leaflet.js
+bundleJs ./vendor/leaflet/addon/fullscreen/Leaflet.fullscreen.min.js
+bundleJs ./vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.min.js
+bundleJs ./vendor/d3/d3.min.js
+bundleJs ./vendor/select2/dist/js/select2.min.js
+bundleJs ./vendor/js-cookie/js.cookie.js
+bundleJs ./vendor/jquery.uls/src/jquery.uls.data.js
+bundleJs ./vendor/jquery.uls/src/jquery.uls.data.utils.js
+bundleJs ./vendor/jquery.uls/src/jquery.uls.lcd.js
+bundleJs ./vendor/jquery.uls/src/jquery.uls.languagefilter.js
+bundleJs ./vendor/jquery.uls/src/jquery.uls.regionfilter.js
+bundleJs ./vendor/jquery.uls/src/jquery.uls.core.js
+bundleJs ./vendor/jquery.i18n/jquery.i18n.js
+bundleJs ./vendor/jquery.i18n/jquery.i18n.messagestore.js
+bundleJs ./vendor/jquery.i18n/jquery.i18n.fallbacks.js
+bundleJs ./vendor/jquery.i18n/jquery.i18n.parser.js
+bundleJs ./vendor/jquery.i18n/jquery.i18n.emitter.js
+bundleJs ./vendor/jquery.i18n/jquery.i18n.language.js
+bundleJs ./wikibase/queryService/ui/App.js
+bundleJs ./wikibase/queryService/ui/i18n/LanguageSelector.js
+bundleJs ./wikibase/queryService/ui/editor/hint/Sparql.js
+bundleJs ./wikibase/queryService/ui/editor/hint/Rdf.js
+bundleJs ./wikibase/queryService/ui/editor/tooltip/Rdf.js
+bundleJs ./wikibase/queryService/ui/editor/Editor.js
+bundleJs ./wikibase/queryService/ui/visualEditor/VisualEditor.js
+bundleJs ./wikibase/queryService/ui/visualEditor/SparqlQuery.js
+bundleJs ./wikibase/queryService/ui/visualEditor/SelectorBox.js
+bundleJs ./wikibase/queryService/ui/QueryExampleDialog.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/AbstractResultBrowser.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/ImageResultBrowser.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/TableResultBrowser.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/CoordinateResultBrowser.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/AbstractChartResultBrowser.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/TreeMapResultBrowser.js
+bundleJs ./wikibase/queryService/ui/resultBrowser/BubbleChartResultBrowser.js
+bundleJs ./wikibase/queryService/api/Sparql.js
+bundleJs ./wikibase/queryService/api/QuerySamples.js
+bundleJs ./wikibase/queryService/api/Wikibase.js
+bundleJs ./wikibase/queryService/RdfNamespaces.js
+bundleJs ./wikibase/config.js
+bundleJs ./wikibase/init.js
+
+echo 'minifying js...'
+# 2>&1: redirect stderr to stdin to be able to pipe it
+# grep -v WARN: avoid showing warnings
+uglifyjs ./bundle.js -c -m -o ./bundle.min.js 2>&1 |grep -v WARN
+
+echo 'compressing...'
+gzip -9 -c bundle.min.js > bundle.min.js.gz
+gzip -9 -c bundle.min.css > bundle.min.css.gz
+
+echo 'done building!'
+echo '\n- JS -'
+du -s -h bundle.*js*
+echo '\n- CSS -'
+du -s -h bundle.*css*
+echo "\nworth it, isn't? :D"
