@@ -3,7 +3,8 @@
   "version": "0.1.3",
   "scripts": {
     "test": "grunt test",
-    "build": "./scripts/build"
+    "build": "./scripts/build",
+    "start": "./node_modules/live-server/live-server.js ."
   },
   "devDependencies": {
     "grunt": "0.4.5",
@@ -14,6 +15,7 @@
     "grunt-jscs": "2.1.0",
     "grunt-jsonlint": "1.0.4",
     "karma-qunit": "0.1.9",
+    "live-server": "^1.0.0",
     "qunitjs": "1.23.1",
     "sinon": "~1.17.3",
     "uglifycss": "0.0.20",
