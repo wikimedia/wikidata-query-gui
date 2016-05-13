@@ -70,10 +70,10 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.queryDataUpdatedTime = function() {
-
+		// Cache the update time only for a minute
 		var deferred = $.Deferred(), query = encodeURI( 'prefix schema: <http://schema.org/> ' +
 				'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ), url = this._serviceUri +
-				'?query=' + query, settings = {
+				'?query=' + query + '&nocache=' + Math.floor( Date.now() / 60000 ), settings = {
 			headers: {
 				Accept: 'application/sparql-results+json'
 			}
