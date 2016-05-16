@@ -79,7 +79,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<a href="#" class="uls-trigger" title="Sorry, at the moment we only have rudimentary arbitrary language support!" data-toggle="tooltip"></a>
-						</li>					
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -179,7 +179,7 @@
 				<div class="tagCloud"></div>
 					 <div class="tagFilter"></div>
 					<div class="input-group">
-						<span class="input-group-addon"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></span> <input type="text" class="tableFilter form-control" placeholder="Type to filter"> 
+						<span class="input-group-addon"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></span> <input type="text" class="tableFilter form-control" placeholder="Type to filter">
 					</div>
 					<div class="exampleTable">
 						<table class="table table-striped">
@@ -191,7 +191,11 @@
 			</div>
 		</div>
 	</div>
-<!-- JS files -->
+
+	<!-- faster rendering of points in leaflet map -->
+	<script>L_PREFER_CANVAS = true;</script>
+
+	<!-- JS files -->
 	<script src="mediawiki.js"></script>
 
 	<script src="vendor/jquery/jquery-1.12.0.min.js"></script>
