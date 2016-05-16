@@ -99,7 +99,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					lon = longLat[0],
 					lat = longLat[1];
 
-				var marker = L.circle( [ lat, lon ], 10 )
+				var marker = L.circleMarker( [ lat, lon ], self._getMarkerStyle() )
 					.bindPopup( popup );
 
 				marker.on( 'click', function() {
@@ -118,12 +118,20 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			markers.push( marker );
 		}
 
-		return L.featureGroup( markers ).setStyle( {
+		return L.featureGroup( markers );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getMarkerStyle = function() {
+		return {
+			radius: 2,
 			color: '#e04545',
-			opacity: 0.9,
+			opacity: 0.8,
 			fillColor: '#e04545',
 			fillOpacity: 0.9
-		} );
+		};
 	};
 
 	/**
