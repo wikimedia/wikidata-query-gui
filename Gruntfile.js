@@ -80,7 +80,7 @@ module.exports = function( grunt ) {
 							cwd: './',
 							src: [
 									'vendor/leaflet/**', 'i18n/**', 'vendor/jquery.uls/**',
-									'*.html', 'logo.png', 'robots.txt'
+									'*.html', 'logo.svg', 'robots.txt'
 							],
 							dest: 'dist'
 						}
