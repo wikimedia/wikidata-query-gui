@@ -42,6 +42,7 @@
 		"d3": false,
 		"sparqljs": false,
 		"_": false,
-		"Cookies": false
+		"Cookies": false,
+		"vis": false
 	}
 }

@@ -108,6 +108,13 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 			class: 'TreeMapResultBrowser',
 			object: null,
 			$element: null
+		},
+		Timeline: {
+			icon: 'calendar',
+			label: 'Timeline',
+			class: 'TimelineResultBrowser',
+			object: null,
+			$element: null
 		}
 	};
 

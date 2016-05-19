@@ -98,6 +98,25 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
+	 * Parse dateTime string to Date object
+	 * Allows negative years without leading zeros http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15.1
+	 *
+	 * @param {string} dateTime
+	 * @return {Object}
+	 */
+	SELF.prototype.parseDate = function( dateTime ) {
+
+		//Add leading zeros to negative year
+		dateTime = dateTime.replace( /^-(\d{1})-/, '-00000$1-' )
+		.replace( /^-(\d{2})-/, '-0000$1-' )
+		.replace( /^-(\d{3})-/, '-000$1-' )
+		.replace( /^-(\d{4})-/, '-00$1-' )
+		.replace( /^-(\d{5})-/, '-0$1-' );
+
+		return new Date( Date.parse( dateTime ) );
+	};
+
+	/**
 	 * Checks whether given URL is available for explorer
 	 *
 	 * @param {string} url
