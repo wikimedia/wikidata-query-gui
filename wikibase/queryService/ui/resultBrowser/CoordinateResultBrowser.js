@@ -166,7 +166,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._getItemDescription = function( row ) {
-		var $result = $( '<div/>' ).append( this._getFormatter().formatRow( row ) );
+		var $result = $( '<div/>' ).append( this._getFormatter().formatRow( row, true ) );
 
 		return $result;
 	};
