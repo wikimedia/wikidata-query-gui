@@ -10,6 +10,17 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
 	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/';
+	var DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime';
+	var TYPE_URI = 'uri';
+
+	var DATETIME_FORMAT_OPTIONS = {
+		year: 'numeric',
+		month: 'short',
+		era: 'short',
+		day: 'numeric',
+		hour: '2-digit',
+		minute: '2-digit'
+	};
 
 	var NUMBER_TYPES = [
 			'http://www.w3.org/2001/XMLSchema#double', 'http://www.w3.org/2001/XMLSchema#float',
@@ -41,16 +52,16 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Format a data row
 	 *
 	 * @param {Object} row
+	 * @param {boolean} embed media files
 	 * @return {jQuery} element
 	 */
-	SELF.prototype.formatRow = function( row ) {
+	SELF.prototype.formatRow = function( row, embed ) {
 		var self = this;
 
 		var $result = $( '<div/>' );
 
 		$.each( row, function( key, value ) {
-			$result.prepend( $( '<div/>' ).text( key + ': ' )
-					.append( self.formatValue( value, key ) ) );
+			$result.prepend( $( '<div>' ).append( self.formatValue( value, key, embed ) ) );
 		} );
 
 		return $result;
@@ -60,24 +71,40 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Format a data value
 	 *
 	 * @param {Object} data
-	 * @param {string} key
+	 * @param {string} title (optional)
+	 * @param {boolean} embed (optional) media files
 	 * @return {jQuery} element
 	 */
-	SELF.prototype.formatValue = function( data, key ) {
+	SELF.prototype.formatValue = function( data, title, embed ) {
 		var value = data.value, $html = $( '<span>' );
 
-		if ( !data.type ) {
-			return value;
+		if ( !title ) {
+			title = data.dataType || '';
 		}
 
-		if ( data.type === 'uri' ) {
-			var $link = $( '<a>' ).attr( 'href', value ).attr( 'target', '_blank' );
+		if ( !data.type ) {
+			return $( '<span>' ).text( value ).attr( 'title', title );
+		}
+
+		switch ( data.datatype || data.type ) {
+		case TYPE_URI:
+			var $link = $( '<a>' ).attr( 'href', value ).attr( 'target', '_blank' ).attr( 'title',
+					title );
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
-				$link.text( 'commons:' +
-						decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
-				$html.prepend( this.createGalleryButton( value, key ), ' ' );
+
+				if ( embed ) {
+					$link.click( this.handleCommonResourceItem );
+					$link.append(
+							$( '<img>' ).attr( 'src',
+									this.getCommonsResourceFileNameThumbnail( value, '120' ) ) )
+							.width( '120' );
+				} else {
+					$link.text( 'commons:' +
+							decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
+					$html.prepend( this.createGalleryButton( value, title ), ' ' );
+				}
 
 			} else {
 				$link.text( this.abbreviateUri( value ) );
@@ -85,11 +112,21 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 					$html.prepend( this.createExploreButton( value ), ' ' );
 				}
 			}
+			break;
+		case DATATYPE_DATETIME:
+			var date = this.parseDate( value );
+			date = date.toLocaleDateString( $( 'html' ).attr( 'lang' ), DATETIME_FORMAT_OPTIONS );
+			var $dateLabel = $( '<span>' ).text( date );
+			$dateLabel.attr( 'title', title + ': ' + value );
+			$html.append( $dateLabel );
+			break;
 
-		} else {
+		default:
 			var $label = $( '<span>' ).text( value );
 			if ( data['xml:lang'] ) {
-				$label.attr( 'title', value + '@' + data['xml:lang'] );
+				$label.attr( 'title', title + ': ' + value + '@' + data['xml:lang'] );
+			} else {
+				$label.attr( 'title', title );
 			}
 			$html.append( $label );
 		}
@@ -113,7 +150,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		.replace( /^-(\d{4})-/, '-00$1-' )
 		.replace( /^-(\d{5})-/, '-0$1-' );
 
-		return new Date( Date.parse( dateTime ) );
+		return new Date( dateTime );
 	};
 
 	/**
