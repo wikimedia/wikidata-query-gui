@@ -1,26 +1,26 @@
 {
-    "@metadata": {
-        "authors": [
-            "Jonas Kress"
-        ],
-        "locale": "de",
-        "message-documentation": "qqq"
-    },
-    "wdqs-app-button-examples": "Button to show examples dialog",
-    "wdqs-app-button-prefixes": "Menu entry for prefixes",
-    "wdqs-app-button-tools": "Menu entry for tools",
-    "wdqs-app-button-help": "Menu entry for help",
-    "wdqs-app-button-run": "Button to run SPARQL query",
-    "wdqs-app-button-clear": "Button to clear SPARQL query editor",
-    "wdqs-app-button-display": "Button display result as table, image, ... ",
-    "wdqs-app-button-download": "Button download result",
-    "wdqs-app-button-link": "Button get link to query",
+	"@metadata": {
+		"locale": "de",
+		"message-documentation": "qqq",
+		"authors": [
+			"Jonas Kress"
+		]
+	},
+	"wdqs-app-button-examples": "Button to show examples dialog",
+	"wdqs-app-button-prefixes": "Menu entry for prefixes",
+	"wdqs-app-button-tools": "Menu entry for tools",
+	"wdqs-app-button-help": "Menu entry for help",
+	"wdqs-app-button-run": "Button to run SPARQL query",
+	"wdqs-app-button-clear": "Button to clear SPARQL query editor",
+	"wdqs-app-button-display": "Button display result as table, image, ...",
+	"wdqs-app-button-download": "Button download result",
+	"wdqs-app-button-link": "Button get link to query",
 	"wdqs-ve-find": "Label to find some item",
-    "wdqs-ve-show": "Label to show some item",
-    "wdqs-ve-with": "Label item with property",
-    "wdqs-ve-and": "Label concetantion of properties",
-    "wdqs-ve-anything": "Label to find anything",
-    "wdqs-ve-any": "Label to any property",
-    "wdqs-ve-or": "Label for logical or",
-    "wdqs-ve-subtype": "Label for subtype in ontology"
+	"wdqs-ve-show": "Label to show some item",
+	"wdqs-ve-with": "Label item with property",
+	"wdqs-ve-and": "Label concetantion of properties",
+	"wdqs-ve-anything": "Label to find anything",
+	"wdqs-ve-any": "Label to any property",
+	"wdqs-ve-or": "Label for logical or",
+	"wdqs-ve-subtype": "Label for subtype in ontology"
 }
