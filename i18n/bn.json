@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman"
+		]
+	},
+	"wdqs-app-button-examples": "উদাহরণ",
+	"wdqs-app-button-prefixes": "উপসর্গসমূহ",
+	"wdqs-app-button-tools": "সরঞ্জাম",
+	"wdqs-app-button-help": "সাহায্য",
+	"wdqs-app-button-run": "চালান",
+	"wdqs-app-button-clear": "পরিস্কার",
+	"wdqs-app-button-display": "প্রদর্শন",
+	"wdqs-app-button-download": "ডাউনলোড",
+	"wdqs-app-button-link": "সংযোগ",
+	"wdqs-ve-find": "খুঁজুন",
+	"wdqs-ve-show": "দেখাও",
+	"wdqs-ve-with": "সহ",
+	"wdqs-ve-and": "এবং",
+	"wdqs-ve-anything": "যে কোনো কিছু",
+	"wdqs-ve-any": "যেকোন",
+	"wdqs-ve-or": "অথবা",
+	"wdqs-ve-subtype": "উপপ্রকার"
+}

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"wdqs-app-button-examples": "Exemples",
+	"wdqs-app-button-prefixes": "Préfixes",
+	"wdqs-app-button-tools": "Outils",
+	"wdqs-app-button-help": "Aide",
+	"wdqs-app-button-run": "Exécuter",
+	"wdqs-app-button-clear": "Effacer",
+	"wdqs-app-button-display": "Afficher",
+	"wdqs-app-button-download": "Télécharger",
+	"wdqs-app-button-link": "Lien",
+	"wdqs-ve-find": "Rechercher",
+	"wdqs-ve-show": "Afficher",
+	"wdqs-ve-with": "avec",
+	"wdqs-ve-and": "et",
+	"wdqs-ve-anything": "quelque chose",
+	"wdqs-ve-any": "une",
+	"wdqs-ve-or": "ou",
+	"wdqs-ve-subtype": "sous-type"
+}

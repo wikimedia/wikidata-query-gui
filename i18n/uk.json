@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Laboramus"
+		]
+	},
+	"wdqs-app-button-examples": "Приклади",
+	"wdqs-app-button-prefixes": "Префікси",
+	"wdqs-app-button-tools": "Інструменти",
+	"wdqs-app-button-help": "Довідка",
+	"wdqs-app-button-run": "Запустити",
+	"wdqs-app-button-clear": "Очистити",
+	"wdqs-app-button-display": "Формат",
+	"wdqs-app-button-download": "Завантажити",
+	"wdqs-app-button-link": "Посилання",
+	"wdqs-ve-find": "Знайти",
+	"wdqs-ve-show": "Показати",
+	"wdqs-ve-with": "з",
+	"wdqs-ve-and": "та",
+	"wdqs-ve-anything": "будь-яке",
+	"wdqs-ve-any": "будь-яке",
+	"wdqs-ve-or": "або",
+	"wdqs-ve-subtype": "підтип"
+}

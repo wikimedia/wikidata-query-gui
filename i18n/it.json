@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"wdqs-app-button-examples": "Esempi",
+	"wdqs-app-button-prefixes": "Prefissi",
+	"wdqs-app-button-tools": "Strumenti",
+	"wdqs-app-button-help": "Aiuto",
+	"wdqs-app-button-run": "Esegui",
+	"wdqs-app-button-clear": "Pulisci",
+	"wdqs-app-button-display": "Aspetto",
+	"wdqs-app-button-download": "Scarica",
+	"wdqs-app-button-link": "Collegamento",
+	"wdqs-ve-find": "Trova",
+	"wdqs-ve-show": "Mostra",
+	"wdqs-ve-with": "con",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-any": "qualsiasi",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "sottotipo"
+}

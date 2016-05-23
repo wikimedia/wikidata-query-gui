@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"wdqs-app-button-examples": "მაგალითები",
+	"wdqs-app-button-prefixes": "თავსართები",
+	"wdqs-app-button-tools": "ხელსაწყოები",
+	"wdqs-app-button-help": "დახმარება",
+	"wdqs-app-button-run": "გაშვება",
+	"wdqs-app-button-clear": "გასუფთავება",
+	"wdqs-app-button-display": "ფორმატი",
+	"wdqs-app-button-download": "ჩამოტვირთვა",
+	"wdqs-app-button-link": "ბმული",
+	"wdqs-ve-find": "ძიება",
+	"wdqs-ve-show": "ჩვენება",
+	"wdqs-ve-and": "და",
+	"wdqs-ve-any": "ნებისმიერი",
+	"wdqs-ve-or": "ან",
+	"wdqs-ve-subtype": "ქვეტიპი"
+}

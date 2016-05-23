@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"wdqs-app-button-examples": "範例",
+	"wdqs-app-button-prefixes": "前綴",
+	"wdqs-app-button-tools": "工具",
+	"wdqs-app-button-help": "說明",
+	"wdqs-app-button-run": "執行",
+	"wdqs-app-button-clear": "清除",
+	"wdqs-app-button-display": "顯示",
+	"wdqs-app-button-download": "下載",
+	"wdqs-app-button-link": "連結",
+	"wdqs-ve-find": "搜尋",
+	"wdqs-ve-show": "項目顯示",
+	"wdqs-ve-with": "與",
+	"wdqs-ve-and": "和",
+	"wdqs-ve-anything": "任何項目",
+	"wdqs-ve-any": "任何",
+	"wdqs-ve-or": "或",
+	"wdqs-ve-subtype": "子類型"
+}

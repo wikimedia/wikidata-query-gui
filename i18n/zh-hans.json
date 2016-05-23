@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226",
+			"Yfdyh000"
+		]
+	},
+	"wdqs-app-button-examples": "示例",
+	"wdqs-app-button-prefixes": "前缀",
+	"wdqs-app-button-tools": "工具",
+	"wdqs-app-button-help": "帮助",
+	"wdqs-app-button-run": "运行",
+	"wdqs-app-button-clear": "清除",
+	"wdqs-app-button-display": "显示",
+	"wdqs-app-button-download": "下载",
+	"wdqs-app-button-link": "链接",
+	"wdqs-ve-find": "查找",
+	"wdqs-ve-show": "显示",
+	"wdqs-ve-with": "有",
+	"wdqs-ve-and": "和",
+	"wdqs-ve-anything": "任何事物",
+	"wdqs-ve-any": "任何",
+	"wdqs-ve-or": "或",
+	"wdqs-ve-subtype": "子类型"
+}

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liridon"
+		]
+	},
+	"wdqs-app-button-examples": "Shembuj",
+	"wdqs-app-button-prefixes": "Parashtesa",
+	"wdqs-app-button-tools": "Mjete",
+	"wdqs-app-button-help": "Ndihmë",
+	"wdqs-app-button-run": "Llësho",
+	"wdqs-app-button-clear": "Pastro",
+	"wdqs-app-button-display": "Shfaq",
+	"wdqs-app-button-download": "Shkarko",
+	"wdqs-app-button-link": "Lidhje",
+	"wdqs-ve-find": "Gjej",
+	"wdqs-ve-show": "Trego",
+	"wdqs-ve-with": "me",
+	"wdqs-ve-and": "dhe",
+	"wdqs-ve-anything": "gjithçka",
+	"wdqs-ve-any": "ndonjë",
+	"wdqs-ve-or": "ose",
+	"wdqs-ve-subtype": "nënlloj"
+}

@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"wdqs-app-button-examples": "Przykłady",
+	"wdqs-app-button-prefixes": "Przedrostki",
+	"wdqs-app-button-tools": "Narzędzia",
+	"wdqs-app-button-help": "Pomoc",
+	"wdqs-app-button-run": "Uruchom",
+	"wdqs-app-button-clear": "Wyczyść",
+	"wdqs-app-button-display": "Wyświetl",
+	"wdqs-app-button-download": "Pobierz",
+	"wdqs-app-button-link": "Link",
+	"wdqs-ve-find": "Znajdź",
+	"wdqs-ve-show": "Pokaż",
+	"wdqs-ve-with": "z",
+	"wdqs-ve-and": "i",
+	"wdqs-ve-any": "dowolna",
+	"wdqs-ve-or": "lub",
+	"wdqs-ve-subtype": "podtyp"
+}

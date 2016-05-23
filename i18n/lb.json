@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"wdqs-app-button-examples": "Beispiller",
+	"wdqs-app-button-prefixes": "Prefixen",
+	"wdqs-app-button-tools": "Geschirkëscht",
+	"wdqs-app-button-help": "Hëllef",
+	"wdqs-app-button-run": "Lass",
+	"wdqs-app-button-clear": "Eidel maachen",
+	"wdqs-app-button-display": "Weisen",
+	"wdqs-app-button-download": "Eroflueden",
+	"wdqs-app-button-link": "Link",
+	"wdqs-ve-find": "Sichen",
+	"wdqs-ve-show": "Weisen",
+	"wdqs-ve-with": "mat",
+	"wdqs-ve-and": "a(n)",
+	"wdqs-ve-anything": "eppes",
+	"wdqs-ve-any": "all",
+	"wdqs-ve-or": "oder",
+	"wdqs-ve-subtype": "Ënnertyp"
+}

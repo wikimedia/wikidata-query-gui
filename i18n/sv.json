@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"wdqs-app-button-examples": "Exempel",
+	"wdqs-app-button-prefixes": "Prefix",
+	"wdqs-app-button-tools": "Verktyg",
+	"wdqs-app-button-help": "Hjälp",
+	"wdqs-app-button-run": "Kör",
+	"wdqs-app-button-clear": "Rensa",
+	"wdqs-app-button-display": "Visning",
+	"wdqs-app-button-download": "Ladda ned",
+	"wdqs-app-button-link": "Länka",
+	"wdqs-ve-find": "Hitta",
+	"wdqs-ve-show": "Visa",
+	"wdqs-ve-with": "med",
+	"wdqs-ve-and": "och",
+	"wdqs-ve-anything": "vad som helst",
+	"wdqs-ve-or": "eller",
+	"wdqs-ve-subtype": "undertyp"
+}

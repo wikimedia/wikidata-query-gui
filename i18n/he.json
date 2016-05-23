@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80",
+			"Guycn2"
+		]
+	},
+	"wdqs-app-button-examples": "דוגמאות",
+	"wdqs-app-button-prefixes": "קידומות",
+	"wdqs-app-button-tools": "כלים",
+	"wdqs-app-button-help": "עזרה",
+	"wdqs-app-button-run": "הרצה",
+	"wdqs-app-button-clear": "ניקוי",
+	"wdqs-app-button-display": "הצגה",
+	"wdqs-app-button-download": "הורדה",
+	"wdqs-app-button-link": "קישור",
+	"wdqs-ve-find": "מציאה",
+	"wdqs-ve-show": "הצגה",
+	"wdqs-ve-with": "עם",
+	"wdqs-ve-and": "וגם",
+	"wdqs-ve-anything": "כל דבר",
+	"wdqs-ve-any": "הכול",
+	"wdqs-ve-or": "או",
+	"wdqs-ve-subtype": "תת־סוג"
+}

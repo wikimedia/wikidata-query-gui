@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Silovan"
+		]
+	},
+	"wdqs-app-button-examples": "სამანგეფი",
+	"wdqs-app-button-prefixes": "პრეფიქსეფი",
+	"wdqs-app-button-tools": "ხეჭკუდეფი",
+	"wdqs-app-button-help": "მოხვარა",
+	"wdqs-app-button-run": "გოტება",
+	"wdqs-app-button-clear": "ლასუა",
+	"wdqs-app-button-display": "ძირაფა",
+	"wdqs-app-button-download": "გინოჭარუა",
+	"wdqs-app-button-link": "რსხილი",
+	"wdqs-ve-find": "გორუა",
+	"wdqs-ve-show": "ძირაფა",
+	"wdqs-ve-and": "დო",
+	"wdqs-ve-anything": "მუდგაინი",
+	"wdqs-ve-any": "ირნერი",
+	"wdqs-ve-or": "ვარდა",
+	"wdqs-ve-subtype": "გიმენტიპი"
+}

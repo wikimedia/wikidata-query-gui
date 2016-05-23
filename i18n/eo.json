@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin van der Vliet"
+		]
+	},
+	"wdqs-app-button-examples": "Ekzemploj",
+	"wdqs-app-button-prefixes": "Prefiksoj",
+	"wdqs-app-button-tools": "Iloj",
+	"wdqs-app-button-display": "Montri",
+	"wdqs-app-button-download": "Elŝuti",
+	"wdqs-app-button-link": "Ligilo",
+	"wdqs-ve-find": "Serĉi",
+	"wdqs-ve-show": "Montri",
+	"wdqs-ve-with": "kun",
+	"wdqs-ve-and": "kaj",
+	"wdqs-ve-any": "kaj",
+	"wdqs-ve-or": "aŭ"
+}

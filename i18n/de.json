@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"wdqs-app-button-examples": "Beispiele",
+	"wdqs-app-button-prefixes": "Präfixe",
+	"wdqs-app-button-tools": "Werkzeuge",
+	"wdqs-app-button-help": "Hilfe",
+	"wdqs-app-button-run": "Ausführen",
+	"wdqs-app-button-clear": "Leeren",
+	"wdqs-app-button-display": "Anzeigen",
+	"wdqs-app-button-download": "Herunterladen",
+	"wdqs-app-button-link": "Link",
+	"wdqs-ve-find": "Finden",
+	"wdqs-ve-show": "Anzeigen",
+	"wdqs-ve-with": "mit",
+	"wdqs-ve-and": "und",
+	"wdqs-ve-anything": "alles",
+	"wdqs-ve-any": "beliebiges",
+	"wdqs-ve-or": "oder",
+	"wdqs-ve-subtype": "Untertyp"
+}

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"wdqs-app-button-examples": "Примери",
+	"wdqs-app-button-prefixes": "Претставки",
+	"wdqs-app-button-tools": "Алатки",
+	"wdqs-app-button-help": "Помош",
+	"wdqs-app-button-run": "Пушти",
+	"wdqs-app-button-clear": "Исчисти",
+	"wdqs-app-button-display": "Прикажи",
+	"wdqs-app-button-download": "Преземи",
+	"wdqs-app-button-link": "Врска",
+	"wdqs-ve-find": "Пронајди",
+	"wdqs-ve-show": "Прикажи",
+	"wdqs-ve-with": "со",
+	"wdqs-ve-and": "и",
+	"wdqs-ve-anything": "било што",
+	"wdqs-ve-any": "било кое",
+	"wdqs-ve-or": "или",
+	"wdqs-ve-subtype": "поттип"
+}
