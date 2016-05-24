@@ -403,3 +403,22 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 	display: none;
 	padding-left: 30px;
 }
+
+/*
+	VIS
+*/
+.vis-item {
+	padding: 15px;
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+}
+
+.vis-item.vis-selected {
+	background-color: white;
+	border-color: #888a85;
+}
+
+.vis-item, .vis-item.vis-line {
+	background-color: white;
+	border-color: #888a85;
+}
+

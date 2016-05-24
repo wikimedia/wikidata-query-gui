@@ -71,7 +71,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 				}
 				self.processVisitors( field, key );
 
-				cb( field, key, row );
+				cb( field, key, row, rowNum );
 			} );
 		} );
 	};
