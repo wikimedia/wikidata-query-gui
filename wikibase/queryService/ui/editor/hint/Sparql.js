@@ -87,11 +87,8 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	SELF.prototype._getDefinedVariables = function( text ) {
 		var variables = {};
 
-		$.each( text.split( /\s/ ), function( key, word ) {
-			word = word.trim();
-			if ( word.match( /^\?\w+$/ ) ) {
-				variables[ word ] = true;
-			}
+		$.each( text.match( /\?[\w]+/g ), function( key, word ) {
+			variables[ word ] = true;
 		} );
 
 		return Object.keys( variables );
