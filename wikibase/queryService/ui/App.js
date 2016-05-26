@@ -115,6 +115,13 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 			class: 'TimelineResultBrowser',
 			object: null,
 			$element: null
+		},
+		Dimensions: {
+			icon: 'random',
+			label: 'Dimensions',
+			class: 'MultiDimensionResultBrowser',
+			object: null,
+			$element: null
 		}
 	};
 

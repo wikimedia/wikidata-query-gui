@@ -422,3 +422,42 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 	border-color: #888a85;
 }
 
+/*
+	MultiDimensionResultBrowser
+*/
+
+#query-result .foreground path {
+  fill: none;
+  stroke: #222;
+  stroke-opacity: 0.4;
+  pointer-events: none;
+  stroke-width: 3px;
+}
+
+#query-result .axis .title {
+  font-size: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(-12deg) translate(-5px,-6px);
+}
+
+#query-result .axis line,
+#query-result .axis path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+#query-result .brush .extent {
+  fill-opacity: .3;
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+#query-result pre {
+  width: 900px;
+  margin: 10px 30px;
+  tab-size: 21;
+  font-size: 12px;
+  overflow: auto;
+}
