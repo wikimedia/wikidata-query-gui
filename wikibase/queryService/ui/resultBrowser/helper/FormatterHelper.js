@@ -173,8 +173,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 */
 	SELF.prototype.isExploreUrl = function( url ) {
-		if ( url && url.match ) {
-			return url.match( EXPLORE_URL + '(.+)' );
+		if ( url && typeof url === 'string' ) {
+			return url.startsWith( EXPLORE_URL );
 		}
 		return false;
 	};
@@ -357,6 +357,21 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		}
 
 		return cell.datatype === DATATYPE_DATETIME;
+	};
+
+	/**
+	 * Checks whether the current cell is a WD entity URI
+	 *
+	 * @private
+	 * @param {Object} cell
+	 * @return {boolean}
+	 */
+	SELF.prototype.isEntity = function( cell ) {
+		if ( !cell || !cell.value ) {
+			return false;
+		}
+
+		return this.isExploreUrl( cell.value );
 	};
 
 	return SELF;

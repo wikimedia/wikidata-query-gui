@@ -122,6 +122,13 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 			class: 'MultiDimensionResultBrowser',
 			object: null,
 			$element: null
+		},
+		Graph: {
+			icon: 'retweet',
+			label: 'Graph',
+			class: 'GraphResultBrowser',
+			object: null,
+			$element: null
 		}
 	};
 
