@@ -42,7 +42,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 		var $container = $( '<div>' );
 
 		var timeline = new vis.Timeline( $container[0], this._getItems(), TIMELINE_OPTIONS );
-		$element.html( $container.prepend( this._createToolbar( timeline ) ) );
+		$element.append( $container.prepend( this._createToolbar( timeline ) ) );
 	};
 
 	/**
@@ -102,9 +102,10 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	SELF.prototype._createToolbar = function( timeline ) {
 		var $toolbar = $( '<div style="margin-top: -35px; text-align: center;">' );
 
-		$( '<a class="btn btn-default">' ).click( timeline.redraw ).append( '<span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span>' )
+		$( '<a class="btn btn-default">' ).click( $.proxy( timeline.redraw, timeline ) ).append(
+				'<span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span>' )
 				.appendTo( $toolbar );
-		$( '<a class="btn btn-default">' ).click( timeline.fit ).append(
+		$( '<a class="btn btn-default">' ).click( $.proxy( timeline.fit, timeline ) ).append(
 				'<span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>' )
 				.appendTo( $toolbar );
 
