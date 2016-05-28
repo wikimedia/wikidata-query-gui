@@ -5,22 +5,13 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultBrowser.helper || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, mw ) {
+wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, mw, moment ) {
 	'use strict';
 
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
 	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/';
 	var DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime';
 	var TYPE_URI = 'uri';
-
-	var DATETIME_FORMAT_OPTIONS = {
-		year: 'numeric',
-		month: 'short',
-		era: 'short',
-		day: 'numeric',
-		hour: '2-digit',
-		minute: '2-digit'
-	};
 
 	var NUMBER_TYPES = [
 			'http://www.w3.org/2001/XMLSchema#double', 'http://www.w3.org/2001/XMLSchema#float',
@@ -114,9 +105,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			}
 			break;
 		case DATATYPE_DATETIME:
-			var date = this.parseDate( value );
-			date = date.toLocaleDateString( $( 'html' ).attr( 'lang' ), DATETIME_FORMAT_OPTIONS );
-			var $dateLabel = $( '<span>' ).text( date );
+			var $dateLabel = $( '<span>' ).text( this._formatDate( this.parseDate( value ) ) );
 			$dateLabel.attr( 'title', title + ': ' + value );
 			$html.append( $dateLabel );
 			break;
@@ -135,6 +124,17 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
+	 * @protected
+	 */
+	SELF.prototype._formatDate = function( date, lang ) {
+		try {
+				return date.format( 'll' );
+		} catch ( e ) {
+			return 'Invalid date';
+		}
+	};
+
+	/**
 	 * Parse dateTime string to Date object
 	 * Allows negative years without leading zeros http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15.1
 	 *
@@ -143,6 +143,17 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.parseDate = function( dateTime ) {
 
+		if ( !dateTime.startsWith( '+' ) && !dateTime.startsWith( '-' ) ) {
+			dateTime = '+' + dateTime;
+		}
+
+		//Add leading zeros to positve year
+		dateTime = dateTime.replace( /^\+(\d{1})-/, '+00000$1-' )
+		.replace( /^\+(\d{2})-/, '+0000$1-' )
+		.replace( /^\+(\d{3})-/, '+000$1-' )
+		.replace( /^\+(\d{4})-/, '+00$1-' )
+		.replace( /^\+(\d{5})-/, '+0$1-' );
+
 		//Add leading zeros to negative year
 		dateTime = dateTime.replace( /^-(\d{1})-/, '-00000$1-' )
 		.replace( /^-(\d{2})-/, '-0000$1-' )
@@ -150,7 +161,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		.replace( /^-(\d{4})-/, '-00$1-' )
 		.replace( /^-(\d{5})-/, '-0$1-' );
 
-		return new Date( dateTime );
+		dateTime = dateTime.replace( 'Z', '' );//remove timezone
+
+		return moment( dateTime, moment.ISO_8601 );
 	};
 
 	/**
@@ -331,5 +344,20 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		return NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
 	};
 
+	/**
+	 * Checks whether the current cell is date time
+	 *
+	 * @private
+	 * @param {Object} cell
+	 * @return {boolean}
+	 */
+	SELF.prototype.isDateTime = function( cell ) {
+		if ( !cell || !cell.datatype ) {
+			return false;
+		}
+
+		return cell.datatype === DATATYPE_DATETIME;
+	};
+
 	return SELF;
-}( jQuery, mediaWiki ) );
+}( jQuery, mediaWiki, moment ) );

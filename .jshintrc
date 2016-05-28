@@ -43,6 +43,7 @@
 		"sparqljs": false,
 		"_": false,
 		"Cookies": false,
-		"vis": false
+		"vis": false,
+		"moment": false
 	}
 }
