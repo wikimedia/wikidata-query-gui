@@ -1,4 +1,4 @@
-( function( $, config ) {
+( function( $, config, moment ) {
 	'use strict';
 
 	var wb = wikibase.queryService;
@@ -8,6 +8,7 @@
 
 		$.i18n.debug = true;
 		$.i18n().locale = lang;
+		moment.locale( lang );
 
 		$.when(
 			$.i18n().load( 'i18n/' + lang + '.json', lang ),
@@ -41,4 +42,4 @@
 					new wb.api.Sparql( config.api.sparql.uri ) );
 		} );
 
-} )( jQuery, CONFIG );
+} )( jQuery, CONFIG, moment );

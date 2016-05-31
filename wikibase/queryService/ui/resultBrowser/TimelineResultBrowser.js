@@ -6,8 +6,6 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vis, window, _ ) {
 	'use strict';
 
-	var TIME_DATATYPE = 'http://www.w3.org/2001/XMLSchema#dateTime';
-
 	var TIMELINE_OPTIONS = {
 		minHeight: '400px',
 		orientation: {
@@ -54,7 +52,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 		var self = this, item = {};
 		this._iterateResult( function( field, key, row, rowIndex ) {
 
-			if ( field && field.datatype === TIME_DATATYPE ) {
+			if ( self._getFormatter().isDateTime( field ) ) {
 				if ( !items[rowIndex] ) {// create new
 					var startDate = self._getFormatter().parseDate( field.value );
 					item = {
@@ -139,7 +137,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data ) {
-		if ( data && data.datatype === TIME_DATATYPE ) {
+		if ( this._getFormatter().isDateTime( data ) ) {
 			this._drawable = true;
 			return false;
 		}
