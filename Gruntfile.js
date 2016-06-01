@@ -53,16 +53,8 @@ module.exports = function( grunt ) {
 				dest: 'dist'
 			}
 		},
-		concat: {
-			options: {
-				separator: ';'
-			},
-			dist: {}
-		},
-		uglify: {
-			options: {},
-			dist: {}
-		},
+		concat: {},
+		uglify: {},
 		copy: {
 			release: {
 				files: [
@@ -79,8 +71,8 @@ module.exports = function( grunt ) {
 							expand: true,
 							cwd: './',
 							src: [
-									'vendor/leaflet/**', 'i18n/**', 'vendor/jquery.uls/**',
-									'*.html', 'logo.svg', 'robots.txt'
+									'i18n/**', 'vendor/jquery.uls/**', '*.html', 'logo.svg',
+									'robots.txt'
 							],
 							dest: 'dist'
 						}
@@ -119,7 +111,7 @@ module.exports = function( grunt ) {
 			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
-			'clean', 'copy', 'useminPrepare', 'cssmin', 'concat', 'uglify', 'filerev', 'usemin'
+			'clean', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };
