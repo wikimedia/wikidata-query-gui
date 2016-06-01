@@ -53,7 +53,7 @@
   mw.wdqsQuery = function (query) {
     return future(function (k) {
       $.ajax({
-        url: '/bigdata/namespace/wdq/sparql',
+        url: '//query.wikidata.org/bigdata/namespace/wdq/sparql',
         data: { query: query },
         dataType: 'json',
         success: function (x) { return k(x.results.bindings); }
