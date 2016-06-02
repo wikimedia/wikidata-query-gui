@@ -58,6 +58,10 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 				url = null;
 				prevRow = row;
 
+				if ( row.rgb && row.rgb.value.match( /^[0-9A-F]{6}$/ ) ) {
+					item.color = '#' + row.rgb.value;
+				}
+
 				if ( row[labelKey] && row[numberKey] ) {
 					item.name = row[labelKey].value;
 					item.size = row[numberKey].value;
@@ -87,7 +91,8 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 						packageName: name,
 						className: node.name,
 						value: node.size,
-						url: node.url
+						url: node.url,
+						color: node.color
 					} );
 				}
 			}
@@ -122,7 +127,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 		node.append( 'circle' ).attr( 'r', function( d ) {
 			return d.r;
 		} ).style( 'fill', function( d ) {
-			return color( d.className );
+			return d.color || color( d.className );
 		} );
 
 		node.append( 'text' ).attr( 'dy', '.3em' ).style( 'text-anchor', 'middle' ).text(
@@ -131,6 +136,10 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 				} ).on( 'click', function( d ) {
 			if ( d.url ) {
 				window.open( d.url, '_blank' );
+			}
+		} ).style( 'fill', function( d ) {
+			if ( d.color ) {
+				return SELF.prototype._calculateLuma( d.color ) <= 0.5 ? '#FFF' : '#000';
 			}
 		} ).style( 'cursor', 'pointer' );
 
@@ -178,6 +187,30 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 		}
 
 		return true;
+	};
+
+	/**
+	 * Calculate the luma of the given sRGB color.
+	 *
+     * @private
+	 * @param {string} color as six hex digits (no #)
+	 * @return {number} luma of the color, or NaN if the color string is invalid
+	 */
+	SELF.prototype._calculateLuma = function( color ) {
+		var r = parseInt( color.substr( 1, 2 ), 16 ) / 255;
+		var g = parseInt( color.substr( 3, 2 ), 16 ) / 255;
+		var b = parseInt( color.substr( 5, 2 ), 16 ) / 255;
+		if ( isFinite( r ) && isFinite( g ) && isFinite( b ) ) {
+			// linearize gamma-corrected sRGB values
+			r = r <= 0.04045 ? r / 12.92 : Math.pow( ( r + 0.055 ) / 1.055, 2.4 );
+			g = g <= 0.04045 ? g / 12.92 : Math.pow( ( g + 0.055 ) / 1.055, 2.4 );
+			b = b <= 0.04045 ? b / 12.92 : Math.pow( ( b + 0.055 ) / 1.055, 2.4 );
+			// calculate luma using Rec. 709 coefficients
+			var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+			return luma;
+		} else {
+			return NaN;
+		}
 	};
 
 	return SELF;
