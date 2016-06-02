@@ -602,6 +602,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 		}
 
 		var hash = encodeURIComponent( this._editor.getValue() );
+		hash = hash.replace( /[!'()*]/g, function( c ) {
+			return '%' + c.charCodeAt( 0 ).toString( 16 );
+		} );
 
 		if ( window.location.hash !== hash ) {
 			if ( window.history.pushState ) {
