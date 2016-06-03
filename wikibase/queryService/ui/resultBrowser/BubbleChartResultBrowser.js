@@ -132,7 +132,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 			if ( d.url ) {
 				window.open( d.url, '_blank' );
 			}
-		} ).style( 'cursor', 'hand' );
+		} ).style( 'cursor', 'pointer' );
 
 	};
 
