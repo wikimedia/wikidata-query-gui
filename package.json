@@ -25,7 +25,8 @@
 		"vis": "^4.16.1",
 		"moment": "^2.13.0",
 		"es6-shim": "^0.35.1",
-		"jqcloud-npm": "^3.0.3"
+		"jqcloud-npm": "^3.0.3",
+		"downloadjs": "^1.4.4"
 	},
 	"devDependencies": {
 		"grunt": "0.4.5",
