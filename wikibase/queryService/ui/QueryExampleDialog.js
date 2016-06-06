@@ -72,7 +72,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			afterAddingTag: $.proxy( this._filterTable, this ),
 			afterDeletingTag: function() {
 				self._filterTable();
-				self._drawTagCloud();
+				self._drawTagCloud( true );
 			}
 		} );
 
@@ -114,7 +114,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._drawTagCloud = function() {
+	SELF.prototype._drawTagCloud = function( redraw ) {
 		var self = this;
 
 		var jQCloudTags = [];
@@ -125,21 +125,25 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				link: '#',
 				html: {
 					title: weight + ' match(es)'
+				},
+				handlers: {
+					click: function( e ) {
+						self._$element.find( '.tagFilter' ).tags().addTag( $( this ).text() );
+						self._drawTagCloud( true );
+						return false;
+					}
 				}
 			} );
 		} );
 
-		$( '.tagCloud' ).empty();
+		if ( redraw ) {
+			$( '.tagCloud' ).jQCloud( 'update', jQCloudTags );
+			return;
+		}
+
 		$( '.tagCloud' ).jQCloud( jQCloudTags, {
 			delayedMode: true,
-			afterCloudRender: function( e ) {
-				$( '.tagCloud' ).find( 'a' ).click( function( e ) {
-					e.preventDefault();
-					self._$element.find( '.tagFilter' ).tags().addTag( $( this ).text() );
-					self._drawTagCloud();
-					return false;
-				} );
-			}
+			autoResize: true
 		} );
 
 	};

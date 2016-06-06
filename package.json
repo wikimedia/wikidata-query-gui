@@ -24,7 +24,8 @@
 		"js-cookie": "^2.1.2",
 		"vis": "^4.16.1",
 		"moment": "^2.13.0",
-		"es6-shim": "^0.35.1"
+		"es6-shim": "^0.35.1",
+		"jqcloud-npm": "^3.0.3"
 	},
 	"devDependencies": {
 		"grunt": "0.4.5",
