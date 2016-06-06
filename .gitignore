@@ -1,4 +1,5 @@
 node_modules
 .project
 .tmp
+.settings
 dist
