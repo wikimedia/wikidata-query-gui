@@ -224,9 +224,8 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 		tags = $( '<td/>' ).text( tags.join( '|' ) ).hide();
 		var example = $( '<tr/>' );
-		example.append( $( '<td/>' ).append( link ) );
+		example.append( $( '<td/>' ).append( link ).append( ' ', edit ) );
 		example.append( $( '<td/>' ).append( preview ) );
-		example.append( $( '<td/>' ).append( edit ) );
 		example.append( tags );
 
 		this._$element.find( '.searchable' ).append( example );
