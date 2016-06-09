@@ -13,6 +13,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
+	grunt.loadNpmTasks( 'grunt-contrib-htmlmin' );
 
 	var pkg = grunt.file.readJSON( 'package.json' );
 
@@ -122,6 +123,17 @@ module.exports = function( grunt ) {
 			html: [
 				'dist/index.html'
 			]
+		},
+		htmlmin: {
+			dist: {
+				options: {
+					removeComments: true,
+					collapseWhitespace: true
+				},
+				files: {
+					'dist/index.html': 'dist/index.html'
+				}
+			}
 		}
 	} );
 
@@ -129,7 +141,8 @@ module.exports = function( grunt ) {
 			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
-			'clean', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin'
+			'clean', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin',
+			'htmlmin'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };

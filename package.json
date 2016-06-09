@@ -43,6 +43,7 @@
 		"grunt-filerev": "",
 		"grunt-contrib-concat": "",
 		"grunt-contrib-uglify": "",
-		"grunt-contrib-cssmin": ""
+		"grunt-contrib-cssmin": "",
+		"grunt-contrib-htmlmin": "^1.4.0"
 	}
 }
