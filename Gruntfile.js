@@ -58,13 +58,31 @@ module.exports = function( grunt ) {
 		copy: {
 			release: {
 				files: [
-						{
+						{//bootstrap icons
 							expand: true,
 							flatten: true,
 							src: [
-								'vendor/bootstrap/fonts/*'
+								'**/*.{eot,ttf,woff,woff2}'
 							],
 							dest: 'dist/fonts/',
+							filter: 'isFile'
+						},
+						{// uls images
+							expand: true,
+							flatten: true,
+							src: [
+								'**/jquery.uls/images/*.{png,jpg,svg}'
+							],
+							dest: 'dist/images/',
+							filter: 'isFile'
+						},
+						{// leaflet fullscreen images
+							expand: true,
+							flatten: true,
+							src: [
+								'**/leaflet-fullscreen/**/*.png'
+							],
+							dest: 'dist/css/',
 							filter: 'isFile'
 						},
 						{

@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>QUnit Tests</title>
-  <link rel="stylesheet" href="../../node_modules/qunitjs/qunit/qunit.css">
-  <script src="../../node_modules/qunitjs/qunit/qunit.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>QUnit Tests</title>
+<link rel="stylesheet" href="../../node_modules/qunitjs/qunit/qunit.css">
+<script src="../../node_modules/qunitjs/qunit/qunit.js"></script>
 </head>
 <body>
-  <div id="qunit"></div>
-  <div id="qunit-fixture"></div>
- 
- <!-- Vendor -->
- 	<script src="../../vendor/es6-shim/es6-shim.min.js"></script>
-	<script src="../../vendor/jquery/jquery-1.12.0.min.js"></script>
-	<script src="../../vendor/underscore/underscore.js"></script>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+
+	<!-- Vendor -->
+	<script src="../../node_modules/es6-shim/es6-shim.js"></script>
+	<script src="../../node_modules/jquery/dist/jquery.js"></script>
+	<script src="../../node_modules/underscore/underscore.js"></script>
+	<script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="../../node_modules/sinon/pkg/sinon-1.17.3.js"></script>
-	<script src="../../vendor/lightbox/ekko-lightbox.min.js"></script>
-	<script src="../../vendor/leaflet/leaflet.js"></script>
-	<script src="../../vendor/leaflet/addon/fullscreen/Leaflet.fullscreen.min.js"></script>
-	<script src="../../vendor/leaflet/addon/boxzoom/L.Control.ZoomBox.min.js"></script>
-	<script src="../../vendor/d3/d3.min.js"></script>
+
+	<script src="../../node_modules/bootstrap-table/dist/bootstrap-table.js"></script>
+	<script src="../../node_modules/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="../../node_modules/bootstrap-table/dist/extensions/key-events/bootstrap-table-key-events.js"></script>
+	<script src="../../node_modules/bootstrap-table/dist/extensions/cookie/bootstrap-table-cookie.js"></script>
+	<script src="../../node_modules/select2/dist/js/select2.js"></script>
+	<script src="../../node_modules/ekko-lightbox/dist/ekko-lightbox.js"></script>
+	<script src="../../node_modules/leaflet/dist/leaflet.js"></script>
+	<script src="../../node_modules/leaflet-fullscreen/dist/Leaflet.fullscreen.js"></script>
+	<script src="../../node_modules/leaflet-zoombox/L.Control.ZoomBox.js"></script>
+	<script src="../../node_modules/d3/d3.js"></script>
+	<script src="../../node_modules/js-cookie/src/js.cookie.js"></script>
+	<script src="../../node_modules/vis/dist/vis.js"></script>
+	<script src="../../node_modules/moment/min/moment-with-locales.js"></script>
+
 	<script src="../../vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>
-	<script src="../../vendor/bootstrap-table/bootstrap-table.min.js"></script>
-	<script src="../../vendor/bootstrap-table/extensions/mobile/bootstrap-table-mobile.min.js"></script>
-	<script src="../../vendor/bootstrap-table/extensions/key-events/bootstrap-table-key-events.min.js"></script>
-	<script src="../../vendor/bootstrap-table/extensions/cookie/bootstrap-table-cookie.js"></script>
- 	<script src="../../vendor/momentjs/moment-with-locales.min.js"></script>
-	<script src="../../vendor/vis/vis.js"></script>
- <!-- wikibase -->
- 	<script src="../queryService/api/Wikibase.js"></script>
+	<!-- wikibase -->
+	<script src="../queryService/api/Wikibase.js"></script>
 	<script src="../queryService/ui/editor/hint/Rdf.js"></script>
 	<script src="../queryService/RdfNamespaces.js"></script>
 	<script src="../queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
@@ -41,7 +46,7 @@
 	<script src="../queryService/ui/resultBrowser/TableResultBrowser.js"></script>
 	<script src="../queryService/ui/resultBrowser/TreeMapResultBrowser.js"></script>
 	<script src="../queryService/ui/resultBrowser/TimelineResultBrowser.js"></script>
-<!-- Tests -->
+	<!-- Tests -->
 	<script src="queryService/ui/editor/hint/Rdf.test.js"></script>
 	<script src="queryService/ui/resultBrowser/ResultBrowser.test.js"></script>
 </body>
