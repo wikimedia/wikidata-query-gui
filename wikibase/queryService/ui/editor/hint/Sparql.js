@@ -17,7 +17,8 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'(SAMPLE() AS )', 'COUNT', '(COUNT() AS )', 'DESC', 'DESC()', 'ASC', 'ASC()',
 			'FILTER ()', 'FILTER NOT EXISTS', 'FILTER NOT EXISTS {\n\n}', 'UNION', 'UNION {\n\n}',
 			'BIND', 'BIND ()', 'GROUP_CONCAT', '(GROUP_CONCAT() as )', 'ORDER BY',
-			'#defaultView:Map', '#defaultView:ImageGrid'
+			'#defaultView:Map', '#defaultView:ImageGrid', '#defaultView:Map', '#defaultView:BubbleChart',
+			'#defaultView:TreeMap', '#defaultView:Timeline', '#defaultView:Dimensions', '#defaultView:Graph'
 	];
 
 	var SPARQL_PREDICATES = [

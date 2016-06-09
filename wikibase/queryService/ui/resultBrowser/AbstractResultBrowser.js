@@ -120,6 +120,10 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	SELF.prototype.processVisitors = function( data, columnKey ) {
 		var self = this, removeVisitors = [];
 
+		if ( this._visitors.length === 0 ) {
+			return;
+		}
+
 		$.each( this._visitors, function( key, v ) {
 			if ( v.visit && typeof v.visit === 'function' ) {
 				if ( v.visit( data, columnKey ) === false ) {
@@ -129,7 +133,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 		} );
 
 		$.each( removeVisitors, function( key, visitorIndex ) {
-			self._visitors.splice( removeVisitors, 1 );
+			self._visitors.splice( visitorIndex, 1 );
 		} );
 	};
 
