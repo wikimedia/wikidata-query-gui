@@ -237,7 +237,18 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 	 * @return {boolean}
 	 */
 	SELF.prototype.isDrawable = function() {
-		return true;
+		return this._drawable;
+	};
+
+	/**
+	 * Receiving data from the visit
+	 *
+	 * @param {Object} data
+	 * @return {boolean} false if there is no revisit needed
+	 */
+	SELF.prototype.visit = function( data ) {
+		this._drawable = true;
+		return false;
 	};
 
 	return SELF;

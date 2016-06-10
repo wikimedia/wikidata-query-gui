@@ -3,7 +3,7 @@
 
 	QUnit.module( 'wikibase.queryService.ui.resultBrowser' );
 	var resultBrowser = wb.queryService.ui.resultBrowser;
-	var browsers = [ 'TableResultBrowser', 'ImageResultBrowser', 'CoordinateResultBrowser', 'BubbleChartResultBrowser', 'TreeMapResultBrowser', 'TimelineResultBrowser' ];
+	var browsers = [ 'TableResultBrowser', 'ImageResultBrowser', 'CoordinateResultBrowser', 'BubbleChartResultBrowser', 'TreeMapResultBrowser', 'TimelineResultBrowser', 'MultiDimensionResultBrowser', 'GraphResultBrowser' ];
 
 
 	var data = {
@@ -13,7 +13,9 @@
 		CoordinateResultBrowser: {"head":{"vars":["label","coord","place","image"]},"results":{"bindings":[{"coord":{"datatype":"http://www.opengis.net/ont/geosparql#wktLiteral","type":"literal","value":"Point(41.4869-79.5953)"},"label":{"xml:lang":"en","type":"literal","value":"PitholeStoneArchBridge"}},{"coord":{"datatype":"http://www.opengis.net/ont/geosparql#wktLiteral","type":"literal","value":"Point(43.504611.7996)"},"label":{"xml:lang":"en","type":"literal","value":"PonteBuriano"}}]}},
 		BubbleChartResultBrowser: {"head":{"vars":["item","itemLabel","duration"]},"results":{"bindings":[{"item":{"type":"uri","value":"http://www.wikidata.org/entity/Q1440764"},"itemLabel":{"xml:lang":"en","type":"literal","value":"BattleofTimor"},"duration":{"datatype":"http://www.w3.org/2001/XMLSchema#double","type":"literal","value":"356.0"}},{"item":{"type":"uri","value":"http://www.wikidata.org/entity/Q383614"},"itemLabel":{"xml:lang":"en","type":"literal","value":"BattleofKohima"},"duration":{"datatype":"http://www.w3.org/2001/XMLSchema#double","type":"literal","value":"79.0"}}]}},
 		TreeMapResultBrowser: {"head":{"vars":["show","showLabel","season","seasonLabel","episode","episodeLabel"]},"results":{"bindings":[{"show":{"type":"uri","value":"http://www.wikidata.org/entity/Q886"},"season":{"type":"uri","value":"http://www.wikidata.org/entity/Q13131"},"episode":{"type":"uri","value":"http://www.wikidata.org/entity/Q48697"},"showLabel":{"xml:lang":"en","type":"literal","value":"TheSimpsons"},"seasonLabel":{"xml:lang":"en","type":"literal","value":"24thseasonofTheSimpsons"},"episodeLabel":{"xml:lang":"en","type":"literal","value":"AdventuresinBaby-Getting"}},{"show":{"type":"uri","value":"http://www.wikidata.org/entity/Q886"},"season":{"type":"uri","value":"http://www.wikidata.org/entity/Q13131"},"episode":{"type":"uri","value":"http://www.wikidata.org/entity/Q218073"},"showLabel":{"xml:lang":"en","type":"literal","value":"TheSimpsons"},"seasonLabel":{"xml:lang":"en","type":"literal","value":"24thseasonofTheSimpsons"},"episodeLabel":{"xml:lang":"en","type":"literal","value":"MoonshineRiver"}}]}},
-		TimelineResultBrowser: { "head" : { "vars" : [ "_WikidataLabel", "_publication_date" ] }, "results" : { "bindings" : [ { "_publication_date" : { "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime", "type" : "literal", "value" : "2014-10-01T00:00:00Z" }, "_WikidataLabel" : { "xml:lang" : "en", "type" : "literal", "value" : "Wikidata: A Free Collaborative Knowledgebase" } }, { "_publication_date" : { "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime", "type" : "literal", "value" : "2015-01-01T00:00:00Z" }, "_WikidataLabel" : { "xml:lang" : "en", "type" : "literal", "value" : "Utilizing the Wikidata system to improve the quality of medical content in Wikipedia in diverse languages: a pilot study" } }, { "_publication_date" : { "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime", "type" : "literal", "value" : "2015-11-16T00:00:00Z" }, "_WikidataLabel" : { "xml:lang" : "en", "type" : "literal", "value" : "Wikidata: A platform for data integration and dissemination for the life sciences and beyond" } } ] }}
+		TimelineResultBrowser: { "head" : { "vars" : [ "_WikidataLabel", "_publication_date" ] }, "results" : { "bindings" : [ { "_publication_date" : { "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime", "type" : "literal", "value" : "2014-10-01T00:00:00Z" }, "_WikidataLabel" : { "xml:lang" : "en", "type" : "literal", "value" : "Wikidata: A Free Collaborative Knowledgebase" } }, { "_publication_date" : { "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime", "type" : "literal", "value" : "2015-01-01T00:00:00Z" }, "_WikidataLabel" : { "xml:lang" : "en", "type" : "literal", "value" : "Utilizing the Wikidata system to improve the quality of medical content in Wikipedia in diverse languages: a pilot study" } }, { "_publication_date" : { "datatype" : "http://www.w3.org/2001/XMLSchema#dateTime", "type" : "literal", "value" : "2015-11-16T00:00:00Z" }, "_WikidataLabel" : { "xml:lang" : "en", "type" : "literal", "value" : "Wikidata: A platform for data integration and dissemination for the life sciences and beyond" } } ] }},
+		MultiDimensionResultBrowser: {  "head" : {    "vars" : [ "item", "itemLabel" ]  },  "results" : {    "bindings" : [ {      "item" : {        "type" : "uri",        "value" : "http://www.wikidata.org/entity/Q498787"      },      "itemLabel" : {        "xml:lang" : "en",        "type" : "literal",        "value" : "Muezza"      }    }, {      "item" : {        "type" : "uri",        "value" : "http://www.wikidata.org/entity/Q677525"      },      "itemLabel" : {        "xml:lang" : "en",        "type" : "literal",        "value" : "Orangey"      }    } ] }},
+		GraphResultBrowser: {  "head" : {    "vars" : [ "item", "itemLabel" ]  },  "results" : {    "bindings" : [ {      "item" : {        "type" : "uri",        "value" : "http://www.wikidata.org/entity/Q498787"      },      "itemLabel" : {        "xml:lang" : "en",        "type" : "literal",        "value" : "Muezza"      }    }, {      "item" : {        "type" : "uri",        "value" : "http://www.wikidata.org/entity/Q677525"      },      "itemLabel" : {        "xml:lang" : "en",        "type" : "literal",        "value" : "Orangey"      }    } ] }},
 	};
 
 //	var expected = {
@@ -38,6 +40,14 @@
 				var b = new resultBrowser[ browser ]();
 				var tb = new resultBrowser.TableResultBrowser();
 				tb.addVisitor( b );
+
+				$.each( browsers, function( i, ob ){
+					if( ob === browser ){
+						return;
+					}
+					tb.addVisitor( new resultBrowser[ ob ]() );
+				} );
+
 				tb.setResult( data[ browser ] );
 				tb.draw( $( '<div> ' ) );
 
