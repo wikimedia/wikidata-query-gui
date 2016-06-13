@@ -96,8 +96,10 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 									day: 'numeric',
 									year: 'numeric'
 								} );
+							var differenceInSeconds = Math
+									.round( ( new Date() - updateDate ) / 1000 );
 
-						deferred.resolve( dateText );
+						deferred.resolve( dateText, differenceInSeconds );
 					} ).fail( function() {
 				deferred.reject();
 			} );
