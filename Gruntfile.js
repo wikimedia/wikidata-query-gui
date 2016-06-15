@@ -49,7 +49,7 @@ module.exports = function( grunt ) {
 			]
 		},
 		useminPrepare: {
-			html: 'index.html',
+			html: ['index.html', 'embed.html'],
 			options: {
 				dest: 'dist'
 			}
@@ -121,7 +121,7 @@ module.exports = function( grunt ) {
 		},
 		usemin: {
 			html: [
-				'dist/index.html'
+				'dist/index.html', 'dist/embed.html'
 			]
 		},
 		htmlmin: {
