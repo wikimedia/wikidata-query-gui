@@ -5,7 +5,7 @@ This repository contains the GUI for the [Wikidata Query Service](https://query.
 Please see more details about the service in the [User Manual](https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual).
 
 
-#Download
+#Download & setup
 
 Clone git repo, go into created folder and then pull all dependencies via npm package manager.
 
@@ -27,4 +27,18 @@ Create a build with bundled and minified files.
 
 ```bash
 $ grunt build
+```
+
+
+#Deploy
+Creates a build and pushes it to the deployment branch via git review
+
+```bash
+$ grunt deploy
+```
+
+
+Please make sure you have defined a gitreview username:
+```bash
+git config --global --add gitreview.username "[username]"
 ```
