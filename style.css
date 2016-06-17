@@ -131,8 +131,6 @@ iframe.shortUrl {
 	margin-right: 0;
 }
 
-
-
 .label {
 	font-size: 100%;
 }
@@ -376,6 +374,11 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 }
 .visual-editor .panel-info {
     background: rgba(255,255,255,0.9);
+}
+
+.visual-editor .panel-heading {
+	background: rgba(255, 255, 255, 0.9);
+	padding: 8px 10px;
 }
 
 .visual-editor .panel-body {
