@@ -222,7 +222,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					trigger: 'hover',
 					container: 'body',
 					title: 'Preview',
-					content: $( '<pre style="white-space: pre-wrap;"/>' ).text( query ),
+					content: $( '<pre style="white-space:pre-line; word-break:break-word;"/>' ).text( query ),
 					html: true
 				} );
 
