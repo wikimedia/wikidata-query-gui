@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ ) {
+wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _, Cookies ) {
 	'use strict';
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
@@ -195,7 +195,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 	 * @private
 	 */
 	SELF.prototype._initVisualEditor = function() {
-		var self = this;
+		var self = this,
+			cookieHide = 'visual-editor-hide';
+
 		if ( !this._visualEditor ) {
 			this._visualEditor = new wikibase.queryService.ui.visualEditor.VisualEditor();
 		}
@@ -203,18 +205,24 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 			self._editor.setValue( ve.getQuery() );
 		} );
 
+		if ( Cookies.get( cookieHide ) === 'true' ) {
+			$( '.visual-editor-trigger' ).show();
+		}
+
 		if ( this._editor ) {
 			this._editor.registerCallback( 'change', _.debounce( function() {
 				if ( $( '.visual-editor-trigger' ).is( ':visible' ) ||
 						self._editor.getValue() === self._visualEditor.getQuery() ) {
 					return;
 				}
+
 				$( '.visual-editor' ).hide();
 				self._drawVisualEditor();
-			}, 500 ) );
+			}, 1500 ) );
 		}
 
 		$( '.visual-editor .panel-heading .close' ).click( function() {
+			Cookies.set( cookieHide, true );
 			$( '.visual-editor' ).hide();
 			$( '.visual-editor-trigger' ).show();
 			return false;
@@ -222,6 +230,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 
 		$( '.visual-editor-trigger' ).click( function() {
 			$( '.visual-editor-trigger' ).hide();
+			Cookies.set( cookieHide, false );
 			self._drawVisualEditor();
 			return false;
 		} );
@@ -690,4 +699,4 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _ 
 	};
 
 	return SELF;
-}( jQuery, mediaWiki, download, EXPLORER, window, _ ) );
+}( jQuery, mediaWiki, download, EXPLORER, window, _, Cookies ) );
