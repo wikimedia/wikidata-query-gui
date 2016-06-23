@@ -24,16 +24,21 @@
 </head>
 <body>
 
-	<div id="progress" class="progress">
-		<div class="progress-bar progress-bar-info
-                   progress-bar-striped active" style="width: 100%">Loading</div>
+	<div id="progress">
+		<div class="progress">
+			<div class="progress-bar progress-bar
+	                   progress-bar-striped active" style="width: 100%">Loading</div>
+		</div>
+		<div style="position:absolute;top:0px;height:100%; width:100%; background-size: 80% 80%;
+					background-image:url(https://upload.wikimedia.org/wikipedia/commons/6/66/Wikidata-logo-en.svg);  
+					background-repeat:no-repeat; background-position:center;"></div>
 	</div>
 	<div id="error" class="progress" style="display: none;">
 		<div class="progress-bar progress-bar-danger" style="width: 100%">Error</div>
 	</div>
 
 	<div id="result"></div>
-	<a class="link" target="_blank" style="position: fixed; bottom: 0px; left: 0px; padding: 0px 2px 0px 2px; background-color: rgba(255, 255, 255, 0.7);"><small>Wikidata.org</small></a>
+	<a class="link" target="_blank" title="Wikidata Query Service SPARQL" style="position: fixed; bottom: 0px; left: 0px; padding: 0px 2px 0px 2px; background-color: rgba(255, 255, 255, 0.7);"><small>Wikidata.org</small></a>
 
 	<!-- JS files -->
 	<!-- build:js js/embed.vendor.min.js -->
