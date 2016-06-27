@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _, Cookies ) {
+wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _, Cookies, moment ) {
 	'use strict';
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
@@ -309,10 +309,50 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._initDataUpdated = function() {
-		this._sparqlApi.queryDataUpdatedTime().done( function( time ) {
-			$( '#dbUpdated' ).text( time );
-		} ).fail( function() {
-			$( '#dbUpdated' ).text( '[unable to connect]' );
+		var self = this;
+		var $label = $( '.dataUpdated > span' );
+
+		var updateDataStatus = function() {
+			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
+
+				var updatestatustext = moment.duration( difference, 'seconds' ).humanize();
+
+				$label.text( updatestatustext );
+
+				$label.removeClass( 'list-group-item-success', 'list-group-item-warning', 'list-group-item-danger' );
+
+				if ( difference <= 60 * 2 ) {
+					$label.addClass( 'list-group-item-success' );
+				} else if ( difference <= 60 * 15 ) {
+					$label.addClass( 'list-group-item-warning' );
+				} else {
+					$label.addClass( 'list-group-item-danger' );
+				}
+			} );
+		};
+
+		updateDataStatus();
+
+		window.setInterval( updateDataStatus, 10 * 60 * 1000 );
+
+		$label.hover( function() {
+			updateDataStatus();
+
+			var e = $( this );
+			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
+				e.popover( {
+					html: true,
+					placement: 'bottom',
+					content: 'Data last updated: ' + difference + 's ago.<br/>' + time
+				} ).popover( 'show' );
+			} ).fail( function() {
+				e.popover( {
+					content: '[unable to connect]'
+				} ).popover( 'show' );
+			} );
+		}, function() {
+			var e = $( this );
+			e.popover( 'destroy' );
 		} );
 	};
 
@@ -699,4 +739,5 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	};
 
 	return SELF;
-}( jQuery, mediaWiki, download, EXPLORER, window, _, Cookies ) );
+
+}( jQuery, mediaWiki, download, EXPLORER, window, _, Cookies, moment ) );
