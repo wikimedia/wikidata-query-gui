@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"AzorAhai",
+			"Reza1615"
+		]
+	},
+	"wdqs-app-button-examples": "مثال‌ها",
+	"wdqs-app-button-prefixes": "پیشوند",
+	"wdqs-app-button-tools": "ابزارها",
+	"wdqs-app-button-help": "راهنما",
+	"wdqs-app-button-run": "اجرا",
+	"wdqs-app-button-clear": "پاک‌کردن",
+	"wdqs-app-button-display": "نمایش",
+	"wdqs-app-button-download": "دریافت",
+	"wdqs-app-button-link": "پیوند",
+	"wdqs-ve-find": "یافتن",
+	"wdqs-ve-show": "نمایش",
+	"wdqs-ve-with": "با",
+	"wdqs-ve-and": "و",
+	"wdqs-ve-anything": "همه‌چیز",
+	"wdqs-ve-any": "هر",
+	"wdqs-ve-or": "یا",
+	"wdqs-ve-subtype": "زیرنوع"
+}

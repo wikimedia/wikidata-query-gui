@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"wdqs-app-button-examples": "उदाहरणे",
+	"wdqs-app-button-prefixes": "उपसर्ग",
+	"wdqs-app-button-tools": "साधने",
+	"wdqs-app-button-help": "साहाय्य",
+	"wdqs-app-button-run": "चालवा",
+	"wdqs-app-button-clear": "स्वच्छ करा",
+	"wdqs-app-button-display": "दर्शवा",
+	"wdqs-app-button-download": "अधिभारण करा",
+	"wdqs-app-button-link": "दुवा",
+	"wdqs-ve-find": "शोधा",
+	"wdqs-ve-show": "दाखवा",
+	"wdqs-ve-with": "सह",
+	"wdqs-ve-and": "आणि",
+	"wdqs-ve-anything": "कोणतीही गोष्ट",
+	"wdqs-ve-any": "कोणतेही",
+	"wdqs-ve-or": "किंवा",
+	"wdqs-ve-subtype": "उपप्रकार"
+}

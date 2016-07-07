@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sfic"
+		]
+	},
+	"wdqs-app-button-examples": "उदाहरण",
+	"wdqs-app-button-prefixes": "उपसर्ग",
+	"wdqs-app-button-tools": "उपकरण",
+	"wdqs-app-button-help": "सहायता",
+	"wdqs-app-button-clear": "खाली करें",
+	"wdqs-app-button-display": "प्रदर्शन",
+	"wdqs-app-button-download": "डाउनलोड",
+	"wdqs-app-button-link": "कड़ी",
+	"wdqs-ve-find": "खोजें",
+	"wdqs-ve-show": "दिखाएँ",
+	"wdqs-ve-with": "के साथ",
+	"wdqs-ve-and": "और",
+	"wdqs-ve-any": "कोई भी",
+	"wdqs-ve-or": "या",
+	"wdqs-ve-subtype": "उपप्रकार"
+}

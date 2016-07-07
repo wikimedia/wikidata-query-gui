@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"wdqs-app-button-examples": "Exemplos",
+	"wdqs-app-button-prefixes": "Prefixos",
+	"wdqs-app-button-tools": "Ferramentas",
+	"wdqs-app-button-help": "Ajuda",
+	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-clear": "Limpar",
+	"wdqs-app-button-display": "Mostrar",
+	"wdqs-app-button-download": "Descarregar",
+	"wdqs-app-button-link": "Ligação",
+	"wdqs-ve-find": "Procurar",
+	"wdqs-ve-show": "Mostrar",
+	"wdqs-ve-with": "com",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-anything": "qualquer coisa",
+	"wdqs-ve-any": "qualquer",
+	"wdqs-ve-or": "ou",
+	"wdqs-ve-subtype": "subtipo"
+}

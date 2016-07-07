@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"01miki10",
+			"Silvonen",
+			"Stryn"
+		]
+	},
+	"wdqs-app-button-examples": "Esimerkkejä",
+	"wdqs-app-button-prefixes": "Etuliitteet",
+	"wdqs-app-button-tools": "Työkalut",
+	"wdqs-app-button-help": "Ohje",
+	"wdqs-app-button-run": "Suorita",
+	"wdqs-app-button-clear": "Tyhjennä",
+	"wdqs-app-button-display": "Näytä",
+	"wdqs-app-button-download": "Lataa",
+	"wdqs-app-button-link": "Linkki",
+	"wdqs-ve-find": "Etsi",
+	"wdqs-ve-show": "Näytä",
+	"wdqs-ve-with": "jossa",
+	"wdqs-ve-and": "ja",
+	"wdqs-ve-anything": "mikä tahansa",
+	"wdqs-ve-any": "kaikki",
+	"wdqs-ve-or": "tai",
+	"wdqs-ve-subtype": "alatyyppi"
+}

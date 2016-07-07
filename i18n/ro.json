@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"ANDROBETA"
+		]
+	},
+	"wdqs-app-button-examples": "Exemple",
+	"wdqs-app-button-prefixes": "Prefixe",
+	"wdqs-app-button-tools": "Unelte",
+	"wdqs-app-button-help": "Ajutor",
+	"wdqs-app-button-run": "Pornire",
+	"wdqs-app-button-clear": "Curăță",
+	"wdqs-app-button-display": "Afișare",
+	"wdqs-app-button-download": "Descărcare",
+	"wdqs-app-button-link": "Legătură",
+	"wdqs-ve-find": "Găsește",
+	"wdqs-ve-show": "Afișează",
+	"wdqs-ve-with": "cu",
+	"wdqs-ve-and": "și",
+	"wdqs-ve-anything": "orice",
+	"wdqs-ve-any": "oricare",
+	"wdqs-ve-or": "sau",
+	"wdqs-ve-subtype": "subtip"
+}

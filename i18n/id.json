@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beeyan"
+		]
+	},
+	"wdqs-app-button-examples": "Contoh",
+	"wdqs-app-button-prefixes": "Awalan",
+	"wdqs-app-button-tools": "Perkakas",
+	"wdqs-app-button-help": "Bantuan",
+	"wdqs-app-button-run": "Jalankan",
+	"wdqs-app-button-clear": "Kosongkan",
+	"wdqs-app-button-display": "Tampilan",
+	"wdqs-app-button-download": "Unduh",
+	"wdqs-app-button-link": "Pranala",
+	"wdqs-ve-find": "Temukan",
+	"wdqs-ve-show": "Tampilkan",
+	"wdqs-ve-with": "dengan",
+	"wdqs-ve-and": "dan",
+	"wdqs-ve-anything": "semuanya",
+	"wdqs-ve-any": "semua",
+	"wdqs-ve-or": "atau",
+	"wdqs-ve-subtype": "subjenis"
+}

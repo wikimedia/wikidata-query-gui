@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otokoume"
+		]
+	},
+	"wdqs-app-button-examples": "例",
+	"wdqs-app-button-tools": "ツール",
+	"wdqs-app-button-help": "ヘルプ",
+	"wdqs-app-button-run": "実行",
+	"wdqs-app-button-clear": "消去",
+	"wdqs-app-button-display": "表示",
+	"wdqs-app-button-download": "ダウンロード",
+	"wdqs-app-button-link": "リンク",
+	"wdqs-ve-find": "検索"
+}

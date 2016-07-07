@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kumkumuk"
+		]
+	},
+	"wdqs-app-button-examples": "Örnekler",
+	"wdqs-app-button-prefixes": "Önekler",
+	"wdqs-app-button-tools": "Araçlar",
+	"wdqs-app-button-help": "Yardım",
+	"wdqs-app-button-run": "Çalıştır",
+	"wdqs-app-button-clear": "Temizle",
+	"wdqs-app-button-display": "Görüntüle",
+	"wdqs-app-button-download": "İndir",
+	"wdqs-app-button-link": "Bağlantı",
+	"wdqs-ve-find": "Bul",
+	"wdqs-ve-show": "Göster",
+	"wdqs-ve-with": "ile",
+	"wdqs-ve-and": "ve",
+	"wdqs-ve-anything": "hiçbir şey",
+	"wdqs-ve-any": "herhangi",
+	"wdqs-ve-or": "ya da",
+	"wdqs-ve-subtype": "alt tür"
+}

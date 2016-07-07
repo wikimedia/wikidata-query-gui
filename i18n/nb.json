@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Danmichaelo"
+		]
+	},
+	"wdqs-app-button-examples": "Eksempler",
+	"wdqs-app-button-prefixes": "Prefiks",
+	"wdqs-app-button-tools": "Verktøy",
+	"wdqs-app-button-help": "Hjelp",
+	"wdqs-app-button-run": "Kjør",
+	"wdqs-app-button-clear": "Tøm",
+	"wdqs-app-button-display": "Visning",
+	"wdqs-app-button-download": "Last ned",
+	"wdqs-app-button-link": "Lenke",
+	"wdqs-ve-find": "Finn",
+	"wdqs-ve-show": "Vis",
+	"wdqs-ve-with": "med",
+	"wdqs-ve-and": "og",
+	"wdqs-ve-anything": "hva som helst",
+	"wdqs-ve-any": "enhver",
+	"wdqs-ve-or": "eller",
+	"wdqs-ve-subtype": "undertype"
+}

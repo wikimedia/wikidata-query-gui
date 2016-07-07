@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kwj2772",
+			"Ykhwong"
+		]
+	},
+	"wdqs-app-button-examples": "예시",
+	"wdqs-app-button-prefixes": "접두어",
+	"wdqs-app-button-tools": "도구",
+	"wdqs-app-button-help": "도움말",
+	"wdqs-app-button-run": "동작",
+	"wdqs-app-button-clear": "지우기",
+	"wdqs-app-button-display": "보기",
+	"wdqs-app-button-download": "다운로드",
+	"wdqs-app-button-link": "링크",
+	"wdqs-ve-find": "찾기",
+	"wdqs-ve-show": "보기",
+	"wdqs-ve-with": "사용",
+	"wdqs-ve-and": "그리고",
+	"wdqs-ve-anything": "모든 항목",
+	"wdqs-ve-any": "모두",
+	"wdqs-ve-or": "또는",
+	"wdqs-ve-subtype": "하위 유형"
+}

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"wdqs-app-button-examples": "Esembie",
+	"wdqs-app-button-prefixes": "Prefisse",
+	"wdqs-app-button-tools": "Struminde",
+	"wdqs-app-button-help": "Aijute",
+	"wdqs-app-button-run": "Esegue",
+	"wdqs-app-button-clear": "Pulizze",
+	"wdqs-app-button-display": "Fà vedè",
+	"wdqs-app-button-download": "Scareche",
+	"wdqs-app-button-link": "Collegamende",
+	"wdqs-ve-find": "Iacchie",
+	"wdqs-ve-show": "Fà vedè",
+	"wdqs-ve-with": "cu",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-anything": "tutte",
+	"wdqs-ve-any": "tutte",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "sottotipe"
+}

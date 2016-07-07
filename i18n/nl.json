@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand"
+			"Siebrand",
+			"Sjoerddebruin"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -10,7 +11,7 @@
 	"wdqs-app-button-help": "Hulp",
 	"wdqs-app-button-run": "Uitvoeren",
 	"wdqs-app-button-clear": "Wissen",
-	"wdqs-app-button-display": "Weergeven",
+	"wdqs-app-button-display": "Weergaven",
 	"wdqs-app-button-download": "Downloaden",
 	"wdqs-app-button-link": "Koppeling",
 	"wdqs-ve-find": "Zoeken",

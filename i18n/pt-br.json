@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"HenriqueCrang",
+			"Macofe"
+		]
+	},
+	"wdqs-app-button-examples": "Exemplos",
+	"wdqs-app-button-prefixes": "Prefixos",
+	"wdqs-app-button-tools": "Ferramentas",
+	"wdqs-app-button-help": "Ajuda",
+	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-clear": "Limpar",
+	"wdqs-app-button-display": "Exibir",
+	"wdqs-app-button-download": "Baixar",
+	"wdqs-app-button-link": "Link",
+	"wdqs-ve-find": "Procurar",
+	"wdqs-ve-show": "Exibir",
+	"wdqs-ve-with": "com",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-anything": "qualquer coisa",
+	"wdqs-ve-any": "qualquer",
+	"wdqs-ve-or": "ou",
+	"wdqs-ve-subtype": "subtipo"
+}

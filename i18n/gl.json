@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"wdqs-app-button-examples": "Exemplos",
+	"wdqs-app-button-prefixes": "PrefixoS",
+	"wdqs-app-button-tools": "Ferramentas",
+	"wdqs-app-button-help": "Axuda",
+	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-clear": "Limpar",
+	"wdqs-app-button-display": "Visualización",
+	"wdqs-app-button-download": "Descargar",
+	"wdqs-app-button-link": "Ligazón",
+	"wdqs-ve-find": "Procurar",
+	"wdqs-ve-show": "Mostrar",
+	"wdqs-ve-with": "con",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-anything": "calquera cousa",
+	"wdqs-ve-any": "calquera",
+	"wdqs-ve-or": "ou",
+	"wdqs-ve-subtype": "subtipo"
+}

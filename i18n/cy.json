@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin Owain"
+		]
+	},
+	"wdqs-app-button-examples": "Engreifftiau",
+	"wdqs-app-button-prefixes": "Rhagddodiad",
+	"wdqs-app-button-tools": "Offer",
+	"wdqs-app-button-help": "Cymorth",
+	"wdqs-app-button-run": "Rhoi ar waith",
+	"wdqs-app-button-clear": "Clirio",
+	"wdqs-app-button-display": "Arddangos",
+	"wdqs-app-button-download": "Lawrlwytho",
+	"wdqs-app-button-link": "Dolennau",
+	"wdqs-ve-find": "Canfod",
+	"wdqs-ve-show": "Arddangos",
+	"wdqs-ve-with": "gyda",
+	"wdqs-ve-and": "a / ac",
+	"wdqs-ve-anything": "unrhyw beth",
+	"wdqs-ve-any": "unrhyw",
+	"wdqs-ve-or": "neu",
+	"wdqs-ve-subtype": "is-fath"
+}

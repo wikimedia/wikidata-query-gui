@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"NoiX180"
+		]
+	},
+	"wdqs-app-button-examples": "Conto",
+	"wdqs-app-button-prefixes": "Ater-ater",
+	"wdqs-app-button-tools": "Piranti",
+	"wdqs-app-button-help": "Pitulung",
+	"wdqs-app-button-run": "Lakokaké",
+	"wdqs-app-button-clear": "Resiki",
+	"wdqs-app-button-display": "Pajang",
+	"wdqs-app-button-download": "Undhuh",
+	"wdqs-app-button-link": "Pranala",
+	"wdqs-ve-find": "Golèk",
+	"wdqs-ve-show": "Tuduhaké",
+	"wdqs-ve-with": "karo",
+	"wdqs-ve-and": "lan",
+	"wdqs-ve-anything": "apa waé",
+	"wdqs-ve-any": "apa waé",
+	"wdqs-ve-or": "utawa",
+	"wdqs-ve-subtype": "anak jinis"
+}

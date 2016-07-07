@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ильнар"
+		]
+	},
+	"wdqs-app-button-examples": "Мисаллар",
+	"wdqs-app-button-prefixes": "Префикслар",
+	"wdqs-app-button-tools": "Кораллар",
+	"wdqs-app-button-help": "Ярдәм",
+	"wdqs-app-button-run": "Җибәрү",
+	"wdqs-app-button-clear": "Чистарту",
+	"wdqs-app-button-display": "Күрсәтү",
+	"wdqs-app-button-download": "Йөкләү",
+	"wdqs-app-button-link": "Сылтама",
+	"wdqs-ve-find": "Эзләү",
+	"wdqs-ve-show": "Күрсәтү",
+	"wdqs-ve-with": "белән",
+	"wdqs-ve-and": "һәм",
+	"wdqs-ve-anything": "берәрсен",
+	"wdqs-ve-any": "теләгәнен",
+	"wdqs-ve-or": "яки",
+	"wdqs-ve-subtype": "астип"
+}

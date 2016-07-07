@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia"
+		]
+	},
+	"wdqs-app-button-examples": "Contoh",
+	"wdqs-app-button-prefixes": "Awalan",
+	"wdqs-app-button-tools": "Alat",
+	"wdqs-app-button-help": "Bantuan",
+	"wdqs-app-button-run": "Jalankan",
+	"wdqs-app-button-clear": "Padamkan",
+	"wdqs-app-button-display": "Paparkan",
+	"wdqs-app-button-download": "Muat turun",
+	"wdqs-app-button-link": "Pautan",
+	"wdqs-ve-find": "Cari",
+	"wdqs-ve-show": "Tunjukkan",
+	"wdqs-ve-with": "dengan",
+	"wdqs-ve-and": "dan",
+	"wdqs-ve-anything": "apa-apa sahaja",
+	"wdqs-ve-any": "sebarang",
+	"wdqs-ve-or": "atau",
+	"wdqs-ve-subtype": "subjenis"
+}

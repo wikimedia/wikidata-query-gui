@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zygimantus"
+		]
+	},
+	"wdqs-app-button-examples": "Pavyzdžiai",
+	"wdqs-app-button-prefixes": "Priešdėliai",
+	"wdqs-app-button-tools": "Įrankiai",
+	"wdqs-app-button-help": "Pagalba",
+	"wdqs-app-button-run": "Paleisti",
+	"wdqs-app-button-clear": "Išvalyti",
+	"wdqs-app-button-display": "Rodyti",
+	"wdqs-app-button-download": "Atsisiųsti",
+	"wdqs-app-button-link": "Nuoroda",
+	"wdqs-ve-find": "Ieškoti",
+	"wdqs-ve-show": "Rodyti",
+	"wdqs-ve-with": "su",
+	"wdqs-ve-and": "ir",
+	"wdqs-ve-anything": "bet kas",
+	"wdqs-ve-any": "bet kuris",
+	"wdqs-ve-or": "arba",
+	"wdqs-ve-subtype": "potipis"
+}

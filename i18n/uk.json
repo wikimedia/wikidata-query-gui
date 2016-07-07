@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Laboramus"
+			"Laboramus",
+			"Ата"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -17,7 +18,7 @@
 	"wdqs-ve-show": "Показати",
 	"wdqs-ve-with": "з",
 	"wdqs-ve-and": "та",
-	"wdqs-ve-anything": "будь-яке",
+	"wdqs-ve-anything": "будь-що",
 	"wdqs-ve-any": "будь-яке",
 	"wdqs-ve-or": "або",
 	"wdqs-ve-subtype": "підтип"

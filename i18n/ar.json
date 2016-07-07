@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alaa"
+		]
+	},
+	"wdqs-app-button-examples": "أمثلة",
+	"wdqs-app-button-prefixes": "لواحق",
+	"wdqs-app-button-tools": "أدوات",
+	"wdqs-app-button-help": "مساعدة",
+	"wdqs-app-button-run": "تشغيل",
+	"wdqs-app-button-clear": "مسح",
+	"wdqs-app-button-display": "عرض",
+	"wdqs-app-button-download": "تحميل",
+	"wdqs-app-button-link": "رابط",
+	"wdqs-ve-show": "إظهار",
+	"wdqs-ve-with": "مع",
+	"wdqs-ve-and": "و",
+	"wdqs-ve-anything": "أي شيء",
+	"wdqs-ve-any": "أي",
+	"wdqs-ve-or": "أو"
+}

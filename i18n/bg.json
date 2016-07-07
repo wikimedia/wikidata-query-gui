@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Termininja"
+		]
+	},
+	"wdqs-app-button-examples": "Примери",
+	"wdqs-app-button-prefixes": "Представки",
+	"wdqs-app-button-tools": "Инструменти",
+	"wdqs-app-button-help": "Помощ",
+	"wdqs-app-button-run": "Стартиране",
+	"wdqs-app-button-clear": "Изчистване",
+	"wdqs-app-button-display": "Показване",
+	"wdqs-app-button-download": "Изтегляне",
+	"wdqs-app-button-link": "Препратка",
+	"wdqs-ve-find": "Търсене",
+	"wdqs-ve-show": "Показване",
+	"wdqs-ve-with": "с",
+	"wdqs-ve-and": "и",
+	"wdqs-ve-anything": "нищо",
+	"wdqs-ve-any": "всяко",
+	"wdqs-ve-or": "или",
+	"wdqs-ve-subtype": "подтип"
+}

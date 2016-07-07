@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"wdqs-app-button-examples": "Exemplos",
+	"wdqs-app-button-prefixes": "Prefixos",
+	"wdqs-app-button-tools": "Ferramientes",
+	"wdqs-app-button-help": "Ayuda",
+	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-clear": "Llimpiar",
+	"wdqs-app-button-display": "Amosar",
+	"wdqs-app-button-download": "Descargar",
+	"wdqs-app-button-link": "Enllaz",
+	"wdqs-ve-find": "Alcontrar",
+	"wdqs-ve-show": "Amosar",
+	"wdqs-ve-with": "con",
+	"wdqs-ve-and": "y",
+	"wdqs-ve-anything": "cualquier cosa",
+	"wdqs-ve-any": "cualesquiera",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "subtipu"
+}

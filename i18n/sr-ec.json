@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rancher"
+		]
+	},
+	"wdqs-app-button-examples": "Примери",
+	"wdqs-app-button-prefixes": "Префикси",
+	"wdqs-app-button-tools": "Алатке",
+	"wdqs-app-button-help": "Помоћ",
+	"wdqs-app-button-run": "Покрени",
+	"wdqs-app-button-clear": "Очисти",
+	"wdqs-app-button-display": "Формат",
+	"wdqs-app-button-download": "Преузми",
+	"wdqs-app-button-link": "Веза",
+	"wdqs-ve-find": "Пронађи",
+	"wdqs-ve-show": "Прикажи",
+	"wdqs-ve-with": "са",
+	"wdqs-ve-and": "и",
+	"wdqs-ve-anything": "било шта",
+	"wdqs-ve-any": "било које",
+	"wdqs-ve-or": "или",
+	"wdqs-ve-subtype": "подтип"
+}

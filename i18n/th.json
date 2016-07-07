@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bluegram"
+		]
+	},
+	"wdqs-app-button-examples": "ตัวอย่าง",
+	"wdqs-app-button-tools": "เครื่องมือ",
+	"wdqs-app-button-help": "ช่วยเหลือ",
+	"wdqs-app-button-clear": "ล้าง",
+	"wdqs-app-button-download": "ดาวน์โหลด",
+	"wdqs-app-button-link": "ลิงก์",
+	"wdqs-ve-find": "ค้นหา",
+	"wdqs-ve-show": "แสดง",
+	"wdqs-ve-with": "ด้วย:",
+	"wdqs-ve-and": "และ",
+	"wdqs-ve-or": "หรือ",
+	"wdqs-ve-subtype": "หมวดย่อย"
+}

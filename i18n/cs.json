@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Clon",
+			"Mormegil"
+		]
+	},
+	"wdqs-app-button-examples": "Příklady",
+	"wdqs-app-button-prefixes": "Předpony",
+	"wdqs-app-button-tools": "Nástroje",
+	"wdqs-app-button-help": "Nápověda",
+	"wdqs-app-button-run": "Spustit",
+	"wdqs-app-button-clear": "Vymazat",
+	"wdqs-app-button-display": "Zobrazení",
+	"wdqs-app-button-download": "Stáhnout",
+	"wdqs-app-button-link": "Odkaz",
+	"wdqs-ve-find": "Najít",
+	"wdqs-ve-show": "Zobrazit",
+	"wdqs-ve-with": "s",
+	"wdqs-ve-and": "a",
+	"wdqs-ve-anything": "cokoli",
+	"wdqs-ve-any": "libovolné",
+	"wdqs-ve-or": "nebo",
+	"wdqs-ve-subtype": "podtyp"
+}

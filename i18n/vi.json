@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nguyên Lê"
+		]
+	},
+	"wdqs-app-button-examples": "Ví dụ",
+	"wdqs-app-button-prefixes": "Tiền tố",
+	"wdqs-app-button-tools": "Công cụ",
+	"wdqs-app-button-help": "Trợ giúp",
+	"wdqs-app-button-run": "Chạy",
+	"wdqs-app-button-clear": "Tẩy trống",
+	"wdqs-app-button-display": "Hiển thị",
+	"wdqs-app-button-download": "Tải xuống",
+	"wdqs-app-button-link": "Liên kết",
+	"wdqs-ve-find": "Tìm kiếm",
+	"wdqs-ve-show": "Hiện",
+	"wdqs-ve-with": "với",
+	"wdqs-ve-and": "và",
+	"wdqs-ve-anything": "bất kỳ thứ gì",
+	"wdqs-ve-any": "bất kỳ",
+	"wdqs-ve-or": "hoặc",
+	"wdqs-ve-subtype": "kiểu con"
+}
