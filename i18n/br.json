@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gwenn-Ael"
+		]
+	},
+	"wdqs-app-button-examples": "Skouerioù",
+	"wdqs-app-button-prefixes": "Rakgerioù",
+	"wdqs-app-button-tools": "Ostilhoù",
+	"wdqs-app-button-help": "Skoazell",
+	"wdqs-app-button-run": "Seveniñ",
+	"wdqs-app-button-clear": "Diverkañ",
+	"wdqs-app-button-display": "Diskwel",
+	"wdqs-app-button-download": "Pellgargañ",
+	"wdqs-app-button-link": "Liammoù",
+	"wdqs-ve-find": "Klask",
+	"wdqs-ve-show": "Diskouez",
+	"wdqs-ve-with": "gant :",
+	"wdqs-ve-and": "ha(g)",
+	"wdqs-ve-anything": "Netra",
+	"wdqs-ve-any": "forzh pehini",
+	"wdqs-ve-or": "pe",
+	"wdqs-ve-subtype": "Is-doare"
+}
