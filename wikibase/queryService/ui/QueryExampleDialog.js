@@ -57,6 +57,11 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 		this._initFilter();
 		this._initExamples();
+
+		var self = this;
+		this._$element.focus( function() {
+			self._$element.find( '.tableFilter' ).focus();
+		} );
 	};
 
 	/**
