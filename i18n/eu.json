@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sator"
+		]
+	},
+	"wdqs-app-button-examples": "Adibideak",
+	"wdqs-app-button-prefixes": "Aurrizkiak",
+	"wdqs-app-button-tools": "Tresnak",
+	"wdqs-app-button-help": "Laguntza",
+	"wdqs-app-button-clear": "Garbitu",
+	"wdqs-app-button-display": "Erakutsi",
+	"wdqs-app-button-download": "Jaitsi",
+	"wdqs-app-button-link": "Lotura",
+	"wdqs-ve-find": "Aurkitu",
+	"wdqs-ve-show": "Erakutsi",
+	"wdqs-ve-with": "honekin",
+	"wdqs-ve-and": "eta",
+	"wdqs-ve-or": "edo"
+}
