@@ -11,6 +11,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
 	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/';
 	var DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime';
+	var DATATYPE_MATHML = 'http://www.w3.org/1998/Math/MathML';
 	var TYPE_URI = 'uri';
 
 	var NUMBER_TYPES = [
@@ -108,6 +109,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			var $dateLabel = $( '<span>' ).text( this._formatDate( this.parseDate( value ) ) );
 			$dateLabel.attr( 'title', title + ': ' + value );
 			$html.append( $dateLabel );
+			break;
+		case DATATYPE_MATHML:
+			$html.append( $( data ) );
 			break;
 
 		default:
