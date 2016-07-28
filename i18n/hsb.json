@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Michawiki"
+		]
+	},
+	"wdqs-app-button-examples": "Přikłady",
+	"wdqs-app-button-prefixes": "Prefiksy",
+	"wdqs-app-button-tools": "Nastroje",
+	"wdqs-app-button-help": "Pomoc",
+	"wdqs-app-button-run": "Wuwjesć",
+	"wdqs-app-button-clear": "Wuprózdnić",
+	"wdqs-app-button-display": "Zwobraznić",
+	"wdqs-app-button-download": "Sćahnyć",
+	"wdqs-app-button-link": "Wotkaz",
+	"wdqs-ve-find": "Namakać",
+	"wdqs-ve-show": "Pokazać",
+	"wdqs-ve-with": "z",
+	"wdqs-ve-and": "a",
+	"wdqs-ve-anything": "wšitko",
+	"wdqs-ve-any": "někajka",
+	"wdqs-ve-or": "abo",
+	"wdqs-ve-subtype": "podtyp"
+}

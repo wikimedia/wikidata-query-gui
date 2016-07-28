@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otokoume"
+			"Otokoume",
+			"Fryed-peach"
 		]
 	},
 	"wdqs-app-button-examples": "例",
+	"wdqs-app-button-prefixes": "接頭辞",
 	"wdqs-app-button-tools": "ツール",
 	"wdqs-app-button-help": "ヘルプ",
 	"wdqs-app-button-run": "実行",
@@ -12,5 +14,8 @@
 	"wdqs-app-button-display": "表示",
 	"wdqs-app-button-download": "ダウンロード",
 	"wdqs-app-button-link": "リンク",
-	"wdqs-ve-find": "検索"
+	"wdqs-ve-find": "検索",
+	"wdqs-ve-show": "表示",
+	"wdqs-ve-and": "かつ",
+	"wdqs-ve-or": "または"
 }
