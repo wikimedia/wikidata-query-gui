@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Alaa"
+			"Alaa",
+			"Meno25",
+			"Mr. Ibrahem"
 		]
 	},
 	"wdqs-app-button-examples": "أمثلة",
@@ -13,10 +15,12 @@
 	"wdqs-app-button-display": "عرض",
 	"wdqs-app-button-download": "تحميل",
 	"wdqs-app-button-link": "رابط",
+	"wdqs-ve-find": "ابحث",
 	"wdqs-ve-show": "إظهار",
 	"wdqs-ve-with": "مع",
 	"wdqs-ve-and": "و",
 	"wdqs-ve-anything": "أي شيء",
 	"wdqs-ve-any": "أي",
-	"wdqs-ve-or": "أو"
+	"wdqs-ve-or": "أو",
+	"wdqs-ve-subtype": "النوع الفرعي"
 }

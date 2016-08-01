@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"HalanTul"
+		]
+	},
+	"wdqs-app-button-examples": "Холобурдар",
+	"wdqs-app-button-prefixes": "Префикстар",
+	"wdqs-app-button-tools": "Сэп-сэбиргэл",
+	"wdqs-app-button-help": "Көмө",
+	"wdqs-app-button-run": "Ыыт",
+	"wdqs-app-button-clear": "Сот",
+	"wdqs-app-button-download": "Хачайдаа",
+	"wdqs-app-button-link": "Сигэ",
+	"wdqs-ve-find": "Бул",
+	"wdqs-ve-show": "Көрдөр",
+	"wdqs-ve-with": "маны кытта",
+	"wdqs-ve-and": "уонна",
+	"wdqs-ve-anything": "түбэспиччэ",
+	"wdqs-ve-any": "ханнык баҕарар",
+	"wdqs-ve-or": "эбэтэр"
+}
