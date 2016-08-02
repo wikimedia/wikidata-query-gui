@@ -5,6 +5,10 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	'use strict';
 
+	var API_ENDPOINT = 'https://www.mediawiki.org/w/api.php';
+	var PAGE_URL = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples';
+	var PAGE_TITLE = 'Wikibase/Indexing/SPARQL_Query_Examples';
+
 	/**
 	 * QuerySamples API for the Wikibase query service
 	 *
@@ -23,13 +27,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 */
 	SELF.prototype.getExamples = function () {
 
-		var examples = [],
-			deferred = $.Deferred();
+		var deferred = $.Deferred(),
+			self = this;
 
 		$.ajax(
 				{
-					url: 'https://www.mediawiki.org/w/api.php?action=query&prop=revisions&titles=Wikibase/' +
-							'Indexing/SPARQL_Query_Examples&rvprop=content',
+					url: API_ENDPOINT + '?action=query&prop=revisions&titles=' + encodeURIComponent( PAGE_TITLE ) + '&rvprop=content',
 					data: {
 						format: 'json'
 					},
@@ -37,47 +40,75 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 				} )
 		.done(
 				function ( data ) {
-
 					var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
 					wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
 
-					var re = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
-						regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
-						regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
-						regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
-						m;
-
-					while ( ( m = re.exec( wikitext ) ) !== null ) {
-						var paragraph = m[0],
-							title = m[1].trim( ),
-							tags = [],
-							tag,
-							href = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples#' +
-								encodeURIComponent( title.replace( / /g, '_' ) ).replace(
-										/%/g, '.' ),
-							sparqlTemplate = m[2],
-							query = sparqlTemplate.match( regexQuery )[1].trim();
-
-						if ( sparqlTemplate.match( regexExtraPrefix ) ) {
-							query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n' + query;
-						}
-						if ( paragraph.match( regexTags ) ) {
-							while ( ( tag = regexTags.exec( paragraph ) ) !== null ) {
-								tags.push( tag[2].trim() + ' (' + tag[1].trim() + ')' );
-							}
-						}
-
-						examples.push( {
-							title: title,
-							query: query,
-							href: href,
-							tags: tags
-						} );
-					}
-					deferred.resolve( examples );
+					deferred.resolve( self._extract( wikitext ) );
 				} );
 
 		return deferred;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._extract = function ( wikitext ) {
+		var self = this,
+			examples = [],
+			regexSection = /^\=\=([^\=]+)\=\=$/g,
+			section = '',
+			sectionHeader = null;
+
+		wikitext.split( '\n' ).forEach( function( line ) {
+			if ( line.match( regexSection ) ) {
+				examples = $.merge( examples, self._extractExamples( section, sectionHeader ) );
+				sectionHeader = line.replace( /=/g, '' ).trim();
+				section = '';
+			} else {
+				section += line + '\n';
+			}
+		} );
+		examples = $.merge( examples, self._extractExamples( section, sectionHeader ) );
+
+		return examples;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._extractExamples = function ( section, sectionHeader ) {
+		var regexParagraph = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
+			regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
+			regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
+			regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
+			m,
+			examples = [];
+
+		while ( ( m = regexParagraph.exec( section ) ) !== null ) {
+			var paragraph = m[0], title = m[1].trim(), tags = [], tag,
+				href = PAGE_URL + '#' +	encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
+				sparqlTemplate = m[2],
+				query = sparqlTemplate.match( regexQuery )[1].trim();
+
+			if ( sparqlTemplate.match( regexExtraPrefix ) ) {
+				query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n' + query;
+			}
+			if ( paragraph.match( regexTags ) ) {
+				while ( ( tag = regexTags.exec( paragraph ) ) !== null ) {
+					tags.push( tag[2].trim() + ' (' + tag[1].trim() + ')' );
+				}
+			}
+
+			examples.push( {
+				title: title,
+				query: query,
+				href: href,
+				tags: tags,
+				category: sectionHeader
+			} );
+		}
+
+		return examples;
 	};
 
 	return SELF;

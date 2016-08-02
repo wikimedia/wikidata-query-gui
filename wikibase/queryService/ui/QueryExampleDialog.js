@@ -87,13 +87,20 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._initExamples = function() {
-		var self = this;
+		var self = this,
+			category = null;
 
 		this._querySamplesApi.getExamples().done( function( examples ) {
 			self._examples = examples;
 			self._initTagCloud();
 
 			$.each( examples, function( key, example ) {
+
+				if ( example.category !==  category ) {
+					category = example.category;
+					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
+							.append( $( '<td colspan="100%">' ).text( category ) ) );
+				}
 				self._addExample( example.title, example.query, example.href, example.tags );
 			} );
 
@@ -264,10 +271,15 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		};
 
 		this._$element.find( '.searchable tr' ).hide();
-		this._$element.find( '.searchable tr' ).filter( function() {
+		var $matchingElements = this._$element.find( '.searchable tr' ).filter( function() {
 			return filterRegex.test( $( this ).text() ) && tagFilter( $( this ).text() );
-		} ).show();
+		} );
 
+		$matchingElements.show();
+		$matchingElements.each( function( i, el ) {
+			$( el ).prevAll( 'tr.active' ).first().show();
+
+		} );
 	};
 
 	return SELF;
