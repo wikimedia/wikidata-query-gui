@@ -220,28 +220,39 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._addExample = function( title, query, href, tags ) {
-		var self = this;
+		var self = this,
+			link = $( '<a title="Select" data-dismiss="modal">' ).text( title ).attr( 'href', '#' )
+					.click( function() { self._callback( query, title );	} ),
+			edit = $( '<a title="Edit">' ).attr( 'href', href ).attr( 'target', '_blank' )
+					.append( '<span>' ).addClass( 'glyphicon glyphicon-pencil' ),
 
-		var link = $( '<a title="Select this query" data-dismiss="modal">' ).text( title ).attr(
-				'href', '#' ).click( function() {
-			self._callback( query, title );
-		} ), edit = $( '<a title="Edit this Query">' ).attr( 'href', href ).attr( 'target',
-				'_blank' ).append(
-				'<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>' ), preview = $(
-				'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>' ).popover(
+			source = $( '<span>' ).addClass( 'glyphicon glyphicon-eye-open' ).popover(
 				{
 					placement: 'bottom',
 					trigger: 'hover',
 					container: 'body',
-					title: 'Preview',
+					title: $.i18n( 'wdqs-dialog-examples-preview-query' ),
 					content: $( '<pre style="white-space:pre-line; word-break:break-word;"/>' ).text( query ),
+					html: true
+				} ),
+			preview = $( '<a href="#">' ).addClass( 'glyphicon glyphicon-camera' ).clickover(
+				{
+					placement: 'right',
+					'global_close': true,
+					trigger: 'click',
+					container: 'body',
+					title: $.i18n( 'wdqs-dialog-examples-preview-result' ),
+					content: $( '<iframe width="400" height="400" frameBorder="0" src="embed.html#'
+							+ encodeURIComponent( query ) + '">' ),
 					html: true
 				} );
 
-		tags = $( '<td/>' ).text( tags.join( '|' ) ).hide();
-		var example = $( '<tr/>' );
-		example.append( $( '<td/>' ).append( link ).append( ' ', edit ) );
-		example.append( $( '<td/>' ).append( preview ) );
+		tags = $( '<td>' ).text( tags.join( '|' ) ).hide();
+
+		var example = $( '<tr>' );
+		example.append( $( '<td>' ).append( link ).append( ' ', edit ) );
+		example.append( $( '<td>' ).append( preview ) );
+		example.append( $( '<td>' ).append( source ) );
 		example.append( tags );
 
 		this._$element.find( '.searchable' ).append( example );
