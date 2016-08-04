@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nguyên Lê"
+			"Nguyên Lê",
+			"Minh Nguyen"
 		]
 	},
 	"wdqs-app-button-examples": "Ví dụ",
@@ -11,7 +12,7 @@
 	"wdqs-app-button-run": "Chạy",
 	"wdqs-app-button-clear": "Tẩy trống",
 	"wdqs-app-button-display": "Hiển thị",
-	"wdqs-app-button-download": "Tải xuống",
+	"wdqs-app-button-download": "Tải về",
 	"wdqs-app-button-link": "Liên kết",
 	"wdqs-ve-find": "Tìm kiếm",
 	"wdqs-ve-show": "Hiện",

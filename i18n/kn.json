@@ -1,21 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"ಶಿವಕುಮಾರ್ ನಾಯಕ್"
 		]
 	},
 	"wdqs-app-button-examples": "ಉದಾಹರಣೆಗಳು",
+	"wdqs-app-button-prefixes": "ಮುಂಪದ",
 	"wdqs-app-button-tools": "ಉಪಕರಣಗಳು",
 	"wdqs-app-button-help": "ಸಹಾಯ",
+	"wdqs-app-button-run": "ಹುಡುಕು",
 	"wdqs-app-button-clear": "ಅಳಿಸು",
 	"wdqs-app-button-display": "ಪ್ರದರ್ಶಿಸು",
-	"wdqs-app-button-download": "ನಕಲಿಳಿಸು",
-	"wdqs-app-button-link": "ಸಂಪರ್ಕ",
+	"wdqs-app-button-download": "ಇಳಿಸು",
+	"wdqs-app-button-link": "ಕೊಂಡಿ",
 	"wdqs-ve-find": "ಹುಡುಕು",
 	"wdqs-ve-show": "ತೋರಿಸು",
 	"wdqs-ve-with": "ಜೊತೆ",
 	"wdqs-ve-and": "ಮತ್ತು",
-	"wdqs-ve-anything": "ಯಾವುದೇ ವಿಷಯ",
+	"wdqs-ve-anything": "ಯಾವುದಾದರು",
 	"wdqs-ve-any": "ಯಾವುದೇ",
-	"wdqs-ve-or": "ಅಥವಾ"
+	"wdqs-ve-or": "ಅಥವಾ",
+	"wdqs-ve-subtype": "ಉಪಮಾದರಿ"
 }
