@@ -110,23 +110,6 @@ iframe.shortUrl {
 	background: rgba(255,255,255,0.5);
 }
 
-.actionMessage .progress {
-    height: 30px;
-    font-size: 30px;
-}
-.actionMessage .progress-bar {
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: bold;
-}
-
-.actionMessage .label {
-	display: block;
-    font-size: 16px;
-    line-height: 20px;
-}
-
-
 /**
 	Bootstrap Styles
 **/
@@ -136,10 +119,6 @@ iframe.shortUrl {
 
 .navbar-right {
 	margin-right: 0;
-}
-
-.actionMessage {
-	display: none;
 }
 
 .popover{
@@ -342,6 +321,29 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
     }
 }
 
+/*
+	ActionBar
+*/
+
+.action-bar .progress {
+    height: 30px;
+    font-size: 30px;
+}
+.action-bar .progress-bar {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.action-bar .label {
+	display: block;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.action-bar {
+	display: none;
+}
 
 /*
 	Treemap

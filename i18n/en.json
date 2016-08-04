@@ -22,5 +22,9 @@
     "wdqs-ve-anything": "anything",
     "wdqs-ve-any": "any",
     "wdqs-ve-or": "or",
-    "wdqs-ve-subtype": "subtype"
+    "wdqs-ve-subtype": "subtype",
+    "wdqs-action-query": "Running query",
+    "wdqs-action-render": "Rendering result",
+    "wdqs-action-error-display": "Unable to display result",
+    "wdqs-action-timeout": "Query timeout limit reached"
 }

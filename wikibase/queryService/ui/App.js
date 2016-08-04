@@ -8,6 +8,10 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 
+	var QUERY_ERROR_MAP = {
+			'Query deadline is expired.': 'wdqs-action-timeout'
+	};
+
 	/**
 	 * A ui application for the Wikibase query service
 	 *
@@ -74,6 +78,12 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._selectedResultBrowser = null;
+
+	/**
+	 * @property {wikibase.queryService.ui.toolbar.Actionbar}
+	 * @private
+	 */
+	SELF.prototype._actionBar = null;
 
 	/**
 	 * @property {Object}
@@ -178,6 +188,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				$( '#execute-button' ).click();
 			}
 		} );
+
+		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
 	};
 
 	/**
@@ -531,7 +543,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		e.preventDefault();
 		this._editor.save();
 		this._updateQueryUrl();
-		this._showActionMessage( 'Running Query', 'info', 100 );
+		this._actionBar.show( 'wdqs-action-query', 'info', 100 );
 
 		$( '#query-result' ).empty( '' );
 		$( '#query-result' ).hide();
@@ -555,8 +567,10 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 
 		try {
 			var shortError = error.match(
-					/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop();
-			this._showActionMessage( shortError.trim(), 'danger' );
+					/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop().trim();
+			shortError = QUERY_ERROR_MAP[ shortError ] || shortError;
+
+			this._actionBar.show( shortError, 'danger' );
 		} catch ( e ) {
 		}
 
@@ -653,14 +667,14 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	SELF.prototype._drawResult = function( resultBrowser ) {
 		var self = this;
 
-		this._showActionMessage( 'Generating View', 'success', 100 );
+		this._actionBar.show( 'wdqs-action-render', 'success', 100 );
 		window.setTimeout( function() {
 			try {
 				$( '#query-result' ).show();
 				resultBrowser.draw( $( '#query-result' ) );
-				self._hideActionMessage();
+				self._actionBar.hide();
 			} catch ( e ) {
-				self._showActionMessage( 'Unable to display result', 'warning' );
+				self._actionBar.show( 'wdqs-action-error-display', 'warning' );
 				window.console.log( e.stack );
 			}
 			self._handleQueryResultBrowsers();
@@ -703,39 +717,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 			}
 		}
 
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._showActionMessage = function( text, labelType, progress ) {
-		if ( !labelType ) {
-			labelType = 'info';
-		}
-		if ( !progress ) {
-			progress = false;
-		}
-		$( '.actionMessage' ).html( '' );
-
-		if ( progress !== false ) {
-			$(
-					'<div class="progress"><div class="progress-bar progress-bar-' + labelType +
-							' progress-bar-striped active" role="progressbar" style="width: ' +
-							progress + '%">' + text + '</div></div>' ).appendTo(
-					$( '.actionMessage' ) );
-		} else {
-			$( '<div class="label label-' + labelType + '"/>' ).text( text ).appendTo(
-					$( '.actionMessage' ) );
-		}
-
-		$( '.actionMessage' ).show();
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._hideActionMessage = function() {
-		$( '.actionMessage' ).hide();
 	};
 
 	return SELF;

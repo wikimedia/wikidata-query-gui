@@ -23,5 +23,9 @@
 	"wdqs-ve-anything": "Label to find anything\n{{Identical|Anything}}",
 	"wdqs-ve-any": "Label to any property\n{{Identical|Any}}",
 	"wdqs-ve-or": "Label for logical or\n{{Identical|Or}}",
-	"wdqs-ve-subtype": "Label for subtype in ontology\n{{Identical|Subtype}}"
+	"wdqs-ve-subtype": "Label for subtype in ontology\n{{Identical|Subtype}}",
+	"wdqs-action-query": "Label for progressbar",
+    "wdqs-action-error-display": "Label for progressbar",
+    "wdqs-action-render": "Label for progressbar",
+    "wdqs-action-timeout": "Label for progressbar"
 }
