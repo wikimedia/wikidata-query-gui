@@ -79,4 +79,4 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 
 	return SELF;
 
-}( jQuery, mediaWiki, download, EXPLORER, window, _, Cookies, moment ) );
+}( jQuery ) );
