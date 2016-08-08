@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "alles",
 	"wdqs-ve-any": "beliebiges",
 	"wdqs-ve-or": "oder",
-	"wdqs-ve-subtype": "Untertyp"
+	"wdqs-ve-subtype": "Untertyp",
+	"wdqs-action-query": "Führe Abfrage aus",
+	"wdqs-action-render": "Rendere Ergebnis",
+	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
+	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht"
 }

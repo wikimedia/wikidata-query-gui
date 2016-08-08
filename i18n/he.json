@@ -21,5 +21,9 @@
 	"wdqs-ve-anything": "כל דבר",
 	"wdqs-ve-any": "הכול",
 	"wdqs-ve-or": "או",
-	"wdqs-ve-subtype": "תת־סוג"
+	"wdqs-ve-subtype": "תת־סוג",
+	"wdqs-action-query": "שאילתה רצה",
+	"wdqs-action-render": "התוצאה בהכנה להצגה",
+	"wdqs-action-error-display": "לא ניתן להציג את התוצאה",
+	"wdqs-action-timeout": "הגיע זמן התפוגה של השאילתה"
 }

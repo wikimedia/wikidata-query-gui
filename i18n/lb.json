@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "eppes",
 	"wdqs-ve-any": "all",
 	"wdqs-ve-or": "oder",
-	"wdqs-ve-subtype": "Ënnertyp"
+	"wdqs-ve-subtype": "Ënnertyp",
+	"wdqs-action-query": "Ufro gëtt ausgeféiert",
+	"wdqs-action-render": "Resultat gëtt duergestallt",
+	"wdqs-action-error-display": "D'Resultat kann net gewise ginn",
+	"wdqs-action-timeout": "Zäitlimit fir eng Ufro gouf erreecht"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kumkumuk"
+			"Kumkumuk",
+			"Mirzali"
 		]
 	},
 	"wdqs-app-button-examples": "Misali",
@@ -20,5 +21,9 @@
 	"wdqs-ve-anything": "qet theba",
 	"wdqs-ve-any": "her ci",
 	"wdqs-ve-or": "ya na",
-	"wdqs-ve-subtype": "bınbabet"
+	"wdqs-ve-subtype": "bınbabet",
+	"wdqs-action-query": "Pers gureneno",
+	"wdqs-action-render": "Neticeyi vêniyenê",
+	"wdqs-action-error-display": "Neticeyi nêmocniyenê",
+	"wdqs-action-timeout": "Pers rest sinorê demraveriye"
 }

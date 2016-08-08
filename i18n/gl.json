@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "calquera cousa",
 	"wdqs-ve-any": "calquera",
 	"wdqs-ve-or": "ou",
-	"wdqs-ve-subtype": "subtipo"
+	"wdqs-ve-subtype": "subtipo",
+	"wdqs-action-query": "Execución da consulta",
+	"wdqs-action-render": "Presentando o resultado",
+	"wdqs-action-error-display": "Imposible mostrar o resultado",
+	"wdqs-action-timeout": "Superado o límite de tempo da consulta"
 }

@@ -21,5 +21,9 @@
 	"wdqs-ve-anything": "任何事物",
 	"wdqs-ve-any": "任何",
 	"wdqs-ve-or": "或",
-	"wdqs-ve-subtype": "子类型"
+	"wdqs-ve-subtype": "子类型",
+	"wdqs-action-query": "正在运行查询",
+	"wdqs-action-render": "正在渲染结果",
+	"wdqs-action-error-display": "无法显示结果",
+	"wdqs-action-timeout": "已达到查询超时限制"
 }

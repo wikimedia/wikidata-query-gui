@@ -21,5 +21,9 @@
 	"wdqs-ve-anything": "qualsiasi cosa",
 	"wdqs-ve-any": "qualsiasi",
 	"wdqs-ve-or": "o",
-	"wdqs-ve-subtype": "sottotipo"
+	"wdqs-ve-subtype": "sottotipo",
+	"wdqs-action-query": "Esecuzione dell'interrogazione",
+	"wdqs-action-render": "Rappresentazione dei risultati",
+	"wdqs-action-error-display": "Impossibile visualizzare il risultato",
+	"wdqs-action-timeout": "Limite timeout per la query raggiunto"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kumkumuk"
+			"Kumkumuk",
+			"MrSchipunov"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -20,5 +21,9 @@
 	"wdqs-ve-anything": "hiçbir şey",
 	"wdqs-ve-any": "herhangi",
 	"wdqs-ve-or": "ya da",
-	"wdqs-ve-subtype": "alt tür"
+	"wdqs-ve-subtype": "alt tür",
+	"wdqs-action-query": "Sorgu çalıştırılıyor",
+	"wdqs-action-render": "Sonuçlar gösteriliyor",
+	"wdqs-action-error-display": "Sonuç görüntülenemiyor",
+	"wdqs-action-timeout": "Sorgu zaman aşımı sınırına ulaştı"
 }

@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "било што",
 	"wdqs-ve-any": "било кое",
 	"wdqs-ve-or": "или",
-	"wdqs-ve-subtype": "поттип"
+	"wdqs-ve-subtype": "поттип",
+	"wdqs-action-query": "Го работам барањето",
+	"wdqs-action-render": "Правам испис на исходот",
+	"wdqs-action-error-display": "Не можам да го прикажам исходот",
+	"wdqs-action-timeout": "Достигнато е временското ограничување на барањето"
 }

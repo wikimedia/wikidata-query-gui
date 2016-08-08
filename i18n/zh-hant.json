@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "任何項目",
 	"wdqs-ve-any": "任何",
 	"wdqs-ve-or": "或",
-	"wdqs-ve-subtype": "子類型"
+	"wdqs-ve-subtype": "子類型",
+	"wdqs-action-query": "正在進行查詢",
+	"wdqs-action-render": "正在翻譯結果",
+	"wdqs-action-error-display": "無法顯示結果",
+	"wdqs-action-timeout": "已達查詢逾時限制"
 }

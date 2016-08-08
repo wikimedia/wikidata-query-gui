@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"MrLeopold"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -21,5 +22,9 @@
 	"wdqs-ve-anything": "alles",
 	"wdqs-ve-any": "alle",
 	"wdqs-ve-or": "of",
-	"wdqs-ve-subtype": "subtype"
+	"wdqs-ve-subtype": "subtype",
+	"wdqs-action-query": "Zoekopdracht uitvoeren",
+	"wdqs-action-render": "Resultaat van rendering",
+	"wdqs-action-error-display": "Niet in staat om de resultaten weer te geven",
+	"wdqs-action-timeout": "Time-out voor zoekopdrachtenlimiet is bereikt"
 }

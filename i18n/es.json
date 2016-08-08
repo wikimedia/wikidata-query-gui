@@ -22,5 +22,9 @@
 	"wdqs-ve-anything": "cualquier cosa",
 	"wdqs-ve-any": "cualquiera",
 	"wdqs-ve-or": "o",
-	"wdqs-ve-subtype": "subtipo"
+	"wdqs-ve-subtype": "subtipo",
+	"wdqs-action-query": "Ejecución de la consulta",
+	"wdqs-action-render": "Representación del resultado",
+	"wdqs-action-error-display": "No se puede mostrar el resultado",
+	"wdqs-action-timeout": "Se agotó el tiempo de espera de la consulta"
 }

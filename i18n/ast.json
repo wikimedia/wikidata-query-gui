@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "cualquier cosa",
 	"wdqs-ve-any": "cualesquiera",
 	"wdqs-ve-or": "o",
-	"wdqs-ve-subtype": "subtipu"
+	"wdqs-ve-subtype": "subtipu",
+	"wdqs-action-query": "Executando consulta",
+	"wdqs-action-render": "Presentando'l resultáu",
+	"wdqs-action-error-display": "Nun pudo amosase'l resultáu",
+	"wdqs-action-timeout": "Llegóse a la llende de tiempu de consulta"
 }

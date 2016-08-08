@@ -20,5 +20,9 @@
 	"wdqs-ve-anything": "quelque chose",
 	"wdqs-ve-any": "une",
 	"wdqs-ve-or": "ou",
-	"wdqs-ve-subtype": "sous-type"
+	"wdqs-ve-subtype": "sous-type",
+	"wdqs-action-query": "Exécution de la requête",
+	"wdqs-action-render": "Rendu du résultat",
+	"wdqs-action-error-display": "Impossible d’afficher le résultat",
+	"wdqs-action-timeout": "Limite du temps de requête atteinte"
 }

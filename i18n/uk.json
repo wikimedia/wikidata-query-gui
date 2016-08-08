@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Laboramus",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -21,5 +22,9 @@
 	"wdqs-ve-anything": "будь-що",
 	"wdqs-ve-any": "будь-яке",
 	"wdqs-ve-or": "або",
-	"wdqs-ve-subtype": "підтип"
+	"wdqs-ve-subtype": "підтип",
+	"wdqs-action-query": "Виконання запиту",
+	"wdqs-action-render": "Візуалізація результату",
+	"wdqs-action-error-display": "Не вдалося відобразити результат",
+	"wdqs-action-timeout": "Вичерпано ліміт часу, відведеного на виконання запиту"
 }

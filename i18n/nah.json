@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teòtlalili"
+			"Teòtlalili",
+			"Ricardo gs"
 		]
 	},
 	"wdqs-app-button-examples": "Machiòme",
@@ -20,5 +21,9 @@
 	"wdqs-ve-anything": "âmò tlèn",
 	"wdqs-ve-any": "saintlèn",
 	"wdqs-ve-or": "noso",
-	"wdqs-ve-subtype": "tlanitlamantli"
+	"wdqs-ve-subtype": "tlanitlamantli",
+	"wdqs-action-query": "Yehyecoltīliztli īchīhualtilīz",
+	"wdqs-action-render": "Mochīhualiztli īīxiptlayo",
+	"wdqs-action-error-display": "Ahmohuelitittītia in mochīhualiztli",
+	"wdqs-action-timeout": "Ōtlan in yehyecoltīliztli ītlachiyalizcāhuitl"
 }

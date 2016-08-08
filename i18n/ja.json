@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Otokoume",
-			"Fryed-peach"
+			"Fryed-peach",
+			"組曲師"
 		]
 	},
 	"wdqs-app-button-examples": "例",
@@ -17,5 +18,7 @@
 	"wdqs-ve-find": "検索",
 	"wdqs-ve-show": "表示",
 	"wdqs-ve-and": "かつ",
-	"wdqs-ve-or": "または"
+	"wdqs-ve-or": "または",
+	"wdqs-action-query": "\n実行中のクエリ",
+	"wdqs-action-render": "結果をレンダリング"
 }

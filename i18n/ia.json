@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"wdqs-app-button-examples": "Exemplos",
+	"wdqs-app-button-prefixes": "Prefixos",
+	"wdqs-app-button-tools": "Instrumentos",
+	"wdqs-app-button-help": "Adjuta",
+	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-clear": "Vacuar",
+	"wdqs-app-button-display": "Visualisar",
+	"wdqs-app-button-download": "Discargar",
+	"wdqs-app-button-link": "Ligamine",
+	"wdqs-ve-find": "Cercar",
+	"wdqs-ve-show": "Monstrar",
+	"wdqs-ve-with": "con",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-anything": "qualcunque cosa",
+	"wdqs-ve-any": "qualcunque",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "subtypo",
+	"wdqs-action-query": "Execution del consulta",
+	"wdqs-action-render": "Rendition del resultato",
+	"wdqs-action-error-display": "Impossibile monstrar resultato",
+	"wdqs-action-timeout": "Le consulta ha expirate"
+}

@@ -21,5 +21,9 @@
 	"wdqs-ve-anything": "모든 항목",
 	"wdqs-ve-any": "모두",
 	"wdqs-ve-or": "또는",
-	"wdqs-ve-subtype": "하위 유형"
+	"wdqs-ve-subtype": "하위 유형",
+	"wdqs-action-query": "쿼리 조회 중",
+	"wdqs-action-render": "결과 출력 중",
+	"wdqs-action-error-display": "결과를 표시할 수 없음",
+	"wdqs-action-timeout": "쿼리 시간 초과 제한에 도달함"
 }
