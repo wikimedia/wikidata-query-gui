@@ -65,12 +65,8 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 
 		$.each( this._result.results.bindings, function( rowNum, row ) {
 			$.each( self._result.head.vars, function( rowNum1, key ) {
-				var field = null;
-				if ( row[key] ) {
-					field = row[key];
-				}
+				var field = row[key] || null;
 				self.processVisitors( field, key );
-
 				cb( field, key, row, rowNum );
 			} );
 		} );

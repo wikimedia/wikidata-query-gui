@@ -27,17 +27,9 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @param {wikibase.queryService.ui.visualEditor.SelectorBox} [selectorBox]
 	 */
 	function SELF( api, selectorBox ) {
-		this._api = api;
-
-		if ( !this._api ) {
-			this._api = new wikibase.queryService.api.Wikibase();
-		}
-
-		this._selectorBox = selectorBox;
-		if ( !this._selectorBox ) {
-			this._selectorBox = new wikibase.queryService.ui.visualEditor.SelectorBox( this._api );
-		}
-
+		this._api = api || new wikibase.queryService.api.Wikibase();
+		this._selectorBox = selectorBox
+			|| new wikibase.queryService.ui.visualEditor.SelectorBox( this._api );
 		this._query = new wikibase.queryService.ui.visualEditor.SparqlQuery();
 	}
 
@@ -253,7 +245,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				value = null;
 			}
 
-			$value.text( value ? value : '' );
+			$value.text( value || '' );
 			self._query.setLimit( value );
 
 			if ( self._changeListener ) {
@@ -418,10 +410,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._isVariable = function( entity ) {
-		if ( typeof entity === 'string' && entity.startsWith( '?' ) ) {
-			return true;
-		}
-		return false;
+		return typeof entity === 'string' && entity.startsWith( '?' );
 	};
 
 	/**
@@ -440,11 +429,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		} );
 
-		if ( Object.keys( boundVariables ).length > 1 ) {
-			return false;
-		}
-
-		return true;
+		return Object.keys( boundVariables ).length <= 1;
 	};
 
 	/**

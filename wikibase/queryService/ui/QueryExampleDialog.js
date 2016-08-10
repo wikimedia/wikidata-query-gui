@@ -99,7 +99,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				if ( example.category !==  category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
-							.append( $( '<td colspan="100%">' ).text( category ) ) );
+							.append( $( '<td colspan="2">' ).text( category ) ) );
 				}
 				self._addExample( example.title, example.query, example.href, example.tags );
 			} );

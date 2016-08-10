@@ -17,12 +17,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 * @param {wikibase.queryService.api.Wikibase} [api]
 	 */
 	function SELF( api ) {
-
-		if ( api ) {
-			this._api = api;
-		} else {
-			this._api = new wikibase.queryService.api.Wikibase();
-		}
+		this._api = api || new wikibase.queryService.api.Wikibase();
 	}
 
 	/**
@@ -66,11 +61,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 				return $content;
 			}
 		} ).click( function( e ) {
-			if ( $element.data( 'value' ) ) {
-				$input.val( $element.data( 'value' ) );
-			} else {
-				$input.val( '' );
-			}
+			$input.val( $element.data( 'value' ) || '' );
 		} );
 
 		$input.on( 'keyup mouseup', function() {

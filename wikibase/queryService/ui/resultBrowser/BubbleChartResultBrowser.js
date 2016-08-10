@@ -151,12 +151,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 	 * @return {boolean}
 	 */
 	SELF.prototype.isDrawable = function() {
-
-		if ( this._hasLabel && this._hasNumber ) {
-			return true;
-		}
-
-		return false;
+		return this._hasLabel && this._hasNumber;
 	};
 
 	/**
@@ -182,11 +177,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 			this._hasLabel = true;
 		}
 
-		if ( this._hasLabel && this._hasNumber ) {
-			return false;
-		}
-
-		return true;
+		return !this.isDrawable();
 	};
 
 	/**

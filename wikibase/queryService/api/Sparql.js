@@ -20,12 +20,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @param {string} [serviceUri] Optional URI to the SPARQL service endpoint
 	 */
 	function SELF( serviceUri ) {
-
-		if ( serviceUri ) {
-			this._serviceUri = serviceUri;
-		} else {
-			this._serviceUri = SPARQL_SERVICE_URI;
-		}
+		this._serviceUri = serviceUri || SPARQL_SERVICE_URI;
 	}
 
 	/**
