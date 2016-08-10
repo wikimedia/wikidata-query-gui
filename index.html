@@ -92,20 +92,24 @@
 
 			<div id="query-box">
 				<form id="query-form">
-					<textarea class="queryEditor" name="query" placeholder="(Input a SPARQL query or choose a query example)"></textarea>
+					<textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea>
           <div class="status navbar navbar-default">
             <div class="navbar-left">
-						        Press <i>[CTRL-SPACE]</i> to activate auto completion.
+                <span data-i18n="[html]wdqs-app-footer-help"></span>
             </div>
             <div class="navbar-right">
-						        Data updated <span class="dataUpdated"> <span class="list-group-item-success badge"></span> ago</span>
+						        <span data-i18n="wdqs-app-footer-updated-before"></span>
+						        <span class="dataUpdated">
+						          <span class="list-group-item-success badge"></span>
+						        </span>
+                                <span data-i18n="wdqs-app-footer-updated-after"></span>
             </div>
 
           </div>
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
-								<button type="submit" class="btn btn-info" id="execute-button" title="Execute query (<CTRL> + <ENTER>)">
+								<button type="submit" class="btn btn-info" id="execute-button" data-i18n="[title]wdqs-app-button-run-title">
 									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run"></span>
 								</button>
 								<button type="button" class="btn btn-default" id="clear-button">
