@@ -68,7 +68,6 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 					data.children.push( item );
 				}
 			}
-
 		} );
 
 		var $wrapper = $( '<center>' );
@@ -142,7 +141,6 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 				return SELF.prototype._calculateLuma( d.color ) <= 0.5 ? '#FFF' : '#000';
 			}
 		} ).style( 'cursor', 'pointer' );
-
 	};
 
 	/**
@@ -173,7 +171,6 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 	 * Check if this value contains an coordinate value.
 	 */
 	SELF.prototype._checkColumn = function( value ) {
-
 		if ( this._getFormatter().isNumber( value ) ) {
 			this._hasNumber = true;
 		}

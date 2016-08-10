@@ -29,11 +29,11 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 	 * @param {jQuery} $element to draw at
 	 */
 	SELF.prototype.draw = function( $element ) {
+		var dimensions = {},
+			data = [],
+			f = this._getFormatter();
 
-		var dimensions = {}, data = [];
-		var f = this._getFormatter();
 		this._iterateResult( function( field, key, row, rowNum ) {
-
 			if ( !data[rowNum] ) {
 				data[rowNum] = {};
 			}
@@ -51,15 +51,12 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 				};
 				if ( f.isNumber( field ) ) {
 					d.type = 'NUMBER';
-
 				}
 				if ( field && field.type === TIME_DATATYPE ) {
 					d.type = 'DATE';
-
 				}
 				dimensions[key] = d;
 			}
-
 		} );
 
 		this._draw( $element, data, _.values( dimensions ) );
@@ -87,9 +84,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 				within: function( d, extent ) {
 					return extent[0] <= d && d <= extent[1];
 				},
-				defaultScale: d3.scale.linear().range( [
-						height, 0
-				] )
+				defaultScale: d3.scale.linear().range( [ height, 0 ] )
 			},
 			'STRING': {
 				key: 'String',
@@ -100,9 +95,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 				within: function( d, extent, dim ) {
 					return extent[0] <= dim.scale( d ) && dim.scale( d ) <= extent[1];
 				},
-				defaultScale: d3.scale.ordinal().rangePoints( [
-						0, height
-				] )
+				defaultScale: d3.scale.ordinal().rangePoints( [ 0, height ] )
 			},
 			'DATE': {
 				key: 'Date',
@@ -113,9 +106,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 				within: function( d, extent ) {
 					return extent[0] <= d && d <= extent[1];
 				},
-				defaultScale: d3.time.scale().range( [
-						0, height
-				] )
+				defaultScale: d3.time.scale().range( [ 0, height ] )
 			}
 		};
 
@@ -125,9 +116,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 
 		var x = d3.scale.ordinal().domain( dimensions.map( function( dim ) {
 			return dim.key;
-		} ) ).rangePoints( [
-				0, width
-		] );
+		} ) ).rangePoints( [ 0, width ] );
 
 		var line = d3.svg.line().defined( function( d ) {
 			return !isNaN( d[1] );

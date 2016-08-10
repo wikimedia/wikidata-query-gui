@@ -39,7 +39,6 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 * @param {Object} toolbar {icon:callback}
 	 */
 	SELF.prototype.add = function( $element, listener, toolbar ) {
-
 		switch ( $element.data( 'type' ).toLowerCase() ) {
 		case 'number':
 			this._createInput( $element, listener, toolbar );
@@ -99,7 +98,6 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 				return $content;
 			}
 		} ).click( function( e ) {
-
 			$select.toggleClass( 'open' );
 
 			if ( !$select.data( 'select2' ) ) {
@@ -150,14 +148,14 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getToolbar = function( toolbar, $element ) {
-
 		var $toolbar = $( '<span>' );
+
 		$.each( toolbar, function( icon, callback ) {
 			var $link = $( '<a>' ).attr( 'href', '#' );
 			$link.prepend( '<span class="glyphicon glyphicon-' + icon +
 					'" aria-hidden="true"></span>', ' ' );
-			$link.click( function() {
 
+			$link.click( function() {
 				if ( callback() ) {
 					$element.click();// close popover
 				}

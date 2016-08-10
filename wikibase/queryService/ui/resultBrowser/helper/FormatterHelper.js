@@ -85,7 +85,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
-
 				if ( embed ) {
 					$link.click( this.handleCommonResourceItem );
 					$link.append(
@@ -97,9 +96,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 							decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
 					$html.prepend( this.createGalleryButton( value, title ), ' ' );
 				}
-
 			} else {
 				$link.text( this.abbreviateUri( value ) );
+
 				if ( this.isExploreUrl( value ) ) {
 					$html.prepend( this.createExploreButton( value ), ' ' );
 				}
@@ -314,6 +313,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.handleCommonResourceItem = function( e ) {
 		e.preventDefault();
+
 		$( this ).ekkoLightbox( {
 			'scale_height': true
 		} );

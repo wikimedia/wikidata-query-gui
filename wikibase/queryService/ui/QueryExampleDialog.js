@@ -80,7 +80,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				self._drawTagCloud( true );
 			}
 		} );
-
 	};
 
 	/**
@@ -95,7 +94,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			self._initTagCloud();
 
 			$.each( examples, function( key, example ) {
-
 				if ( example.category !==  category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
@@ -103,7 +101,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				}
 				self._addExample( example.title, example.query, example.href, example.tags );
 			} );
-
 		} );
 	};
 
@@ -118,9 +115,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				self._drawTagCloud();
 				clearInterval( interval );
 			}
-
 		}, 300 );
-
 	};
 
 	/**
@@ -157,7 +152,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			delayedMode: true,
 			autoResize: true
 		} );
-
 	};
 
 	/**
@@ -262,9 +256,8 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._filterTable = function() {
-
-		var filter = this._$element.find( '.tableFilter' ), filterRegex = new RegExp( filter.val(),
-				'i' );
+		var filter = this._$element.find( '.tableFilter' ),
+			filterRegex = new RegExp( filter.val(), 'i' );
 
 		var tags = this._$element.find( '.tagFilter' ).tags().getTags();
 
@@ -289,7 +282,6 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		$matchingElements.show();
 		$matchingElements.each( function( i, el ) {
 			$( el ).prevAll( 'tr.active' ).first().show();
-
 		} );
 	};
 

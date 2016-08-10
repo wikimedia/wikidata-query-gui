@@ -60,9 +60,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		var markerGroups = this._getMarkerGroups(),
 			map = L.map( 'map', {
-			center: [
-					0, 0
-			],
+			center: [ 0, 0 ],
 			maxZoom: 18,
 			minZoom: 2,
 			fullscreenControl: true,
@@ -187,8 +185,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._extractLongLat = function( point ) {
-
 		var globe = this._extractGlobe( point );
+
 		if ( globe !== null && globe !== GLOBE_EARTH ) {
 			return null;
 		}

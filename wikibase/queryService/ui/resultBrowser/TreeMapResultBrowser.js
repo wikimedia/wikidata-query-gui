@@ -34,12 +34,14 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 * @param {jQuery} $element to draw at
 	 **/
 	SELF.prototype.draw = function( $element ) {
-		var self = this;
-
-		var data = {}, layer = data, size = null, url = null, prevRow = null;
+		var self = this,
+			data = {},
+			layer = data,
+			size = null,
+			url = null,
+			prevRow = null;
 
 		this._iterateResult( function( field, key, row ) {
-
 			if ( row !== prevRow ) {
 				if ( prevRow !== null ) {
 					layer.data = {
@@ -66,8 +68,8 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			if ( field && field.value && self._getFormatter().isExploreUrl( field.value ) ) {
 				url = field.value;
 			}
-
 		} );
+
 		layer.data = {
 			size: size,
 			url: url
@@ -83,7 +85,9 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	};
 
 	SELF.prototype._createTreeData = function( data ) {
-		var self = this, nodes = [], node;
+		var self = this,
+			nodes = [],
+			node;
 
 		if ( data.data ) {
 			return nodes;
@@ -355,7 +359,6 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 				d3.event.stopPropagation();
 			}
 		}
-
 	};
 	/* jshint ignore:end */
 
@@ -386,7 +389,6 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 * Check if this value contains an coordinate value.
 	 */
 	SELF.prototype._checkColumn = function( value, key ) {
-
 		if ( this._getFormatter().isLabel( value, key ) ) {
 			this._labelColumns[key] = true;
 

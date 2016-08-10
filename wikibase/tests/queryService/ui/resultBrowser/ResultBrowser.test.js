@@ -26,7 +26,7 @@
 		TreeMapResultBrowser: '<svg',
 	};
 
-	$.each( browsers, function( index, browser ){
+	$.each( browsers, function( index, browser ) {
 
 		QUnit.test( 'When instantiating ' + browser + ' there should be no error ', function( assert ) {
 			var b = new resultBrowser[ browser ]();

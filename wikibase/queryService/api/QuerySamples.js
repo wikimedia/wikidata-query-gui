@@ -26,7 +26,6 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @return {jQuery.Promise} Object taking list of example queries { title:, query: }
 	 */
 	SELF.prototype.getExamples = function () {
-
 		var deferred = $.Deferred(),
 			self = this;
 
@@ -82,7 +81,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			examples = [];
 
 		while ( ( m = regexParagraph.exec( section ) ) !== null ) {
-			var paragraph = m[0], title = m[1].trim(), tags = [], tag,
+			var paragraph = m[0],
+				title = m[1].trim(),
+				tags = [],
+				tag,
 				href = PAGE_URL + '#' +	encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
 				sparqlTemplate = m[2],
 				query = sparqlTemplate.match( regexQuery )[1].replace( /\{\{!\}\}/g, '|' ).trim();
