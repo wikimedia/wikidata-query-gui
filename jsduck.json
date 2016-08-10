@@ -4,10 +4,11 @@
   "--processes": "0",
   "--warnings-exit-nonzero": true,
   "--builtin-classes": true,
-  "--external": "HTMLDocument,Window,MouseEvent,KeyboardEvent,File",
-  "--warnings": ["-nodoc(class,public)"],
-  "--external": "jQuery,jQuery.Promise,CodeMirror",
-  "--warnings": "-tag(license)",
+  "--external": "CodeMirror,File,HTMLDocument,jQuery,jQuery.Promise,KeyboardEvent,MouseEvent,Window",
+  "--warnings": [
+    "-nodoc(class,public)",
+    "-tag(license)"
+  ],
   "--": [
     "wikibase/queryService"
   ]
