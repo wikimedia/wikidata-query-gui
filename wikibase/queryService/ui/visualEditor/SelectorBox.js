@@ -14,7 +14,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 *
 	 * @author Jonas Kress
 	 * @constructor
-	 * @param {wikibase.queryService.api.Wikibase} api
+	 * @param {wikibase.queryService.api.Wikibase} [api]
 	 */
 	function SELF( api ) {
 

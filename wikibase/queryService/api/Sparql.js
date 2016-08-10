@@ -17,7 +17,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 *
-	 * @param {string} serviceUri (optional) serviceUri URI to the SPARQL service endpoint
+	 * @param {string} [serviceUri] Optional URI to the SPARQL service endpoint
 	 */
 	function SELF( serviceUri ) {
 

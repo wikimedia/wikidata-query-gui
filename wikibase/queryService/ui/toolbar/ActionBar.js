@@ -55,6 +55,9 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	};
 
 	/**
+	 * @param {string} text
+	 * @param {string} type
+	 * @param {int} progress
 	 * @private
 	 */
 	SELF.prototype._getProgressbar = function( text, type, progress ) {
@@ -64,9 +67,11 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	};
 
 	/**
+	 * @param {string} text
+	 * @param {string} type
 	 * @private
 	 */
-	SELF.prototype._getBar = function( text, type, isProgress ) {
+	SELF.prototype._getBar = function( text, type ) {
 		return $( '<div class="label label-' + type + '"/>' ).text( text );
 	};
 

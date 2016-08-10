@@ -73,7 +73,7 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	/**
 	 * Set LIMIT
 	 *
-	 * @param {string} limit
+	 * @param {int} limit
 	 */
 	SELF.prototype.setLimit = function( limit ) {
 		if ( !limit ) {

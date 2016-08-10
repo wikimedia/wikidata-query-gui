@@ -223,7 +223,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Creates a thumbnail URL from given commons resource URL
 	 *
 	 * @param {string} url
-	 * @param {number} width
+	 * @param {number} [width]
 	 * @return {String}
 	 */
 	SELF.prototype.getCommonsResourceFileNameThumbnail = function( url, width ) {
