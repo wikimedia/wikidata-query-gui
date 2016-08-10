@@ -106,6 +106,13 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 			object: null,
 			$element: null
 		},
+		Polestar: {
+			icon: 'stats',
+			label: 'Graph it!',
+			class: 'PolestarResultBrowser',
+			object: null,
+			$element: null
+		},
 		ImageGrid: {
 			icon: 'picture',
 			label: 'Image Grid',

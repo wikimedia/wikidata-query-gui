@@ -165,7 +165,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 	};
 
 	/**
-	 * Check if this value contains an coordinate value.
+	 * Check if this value contains an numeric value.
 	 */
 	SELF.prototype._checkColumn = function( value ) {
 		if ( this._getFormatter().isNumber( value ) ) {
