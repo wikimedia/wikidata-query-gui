@@ -3,11 +3,14 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, window ) {
+wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, d3, _, window ) {
 	'use strict';
 
 	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
 	var GLOBE_EARTH = 'Q2';
+
+	var LAYER_COLUMN = 'layer';
+	var LAYER_DEFAULT_GROUP = '_LAYER_DEFAULT_GROUP';
 
 	var TILE_LAYER = {
 		wikimedia: {
@@ -44,12 +47,6 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractResultBrowser();
 
 	/**
-	 * @property {jQuery}
-	 * @private
-	 */
-	SELF.prototype._grid = null;
-
-	/**
 	 * Draw a map to the given element
 	 *
 	 * @param {jQuery} $element target element
@@ -61,23 +58,30 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		$element.html( container );
 
-		var markerGroup = this._getMarkerGroup(), map = L.map( 'map', {
+		var markerGroups = this._getMarkerGroups(),
+			map = L.map( 'map', {
 			center: [
 					0, 0
 			],
 			maxZoom: 18,
 			minZoom: 2,
-			fullscreenControl: true
-		} ).fitBounds( markerGroup.getBounds() );
+			fullscreenControl: true,
+			layers: _.compact( markerGroups ) // convert object to array
+		} ).fitBounds( markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
 
 		this._setTileLayer( map );
 
+		//map controls
 		map.addControl( L.control.zoomBox( {
 			modal: false,
 			className: 'glyphicon glyphicon-zoom-in'
 		} ) );
 		map.addControl( new ScrollToTopButton() );
-		markerGroup.addTo( map );
+
+		var numberOfLayers = Object.keys( markerGroups ).length;
+		if ( numberOfLayers > 1 ) {
+			this._getLayerControl( markerGroups ).addTo( map );
+		}
 
 		$element.html( container );
 	};
@@ -85,8 +89,31 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getMarkerGroup = function() {
-		var self = this, markers = [];
+	SELF.prototype._getLayerControl = function( markerGroups ) {
+		var self = this,
+			layerControls = {},
+			control = '';
+
+		$.each( markerGroups, function( name, markers ) {
+			if ( name === LAYER_DEFAULT_GROUP ) {
+				control = self._i18n( 'wdqs-result-map-layers-all', 'All layers' );
+			} else {
+				var color = self._getMarkerGroupColor( name );
+				control = '<span style="color:' + color + '">&#x2b24;</span> ' + name;
+			}
+
+			layerControls[ control ] = markers;
+		} );
+
+		return L.control.layers( null, layerControls );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getMarkerGroups = function() {
+		var self = this, markers = {};
+		markers[ LAYER_DEFAULT_GROUP ] = [];
 
 		this._iterateResult( function( field, key, row ) {
 			if ( field && field.datatype === MAP_DATATYPE ) {
@@ -99,7 +126,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					lon = longLat[0],
 					lat = longLat[1];
 
-				var marker = L.circleMarker( [ lat, lon ], self._getMarkerStyle() )
+				var layer = row[ LAYER_COLUMN ] && row[ LAYER_COLUMN ].value || LAYER_DEFAULT_GROUP;
+				var marker = L.circleMarker( [ lat, lon ], self._getMarkerStyle( layer ) )
 					.bindPopup( popup );
 
 				marker.on( 'click', function() {
@@ -107,29 +135,50 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					popup.setContent( info[0] );
 				} );
 
-				markers.push( marker );
+				if ( !markers[ layer ] ) {
+					markers[ layer ] = [];
+				}
+				markers[ layer ].push( marker );
+				markers[ LAYER_DEFAULT_GROUP ].push( marker );
 			}
 		} );
 
-		if ( markers.length === 0 ) {
+		if ( Object.keys( markers ).length === 0 ) {
 			var marker = L.marker( [
 					0, 0
 			] ).bindPopup( 'Nothing found!' ).openPopup();
-			markers.push( marker );
+			return { null: L.featureGroup( [marker] ) };
 		}
 
-		return L.featureGroup( markers );
+		$.each( markers, function( key ) {
+			markers[ key ] = L.featureGroup( markers[ key ] );
+		} );
+
+		return markers;
 	};
 
 	/**
+	 * Maps group name to a certain color
 	 * @private
 	 */
-	SELF.prototype._getMarkerStyle = function() {
+	SELF.prototype._getMarkerGroupColor = d3.scale.category20();
+
+	/**
+	 * @private
+	 * @param {string} group
+	 */
+	SELF.prototype._getMarkerStyle = function( group ) {
+		var color = '#e04545';
+
+		if ( group !== LAYER_DEFAULT_GROUP ) {
+			color = this._getMarkerGroupColor( group );
+		}
+
 		return {
-			radius: 2,
-			color: '#e04545',
+			radius: 3,
+			color: color,
 			opacity: 0.8,
-			fillColor: '#e04545',
+			fillColor: color,
 			fillOpacity: 0.9
 		};
 	};
@@ -231,4 +280,4 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	return SELF;
-}( jQuery, L, window ) );
+}( jQuery, L, d3, _, window ) );

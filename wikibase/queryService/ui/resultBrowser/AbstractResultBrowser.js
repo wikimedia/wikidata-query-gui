@@ -170,5 +170,24 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 		return this._formatter;
 	};
 
+	/**
+	 * Get an i18n string
+	 *
+	 * @protected
+	 * @param {string} key for the i18n message
+	 * @param {string} message default text
+	 *
+	 * @return {string}
+	 */
+	SELF.prototype._i18n = function( key, message ) {
+		var i18nMessage = null;
+
+		if ( !$.i18n || ( i18nMessage = $.i18n( key ) ) === key ) {
+			return message;
+		}
+
+		return i18nMessage;
+	};
+
 	return SELF;
 }( jQuery, wikibase ) );

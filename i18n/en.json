@@ -28,5 +28,6 @@
     "wdqs-action-query": "Running query",
     "wdqs-action-render": "Rendering result",
     "wdqs-action-error-display": "Unable to display result",
-    "wdqs-action-timeout": "Query timeout limit reached"
+    "wdqs-action-timeout": "Query timeout limit reached",
+    "wdqs-result-map-layers-all": "All layers"
 }
