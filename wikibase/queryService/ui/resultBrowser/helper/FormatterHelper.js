@@ -230,15 +230,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		if ( !this.isCommonsResource( url ) ) {
 			return url;
 		}
-		if ( !width ) {
-			width = 400;
-		}
 
-		if ( url.match( /^http\:\/\//i ) ) {
-			url = url.replace( /^http\:\/\//, 'https://' );
-		}
-
-		return url + '?width=' + width;
+		return url.replace( /^http(?=:\/\/)/, 'https' ) + '?width=' + ( width || 400 );
 	};
 
 	/**

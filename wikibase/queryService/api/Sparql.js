@@ -232,7 +232,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 */
 	SELF.prototype._encodeCsv = function( string ) {
 		var result = string.replace( /"/g, '""' );
-		if ( result.search( /("|,|\n)/g ) >= 0 ) {
+		if ( /[",\n]/.test( result ) ) {
 			result = '"' + result + '"';
 		}
 		return result;
