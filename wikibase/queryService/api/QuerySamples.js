@@ -38,13 +38,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 					},
 					dataType: 'jsonp'
 				} )
-		.done(
-				function ( data ) {
-					var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
-					wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
-
-					deferred.resolve( self._extract( wikitext ) );
-				} );
+		.done( function ( data ) {
+			var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
+			deferred.resolve( self._extract( wikitext ) );
+		} );
 
 		return deferred;
 	};
@@ -77,10 +74,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @private
 	 */
 	SELF.prototype._extractExamples = function ( section, sectionHeader ) {
-		var regexParagraph = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)({{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
-			regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
-			regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
-			regexTags = /{{Q\|([^]+?)\|([^]+?)}}+/g,
+		var regexParagraph = /^=+([^=]+)=+\n[^=]*?(\{\{SPARQL\s*\|[\s\S]*?\}\})/gm,
+			regexQuery = /\|\s*query\s*=([^|]*?)(?:\||\}\})/,
+			regexExtraPrefix = /\|\s*extraprefix\s*=([^|]*?)(?:\||\}\})/,
+			regexTags = /\{\{Q\|([^{|}]+)\|([^{|}]+)\}\}/gi,
 			m,
 			examples = [];
 
@@ -88,7 +85,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			var paragraph = m[0], title = m[1].trim(), tags = [], tag,
 				href = PAGE_URL + '#' +	encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
 				sparqlTemplate = m[2],
-				query = sparqlTemplate.match( regexQuery )[1].trim();
+				query = sparqlTemplate.match( regexQuery )[1].replace( /\{\{!\}\}/g, '|' ).trim();
 
 			if ( sparqlTemplate.match( regexExtraPrefix ) ) {
 				query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n' + query;
