@@ -110,7 +110,7 @@
 			var browserPackage = wikibase.queryService.ui.resultBrowser;
 
 			try {
-				var browserClass = RESULT_BROWSER[query.match( /\#defaultView:(.*)/ )[1]].class;
+				var browserClass = RESULT_BROWSER[query.match( /#defaultView:(\w+)/ )[1]].class;
 				var browser = new browserPackage[browserClass]();
 			} catch ( e ) {
 				var browserClass = RESULT_BROWSER.Table.class;

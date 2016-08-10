@@ -627,7 +627,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._getDefaultResultBrowser = function() {
-		var match = this._editor.getValue().match( /\#defaultView:(.*)/ );
+		var match = this._editor.getValue().match( /#defaultView:(\w+)/ );
 
 		if ( match && this._resultBrowsers[match[1]] ) {
 			return match[1];
