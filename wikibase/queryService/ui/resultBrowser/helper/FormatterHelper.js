@@ -164,26 +164,14 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {Object}
 	 */
 	SELF.prototype.parseDate = function( dateTime ) {
-
-		if ( !dateTime.startsWith( '+' ) && !dateTime.startsWith( '-' ) ) {
-			dateTime = '+' + dateTime;
-		}
-
-		//Add leading zeros to positve year
-		dateTime = dateTime.replace( /^\+(\d{1})-/, '+00000$1-' )
-		.replace( /^\+(\d{2})-/, '+0000$1-' )
-		.replace( /^\+(\d{3})-/, '+000$1-' )
-		.replace( /^\+(\d{4})-/, '+00$1-' )
-		.replace( /^\+(\d{5})-/, '+0$1-' );
-
-		//Add leading zeros to negative year
-		dateTime = dateTime.replace( /^-(\d{1})-/, '-00000$1-' )
-		.replace( /^-(\d{2})-/, '-0000$1-' )
-		.replace( /^-(\d{3})-/, '-000$1-' )
-		.replace( /^-(\d{4})-/, '-00$1-' )
-		.replace( /^-(\d{5})-/, '-0$1-' );
-
-		dateTime = dateTime.replace( 'Z', '' );//remove timezone
+		// Add leading plus sign if it's missing
+		dateTime = dateTime.replace( /^(?![+-])/, '+' );
+		// Pad years to 6 digits
+		dateTime = dateTime.replace( /^([+-]?)(\d{1,5}\b)/, function( $0, $1, $2 ) {
+			return $1 + ( '00000' + $2 ).slice( -6 );
+		} );
+		// Remove timezone
+		dateTime = dateTime.replace( /Z$/, '' );
 
 		return moment( dateTime, moment.ISO_8601 );
 	};

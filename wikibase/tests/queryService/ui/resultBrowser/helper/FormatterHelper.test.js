@@ -13,6 +13,10 @@
 
 	QUnit.test( 'parseDate', function( assert ) {
 		var testCases = [
+			[ '2016-12-31', '2016-12-31' ],
+			[ '2016-12-31T00:00:00', '2016-12-31' ],
+
+			// Testing the supported range
 			[ '-1000000-12-31T00:00:00Z', 'Invalid date' ],
 			[ '-271821-01-01T00:00:00Z', 'Invalid date' ],
 			[ '-271820-01-01T00:00:00Z', '-271820-01-01' ],
