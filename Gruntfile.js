@@ -83,12 +83,22 @@ module.exports = function( grunt ) {
 							expand: true,
 							cwd: './',
 							src: [
-									'i18n/**', 'vendor/jquery.uls/**', '*.html',
+									'*.html',
 									'logo.svg', 'robots.txt'
 							],
 							dest: dist
 						}
 				]
+			}
+		},
+		'merge-i18n': {
+			i18n: {
+				src: [
+					'**/i18n/*.json',
+					'!**/examples/**',
+					'!**/demo/**'
+				],
+				dest: dist + '/i18n'
 			}
 		},
 		cssmin: {
@@ -183,7 +193,7 @@ module.exports = function( grunt ) {
 			'clean', 'build_dist'
 	] );
 	grunt.registerTask( 'build_dist', [
-			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin'
+			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
 	] );
 	grunt.registerTask( 'deploy', [
 			'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'build_dist', 'shell:commitDeploy', 'configDeploy', 'shell:review'
