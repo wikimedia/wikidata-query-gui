@@ -88,7 +88,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	SELF.prototype._getDefinedVariables = function( text ) {
 		var variables = {};
 
-		$.each( text.match( /\?[\w]+/g ), function( key, word ) {
+		$.each( text.match( /\?\w+/g ), function( key, word ) {
 			variables[ word ] = true;
 		} );
 
@@ -135,7 +135,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			pos = 0;
 		}
 
-		while ( line.charAt( pos ).match( /[\w?#]/ ) ) {
+		while ( /[\w?#]/.test( line.charAt( pos ) ) ) {
 			pos--;
 			if ( pos < 0 ) {
 				break;
@@ -144,7 +144,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		var left = pos + 1;
 
 		pos = position;
-		while ( line.charAt( pos ).match( /[\w]/ ) ) {
+		while ( /\w/.test( line.charAt( pos ) ) ) {
 			pos++;
 			if ( pos >= line.length ) {
 				break;

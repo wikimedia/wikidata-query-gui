@@ -54,7 +54,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	SELF.prototype._extract = function ( wikitext ) {
 		var self = this,
 			examples = [],
-			regexSection = /^\=\=([^\=]+)\=\=$/g,
+			regexSection = /^==([^=]+)==$/gm,
 			section = '',
 			sectionHeader = null;
 
