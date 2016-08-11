@@ -154,7 +154,13 @@ module.exports = function( grunt ) {
 						'newmessage=$(cat <<END\nMerging from $lastrev:\n\n$message\nEND\n)',
 						'cd ' + dist,
 						'git add -A', 'git commit -m "$newmessage"',
-						'echo "$newmessage"', 'git review'
+						'echo "$newmessage"'
+				].join( '&&' )
+			},
+			review: {
+				command: [
+						'cd ' + dist,
+						'git review'
 				].join( '&&' )
 			}
 		}
@@ -180,7 +186,7 @@ module.exports = function( grunt ) {
 			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin'
 	] );
 	grunt.registerTask( 'deploy', [
-			'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'build_dist', 'configDeploy','shell:commitDeploy'
+			'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'build_dist', 'shell:commitDeploy', 'configDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };
