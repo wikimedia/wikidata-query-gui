@@ -14,6 +14,8 @@
 	"wdqs-app-button-display": "Bıasne",
 	"wdqs-app-button-download": "Ron",
 	"wdqs-app-button-link": "Link",
+	"wdqs-dialog-examples-preview-query": "Persena verqayti",
+	"wdqs-dialog-examples-preview-result": "Neticey verqayti",
 	"wdqs-ve-find": "Bıvêne",
 	"wdqs-ve-show": "Bıvin",
 	"wdqs-ve-with": "Ya",
@@ -25,5 +27,6 @@
 	"wdqs-action-query": "Pers gureneno",
 	"wdqs-action-render": "Neticeyi vêniyenê",
 	"wdqs-action-error-display": "Neticeyi nêmocniyenê",
-	"wdqs-action-timeout": "Pers rest sinorê demraveriye"
+	"wdqs-action-timeout": "Pers rest sinorê demraveriye",
+	"wdqs-result-map-layers-all": "Katmani heme"
 }

@@ -8,13 +8,18 @@
 	"wdqs-app-button-prefixes": "פרעפֿיקסן",
 	"wdqs-app-button-tools": "געצייג",
 	"wdqs-app-button-help": "הילף",
+	"wdqs-app-button-run": "אויספֿירן",
 	"wdqs-app-button-clear": "רייניקן",
+	"wdqs-app-button-display": "אויסשטעלונג",
 	"wdqs-app-button-download": "אראָפלאָדן",
 	"wdqs-app-button-link": "לינק",
 	"wdqs-ve-find": "טרעפֿן",
 	"wdqs-ve-show": "ווייזן",
 	"wdqs-ve-with": "מיט",
 	"wdqs-ve-and": "און",
+	"wdqs-ve-anything": "אַלע",
+	"wdqs-ve-any": "אַלע",
 	"wdqs-ve-or": "אדער",
-	"wdqs-ve-subtype": "אונטערטיפ"
+	"wdqs-ve-subtype": "אונטערטיפ",
+	"wdqs-action-render": "רענדער רעזולטאַט"
 }

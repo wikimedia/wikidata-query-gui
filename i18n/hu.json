@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Tacsipacsi",
-			"Wolf Rex"
+			"Wolf Rex",
+			"Máté"
 		]
 	},
 	"wdqs-app-button-examples": "Példák",
@@ -14,6 +15,8 @@
 	"wdqs-app-button-display": "Megjelenít",
 	"wdqs-app-button-download": "Letöltés",
 	"wdqs-app-button-link": "Hivatkozás",
+	"wdqs-dialog-examples-preview-query": "Lekérdezés előnézete",
+	"wdqs-dialog-examples-preview-result": "Eredmény előnézete",
 	"wdqs-ve-find": "Keres",
 	"wdqs-ve-show": "Mutat",
 	"wdqs-ve-with": "ezzel:",
@@ -21,5 +24,10 @@
 	"wdqs-ve-anything": "bármi",
 	"wdqs-ve-any": "bármelyik",
 	"wdqs-ve-or": "vagy",
-	"wdqs-ve-subtype": "altípus"
+	"wdqs-ve-subtype": "altípus",
+	"wdqs-action-query": "Lekérdezés futtatása",
+	"wdqs-action-render": "Eredmény megjelenítésének előkészítése",
+	"wdqs-action-error-display": "Nem tudtuk megjeleníteni az eredményt",
+	"wdqs-action-timeout": "Lekérdezési időkorlát elérve",
+	"wdqs-result-map-layers-all": "Minden réteg"
 }

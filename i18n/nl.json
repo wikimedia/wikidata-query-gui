@@ -26,5 +26,6 @@
 	"wdqs-action-query": "Zoekopdracht uitvoeren",
 	"wdqs-action-render": "Resultaat van rendering",
 	"wdqs-action-error-display": "Niet in staat om de resultaten weer te geven",
-	"wdqs-action-timeout": "Time-out voor zoekopdrachtenlimiet is bereikt"
+	"wdqs-action-timeout": "Time-out voor zoekopdrachtenlimiet is bereikt",
+	"wdqs-result-map-layers-all": "Alle lagen"
 }

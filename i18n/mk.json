@@ -13,6 +13,8 @@
 	"wdqs-app-button-display": "Прикажи",
 	"wdqs-app-button-download": "Преземи",
 	"wdqs-app-button-link": "Врска",
+	"wdqs-dialog-examples-preview-query": "Преглед на барањето",
+	"wdqs-dialog-examples-preview-result": "Преглед на исходот",
 	"wdqs-ve-find": "Пронајди",
 	"wdqs-ve-show": "Прикажи",
 	"wdqs-ve-with": "со",
@@ -24,5 +26,6 @@
 	"wdqs-action-query": "Го работам барањето",
 	"wdqs-action-render": "Правам испис на исходот",
 	"wdqs-action-error-display": "Не можам да го прикажам исходот",
-	"wdqs-action-timeout": "Достигнато е временското ограничување на барањето"
+	"wdqs-action-timeout": "Достигнато е временското ограничување на барањето",
+	"wdqs-result-map-layers-all": "Сите слоеви"
 }

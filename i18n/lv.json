@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Papuass",
+			"Silraks"
+		]
+	},
+	"wdqs-app-button-examples": "Piemēri",
+	"wdqs-app-button-prefixes": "Prefiksi",
+	"wdqs-app-button-tools": "Rīki",
+	"wdqs-app-button-help": "Palīdzība",
+	"wdqs-app-button-run": "Izpildīt",
+	"wdqs-app-button-clear": "Notīrīt",
+	"wdqs-app-button-display": "Attēlošana",
+	"wdqs-app-button-download": "Lejupielādēt",
+	"wdqs-app-button-link": "Saite",
+	"wdqs-ve-find": "Atrast",
+	"wdqs-ve-show": "Rādīt",
+	"wdqs-ve-with": "ar",
+	"wdqs-ve-and": "un",
+	"wdqs-ve-anything": "jebko",
+	"wdqs-ve-any": "visi",
+	"wdqs-ve-or": "vai",
+	"wdqs-ve-subtype": "apakštips",
+	"wdqs-action-query": "Izpilda vaicājumu",
+	"wdqs-action-render": "Attēlo rezultātu",
+	"wdqs-action-error-display": "Nevar parādīt rezultātu",
+	"wdqs-action-timeout": "Vaicājuma laika limits sasniegts"
+}

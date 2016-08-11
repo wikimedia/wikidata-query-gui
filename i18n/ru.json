@@ -13,6 +13,8 @@
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-download": "Скачать",
 	"wdqs-app-button-link": "Ссылка",
+	"wdqs-dialog-examples-preview-query": "Посмотреть запрос",
+	"wdqs-dialog-examples-preview-result": "Посмотреть результат",
 	"wdqs-ve-find": "Найти",
 	"wdqs-ve-show": "Показать",
 	"wdqs-ve-with": "с",
@@ -20,5 +22,10 @@
 	"wdqs-ve-anything": "что-нибудь",
 	"wdqs-ve-any": "любое",
 	"wdqs-ve-or": "или",
-	"wdqs-ve-subtype": "подтип"
+	"wdqs-ve-subtype": "подтип",
+	"wdqs-action-query": "Выполнение запроса",
+	"wdqs-action-render": "Обработка результата",
+	"wdqs-action-error-display": "Не удается отобразить результат",
+	"wdqs-action-timeout": "Запрос занял слишком много времени",
+	"wdqs-result-map-layers-all": "Все слои"
 }

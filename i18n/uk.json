@@ -15,6 +15,8 @@
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-download": "Завантажити",
 	"wdqs-app-button-link": "Посилання",
+	"wdqs-dialog-examples-preview-query": "Попередній перегляд запиту",
+	"wdqs-dialog-examples-preview-result": "Попередній перегляд результату",
 	"wdqs-ve-find": "Знайти",
 	"wdqs-ve-show": "Показати",
 	"wdqs-ve-with": "з",
@@ -26,5 +28,6 @@
 	"wdqs-action-query": "Виконання запиту",
 	"wdqs-action-render": "Візуалізація результату",
 	"wdqs-action-error-display": "Не вдалося відобразити результат",
-	"wdqs-action-timeout": "Вичерпано ліміт часу, відведеного на виконання запиту"
+	"wdqs-action-timeout": "Вичерпано ліміт часу, відведеного на виконання запиту",
+	"wdqs-result-map-layers-all": "Всі шари"
 }

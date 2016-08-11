@@ -20,5 +20,6 @@
 	"wdqs-ve-anything": "cokolwiek",
 	"wdqs-ve-any": "dowolna",
 	"wdqs-ve-or": "lub",
-	"wdqs-ve-subtype": "podtyp"
+	"wdqs-ve-subtype": "podtyp",
+	"wdqs-action-error-display": "Nie można wyświetlić wyniku"
 }

@@ -13,10 +13,19 @@
 	"wdqs-app-button-display": "Montri",
 	"wdqs-app-button-download": "Elŝuti",
 	"wdqs-app-button-link": "Ligilo",
+	"wdqs-dialog-examples-preview-query": "Antaŭrigardi informpeton",
+	"wdqs-dialog-examples-preview-result": "Antaŭrigardi rezulton",
 	"wdqs-ve-find": "Serĉi",
 	"wdqs-ve-show": "Montri",
 	"wdqs-ve-with": "kun",
 	"wdqs-ve-and": "kaj",
+	"wdqs-ve-anything": "io ajn",
 	"wdqs-ve-any": "kaj",
-	"wdqs-ve-or": "aŭ"
+	"wdqs-ve-or": "aŭ",
+	"wdqs-ve-subtype": "subtipo",
+	"wdqs-action-query": "Rulado de informpeto",
+	"wdqs-action-render": "Bildigado de rezulto",
+	"wdqs-action-error-display": "Montri rezulton ne eblas",
+	"wdqs-action-timeout": "Informpeta tempolimo atingita",
+	"wdqs-result-map-layers-all": "Ĉiuj tavoloj"
 }

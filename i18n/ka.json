@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"David1010"
+			"David1010",
+			"MIKHEIL"
 		]
 	},
 	"wdqs-app-button-examples": "მაგალითები",
@@ -13,10 +14,12 @@
 	"wdqs-app-button-display": "ფორმატი",
 	"wdqs-app-button-download": "ჩამოტვირთვა",
 	"wdqs-app-button-link": "ბმული",
+	"wdqs-dialog-examples-preview-result": "შედეგების გადახედვა",
 	"wdqs-ve-find": "ძიება",
 	"wdqs-ve-show": "ჩვენება",
 	"wdqs-ve-and": "და",
 	"wdqs-ve-any": "ნებისმიერი",
 	"wdqs-ve-or": "ან",
-	"wdqs-ve-subtype": "ქვეტიპი"
+	"wdqs-ve-subtype": "ქვეტიპი",
+	"wdqs-result-map-layers-all": "ყველა შრე"
 }

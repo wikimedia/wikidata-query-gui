@@ -14,6 +14,8 @@
 	"wdqs-app-button-display": "显示",
 	"wdqs-app-button-download": "下载",
 	"wdqs-app-button-link": "链接",
+	"wdqs-dialog-examples-preview-query": "预览查询",
+	"wdqs-dialog-examples-preview-result": "预览结果",
 	"wdqs-ve-find": "查找",
 	"wdqs-ve-show": "显示",
 	"wdqs-ve-with": "有",
@@ -25,5 +27,6 @@
 	"wdqs-action-query": "正在运行查询",
 	"wdqs-action-render": "正在渲染结果",
 	"wdqs-action-error-display": "无法显示结果",
-	"wdqs-action-timeout": "已达到查询超时限制"
+	"wdqs-action-timeout": "已达到查询超时限制",
+	"wdqs-result-map-layers-all": "所有图层"
 }

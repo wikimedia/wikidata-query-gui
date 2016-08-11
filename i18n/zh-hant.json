@@ -13,6 +13,8 @@
 	"wdqs-app-button-display": "顯示",
 	"wdqs-app-button-download": "下載",
 	"wdqs-app-button-link": "連結",
+	"wdqs-dialog-examples-preview-query": "預覽查詢",
+	"wdqs-dialog-examples-preview-result": "預覽結果",
 	"wdqs-ve-find": "搜尋",
 	"wdqs-ve-show": "項目顯示",
 	"wdqs-ve-with": "與",
@@ -24,5 +26,6 @@
 	"wdqs-action-query": "正在進行查詢",
 	"wdqs-action-render": "正在翻譯結果",
 	"wdqs-action-error-display": "無法顯示結果",
-	"wdqs-action-timeout": "已達查詢逾時限制"
+	"wdqs-action-timeout": "已達查詢逾時限制",
+	"wdqs-result-map-layers-all": "所有圖層"
 }

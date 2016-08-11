@@ -13,6 +13,7 @@
 	"wdqs-app-button-display": "दर्शवा",
 	"wdqs-app-button-download": "अधिभारण करा",
 	"wdqs-app-button-link": "दुवा",
+	"wdqs-dialog-examples-preview-result": "झलकेचा निकाल",
 	"wdqs-ve-find": "शोधा",
 	"wdqs-ve-show": "दाखवा",
 	"wdqs-ve-with": "सह",
@@ -20,5 +21,6 @@
 	"wdqs-ve-anything": "कोणतीही गोष्ट",
 	"wdqs-ve-any": "कोणतेही",
 	"wdqs-ve-or": "किंवा",
-	"wdqs-ve-subtype": "उपप्रकार"
+	"wdqs-ve-subtype": "उपप्रकार",
+	"wdqs-action-error-display": "निकाल दर्शवू शकत नाही"
 }

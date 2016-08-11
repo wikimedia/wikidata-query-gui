@@ -14,6 +14,8 @@
 	"wdqs-app-button-display": "Aspetto",
 	"wdqs-app-button-download": "Scarica",
 	"wdqs-app-button-link": "Collegamento",
+	"wdqs-dialog-examples-preview-query": "Anteprima query",
+	"wdqs-dialog-examples-preview-result": "Anteprima risultato",
 	"wdqs-ve-find": "Trova",
 	"wdqs-ve-show": "Mostra",
 	"wdqs-ve-with": "con",
@@ -25,5 +27,6 @@
 	"wdqs-action-query": "Esecuzione dell'interrogazione",
 	"wdqs-action-render": "Rappresentazione dei risultati",
 	"wdqs-action-error-display": "Impossibile visualizzare il risultato",
-	"wdqs-action-timeout": "Limite timeout per la query raggiunto"
+	"wdqs-action-timeout": "Limite timeout per la query raggiunto",
+	"wdqs-result-map-layers-all": "Tutti i livelli"
 }

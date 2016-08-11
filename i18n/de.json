@@ -13,6 +13,8 @@
 	"wdqs-app-button-display": "Anzeigen",
 	"wdqs-app-button-download": "Herunterladen",
 	"wdqs-app-button-link": "Link",
+	"wdqs-dialog-examples-preview-query": "Vorschau der Abfrage",
+	"wdqs-dialog-examples-preview-result": "Vorschau des Ergebnisses",
 	"wdqs-ve-find": "Finden",
 	"wdqs-ve-show": "Anzeigen",
 	"wdqs-ve-with": "mit",
@@ -24,5 +26,6 @@
 	"wdqs-action-query": "Führe Abfrage aus",
 	"wdqs-action-render": "Rendere Ergebnis",
 	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
-	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht"
+	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht",
+	"wdqs-result-map-layers-all": "Alle Ebenen"
 }
