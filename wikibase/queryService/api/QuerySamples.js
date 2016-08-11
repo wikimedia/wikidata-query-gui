@@ -76,10 +76,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @private
 	 */
 	SELF.prototype._extractExamples = function ( section, sectionHeader ) {
-		var regexParagraph = /(?:=+)([^=]*)(?:=+)\n(?:[]*?)(?:[^=]*?)(\{\{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
+		var regexParagraph = /(?:=+)([^=]*)(?:=+)\n(?:[]*?)(?:[^=]*?)(\{\{SPARQL\s*\|[\s\S]*?}}\n)/g,
 			regexQuery = /query\s*=([^]+)(?:}}|\|)/,
-			regexExtraPrefix = /extraprefix\s*=([^]+?)(?:\||}})+/,
-			regexTags = /\{\{Q\|([^]+?)\|([^]+?)}}+/g,
+			regexExtraPrefix = /extraprefix\s*=([^]+?)(?:\||}})/,
+			regexTags = /\{\{Q\|([^]+?)\|([^]+?)}}/g,
 			m,
 			examples = [];
 
