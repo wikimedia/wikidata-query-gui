@@ -76,7 +76,6 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 					}
 				}
 			} );
-
 		}
 
 		$( '<a class="btn btn-default">' ).click( function() {
@@ -106,7 +105,11 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	 * @private
 	 */
 	SELF.prototype._getData = function() {
-		var nodes = {}, edges = {}, rows = [], format = this._getFormatter(), node = {};
+		var nodes = {},
+			edges = {},
+			rows = [],
+			format = this._getFormatter(),
+			node = {};
 
 		this._iterateResult( function( field, key, row, rowIndex ) {
 			if ( !field || !field.value ) {
@@ -145,7 +148,6 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 				node.title += ' value:' + field.value;
 				node.shape = 'dot';
 			}
-
 		} );
 
 		return {

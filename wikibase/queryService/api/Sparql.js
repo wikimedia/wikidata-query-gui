@@ -109,7 +109,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {jQuery.Promise} query
 	 */
 	SELF.prototype.query = function( query ) {
-		var deferred = $.Deferred(), self = this, settings = {
+		var self = this,
+			deferred = $.Deferred(),
+			settings = {
 			headers: {
 				Accept: 'application/sparql-results+json'
 			}
@@ -248,8 +250,10 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {string} csv
 	 */
 	SELF.prototype.getResultAsCsv = function() {
-		var self = this, data = self._rawData;
-		var out = data.head.vars.map( this._encodeCsv ).join( ',' ) + '\n';
+		var self = this,
+			data = self._rawData,
+			out = data.head.vars.map( this._encodeCsv ).join( ',' ) + '\n';
+
 		out = this._processData( data, function( row, out ) {
 			var rowOut = '';
 			var first = true;
@@ -279,7 +283,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {string}
 	 */
 	SELF.prototype.getResultAsJson = function() {
-		var out = [], data = this._rawData;
+		var out = [],
+			data = this._rawData;
+
 		out = this._processData( data, function( row, out ) {
 			var extractRow = {};
 			for ( var rowVar in row ) {
@@ -337,9 +343,12 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {string}
 	 */
 	SELF.prototype.getSparqlTsv = function() {
-		var data = this._rawData, self = this, out = data.head.vars.map( function( vname ) {
+		var self = this,
+			data = this._rawData,
+			out = data.head.vars.map( function( vname ) {
 			return '?' + vname;
 		} ).join( '\t' ) + '\n';
+
 		out = this._processData( data, function( row, out ) {
 			var rowOut = '';
 			var first = true;

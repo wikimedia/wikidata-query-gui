@@ -86,5 +86,4 @@
 		} );
 	} );
 
-
 }( jQuery, QUnit, sinon, wikibase ) );

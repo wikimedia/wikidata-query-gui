@@ -157,8 +157,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @param {jQuery} $element
 	 */
 	SELF.prototype.draw = function( $element ) {
-
 		this._triples = this._query.getTriples();
+
 		var subqueries = this._query.getSubQueries();
 		while ( subqueries.length > 0 ) {
 			var q = subqueries.pop();
@@ -183,7 +183,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._i18n = function( key ) {
-
 		if ( !$.i18n ) {
 			return this._labels[key];
 		}
@@ -213,6 +212,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				$show.append( self._getTripleHtml( triple ) );
 				return;
 			}
+
 			if ( $find.children().length > 1 ) {
 				if ( $find.children().length === 2 ) {
 					$find.append( $( '<span>' ).text( self._i18n( 'with' ) + ' ' ) );
@@ -220,8 +220,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 					$find.append(  $( '<span>' ).text( self._i18n( 'and' ) + ' ' ) );
 				}
 			}
-			$find.append( self._getTripleHtml( triple ) );
 
+			$find.append( self._getTripleHtml( triple ) );
 		} );
 
 		if ( $find.children().length === 1 ) {
@@ -356,7 +356,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._isNotRelevant = function( triple ) {
-
 		if ( FILTER_PREDICATES[triple.predicate] ) {
 			return true;
 		}
@@ -374,7 +373,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._isInShowSection = function( triple ) {
-
 		// Must match ?value wdt:Pxx ?item
 		if ( this._isVariable( triple.subject ) && this._isVariable( triple.object ) ) {
 			return true;
@@ -387,11 +385,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getTripleHtml = function( triple ) {
-		var self = this;
+		var self = this,
+			$triple = $( '<span>' );
 
-		var $triple = $( '<span>' );
 		$.each( triple.triple, function( k, entity ) {
-
 			if ( self._isSimpleMode && self._isVariable( entity ) ) {
 				return;
 			}
@@ -426,7 +423,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 					self._isVariable( t.triple.object ) === false ) {
 				boundVariables[t.triple.subject] = true;
 			}
-
 		} );
 
 		return Object.keys( boundVariables ).length <= 1;
@@ -460,7 +456,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			triple.triple = newTriple;
 
 			$path.append( self._getTripleEntityHtml( v, triple, k ) );
-
 		} );
 
 		return $path;

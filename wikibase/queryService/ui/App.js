@@ -27,7 +27,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @param {wikibase.queryService.api.Sparql} visualEditor
 	 */
 	function SELF( $element, editor, visualEditor, sparqlApi, querySamplesApi ) {
-
 		this._$element = $element;
 		this._editor = editor;
 		this._visualEditor = visualEditor;
@@ -154,7 +153,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._init = function() {
-
 		if ( !this._sparqlApi ) {
 			this._sparqlApi = new wikibase.queryService.api.Sparql();
 		}
@@ -283,7 +281,11 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._initRdfNamespaces = function() {
-		var category, select, ns, container = $( '.namespace-shortcuts' ), namespaces = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS;
+		var category,
+			select,
+			ns,
+			container = $( '.namespace-shortcuts' ),
+			namespaces = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS;
 
 		container.click( function( e ) {
 			e.stopPropagation();
@@ -497,7 +499,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		};
 
 		var downloadHandler = function( filename, handler, mimetype ) {
-
 			return function( e ) {
 				e.preventDefault();
 
@@ -523,7 +524,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._initResultBrowserMenu = function() {
-
 		$.each( this._resultBrowsers, function( key, b ) {
 			var $element = $( '<li><a class="result-browser" href="#">' +
 					'<span class="glyphicon glyphicon-' + b.icon + '"></span>' + b.label +
@@ -531,7 +531,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 			$element.appendTo( $( '#result-browser-menu' ) );
 			b.$element = $element;
 		} );
-
 	};
 
 	/**
@@ -676,15 +675,17 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				self._actionBar.show( 'wdqs-action-error-display', 'warning' );
 				window.console.log( e.stack );
 			}
-			self._handleQueryResultBrowsers();
 
+			self._handleQueryResultBrowsers();
 		}, 20 );
 	};
 	/**
 	 * @private
 	 */
 	SELF.prototype._handleNamespaceSelected = function( e ) {
-		var ns, uri = e.target.value, current = this._editor.getValue();
+		var ns,
+			uri = e.target.value,
+			current = this._editor.getValue();
 
 		if ( current.indexOf( '<' + uri + '>' ) === -1 ) {
 			ns = $( e.target ).find( ':selected' ).text();
@@ -715,7 +716,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				window.location.hash = hash;
 			}
 		}
-
 	};
 
 	return SELF;

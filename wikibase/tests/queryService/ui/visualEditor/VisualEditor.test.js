@@ -89,7 +89,6 @@
 			assert.equal( ve.getQuery().trim(), testCase.sparqlOut );
 			assert.equal( $html.text().trim(), testCase.text );
 		} );
-
 	} );
 
 }( jQuery, QUnit, sinon, wikibase ) );

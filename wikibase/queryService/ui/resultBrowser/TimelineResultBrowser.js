@@ -51,7 +51,6 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 			items = [];
 
 		this._iterateResult( function( field, key, row, rowIndex ) {
-
 			if ( self._getFormatter().isDateTime( field ) ) {
 				if ( !items[rowIndex] ) {// create new
 					items[rowIndex] = {

@@ -135,7 +135,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 					hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
 
 					deferred.resolve( hint );
-
 				} ).fail(
 				function() {// if rdf hint is rejected try sparql hint
 					self._sparqlHint.getHint( editorContent, lineContent, lineNum, cursorPos )
@@ -245,7 +244,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 		if ( localStorage ) {
 			localStorage.setItem( LOCAL_STORAGE_KEY, value );
 		}
-
 	};
 
 	/**

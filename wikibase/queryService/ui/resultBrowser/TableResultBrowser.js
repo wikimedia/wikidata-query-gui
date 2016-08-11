@@ -43,7 +43,6 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @private
 	 */
 	SELF.prototype._sorter = {
-
 		string: function( val1, val2 ) {
 			return val1.localeCompare( val2 );
 		},
@@ -151,7 +150,6 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			cookieExpire: '1y',
 			cookiesEnabled: [ 'bs.table.pageList' ]
 		} );
-
 	};
 
 	/**

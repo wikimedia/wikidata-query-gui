@@ -159,7 +159,6 @@
 			"predicate": "PU2",
 			"object": "OU2"
 		}, 'triple3 must be SU2, PU2, OU2' );
-
 	} );
 
 	QUnit.test( 'When query is \'' + QUERY.TRIPLES + '\' and I delete 2 triples then', function(
@@ -198,7 +197,6 @@
 		assert.equal( queries.length, 1, 'expecting one sub query of sub query' );
 		assert.ok( ( queries[0] instanceof PACKAGE.SparqlQuery ),
 				'that must be instance of SparqlQuery' );
-
 	} );
 
 	QUnit.test( 'When query is \'' + QUERY.TRIPLES + '\' and I add two triples',

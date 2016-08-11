@@ -35,7 +35,6 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 		this._grid = $( '<div class="masonry">' );
 
 		this._iterateResult( function( field, key, row ) {
-
 			if ( field && self._isCommonsResource( field.value ) ) {
 				var url = field.value, fileName = self._getFormatter().getCommonsResourceFileName(
 						url );
@@ -43,7 +42,6 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 				self._grid.append( self._getItem( self._getThumbnail( url ), self._getThumbnail(
 						url, 1000 ), fileName, row ) );
 			}
-
 		} );
 
 		$element.html( this._grid );

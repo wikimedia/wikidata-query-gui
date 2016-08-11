@@ -38,7 +38,6 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 * @param {String} query SPARQL query string
 	 */
 	SELF.prototype.parse = function( query, prefixes ) {
-
 		var parser = new sparqljs.Parser( prefixes );
 		this._query = parser.parse( query );
 	};
@@ -88,7 +87,6 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 * @param {string} name of variable e.g. ?foo
 	 */
 	SELF.prototype.hasVariable = function( name ) {
-
 		if ( this._query.variables.length === 0 ) {
 			return false;
 		}
@@ -106,7 +104,6 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 * @param {string} name
 	 */
 	SELF.prototype.addVariable = function( name ) {
-
 		if ( !name.startsWith( '?' ) ) {
 			return;
 		}
@@ -128,7 +125,6 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 * @param {string} name
 	 */
 	SELF.prototype.removeVariable = function( name ) {
-
 		if ( !name.startsWith( '?' ) ) {
 			return;
 		}
@@ -230,13 +226,13 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 				}
 			]
 		};
+
 		if ( isOptional ) {
 			var optionalTriple = {
 				type: 'optional',
 				patterns: [
 					triple
 				]
-
 			};
 			this._query.where.push( optionalTriple );
 		} else {
