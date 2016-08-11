@@ -365,11 +365,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 * @return {boolean}
 	 */
 	SELF.prototype.isDrawable = function() {
-
-		if ( Object.keys( this._labelColumns ).length > 1 ) {
-			return true;
-		}
-		return false;
+		return Object.keys( this._labelColumns ).length > 1;
 	};
 
 	/**
@@ -389,10 +385,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 
 		if ( this._getFormatter().isLabel( value, key ) ) {
 			this._labelColumns[key] = true;
-
-			if ( Object.keys( this._labelColumns ).length > 1 ) {
-				return false;
-			}
+			return !this.isDrawable();
 		}
 
 		return true;

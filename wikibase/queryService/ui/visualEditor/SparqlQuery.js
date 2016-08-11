@@ -50,8 +50,7 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 */
 	SELF.prototype.getQueryString = function() {
 		try {
-			var q = new sparqljs.Generator().stringify( this._query );
-			return q;
+			return new sparqljs.Generator().stringify( this._query );
 		} catch ( e ) {
 			return null;
 		}
@@ -98,11 +97,7 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 			return true;
 		}
 
-		if ( this._query.variables.indexOf( name ) >= 0 ) {
-			return true;
-		}
-
-		return false;
+		return this._query.variables.indexOf( name ) >= 0;
 	};
 
 	/**

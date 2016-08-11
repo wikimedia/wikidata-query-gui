@@ -144,9 +144,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		} );
 
 		if ( Object.keys( markers ).length === 0 ) {
-			var marker = L.marker( [
-					0, 0
-			] ).bindPopup( 'Nothing found!' ).openPopup();
+			var marker = L.marker( [ 0, 0 ] ).bindPopup( 'Nothing found!' ).openPopup();
 			return { null: L.featureGroup( [marker] ) };
 		}
 

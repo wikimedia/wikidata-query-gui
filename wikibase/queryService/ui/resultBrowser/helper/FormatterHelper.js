@@ -285,7 +285,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Handler for explore links
 	 */
 	SELF.prototype.handleExploreItem = function( e ) {
-		var id, url = $( e.target ).attr( 'href' ) || '', match;
+		var id,
+			url = $( e.target ).attr( 'href' ) || '',
+			match;
+
 		e.preventDefault();
 
 		match = url.match( EXPLORE_URL + '(.+)' );

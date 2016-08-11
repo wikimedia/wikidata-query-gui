@@ -47,21 +47,18 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	 * @private
 	 */
 	SELF.prototype._getItems = function() {
-		var items = [];
+		var self = this,
+			items = [];
 
-		var self = this, item = {};
 		this._iterateResult( function( field, key, row, rowIndex ) {
 
 			if ( self._getFormatter().isDateTime( field ) ) {
 				if ( !items[rowIndex] ) {// create new
-					var startDate = self._getFormatter().parseDate( field.value );
-					item = {
+					items[rowIndex] = {
 						id: rowIndex,
 						content: self._getHtml( row ).html(),
-						start: startDate
+						start: self._getFormatter().parseDate( field.value )
 					};
-					items[rowIndex] = item;
-
 				} else { // create time span with start and end date
 					var dates = [];
 					dates.push( self._getFormatter().parseDate( field.value ) );

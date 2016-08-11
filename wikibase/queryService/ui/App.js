@@ -545,8 +545,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		this._updateQueryUrl();
 		this._actionBar.show( 'wdqs-action-query', 'info', 100 );
 
-		$( '#query-result' ).empty( '' );
-		$( '#query-result' ).hide();
+		$( '#query-result' ).empty().hide();
 		$( '.query-total' ).hide();
 		$( '#execute-button' ).prop( 'disabled', true );
 		$( '#query-error' ).hide();

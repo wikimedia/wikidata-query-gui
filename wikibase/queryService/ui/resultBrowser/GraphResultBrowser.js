@@ -148,11 +148,10 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 
 		} );
 
-		var result = {
+		return {
 			nodes: new vis.DataSet( _.compact( nodes ) ),
 			edges: new vis.DataSet( _.compact( edges ) )
 		};
-		return result;
 	};
 
 	/**
