@@ -40,7 +40,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		.done(
 				function ( data ) {
 					var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
-					wikitext = wikitext.replace( /\{\{!\}\}/g, '|' );
+					wikitext = wikitext.replace( /\{\{!}}/g, '|' );
 
 					deferred.resolve( self._extract( wikitext ) );
 				} );
@@ -76,9 +76,9 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @private
 	 */
 	SELF.prototype._extractExamples = function ( section, sectionHeader ) {
-		var regexParagraph = /(?:[\=]+)([^\=]*)(?:[\=]+)\n(?:[]*?)(?:[^=]*?)(\{\{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
-			regexQuery = /query\s*\=([^]+)(?:}}|\|)/,
-			regexExtraPrefix = /extraprefix\s*\=([^]+?)(?:\||}})+/,
+		var regexParagraph = /(?:[=]+)([^=]*)(?:[=]+)\n(?:[]*?)(?:[^=]*?)(\{\{SPARQL\s*\|[\s\S]*?}}\n){1}/g,
+			regexQuery = /query\s*=([^]+)(?:}}|\|)/,
+			regexExtraPrefix = /extraprefix\s*=([^]+?)(?:\||}})+/,
 			regexTags = /\{\{Q\|([^]+?)\|([^]+?)}}+/g,
 			m,
 			examples = [];
