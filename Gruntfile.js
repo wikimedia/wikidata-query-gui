@@ -29,8 +29,11 @@ module.exports = function( grunt ) {
 			]
 		},
 		banana: {
-			all: 'i18n/'
-		},
+			all: 'i18n/',
+					options: {
+						disallowBlankTranslations: false
+					}
+				},
 		clean: {
 			release: [
 				dist
