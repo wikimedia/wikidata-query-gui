@@ -105,7 +105,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			}
 			break;
 		case DATATYPE_DATETIME:
-			var $dateLabel = $( '<span>' ).text( this._formatDate( this.parseDate( value ) ) );
+			var $dateLabel = $( '<span>' ).text( this._formatDate( value ) );
 			$dateLabel.attr( 'title', title + ': ' + value );
 			$html.append( $dateLabel );
 			break;
@@ -128,14 +128,32 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
+	 * @param {string} dateTime
+	 * @return {string}
 	 * @protected
 	 */
-	SELF.prototype._formatDate = function( date, lang ) {
-		try {
-				return date.format( 'll' );
-		} catch ( e ) {
-			return 'Invalid date';
+	SELF.prototype._formatDate = function( dateTime ) {
+		var isBce = false,
+			positiveDate = dateTime.replace( /^(?:-\d+|\+?0+\b)/, function( year ) {
+				isBce = true;
+				return Math.abs( year ) + 1;
+			} ),
+			moment = this.parseDate( positiveDate ),
+			formatted;
+
+		if ( moment.isValid() ) {
+			formatted = moment.format( 'll' );
+		} else {
+			var year = positiveDate.replace( /^\+?(\d+).*/, '$1' );
+			formatted = '0000'.slice( year.length ) + year;
 		}
+
+		if ( isBce ) {
+			// TODO: Translate.
+			formatted += ' BCE';
+		}
+
+		return formatted;
 	};
 
 	/**
