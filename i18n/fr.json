@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Wladek92"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -9,10 +10,15 @@
 	"wdqs-app-button-tools": "Outils",
 	"wdqs-app-button-help": "Aide",
 	"wdqs-app-button-run": "Exécuter",
+	"wdqs-app-button-run-title": "Exécuter la requête (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Effacer",
 	"wdqs-app-button-display": "Afficher",
 	"wdqs-app-button-download": "Télécharger",
 	"wdqs-app-button-link": "Lien",
+	"wdqs-app-footer-help": "Presser <i>[CTRL-SPACE]</i> pour activer l’auto-complétude.",
+	"wdqs-app-footer-updated-before": "Données mises à jour",
+	"wdqs-app-footer-updated-after": "il y a",
+	"wdqs-app-editor-placeholder": "(Entrer une requête SPARQL ou choisir un exemple de requête)",
 	"wdqs-dialog-examples-preview-query": "Aperçu de la requête",
 	"wdqs-dialog-examples-preview-result": "Aperçu du résultat",
 	"wdqs-ve-find": "Rechercher",

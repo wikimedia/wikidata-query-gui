@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sarchia"
+		]
+	},
+	"wdqs-app-button-examples": "نموونەکان",
+	"wdqs-app-button-prefixes": "پێشگرەکان",
+	"wdqs-app-button-tools": "ئامرازەکان",
+	"wdqs-app-button-help": "یارمەتی",
+	"wdqs-app-button-clear": "سڕینەوە",
+	"wdqs-app-button-display": "پیشاندان",
+	"wdqs-app-button-download": "داگرتن",
+	"wdqs-app-button-link": "بەستەر",
+	"wdqs-ve-find": "بیدۆزەرەوە",
+	"wdqs-ve-show": "نیشاندان",
+	"wdqs-ve-with": "لەگەڵ",
+	"wdqs-ve-and": "و",
+	"wdqs-ve-anything": "ھەرشتێک",
+	"wdqs-ve-any": "ھەر",
+	"wdqs-ve-or": "یان"
+}

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Evropi",
-			"Geraki"
+			"Geraki",
+			"Stam.nikos"
 		]
 	},
 	"wdqs-app-button-examples": "Παραδείγματα",
@@ -10,10 +11,17 @@
 	"wdqs-app-button-tools": "Εργαλεία",
 	"wdqs-app-button-help": "Βοήθεια",
 	"wdqs-app-button-run": "Εκτέλεση",
+	"wdqs-app-button-run-title": "Εκτέλεση ερωτήματος (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Εκκαθάριση",
 	"wdqs-app-button-display": "Εμφάνιση",
 	"wdqs-app-button-download": "Λήψη",
 	"wdqs-app-button-link": "Σύνδεσμος",
+	"wdqs-app-footer-help": "Πατήστε <i>[CTRL-SPACE]</i> για να ενεργοποιήσετε την αυτόματη συμπλήρωση.",
+	"wdqs-app-footer-updated-before": "Τα δεδομένα ενημερώθηκαν",
+	"wdqs-app-footer-updated-after": "πριν",
+	"wdqs-app-editor-placeholder": "(Εισαγάγετε ένα ερώτημα SPARQL ή να διαλέξτε ένα παράδειγμα ερωτήματος)",
+	"wdqs-dialog-examples-preview-query": "Προεπισκόπηση ερωτήματος",
+	"wdqs-dialog-examples-preview-result": "Προεπισκόπηση αποτελέσματος",
 	"wdqs-ve-find": "Εύρεση",
 	"wdqs-ve-show": "Εμφάνιση",
 	"wdqs-ve-with": "με",
@@ -21,5 +29,10 @@
 	"wdqs-ve-anything": "οτιδήποτε",
 	"wdqs-ve-any": "οτιδήποτε",
 	"wdqs-ve-or": "ή",
-	"wdqs-ve-subtype": "υποτύπος"
+	"wdqs-ve-subtype": "υποτύπος",
+	"wdqs-action-query": "Εκτελούμενο ερώτημα",
+	"wdqs-action-render": "Παραγωγή αποτελέσματος",
+	"wdqs-action-error-display": "Αδυναμία προβολής αποτελέσματος",
+	"wdqs-action-timeout": "Έφτασε το χρονικό όριο του ερωτήματος",
+	"wdqs-result-map-layers-all": "Όλα τα στρώματα"
 }

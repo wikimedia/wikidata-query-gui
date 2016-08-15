@@ -19,7 +19,7 @@
 	"wdqs-app-button-link": "Button get link to query\n{{Identical|Link}}",
 	"wdqs-app-footer-help": "Help message at the footer of the editor",
 	"wdqs-app-footer-updated-before": "Label before date string at the footer",
-	"wdqs-app-footer-updated-after": "Label after date string at the footer",
+	"wdqs-app-footer-updated-after": "Label after date string at the footer\n{{Identical|Ago}}",
 	"wdqs-app-editor-placeholder": "Placeholder message in editor box",
 	"wdqs-dialog-examples-preview-query": "Label to preview query in example dialog",
 	"wdqs-dialog-examples-preview-result": "Label to preview result in example dialog",

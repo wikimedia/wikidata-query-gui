@@ -13,6 +13,10 @@
 	"wdqs-app-button-display": "Weisen",
 	"wdqs-app-button-download": "Eroflueden",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-footer-updated-before": "Daten aktualiséiert",
+	"wdqs-app-footer-updated-after": "viru(n)",
+	"wdqs-dialog-examples-preview-query": "Simulatioun vun der Ufro",
+	"wdqs-dialog-examples-preview-result": "Simulatioun vum Resultat",
 	"wdqs-ve-find": "Sichen",
 	"wdqs-ve-show": "Weisen",
 	"wdqs-ve-with": "mat",
@@ -24,5 +28,6 @@
 	"wdqs-action-query": "Ufro gëtt ausgeféiert",
 	"wdqs-action-render": "Resultat gëtt duergestallt",
 	"wdqs-action-error-display": "D'Resultat kann net gewise ginn",
-	"wdqs-action-timeout": "Zäitlimit fir eng Ufro gouf erreecht"
+	"wdqs-action-timeout": "Zäitlimit fir eng Ufro gouf erreecht",
+	"wdqs-result-map-layers-all": "All Niveauen"
 }

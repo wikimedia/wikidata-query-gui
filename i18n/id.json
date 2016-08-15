@@ -9,10 +9,16 @@
 	"wdqs-app-button-tools": "Perkakas",
 	"wdqs-app-button-help": "Bantuan",
 	"wdqs-app-button-run": "Jalankan",
+	"wdqs-app-button-run-title": "Jalankan kueri (''query'') (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Kosongkan",
 	"wdqs-app-button-display": "Tampilan",
 	"wdqs-app-button-download": "Unduh",
 	"wdqs-app-button-link": "Pranala",
+	"wdqs-app-footer-help": "Tekan tombol <i>[CTRL-SPACE]</i> untuk mengaktifkan penyelesaian otomatis.",
+	"wdqs-app-footer-updated-before": "Pemutakhiran terakhir",
+	"wdqs-app-footer-updated-after": "yang lalu",
+	"wdqs-dialog-examples-preview-query": "Pratayang kueri (''query'')",
+	"wdqs-dialog-examples-preview-result": "Pratayang hasil",
 	"wdqs-ve-find": "Temukan",
 	"wdqs-ve-show": "Tampilkan",
 	"wdqs-ve-with": "dengan",
@@ -20,5 +26,7 @@
 	"wdqs-ve-anything": "semuanya",
 	"wdqs-ve-any": "semua",
 	"wdqs-ve-or": "atau",
-	"wdqs-ve-subtype": "subjenis"
+	"wdqs-ve-subtype": "subjenis",
+	"wdqs-action-query": "Jalankan kueri (''query'')",
+	"wdqs-action-error-display": "Tidak bisa menampilkan hasil"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kwj2772",
-			"Ykhwong"
+			"Ykhwong",
+			"아라"
 		]
 	},
 	"wdqs-app-button-examples": "예시",
@@ -10,10 +11,17 @@
 	"wdqs-app-button-tools": "도구",
 	"wdqs-app-button-help": "도움말",
 	"wdqs-app-button-run": "동작",
+	"wdqs-app-button-run-title": "쿼리 실행 (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "지우기",
-	"wdqs-app-button-display": "보기",
+	"wdqs-app-button-display": "표시",
 	"wdqs-app-button-download": "다운로드",
 	"wdqs-app-button-link": "링크",
+	"wdqs-app-footer-help": "자동 완성을 활성화하려면 <i>[CTRL-SPACE]</i>를 누르십시오.",
+	"wdqs-app-footer-updated-before": "업데이트한 데이터",
+	"wdqs-app-footer-updated-after": "전",
+	"wdqs-app-editor-placeholder": "(SPARQL 쿼리를 입력하거나 쿼리 예제를 선택하십시오)",
+	"wdqs-dialog-examples-preview-query": "쿼리 미리보기",
+	"wdqs-dialog-examples-preview-result": "미리 보기 결과",
 	"wdqs-ve-find": "찾기",
 	"wdqs-ve-show": "보기",
 	"wdqs-ve-with": "사용",
@@ -25,5 +33,6 @@
 	"wdqs-action-query": "쿼리 조회 중",
 	"wdqs-action-render": "결과 출력 중",
 	"wdqs-action-error-display": "결과를 표시할 수 없음",
-	"wdqs-action-timeout": "쿼리 시간 초과 제한에 도달함"
+	"wdqs-action-timeout": "쿼리 시간 초과 제한에 도달함",
+	"wdqs-result-map-layers-all": "모든 계층"
 }

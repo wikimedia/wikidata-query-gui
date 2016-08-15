@@ -14,6 +14,8 @@
 	"wdqs-app-button-display": "Görüntüle",
 	"wdqs-app-button-download": "İndir",
 	"wdqs-app-button-link": "Bağlantı",
+	"wdqs-dialog-examples-preview-query": "Sorgu önizleme",
+	"wdqs-dialog-examples-preview-result": "Önizleme sonucu",
 	"wdqs-ve-find": "Bul",
 	"wdqs-ve-show": "Göster",
 	"wdqs-ve-with": "ile",
@@ -25,5 +27,6 @@
 	"wdqs-action-query": "Sorgu çalıştırılıyor",
 	"wdqs-action-render": "Sonuçlar gösteriliyor",
 	"wdqs-action-error-display": "Sonuç görüntülenemiyor",
-	"wdqs-action-timeout": "Sorgu zaman aşımı sınırına ulaştı"
+	"wdqs-action-timeout": "Sorgu zaman aşımı sınırına ulaştı",
+	"wdqs-result-map-layers-all": "Tüm katmanlar"
 }

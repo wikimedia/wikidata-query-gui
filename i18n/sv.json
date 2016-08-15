@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Rockyfelle"
 		]
 	},
 	"wdqs-app-button-examples": "Exempel",
@@ -9,10 +10,17 @@
 	"wdqs-app-button-tools": "Verktyg",
 	"wdqs-app-button-help": "Hjälp",
 	"wdqs-app-button-run": "Kör",
+	"wdqs-app-button-run-title": "Utför förfrågan (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Rensa",
 	"wdqs-app-button-display": "Visning",
 	"wdqs-app-button-download": "Ladda ned",
 	"wdqs-app-button-link": "Länka",
+	"wdqs-app-footer-help": "Tryck på <i>[CTRL-SPACE]</i> för att aktivera automatisk komplettering.",
+	"wdqs-app-footer-updated-before": "Data uppdaterades",
+	"wdqs-app-footer-updated-after": "sedan",
+	"wdqs-app-editor-placeholder": "(Skriv en SPARQL-förfrågan eller välj ett exempel)",
+	"wdqs-dialog-examples-preview-query": "Förhandsvisa förfrågan",
+	"wdqs-dialog-examples-preview-result": "Förhandsvisa resultat",
 	"wdqs-ve-find": "Hitta",
 	"wdqs-ve-show": "Visa",
 	"wdqs-ve-with": "med",
@@ -20,5 +28,10 @@
 	"wdqs-ve-anything": "vad som helst",
 	"wdqs-ve-any": "någon",
 	"wdqs-ve-or": "eller",
-	"wdqs-ve-subtype": "undertyp"
+	"wdqs-ve-subtype": "undertyp",
+	"wdqs-action-query": "Bearbetar förfrågan",
+	"wdqs-action-render": "Renderar resultat",
+	"wdqs-action-error-display": "Det gick inte att visa resultatet",
+	"wdqs-action-timeout": "Förfrågan nådde tidsgränsen",
+	"wdqs-result-map-layers-all": "Alla lager"
 }

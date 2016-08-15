@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chaduvari",
+			"WP MANIKHANTA"
+		]
+	},
+	"wdqs-app-button-examples": "ఉదాహరణ",
+	"wdqs-app-button-prefixes": "ఉపసర్గలు",
+	"wdqs-app-button-tools": "పనిముట్లు",
+	"wdqs-app-button-help": "సహాయం",
+	"wdqs-app-button-run": "పరుగెట్టు",
+	"wdqs-app-button-clear": "తుడిచివేయు",
+	"wdqs-app-button-display": "వీక్షించు",
+	"wdqs-app-button-download": "దింపుకోండి",
+	"wdqs-app-button-link": "లంకె",
+	"wdqs-app-footer-updated-before": "డేటాను తాజాకరించాం",
+	"wdqs-app-footer-updated-after": "క్రితం",
+	"wdqs-dialog-examples-preview-query": "మునుజుపు ప్రశ్నార్దకం",
+	"wdqs-dialog-examples-preview-result": "మునుజుపు ఫలితం",
+	"wdqs-ve-find": "వెతుకు",
+	"wdqs-ve-show": "చూపించు",
+	"wdqs-ve-with": "తో",
+	"wdqs-ve-and": "మరియు",
+	"wdqs-ve-anything": "ఎదైనప్పటికి",
+	"wdqs-ve-any": "ఏదైనా",
+	"wdqs-ve-or": "లేదా",
+	"wdqs-ve-subtype": "ఉపరకము",
+	"wdqs-action-query": "జరుగుతున్న ప్రశ్నార్దకం",
+	"wdqs-action-render": "అనువదించిన ఫలితం",
+	"wdqs-action-error-display": "ఫలితాన్ని చూపించలేకపోతుంది",
+	"wdqs-action-timeout": "ప్రశ్నార్దక గడువు మగింపు ఆసన్నమైనది",
+	"wdqs-result-map-layers-all": "అన్ని పోరలు"
+}

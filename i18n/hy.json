@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aram1985"
+		]
+	},
+	"wdqs-app-button-examples": "Օրինակներ",
+	"wdqs-app-button-help": "Օգնություն",
+	"wdqs-app-button-run": "Անցնել",
+	"wdqs-app-button-clear": "Մաքրել",
+	"wdqs-app-button-display": "Ցուցադրել",
+	"wdqs-app-button-download": "Ներբեռնել",
+	"wdqs-app-button-link": "Հղում",
+	"wdqs-dialog-examples-preview-query": "Դիտել հարցումը",
+	"wdqs-dialog-examples-preview-result": "Դիտել արդյունքը",
+	"wdqs-ve-find": "Գտնել",
+	"wdqs-ve-show": "Ցուցադրել",
+	"wdqs-ve-with": "հետ",
+	"wdqs-ve-and": "և"
+}

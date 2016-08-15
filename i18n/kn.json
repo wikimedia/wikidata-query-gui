@@ -14,6 +14,8 @@
 	"wdqs-app-button-display": "ಪ್ರದರ್ಶಿಸು",
 	"wdqs-app-button-download": "ಇಳಿಸು",
 	"wdqs-app-button-link": "ಕೊಂಡಿ",
+	"wdqs-dialog-examples-preview-query": "ಪ್ರಶ್ನೆಯ ಮುನ್ನೋಟ",
+	"wdqs-dialog-examples-preview-result": "ಫಲಿತಾಂಶದ ಮುನ್ನೋಟ",
 	"wdqs-ve-find": "ಹುಡುಕು",
 	"wdqs-ve-show": "ತೋರಿಸು",
 	"wdqs-ve-with": "ಜೊತೆ",
@@ -21,5 +23,10 @@
 	"wdqs-ve-anything": "ಯಾವುದಾದರು",
 	"wdqs-ve-any": "ಯಾವುದೇ",
 	"wdqs-ve-or": "ಅಥವಾ",
-	"wdqs-ve-subtype": "ಉಪಮಾದರಿ"
+	"wdqs-ve-subtype": "ಉಪಮಾದರಿ",
+	"wdqs-action-query": "ಚಾಲನೆಯಲ್ಲಿರುವ ಪ್ರಶ್ನೆ",
+	"wdqs-action-render": "ರೆಂಡರಿಂಗ್ ಫಲಿತಾಂಶ",
+	"wdqs-action-error-display": "ಫಲಿತಾಂಶವನ್ನು ಪ್ರದರ್ಶಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ",
+	"wdqs-action-timeout": "ಪ್ರಶ್ನೆಯು ಕಾಲಾವಧಿ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ",
+	"wdqs-result-map-layers-all": "ಎಲ್ಲಾ ಪದರಗಳು"
 }

@@ -9,10 +9,17 @@
 	"wdqs-app-button-tools": "Instrumentos",
 	"wdqs-app-button-help": "Adjuta",
 	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-run-title": "Executar consulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Vacuar",
 	"wdqs-app-button-display": "Visualisar",
 	"wdqs-app-button-download": "Discargar",
 	"wdqs-app-button-link": "Ligamine",
+	"wdqs-app-footer-help": "Preme <i>[CTRL-SPACE]</i> pro activar auto-completion.",
+	"wdqs-app-footer-updated-before": "Datos actualisate",
+	"wdqs-app-footer-updated-after": "retro",
+	"wdqs-app-editor-placeholder": "(Entra un consulta SPARQL o selige un exemplo de consulta)",
+	"wdqs-dialog-examples-preview-query": "Previsualisar consulta",
+	"wdqs-dialog-examples-preview-result": "Previsualisar resultato",
 	"wdqs-ve-find": "Cercar",
 	"wdqs-ve-show": "Monstrar",
 	"wdqs-ve-with": "con",
@@ -24,5 +31,6 @@
 	"wdqs-action-query": "Execution del consulta",
 	"wdqs-action-render": "Rendition del resultato",
 	"wdqs-action-error-display": "Impossibile monstrar resultato",
-	"wdqs-action-timeout": "Le consulta ha expirate"
+	"wdqs-action-timeout": "Le consulta ha expirate",
+	"wdqs-result-map-layers-all": "Tote le stratos"
 }

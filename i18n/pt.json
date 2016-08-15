@@ -23,5 +23,6 @@
 	"wdqs-ve-subtype": "subtipo",
 	"wdqs-action-query": "A executar consulta",
 	"wdqs-action-error-display": "Não é possível exibir o resultado",
-	"wdqs-action-timeout": "Atingido o tempo de limite da consulta"
+	"wdqs-action-timeout": "Atingido o tempo de limite da consulta",
+	"wdqs-result-map-layers-all": "Todas as camadas"
 }

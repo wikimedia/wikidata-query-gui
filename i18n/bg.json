@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Termininja"
+			"Termininja",
+			"StanProg"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -13,6 +14,8 @@
 	"wdqs-app-button-display": "Показване",
 	"wdqs-app-button-download": "Изтегляне",
 	"wdqs-app-button-link": "Препратка",
+	"wdqs-dialog-examples-preview-query": "Преглед на заявката",
+	"wdqs-dialog-examples-preview-result": "Преглед на резултата",
 	"wdqs-ve-find": "Търсене",
 	"wdqs-ve-show": "Показване",
 	"wdqs-ve-with": "с",
@@ -20,5 +23,10 @@
 	"wdqs-ve-anything": "нищо",
 	"wdqs-ve-any": "всяко",
 	"wdqs-ve-or": "или",
-	"wdqs-ve-subtype": "подтип"
+	"wdqs-ve-subtype": "подтип",
+	"wdqs-action-query": "Изпълнение на заявката",
+	"wdqs-action-render": "Обработка на резултата",
+	"wdqs-action-error-display": "Резултатът не може да бъде показан",
+	"wdqs-action-timeout": "Заявката отне прекалено много време",
+	"wdqs-result-map-layers-all": "Всички слоеве"
 }
