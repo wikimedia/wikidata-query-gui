@@ -148,6 +148,12 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 				node.title += ' value:' + field.value;
 				node.shape = 'dot';
 			}
+
+			if ( key === 'rgb' && format.isColor( field ) ) {
+				node.color = format.getColorForHtml( field );
+				var foreground = format.calculateLuma( field.value ) <= 0.5 ? '#FFF' : '#000';
+				node.font = { color: foreground };
+			}
 		} );
 
 		return {
