@@ -68,20 +68,44 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		} ).fitBounds( markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
 
 		this._setTileLayer( map );
+		this._createControls( map, markerGroups );
 
-		//map controls
+		$element.html( container );
+	};
+
+	/**
+	 * Create map controls
+	 *
+	 * @private
+	 */
+	SELF.prototype._createControls = function( map, markerGroups ) {
+		//zoom control
 		map.addControl( L.control.zoomBox( {
 			modal: false,
 			className: 'glyphicon glyphicon-zoom-in'
 		} ) );
 		map.addControl( new ScrollToTopButton() );
 
+		//layers control
 		var numberOfLayers = Object.keys( markerGroups ).length;
 		if ( numberOfLayers > 1 ) {
-			this._getLayerControl( markerGroups ).addTo( map );
-		}
+			var control = this._getLayerControl( markerGroups ).addTo( map );
 
-		$element.html( container );
+			// update layer control
+			map.on( 'overlayadd overlayremove', function ( event ) {
+				if ( event.layer !== markerGroups[ LAYER_DEFAULT_GROUP ] ) {
+					return;
+				}
+				$.each( markerGroups, function( i, layer ) {
+					if ( event.type === 'overlayadd' ) {
+						map.addLayer( layer );
+					} else {
+						map.removeLayer( layer );
+					}
+				} );
+				control._update();
+			} );
+		}
 	};
 
 	/**
