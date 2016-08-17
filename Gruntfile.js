@@ -82,7 +82,15 @@ module.exports = function( grunt ) {
 							dest: dist + '/css/',
 							filter: 'isFile'
 						},
-						{
+						{// leaflet images
+							expand: true,
+							flatten: true,
+							src: [
+								'**/leaflet/dist/images/*.png'
+							],
+							dest: dist + '/css/images',
+							filter: 'isFile'
+						},{
 							expand: true,
 							cwd: './',
 							src: [
