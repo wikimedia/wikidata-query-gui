@@ -154,7 +154,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			if ( key === 'rgb' && format.isColor( field ) ) {
 				node.color = format.getColorForHtml( field );
 				if ( node.shape !== 'dot' && node.shape !== 'image' ) {
-					var foreground = format.calculateLuma( field.value ) <= 0.5 ? '#FFF' : '#000';
+					var foreground = format.calculateLuminance( field.value ) <= 0.5 ? '#FFF' : '#000';
 					node.font = { color: foreground };
 				}
 			}

@@ -139,7 +139,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 			}
 		} ).style( 'fill', function( d ) {
 			if ( d.color ) {
-				return self._getFormatter().calculateLuma( d.color ) <= 0.5 ? '#FFF' : '#000';
+				return self._getFormatter().calculateLuminance( d.color ) <= 0.5 ? '#FFF' : '#000';
 			}
 		} ).style( 'cursor', 'pointer' );
 	};
