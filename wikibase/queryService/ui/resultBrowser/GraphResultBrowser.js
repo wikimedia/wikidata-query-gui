@@ -141,18 +141,22 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			if ( format.isCommonsResource( field.value ) ) {
 				node.image = format.getCommonsResourceFileNameThumbnail( field.value, 150 );
 				node.shape = 'image';
+				node.font = { color: 'black' };
 			}
 
 			if ( format.isNumber( field ) ) {
 				node.value = field.value;
 				node.title += ' value:' + field.value;
 				node.shape = 'dot';
+				node.font = { color: 'black' };
 			}
 
 			if ( key === 'rgb' && format.isColor( field ) ) {
 				node.color = format.getColorForHtml( field );
-				var foreground = format.calculateLuma( field.value ) <= 0.5 ? '#FFF' : '#000';
-				node.font = { color: foreground };
+				if ( node.shape !== 'dot' && node.shape !== 'image' ) {
+					var foreground = format.calculateLuma( field.value ) <= 0.5 ? '#FFF' : '#000';
+					node.font = { color: foreground };
+				}
 			}
 		} );
 
