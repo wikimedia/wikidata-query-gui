@@ -57,7 +57,7 @@
 							<ul class="dropdown-menu">
 								<li><div class="namespace-shortcuts"></div></li>
 								<li role="separator" class="divider"></li>
-								<li><a class="addPrefixes">Add Standard Prefixes</a></li>
+								<li><a class="addPrefixes" data-i18n="wdqs-app-editor-addprefixes"></a></li>
 							</ul></li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span data-i18n="wdqs-app-button-tools"></span><span class="caret"></span></a>
@@ -73,13 +73,13 @@
 						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="wdqs-app-button-help"></span><span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a target="_blank" href="https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new">Give Feedback!</a></li>
+								<li><a target="_blank" href="https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new" data-i18n="wdqs-app-help-feedback"></a></li>
 								<li role="separator" class="divider"></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual">User Manual</a></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples">Sample Queries</a></li>
+								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual" data-i18n="wdqs-app-help-manual"></a></li>
+								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples" data-i18n="wdqs-app-help-examples"></a></li>
 								<li role="separator" class="divider"></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format">RDF Data Model</a></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Full_list_of_prefixes">List of prefixes</a></li>
+								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format" data-i18n="wdqs-app-help-datamodel"></a></li>
+								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Full_list_of_prefixes" data-i18n="wdqs-app-help-prefixes"></a></li>
 							</ul></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
@@ -141,9 +141,9 @@
 								    <span class="glyphicon glyphicon-link" aria-hidden="true"></span><span data-i18n="wdqs-app-button-link"></span><span class="caret"></span>
 								  </a>
 								  <ul class="dropdown-menu">
-									<li><a href="#" class="shortUrlTrigger result" target="_blank" title="Short URL to this query" data-toggle="popover">Short URL</a></li>
-									<li><a href="#" class="embed result" target="_blank" data-toggle="popover">Embed Result</a></li>
-									<li><a target="_blank" title="SPARQL endpoint REST request" class="queryUri">REST Endpoint</a></li>
+									<li><a href="#" class="shortUrlTrigger result" target="_blank"  data-i18n="[title]wdqs-app-result-shorturl-title" data-toggle="popover"><span data-i18n="wdqs-app-result-shorturl"></span></a></li>
+									<li><a target="_blank" title="SPARQL endpoint REST request" class="queryUri" data-i18n="[title]wdqs-app-result-endpoint-title"><span data-i18n="wdqs-app-result-endpoint"></span></a></li>
+									<li><a href="#" class="embed result" target="_blank" data-toggle="popover" data-i18n="wdqs-app-result-embed"></a></li>
 								  </ul>
 							</li>
 						</ul>
@@ -162,7 +162,7 @@
 						<div class="panel-body"></div>
 					</div>
 				</div>
-				<a href="#" class="shareQuery shortUrlTrigger query" target="_blank" title="Short URL to this page" data-toggle="popover"> <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+				<a href="#" class="shareQuery shortUrlTrigger query" target="_blank" data-i18n="[title]wdqs-app-shorturl-page-title" data-toggle="popover"> <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
 			</div>
 		</div>
 		<div class="row action-bar">

@@ -429,7 +429,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 							}
 						} );
 
-		$( '.shortUrlTrigger' ).clickover(
+		$( '.shortUrlTrigger.query' ).clickover(
 				{
 					placement: 'left',
 					'global_close': true,
@@ -438,6 +438,19 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 						self._updateQueryUrl();
 						return '<iframe class="shortUrl" src="' + SHORTURL_API +
 								encodeURIComponent( window.location ) + '">';
+					}
+				} );
+
+		$( '.shortUrlTrigger.result' ).clickover(
+				{
+					placement: 'left',
+					'global_close': true,
+					'html': true,
+					'content': function() {
+						self._updateQueryUrl();
+						var $link = $( '<a>' ).attr( 'href', 'embed.html' + window.location.hash );
+						return '<iframe class="shortUrl" src="' + SHORTURL_API +
+								encodeURIComponent( $link[0].href ) + '">';
 					}
 				} );
 
