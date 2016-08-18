@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Clon",
-			"Mormegil"
+			"Mormegil",
+			"Marek Pavlica",
+			"Zbyso23"
 		]
 	},
 	"wdqs-app-button-examples": "Příklady",
@@ -10,10 +12,17 @@
 	"wdqs-app-button-tools": "Nástroje",
 	"wdqs-app-button-help": "Nápověda",
 	"wdqs-app-button-run": "Spustit",
+	"wdqs-app-button-run-title": "Spustit dotaz (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Vymazat",
 	"wdqs-app-button-display": "Zobrazení",
 	"wdqs-app-button-download": "Stáhnout",
 	"wdqs-app-button-link": "Odkaz",
+	"wdqs-app-footer-help": "Stisknutím <i>[CTRL-SPACE]</i> aktivujete automatické dokončení.",
+	"wdqs-app-footer-updated-before": "Data aktualizována před",
+	"wdqs-app-footer-updated-after": "",
+	"wdqs-app-editor-placeholder": "(Vložte SPARQL dotaz nebo vyberte příklad dotazu)",
+	"wdqs-dialog-examples-preview-query": "Náhled dotazu",
+	"wdqs-dialog-examples-preview-result": "Náhled výsledku",
 	"wdqs-ve-find": "Najít",
 	"wdqs-ve-show": "Zobrazit",
 	"wdqs-ve-with": "s",
@@ -21,5 +30,10 @@
 	"wdqs-ve-anything": "cokoli",
 	"wdqs-ve-any": "libovolné",
 	"wdqs-ve-or": "nebo",
-	"wdqs-ve-subtype": "podtyp"
+	"wdqs-ve-subtype": "podtyp",
+	"wdqs-action-query": "Probíhá dotaz...",
+	"wdqs-action-render": "Vykresluje se výsledek",
+	"wdqs-action-error-display": "Nelze zobrazit výsledek",
+	"wdqs-action-timeout": "Vypršel časový limit pro dotaz",
+	"wdqs-result-map-layers-all": "Všechny vrstvy"
 }

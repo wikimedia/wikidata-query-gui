@@ -11,10 +11,17 @@
 	"wdqs-app-button-tools": "Herramientas",
 	"wdqs-app-button-help": "Ayuda",
 	"wdqs-app-button-run": "Ejecutar",
+	"wdqs-app-button-run-title": "Ejecutar consulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Vaciar",
 	"wdqs-app-button-display": "Mostrar",
 	"wdqs-app-button-download": "Descargar",
 	"wdqs-app-button-link": "Enlace",
+	"wdqs-app-footer-help": "Presiona <i>[CTRL-ESPACIO]</i> para activar el autocompletado.",
+	"wdqs-app-footer-updated-before": "Datos actualizados",
+	"wdqs-app-footer-updated-after": "hace",
+	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o elige una consulta de ejemplo)",
+	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
+	"wdqs-dialog-examples-preview-result": "Vista previa del resultado",
 	"wdqs-ve-find": "Buscar",
 	"wdqs-ve-show": "Mostrar",
 	"wdqs-ve-with": "con",
@@ -26,5 +33,6 @@
 	"wdqs-action-query": "Ejecución de la consulta",
 	"wdqs-action-render": "Representación del resultado",
 	"wdqs-action-error-display": "No se puede mostrar el resultado",
-	"wdqs-action-timeout": "Se agotó el tiempo de espera de la consulta"
+	"wdqs-action-timeout": "Se agotó el tiempo de espera de la consulta",
+	"wdqs-result-map-layers-all": "Todas las capas"
 }

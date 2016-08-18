@@ -9,10 +9,16 @@
 	"wdqs-app-button-tools": "Ferramientes",
 	"wdqs-app-button-help": "Ayuda",
 	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-run-title": "Executar consulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Llimpiar",
 	"wdqs-app-button-display": "Amosar",
 	"wdqs-app-button-download": "Descargar",
 	"wdqs-app-button-link": "Enllaz",
+	"wdqs-app-footer-help": "Prime <i>[CTRL-SPACE]</i> p'activar el completáu automáticu.",
+	"wdqs-app-footer-updated-before": "Datos anovaos",
+	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o escueye un exemplu de consulta)",
+	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
+	"wdqs-dialog-examples-preview-result": "Vista previa del resultáu",
 	"wdqs-ve-find": "Alcontrar",
 	"wdqs-ve-show": "Amosar",
 	"wdqs-ve-with": "con",
@@ -24,5 +30,6 @@
 	"wdqs-action-query": "Executando consulta",
 	"wdqs-action-render": "Presentando'l resultáu",
 	"wdqs-action-error-display": "Nun pudo amosase'l resultáu",
-	"wdqs-action-timeout": "Llegóse a la llende de tiempu de consulta"
+	"wdqs-action-timeout": "Llegóse a la llende de tiempu de consulta",
+	"wdqs-result-map-layers-all": "Toles capes"
 }

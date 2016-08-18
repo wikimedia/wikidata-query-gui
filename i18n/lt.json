@@ -13,6 +13,7 @@
 	"wdqs-app-button-display": "Rodyti",
 	"wdqs-app-button-download": "Atsisiųsti",
 	"wdqs-app-button-link": "Nuoroda",
+	"wdqs-dialog-examples-preview-query": "Peržiūros užklausa",
 	"wdqs-ve-find": "Ieškoti",
 	"wdqs-ve-show": "Rodyti",
 	"wdqs-ve-with": "su",
@@ -20,5 +21,6 @@
 	"wdqs-ve-anything": "bet kas",
 	"wdqs-ve-any": "bet kuris",
 	"wdqs-ve-or": "arba",
-	"wdqs-ve-subtype": "potipis"
+	"wdqs-ve-subtype": "potipis",
+	"wdqs-result-map-layers-all": "Visi sluoksniai"
 }

@@ -17,6 +17,7 @@
 	"wdqs-app-footer-help": "Tekan tombol <i>[CTRL-SPACE]</i> untuk mengaktifkan penyelesaian otomatis.",
 	"wdqs-app-footer-updated-before": "Pemutakhiran terakhir",
 	"wdqs-app-footer-updated-after": "yang lalu",
+	"wdqs-app-editor-placeholder": "(Masukkan suatu kueri (''query'') SPARQL atau pilih suatu contoh kueri)",
 	"wdqs-dialog-examples-preview-query": "Pratayang kueri (''query'')",
 	"wdqs-dialog-examples-preview-result": "Pratayang hasil",
 	"wdqs-ve-find": "Temukan",
@@ -28,5 +29,8 @@
 	"wdqs-ve-or": "atau",
 	"wdqs-ve-subtype": "subjenis",
 	"wdqs-action-query": "Jalankan kueri (''query'')",
-	"wdqs-action-error-display": "Tidak bisa menampilkan hasil"
+	"wdqs-action-render": "Hasil sesuaian",
+	"wdqs-action-error-display": "Tidak bisa menampilkan hasil",
+	"wdqs-action-timeout": "Batas tunggu kueri (''query'') sudah terlewat",
+	"wdqs-result-map-layers-all": "Semua layer"
 }

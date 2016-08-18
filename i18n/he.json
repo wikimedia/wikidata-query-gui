@@ -10,10 +10,15 @@
 	"wdqs-app-button-tools": "כלים",
 	"wdqs-app-button-help": "עזרה",
 	"wdqs-app-button-run": "הרצה",
+	"wdqs-app-button-run-title": "ביצוע שאילתה (<קונטרול> + <אנטר>)",
 	"wdqs-app-button-clear": "ניקוי",
 	"wdqs-app-button-display": "הצגה",
 	"wdqs-app-button-download": "הורדה",
 	"wdqs-app-button-link": "קישור",
+	"wdqs-app-footer-help": "יש ללחוץ <i>[קונטרול-רווח]</i> כדי להפעיל השלמה אוטומטית.",
+	"wdqs-app-footer-updated-before": "הנתונים עודכנו",
+	"wdqs-app-footer-updated-after": "לפני",
+	"wdqs-app-editor-placeholder": "(נא להזין שאילתת SPARQL או לבחור דוגמת שאילתה)",
 	"wdqs-dialog-examples-preview-query": "תצוגה מקדימה של שאילתה",
 	"wdqs-dialog-examples-preview-result": "תצוגה מקדימה של תוצאה",
 	"wdqs-ve-find": "מציאה",
@@ -27,5 +32,6 @@
 	"wdqs-action-query": "שאילתה רצה",
 	"wdqs-action-render": "התוצאה בהכנה להצגה",
 	"wdqs-action-error-display": "לא ניתן להציג את התוצאה",
-	"wdqs-action-timeout": "הגיע זמן התפוגה של השאילתה"
+	"wdqs-action-timeout": "הגיע זמן התפוגה של השאילתה",
+	"wdqs-result-map-layers-all": "כל השכבות"
 }
