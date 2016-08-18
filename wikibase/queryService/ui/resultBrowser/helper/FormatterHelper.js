@@ -408,13 +408,17 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Calculate the luma of the given sRGB color.
+	 * Calculate the luminance of the given sRGB color.
 	 *
-     * @private
+	 * This uses the reverse sRGB transformation,
+	 * as documented on https://en.wikipedia.org/wiki/SRGB#The_reverse_transformation,
+	 * to calculate the luminance (Y coordinate in the CIE XYZ model).
+	 *
+	 * @private
 	 * @param {string} color as six hex digits (no #)
-	 * @return {number} luma of the color, or NaN if the color string is invalid
+	 * @return {number} luminance of the color, or NaN if the color string is invalid
 	 */
-	SELF.prototype.calculateLuma = function( color ) {
+	SELF.prototype.calculateLuminance = function( color ) {
 		var r = parseInt( color.substr( 1, 2 ), 16 ) / 255;
 		var g = parseInt( color.substr( 3, 2 ), 16 ) / 255;
 		var b = parseInt( color.substr( 5, 2 ), 16 ) / 255;
@@ -423,9 +427,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			r = r <= 0.04045 ? r / 12.92 : Math.pow( ( r + 0.055 ) / 1.055, 2.4 );
 			g = g <= 0.04045 ? g / 12.92 : Math.pow( ( g + 0.055 ) / 1.055, 2.4 );
 			b = b <= 0.04045 ? b / 12.92 : Math.pow( ( b + 0.055 ) / 1.055, 2.4 );
-			// calculate luma using Rec. 709 coefficients
-			var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-			return luma;
+			// calculate luminance using Rec. 709 coefficients
+			var luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+			return luminance;
 		} else {
 			return NaN;
 		}
