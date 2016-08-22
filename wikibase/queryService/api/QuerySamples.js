@@ -5,9 +5,10 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	'use strict';
 
-	var API_ENDPOINT = 'https://www.mediawiki.org/w/api.php';
-	var PAGE_URL = 'https://www.mediawiki.org/wiki/Wikibase/Indexing/SPARQL_Query_Examples';
+	var API_SERVER = 'https://www.mediawiki.org/';
+	var API_ENDPOINT = API_SERVER + 'api/rest_v1/page/html/';
 	var PAGE_TITLE = 'Wikibase/Indexing/SPARQL_Query_Examples';
+	var PAGE_URL = API_SERVER + 'wiki/' + PAGE_TITLE;
 
 	/**
 	 * QuerySamples API for the Wikibase query service
@@ -30,87 +31,104 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			self = this;
 
 		$.ajax(
-				{
-					url: API_ENDPOINT + '?action=query&prop=revisions&titles=' + encodeURIComponent( PAGE_TITLE ) + '&rvprop=content',
-					data: {
-						format: 'json'
-					},
-					dataType: 'jsonp'
-				} )
-		.done(
-				function ( data ) {
-					var wikitext = data.query.pages[Object.keys( data.query.pages )].revisions[0]['*'];
-					wikitext = wikitext.replace( /\{\{!}}/g, '|' );
-
-					deferred.resolve( self._extract( wikitext ) );
-				} );
+			{
+				url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
+				dataType: 'html'
+			}
+		).done(
+			function ( data ) {
+				deferred.resolve( self._parseHTML( data ) );
+			}
+		);
 
 		return deferred;
 	};
 
 	/**
-	 * @private
-	 */
-	SELF.prototype._extract = function ( wikitext ) {
-		var self = this,
-			examples = [],
-			regexSection = /^==([^=]+)==$/gm,
-			section = '',
-			sectionHeader = null;
-
-		wikitext.split( '\n' ).forEach( function( line ) {
-			if ( line.match( regexSection ) ) {
-				examples = $.merge( examples, self._extractExamples( section, sectionHeader ) );
-				sectionHeader = line.replace( /=/g, '' ).trim();
-				section = '';
-			} else {
-				section += line + '\n';
-			}
-		} );
-		examples = $.merge( examples, self._extractExamples( section, sectionHeader ) );
-
-		return examples;
+	 * Find closest header element one higher than this one
+	 *
+	 * @param {Element} element Header element
+	 * @return {null|Element} Header element
+     * @private
+     */
+	SELF.prototype._findPrevHeader = function ( element ) {
+		var tag = element.prop( 'tagName' );
+		if ( tag[0] !== 'H' && tag[0] !== 'h' ) {
+			return null;
+		}
+		return this._findPrev( element, 'h' + ( tag.substr( 1 ) - 1 ) );
 	};
 
 	/**
-	 * @private
-	 */
-	SELF.prototype._extractExamples = function ( section, sectionHeader ) {
-		var regexParagraph = /(?:=+)([^=]*)(?:=+)\n(?:[]*?)(?:[^=]*?)(\{\{SPARQL\s*\|[\s\S]*?}}\n)/g,
-			regexQuery = /query\s*=([\s\S]+)(?:}}|\|)/,
-			regexExtraPrefix = /extraprefix\s*=([\s\S]+?)(?:\||}})/,
-			regexTags = /\{\{Q\|([^{|}]+)\|([^{|}]+)}}/g,
-			m,
-			examples = [];
-
-		while ( ( m = regexParagraph.exec( section ) ) !== null ) {
-			var paragraph = m[0],
-				title = m[1].trim(),
-				tags = [],
-				tag,
-				href = PAGE_URL + '#' +	encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
-				sparqlTemplate = m[2],
-				query = sparqlTemplate.match( regexQuery )[1].trim();
-
-			if ( sparqlTemplate.match( regexExtraPrefix ) ) {
-				query = sparqlTemplate.match( regexExtraPrefix )[1] + '\n\n' + query;
-			}
-			if ( paragraph.match( regexTags ) ) {
-				while ( ( tag = regexTags.exec( paragraph ) ) !== null ) {
-					tags.push( tag[2].trim() + ' (' + tag[1].trim() + ')' );
-				}
-			}
-
-			examples.push( {
-				title: title,
-				query: query,
-				href: href,
-				tags: tags,
-				category: sectionHeader
-			} );
+	 * Find previous element matching the selector
+	 *
+	 * @param {Element} element
+	 * @param {String} selector
+	 * @return {Element}
+     * @private
+     */
+	SELF.prototype._findPrev = function ( element, selector ) {
+		var prev = element.prev().filter( selector );
+		if ( prev.length > 0 ) {
+			return prev;
 		}
+		return element.prevUntil( selector ).last().prev();
+	};
 
-		return examples;
+	/**
+	 * Get list of tags from UL list
+	 *
+	 * @param {Element} tagUL
+	 * @return {String[]}
+     * @private
+     */
+	SELF.prototype._extractTagsFromUL = function( tagUL ) {
+		return tagUL.find( 'a[rel="mw:ExtLink"]' ).map( function() { return $( this ).text().trim(); } ).get();
+	};
+
+	SELF.prototype._parseHTML = function ( html ) {
+		var data = $( '<div/>' ).append( html ),
+			self = this;
+		// Find all SPARQL Templates
+		var examples = data.find( 'div.mw-highlight' ).map( function() {
+			var dataMW = $( this ).attr( 'data-mw' );
+			if ( !dataMW ) {
+				return;
+			}
+
+			var data = JSON.parse( dataMW );
+			var query;
+
+			if ( data.parts && data.parts[0].template.target.href === './Template:SPARQL' ) {
+				// SPARQL template
+				query = data.parts[0].template.params.query.wt;
+			} else if ( data.body ) {
+				// SPARQL2 template
+				query = data.body.extsrc;
+			} else {
+				return null;
+			}
+
+			// Find preceding title element
+			var titleEl = self._findPrev( $( this ), 'h2,h3,h4,h5,h6,h7' );
+			if ( !titleEl ) {
+				return null;
+			}
+			var title = titleEl.text().trim();
+			// Get UL elements between header and query text
+			var tagUL = titleEl.nextUntil( this ).filter( 'ul' );
+
+			return {
+				title:    title,
+				query:    query,
+				href:     PAGE_URL + '#' + encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
+				tags:     self._extractTagsFromUL( tagUL ),
+				category: self._findPrevHeader( titleEl ).text().trim()
+			};
+
+		} ).get();
+		// drop bad ones and return
+		return examples.filter( Boolean );
 	};
 
 	return SELF;
