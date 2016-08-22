@@ -3,7 +3,8 @@
 		"authors": [
 			"Alaa",
 			"Meno25",
-			"Mr. Ibrahem"
+			"Mr. Ibrahem",
+			"بدارين"
 		]
 	},
 	"wdqs-app-button-examples": "أمثلة",
@@ -15,6 +16,10 @@
 	"wdqs-app-button-display": "عرض",
 	"wdqs-app-button-download": "تحميل",
 	"wdqs-app-button-link": "رابط",
+	"wdqs-app-help-feedback": "أرسل لنا الملاحظات",
+	"wdqs-app-help-manual": "دليل المستخدم",
+	"wdqs-app-help-examples": "Example Queries",
+	"wdqs-app-help-datamodel": "نموذج بيانات RDF",
 	"wdqs-ve-find": "ابحث",
 	"wdqs-ve-show": "إظهار",
 	"wdqs-ve-with": "مع",

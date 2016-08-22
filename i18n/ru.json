@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Laboramus"
+			"Laboramus",
+			"Okras"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -14,10 +15,22 @@
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-download": "Скачать",
 	"wdqs-app-button-link": "Ссылка",
+	"wdqs-app-help-feedback": "Оставить отзыв!",
+	"wdqs-app-help-manual": "Руководство пользователя",
+	"wdqs-app-help-examples": "Примеры запросов",
+	"wdqs-app-help-datamodel": "Модель данных RDF",
+	"wdqs-app-help-prefixes": "Список префиксов",
 	"wdqs-app-footer-help": "Нажмите <i>[Ctrl + пробел]</i>, чтобы активировать автоматическое завершение.",
 	"wdqs-app-footer-updated-before": "Последнее обновление",
 	"wdqs-app-footer-updated-after": "назад",
+	"wdqs-app-result-shorturl": "Короткий URL результата",
+	"wdqs-app-result-shorturl-title": "Короткий URL для результата этого запроса",
+	"wdqs-app-result-embed": "Вставка результатов",
+	"wdqs-app-result-endpoint": "Доступ к SPARQL",
+	"wdqs-app-result-endpoint-title": "Ссылка на точку доступа SPARQL с результатом этого допроса",
+	"wdqs-app-shorturl-page-title": "Короткий URL-адрес к этой странице",
 	"wdqs-app-editor-placeholder": "(Введите запрос на SPARQL или выберите один из примеров)",
+	"wdqs-app-editor-addprefixes": "Добавить стандартные префиксы",
 	"wdqs-dialog-examples-preview-query": "Посмотреть запрос",
 	"wdqs-dialog-examples-preview-result": "Посмотреть результат",
 	"wdqs-ve-find": "Найти",
