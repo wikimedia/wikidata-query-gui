@@ -108,6 +108,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			} else {
 				return null;
 			}
+			// Fix {{!}} hack
+			query = query.replace( /\{\{!}}/g, '|' );
 
 			// Find preceding title element
 			var titleEl = self._findPrev( $( this ), 'h2,h3,h4,h5,h6,h7' );
