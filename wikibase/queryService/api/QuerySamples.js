@@ -87,9 +87,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	};
 
 	SELF.prototype._parseHTML = function ( html ) {
-		var data = $( '<div/>' ).append( html ),
+		var div = document.createElement( 'div' ),
+			data,
 			self = this;
-		// Find all SPARQL Templates
+		div.innerHTML = html;
+		data = $( div );
+			// Find all SPARQL Templates
 		var examples = data.find( 'div.mw-highlight' ).map( function() {
 			var dataMW = $( this ).attr( 'data-mw' );
 			if ( !dataMW ) {
