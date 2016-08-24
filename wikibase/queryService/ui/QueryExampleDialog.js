@@ -97,7 +97,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				if ( example.category !==  category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
-							.append( $( '<td colspan="2">' ).text( category ) ) );
+							.append( $( '<td colspan="3">' ).text( category ) ) );
 				}
 				self._addExample( example.title, example.query, example.href, example.tags );
 			} );
@@ -231,15 +231,20 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				} ),
 			preview = $( '<a href="#">' ).addClass( 'glyphicon glyphicon-camera' ).clickover(
 				{
-					placement: 'right',
+					placement: 'left',
 					'global_close': true,
 					trigger: 'click',
 					container: 'body',
 					title: $.i18n( 'wdqs-dialog-examples-preview-result' ),
-					content: $( '<iframe width="400" height="400" frameBorder="0" src="embed.html#'
+					content: $( '<iframe width="400" height="350" frameBorder="0" src="embed.html#'
 							+ encodeURIComponent( query ) + '">' ),
 					html: true
 				} );
+			$( '.exampleTable' ).scroll( function() {
+			if ( preview.clickover ) {
+				preview.clickover( 'hide' ).removeAttr( 'data-clickover-open' );
+			}
+		} );
 
 		tags = $( '<td>' ).text( tags.join( '|' ) ).hide();
 
