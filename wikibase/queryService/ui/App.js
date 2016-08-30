@@ -324,24 +324,24 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 */
 	SELF.prototype._initDataUpdated = function() {
 		var self = this;
-		var $label = $( '.dataUpdated > span' );
+		var $label = $( '.dataUpdated' );
 
 		var updateDataStatus = function() {
 			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
 
-				var updatestatustext = moment.duration( difference, 'seconds' ).humanize();
-
-				$label.text( updatestatustext );
-
-				$label.removeClass( 'list-group-item-success', 'list-group-item-warning', 'list-group-item-danger' );
+				var updatestatustext = moment.duration( difference, 'seconds' ).humanize(),
+					labelClass,
+					badge;
 
 				if ( difference <= 60 * 2 ) {
-					$label.addClass( 'list-group-item-success' );
+					labelClass = 'list-group-item-success';
 				} else if ( difference <= 60 * 15 ) {
-					$label.addClass( 'list-group-item-warning' );
+					labelClass =  'list-group-item-warning';
 				} else {
-					$label.addClass( 'list-group-item-danger' );
+					labelClass = 'list-group-item-danger';
 				}
+				badge = '<span class="badge ' + labelClass + '">' + updatestatustext + '</span>';
+				$label.html( $.i18n( 'wdqs-app-footer-updated', badge ) );
 			} );
 		};
 
@@ -357,7 +357,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				e.popover( {
 					html: true,
 					placement: 'bottom',
-					content: 'Data last updated: ' + difference + 's ago.<br/>' + time
+					content: $.i18n( 'wdqs-app-footer-updated-seconds', difference ) + '.</br>' + time
 				} ).popover( 'show' );
 			} ).fail( function() {
 				e.popover( {
