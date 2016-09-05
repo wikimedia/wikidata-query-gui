@@ -3,7 +3,8 @@
 		"authors": [
 			"Siebrand",
 			"Sjoerddebruin",
-			"MrLeopold"
+			"MrLeopold",
+			"Wikibelgiaan"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -22,12 +23,13 @@
 	"wdqs-app-help-datamodel": "RDF-gegevensmodel",
 	"wdqs-app-help-prefixes": "Lijst van voorvoegsels",
 	"wdqs-app-footer-help": "Druk op <i>[CTRL-SPATIE]</i> om automatisch aanvullen te activeren.",
-	"wdqs-app-footer-updated-before": "Gegevens bijgewerkt:",
-	"wdqs-app-footer-updated-after": "geleden",
+	"wdqs-app-footer-updated": "Gegevens $1 geleden bijgewerkt",
+	"wdqs-app-footer-updated-seconds": "Gegevens $1 seconden geleden bijgewerkt",
 	"wdqs-app-result-shorturl": "Korte URL naar resultaat",
 	"wdqs-app-result-shorturl-title": "Korte URL naar dit resultaat",
 	"wdqs-app-result-embed": "Resultaat invoegen",
 	"wdqs-app-result-endpoint": "SPARQL-endpoint",
+	"wdqs-app-result-endpoint-title": "Koppeling naar het SPARQL-eindpunt die het resultaat oplevert",
 	"wdqs-app-shorturl-page-title": "Korte URL naar deze pagina",
 	"wdqs-app-editor-placeholder": "(Voer een SPARQL-zoekopdracht in of kies een voorbeeld uit)",
 	"wdqs-app-editor-addprefixes": "Standaard-voorvoegsels toevoegen",

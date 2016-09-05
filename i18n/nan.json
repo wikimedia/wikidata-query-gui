@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luuva"
+		]
+	},
+	"wdqs-app-button-examples": "Hoān-lē",
+	"wdqs-app-button-prefixes": "Chiap-thâu-gú",
+	"wdqs-app-button-tools": "Ke-si",
+	"wdqs-app-button-help": "Pang-chō͘",
+	"wdqs-app-button-run": "Cháu",
+	"wdqs-app-button-run-title": "Chip-hêng cha-sûn (<CTRL> + <ENTER>)",
+	"wdqs-app-button-clear": "Piàⁿ-chheng",
+	"wdqs-app-button-display": "Tián-sī",
+	"wdqs-app-button-download": "Táuⁿ-ló͘",
+	"wdqs-app-button-link": "Liân-kiat",
+	"wdqs-app-help-feedback": "Thê-kiong hoán-èng",
+	"wdqs-app-help-manual": "Ēng-chiá Soat-bêng-su",
+	"wdqs-app-help-examples": "Hoān-lē Châ-sûn",
+	"wdqs-app-help-datamodel": "RDF Chu-liāu Bô͘-hêng",
+	"wdqs-app-help-prefixes": "Chiap-thâu-sû lia̍t-toaⁿ",
+	"wdqs-app-footer-help": "Kā <i>[CTRL-SPACE]</i> jí--lo̍h lâi khai-khé chū-tông goân-sêng",
+	"wdqs-app-footer-updated": "Chū-liā tī $1 chêng kái-sin",
+	"wdqs-app-footer-updated-seconds": "Chu-liāu tī $1 bió chêng kái-sin",
+	"wdqs-app-result-shorturl": "Kòe-khì kia̍t-kó ê té-pán URL",
+	"wdqs-app-result-shorturl-title": "Kòe-lâi pún kiat-kó ê té-pán URL",
+	"wdqs-app-result-embed": "Kheng--leh ê kiat-kó",
+	"wdqs-app-result-endpoint": "SPARQL bóe-tiám",
+	"wdqs-app-result-endpoint-title": "Liân kòe SPARQL bóe-tiám thoân tńg kiat-kó",
+	"wdqs-app-shorturl-page-title": "Kòe-lâi pún ia̍h-bīn ê té-pán URL",
+	"wdqs-ve-find": "Chhōe",
+	"wdqs-ve-show": "Hían-sī",
+	"wdqs-ve-or": "he̍k-chiá",
+	"wdqs-ve-subtype": "chhù-lūi-hêng"
+}

@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zygimantus"
+			"Zygimantus",
+			"Eitvys200",
+			"Hugo.arg"
 		]
 	},
 	"wdqs-app-button-examples": "Pavyzdžiai",
@@ -13,7 +15,15 @@
 	"wdqs-app-button-display": "Rodyti",
 	"wdqs-app-button-download": "Atsisiųsti",
 	"wdqs-app-button-link": "Nuoroda",
+	"wdqs-app-help-manual": "Naudotojo vadovas",
+	"wdqs-app-help-examples": "Užklausų pavyzdžiai",
+	"wdqs-app-help-datamodel": "RDF duomenų modelis",
+	"wdqs-app-help-prefixes": "Priešdėlių sąrašas",
+	"wdqs-app-footer-updated": "Duomenys atnaujinti prieš $1",
+	"wdqs-app-footer-updated-seconds": "Duomenys atnaujinti prieš $1 sekundes",
+	"wdqs-app-editor-addprefixes": "Pridėti standartinius priešdėlius",
 	"wdqs-dialog-examples-preview-query": "Peržiūros užklausa",
+	"wdqs-dialog-examples-preview-result": "Peržiūrėti rezultatą",
 	"wdqs-ve-find": "Ieškoti",
 	"wdqs-ve-show": "Rodyti",
 	"wdqs-ve-with": "su",
@@ -22,5 +32,6 @@
 	"wdqs-ve-any": "bet kuris",
 	"wdqs-ve-or": "arba",
 	"wdqs-ve-subtype": "potipis",
+	"wdqs-action-render": "Atvaizdavimo rezultatas",
 	"wdqs-result-map-layers-all": "Visi sluoksniai"
 }

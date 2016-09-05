@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kumkumuk",
-			"MrSchipunov"
+			"MrSchipunov",
+			"Alpkant"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -14,6 +15,8 @@
 	"wdqs-app-button-display": "Görüntüle",
 	"wdqs-app-button-download": "İndir",
 	"wdqs-app-button-link": "Bağlantı",
+	"wdqs-app-footer-updated": "Veri $1 önce güncellendi",
+	"wdqs-app-footer-updated-seconds": "Veri $1 saniye önce güncellendi.",
 	"wdqs-dialog-examples-preview-query": "Sorgu önizleme",
 	"wdqs-dialog-examples-preview-result": "Önizleme sonucu",
 	"wdqs-ve-find": "Bul",

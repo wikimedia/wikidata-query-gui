@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"TMg"
 		]
 	},
 	"wdqs-app-button-examples": "Beispiele",
@@ -19,16 +20,16 @@
 	"wdqs-app-help-examples": "Beispielabfragen",
 	"wdqs-app-help-datamodel": "RDF-Datenmodell",
 	"wdqs-app-help-prefixes": "Liste der Präfixe",
-	"wdqs-app-footer-help": "<i>[STRG-LEERZEICHEN]</i> drücken, um die Autovervollständigung zu aktivieren.",
-	"wdqs-app-footer-updated-before": "Daten aktualisiert vor",
-	"wdqs-app-footer-updated-after": "",
+	"wdqs-app-footer-help": "<i>[STRG-LEERTASTE]</i> drücken, um die Autovervollständigung zu aktivieren.",
+	"wdqs-app-footer-updated": "Daten vor $1 aktualisiert",
+	"wdqs-app-footer-updated-seconds": "Daten vor $1 Sekunden aktualisiert",
 	"wdqs-app-result-shorturl": "Kurz-URL auf das Ergebnis",
 	"wdqs-app-result-shorturl-title": "Kurz-URL auf dieses Ergebnis",
 	"wdqs-app-result-embed": "Ergebnis einbetten",
 	"wdqs-app-result-endpoint": "SPARQL-Endpunkt",
 	"wdqs-app-result-endpoint-title": "Link auf den SPARQL-Endpunkt, der das Ergebnis zurückgibt",
 	"wdqs-app-shorturl-page-title": "Kurz-URL auf diese Seite",
-	"wdqs-app-editor-placeholder": "(Eine SPARQL-Abfrage einfügen oder ein Abfragebeispiel auswählen)",
+	"wdqs-app-editor-placeholder": "(Eine SPARQL-Abfrage eingeben oder eine Beispielabfrage auswählen)",
 	"wdqs-app-editor-addprefixes": "Standardpräfixe hinzufügen",
 	"wdqs-dialog-examples-preview-query": "Vorschau der Abfrage",
 	"wdqs-dialog-examples-preview-result": "Vorschau des Ergebnisses",
@@ -36,12 +37,12 @@
 	"wdqs-ve-show": "Anzeigen",
 	"wdqs-ve-with": "mit",
 	"wdqs-ve-and": "und",
-	"wdqs-ve-anything": "alles",
+	"wdqs-ve-anything": "irgendetwas",
 	"wdqs-ve-any": "beliebiges",
 	"wdqs-ve-or": "oder",
 	"wdqs-ve-subtype": "Untertyp",
 	"wdqs-action-query": "Führe Abfrage aus",
-	"wdqs-action-render": "Rendere Ergebnis",
+	"wdqs-action-render": "Verarbeite Ergebnis",
 	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
 	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht",
 	"wdqs-result-map-layers-all": "Alle Ebenen"

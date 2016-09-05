@@ -17,8 +17,6 @@
 	"wdqs-app-button-download": "Λήψη",
 	"wdqs-app-button-link": "Σύνδεσμος",
 	"wdqs-app-footer-help": "Πατήστε <i>[CTRL-SPACE]</i> για να ενεργοποιήσετε την αυτόματη συμπλήρωση.",
-	"wdqs-app-footer-updated-before": "Τα δεδομένα ενημερώθηκαν",
-	"wdqs-app-footer-updated-after": "πριν",
 	"wdqs-app-editor-placeholder": "(Εισαγάγετε ένα ερώτημα SPARQL ή να διαλέξτε ένα παράδειγμα ερωτήματος)",
 	"wdqs-dialog-examples-preview-query": "Προεπισκόπηση ερωτήματος",
 	"wdqs-dialog-examples-preview-result": "Προεπισκόπηση αποτελέσματος",

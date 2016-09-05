@@ -18,8 +18,6 @@
 	"wdqs-app-button-download": "Stáhnout",
 	"wdqs-app-button-link": "Odkaz",
 	"wdqs-app-footer-help": "Stisknutím <i>[CTRL-SPACE]</i> aktivujete automatické dokončení.",
-	"wdqs-app-footer-updated-before": "Data aktualizována před",
-	"wdqs-app-footer-updated-after": "",
 	"wdqs-app-editor-placeholder": "(Vložte SPARQL dotaz nebo vyberte příklad dotazu)",
 	"wdqs-dialog-examples-preview-query": "Náhled dotazu",
 	"wdqs-dialog-examples-preview-result": "Náhled výsledku",

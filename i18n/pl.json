@@ -13,6 +13,8 @@
 	"wdqs-app-button-display": "Wyświetl",
 	"wdqs-app-button-download": "Pobierz",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-footer-updated": "Dane zaktualizowano $1 temu",
+	"wdqs-app-footer-updated-seconds": "Dane zaktualizowano sekund $1 temu",
 	"wdqs-ve-find": "Znajdź",
 	"wdqs-ve-show": "Pokaż",
 	"wdqs-ve-with": "z",

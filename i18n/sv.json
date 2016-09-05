@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Rockyfelle"
+			"Rockyfelle",
+			"Jopparn"
 		]
 	},
 	"wdqs-app-button-examples": "Exempel",
@@ -14,11 +15,23 @@
 	"wdqs-app-button-clear": "Rensa",
 	"wdqs-app-button-display": "Visning",
 	"wdqs-app-button-download": "Ladda ned",
-	"wdqs-app-button-link": "Länka",
+	"wdqs-app-button-link": "Länk",
+	"wdqs-app-help-feedback": "Ge återkoppling!",
+	"wdqs-app-help-manual": "Användarmanual",
+	"wdqs-app-help-examples": "Exempelförfrågan",
+	"wdqs-app-help-datamodel": "RDF-datamodell",
+	"wdqs-app-help-prefixes": "Lista över prefix",
 	"wdqs-app-footer-help": "Tryck på <i>[CTRL-SPACE]</i> för att aktivera automatisk komplettering.",
-	"wdqs-app-footer-updated-before": "Data uppdaterades",
-	"wdqs-app-footer-updated-after": "sedan",
+	"wdqs-app-footer-updated": "Data uppdaterades $1 sedan",
+	"wdqs-app-footer-updated-seconds": "Data uppdaterades $1 sekunder sedan",
+	"wdqs-app-result-shorturl": "Kort webbadress till resultatet",
+	"wdqs-app-result-shorturl-title": "Kort webbadress till detta resultat",
+	"wdqs-app-result-embed": "Bädda in resultat",
+	"wdqs-app-result-endpoint": "SPARQL-slutpunkt",
+	"wdqs-app-result-endpoint-title": "Länk till SPARQL-slutpunkten som returnerar resultatet",
+	"wdqs-app-shorturl-page-title": "Kort webbadress till denna sida",
 	"wdqs-app-editor-placeholder": "(Skriv en SPARQL-förfrågan eller välj ett exempel)",
+	"wdqs-app-editor-addprefixes": "Lägg till standardprefix",
 	"wdqs-dialog-examples-preview-query": "Förhandsvisa förfrågan",
 	"wdqs-dialog-examples-preview-result": "Förhandsvisa resultat",
 	"wdqs-ve-find": "Hitta",

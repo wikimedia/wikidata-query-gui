@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"BHARATHESHA ALASANDEMAJALU"
 		]
 	},
 	"wdqs-app-button-examples": "ಉದಾಹರಣೆಲು",
@@ -9,10 +10,14 @@
 	"wdqs-app-button-help": "ಸಹಾಯೊ",
 	"wdqs-app-button-clear": "ಮಾಜಲೇ",
 	"wdqs-app-button-display": "ಪ್ರದರ್ಶಿಸಾಲೆ",
+	"wdqs-app-button-download": "ಡೌನ್‍ಲೋಡ್",
 	"wdqs-app-button-link": "ಕೊಂಡಿಲು",
+	"wdqs-app-help-feedback": "ಪ್ರತಿಕ್ರಿಯೆ ಕೊರ್ಲೆ!",
 	"wdqs-ve-find": "ನಾಡ್’ಲೆ",
 	"wdqs-ve-show": "ತೋಜಾಲೆ",
+	"wdqs-ve-with": "ಒಟ್ಟುಗೆ",
 	"wdqs-ve-and": "ಬುಕ್ಕೊ",
+	"wdqs-ve-anything": "ಒವ್ವುಲಾ",
 	"wdqs-ve-any": "ಒವ್ವೇ",
 	"wdqs-ve-or": "ಅತ್ತಂಡ"
 }

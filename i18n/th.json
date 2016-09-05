@@ -1,19 +1,44 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bluegram"
+			"Bluegram",
+			"Pon44695"
 		]
 	},
 	"wdqs-app-button-examples": "ตัวอย่าง",
+	"wdqs-app-button-prefixes": "คำนำหน้า",
 	"wdqs-app-button-tools": "เครื่องมือ",
 	"wdqs-app-button-help": "ช่วยเหลือ",
+	"wdqs-app-button-run": "ดำเนินการ",
+	"wdqs-app-button-run-title": "ดำเนินการคิวรี (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "ล้าง",
+	"wdqs-app-button-display": "แสดงผล",
 	"wdqs-app-button-download": "ดาวน์โหลด",
 	"wdqs-app-button-link": "ลิงก์",
+	"wdqs-app-help-feedback": "ส่งฟีดแบค!",
+	"wdqs-app-help-manual": "คู่มือผู้ใช้",
+	"wdqs-app-help-examples": "ตัวอย่างคิวรี",
+	"wdqs-app-help-datamodel": "ต้นแบบข้อมูล RDF",
+	"wdqs-app-help-prefixes": "รายการคำนำหน้า",
+	"wdqs-app-result-shorturl": "URL แบบสั้นไปยังผลลัพธ์",
+	"wdqs-app-result-shorturl-title": "URL แบบสั้นไปยังผลลัพธ์นี้",
+	"wdqs-app-result-embed": "ฝังผลลัพธ์",
+	"wdqs-app-result-endpoint": "จุดจบ SPARQL",
+	"wdqs-app-result-endpoint-title": "ลิงก์ไปยังจุดจบ SPARQL กลับคืนผลลัพธ์",
+	"wdqs-app-shorturl-page-title": "URL แบบสั้นไปยังหน้านี้",
+	"wdqs-app-editor-placeholder": "(นำเข้า SPARQL คิวรี หรือเลือกตัวอย่างคิวรี)",
+	"wdqs-app-editor-addprefixes": "เพิ่มคำนำหน้ามาตรฐาน",
+	"wdqs-dialog-examples-preview-query": "แสดงตัวอย่างคิวรี",
+	"wdqs-dialog-examples-preview-result": "แสดงตัวอย่างผลลัพธ์",
 	"wdqs-ve-find": "ค้นหา",
 	"wdqs-ve-show": "แสดง",
 	"wdqs-ve-with": "ด้วย:",
 	"wdqs-ve-and": "และ",
+	"wdqs-ve-anything": "สิ่งใด ๆ",
+	"wdqs-ve-any": "ใด ๆ",
 	"wdqs-ve-or": "หรือ",
-	"wdqs-ve-subtype": "หมวดย่อย"
+	"wdqs-ve-subtype": "หมวดย่อย",
+	"wdqs-action-query": "กำลังดำเนินการคิวรี",
+	"wdqs-action-render": "กำลังแปลผลลัพธ์",
+	"wdqs-result-map-layers-all": "ชั้นทั้งหมด"
 }

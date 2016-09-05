@@ -15,8 +15,6 @@
 	"wdqs-app-button-download": "Discargar",
 	"wdqs-app-button-link": "Ligamine",
 	"wdqs-app-footer-help": "Preme <i>[CTRL-SPACE]</i> pro activar auto-completion.",
-	"wdqs-app-footer-updated-before": "Datos actualisate",
-	"wdqs-app-footer-updated-after": "retro",
 	"wdqs-app-editor-placeholder": "(Entra un consulta SPARQL o selige un exemplo de consulta)",
 	"wdqs-dialog-examples-preview-query": "Previsualisar consulta",
 	"wdqs-dialog-examples-preview-result": "Previsualisar resultato",

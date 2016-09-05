@@ -13,6 +13,17 @@
 	"wdqs-app-button-display": "Diskwel",
 	"wdqs-app-button-download": "Pellgargañ",
 	"wdqs-app-button-link": "Liammoù",
+	"wdqs-app-help-feedback": "Roit ho soñj !",
+	"wdqs-app-help-manual": "Levr implijer",
+	"wdqs-app-help-examples": "Rekedoù skouerioù",
+	"wdqs-app-help-prefixes": "Roll rakgerioù",
+	"wdqs-app-result-shorturl": "URL berr war-zu an disoc'h",
+	"wdqs-app-result-shorturl-title": "URL berr war-zu an disoc'h-se",
+	"wdqs-app-shorturl-page-title": "URL berr eus ar bajenn-mañ",
+	"wdqs-app-editor-placeholder": "(Enrollañ ur reked SPARQL pe dibab ur skouer eus ar reked)",
+	"wdqs-app-editor-addprefixes": "Ouzhpennañ ar rakgerioù standart",
+	"wdqs-dialog-examples-preview-query": "Alberz ar reked",
+	"wdqs-dialog-examples-preview-result": "Alberz eus an disoc'h",
 	"wdqs-ve-find": "Klask",
 	"wdqs-ve-show": "Diskouez",
 	"wdqs-ve-with": "gant :",
@@ -20,5 +31,8 @@
 	"wdqs-ve-anything": "Netra",
 	"wdqs-ve-any": "forzh pehini",
 	"wdqs-ve-or": "pe",
-	"wdqs-ve-subtype": "Is-doare"
+	"wdqs-ve-subtype": "Is-doare",
+	"wdqs-action-query": "Seveniñ ar reked",
+	"wdqs-action-error-display": "Ne c'haller ket diskwel an disoc'h",
+	"wdqs-result-map-layers-all": "An holl wiskadoù"
 }

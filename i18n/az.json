@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Şeyx Şamil"
+		]
+	},
+	"wdqs-app-button-examples": "Nümunələr",
+	"wdqs-app-button-prefixes": "Prefikslər",
+	"wdqs-app-button-tools": "Alətlər",
+	"wdqs-app-button-help": "Kömək",
+	"wdqs-app-button-run": "İşlət",
+	"wdqs-app-button-run-title": "Sorğunu yerinə yetir",
+	"wdqs-app-button-clear": "Təmizlə",
+	"wdqs-app-button-display": "Göstər",
+	"wdqs-app-button-download": "Endir",
+	"wdqs-app-button-link": "Keçid",
+	"wdqs-app-help-feedback": "Rəy ver!",
+	"wdqs-app-help-manual": "İstifadəçi təlimatı",
+	"wdqs-app-help-examples": "Sorğu nümunələri",
+	"wdqs-app-help-datamodel": "RDF Məlumat Modeli",
+	"wdqs-app-help-prefixes": "Prefikslərin siyahısı",
+	"wdqs-app-footer-help": "Avtomatik tamamlamanı aktivləşdirmək üçün <i>[CTRL-SPACE]</i>-ə bas",
+	"wdqs-app-result-shorturl": "Nəticəyə qısa URL",
+	"wdqs-app-result-shorturl-title": "Bu nəticəyə qısa URL",
+	"wdqs-app-result-embed": "Yerləşdirilmiş nəticələr",
+	"wdqs-dialog-examples-preview-query": "Sorğuya əvvəlcədən bax",
+	"wdqs-dialog-examples-preview-result": "Nəticəyə əvvəlcədən bax",
+	"wdqs-ve-find": "Tap",
+	"wdqs-ve-show": "Göstər",
+	"wdqs-ve-with": "ilə",
+	"wdqs-ve-anything": "bir şey",
+	"wdqs-ve-any": "hər hansı bir",
+	"wdqs-ve-or": "və ya"
+}

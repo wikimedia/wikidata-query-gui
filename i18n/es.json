@@ -3,7 +3,8 @@
 		"authors": [
 			"2axterix2",
 			"Macofe",
-			"Rubentl134"
+			"Rubentl134",
+			"Dgstranz"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -16,9 +17,9 @@
 	"wdqs-app-button-display": "Mostrar",
 	"wdqs-app-button-download": "Descargar",
 	"wdqs-app-button-link": "Enlace",
+	"wdqs-app-help-manual": "Manual del usuario",
+	"wdqs-app-help-prefixes": "Lista de prefijos",
 	"wdqs-app-footer-help": "Presiona <i>[CTRL-ESPACIO]</i> para activar el autocompletado.",
-	"wdqs-app-footer-updated-before": "Datos actualizados",
-	"wdqs-app-footer-updated-after": "hace",
 	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o elige una consulta de ejemplo)",
 	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
 	"wdqs-dialog-examples-preview-result": "Vista previa del resultado",

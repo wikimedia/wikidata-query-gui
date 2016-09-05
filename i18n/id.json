@@ -15,8 +15,6 @@
 	"wdqs-app-button-download": "Unduh",
 	"wdqs-app-button-link": "Pranala",
 	"wdqs-app-footer-help": "Tekan tombol <i>[CTRL-SPACE]</i> untuk mengaktifkan penyelesaian otomatis.",
-	"wdqs-app-footer-updated-before": "Pemutakhiran terakhir",
-	"wdqs-app-footer-updated-after": "yang lalu",
 	"wdqs-app-editor-placeholder": "(Masukkan suatu kueri (''query'') SPARQL atau pilih suatu contoh kueri)",
 	"wdqs-dialog-examples-preview-query": "Pratayang kueri (''query'')",
 	"wdqs-dialog-examples-preview-result": "Pratayang hasil",

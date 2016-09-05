@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Algentem"
+		]
+	},
+	"wdqs-app-button-examples": "Exempli",
+	"wdqs-app-button-prefixes": "Prefixi",
+	"wdqs-app-button-tools": "Utensili",
+	"wdqs-app-button-help": "Helpo",
+	"wdqs-app-button-run": "Kurar",
+	"wdqs-app-button-clear": "Vakuigar",
+	"wdqs-app-button-display": "Estalar",
+	"wdqs-app-button-download": "Deskargar",
+	"wdqs-app-help-prefixes": "Listo di prefixi",
+	"wdqs-app-footer-updated": "Donaji kargita $1 ante nun",
+	"wdqs-app-footer-updated-seconds": "Donaji kargita $1 sekundi ante nun",
+	"wdqs-ve-find": "Trovar",
+	"wdqs-ve-show": "Montrar",
+	"wdqs-ve-with": "kun",
+	"wdqs-ve-and": "e",
+	"wdqs-ve-anything": "ulo",
+	"wdqs-ve-any": "ula",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "subtipo",
+	"wdqs-result-map-layers-all": "Omna strati"
+}

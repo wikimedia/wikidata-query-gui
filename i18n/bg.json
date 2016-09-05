@@ -16,8 +16,6 @@
 	"wdqs-app-button-download": "Изтегляне",
 	"wdqs-app-button-link": "Препратка",
 	"wdqs-app-footer-help": "Натиснете <i>[Ctrl + интервал]</i>, за да активирате функцията за автоматично довършване.",
-	"wdqs-app-footer-updated-before": "Последна промяна",
-	"wdqs-app-footer-updated-after": "назад",
 	"wdqs-app-editor-placeholder": "(Въведете заявка за SPARQL или изберете пример)",
 	"wdqs-dialog-examples-preview-query": "Преглед на заявката",
 	"wdqs-dialog-examples-preview-result": "Преглед на резултата",
