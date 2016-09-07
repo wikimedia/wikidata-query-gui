@@ -45,6 +45,11 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 		if ( !valueType ) {
 			valueType = 'c';
 		}
+
+		if ( location.hostname !== 'query.wikidata.org' ) {
+			return;// only track on wikidata.org
+		}
+
 		// https://www.wikidata.org/beacon/statsv?test.statsv.foo2=5c
 		return this._track( metricName + '=' + value + valueType );
 	};
