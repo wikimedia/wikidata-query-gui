@@ -72,6 +72,7 @@
 	<script src="wikibase/queryService/ui/resultBrowser/MultiDimensionResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowser.js"></script>
 	<script src="wikibase/queryService/api/Sparql.js"></script>
+	<script src="wikibase/queryService/api/Tracking.js"></script>
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
 	<!-- endbuild -->
 
@@ -110,12 +111,16 @@
 			var browserPackage = wikibase.queryService.ui.resultBrowser;
 
 			try {
-				var browserClass = RESULT_BROWSER[query.match( /#defaultView:(\w+)/ )[1]].class;
+				var browserKey = query.match( /#defaultView:(\w+)/ )[1];
+				var browserClass = RESULT_BROWSER[browserKey].class;
 				var browser = new browserPackage[browserClass]();
 			} catch ( e ) {
 				var browserClass = RESULT_BROWSER.Table.class;
 				var browser = new browserPackage[browserClass]();
 			}
+
+			var tracking = new wikibase.queryService.api.Tracking();
+			tracking.track( 'wikibase.queryService.ui.embed.' + ( browserKey || 'default' ) );
 
 			var api = new wikibase.queryService.api.Sparql();
 			api.query( query ).done( function() {

@@ -1,0 +1,64 @@
+var tracking = tracking || {};
+wikibase.queryService = wikibase.queryService || {};
+wikibase.queryService.api = wikibase.queryService.api || {};
+
+wikibase.queryService.api.Tracking = ( function( $ ) {
+	'use strict';
+
+	var API_ENDPOINT = 'https://www.wikidata.org/beacon/statsv';
+
+	/**
+	 * API for the Tracking API
+	 *
+	 * @class wikibase.queryService.api.Tracking
+	 * @license GNU GPL v2+
+	 *
+	 * @author Addshore
+	 * @constructor
+	 * @param {string} endpoint default: 'https://www.wikidata.org/beacon/statsv'
+	 */
+	function SELF( endpoint ) {
+		this._endpoint = API_ENDPOINT;
+
+		if ( endpoint ) {
+			this._endpoint = endpoint;
+		}
+	}
+
+	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._endpoint = null;
+
+	/**
+	 * @param {string} metricName
+	 * @param {int} value
+	 * @param {string} valueType
+	 *
+	 * @return {jQuery.Promise}
+	 */
+	SELF.prototype.track = function( metricName, value, valueType ) {
+		if ( !value ) {
+			value = 1;
+		}
+		if ( !valueType ) {
+			valueType = 'c';
+		}
+		// https://www.wikidata.org/beacon/statsv?test.statsv.foo2=5c
+		return this._track( metricName + '=' + value + valueType );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._track = function( query ) {
+		return $.ajax( {
+			url: this._endpoint + '?' + query,
+			dataType: 'jsonp'
+		} );
+	};
+
+	return SELF;
+
+}( jQuery ) );

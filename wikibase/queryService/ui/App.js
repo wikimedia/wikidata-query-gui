@@ -8,6 +8,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 
+	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
+
 	var QUERY_ERROR_MAP = {
 			'Query deadline is expired.': 'wdqs-action-timeout'
 	};
@@ -83,6 +85,12 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 * @private
 	 */
 	SELF.prototype._actionBar = null;
+
+	/**
+	 * @property {wikibase.queryService.api.Tracking}
+	 * @private
+	 */
+	SELF.prototype._trackingApi = null;
 
 	/**
 	 * @property {Object}
@@ -161,9 +169,15 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
 		}
 
+		if ( !this._trackingApi ) {
+			this._trackingApi = new wikibase.queryService.api.Tracking();
+		}
+
 		if ( !this._editor ) {
 			this._editor = new wikibase.queryService.ui.editor.Editor();
 		}
+
+		this._track( 'init' );
 
 		this._initApp();
 		this._initEditor();
@@ -386,10 +400,16 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				return standardPrefixes[x];
 			} ).join( '\n' );
 			self._editor.prepandValue( prefixes + '\n\n' );
+			self._track( 'buttonClick.addPrefixes' );
+		} );
+
+		$( '[data-target="#QueryExamples"]' ).click( function() {
+			self._track( 'buttonClick.examples' );
 		} );
 
 		$( '#clear-button' ).click( function() {
 			self._editor.setValue( '' );
+			self._track( 'buttonClick.clear' );
 		} );
 
 		$( '.explorer-close' ).click( function( e ) {
@@ -439,6 +459,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 						return '<iframe class="shortUrl" src="' + SHORTURL_API +
 								encodeURIComponent( window.location ) + '">';
 					}
+				} ).click( function() {
+					self._track( 'buttonClick.shortUrlQuery' );
 				} );
 
 		$( '.shortUrlTrigger.result' ).clickover(
@@ -452,6 +474,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 						return '<iframe class="shortUrl" src="' + SHORTURL_API +
 								encodeURIComponent( $link[0].href ) + '">';
 					}
+				} ).click( function() {
+					self._track( 'buttonClick.shortUrlResult' );
 				} );
 
 		$( '.embed.result' ).clickover(
@@ -477,6 +501,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 
 						return $html;
 					}
+				} ).click( function() {
+					self._track( 'buttonClick.embedResult' );
 				} );
 	};
 
@@ -511,6 +537,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 			}
 		};
 
+		var self = this;
 		var downloadHandler = function( filename, handler, mimetype ) {
 			return function( e ) {
 				e.preventDefault();
@@ -520,7 +547,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				}
 
 				// see: http://danml.com/download.html
+				self._track( 'buttonClick.download.' + filename );
 				download( handler(), filename, mimetype );
+
 			};
 		};
 
@@ -575,17 +604,19 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 */
 	SELF.prototype._handleQueryError = function( error ) {
 		$( '#query-error' ).html( $( '<pre>' ).text( error ) ).show();
+		var shortError = null;
 
 		try {
-			var shortError = error.match(
+			shortError = error.match(
 					/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop().trim();
-			shortError = QUERY_ERROR_MAP[ shortError ] || shortError;
 
-			this._actionBar.show( shortError, 'danger' );
+			this._actionBar.show( QUERY_ERROR_MAP[ shortError ] || shortError, 'danger' );
 		} catch ( e ) {
 		}
 
 		$( '#execute-button' ).prop( 'disabled', false );
+
+		this._track( 'result.error.' + ( QUERY_ERROR_MAP[ shortError ] || 'unknown' ) );
 
 		this._editor.highlightError( error );
 	};
@@ -605,6 +636,10 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		this._drawResult( defaultBrowser );
 		this._selectedResultBrowser = null;
 
+		this._track( 'result.resultLength', api.getResultLength() );
+		this._track( 'result.executionTime', api.getExecutionTime(), 'ms' );
+		this._track( 'result.received.success' );
+
 		return false;
 	};
 
@@ -615,6 +650,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	SELF.prototype._createResultBrowsers = function( resultData ) {
 
 		var defaultBrowser = this._getDefaultResultBrowser();
+
+		this._track( 'result.browser.' + ( defaultBrowser || 'default' ) );
 
 		// instantiate
 		$.each( this._resultBrowsers, function( key, b ) {
@@ -664,6 +701,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 					$( '#query-result' ).html( '' );
 					self._drawResult( b.object );
 					self._selectedResultBrowser = key;
+					self._track( 'buttonClick.display.' + key );
 					return false;
 				} );
 			} else {
@@ -729,6 +767,13 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 				window.location.hash = hash;
 			}
 		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._track = function( metricName, value, valueType ) {
+		this._trackingApi.track( TRACKING_NAMESPACE + metricName, value, valueType );
 	};
 
 	return SELF;
