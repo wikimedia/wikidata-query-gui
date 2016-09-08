@@ -48,5 +48,6 @@
 	"wdqs-action-render": "Label for progressbar",
 	"wdqs-action-error-display": "Label for progressbar",
 	"wdqs-action-timeout": "Label for progressbar",
+	"wdqs-action-malformed-query": "Label for progressbar",
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view"
 }

@@ -11,7 +11,8 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
 
 	var QUERY_ERROR_MAP = {
-			'Query deadline is expired.': 'wdqs-action-timeout'
+			'QueryTimeoutException: Query deadline is expired': 'wdqs-action-timeout',
+			'MalformedQueryException: ': 'wdqs-action-malformed-query'
 	};
 
 	/**
@@ -584,7 +585,7 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		e.preventDefault();
 		this._editor.save();
 		this._updateQueryUrl();
-		this._actionBar.show( 'wdqs-action-query', 'info', 100 );
+		this._actionBar.show( 'wdqs-action-query', '', 'info', 100 );
 
 		$( '#query-result' ).empty().hide();
 		$( '.query-total' ).hide();
@@ -604,16 +605,21 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 */
 	SELF.prototype._handleQueryError = function( error ) {
 		$( '#query-error' ).html( $( '<pre>' ).text( error ) ).show();
-		var shortError = null;
+		var shortError = null,
+			errorMessageKey = null,
+			errorToMatch = error.substring( error.indexOf( 'java.util.concurrent.ExecutionException:' ) );
 
-		try {
+		for ( var errorKey in QUERY_ERROR_MAP ) {
+			if ( errorToMatch.indexOf( errorKey ) !== -1 ) {
+				errorMessageKey = QUERY_ERROR_MAP[ errorKey ];
+			}
+		}
+		if ( errorMessageKey === null || errorMessageKey === 'wdqs-action-malformed-query' ) {
 			shortError = error.match(
-					/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop().trim();
-
-			this._actionBar.show( QUERY_ERROR_MAP[ shortError ] || shortError, 'danger' );
-		} catch ( e ) {
+				/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop().trim();
 		}
 
+		this._actionBar.show( errorMessageKey || '', shortError || '', 'danger' );
 		$( '#execute-button' ).prop( 'disabled', false );
 
 		this._track( 'result.error.' + ( QUERY_ERROR_MAP[ shortError ] || 'unknown' ) );
@@ -716,14 +722,14 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	SELF.prototype._drawResult = function( resultBrowser ) {
 		var self = this;
 
-		this._actionBar.show( 'wdqs-action-render', 'success', 100 );
+		this._actionBar.show( 'wdqs-action-render', '',  'success', 100 );
 		window.setTimeout( function() {
 			try {
 				$( '#query-result' ).show();
 				resultBrowser.draw( $( '#query-result' ) );
 				self._actionBar.hide();
 			} catch ( e ) {
-				self._actionBar.show( 'wdqs-action-error-display', 'warning' );
+				self._actionBar.show( 'wdqs-action-error-display', '', 'warning' );
 				window.console.log( e.stack );
 			}
 
