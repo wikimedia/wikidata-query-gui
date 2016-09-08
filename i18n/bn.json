@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aftabuzzaman"
+			"Aftabuzzaman",
+			"আজিজ"
 		]
 	},
 	"wdqs-app-button-examples": "উদাহরণ",
@@ -24,6 +25,7 @@
 	"wdqs-app-footer-updated-seconds": "$1 সেকেন্ড আগে উপাত্ত হালনাগাদকৃত",
 	"wdqs-app-result-endpoint": "SPARQL শেষবিন্দু",
 	"wdqs-app-editor-placeholder": "(একটি SPARQL ক্যোয়ারী দিন বা একটি ক্যোয়ারীর উদাহরণ চয়ন করুন)",
+	"wdqs-app-editor-addprefixes": "মান্য উপসর্গ যোগ করুন",
 	"wdqs-dialog-examples-preview-query": "ক্যোয়ারী প্রাকদর্শন",
 	"wdqs-dialog-examples-preview-result": "ফলাফল প্রাকদর্শন",
 	"wdqs-ve-find": "খুঁজুন",

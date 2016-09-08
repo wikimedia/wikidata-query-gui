@@ -3,7 +3,8 @@
 		"authors": [
 			"Evropi",
 			"Geraki",
-			"Stam.nikos"
+			"Stam.nikos",
+			"Glavkos"
 		]
 	},
 	"wdqs-app-button-examples": "Παραδείγματα",
@@ -16,7 +17,13 @@
 	"wdqs-app-button-display": "Εμφάνιση",
 	"wdqs-app-button-download": "Λήψη",
 	"wdqs-app-button-link": "Σύνδεσμος",
+	"wdqs-app-help-manual": "Εγχειρίδιο Χρήστη",
+	"wdqs-app-help-examples": "Παραδείγματα Ερωτημάτων",
+	"wdqs-app-help-datamodel": "Μοντέλο Δεδομένων RDF",
+	"wdqs-app-help-prefixes": "Κατάλογος προθεμάτων",
 	"wdqs-app-footer-help": "Πατήστε <i>[CTRL-SPACE]</i> για να ενεργοποιήσετε την αυτόματη συμπλήρωση.",
+	"wdqs-app-footer-updated": "Δεδομένα που ενημερώθηκαν $1 πριν",
+	"wdqs-app-shorturl-page-title": "Σύντομο URL γι' αυτή τη σελίδα",
 	"wdqs-app-editor-placeholder": "(Εισαγάγετε ένα ερώτημα SPARQL ή να διαλέξτε ένα παράδειγμα ερωτήματος)",
 	"wdqs-dialog-examples-preview-query": "Προεπισκόπηση ερωτήματος",
 	"wdqs-dialog-examples-preview-result": "Προεπισκόπηση αποτελέσματος",
