@@ -93,6 +93,12 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	SELF.prototype._trackingApi = null;
 
 	/**
+	 * @property {boolean}
+	 * @private
+	 */
+	SELF.prototype._hasRunFirstQuery = false;
+
+	/**
 	 * @property {Object}
 	 * @private
 	 */
@@ -580,6 +586,11 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	 */
 	SELF.prototype._handleQuerySubmit = function( e ) {
 		var self = this;
+
+		if ( !this._hasRunFirstQuery ) {
+			this._track( 'firstQuery' );
+			this._hasRunFirstQuery = true;
+		}
 
 		e.preventDefault();
 		this._editor.save();
