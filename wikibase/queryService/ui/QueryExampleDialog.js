@@ -5,6 +5,8 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	'use strict';
 
+	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.examples.';
+
 	/**
 	 * A ui dialog for selecting a query example
 	 *
@@ -46,6 +48,12 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	SELF.prototype._examples = null;
 
 	/**
+	 * @property {wikibase.queryService.api.Tracking}
+	 * @private
+	 */
+	SELF.prototype._trackingApi = null;
+
+	/**
 	 * Initialize private members and call delegate to specific init methods
 	 *
 	 * @private
@@ -53,6 +61,10 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	SELF.prototype._init = function() {
 		if ( !this._querySamplesApi ) {
 			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
+		}
+
+		if ( !this._trackingApi ) {
+			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}
 
 		this._initFilter();
@@ -216,9 +228,15 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	SELF.prototype._addExample = function( title, query, href, tags ) {
 		var self = this,
 			link = $( '<a title="Select" data-dismiss="modal">' ).text( title ).attr( 'href', '#' )
-					.click( function() { self._callback( query, title );	} ),
+					.click( function() {
+						self._callback( query, title );
+						self._track( 'select' );
+					} ),
 			edit = $( '<a title="Edit">' ).attr( 'href', href ).attr( 'target', '_blank' )
-					.append( '<span>' ).addClass( 'glyphicon glyphicon-pencil' ),
+					.append( '<span>' ).addClass( 'glyphicon glyphicon-pencil' )
+					.click( function() {
+						self._track( 'edit' );
+					} ),
 
 			source = $( '<span>' ).addClass( 'glyphicon glyphicon-eye-open' ).popover(
 				{
@@ -239,6 +257,9 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					content: $( '<iframe width="400" height="350" frameBorder="0" src="embed.html#'
 							+ encodeURIComponent( query ) + '">' ),
 					html: true
+				} )
+				.click( function() {
+					self._track( 'preview' );
 				} );
 			$( '.exampleTable' ).scroll( function() {
 			if ( preview.clickover ) {
@@ -288,6 +309,13 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		$matchingElements.each( function( i, el ) {
 			$( el ).prevAll( 'tr.active' ).first().show();
 		} );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._track = function( metricName, value, valueType ) {
+		this._trackingApi.track( TRACKING_NAMESPACE + metricName, value, valueType );
 	};
 
 	return SELF;
