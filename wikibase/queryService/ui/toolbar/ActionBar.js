@@ -30,13 +30,19 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	/**
 	 * Show action bar
 	 *
-	 * @param {string} text message
+	 * @param {string} messageKey primary message key
+	 * @param {string} extraText to be appended to the primary message
 	 * @param {string} type of message: primary, success, info, warning, danger
 	 * @param {int} progress false if no progress, or actual progress 0-100
 	 */
-	SELF.prototype.show = function( text, type, progress ) {
+	SELF.prototype.show = function( messageKey, extraText, type, progress ) {
+		var text = messageKey;
+
 		if ( $.i18n ) {
-			text = $.i18n( text );
+			text = $.i18n( messageKey );
+		}
+		if ( extraText !== '' ) {
+			text = text + ': ' + extraText;
 		}
 
 		this._$element.find( '.message' ).html( '' );
