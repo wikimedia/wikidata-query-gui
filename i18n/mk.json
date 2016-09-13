@@ -44,5 +44,6 @@
 	"wdqs-action-render": "Правам испис на исходот",
 	"wdqs-action-error-display": "Не можам да го прикажам исходот",
 	"wdqs-action-timeout": "Достигнато е временското ограничување на барањето",
+	"wdqs-action-malformed-query": "Барањето е лошо срочено",
 	"wdqs-result-map-layers-all": "Сите слоеви"
 }

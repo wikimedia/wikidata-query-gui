@@ -45,5 +45,6 @@
 	"wdqs-action-render": "Representación del resultado",
 	"wdqs-action-error-display": "No se puede mostrar el resultado",
 	"wdqs-action-timeout": "Se agotó el tiempo de espera de la consulta",
+	"wdqs-action-malformed-query": "La consulta es incorrecta",
 	"wdqs-result-map-layers-all": "Todas las capas"
 }

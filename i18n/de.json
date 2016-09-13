@@ -45,5 +45,6 @@
 	"wdqs-action-render": "Verarbeite Ergebnis",
 	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
 	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht",
+	"wdqs-action-malformed-query": "Die Abfrage ist beschädigt",
 	"wdqs-result-map-layers-all": "Alle Ebenen"
 }

@@ -44,5 +44,6 @@
 	"wdqs-action-render": "नतिजा खिच्चाछ़",
 	"wdqs-action-error-display": "नतिजा धेकाउनाइ असमर्थ",
 	"wdqs-action-timeout": "क्वेरी टाएमआउट ओणा पुगिग्यो",
+	"wdqs-action-malformed-query": "क्वेरि विकृत छ",
 	"wdqs-result-map-layers-all": "जम्माइ तह"
 }

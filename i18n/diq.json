@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kumkumuk",
-			"Mirzali"
+			"Mirzali",
+			"Asmen"
 		]
 	},
 	"wdqs-app-button-examples": "Misali",
@@ -45,5 +46,6 @@
 	"wdqs-action-render": "Neticeyi vêniyenê",
 	"wdqs-action-error-display": "Neticeyi nêmocniyenê",
 	"wdqs-action-timeout": "Pers rest sinorê demraveriye",
+	"wdqs-action-malformed-query": "Persayış xırabıno",
 	"wdqs-result-map-layers-all": "Katmani heme"
 }

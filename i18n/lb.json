@@ -41,5 +41,6 @@
 	"wdqs-action-render": "Resultat gëtt duergestallt",
 	"wdqs-action-error-display": "D'Resultat kann net gewise ginn",
 	"wdqs-action-timeout": "Zäitlimit fir eng Ufro gouf erreecht",
+	"wdqs-action-malformed-query": "Ufro ass schlecht formuléiert",
 	"wdqs-result-map-layers-all": "All Niveauen"
 }

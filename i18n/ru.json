@@ -45,5 +45,6 @@
 	"wdqs-action-render": "Обработка результата",
 	"wdqs-action-error-display": "Не удается отобразить результат",
 	"wdqs-action-timeout": "Запрос занял слишком много времени",
+	"wdqs-action-malformed-query": "Запрос плохо сформирован",
 	"wdqs-result-map-layers-all": "Все слои"
 }

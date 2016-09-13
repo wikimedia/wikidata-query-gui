@@ -45,5 +45,6 @@
 	"wdqs-action-render": "התוצאה בהכנה להצגה",
 	"wdqs-action-error-display": "לא ניתן להציג את התוצאה",
 	"wdqs-action-timeout": "הגיע זמן התפוגה של השאילתה",
+	"wdqs-action-malformed-query": "השאילתה פגומה",
 	"wdqs-result-map-layers-all": "כל השכבות"
 }

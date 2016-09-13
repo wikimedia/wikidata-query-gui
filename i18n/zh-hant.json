@@ -44,5 +44,6 @@
 	"wdqs-action-render": "正在翻譯結果",
 	"wdqs-action-error-display": "無法顯示結果",
 	"wdqs-action-timeout": "已達查詢逾時限制",
+	"wdqs-action-malformed-query": "查詢異常",
 	"wdqs-result-map-layers-all": "所有圖層"
 }

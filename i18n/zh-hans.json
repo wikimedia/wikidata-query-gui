@@ -45,5 +45,6 @@
 	"wdqs-action-render": "正在渲染结果",
 	"wdqs-action-error-display": "无法显示结果",
 	"wdqs-action-timeout": "已达到查询超时限制",
+	"wdqs-action-malformed-query": "查询有缺陷",
 	"wdqs-result-map-layers-all": "所有图层"
 }

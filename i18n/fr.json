@@ -45,5 +45,6 @@
 	"wdqs-action-render": "Rendu du résultat",
 	"wdqs-action-error-display": "Impossible d’afficher le résultat",
 	"wdqs-action-timeout": "Limite du temps de requête atteinte",
+	"wdqs-action-malformed-query": "La requête est mal formulée",
 	"wdqs-result-map-layers-all": "Toutes les couches"
 }

@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metsavend"
+		]
+	},
+	"wdqs-app-button-examples": "Näited",
+	"wdqs-app-button-prefixes": "Eesliited",
+	"wdqs-app-button-tools": "Tööriistad",
+	"wdqs-app-button-help": "Abi",
+	"wdqs-app-button-run": "Käivita",
+	"wdqs-app-button-run-title": "Käivita päring (<CTRL> + <ENTER>)",
+	"wdqs-app-button-clear": "Tühjenda",
+	"wdqs-app-button-display": "Kuva",
+	"wdqs-app-button-download": "Laadi alla",
+	"wdqs-app-button-link": "Link",
+	"wdqs-app-help-feedback": "Andke tagasisidet!",
+	"wdqs-app-help-manual": "Kasutusjuhend",
+	"wdqs-app-help-examples": "Näidispäringud",
+	"wdqs-app-help-datamodel": "RDF andmemudel",
+	"wdqs-app-help-prefixes": "Prefiksite loend",
+	"wdqs-app-footer-help": "Vajuta <i>[CTRL-KAARDE]</i> , et aktiveerida automaatne täitmine.",
+	"wdqs-app-footer-updated": "Andmeid uuendati $1 tagasi",
+	"wdqs-app-footer-updated-seconds": "Andmeid uuendati $1 sekundi eest",
+	"wdqs-dialog-examples-preview-result": "Eelvaate tulemus",
+	"wdqs-ve-find": "Otsi",
+	"wdqs-ve-show": "Näita",
+	"wdqs-ve-with": "koos",
+	"wdqs-ve-and": "ja",
+	"wdqs-ve-anything": "mida tahes",
+	"wdqs-ve-any": "mistahes",
+	"wdqs-ve-or": "või",
+	"wdqs-ve-subtype": "alltüüp",
+	"wdqs-action-query": "Päring on töös",
+	"wdqs-result-map-layers-all": "Kõik kihid"
+}

@@ -4,7 +4,8 @@
 			"Tacsipacsi",
 			"Wolf Rex",
 			"Máté",
-			"Dj"
+			"Dj",
+			"R-Joe"
 		]
 	},
 	"wdqs-app-button-examples": "Példák",
@@ -45,5 +46,6 @@
 	"wdqs-action-render": "Eredmény megjelenítésének előkészítése",
 	"wdqs-action-error-display": "Nem tudtuk megjeleníteni az eredményt",
 	"wdqs-action-timeout": "Lekérdezési időkorlát elérve",
+	"wdqs-action-malformed-query": "Lekérdezés hibás",
 	"wdqs-result-map-layers-all": "Minden réteg"
 }

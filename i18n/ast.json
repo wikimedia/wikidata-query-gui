@@ -44,5 +44,6 @@
 	"wdqs-action-render": "Presentando'l resultáu",
 	"wdqs-action-error-display": "Nun pudo amosase'l resultáu",
 	"wdqs-action-timeout": "Llegóse a la llende de tiempu de consulta",
+	"wdqs-action-malformed-query": "La consulta ta mal formada",
 	"wdqs-result-map-layers-all": "Toles capes"
 }
