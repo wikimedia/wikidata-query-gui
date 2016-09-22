@@ -62,6 +62,10 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		entityPrefixes = this._extractPrefixes( editorContent );
 
 		if ( !entityPrefixes[prefix] ) { // unknown prefix
+			if ( this._rdfNamespaces.ALL_PREFIXES && this._rdfNamespaces.ALL_PREFIXES[prefix] ) {
+				// Sparql.js may deal with those prefixes
+				return deferred.reject().promise();
+			}
 			list = [ {
 				text: term,
 				displayText: 'Unknown prefix \'' + prefix + ':\''
