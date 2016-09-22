@@ -5,9 +5,9 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	'use strict';
 
-	var API_SERVER = 'https://www.mediawiki.org/';
+	var API_SERVER = 'https://www.wikidata.org/';
 	var API_ENDPOINT = API_SERVER + 'api/rest_v1/page/html/';
-	var PAGE_TITLE = 'Wikibase/Indexing/SPARQL_Query_Examples';
+	var PAGE_TITLE = 'Wikidata:SPARQL query service/queries/examples';
 	var PAGE_URL = API_SERVER + 'wiki/' + PAGE_TITLE;
 
 	/**
@@ -72,7 +72,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		if ( prev.length > 0 ) {
 			return prev;
 		}
-		return element.prevUntil( selector ).last().prev();
+		prev = element.prevUntil( selector ).last().prev();
+		if ( prev.length > 0 ) {
+			return prev;
+		}
+		prev = element.parent().prev().filter( selector );
+		return prev;
 	};
 
 	/**
@@ -83,18 +88,17 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
      * @private
      */
 	SELF.prototype._extractTagsFromUL = function( tagUL ) {
-		return tagUL.find( 'a[rel="mw:ExtLink"]' ).map( function() { return $( this ).text().trim(); } ).get();
+		return tagUL.find( 'a[rel="mw:WikiLink"]' ).map( function() { return $( this ).text().trim(); } ).get();
 	};
 
 	SELF.prototype._parseHTML = function ( html ) {
 		var div = document.createElement( 'div' ),
-			data,
 			self = this;
 		div.innerHTML = html;
-		data = $( div );
-			// Find all SPARQL Templates
-		var examples = data.find( 'div.mw-highlight' ).map( function() {
-			var dataMW = $( this ).attr( 'data-mw' );
+		// Find all SPARQL Templates
+		var examples = $( div ).find( 'div.mw-highlight' ).map( function() {
+			var $this = $( this ),
+				dataMW = $this.attr( 'data-mw' );
 			if ( !dataMW ) {
 				return;
 			}
@@ -115,13 +119,13 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			query = query.replace( /\{\{!}}/g, '|' );
 
 			// Find preceding title element
-			var titleEl = self._findPrev( $( this ), 'h2,h3,h4,h5,h6,h7' );
-			if ( !titleEl ) {
+			var titleEl = self._findPrev( $this, 'h2,h3,h4,h5,h6,h7' );
+			if ( !titleEl || !titleEl.length ) {
 				return null;
 			}
 			var title = titleEl.text().trim();
 			// Get UL elements between header and query text
-			var tagUL = titleEl.nextUntil( this ).filter( 'ul' );
+			var tagUL = $this.prevUntil( titleEl ).filter( 'ul' );
 
 			return {
 				title:    title,
@@ -132,8 +136,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			};
 
 		} ).get();
-		// drop bad ones and return
-		return examples.filter( Boolean );
+		// group by category
+		return _.flatten( _.toArray( _.groupBy( examples, 'category' ) ) );
 	};
 
 	return SELF;
