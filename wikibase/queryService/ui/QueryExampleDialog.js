@@ -104,6 +104,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		this._querySamplesApi.getExamples().done( function( examples ) {
 			self._examples = examples;
 			self._initTagCloud();
+			self._updateExamplesCount( examples.length );
 
 			$.each( examples, function( key, example ) {
 				if ( example.category !==  category ) {
@@ -309,6 +310,14 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		$matchingElements.each( function( i, el ) {
 			$( el ).prevAll( 'tr.active' ).first().show();
 		} );
+		this._updateExamplesCount( $matchingElements.length );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._updateExamplesCount = function( count ) {
+		this._$element.find( '.count' ).text( count );
 	};
 
 	/**
