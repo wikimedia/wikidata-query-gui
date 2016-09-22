@@ -22,15 +22,50 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	];
 
 	var SPARQL_PREDICATES = [
+			// wikibase:
+			// property predicates
 			'wikibase:rank', 'wikibase:badge', 'wikibase:propertyType', 'wikibase:directClaim',
 			'wikibase:claim', 'wikibase:statementProperty', 'wikibase:statementValue',
 			'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:referenceValue',
-			'wikibase:Reference', 'wikibase:TimeValue', 'wikibase:QuantityValue',
-			'wikibase:GlobecoordinateValue', 'wikibase:Dump', 'wikibase:PreferredRank',
-			'wikibase:NormalRank', 'wikibase:DeprecatedRank', 'wikibase:BestRank',
+			'wikibase:statementValueNormalized', 'wikibase:qualifierValueNormalized',
+			'wikibase:referenceValueNormalized', 'wikibase:novalue',
+			// data types
+			'wikibase:Reference', 'wikibase:Dump',
+			// ranks
+			'wikibase:PreferredRank', 'wikibase:NormalRank', 'wikibase:DeprecatedRank', 'wikibase:BestRank',
+			// value types
+			'wikibase:TimeValue', 'wikibase:QuantityValue', 'wikibase:GlobecoordinateValue',
+			// property types
 			'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:Globecoordinate',
 			'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
-			'wikibase:Url', 'rdfs:about', 'schema:name', 'schema:description', 'rdfs:label'
+			'wikibase:Url', 'wikibase:ExternalId',
+			// pageprops
+			'wikibase:statements', 'wikibase:sitelinks',
+			// time
+			'wikibase:timeValue', 'wikibase:timePrecision', 'wikibase:timeTimezone', 'wikibase:timeCalendarModel',
+			// quantity
+			'wikibase:quantityAmount', 'wikibase:quantityUpperBound', 'wikibase:quantityLowerBound',
+			'wikibase:quantityUnit', 'wikibase:quantityNormalized',
+			// coordinate
+			'wikibase:geoLatitude', 'wikibase:geoLongitude', 'wikibase:geoPrecision', 'wikibase:geoGlobe',
+			// other
+			'wikibase:wikiGroup',
+			// schema: things
+			'schema:about', 'schema:name', 'schema:description', 'schema:dateModified',
+			'schema:Article', 'schema:inLanguage', 'schema:isPartOf',
+			// rdfs: things
+			'rdfs:label', 'rdf:type',
+			// skos: things
+			'skos:altLabel',
+			// xsd:
+			'xsd:dateTime', 'xsd:integer', 'xsd:decimal',
+			// geo:
+			'geo:wktLiteral',
+			// owl:
+			'owl:sameAs',
+			// prov:
+			'prov:wasDerivedFrom'
+
 	];
 
 	/**
@@ -135,7 +170,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			pos = 0;
 		}
 
-		while ( /[\w?#]/.test( line.charAt( pos ) ) ) {
+		while ( /[\w?#:]/.test( line.charAt( pos ) ) ) {
 			pos--;
 			if ( pos < 0 ) {
 				break;
@@ -144,7 +179,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		var left = pos + 1;
 
 		pos = position;
-		while ( /\w/.test( line.charAt( pos ) ) ) {
+		while ( /[\w:]/.test( line.charAt( pos ) ) ) {
 			pos++;
 			if ( pos >= line.length ) {
 				break;
