@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Termininja",
-			"StanProg"
+			"StanProg",
+			"Vodnokon4e"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -15,6 +16,7 @@
 	"wdqs-app-button-display": "Показване",
 	"wdqs-app-button-download": "Изтегляне",
 	"wdqs-app-button-link": "Препратка",
+	"wdqs-app-help-manual": "Ръководство на потребителя",
 	"wdqs-app-footer-help": "Натиснете <i>[Ctrl + интервал]</i>, за да активирате функцията за автоматично довършване.",
 	"wdqs-app-editor-placeholder": "(Въведете заявка за SPARQL или изберете пример)",
 	"wdqs-dialog-examples-preview-query": "Преглед на заявката",

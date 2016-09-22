@@ -4,7 +4,8 @@
 			"Clon",
 			"Mormegil",
 			"Marek Pavlica",
-			"Zbyso23"
+			"Zbyso23",
+			"Matěj Suchánek"
 		]
 	},
 	"wdqs-app-button-examples": "Příklady",
@@ -17,7 +18,14 @@
 	"wdqs-app-button-display": "Zobrazení",
 	"wdqs-app-button-download": "Stáhnout",
 	"wdqs-app-button-link": "Odkaz",
+	"wdqs-app-help-feedback": "Dát zpětnou vazbu!",
+	"wdqs-app-help-manual": "Uživatelská příručka",
+	"wdqs-app-help-examples": "Příklady dotazů",
+	"wdqs-app-help-prefixes": "Seznam prefixů",
 	"wdqs-app-footer-help": "Stisknutím <i>[CTRL-SPACE]</i> aktivujete automatické dokončení.",
+	"wdqs-app-footer-updated": "Stáří údajů: $1",
+	"wdqs-app-footer-updated-seconds": "Údaje aktualizovány před $1 sekundami",
+	"wdqs-app-result-embed": "Vložit výsledek",
 	"wdqs-app-editor-placeholder": "(Vložte SPARQL dotaz nebo vyberte příklad dotazu)",
 	"wdqs-dialog-examples-preview-query": "Náhled dotazu",
 	"wdqs-dialog-examples-preview-result": "Náhled výsledku",

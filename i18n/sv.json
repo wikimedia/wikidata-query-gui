@@ -46,5 +46,6 @@
 	"wdqs-action-render": "Renderar resultat",
 	"wdqs-action-error-display": "Det gick inte att visa resultatet",
 	"wdqs-action-timeout": "Förfrågan nådde tidsgränsen",
+	"wdqs-action-malformed-query": "Förfrågan är felformulerad",
 	"wdqs-result-map-layers-all": "Alla lager"
 }

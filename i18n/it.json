@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Matteocng"
+			"Matteocng",
+			"Anto"
 		]
 	},
 	"wdqs-app-button-examples": "Esempi",
@@ -37,5 +38,6 @@
 	"wdqs-action-render": "Rappresentazione dei risultati",
 	"wdqs-action-error-display": "Impossibile visualizzare il risultato",
 	"wdqs-action-timeout": "Limite timeout per la query raggiunto",
+	"wdqs-action-malformed-query": "Query non valida",
 	"wdqs-result-map-layers-all": "Tutti i livelli"
 }

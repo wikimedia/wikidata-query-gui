@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metsavend"
+			"Metsavend",
+			"Pikne"
 		]
 	},
 	"wdqs-app-button-examples": "Näited",
@@ -14,11 +15,11 @@
 	"wdqs-app-button-display": "Kuva",
 	"wdqs-app-button-download": "Laadi alla",
 	"wdqs-app-button-link": "Link",
-	"wdqs-app-help-feedback": "Andke tagasisidet!",
+	"wdqs-app-help-feedback": "Anna tagasisidet!",
 	"wdqs-app-help-manual": "Kasutusjuhend",
 	"wdqs-app-help-examples": "Näidispäringud",
-	"wdqs-app-help-datamodel": "RDF andmemudel",
-	"wdqs-app-help-prefixes": "Prefiksite loend",
+	"wdqs-app-help-datamodel": "RDF-andmemudel",
+	"wdqs-app-help-prefixes": "Eesliidete loend",
 	"wdqs-app-footer-help": "Vajuta <i>[CTRL-KAARDE]</i> , et aktiveerida automaatne täitmine.",
 	"wdqs-app-footer-updated": "Andmeid uuendati $1 tagasi",
 	"wdqs-app-footer-updated-seconds": "Andmeid uuendati $1 sekundi eest",

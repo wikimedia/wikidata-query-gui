@@ -47,5 +47,6 @@
 	"wdqs-action-render": "Resultaat van rendering",
 	"wdqs-action-error-display": "Niet in staat om de resultaten weer te geven",
 	"wdqs-action-timeout": "Time-out voor zoekopdrachtenlimiet is bereikt",
+	"wdqs-action-malformed-query": "Zoekopdracht is ongeldig",
 	"wdqs-result-map-layers-all": "Alle lagen"
 }

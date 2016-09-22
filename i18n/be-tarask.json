@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"wdqs-app-button-examples": "Прыклады",
@@ -9,10 +10,18 @@
 	"wdqs-app-button-tools": "Інструмэнты",
 	"wdqs-app-button-help": "Даведка",
 	"wdqs-app-button-run": "Запусьціць",
+	"wdqs-app-button-run-title": "Выканаць запыт (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Ачысьціць",
 	"wdqs-app-button-display": "Фармат",
 	"wdqs-app-button-download": "Спампаваць",
 	"wdqs-app-button-link": "Спасылка",
+	"wdqs-app-help-feedback": "Пакіньце водгук!",
+	"wdqs-app-help-manual": "Дапаможнік карыстальніка",
+	"wdqs-app-help-examples": "Прыклады запытаў",
+	"wdqs-app-help-datamodel": "Мадэль зьвестак RDF",
+	"wdqs-app-help-prefixes": "Сьпіс прэфіксаў",
+	"wdqs-app-footer-help": "Націсьніце <i>[CTRL-SPACE]</i>, каб актываваць аўтазапаўненьне.",
+	"wdqs-app-footer-updated": "Зьвесткі абноўленыя $1 таму",
 	"wdqs-ve-find": "Знайсьці",
 	"wdqs-ve-show": "Паказаць",
 	"wdqs-ve-with": "з",

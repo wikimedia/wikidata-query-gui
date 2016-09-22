@@ -13,8 +13,11 @@
 	"wdqs-app-button-display": "Wyświetl",
 	"wdqs-app-button-download": "Pobierz",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-help-manual": "Podręcznik użytkownika",
+	"wdqs-app-help-prefixes": "Lista prefiksów",
 	"wdqs-app-footer-updated": "Dane zaktualizowano $1 temu",
 	"wdqs-app-footer-updated-seconds": "Dane zaktualizowano sekund $1 temu",
+	"wdqs-app-shorturl-page-title": "Krótki adres URL do tej strony",
 	"wdqs-ve-find": "Znajdź",
 	"wdqs-ve-show": "Pokaż",
 	"wdqs-ve-with": "z",
@@ -23,5 +26,6 @@
 	"wdqs-ve-any": "dowolna",
 	"wdqs-ve-or": "lub",
 	"wdqs-ve-subtype": "podtyp",
-	"wdqs-action-error-display": "Nie można wyświetlić wyniku"
+	"wdqs-action-error-display": "Nie można wyświetlić wyniku",
+	"wdqs-result-map-layers-all": "Wszystkie warstwy"
 }

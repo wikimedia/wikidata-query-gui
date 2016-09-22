@@ -22,6 +22,8 @@
 	"wdqs-app-help-datamodel": "Модель даних RDF",
 	"wdqs-app-help-prefixes": "Список префіксів",
 	"wdqs-app-footer-help": "Натисніть <i>[CTRL-SPACE]</i>, щоб активувати автозаповнення.",
+	"wdqs-app-footer-updated": "Дані оновлені $1 тому",
+	"wdqs-app-footer-updated-seconds": "Дані оновлені $1 секунд тому",
 	"wdqs-app-result-shorturl": "Коротка URL-адреса для результату",
 	"wdqs-app-result-shorturl-title": "Коротка URL-адреса для цього результату",
 	"wdqs-app-result-embed": "Вбудувати результат",
@@ -44,5 +46,6 @@
 	"wdqs-action-render": "Візуалізація результату",
 	"wdqs-action-error-display": "Не вдалося відобразити результат",
 	"wdqs-action-timeout": "Вичерпано ліміт часу, відведеного на виконання запиту",
+	"wdqs-action-malformed-query": "Неправильний запит",
 	"wdqs-result-map-layers-all": "Всі шари"
 }
