@@ -4,7 +4,8 @@
 			"2axterix2",
 			"Macofe",
 			"Rubentl134",
-			"Dgstranz"
+			"Dgstranz",
+			"Koavf"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -28,6 +29,8 @@
 	"wdqs-app-result-shorturl": "URL corta al resultado",
 	"wdqs-app-result-shorturl-title": "URL corta a este resultado",
 	"wdqs-app-result-embed": "Incrustar resultado",
+	"wdqs-app-result-endpoint": "SPARQL punto final",
+	"wdqs-app-result-endpoint-title": "Enlace al SPARQL punto final volviendo el resultado",
 	"wdqs-app-shorturl-page-title": "URL corta a esta página",
 	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o elige una consulta de ejemplo)",
 	"wdqs-app-editor-addprefixes": "Añadir prefijos estándar",
