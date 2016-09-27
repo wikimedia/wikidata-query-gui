@@ -105,6 +105,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			}
 			break;
 		case DATATYPE_DATETIME:
+			if ( !title ) {
+				title = this._i18n( 'wdqs-app-result-formatter-title-datetime', 'Raw ISO timestamp' );
+			}
 			var $dateLabel = $( '<span>' ).text( this._formatDate( value ) );
 			$dateLabel.attr( 'title', title + ': ' + value );
 			$html.append( $dateLabel );
@@ -433,6 +436,25 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		} else {
 			return NaN;
 		}
+	};
+
+	/**
+	 * Get an i18n string
+	 *
+	 * @protected
+	 * @param {string} key for the i18n message
+	 * @param {string} message default text
+	 *
+	 * @return {string}
+	 */
+	SELF.prototype._i18n = function( key, message ) {
+		var i18nMessage = null;
+
+		if ( !$.i18n || ( i18nMessage = $.i18n( key ) ) === key ) {
+			return message;
+		}
+
+		return i18nMessage;
 	};
 
 	return SELF;

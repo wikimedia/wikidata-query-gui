@@ -29,6 +29,7 @@
     "wdqs-app-result-embed": "Embed result",
     "wdqs-app-result-endpoint": "SPARQL endpoint",
     "wdqs-app-result-endpoint-title": "Link to the SPARQL endpoint returning the result",
+    "wdqs-app-result-formatter-title-datetime": "Raw ISO timestamp",
     "wdqs-app-shorturl-page-title": "Short URL to this page",
     "wdqs-app-editor-placeholder": "(Input a SPARQL query or choose a query example)",
     "wdqs-app-editor-addprefixes": "Add Standard Prefixes",
