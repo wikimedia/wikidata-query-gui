@@ -12,11 +12,16 @@
 	"wdqs-app-button-display": "ڏيکاريو",
 	"wdqs-app-button-download": "لاهيو",
 	"wdqs-app-button-link": "ڳنڍڻو",
+	"wdqs-app-help-feedback": "پذيرائي ڏيو!",
+	"wdqs-app-footer-updated": "ڊيٽا $1 اڳ سنواريل",
+	"wdqs-app-footer-updated-seconds": "ڊيٽا $1 سيڪنڊ اڳ سنواريل",
+	"wdqs-dialog-examples-preview-result": "رزلٽ جي پيشِ نگاھ",
 	"wdqs-ve-find": "لھو",
 	"wdqs-ve-show": "ڏيکاريو",
 	"wdqs-ve-with": "سان",
 	"wdqs-ve-and": "۽",
 	"wdqs-ve-anything": "ڪجھ بہ",
 	"wdqs-ve-any": "ڪا",
-	"wdqs-ve-or": "يا"
+	"wdqs-ve-or": "يا",
+	"wdqs-result-map-layers-all": "سڀ تھ"
 }

@@ -45,5 +45,6 @@
 	"wdqs-action-render": "Đang kết xuất kết quả",
 	"wdqs-action-error-display": "Không thể hiển thị kết quả",
 	"wdqs-action-timeout": "Truy vấn đã hết hạn",
+	"wdqs-action-malformed-query": "Truy vấn hư hỏng",
 	"wdqs-result-map-layers-all": "Tất cả các lớp"
 }

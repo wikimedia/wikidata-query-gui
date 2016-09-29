@@ -28,6 +28,7 @@
 	"wdqs-app-result-embed": "Résultat inclus",
 	"wdqs-app-result-endpoint": "point de terminaison SPARQL",
 	"wdqs-app-result-endpoint-title": "Lien vers le point de terminaison SPARQL renvoyant le résultat",
+	"wdqs-app-result-formatter-title-datetime": "Horodatage ISO brut",
 	"wdqs-app-shorturl-page-title": "URL courte de cette page",
 	"wdqs-app-editor-placeholder": "(Entrer une requête SPARQL ou choisir un exemple de requête)",
 	"wdqs-app-editor-addprefixes": "Ajouter des préfixes standards",

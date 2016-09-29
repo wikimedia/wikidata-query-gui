@@ -3,7 +3,8 @@
 		"authors": [
 			"01miki10",
 			"Silvonen",
-			"Stryn"
+			"Stryn",
+			"Pyscowicz"
 		]
 	},
 	"wdqs-app-button-examples": "Esimerkkejä",
@@ -15,6 +16,14 @@
 	"wdqs-app-button-display": "Näytä",
 	"wdqs-app-button-download": "Lataa",
 	"wdqs-app-button-link": "Linkki",
+	"wdqs-app-help-feedback": "Anna palautetta!",
+	"wdqs-app-help-manual": "Käyttöohje",
+	"wdqs-app-footer-updated": "Tiedot päivitetty $1 sitten",
+	"wdqs-app-footer-updated-seconds": "Tiedot päivitetty $1 sekuntia sitten",
+	"wdqs-app-result-shorturl": "Lyhyt URL tulokselle",
+	"wdqs-app-result-embed": "Upota tulos",
+	"wdqs-app-shorturl-page-title": "Lyhyt URL tälle sivulle",
+	"wdqs-dialog-examples-preview-query": "Kyselyn esikatselu",
 	"wdqs-ve-find": "Etsi",
 	"wdqs-ve-show": "Näytä",
 	"wdqs-ve-with": "jossa",
@@ -22,5 +31,6 @@
 	"wdqs-ve-anything": "mikä tahansa",
 	"wdqs-ve-any": "kaikki",
 	"wdqs-ve-or": "tai",
-	"wdqs-ve-subtype": "alatyyppi"
+	"wdqs-ve-subtype": "alatyyppi",
+	"wdqs-result-map-layers-all": "Kaikki tasot"
 }
