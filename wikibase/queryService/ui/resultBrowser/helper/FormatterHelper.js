@@ -325,9 +325,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Checks whether the current cell contains a label
+	 * Checks whether the current cell contains a label:
+         * Has either a language property or is type literal without datatype.
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -336,13 +336,20 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			return false;
 		}
 
-		return cell.hasOwnProperty( 'xml:lang' );
+		if ( cell.hasOwnProperty( 'xml:lang' ) ) {
+			return true;
+		}
+
+		if ( cell.type === 'literal' && !cell.hasOwnProperty( 'datatype' ) ) {
+			return true;
+		}
+
+		return false;
 	};
 
 	/**
 	 * Checks whether the current cell contains a number
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -357,7 +364,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell is date time
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -372,7 +378,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell is a WD entity URI
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -387,7 +392,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell is a color string according to the P465 format
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -399,10 +403,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		return cell.type === 'literal' && cell.value.match( /^[0-9A-F]{6}$/ );
 	};
 
-	/*
+	/**
 	 * Returns an HTML color string for the current cell
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {String}
 	 */
@@ -417,7 +420,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * as documented on https://en.wikipedia.org/wiki/SRGB#The_reverse_transformation,
 	 * to calculate the luminance (Y coordinate in the CIE XYZ model).
 	 *
-	 * @private
 	 * @param {string} color as six hex digits (no #)
 	 * @return {number} luminance of the color, or NaN if the color string is invalid
 	 */

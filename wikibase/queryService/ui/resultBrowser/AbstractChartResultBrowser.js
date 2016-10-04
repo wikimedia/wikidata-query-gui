@@ -25,7 +25,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	/**
 	 * Returns all columns that contain numbers
 	 *
-	 * @private
+	 * @protected
 	 * @return {String[]}
 	 */
 	SELF.prototype._getLabelColumns = function() {
@@ -39,7 +39,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 
 	/**
 	 * Returns all columns that contain numbers
-	 * @private
+	 * @protected
 	 * @return {Number[]}
 	 **/
 	SELF.prototype._getNumberColumns = function() {
@@ -52,7 +52,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	};
 
 	/**
-	 * @private
+	 * @protected
 	 * @return {String[]}
 	 **/
 	SELF.prototype._getColumns = function() {
@@ -60,7 +60,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	};
 
 	/**
-	 * @private
+	 * @protected
 	 * @return {Object[]}
 	 **/
 	SELF.prototype._getRows = function() {
