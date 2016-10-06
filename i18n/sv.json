@@ -29,6 +29,7 @@
 	"wdqs-app-result-embed": "Bädda in resultat",
 	"wdqs-app-result-endpoint": "SPARQL-slutpunkt",
 	"wdqs-app-result-endpoint-title": "Länk till SPARQL-slutpunkten som returnerar resultatet",
+	"wdqs-app-result-formatter-title-datetime": "Rå ISO-tidstämpel",
 	"wdqs-app-shorturl-page-title": "Kort webbadress till denna sida",
 	"wdqs-app-editor-placeholder": "(Skriv en SPARQL-förfrågan eller välj ett exempel)",
 	"wdqs-app-editor-addprefixes": "Lägg till standardprefix",

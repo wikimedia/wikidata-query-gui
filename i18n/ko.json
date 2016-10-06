@@ -26,6 +26,7 @@
 	"wdqs-app-footer-updated-seconds": "$1초 전에 데이터 업데이트됨",
 	"wdqs-app-result-shorturl": "결과에 대한 짧은 URL",
 	"wdqs-app-result-shorturl-title": "이 결과에 대한 짧은 URL",
+	"wdqs-app-result-formatter-title-datetime": "순수 ISO 타임스탬프",
 	"wdqs-app-shorturl-page-title": "이 페이지에 대한 짧은 URL",
 	"wdqs-app-editor-placeholder": "(SPARQL 쿼리를 입력하거나 쿼리 예제를 선택하십시오)",
 	"wdqs-dialog-examples-preview-query": "쿼리 미리보기",

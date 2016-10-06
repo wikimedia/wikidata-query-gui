@@ -27,6 +27,7 @@
 	"wdqs-app-result-embed": "Incrustar resultáu",
 	"wdqs-app-result-endpoint": "Puntu final SPARQL",
 	"wdqs-app-result-endpoint-title": "Enllaz al puntu final SPARQL que devuelve'l resultáu",
+	"wdqs-app-result-formatter-title-datetime": "Marca de tiempu ISO en bruto",
 	"wdqs-app-shorturl-page-title": "URL curtia a esta páxina",
 	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o escueye un exemplu de consulta)",
 	"wdqs-app-editor-addprefixes": "Amestar prefixos estándar",

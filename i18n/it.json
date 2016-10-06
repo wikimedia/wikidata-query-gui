@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Matteocng",
-			"Anto"
+			"Anto",
+			"Selven"
 		]
 	},
 	"wdqs-app-button-examples": "Esempi",
@@ -16,6 +17,7 @@
 	"wdqs-app-button-display": "Aspetto",
 	"wdqs-app-button-download": "Scarica",
 	"wdqs-app-button-link": "Collegamento",
+	"wdqs-app-help-feedback": "Lascia Feedback!",
 	"wdqs-app-help-manual": "Manuale utente",
 	"wdqs-app-help-examples": "Query di esempio",
 	"wdqs-app-help-datamodel": "Modello dati RDF",
@@ -26,6 +28,9 @@
 	"wdqs-app-result-shorturl": "URL breve al risultato",
 	"wdqs-app-result-shorturl-title": "URL breve a questo risultato",
 	"wdqs-app-result-embed": "Incorpora risultato",
+	"wdqs-app-result-endpoint": "Endpoint SPARQL",
+	"wdqs-app-result-endpoint-title": "Il cllegamento al SPARQL endpoint ha restituito il risultato",
+	"wdqs-app-result-formatter-title-datetime": "Timestampa Raw ISO",
 	"wdqs-app-shorturl-page-title": "URL breve a questa pagina",
 	"wdqs-app-editor-placeholder": "(Inserisci una query SPARQL o scegli una query di esempio)",
 	"wdqs-app-editor-addprefixes": "Aggiungi prefissi standard",

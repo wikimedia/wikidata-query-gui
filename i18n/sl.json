@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pickle12"
+		]
+	},
+	"wdqs-app-button-examples": "Vzorci",
+	"wdqs-app-button-prefixes": "Predpone",
+	"wdqs-app-button-tools": "Orodja",
+	"wdqs-app-button-help": "Pomoč",
+	"wdqs-app-button-run": "Zaženi",
+	"wdqs-app-button-run-title": "Pritisni (<CTRL> + <ENTER>)",
+	"wdqs-app-button-clear": "Počisti",
+	"wdqs-app-button-display": "Prikaz",
+	"wdqs-app-button-download": "Prenos",
+	"wdqs-app-button-link": "Povezava",
+	"wdqs-app-help-feedback": "Pošlji povratne informacije",
+	"wdqs-app-help-manual": "Navodila za uporabo",
+	"wdqs-app-help-prefixes": "Seznam predpon",
+	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za vklop samodejnega izpolnjevanja",
+	"wdqs-app-footer-updated": "Podatki posodobljeni pred $1",
+	"wdqs-app-footer-updated-seconds": "Podatki posodobljeni pred $1 sekundami",
+	"wdqs-app-editor-addprefixes": "Dodaj standardne predpone",
+	"wdqs-dialog-examples-preview-query": "Predogled",
+	"wdqs-ve-find": "Poišči",
+	"wdqs-ve-show": "Prikaži",
+	"wdqs-ve-with": "z",
+	"wdqs-ve-and": "in",
+	"wdqs-ve-anything": "karkoli",
+	"wdqs-ve-any": "katerikoli",
+	"wdqs-ve-or": "ali",
+	"wdqs-ve-subtype": "podvrsta",
+	"wdqs-action-render": "Priprava rezultatov",
+	"wdqs-action-error-display": "Prikaz rezultatov ni mogoč",
+	"wdqs-result-map-layers-all": "Vsi sloji"
+}

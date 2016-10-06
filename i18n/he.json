@@ -28,6 +28,7 @@
 	"wdqs-app-result-embed": "הטמעת תוצאה",
 	"wdqs-app-result-endpoint": "נקודת קצה של SPARQL",
 	"wdqs-app-result-endpoint-title": "קישור אל נקודת קצה של SPARQL שמחזירה את התוצאה",
+	"wdqs-app-result-formatter-title-datetime": "חותם זמן ISO גולמי",
 	"wdqs-app-shorturl-page-title": "כתובת URL מקוצרת אל הדף הזה",
 	"wdqs-app-editor-placeholder": "(נא להזין שאילתת SPARQL או לבחור דוגמת שאילתה)",
 	"wdqs-app-editor-addprefixes": "הוספת תחיליות תקניות",

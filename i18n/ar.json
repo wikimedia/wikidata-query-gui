@@ -6,7 +6,8 @@
 			"Mr. Ibrahem",
 			"بدارين",
 			"باسم",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"ديفيد"
 		]
 	},
 	"wdqs-app-button-examples": "أمثلة",
@@ -32,6 +33,7 @@
 	"wdqs-app-result-embed": "تضمين النتيجة",
 	"wdqs-app-result-endpoint": "نقطة نهاية SPARQL",
 	"wdqs-app-result-endpoint-title": "وصلة إلى نقطة نهاية SPARQL التي تقوم بإرجاع نتيجة",
+	"wdqs-app-result-formatter-title-datetime": "الطابع الزمني ل ISO الخام",
 	"wdqs-app-shorturl-page-title": "وصلة URL قصيرة إلى هذه الصفحة",
 	"wdqs-app-editor-placeholder": "(إدخال استعلام SPARQL أو قم بإختيار مثال استعلام)",
 	"wdqs-app-editor-addprefixes": "إضافة البادئات القياسية",
@@ -49,5 +51,6 @@
 	"wdqs-action-render": "التجهيز للنتيجة",
 	"wdqs-action-error-display": "لا يمكن عرض النتيجة",
 	"wdqs-action-timeout": "الاستعلام استغرق الكثير من الوقت",
+	"wdqs-action-malformed-query": "الاستعلام تالف",
 	"wdqs-result-map-layers-all": "كل الطبقات"
 }

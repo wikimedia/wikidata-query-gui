@@ -28,6 +28,7 @@
 	"wdqs-app-result-embed": "嵌入结果",
 	"wdqs-app-result-endpoint": "SPARQL末端",
 	"wdqs-app-result-endpoint-title": "链接至SPARQL末端返回结果",
+	"wdqs-app-result-formatter-title-datetime": "原始ISO时间戳",
 	"wdqs-app-shorturl-page-title": "至此页面的短URL",
 	"wdqs-app-editor-placeholder": "（输入SPARQL查询或选择查询示例）",
 	"wdqs-app-editor-addprefixes": "添加标准前缀",

@@ -27,6 +27,7 @@
 	"wdqs-app-result-embed": "Вметни го исходот",
 	"wdqs-app-result-endpoint": "SPARQL-завршеток",
 	"wdqs-app-result-endpoint-title": "Врска до SPARQL-завршетокоот што го дава исходот",
+	"wdqs-app-result-formatter-title-datetime": "Сиров датум и време по ISO",
 	"wdqs-app-shorturl-page-title": "Кратка URL до страницава",
 	"wdqs-app-editor-placeholder": "(Внесете барање до SPARQL или изберете пример)",
 	"wdqs-app-editor-addprefixes": "Додај стандардни преставки",

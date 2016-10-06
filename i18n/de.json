@@ -28,6 +28,7 @@
 	"wdqs-app-result-embed": "Ergebnis einbetten",
 	"wdqs-app-result-endpoint": "SPARQL-Endpunkt",
 	"wdqs-app-result-endpoint-title": "Link auf den SPARQL-Endpunkt, der das Ergebnis zurückgibt",
+	"wdqs-app-result-formatter-title-datetime": "Roher ISO-Zeitstempel",
 	"wdqs-app-shorturl-page-title": "Kurz-URL auf diese Seite",
 	"wdqs-app-editor-placeholder": "(Eine SPARQL-Abfrage eingeben oder eine Beispielabfrage auswählen)",
 	"wdqs-app-editor-addprefixes": "Standardpräfixe hinzufügen",

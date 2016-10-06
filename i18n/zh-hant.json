@@ -27,6 +27,7 @@
 	"wdqs-app-result-embed": "嵌入結果",
 	"wdqs-app-result-endpoint": "SPARQL端點",
 	"wdqs-app-result-endpoint-title": "連結至SPARQL端點回傳結果",
+	"wdqs-app-result-formatter-title-datetime": "原始ISO時間戳記",
 	"wdqs-app-shorturl-page-title": "連至此頁面的短網址",
 	"wdqs-app-editor-placeholder": "(輸入SPARQL查詢或選擇查詢範例)",
 	"wdqs-app-editor-addprefixes": "增加標準前綴",

@@ -27,6 +27,7 @@
 	"wdqs-app-result-embed": "Нәтиҗәләр кую",
 	"wdqs-app-result-endpoint": "SPARQL мөмкинлеге",
 	"wdqs-app-result-endpoint-title": "Әлеге сорауны нәтиҗәләр белән бергә SPARQL сылтамасы",
+	"wdqs-app-result-formatter-title-datetime": "Чыгыш ISO тамгасы",
 	"wdqs-app-shorturl-page-title": "Әлеге бит өчен кыскача URL",
 	"wdqs-app-editor-placeholder": "(Сорауны SPARQL өчендә яисә бирелгән мисаллардан сайлап башкарыгыз)",
 	"wdqs-app-editor-addprefixes": "Төп префиксларны өстәү",
