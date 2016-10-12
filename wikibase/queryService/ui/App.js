@@ -10,11 +10,6 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
 
-	var QUERY_ERROR_MAP = {
-			'QueryTimeoutException: Query deadline is expired': 'wdqs-action-timeout',
-			'MalformedQueryException: ': 'wdqs-action-malformed-query'
-	};
-
 	/**
 	 * A ui application for the Wikibase query service
 	 *
@@ -603,10 +598,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		$( '#execute-button' ).prop( 'disabled', true );
 		$( '#query-error' ).hide();
 
-		this._sparqlApi.query( this._editor.getValue() ).done(
-				$.proxy( this._handleQueryResult, this ) ).fail( function() {
-			self._handleQueryError( self._sparqlApi.getErrorMessage() );
-		} );
+		this._sparqlApi.query( this._editor.getValue() )
+			.done( $.proxy( this._handleQueryResult, this ) )
+			.fail( $.proxy( this._handleQueryError, this ) );
 
 		$( '.queryUri' ).attr( 'href', self._sparqlApi.getQueryUri() );
 	};
@@ -614,28 +608,33 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 	/**
 	 * @private
 	 */
-	SELF.prototype._handleQueryError = function( error ) {
-		$( '#query-error' ).html( $( '<pre>' ).text( error ) ).show();
-		var shortError = null,
-			errorMessageKey = null,
-			errorToMatch = error.substring( error.indexOf( 'java.util.concurrent.ExecutionException:' ) );
-
-		for ( var errorKey in QUERY_ERROR_MAP ) {
-			if ( errorToMatch.indexOf( errorKey ) !== -1 ) {
-				errorMessageKey = QUERY_ERROR_MAP[ errorKey ];
-			}
-		}
-		if ( errorMessageKey === null || errorMessageKey === 'wdqs-action-malformed-query' ) {
-			shortError = error.match(
-				/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ ).pop().trim();
-		}
-
-		this._actionBar.show( errorMessageKey || '', shortError || '', 'danger' );
+	SELF.prototype._handleQueryError = function() {
 		$( '#execute-button' ).prop( 'disabled', false );
 
-		this._track( 'result.error.' + ( QUERY_ERROR_MAP[ shortError ] || 'unknown' ) );
+		var error = this._sparqlApi.getError(), errorMessageKey = null, codes = this._sparqlApi.ERROR_CODES;
 
-		this._editor.highlightError( error );
+		switch ( error.code ) {
+		case codes.TIMEOUT:
+			errorMessageKey = 'wdqs-action-timeout';
+			break;
+		case codes.MALFORMED:
+			errorMessageKey = 'wdqs-action-malformed-query';
+			break;
+		case codes.SERVER:
+			errorMessageKey = 'wdqs-action-server-error';
+			break;
+		default:
+			errorMessageKey = 'wdqs-action-unknow-error';
+			break;
+		}
+
+		if ( error.debug ) {
+			$( '#query-error' ).html( $( '<pre>' ).text( error.debug ) ).show();
+		}
+
+		this._actionBar.show( errorMessageKey || '', error.message || '', 'danger' );
+		this._track( 'result.error.' + ( errorMessageKey || 'unknown' ) );
+		this._editor.highlightError( error.debug );
 	};
 
 	/**

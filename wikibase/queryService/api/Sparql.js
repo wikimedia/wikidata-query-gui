@@ -7,6 +7,18 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 
 	var SPARQL_SERVICE_URI = '//query.wikidata.org/bigdata/namespace/wdq/sparql';
 
+	var ERROR_CODES = {
+			TIMEOUT: 10,
+			MALFORMED: 20,
+			SERVER: 30,
+			UNKNOWN: 100
+	};
+
+	var ERROR_MAP = {
+		'QueryTimeoutException: Query deadline is expired': ERROR_CODES.TIMEOUT,
+		'MalformedQueryException: ': ERROR_CODES.MALFORMED
+	};
+
 	/**
 	 * SPARQL API for the Wikibase query service
 	 *
@@ -24,6 +36,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	}
 
 	/**
+	 * @property {Object}
+	 */
+	SELF.prototype.ERROR_CODES = ERROR_CODES;
+
+	/**
 	 * @property {Number}
 	 * @private
 	 */
@@ -36,10 +53,10 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	SELF.prototype._executionTime = null;
 
 	/**
-	 * @property {string}
+	 * @property {Object}
 	 * @private
 	 */
-	SELF.prototype._errorMessage = null;
+	SELF.prototype._error = null;
 
 	/**
 	 * @property {Number}
@@ -109,9 +126,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {jQuery.Promise} query
 	 */
 	SELF.prototype.query = function( query ) {
-		var self = this,
-			deferred = $.Deferred(),
-			settings = {
+		var self = this, deferred = $.Deferred(), settings = {
 			headers: {
 				Accept: 'application/sparql-results+json'
 			}
@@ -120,7 +135,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		this._queryUri = this._serviceUri + '?query=' + encodeURIComponent( query );
 
 		this._executionTime = Date.now();
-		$.ajax( this._queryUri, settings ).done( function( data, textStatus, jqXHR ) {
+		$.ajax( this._queryUri, settings ).done( function( data, textStatus, request ) {
 			self._executionTime = Date.now() - self._executionTime;
 
 			if ( typeof data.boolean === 'boolean' ) {
@@ -131,11 +146,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			self._rawData = data;
 
 			deferred.resolve();
-		} ).fail( function( jqXHR ) {
+		} ).fail( function( request ) {
 			self._executionTime = null;
 			self._rawData = null;
 			self._resultLength = null;
-			self._generateErrorMessage( jqXHR );
+			self._generateErrorMessage( request );
 
 			deferred.reject();
 		} );
@@ -146,18 +161,41 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	/**
 	 * Get execution time in ms of the submitted query
 	 */
-	SELF.prototype._generateErrorMessage = function( jqXHR ) {
-		var message = 'ERROR: ';
+	SELF.prototype._generateErrorMessage = function( request, options, exception ) {
+		var error = {
+			code: null,
+			message: null,
+			debug: request.responseText
+		};
 
-		if ( jqXHR.status === 0 ) {
-			message += 'Could not contact server';
+		if ( request.status === 0 ) {
+			error.code = ERROR_CODES.SERVER;
+			error.message = exception;
 		} else {
-			message += jqXHR.responseText;
-			if ( jqXHR.responseText.match( /Query deadline is expired/ ) ) {
-				message = 'QUERY TIMEOUT\n' + message;
+
+			try {
+				var errorToMatch = error.debug.substring( error.debug
+						.indexOf( 'java.util.concurrent.ExecutionException:' ) );
+
+				for ( var errorKey in ERROR_MAP ) {
+					if ( errorToMatch.indexOf( errorKey ) !== -1 ) {
+						error.code = ERROR_MAP[ errorKey ];
+					}
+				}
+
+				if ( error.code === null || error.code === ERROR_CODES.MALFORMED ) {
+					error.message = error.debug
+							.match(
+									/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ )
+							.pop().trim();
+				}
+
+			} catch ( e ) {
+				error.code = ERROR_CODES.UNKNOWN;
 			}
 		}
-		this._errorMessage = message;
+
+		this._error = error;
 	};
 
 	/**
@@ -170,12 +208,12 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	};
 
 	/**
-	 * Get error message of the submitted query if it has failed
+	 * Get error of the submitted query if it has failed
 	 *
-	 * @return {Number}
+	 * @return {object}
 	 */
-	SELF.prototype.getErrorMessage = function() {
-		return this._errorMessage;
+	SELF.prototype.getError = function() {
+		return this._error;
 	};
 
 	/**

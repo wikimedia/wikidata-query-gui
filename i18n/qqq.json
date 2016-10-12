@@ -50,5 +50,7 @@
 	"wdqs-action-error-display": "Label for progressbar",
 	"wdqs-action-timeout": "Label for progressbar",
 	"wdqs-action-malformed-query": "Label for progressbar",
+    "wdqs-action-server-error": "Label for server error",
+	"wdqs-action-unknow-error": "Label for unknown error",
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view"
 }
