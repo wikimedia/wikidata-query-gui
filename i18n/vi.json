@@ -28,6 +28,7 @@
 	"wdqs-app-result-embed": "Nhúng kết quả",
 	"wdqs-app-result-endpoint": "Điểm cuối SPARQL",
 	"wdqs-app-result-endpoint-title": "Liên kết đến điểm cuối SPARQL trả về kết quả",
+	"wdqs-app-result-formatter-title-datetime": "Dấu thời gian ISO thô",
 	"wdqs-app-shorturl-page-title": "URL ngắn gọn đến trang này",
 	"wdqs-app-editor-placeholder": "(Nhập truy vấn SPARQL hoặc chọn một truy vấn mẫu)",
 	"wdqs-app-editor-addprefixes": "Thêm tiền tố chuyển",
