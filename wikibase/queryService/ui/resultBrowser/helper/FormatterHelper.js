@@ -217,6 +217,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {string}
 	 */
 	SELF.prototype.getCommonsResourceFileName = function( url ) {
+		// FIXME: Dots in the constant must be escaped before using it as a regex!
 		var regExp = new RegExp( COMMONS_FILE_PATH, 'ig' );
 
 		return decodeURIComponent( url.replace( regExp, '' ) );
@@ -313,25 +314,18 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 	/**
 	 * Checks whether the current cell contains a label:
-         * Has either a language property or is type literal without datatype.
+	 * Has either a language property, or has the "literal" type without a datatype.
 	 *
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
 	SELF.prototype.isLabel = function( cell ) {
-		if ( !cell || !cell.hasOwnProperty ) {
+		if ( !cell ) {
 			return false;
 		}
 
-		if ( cell.hasOwnProperty( 'xml:lang' ) ) {
-			return true;
-		}
-
-		if ( cell.type === 'literal' && !cell.hasOwnProperty( 'datatype' ) ) {
-			return true;
-		}
-
-		return false;
+		return 'xml:lang' in cell
+			|| ( cell.type === 'literal' && !cell.datatype );
 	};
 
 	/**

@@ -285,6 +285,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 */
 	SELF.prototype._filterTable = function() {
 		var filter = this._$element.find( '.tableFilter' ),
+			// FIXME: This crashs when the user enters an invalid regex. e.g. ".**".
 			filterRegex = new RegExp( filter.val(), 'i' );
 
 		var tags = this._$element.find( '.tagFilter' ).tags().getTags();

@@ -601,7 +601,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._initResultBrowserMenu = function() {
 		$.each( this._resultBrowsers, function( key, b ) {
 			var $element = $( '<li><a class="result-browser" href="#">' +
-					'<span class="' + b.icon.split( '-' ).shift() + ' ' + b.icon + '"></span>' + b.label +
+					'<span class="' + b.icon.split( '-', 1 )[0] + ' ' + b.icon + '"></span>' + b.label +
 					'</a></li>' );
 			$element.appendTo( $( '#result-browser-menu' ) );
 			b.$element = $element;
