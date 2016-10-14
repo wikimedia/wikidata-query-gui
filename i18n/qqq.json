@@ -46,9 +46,11 @@
 	"wdqs-ve-or": "Label for logical or\n{{Identical|Or}}",
 	"wdqs-ve-subtype": "Label for subtype in ontology\n{{Identical|Subtype}}",
 	"wdqs-action-query": "Label for progressbar",
-	"wdqs-action-render": "Label for progressbar",
-	"wdqs-action-error-display": "Label for progressbar",
-	"wdqs-action-timeout": "Label for progressbar",
-	"wdqs-action-malformed-query": "Label for progressbar",
+	"wdqs-action-render": "Label for progressbar when rendering",
+	"wdqs-action-error-display": "Label for progressbar when displaying error",
+	"wdqs-action-timeout": "Label for progressbar on timeout",
+	"wdqs-action-malformed-query": "Label for progressbar on syntax error",
+    "wdqs-action-server-error": "Label for progressbar displaying server error",
+    "wdqs-action-unknow-error": "Label for progressbar displaying unknown error",
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view"
 }
