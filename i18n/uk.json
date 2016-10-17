@@ -3,7 +3,8 @@
 		"authors": [
 			"Laboramus",
 			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"Олександр"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -47,5 +48,7 @@
 	"wdqs-action-error-display": "Не вдалося відобразити результат",
 	"wdqs-action-timeout": "Вичерпано ліміт часу, відведеного на виконання запиту",
 	"wdqs-action-malformed-query": "Неправильний запит",
+	"wdqs-action-server-error": "Помилка сервера",
+	"wdqs-action-unknow-error": "Невідома помилка",
 	"wdqs-result-map-layers-all": "Всі шари"
 }

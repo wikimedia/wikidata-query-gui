@@ -48,5 +48,7 @@
 	"wdqs-action-error-display": "Det gick inte att visa resultatet",
 	"wdqs-action-timeout": "Förfrågan nådde tidsgränsen",
 	"wdqs-action-malformed-query": "Förfrågan är felformulerad",
+	"wdqs-action-server-error": "Serverfel",
+	"wdqs-action-unknow-error": "Okänt fel",
 	"wdqs-result-map-layers-all": "Alla lager"
 }

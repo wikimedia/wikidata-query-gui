@@ -45,5 +45,7 @@
 	"wdqs-action-error-display": "შედეგის ასახვა ვერ ხერხდება",
 	"wdqs-action-timeout": "მოთხოვნამ ძალიან დიდი დრო წაიღო",
 	"wdqs-action-malformed-query": "მოთხოვნა ცუდადაა ფორმირებული",
+	"wdqs-action-server-error": "სერვერის შეცდომა",
+	"wdqs-action-unknow-error": "უცნობი შეცდომა",
 	"wdqs-result-map-layers-all": "ყველა შრე"
 }

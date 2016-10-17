@@ -46,5 +46,7 @@
 	"wdqs-action-error-display": "Не можам да го прикажам исходот",
 	"wdqs-action-timeout": "Достигнато е временското ограничување на барањето",
 	"wdqs-action-malformed-query": "Барањето е лошо срочено",
+	"wdqs-action-server-error": "Грешка во опслужувачот",
+	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-result-map-layers-all": "Сите слоеви"
 }

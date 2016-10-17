@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Arthur2e5"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -47,5 +48,7 @@
 	"wdqs-action-error-display": "无法显示结果",
 	"wdqs-action-timeout": "已达到查询超时限制",
 	"wdqs-action-malformed-query": "查询有缺陷",
+	"wdqs-action-server-error": "服务器错误",
+	"wdqs-action-unknow-error": "未知错误",
 	"wdqs-result-map-layers-all": "所有图层"
 }

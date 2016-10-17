@@ -46,5 +46,7 @@
 	"wdqs-action-error-display": "無法顯示結果",
 	"wdqs-action-timeout": "已達查詢逾時限制",
 	"wdqs-action-malformed-query": "查詢異常",
+	"wdqs-action-server-error": "伺服器錯誤",
+	"wdqs-action-unknow-error": "不明錯誤",
 	"wdqs-result-map-layers-all": "所有圖層"
 }

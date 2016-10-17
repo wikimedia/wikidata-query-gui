@@ -27,5 +27,7 @@
 	"wdqs-ve-or": "lub",
 	"wdqs-ve-subtype": "podtyp",
 	"wdqs-action-error-display": "Nie można wyświetlić wyniku",
+	"wdqs-action-server-error": "Błąd serwera",
+	"wdqs-action-unknow-error": "Nieznany błąd",
 	"wdqs-result-map-layers-all": "Wszystkie warstwy"
 }

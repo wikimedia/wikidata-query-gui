@@ -41,5 +41,7 @@
 	"wdqs-ve-anything": "што-небудзь",
 	"wdqs-ve-any": "любая",
 	"wdqs-ve-or": "ці",
-	"wdqs-ve-subtype": "падтып"
+	"wdqs-ve-subtype": "падтып",
+	"wdqs-action-query": "Выкананьне запыту",
+	"wdqs-action-render": "Візуалізацыя выніку"
 }

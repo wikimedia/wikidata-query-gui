@@ -49,5 +49,7 @@
 	"wdqs-action-error-display": "Impossibile visualizzare il risultato",
 	"wdqs-action-timeout": "Limite timeout per la query raggiunto",
 	"wdqs-action-malformed-query": "Query non valida",
+	"wdqs-action-server-error": "Errore del server",
+	"wdqs-action-unknow-error": "Errore sconosciuto",
 	"wdqs-result-map-layers-all": "Tutti i livelli"
 }

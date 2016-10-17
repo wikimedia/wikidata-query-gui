@@ -47,5 +47,7 @@
 	"wdqs-action-error-display": "ফলাফল দেখানো সম্ভব নয়",
 	"wdqs-action-timeout": "ক্যোয়ারীর সময়সীমা উত্তীর্ণের সীমাতে পৌঁছেছে",
 	"wdqs-action-malformed-query": "ত্রুটিপূর্ণ অনুসন্ধান",
+	"wdqs-action-server-error": "সার্ভার ত্রুটি",
+	"wdqs-action-unknow-error": "অজানা ত্রুটি",
 	"wdqs-result-map-layers-all": "সব স্তর"
 }
