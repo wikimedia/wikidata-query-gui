@@ -146,11 +146,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			self._rawData = data;
 
 			deferred.resolve();
-		} ).fail( function( request ) {
+		} ).fail( function( request, options, exception ) {
 			self._executionTime = null;
 			self._rawData = null;
 			self._resultLength = null;
-			self._generateErrorMessage( request );
+			self._generateErrorMessage( request, options, exception );
 
 			deferred.reject();
 		} );
@@ -163,36 +163,35 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 */
 	SELF.prototype._generateErrorMessage = function( request, options, exception ) {
 		var error = {
-			code: null,
+			code: ERROR_CODES.UNKNOWN,
 			message: null,
 			debug: request.responseText
 		};
 
-		if ( request.status === 0 ) {
+		if ( request.status === 0 || exception ) {
 			error.code = ERROR_CODES.SERVER;
-			error.message = exception;
-		} else {
+			error.message = exception.message;
+		}
 
-			try {
-				var errorToMatch = error.debug.substring( error.debug
-						.indexOf( 'java.util.concurrent.ExecutionException:' ) );
+		try {//extract error from server response
+			var errorToMatch = error.debug.substring( error.debug
+					.indexOf( 'java.util.concurrent.ExecutionException:' ) );
 
-				for ( var errorKey in ERROR_MAP ) {
-					if ( errorToMatch.indexOf( errorKey ) !== -1 ) {
-						error.code = ERROR_MAP[ errorKey ];
-					}
+			for ( var errorKey in ERROR_MAP ) {
+				if ( errorToMatch.indexOf( errorKey ) !== -1 ) {
+					error.code = ERROR_MAP[ errorKey ];
+					error.message = null;
 				}
-
-				if ( error.code === null || error.code === ERROR_CODES.MALFORMED ) {
-					error.message = error.debug
-							.match(
-									/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ )
-							.pop().trim();
-				}
-
-			} catch ( e ) {
-				error.code = ERROR_CODES.UNKNOWN;
 			}
+
+			if ( error.code === ERROR_CODES.UNKNOWN || error.code === ERROR_CODES.MALFORMED ) {
+				error.message = error.debug
+						.match(
+								/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ )
+						.pop().trim();
+			}
+
+		} catch ( e ) {
 		}
 
 		this._error = error;
