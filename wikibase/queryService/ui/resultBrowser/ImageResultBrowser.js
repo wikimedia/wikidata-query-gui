@@ -51,10 +51,11 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	 * @private
 	 **/
 	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
-		var $image = $( '<a data-gallery="g">' ).click(
-				this._getFormatter().handleCommonResourceItem ).attr( 'data-title', title ).attr(
-				'href', url ).append( $( '<img>' ).attr( 'src', thumbnailUrl ) ), $summary = this
-				._getFormatter().formatRow( row );
+		var $image = $( '<a>' )
+				.click( this._getFormatter().handleCommonResourceItem )
+				.attr( { href: url, 'data-gallery': 'g', 'data-title': title } )
+				.append( $( '<img>' ).attr( 'src', thumbnailUrl ) ),
+			$summary = this._getFormatter().formatRow( row );
 
 		return $( '<div class="item">' ).append( $image, $summary );
 	};

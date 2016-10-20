@@ -312,9 +312,9 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 			select = $( '<select>' ).attr( 'class', 'form-control' ).append(
 					$( '<option>' ).text( category ) ).appendTo( container );
 			for ( ns in namespaces[category] ) {
-				select.append( $( '<option>' ).text( ns ).attr( {
-					value: namespaces[category][ns]
-				} ) );
+				select.append(
+					$( '<option>' ).text( ns ).attr( 'value', namespaces[category][ns] )
+				);
 			}
 		}
 	};
@@ -432,87 +432,84 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 		var self = this;
 
 		$( '.visual-editor .help' )
-				.clickover(
-						{
-							placement: 'bottom',
-							'global_close': true,
-							'html': true,
-							'content': function() {
-								return $( '<div>' )
-										.append(
-												$( '<span>' )
-														.html(
-																'This is a basic textual representation of the SPARQL query.<br/>If your query doesn\'t work well, please give ' ),
-												$( '<a>' )
-														.text( 'feedback here!' )
-														.attr( 'href',
-																'https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new' )
-														.attr( 'target', '_B' ) );
-							}
-						} );
+		.clickover( {
+			placement: 'bottom',
+			'global_close': true,
+			'html': true,
+			'content': function() {
+				return $( '<div>' ).append(
+					$( '<span>' ).html(
+						'This is a basic textual representation of the SPARQL query.<br/>If your query doesn\'t work well, please give '
+					),
+					$( '<a>' )
+					.text( 'feedback here!' )
+					.attr( {
+						href: 'https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new',
+						target: '_B'
+					} )
+				);
+			}
+		} );
 
-		$( '.shortUrlTrigger.query' ).clickover(
-				{
-					placement: 'left',
-					'global_close': true,
-					'html': true,
-					'content': function() {
-						self._updateQueryUrl();
-						return '<iframe class="shortUrl" src="' + SHORTURL_API +
-								encodeURIComponent( window.location ) + '">';
-					}
-				} ).click( function() {
-					self._track( 'buttonClick.shortUrlQuery' );
+		$( '.shortUrlTrigger.query' ).clickover( {
+			placement: 'left',
+			'global_close': true,
+			'html': true,
+			'content': function() {
+				self._updateQueryUrl();
+				return '<iframe class="shortUrl" src="' + SHORTURL_API
+					+ encodeURIComponent( window.location ) + '">';
+			}
+		} ).click( function() {
+			self._track( 'buttonClick.shortUrlQuery' );
+		} );
+
+		$( '.shortUrlTrigger.result' ).clickover( {
+			placement: 'left',
+			'global_close': true,
+			'html': true,
+			'content': function() {
+				self._updateQueryUrl();
+				var $link = $( '<a>' ).attr( 'href', 'embed.html' + window.location.hash );
+				return '<iframe class="shortUrl" src="' + SHORTURL_API
+					+ encodeURIComponent( $link[0].href ) + '">';
+			}
+		} ).click( function() {
+			self._track( 'buttonClick.shortUrlResult' );
+		} );
+
+		$( '.embed.result' ).clickover( {
+			placement: 'left',
+			'global_close': true,
+			'html': true,
+			'content': function() {
+				self._updateQueryUrl();
+
+				var b = '';
+				if ( self._selectedResultBrowser ) {
+					b = '#defaultView:' + self._selectedResultBrowser + '\n';
+					b = encodeURIComponent( b );
+				}
+				var $link = $( '<a>' )
+					.attr( 'href', 'embed.html#' + b + window.location.hash.substring( 1 ) );
+				var $html = $( '<textarea>' ).text(
+					'<iframe style="width:80vw; height:50vh;" scrolling="yes" frameborder="0" src="'
+					+ $link[0].href + '">'
+				).click( function() {
+					$html.select();
 				} );
 
-		$( '.shortUrlTrigger.result' ).clickover(
-				{
-					placement: 'left',
-					'global_close': true,
-					'html': true,
-					'content': function() {
-						self._updateQueryUrl();
-						var $link = $( '<a>' ).attr( 'href', 'embed.html' + window.location.hash );
-						return '<iframe class="shortUrl" src="' + SHORTURL_API +
-								encodeURIComponent( $link[0].href ) + '">';
-					}
-				} ).click( function() {
-					self._track( 'buttonClick.shortUrlResult' );
-				} );
-
-		$( '.embed.result' ).clickover(
-				{
-					placement: 'left',
-					'global_close': true,
-					'html': true,
-					'content': function() {
-						self._updateQueryUrl();
-
-						var b = '';
-						if ( self._selectedResultBrowser ) {
-							b = '#defaultView:' + self._selectedResultBrowser + '\n';
-							b = encodeURIComponent( b );
-						}
-						var $link = $( '<a>' ).attr( 'href',
-								'embed.html#' + b + window.location.hash.substring( 1 ) );
-						var $html = $( '<textarea>' ).text(
-								'<iframe style="width:80vw; height:50vh;" scrolling="yes" frameborder="0" src="' +
-										$link[0].href + '">' ).click( function() {
-							$html.select();
-						} );
-
-						return $html;
-					}
-				} ).click( function() {
-					self._track( 'buttonClick.embedResult' );
-				} );
+				return $html;
+			}
+		} ).click( function() {
+			self._track( 'buttonClick.embedResult' );
+		} );
 	};
 
 	/**
 	 * @private
 	 */
 	SELF.prototype._initHandlersDownloads = function() {
-
 		var api = this._sparqlApi;
 		var DOWNLOAD_FORMATS = {
 			'CSV': {

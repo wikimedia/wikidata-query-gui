@@ -469,11 +469,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		var self = this;
 		this._getLabel( entity ).done( function( label, id, description, type ) {
-			var $link = $( '<a>' ).attr( 'href', '#' );
-			$link.text( label );
-			$link.attr( 'data-type', type );
-			$link.attr( 'data-id', id );
-			$link.appendTo( $label );
+			var $link = $( '<a>' )
+				.text( label )
+				.attr( { 'data-id': id, 'data-type': type, href: '#' } )
+				.appendTo( $label );
 
 			$label.tooltip( {
 				'title': '(' + id + ') ' + description

@@ -52,9 +52,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {jQuery} $element target element
 	 */
 	SELF.prototype.draw = function( $element ) {
-		var container = $( '<div>' ).attr( {
-			'id': 'map'
-		} ).height( '100vh' );
+		var container = $( '<div>' ).attr( 'id', 'map' ).height( '100vh' );
 
 		$element.html( container );
 

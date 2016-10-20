@@ -102,15 +102,16 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 			};
 		}
 
-		var diameter = Math.min( $( window ).height(), $( window ).width() ), format = d3
-				.format( ',d' ), color = d3.scale.category20c();
+		var diameter = Math.min( $( window ).height(), $( window ).width() ),
+			format = d3.format( ',d' ),
+			color = d3.scale.category20c(),
+			bubble = d3.layout.pack().sort( null ).size( [ diameter, diameter ] ).padding( 1.5 );
 
-		var bubble = d3.layout.pack().sort( null ).size( [
-				diameter, diameter
-		] ).padding( 1.5 );
-
-		var svg = d3.select( $element[0] ).append( 'svg' ).attr( 'width', diameter ).attr(
-				'height', diameter ).attr( 'class', 'bubble' );
+		var svg = d3.select( $element[0] ).append( 'svg' ).attr( {
+			'class': 'bubble',
+			width: diameter,
+			height: diameter
+		} );
 
 		var node = svg.selectAll( '.node' ).data(
 				bubble.nodes( classes( root ) ).filter( function( d ) {

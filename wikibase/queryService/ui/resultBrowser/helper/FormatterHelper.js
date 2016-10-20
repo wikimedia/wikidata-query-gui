@@ -80,8 +80,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 		switch ( data.datatype || data.type ) {
 		case TYPE_URI:
-			var $link = $( '<a>' ).attr( 'href', value ).attr( 'target', '_blank' ).attr( 'title',
-					title );
+			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank' } );
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
@@ -247,13 +246,17 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {jQuery}
 	 */
 	SELF.prototype.createGalleryButton = function( url, galleryId ) {
-		var fileName = this.getCommonsResourceFileName( url ), thumbnail = this
-				.getCommonsResourceFileNameThumbnail( url, 900 );
+		var fileName = this.getCommonsResourceFileName( url ),
+			thumbnail = this.getCommonsResourceFileNameThumbnail( url, 900 );
 
-		var $button = $(
-				'<a title="Show Gallery" class="gallery glyphicon glyphicon-picture" aria-hidden="true">' )
-				.attr( 'href', thumbnail ).attr( 'data-gallery', 'G_' + galleryId ).attr(
-						'data-title', decodeURIComponent( fileName ) );
+		var $button = $( '<a>' ).attr( {
+			title: 'Show Gallery',
+			href: thumbnail,
+			'aria-hidden': 'true',
+			'class': 'gallery glyphicon glyphicon-picture',
+			'data-gallery': 'G_' + galleryId,
+			'data-title': decodeURIComponent( fileName )
+		} );
 
 		$button.click( this.handleCommonResourceItem );
 
@@ -267,7 +270,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {string}
 	 */
 	SELF.prototype.abbreviateUri = function( uri ) {
-		var nsGroup, ns, NAMESPACE_SHORTCUTS = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS;
+		var NAMESPACE_SHORTCUTS = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS,
+			nsGroup,
+			ns;
 
 		for ( nsGroup in NAMESPACE_SHORTCUTS ) {
 			for ( ns in NAMESPACE_SHORTCUTS[nsGroup] ) {
