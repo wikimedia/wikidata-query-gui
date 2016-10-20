@@ -95,7 +95,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._getPrefixFromWord = function( word ) {
-		return word.split( ':' ).shift();
+		return word.split( ':', 1 )[0];
 	};
 
 	SELF.prototype._getTermFromWord = function( word ) {

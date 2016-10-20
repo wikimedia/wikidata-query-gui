@@ -77,7 +77,7 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		}
 
 		var prefixes = this._extractPrefixes( this._editor.doc.getValue() );
-		var prefix = token.split( ':' ).shift();
+		var prefix = token.split( ':', 1 )[0];
 		var entityId = token.split( ':' ).pop();
 
 		if ( !prefixes[prefix] ) {
