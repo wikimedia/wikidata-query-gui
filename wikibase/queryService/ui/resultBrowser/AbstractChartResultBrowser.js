@@ -52,7 +52,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	};
 
 	/**
-	 * @private
+	 * @protected
 	 * @return {String[]}
 	 **/
 	SELF.prototype._getColumns = function() {
@@ -60,7 +60,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	};
 
 	/**
-	 * @private
+	 * @protected
 	 * @return {Object[]}
 	 **/
 	SELF.prototype._getRows = function() {

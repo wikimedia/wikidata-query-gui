@@ -133,7 +133,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * @param {string} dateTime
 	 * @return {string}
-	 * @protected
+	 * @private
 	 */
 	SELF.prototype._formatDate = function( dateTime ) {
 		var isBce = false,
@@ -327,7 +327,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell contains a label
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -342,7 +341,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell contains a number
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -357,7 +355,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell is date time
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -372,7 +369,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell is a WD entity URI
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -387,7 +383,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Checks whether the current cell is a color string according to the P465 format
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
@@ -399,10 +394,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		return cell.type === 'literal' && cell.value.match( /^[0-9A-F]{6}$/ );
 	};
 
-	/*
+	/**
 	 * Returns an HTML color string for the current cell
 	 *
-	 * @private
 	 * @param {Object} cell
 	 * @return {String}
 	 */
@@ -417,7 +411,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * as documented on https://en.wikipedia.org/wiki/SRGB#The_reverse_transformation,
 	 * to calculate the luminance (Y coordinate in the CIE XYZ model).
 	 *
-	 * @private
 	 * @param {string} color as six hex digits (no #)
 	 * @return {number} luminance of the color, or NaN if the color string is invalid
 	 */
@@ -441,7 +434,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Get an i18n string
 	 *
-	 * @protected
+	 * @private
 	 * @param {string} key for the i18n message
 	 * @param {string} message default text
 	 *
