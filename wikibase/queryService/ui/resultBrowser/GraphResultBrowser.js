@@ -49,12 +49,19 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	SELF.prototype.draw = function( $element ) {
 		var $container = $( '<div>' ).height( '100vh' );
 
-		var network = new vis.Network( $container[0], this._getData(), GRAPH_OPTIONS );
+		var data = this._getData();
+		var network = new vis.Network( $container[0], data, GRAPH_OPTIONS );
 
 		network.on( 'doubleClick', function( properties ) {
 			if ( properties.nodes.length === 1 ) {
 				window.open( properties.nodes[0], '_blank' );
 			}
+		} );
+
+		var nodeBrowser = new wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser( data.nodes, data.edges );
+		network.on( 'click', function( properties ) {
+			var nodeId = properties.nodes[0] || null;
+			nodeBrowser.browse( nodeId );
 		} );
 
 		$container.prepend( this._createToolbar( network ) );
