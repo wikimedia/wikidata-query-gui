@@ -186,10 +186,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 */
 	SELF.prototype.isExploreUrl = function( url ) {
-		if ( url && typeof url === 'string' ) {
-			return url.startsWith( EXPLORE_URL );
-		}
-		return false;
+		return typeof url === 'string' && url.startsWith( EXPLORE_URL );
 	};
 
 	/**
@@ -286,14 +283,11 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Handler for explore links
 	 */
 	SELF.prototype.handleExploreItem = function( e ) {
-		var id,
-			url = $( e.target ).attr( 'href' ) || '',
-			match;
+		var url = $( e.target ).attr( 'href' );
 
 		e.preventDefault();
 
-		match = url.match( EXPLORE_URL + '(.+)' );
-		if ( !match ) {
+		if ( !this.isExploreUrl( url ) ) {
 			return false;
 		}
 
@@ -302,10 +296,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		$explorer.empty();
 		$( '.explorer-panel' ).show();
 
-		id = match[1];
 		mw.config = {
 			get: function() {
-				return 'Q' + id;
+				return url.replace( EXPLORE_URL, 'Q' );
 			}
 		};
 		EXPLORER( $, mw, $explorer );
