@@ -228,16 +228,17 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 */
 	SELF.prototype._addExample = function( title, query, href, tags ) {
 		var self = this,
-			link = $( '<a title="Select" data-dismiss="modal">' ).text( title ).attr( 'href', '#' )
+			$link = $( '<a title="Select" data-dismiss="modal">' ).text( title ).attr( 'href', '#' )
 					.click( function() {
 						self._callback( query, title );
 						self._track( 'select' );
 					} ),
-			edit = $( '<a title="Edit">' ).attr( 'href', href ).attr( 'target', '_blank' )
-					.append( '<span>' ).addClass( 'glyphicon glyphicon-pencil' )
-					.click( function() {
-						self._track( 'edit' );
-					} ),
+			$edit = $( '<a>' )
+				.attr( { title: 'Edit', href: href, target: '_blank' } )
+				.append( '<span>' ).addClass( 'glyphicon glyphicon-pencil' )
+				.click( function() {
+					self._track( 'edit' );
+				} ),
 
 			source = $( '<span>' ).addClass( 'glyphicon glyphicon-eye-open' ).popover(
 				{
@@ -271,7 +272,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		tags = $( '<td>' ).text( tags.join( '|' ) ).hide();
 
 		var example = $( '<tr>' );
-		example.append( $( '<td>' ).append( link ).append( ' ', edit ) );
+		example.append( $( '<td>' ).append( $link ).append( ' ', $edit ) );
 		example.append( $( '<td>' ).append( preview ) );
 		example.append( $( '<td>' ).append( source ) );
 		example.append( tags );
