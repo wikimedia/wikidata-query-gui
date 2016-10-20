@@ -14,8 +14,7 @@
 			$.i18n().load( 'i18n/' + lang + '.json', lang )
 		).done( function() {
 			$( '.wikibase-queryservice' ).i18n();
-			$( 'html' ).attr( 'lang', lang );
-			$( 'html' ).attr( 'dir', $.uls.data.getDir( lang ) );
+			$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
 		} );
 	}
 

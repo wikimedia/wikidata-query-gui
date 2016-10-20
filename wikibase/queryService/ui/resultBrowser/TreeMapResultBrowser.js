@@ -203,11 +203,14 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 				function( d ) {
 					return color( d.parent.name );
 				} );
-		childEnterTransition.append( 'foreignObject' ).attr( 'class', 'foreignObject' ).attr(
-				'width', function( d ) {
-					return Math.max( 0.01, d.dx );
-				} ).attr( 'height', function( d ) {
-			return Math.max( 0.01, d.dy );
+		childEnterTransition.append( 'foreignObject' ).attr( {
+			'class': 'foreignObject',
+			width: function( d ) {
+				return Math.max( 0.01, d.dx );
+			},
+			height: function( d ) {
+				return Math.max( 0.01, d.dy );
+			}
 		} ).append( 'xhtml:body' ).attr( 'class', 'labelbody' ).append( 'div' ).attr( 'class',
 				'label' ).text( function( d ) {
 			return d.name;

@@ -29,8 +29,8 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	 * @return {String[]}
 	 */
 	SELF.prototype._getLabelColumns = function() {
-		var self = this;
-		var row = self._getRows()[0];
+		var self = this,
+			row = self._getRows()[0];
 
 		return self._getColumns().filter( function( column ) {
 			return self._getFormatter().isLabel( row[column] );
@@ -43,8 +43,8 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	 * @return {Number[]}
 	 **/
 	SELF.prototype._getNumberColumns = function() {
-		var self = this;
-		var row = self._getRows()[0];
+		var self = this,
+			row = self._getRows()[0];
 
 		return self._getColumns().filter( function( column ) {
 			return self._getFormatter().isNumber( row[column] );
