@@ -441,7 +441,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {string}
 	 */
 	SELF.prototype._i18n = function( key, message ) {
-		var i18nMessage = null;
+		var i18nMessage;
 
 		if ( !$.i18n || ( i18nMessage = $.i18n( key ) ) === key ) {
 			return message;
