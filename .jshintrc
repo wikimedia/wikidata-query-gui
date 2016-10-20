@@ -27,7 +27,6 @@
 	"browser": true,
 
 	"globals": {
-		"mediaWiki": true,
 		"jQuery": false,
 		"wikibase": true,
 		"CodeMirror": false,

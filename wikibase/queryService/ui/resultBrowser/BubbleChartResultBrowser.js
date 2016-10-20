@@ -2,7 +2,6 @@ var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
-window.mediaWiki = window.mediaWiki || {};
 
 wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $, d3, window ) {
 	'use strict';

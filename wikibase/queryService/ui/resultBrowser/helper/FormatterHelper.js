@@ -3,9 +3,8 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultBrowser.helper || {};
-window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, mw, moment ) {
+wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, moment ) {
 	'use strict';
 
 	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
@@ -289,24 +288,14 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.handleExploreItem = function( e ) {
 		var url = $( e.target ).attr( 'href' );
-
 		e.preventDefault();
 
-		if ( !this.isExploreUrl( url ) ) {
-			return false;
-		}
+		var lang = $.i18n && $.i18n().locale || 'en',
+			query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
+			embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
 
-		var $explorer = $( '.explorer' );
-
-		$explorer.empty();
+		$( '.explorer-panel .panel-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
 		$( '.explorer-panel' ).show();
-
-		mw.config = {
-			get: function() {
-				return url.replace( EXPLORE_URL, 'Q' );
-			}
-		};
-		EXPLORER( $, mw, $explorer );
 
 		return false;
 	};
@@ -449,4 +438,4 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	return SELF;
-}( jQuery, mediaWiki, moment ) );
+}( jQuery, moment ) );

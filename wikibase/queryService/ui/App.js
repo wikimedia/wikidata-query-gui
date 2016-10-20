@@ -1,9 +1,8 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _, Cookies, moment ) {
+wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, moment ) {
 	'use strict';
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
@@ -791,4 +790,4 @@ wikibase.queryService.ui.App = ( function( $, mw, download, EXPLORER, window, _,
 
 	return SELF;
 
-}( jQuery, mediaWiki, download, EXPLORER, window, _, Cookies, moment ) );
+}( jQuery, download, window, _, Cookies, moment ) );
