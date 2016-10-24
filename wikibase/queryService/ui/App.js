@@ -99,56 +99,84 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._resultBrowsers = {
 		Table: {
-			icon: 'th-list',
+			icon: 'glyphicon-th-list',
 			label: 'Table',
 			class: 'TableResultBrowser',
 			object: null,
 			$element: null
 		},
 		ImageGrid: {
-			icon: 'picture',
+			icon: 'glyphicon-picture',
 			label: 'Image Grid',
 			class: 'ImageResultBrowser',
 			object: null,
 			$element: null
 		},
 		Map: {
-			icon: 'map-marker',
+			icon: 'glyphicon-map-marker',
 			label: 'Map',
 			class: 'CoordinateResultBrowser',
 			object: null,
 			$element: null
 		},
+		LineChart: {
+			icon: 'fa-line-chart',
+			label: 'Line Chart',
+			class: 'LineChartResultBrowser',
+			object: null,
+			$element: null
+		},
+		BarChart: {
+			icon: 'fa-bar-chart',
+			label: 'Bar Chart',
+			class: 'BarChartResultBrowser',
+			object: null,
+			$element: null
+		},
+		ScatterChart: {
+			icon: 'fa-braille',
+			label: 'Scatter Chart',
+			class: 'ScatterChartResultBrowser',
+			object: null,
+			$element: null
+		},
+		AreaChart: {
+			icon: 'fa-area-chart',
+			label: 'Area Chart',
+			class: 'AreaChartResultBrowser',
+			object: null,
+			$element: null
+		},
 		BubbleChart: {
-			icon: 'tint',
+			icon: 'glyphicon-tint',
 			label: 'Bubble Chart',
 			class: 'BubbleChartResultBrowser',
 			object: null,
 			$element: null
 		},
 		TreeMap: {
-			icon: 'th',
+			icon: 'glyphicon-th',
 			label: 'Tree Map',
 			class: 'TreeMapResultBrowser',
 			object: null,
 			$element: null
 		},
 		Timeline: {
-			icon: 'calendar',
+			icon: 'glyphicon-calendar',
 			label: 'Timeline',
 			class: 'TimelineResultBrowser',
 			object: null,
 			$element: null
 		},
 		Dimensions: {
-			icon: 'random',
+			icon: 'glyphicon-random',
 			label: 'Dimensions',
 			class: 'MultiDimensionResultBrowser',
 			object: null,
 			$element: null
 		},
 		Graph: {
-			icon: 'retweet',
+			icon: 'glyphicon-retweet',
 			label: 'Graph',
 			class: 'GraphResultBrowser',
 			object: null,
@@ -566,7 +594,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._initResultBrowserMenu = function() {
 		$.each( this._resultBrowsers, function( key, b ) {
 			var $element = $( '<li><a class="result-browser" href="#">' +
-					'<span class="glyphicon glyphicon-' + b.icon + '"></span>' + b.label +
+					'<span class="' + b.icon.split( '-' ).shift() + ' ' + b.icon + '"></span>' + b.label +
 					'</a></li>' );
 			$element.appendTo( $( '#result-browser-menu' ) );
 			b.$element = $element;

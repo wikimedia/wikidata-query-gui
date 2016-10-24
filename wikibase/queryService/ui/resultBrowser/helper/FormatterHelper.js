@@ -312,7 +312,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Checks whether the current cell contains a label
+	 * Checks whether the current cell contains a label:
+         * Has either a language property or is type literal without datatype.
 	 *
 	 * @param {Object} cell
 	 * @return {boolean}
@@ -322,7 +323,15 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			return false;
 		}
 
-		return cell.hasOwnProperty( 'xml:lang' );
+		if ( cell.hasOwnProperty( 'xml:lang' ) ) {
+			return true;
+		}
+
+		if ( cell.type === 'literal' && !cell.hasOwnProperty( 'datatype' ) ) {
+			return true;
+		}
+
+		return false;
 	};
 
 	/**

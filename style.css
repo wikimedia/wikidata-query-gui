@@ -44,7 +44,8 @@ body {
 	margin-right: 0;
 }
 
-#result-browser-menu .glyphicon {
+#result-browser-menu .glyphicon,
+#result-browser-menu .fa {
 	padding: 0 .5em 0 0;
 }
 
@@ -135,7 +136,8 @@ iframe.shortUrl {
 	width: auto;
 }
 
-.dropdown-toggle .glyphicon:before {
+.dropdown-toggle .glyphicon:before,
+.dropdown-toggle .fa:before {
 	margin-right: 3px;
 }
 

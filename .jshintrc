@@ -43,6 +43,7 @@
 		"_": false,
 		"Cookies": false,
 		"vis": false,
-		"moment": false
+		"moment": false,
+		"dimple": false
 	}
 }
