@@ -62,5 +62,5 @@
 	"disallowQuotedKeysInObjects": false,
 	"requireSpaceAfterLineComment": false,
 
-	"excludeFiles": [ "node_modules/**", "vendor/**", "wikibase/codemirror/addon/**", "wikibase/tests/**"]
+	"excludeFiles": [ "node_modules/**", "vendor/**", "wikibase/codemirror/addon/**", "wikibase/tests/**", "polestar/**"]
 }
