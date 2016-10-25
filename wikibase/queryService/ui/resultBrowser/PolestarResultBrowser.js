@@ -37,10 +37,9 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 		var $container = $( '<iframe>' ).attr( {
 			'src': POLESTAR + '#' + JSON.stringify( polestarData ),
 			'class': 'graph-iframe'
-		} ).height( '100vh' );
+		} ).height( '98vh' );
 
 		$element.append( $container );
-		$container.scrollIntoView();
 	};
 
 	/**

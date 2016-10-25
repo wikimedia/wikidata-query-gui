@@ -106,8 +106,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			$element: null
 		},
 		Polestar: {
-			icon: 'glyphicon-stats',
-			label: 'Graph it!',
+			icon: 'fa-certificate',
+			label: 'Graph builder',
 			class: 'PolestarResultBrowser',
 			object: null,
 			$element: null
