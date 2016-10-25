@@ -20,7 +20,7 @@ module.exports = function( grunt ) {
 		},
 		jsonlint: {
 			all: [
-					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**'
+					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!polestar/**'
 			]
 		},
 		qunit: {
@@ -96,6 +96,12 @@ module.exports = function( grunt ) {
 							src: [
 									'*.html',
 									'logo.svg', 'robots.txt'
+							],
+							dest: dist
+						},{
+							expand: true,
+							src: [
+								'**/polestar/**'
 							],
 							dest: dist
 						}
