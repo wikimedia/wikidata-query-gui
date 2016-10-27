@@ -17,6 +17,8 @@
     "wdqs-app-button-download": "Download",
     "wdqs-app-button-link": "Link",
     "wdqs-app-help-feedback": "Give Feedback!",
+    "wdqs-app-help-request-query": "Request a query",
+    "wdqs-app-help-portal": "Help Portal",
     "wdqs-app-help-manual": "User Manual",
     "wdqs-app-help-examples": "Example Queries",
     "wdqs-app-help-datamodel": "RDF Data Model",
