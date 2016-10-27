@@ -406,7 +406,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
 				e.popover( {
 					html: true,
-					placement: 'bottom',
+					placement: 'top',
 					content: $.i18n( 'wdqs-app-footer-updated-seconds', difference ) + '.</br>' + time
 				} ).popover( 'show' );
 			} ).fail( function() {
