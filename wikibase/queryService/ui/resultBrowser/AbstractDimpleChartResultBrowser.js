@@ -113,10 +113,9 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 				rowData = {};
 			}
 
-			if ( field && field.value && field.value !== '' ) {
+			if ( field && field.value ) {
 				rowData[key] = field.value;
 			}
-
 		} );
 
 		data.push( rowData );
@@ -135,7 +134,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 
 		this._createChartAxis();
 
-		var series = this._chart.addSeries( this._chartSeriesKey,  this._getPlotType() );
+		var series = this._chart.addSeries( this._chartSeriesKey, this._getPlotType() );
 		series.addOrderRule( this._chartSeriesKey );
 		series.lineMarkers = true;
 
@@ -155,7 +154,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 			row = this._getRows()[0],
 			formatter = this._getFormatter(),
 			chart = this._chart,
-			axis = ['y', 'x'];
+			axis = [ 'y', 'x' ];
 
 		$.each( this._getColumns(), function( i, key ) {
 			if ( axis.length === 0 ) {
@@ -196,6 +195,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 				self._isStoryPaused = false;
 				return;
 			}
+
 			story.pauseAnimation();
 			self._isStoryPaused = true;
 		} );
@@ -207,13 +207,14 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		this._chart.legends = [];
 
 		this._chartLegend.shapes.selectAll( 'rect' ).on( 'click', function( e ) {
-			var hide = false;
-			var newFilters = [];
-			filterValues.forEach( function( f ) {
-				if ( f === e.aggField.slice( -1 )[0] ) {
+			var hide = false,
+				newFilters = [];
+
+			filterValues.forEach( function( field ) {
+				if ( field === e.aggField.slice( -1 )[0] ) {
 					hide = true;
 				} else {
-					newFilters.push( f );
+					newFilters.push( field );
 				}
 			} );
 
