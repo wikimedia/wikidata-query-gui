@@ -9,7 +9,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
 	var GLOBE_EARTH = 'Q2';
 
-	var LAYER_COLUMN = 'layer';
+	var LAYER_COLUMNS = [ 'layerLabel', 'layer' ];
 	var LAYER_DEFAULT_GROUP = '_LAYER_DEFAULT_GROUP';
 
 	var TILE_LAYER = {
@@ -146,7 +146,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					lon = longLat[0],
 					lat = longLat[1];
 
-				var layer = row[ LAYER_COLUMN ] && row[ LAYER_COLUMN ].value || LAYER_DEFAULT_GROUP;
+				var layer = self._getMarkerGroupsLayer( row );
 				var marker = L.circleMarker( [ lat, lon ], self._getMarkerStyle( layer ) )
 					.bindPopup( popup );
 
@@ -173,6 +173,17 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		} );
 
 		return markers;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getMarkerGroupsLayer = function( row ) {
+		var column = LAYER_COLUMNS.find( function( column ) {
+			return row[column];
+		} );
+
+		return column ? row[column].value : LAYER_DEFAULT_GROUP;
 	};
 
 	/**
