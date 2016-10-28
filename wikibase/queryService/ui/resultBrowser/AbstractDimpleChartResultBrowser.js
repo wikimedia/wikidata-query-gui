@@ -84,10 +84,12 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 */
 	SELF.prototype.draw = function( $element ) {
 		var self = this;
-		this._$element = $element;
+
+		this._$element = $( '<div>' ).css( { width: '100%', height: '98vh' } );
+		$element.html( this._$element );
 
 		this._createData();
-		this._drawSvg( $element );
+		this._drawSvg();
 		this._createChart();
 		this._drawChart();
 		this._createLegendFilter();
@@ -122,8 +124,8 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		this._data = data;
 	};
 
-	SELF.prototype._drawSvg = function( $element ) {
-		this._svg = dimple.newSvg( $element[0], '100%', '98vh' );
+	SELF.prototype._drawSvg = function() {
+		this._svg = dimple.newSvg( this._$element[0], '100%', '100%' );
 	};
 
 	SELF.prototype._createChart = function() {
