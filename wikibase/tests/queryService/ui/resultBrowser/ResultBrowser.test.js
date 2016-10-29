@@ -30,7 +30,7 @@
 	var expected = {
 		TableResultBrowser: '<div class="bootstrap-table">',
 		ImageResultBrowser: '<div class="masonry">',
-		CoordinateResultBrowser: '<div id="map" class="leaflet-container',
+		CoordinateResultBrowser: '<div id="map" .*class="leaflet-container',
 		BubbleChartResultBrowser: '<svg',
 		LineChartResultBrowser: '<svg',
 		BarChartResultBrowser: '<svg',
