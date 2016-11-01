@@ -15,6 +15,8 @@
 	"wdqs-app-button-download": "Táuⁿ-ló͘",
 	"wdqs-app-button-link": "Liân-kiat",
 	"wdqs-app-help-feedback": "Thê-kiong hoán-èng",
+	"wdqs-app-help-request-query": "Chhéng-kiû chi̍t hāng cha-sûn",
+	"wdqs-app-help-portal": "Pang-chō͘ Ji̍p-kháu",
 	"wdqs-app-help-manual": "Ēng-chiá Soat-bêng-su",
 	"wdqs-app-help-examples": "Hoān-lē Châ-sûn",
 	"wdqs-app-help-datamodel": "RDF Chu-liāu Bô͘-hêng",
@@ -27,9 +29,11 @@
 	"wdqs-app-result-embed": "Kheng--leh ê kiat-kó",
 	"wdqs-app-result-endpoint": "SPARQL bóe-tiám",
 	"wdqs-app-result-endpoint-title": "Liân kòe SPARQL bóe-tiám thoân tńg kiat-kó",
+	"wdqs-app-result-formatter-title-datetime": "Goân-sú ê ISO timestamp",
 	"wdqs-app-shorturl-page-title": "Kòe-lâi pún ia̍h-bīn ê té-pán URL",
 	"wdqs-app-editor-placeholder": "(Su-ji̍p 1-ê SPARQL chhâ-sûn he̍k-chiá soán 1-ê chhâ-sûn hoān-lē)",
 	"wdqs-app-editor-addprefixes": "Chin-ka piau-chún jī-thâu",
+	"wdqs-dialog-examples-preview-query": "Cha-sûn ī-lám",
 	"wdqs-dialog-examples-preview-result": "Ū-khòaⁿ kiat-kó",
 	"wdqs-ve-find": "Chhōe",
 	"wdqs-ve-show": "Hían-sī",
@@ -44,5 +48,7 @@
 	"wdqs-action-error-display": "Bô-hoat-tō͘ hián-sī kiat-kó",
 	"wdqs-action-timeout": "Chhâ-sûn ê sî-kan chè-hān kàu--a",
 	"wdqs-action-malformed-query": "Chhâ-sîn bô-chiàⁿ",
+	"wdqs-action-server-error": "Server chhò-ngō͘",
+	"wdqs-action-unknow-error": "Bī-ti chhò-ngō͘",
 	"wdqs-result-map-layers-all": "Choân-pō͘ ê layer"
 }

@@ -5,7 +5,9 @@
 			"Macofe",
 			"Rubentl134",
 			"Dgstranz",
-			"Koavf"
+			"Koavf",
+			"Fitoschido",
+			"Irus"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -19,6 +21,8 @@
 	"wdqs-app-button-download": "Descargar",
 	"wdqs-app-button-link": "Enlace",
 	"wdqs-app-help-feedback": "¡Deja tus comentarios!",
+	"wdqs-app-help-request-query": "Solicitar una consulta",
+	"wdqs-app-help-portal": "Portal De Ayuda",
 	"wdqs-app-help-manual": "Manual del usuario",
 	"wdqs-app-help-examples": "Consultas de ejemplo",
 	"wdqs-app-help-datamodel": "Modelo de datos de RDF",
@@ -29,8 +33,8 @@
 	"wdqs-app-result-shorturl": "URL corta al resultado",
 	"wdqs-app-result-shorturl-title": "URL corta a este resultado",
 	"wdqs-app-result-embed": "Incrustar resultado",
-	"wdqs-app-result-endpoint": "SPARQL punto final",
-	"wdqs-app-result-endpoint-title": "Enlace al SPARQL punto final volviendo el resultado",
+	"wdqs-app-result-endpoint": "Parámetro de SPARQL",
+	"wdqs-app-result-endpoint-title": "Enlace al parámetro de SPARQL que devuelve el resultado",
 	"wdqs-app-result-formatter-title-datetime": "Marca de tiempo ISO en bruto",
 	"wdqs-app-shorturl-page-title": "URL corta a esta página",
 	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o elige una consulta de ejemplo)",

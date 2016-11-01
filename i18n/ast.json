@@ -46,5 +46,7 @@
 	"wdqs-action-error-display": "Nun pudo amosase'l resultáu",
 	"wdqs-action-timeout": "Llegóse a la llende de tiempu de consulta",
 	"wdqs-action-malformed-query": "La consulta ta mal formada",
+	"wdqs-action-server-error": "Error del sirvidor",
+	"wdqs-action-unknow-error": "Error desconocíu",
 	"wdqs-result-map-layers-all": "Toles capes"
 }

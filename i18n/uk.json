@@ -30,6 +30,7 @@
 	"wdqs-app-result-embed": "Вбудувати результат",
 	"wdqs-app-result-endpoint": "Точка доступу SPARQL",
 	"wdqs-app-result-endpoint-title": "Посилання на точку доступу SPARQL, що повертає результат",
+	"wdqs-app-result-formatter-title-datetime": "Сира мітка часу ISO",
 	"wdqs-app-shorturl-page-title": "Коротка URL-адреса цієї сторінки",
 	"wdqs-app-editor-placeholder": "(Введіть запит SPARQL або виберіть приклад запиту)",
 	"wdqs-app-editor-addprefixes": "Додати стандартні префікси",

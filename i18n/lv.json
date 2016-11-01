@@ -10,10 +10,12 @@
 	"wdqs-app-button-tools": "Rīki",
 	"wdqs-app-button-help": "Palīdzība",
 	"wdqs-app-button-run": "Izpildīt",
+	"wdqs-app-button-run-title": "Izpildīt vaicājumu (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Notīrīt",
 	"wdqs-app-button-display": "Attēlošana",
 	"wdqs-app-button-download": "Lejupielādēt",
 	"wdqs-app-button-link": "Saite",
+	"wdqs-app-help-examples": "Vaicājumu piemēri",
 	"wdqs-ve-find": "Atrast",
 	"wdqs-ve-show": "Rādīt",
 	"wdqs-ve-with": "ar",
@@ -25,5 +27,8 @@
 	"wdqs-action-query": "Izpilda vaicājumu",
 	"wdqs-action-render": "Attēlo rezultātu",
 	"wdqs-action-error-display": "Nevar parādīt rezultātu",
-	"wdqs-action-timeout": "Vaicājuma laika limits sasniegts"
+	"wdqs-action-timeout": "Vaicājuma laika limits sasniegts",
+	"wdqs-action-server-error": "Servera kļūda",
+	"wdqs-action-unknow-error": "Nezināma kļūda",
+	"wdqs-result-map-layers-all": "Visi slāņi"
 }

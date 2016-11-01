@@ -22,5 +22,7 @@
 	"wdqs-ve-any": "कोणतेही",
 	"wdqs-ve-or": "किंवा",
 	"wdqs-ve-subtype": "उपप्रकार",
-	"wdqs-action-error-display": "निकाल दर्शवू शकत नाही"
+	"wdqs-action-error-display": "निकाल दर्शवू शकत नाही",
+	"wdqs-action-server-error": "विदागार त्रुटी",
+	"wdqs-action-unknow-error": "अपरिचित त्रुटी"
 }

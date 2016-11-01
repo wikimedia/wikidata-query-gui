@@ -17,6 +17,8 @@
 	"wdqs-app-button-download": "Descargar",
 	"wdqs-app-button-link": "Ligazón",
 	"wdqs-app-help-feedback": "Deixe comentariosǃ",
+	"wdqs-app-help-request-query": "Facer unha petición dunha consulta",
+	"wdqs-app-help-portal": "Portal de axuda",
 	"wdqs-app-help-manual": "Manual de usuario",
 	"wdqs-app-help-examples": "Pescudas de exemplo",
 	"wdqs-app-help-datamodel": "Modelo de datos RDF",
@@ -48,5 +50,7 @@
 	"wdqs-action-error-display": "Non se pode mostrar o resultado",
 	"wdqs-action-timeout": "Superouse o límite de tempo da pescuda",
 	"wdqs-action-malformed-query": "A pescuda non ten un formato correcto",
+	"wdqs-action-server-error": "Erro do servidor",
+	"wdqs-action-unknow-error": "Erro descoñecido",
 	"wdqs-result-map-layers-all": "Todas as capas"
 }

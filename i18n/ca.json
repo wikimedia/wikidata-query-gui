@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toniher"
+		]
+	},
+	"wdqs-app-button-examples": "Exemples",
+	"wdqs-app-button-prefixes": "Prefixos",
+	"wdqs-app-button-tools": "Eines",
+	"wdqs-app-button-help": "Ajuda",
+	"wdqs-app-button-run": "Executa",
+	"wdqs-app-button-run-title": "Executa la consulta (<CTRL> + <RETORN>)",
+	"wdqs-app-button-clear": "Neteja",
+	"wdqs-app-button-display": "Mostra",
+	"wdqs-app-button-download": "Descarrega",
+	"wdqs-app-button-link": "Enllaç",
+	"wdqs-app-help-feedback": "Doneu-nos la vostra opinió!",
+	"wdqs-app-help-manual": "Manual d'usuari",
+	"wdqs-app-help-examples": "Consultes d'exemple",
+	"wdqs-app-help-datamodel": "Model de dades RDF",
+	"wdqs-app-help-prefixes": "Llista de prefixos",
+	"wdqs-app-result-embed": "Incrusta el resultat",
+	"wdqs-dialog-examples-preview-query": "Previsualitza la consulta",
+	"wdqs-dialog-examples-preview-result": "Previsualitza el resultat",
+	"wdqs-ve-find": "Cerca",
+	"wdqs-ve-show": "Mostra",
+	"wdqs-ve-with": "amb",
+	"wdqs-ve-and": "i",
+	"wdqs-ve-anything": "qualsevol cosa",
+	"wdqs-ve-any": "qualsevol",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "subtipus",
+	"wdqs-action-query": "Execució de la consulta",
+	"wdqs-action-render": "Representació del resultat",
+	"wdqs-action-error-display": "No es pot mostrar el resultat",
+	"wdqs-action-unknow-error": "Error desconegut",
+	"wdqs-result-map-layers-all": "Totes les capes"
+}
