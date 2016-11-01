@@ -40,6 +40,7 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 		} ).height( '98vh' );
 
 		$element.append( $container );
+		window.setTimeout( function() { $container.scrollIntoView(); }, 50 );
 	};
 
 	/**
