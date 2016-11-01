@@ -105,17 +105,17 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			object: null,
 			$element: null
 		},
-		Polestar: {
-			icon: 'fa-certificate',
-			label: 'Graph builder',
-			class: 'PolestarResultBrowser',
-			object: null,
-			$element: null
-		},
 		ImageGrid: {
 			icon: 'glyphicon-picture',
 			label: 'Image Grid',
 			class: 'ImageResultBrowser',
+			object: null,
+			$element: null
+		},
+		Polestar: {
+			icon: 'fa-certificate',
+			label: 'Graph builder',
+			class: 'PolestarResultBrowser',
 			object: null,
 			$element: null
 		},
