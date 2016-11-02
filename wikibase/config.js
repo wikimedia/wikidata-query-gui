@@ -11,6 +11,9 @@ var CONFIG = ( function ( window, $ ) {
 			wikibase: {
 				uri: 'https://www.wikidata.org/w/api.php'
 			}
+		},
+		i18nLoad: function( lang ) {
+			return $.i18n().load( 'i18n/' + lang + '.json', lang );
 		}
 	};
 
@@ -19,6 +22,12 @@ var CONFIG = ( function ( window, $ ) {
 			sparql: {
 				uri: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql'
 			}
+		},
+		i18nLoad: function( lang ) {
+			return $.when(
+					$.i18n().load( 'i18n/' + lang + '.json', lang ),
+					$.i18n().load( 'node_modules/jquery.uls/i18n/' + lang + '.json', lang )
+				);
 		}
 	} );
 

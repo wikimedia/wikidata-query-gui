@@ -11,7 +11,7 @@
 		moment.locale( lang );
 
 		$.when(
-			$.i18n().load( 'i18n/' + lang + '.json', lang )
+			config.i18nLoad( lang )
 		).done( function() {
 			$( '.wikibase-queryservice' ).i18n();
 			$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
