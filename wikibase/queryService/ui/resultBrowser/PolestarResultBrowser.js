@@ -30,12 +30,12 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 	 */
 	SELF.prototype.draw = function( $element ) {
 		var polestarData = {
-			url: GRAPH_QUERY_PREFIX + window.location.hash.substr( 1 ),
+			url: GRAPH_QUERY_PREFIX + location.hash.substr( 1 ),
 			name: 'Imported from Wikidata Query Service',
 			_directEmbed: true
 		};
 		var $container = $( '<iframe>' ).attr( {
-			'src': POLESTAR + '#' + JSON.stringify( polestarData ),
+			'src': POLESTAR + '#' + btoa( JSON.stringify( polestarData ) ),
 			'class': 'graph-iframe'
 		} ).height( '98vh' );
 
