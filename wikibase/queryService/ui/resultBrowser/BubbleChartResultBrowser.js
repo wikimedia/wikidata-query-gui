@@ -102,7 +102,6 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 		}
 
 		var diameter = Math.min( $( window ).height(), $( window ).width() ),
-			format = d3.format( ',d' ),
 			color = d3.scale.category20c(),
 			bubble = d3.layout.pack().sort( null ).size( [ diameter, diameter ] ).padding( 1.5 );
 
@@ -121,7 +120,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 				} );
 
 		node.append( 'title' ).text( function( d ) {
-			return d.className + ': ' + format( d.value );
+			return d.className + ': ' + d.value;
 		} );
 
 		node.append( 'circle' ).attr( 'r', function( d ) {
