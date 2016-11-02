@@ -62,11 +62,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			maxZoom: 18,
 			minZoom: 2,
 			fullscreenControl: true,
+			preferCanvas: true,
 			layers: _.compact( markerGroups ) // convert object to array
 		} ).fitBounds( markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
 
 		this._setTileLayer( map );
 		this._createControls( map, markerGroups );
+		this._createMarkerZoomResize( map, markerGroups );
 
 		$element.html( container );
 	};
@@ -104,6 +106,22 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				control._update();
 			} );
 		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createMarkerZoomResize = function( map, markerGroups ) {
+		var resize = function() {
+			var currentZoom = map.getZoom();
+			markerGroups[LAYER_DEFAULT_GROUP].setStyle( {
+				radius: ( currentZoom * ( 1 / 2 ) ),
+				weight: ( currentZoom * ( 1 / 5 ) )
+			} );
+		};
+
+		map.on( 'zoomend', resize );
+		resize();
 	};
 
 	/**
@@ -204,7 +222,6 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		}
 
 		return {
-			radius: 3,
 			color: color,
 			opacity: 0.8,
 			fillColor: color,
