@@ -47,6 +47,18 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractResultBrowser();
 
 	/**
+	 * @property {L.Map}
+	 * @private
+	 **/
+	SELF.prototype._map = null;
+
+	/**
+	 * @property {Object}
+	 * @private
+	 **/
+	SELF.prototype._markerGroups = null;
+
+	/**
 	 * Draw a map to the given element
 	 *
 	 * @param {jQuery} $element target element
@@ -56,19 +68,19 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		$element.html( container );
 
-		var markerGroups = this._getMarkerGroups(),
-			map = L.map( 'map', {
+		this._createMarkerGroups();
+		this._map = L.map( 'map', {
 			center: [ 0, 0 ],
 			maxZoom: 18,
 			minZoom: 2,
 			fullscreenControl: true,
 			preferCanvas: true,
-			layers: _.compact( markerGroups ) // convert object to array
-		} ).fitBounds( markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
+			layers: _.compact( this._markerGroups ) // convert object to array
+		} ).fitBounds( this._markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
 
-		this._setTileLayer( map );
-		this._createControls( map, markerGroups );
-		this._createMarkerZoomResize( map, markerGroups );
+		this._setTileLayer();
+		this._createControls();
+		this._createMarkerZoomResize();
 
 		$element.html( container );
 	};
@@ -78,29 +90,31 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 *
 	 * @private
 	 */
-	SELF.prototype._createControls = function( map, markerGroups ) {
+	SELF.prototype._createControls = function() {
+		var self = this;
+
 		//zoom control
-		map.addControl( L.control.zoomBox( {
+		this._map.addControl( L.control.zoomBox( {
 			modal: false,
 			className: 'glyphicon glyphicon-zoom-in'
 		} ) );
-		map.addControl( new ScrollToTopButton() );
+		this._map.addControl( new ScrollToTopButton() );
 
 		//layers control
-		var numberOfLayers = Object.keys( markerGroups ).length;
+		var numberOfLayers = Object.keys( this._markerGroups ).length;
 		if ( numberOfLayers > 1 ) {
-			var control = this._getLayerControl( markerGroups ).addTo( map );
+			var control = this._getLayerControl( this._markerGroups ).addTo( this._map );
 
 			// update layer control
-			map.on( 'overlayadd overlayremove', function ( event ) {
-				if ( event.layer !== markerGroups[ LAYER_DEFAULT_GROUP ] ) {
+			this._map.on( 'overlayadd overlayremove', function ( event ) {
+				if ( event.layer !== self._markerGroups[ LAYER_DEFAULT_GROUP ] ) {
 					return;
 				}
-				$.each( markerGroups, function( i, layer ) {
+				$.each( self._markerGroups, function( i, layer ) {
 					if ( event.type === 'overlayadd' ) {
-						map.addLayer( layer );
+						self._map.addLayer( layer );
 					} else {
-						map.removeLayer( layer );
+						self._map.removeLayer( layer );
 					}
 				} );
 				control._update();
@@ -111,28 +125,43 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._createMarkerZoomResize = function( map, markerGroups ) {
+	SELF.prototype._createMarkerZoomResize = function() {
+		var self = this;
+
+		if ( this._markerGroups[LAYER_DEFAULT_GROUP].getLayers().length > 1000 ) {
+			return; // disable when to many markers (bad performance)
+		}
+
 		var resize = function() {
-			var currentZoom = map.getZoom();
-			markerGroups[LAYER_DEFAULT_GROUP].setStyle( {
-				radius: ( currentZoom * ( 1 / 2 ) ),
-				weight: ( currentZoom * ( 1 / 5 ) )
+			self._markerGroups[LAYER_DEFAULT_GROUP].setStyle( {
+				radius: self._getMarkerRadius()
 			} );
 		};
 
-		map.on( 'zoomend', resize );
-		resize();
+		this._map.on( 'zoomend', resize );
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getLayerControl = function( markerGroups ) {
+	SELF.prototype._getMarkerRadius = function() {
+		if ( !this._map ) {
+			return 3;
+		}
+
+		var currentZoom = this._map.getZoom();
+		return ( currentZoom * ( 1 / 2 ) );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getLayerControl = function() {
 		var self = this,
 			layerControls = {},
 			control = '';
 
-		$.each( markerGroups, function( name, markers ) {
+		$.each( this._markerGroups, function( name, markers ) {
 			if ( name === LAYER_DEFAULT_GROUP ) {
 				control = self._i18n( 'wdqs-result-map-layers-all', 'All layers' );
 			} else {
@@ -149,7 +178,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getMarkerGroups = function() {
+	SELF.prototype._createMarkerGroups = function() {
 		var self = this, markers = {};
 		markers[ LAYER_DEFAULT_GROUP ] = [];
 
@@ -190,7 +219,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			markers[ key ] = L.featureGroup( markers[ key ] );
 		} );
 
-		return markers;
+		this._markerGroups = markers;
 	};
 
 	/**
@@ -225,7 +254,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			color: color,
 			opacity: 0.8,
 			fillColor: color,
-			fillOpacity: 0.9
+			fillOpacity: 0.9,
+			radius: this._getMarkerRadius()
 		};
 	};
 
@@ -269,15 +299,16 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._setTileLayer = function( map ) {
+	SELF.prototype._setTileLayer = function() {
 		var layer = TILE_LAYER.osm;
+
 		if ( window.location.host === 'query.wikidata.org' ||
 				window.location.host === 'localhost' ||
 				window.location.host.endsWith( '.wmflabs.org' ) ) {
 			layer = TILE_LAYER.wikimedia;
 		}
 
-		L.tileLayer( layer.url, layer.options ).addTo( map );
+		L.tileLayer( layer.url, layer.options ).addTo( this._map );
 	};
 
 	ScrollToTopButton = L.Control.extend( {
