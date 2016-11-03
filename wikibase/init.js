@@ -3,6 +3,11 @@
 
 	var wb = wikibase.queryService;
 
+	function setBrand() {
+		$( '.navbar-brand img' ).attr( 'src', config.brand.logo );
+		$( '.navbar-brand a > span' ).text( config.brand.title );
+	}
+
 	function setLanguage( lang ) {
 		Cookies.set( 'lang', lang );
 
@@ -20,6 +25,8 @@
 
 	$( document ).ready(
 		function() {
+			setBrand();
+
 			var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language;
 			setLanguage( config.language );//always load default language as fallback language
 			setLanguage( lang );
