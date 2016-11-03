@@ -14,6 +14,10 @@ var CONFIG = ( function ( window, $ ) {
 		},
 		i18nLoad: function( lang ) {
 			return $.i18n().load( 'i18n/' + lang + '.json', lang );
+		},
+		brand: {
+			logo: 'logo.svg',
+			title: 'Wikidata Query'
 		}
 	};
 
@@ -28,6 +32,9 @@ var CONFIG = ( function ( window, $ ) {
 					$.i18n().load( 'i18n/' + lang + '.json', lang ),
 					$.i18n().load( 'node_modules/jquery.uls/i18n/' + lang + '.json', lang )
 				);
+		},
+		brand: {
+			title: 'Localhost'
 		}
 	} );
 
