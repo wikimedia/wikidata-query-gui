@@ -237,7 +237,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * Maps group name to a certain color
 	 * @private
 	 */
-	SELF.prototype._getMarkerGroupColor = d3.scale.category20();
+	SELF.prototype._getMarkerGroupColor = d3.scale.category10();
 
 	/**
 	 * @private
