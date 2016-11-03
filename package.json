@@ -17,7 +17,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "bootstrap-table": "^1.10.1",
-    "codemirror": "^5.15.2",
+    "codemirror": "~5.20.2",
     "d3": "^3.5.17",
     "dimple-js": "^2.1.4",
     "downloadjs": "^1.4.4",

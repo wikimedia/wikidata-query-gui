@@ -14,6 +14,13 @@ $ git clone https://gerrit.wikimedia.org/r/wikidata/query/gui
 $ cd gui
 $ npm install
 ```
+
+Alternative use npm install
+
+```bash
+npm i wikidata-query-gui
+```
+
 #Run tests
 
 Run JSHint, JSCS and QUnit tests.
@@ -42,3 +49,13 @@ Please make sure you have defined a gitreview username:
 ```bash
 git config --global --add gitreview.username "[username]"
 ```
+
+
+#Components
+## Editor
+This is a code mirror based SPARQL editor with code completion (ctrl+space)
+```
+var editor = new wikibase.queryService.ui.editor.Editor();
+editor.fromTextArea( $( '.editor' )[0] );
+```
+See examples/editor.html
