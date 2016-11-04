@@ -44,15 +44,6 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 	};
 
 	/**
-	 * Checks whether the browser can draw the given result
-	 *
-	 * @return {boolean}
-	 **/
-	SELF.prototype.isDrawable = function() {
-		return this._drawable;
-	};
-
-	/**
 	 * Receiving data from the visit
 	 *
 	 * @param {Object} data

@@ -709,6 +709,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			b.object = instance;
 		} );
 
+		defaultBrowser.resetVisitors();
+
 		// wire up
 		$.each( this._resultBrowsers, function( key, b ) {
 			defaultBrowser.addVisitor( b.object );
