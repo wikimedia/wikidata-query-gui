@@ -20,11 +20,12 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {Function} callback that is called when selecting an example
 	 */
-	function SELF( $element, querySamplesApi, callback ) {
+	function SELF( $element, querySamplesApi, callback, previewUrl ) {
 
 		this._$element = $element;
 		this._querySamplesApi = querySamplesApi;
 		this._callback = callback;
+		this._previewUrl = previewUrl;
 
 		this._init();
 	}
@@ -40,6 +41,12 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._callback = null;
+
+	/**
+	 * @property {String}
+	 * @private
+	 */
+	SELF.prototype._previewUrl = null;
 
 	/**
 	 * @property {Function}
@@ -245,7 +252,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					placement: 'bottom',
 					trigger: 'hover',
 					container: 'body',
-					title: $.i18n( 'wdqs-dialog-examples-preview-query' ),
+					title: self._i18n( 'wdqs-dialog-examples-preview-query', 'Preview query' ),
 					content: $( '<pre style="white-space:pre-line; word-break:break-word;"/>' ).text( query ),
 					html: true
 				} ),
@@ -255,9 +262,9 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					'global_close': true,
 					trigger: 'click',
 					container: 'body',
-					title: $.i18n( 'wdqs-dialog-examples-preview-result' ),
-					content: $( '<iframe width="400" height="350" frameBorder="0" src="embed.html#'
-							+ encodeURIComponent( query ) + '">' ),
+					title: self._i18n( 'wdqs-dialog-examples-preview-result', 'Preview result'  ),
+					content: $( '<iframe width="400" height="350" frameBorder="0" src="' +
+							( self._previewUrl || 'embed.html#' ) +	encodeURIComponent( query ) + '">' ),
 					html: true
 				} )
 				.click( function() {
@@ -327,6 +334,19 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
 		this._trackingApi.track( TRACKING_NAMESPACE + metricName, value, valueType );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._i18n = function( key, message ) {
+		var i18nMessage = null;
+
+		if ( !$.i18n || ( i18nMessage = $.i18n( key ) ) === key ) {
+			return message;
+		}
+
+		return i18nMessage;
 	};
 
 	return SELF;

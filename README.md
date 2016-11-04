@@ -53,9 +53,47 @@ git config --global --add gitreview.username "[username]"
 
 #Components
 ## Editor
-This is a code mirror based SPARQL editor with code completion (ctrl+space)
+A code mirror based SPARQL editor with code completion (ctrl+space) and tooltips
 ```
 var editor = new wikibase.queryService.ui.editor.Editor();
 editor.fromTextArea( $( '.editor' )[0] );
 ```
 See examples/editor.html
+
+## Example dialog
+
+A dialog that allows browsing of SPARQL examples
+```
+new wikibase.queryService.ui.QueryExampleDialog(  $element, querySamplesApi, callback, previewUrl );
+```
+See examples/dialog.html
+
+## SPARQL
+
+```
+var api = new wikibase.queryService.api.Sparql();
+api.query( query ).done( function(){
+	var json = JSON.parse( api.getResultAsJson() );
+
+} );
+```
+See examples/sparql.html
+## Result Views
+Views that allow rendering SPARQL results [see documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views).
+
+```
+var api = new wikibase.queryService.api.Sparql();
+api.query( query ).done(function() {
+	var result = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser();
+	result.setResult( api.getResultRawData() );
+	result.draw( element );
+} );
+
+
+See examples/result.html
+```
+
+
+
+
+
