@@ -101,7 +101,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 			};
 		}
 
-		var diameter = Math.min( $( window ).height(), $( window ).width() ),
+		var diameter = Math.min( $( window ).height() * 0.98, $( window ).width() ),
 			color = d3.scale.category20c(),
 			bubble = d3.layout.pack().sort( null ).size( [ diameter, diameter ] ).padding( 1.5 );
 

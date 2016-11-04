@@ -22,23 +22,62 @@
 <script src="node_modules/es6-shim/es6-shim.js"></script>
 <!-- endbuild -->
 </head>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	overflow-y: auto;
+}
+
+.logo {
+	position: absolute;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	background-size: 80% 80%;
+	background-image:
+		url(https://upload.wikimedia.org/wikipedia/commons/6/66/Wikidata-logo-en.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#error {
+	display: none;
+}
+
+.progress {
+	height: 30px;;
+}
+
+.progress-bar {
+	width: 100%;
+	line-height: 30px;
+	font-size: 18px;
+}
+
+.link {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	padding: 0px 2px 0px 2px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+</style>
 <body>
 
 	<div id="progress">
-		<div class="progress" style="height:30px;">
-			<div class="progress-bar progress-bar
-	                   progress-bar-striped active" style="width: 100%; line-height:30px; font-size:18px;">Loading</div>
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped active">Loading</div>
 		</div>
-		<div style="position:absolute;top:0px;height:100%; width:100%; background-size: 80% 80%;
-					background-image:url(https://upload.wikimedia.org/wikipedia/commons/6/66/Wikidata-logo-en.svg);  
-					background-repeat:no-repeat; background-position:center;"></div>
+		<div class="logo"></div>
 	</div>
-	<div id="error" class="progress" style="display: none;">
-		<div class="progress-bar progress-bar-danger" style="width: 100%">Error</div>
+	<div id="error" class="progress">
+		<div class="progress-bar progress-bar-danger">Error</div>
 	</div>
 
 	<div id="result"></div>
-	<a class="link" target="_blank" title="Wikidata Query Service SPARQL" style="position: fixed; bottom: 0px; left: 0px; padding: 0px 2px 0px 2px; background-color: rgba(255, 255, 255, 0.8);"><small>Edit on query.Wikidata.org</small></a>
+	<a class="link" target="_blank" title="Wikidata Query Service SPARQL"><small>Edit on query.Wikidata.org</small></a>
 
 	<!-- JS files -->
 	<!-- build:js js/embed.vendor.min.js -->
