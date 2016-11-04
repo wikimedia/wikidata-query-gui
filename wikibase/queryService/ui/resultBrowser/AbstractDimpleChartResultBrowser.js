@@ -156,7 +156,8 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 			row = this._getRows()[0],
 			formatter = this._getFormatter(),
 			chart = this._chart,
-			axis = [ 'y', 'x' ];
+			axis = [ 'y', 'x' ],
+			hasSeriesAxis = false;
 
 		$.each( this._getColumns(), function( i, key ) {
 			if ( axis.length === 0 ) {
@@ -175,15 +176,20 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 			}
 			if ( formatter.isLabel( row[key] ) ) {
 				chart.addCategoryAxis( axis.pop(), key );
+				hasSeriesAxis = true;
 			}
 			if ( formatter.isNumber( row[key] ) ) {
 				chart.addMeasureAxis( axis.pop(), key );
 			}
 			if ( formatter.isDateTime( row[key] ) ) {
 				chart.addTimeAxis( axis.pop(), key, '%Y-%m-%dT%H:%M:%SZ', '%m-%d-%Y' );
+				hasSeriesAxis = true;
 			}
 		} );
 
+		if ( !hasSeriesAxis && !this._chartSeriesKey && chart.axes[0] ) {
+			this._chartSeriesKey = chart.axes[0].measure;
+		}
 	};
 
 	SELF.prototype._createChartStory = function() {
