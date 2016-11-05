@@ -107,6 +107,13 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	};
 
 	/**
+	 * Reset visitors array.
+	 */
+	SELF.prototype.resetVisitors = function() {
+		this._visitors = [];
+	};
+
+	/**
 	 * Call all visitors for the piece of data
 	 *
 	 * @protected
@@ -114,7 +121,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @param {String} columnKey
 	 */
 	SELF.prototype.processVisitors = function( data, columnKey ) {
-		var self = this, removeVisitors = [];
+		var self = this, removeVisitors = {};
 
 		if ( this._visitors.length === 0 ) {
 			return;
@@ -123,13 +130,14 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 		$.each( this._visitors, function( key, v ) {
 			if ( v.visit && typeof v.visit === 'function' ) {
 				if ( v.visit( data, columnKey ) === false ) {
-					removeVisitors.push( key );
+					removeVisitors[key] = true;
 				}
 			}
 		} );
 
-		$.each( removeVisitors, function( key, visitorIndex ) {
-			self._visitors.splice( visitorIndex, 1 );
+		// need to use filter since removal changes keys
+		self._visitors = self._visitors.filter( function( value, visitorIndex ) {
+			return !removeVisitors[visitorIndex];
 		} );
 	};
 
