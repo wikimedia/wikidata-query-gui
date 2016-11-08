@@ -35,7 +35,7 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 			_directEmbed: true
 		};
 		var $container = $( '<iframe>' ).attr( {
-			'src': POLESTAR + '#' + btoa( JSON.stringify( polestarData ) ),
+			'src': POLESTAR + '#' + encodeURIComponent( JSON.stringify( polestarData ) ),
 			'class': 'graph-iframe'
 		} ).height( '98vh' );
 
