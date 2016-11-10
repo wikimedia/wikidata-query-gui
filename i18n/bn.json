@@ -16,6 +16,8 @@
 	"wdqs-app-button-download": "ডাউনলোড",
 	"wdqs-app-button-link": "সংযোগ",
 	"wdqs-app-help-feedback": "প্রতিক্রিয়া দিন!",
+	"wdqs-app-help-request-query": "কোয়েরির অনুরোধ করুন",
+	"wdqs-app-help-portal": "সাহায্য প্রবেশদ্বার",
 	"wdqs-app-help-manual": "ব্যবহারবিধি",
 	"wdqs-app-help-examples": "উদাহরণ ক্যোয়ারী",
 	"wdqs-app-help-datamodel": "RDF উপাত্ত মডেল",

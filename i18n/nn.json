@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Njardarlogar"
+		]
+	},
+	"wdqs-app-button-examples": "Døme",
+	"wdqs-app-button-tools": "Verktøy",
+	"wdqs-app-button-help": "Hjelp",
+	"wdqs-app-button-run": "Køyr",
+	"wdqs-app-button-run-title": "Utfør spørjing (<CTRL> + <ENTER>)",
+	"wdqs-app-button-clear": "Tøm",
+	"wdqs-app-button-display": "Vising",
+	"wdqs-app-button-download": "Last ned",
+	"wdqs-app-button-link": "Lenkje",
+	"wdqs-app-footer-updated": "Data oppdatert for $1 sidan",
+	"wdqs-app-footer-updated-seconds": "Data oppdatert $1 for sekund sidan",
+	"wdqs-dialog-examples-preview-query": "Førehandsvis spørjing",
+	"wdqs-dialog-examples-preview-result": "Førehandsvis resultat",
+	"wdqs-ve-find": "Finn",
+	"wdqs-ve-show": "Vis",
+	"wdqs-ve-with": "med",
+	"wdqs-ve-and": "og",
+	"wdqs-ve-anything": "kva som helst",
+	"wdqs-ve-or": "eller",
+	"wdqs-ve-subtype": "undertype",
+	"wdqs-action-query": "Køyrer spørjing"
+}

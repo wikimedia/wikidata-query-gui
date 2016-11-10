@@ -22,6 +22,8 @@
 	"wdqs-app-button-download": "تحميل",
 	"wdqs-app-button-link": "رابط",
 	"wdqs-app-help-feedback": "أرسل لنا الملاحظات",
+	"wdqs-app-help-request-query": "اطلب استعلامًا",
+	"wdqs-app-help-portal": "بوابة المساعدة",
 	"wdqs-app-help-manual": "دليل المستخدم",
 	"wdqs-app-help-examples": "أمثلة للاستعلامات",
 	"wdqs-app-help-datamodel": "نموذج بيانات RDF",

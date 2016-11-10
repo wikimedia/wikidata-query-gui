@@ -16,10 +16,13 @@
 	"wdqs-app-button-download": "ดาวน์โหลด",
 	"wdqs-app-button-link": "ลิงก์",
 	"wdqs-app-help-feedback": "ส่งฟีดแบค!",
+	"wdqs-app-help-request-query": "ร้องขอคิวรี",
 	"wdqs-app-help-manual": "คู่มือผู้ใช้",
 	"wdqs-app-help-examples": "ตัวอย่างคิวรี",
 	"wdqs-app-help-datamodel": "ต้นแบบข้อมูล RDF",
 	"wdqs-app-help-prefixes": "รายการคำนำหน้า",
+	"wdqs-app-footer-updated": "ข้อมูลอัปเดตเมื่อ $1ที่ผ่านมา",
+	"wdqs-app-footer-updated-seconds": "ข้อมูลอัปเดตเมื่อ $1 วินาทีที่ผ่านมา",
 	"wdqs-app-result-shorturl": "URL แบบสั้นไปยังผลลัพธ์",
 	"wdqs-app-result-shorturl-title": "URL แบบสั้นไปยังผลลัพธ์นี้",
 	"wdqs-app-result-embed": "ฝังผลลัพธ์",
@@ -40,5 +43,7 @@
 	"wdqs-ve-subtype": "หมวดย่อย",
 	"wdqs-action-query": "กำลังดำเนินการคิวรี",
 	"wdqs-action-render": "กำลังแปลผลลัพธ์",
+	"wdqs-action-server-error": "เซิร์ฟเวอร์มีข้อผิดพลาด",
+	"wdqs-action-unknow-error": "เกิดข้อผิดพลาดไม่ทราบสาเหตุ",
 	"wdqs-result-map-layers-all": "ชั้นทั้งหมด"
 }

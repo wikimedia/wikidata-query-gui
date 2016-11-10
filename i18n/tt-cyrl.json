@@ -15,6 +15,8 @@
 	"wdqs-app-button-download": "Йөкләү",
 	"wdqs-app-button-link": "Сылтама",
 	"wdqs-app-help-feedback": "Фикер калдыру!",
+	"wdqs-app-help-request-query": "Ихтыяҗга ихтияҗ",
+	"wdqs-app-help-portal": "Ярдәм порталы",
 	"wdqs-app-help-manual": "Кулланучы әсбабы",
 	"wdqs-app-help-examples": "Сорау мисаллары",
 	"wdqs-app-help-datamodel": "RDF мәгълүмат моделе",
@@ -46,5 +48,7 @@
 	"wdqs-action-error-display": "Нәтиҗәне бирү мөмкин түгел",
 	"wdqs-action-timeout": "Сорау кирәгеннән артык вакыт таләп итә",
 	"wdqs-action-malformed-query": "Сорау начар бирелгән",
+	"wdqs-action-server-error": "Сервер хатасы",
+	"wdqs-action-unknow-error": "Билгесез  хата",
 	"wdqs-result-map-layers-all": "Барлык катламнар"
 }

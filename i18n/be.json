@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mechanizatar"
+		]
+	},
+	"wdqs-app-button-examples": "Прыклады",
+	"wdqs-app-button-prefixes": "Прэфіксы",
+	"wdqs-app-button-tools": "Інструменты",
+	"wdqs-app-button-help": "Даведка",
+	"wdqs-app-button-run": "Запусціць",
+	"wdqs-app-button-run-title": "Выканаць запыт (<CTRL> + <ENTER>)",
+	"wdqs-app-button-clear": "Ачысціць",
+	"wdqs-app-button-display": "Паказаць",
+	"wdqs-app-button-download": "Спампаваць",
+	"wdqs-app-button-link": "Спасылка",
+	"wdqs-app-help-feedback": "Пакіньце водгук!",
+	"wdqs-app-help-manual": "Дапаможнік карыстальніка",
+	"wdqs-app-help-examples": "Прыклады запытаў",
+	"wdqs-app-help-datamodel": "RDF мадэль дадзеных",
+	"wdqs-app-help-prefixes": "Спіс прэфіксаў",
+	"wdqs-app-footer-help": "Націсніце <i>[CTRL-SPACE]</i>, каб актываваць аўтазапаўненне.",
+	"wdqs-app-footer-updated": "Дадзеныя абноўленыя $1 таму",
+	"wdqs-app-footer-updated-seconds": "Дадзеныя абноўленыя {{PLURAL:$1|секунду|секунды|секунд}} таму",
+	"wdqs-app-result-shorturl": "Кароткі URL для выніку",
+	"wdqs-app-result-shorturl-title": "Кароткі URL для гэтага выніку",
+	"wdqs-app-result-embed": "Уставіць вынік",
+	"wdqs-ve-find": "Знайсці",
+	"wdqs-ve-show": "Паказаць",
+	"wdqs-ve-with": "з",
+	"wdqs-ve-and": "і",
+	"wdqs-ve-anything": "нічога",
+	"wdqs-ve-any": "любы",
+	"wdqs-ve-or": "ці",
+	"wdqs-ve-subtype": "падтып",
+	"wdqs-action-query": "Выкананне запыту",
+	"wdqs-action-error-display": "Немагчыма паказаць вынік",
+	"wdqs-action-unknow-error": "Невядомая памылка"
+}
