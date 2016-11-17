@@ -3,7 +3,8 @@
 		"authors": [
 			"Laboramus",
 			"Okras",
-			"Irus"
+			"Irus",
+			"Kareyac"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -18,7 +19,7 @@
 	"wdqs-app-button-link": "Ссылка",
 	"wdqs-app-help-feedback": "Оставить отзыв!",
 	"wdqs-app-help-request-query": "Запрос запрос",
-	"wdqs-app-help-portal": "Помочь портал",
+	"wdqs-app-help-portal": "Портал помощи",
 	"wdqs-app-help-manual": "Руководство пользователя",
 	"wdqs-app-help-examples": "Примеры запросов",
 	"wdqs-app-help-datamodel": "Модель данных RDF",

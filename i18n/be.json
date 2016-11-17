@@ -15,6 +15,8 @@
 	"wdqs-app-button-download": "Спампаваць",
 	"wdqs-app-button-link": "Спасылка",
 	"wdqs-app-help-feedback": "Пакіньце водгук!",
+	"wdqs-app-help-request-query": "Зрабіць запыт",
+	"wdqs-app-help-portal": "Партал дапамогі",
 	"wdqs-app-help-manual": "Дапаможнік карыстальніка",
 	"wdqs-app-help-examples": "Прыклады запытаў",
 	"wdqs-app-help-datamodel": "RDF мадэль дадзеных",
@@ -35,5 +37,7 @@
 	"wdqs-ve-subtype": "падтып",
 	"wdqs-action-query": "Выкананне запыту",
 	"wdqs-action-error-display": "Немагчыма паказаць вынік",
+	"wdqs-action-timeout": "Дасягнуты ліміт часу выканання запыту",
+	"wdqs-action-malformed-query": "Запыт мае некарэктны фармат",
 	"wdqs-action-unknow-error": "Невядомая памылка"
 }

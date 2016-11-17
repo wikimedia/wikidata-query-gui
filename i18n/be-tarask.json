@@ -16,6 +16,8 @@
 	"wdqs-app-button-download": "Спампаваць",
 	"wdqs-app-button-link": "Спасылка",
 	"wdqs-app-help-feedback": "Пакіньце водгук!",
+	"wdqs-app-help-request-query": "Зрабіць запыт",
+	"wdqs-app-help-portal": "Партал дапамогі",
 	"wdqs-app-help-manual": "Дапаможнік карыстальніка",
 	"wdqs-app-help-examples": "Прыклады запытаў",
 	"wdqs-app-help-datamodel": "Мадэль зьвестак RDF",
@@ -43,5 +45,9 @@
 	"wdqs-ve-or": "ці",
 	"wdqs-ve-subtype": "падтып",
 	"wdqs-action-query": "Выкананьне запыту",
-	"wdqs-action-render": "Візуалізацыя выніку"
+	"wdqs-action-render": "Візуалізацыя выніку",
+	"wdqs-action-error-display": "Немагчыма паказаць вынік",
+	"wdqs-action-timeout": "Дасягнуты ліміт часу выкананьня запыту",
+	"wdqs-action-malformed-query": "Запыт няслушны",
+	"wdqs-action-server-error": "Памылка сэрвэра"
 }
