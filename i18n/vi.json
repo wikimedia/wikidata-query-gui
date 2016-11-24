@@ -16,6 +16,8 @@
 	"wdqs-app-button-download": "Tải về",
 	"wdqs-app-button-link": "Liên kết",
 	"wdqs-app-help-feedback": "Gửi phản hồi!",
+	"wdqs-app-help-request-query": "Yêu cầu truy vấn",
+	"wdqs-app-help-portal": "Trợ giúp",
 	"wdqs-app-help-manual": "Hướng dẫn sử dụng",
 	"wdqs-app-help-examples": "Truy vấn mẫu",
 	"wdqs-app-help-datamodel": "Mô hình dữ liệu RDF",
@@ -47,5 +49,7 @@
 	"wdqs-action-error-display": "Không thể hiển thị kết quả",
 	"wdqs-action-timeout": "Truy vấn đã hết hạn",
 	"wdqs-action-malformed-query": "Truy vấn hư hỏng",
+	"wdqs-action-server-error": "Lỗi máy chủ",
+	"wdqs-action-unknow-error": "Lỗi không rõ",
 	"wdqs-result-map-layers-all": "Tất cả các lớp"
 }
