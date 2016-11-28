@@ -18,7 +18,7 @@ $ npm install
 Alternative use npm install
 
 ```bash
-npm i wikidata-query-gui
+npm install wikidata-query-gui
 ```
 
 #Run tests
@@ -53,7 +53,7 @@ git config --global --add gitreview.username "[username]"
 
 #Components
 ## Editor
-A code mirror based SPARQL editor with code completion (ctrl+space) and tooltips
+A [CodeMirror](https://codemirror.net/) based SPARQL editor with code completion (ctrl+space) and tooltips (hover)
 ```
 var editor = new wikibase.queryService.ui.editor.Editor();
 editor.fromTextArea( $( '.editor' )[0] );
@@ -88,12 +88,10 @@ api.query( query ).done(function() {
 	result.setResult( api.getResultRawData() );
 	result.draw( element );
 } );
-
-
-See examples/result.html
 ```
+See examples/result.html
 
+## Release Notes and npm package
 
-
-
-
+Unfortunately there are no releases and the provided code and interfaces are not considered to be stable.
+Also the dist/ folder contains a build that may not reflect the current code on master branch.
