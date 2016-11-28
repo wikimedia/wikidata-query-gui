@@ -39,6 +39,7 @@
 	"wdqs-action-error-display": "Немагчыма паказаць вынік",
 	"wdqs-action-timeout": "Дасягнуты ліміт часу выканання запыту",
 	"wdqs-action-malformed-query": "Запыт мае некарэктны фармат",
+	"wdqs-action-server-error": "Памылка сервера",
 	"wdqs-action-unknow-error": "Невядомая памылка",
 	"wdqs-result-map-layers-all": "Усе слаі"
 }

@@ -16,6 +16,8 @@
 	"wdqs-app-button-download": "Last ned",
 	"wdqs-app-button-link": "Lenke",
 	"wdqs-app-help-feedback": "Gi tilbakemelding!",
+	"wdqs-app-help-request-query": "Etterspør en spørring",
+	"wdqs-app-help-portal": "Hjelpeportal",
 	"wdqs-app-help-manual": "Brukermanual",
 	"wdqs-app-help-examples": "Eksempelspørringer",
 	"wdqs-app-help-datamodel": "RDF-datamodell",
@@ -47,5 +49,7 @@
 	"wdqs-action-error-display": "Kunne ikke vise resultat",
 	"wdqs-action-timeout": "Spørringen nådde tidsavbruddsgrensen",
 	"wdqs-action-malformed-query": "Spørringen er misformet",
+	"wdqs-action-server-error": "Tjenerfeil",
+	"wdqs-action-unknow-error": "Ukjent feil",
 	"wdqs-result-map-layers-all": "Alle lag"
 }
