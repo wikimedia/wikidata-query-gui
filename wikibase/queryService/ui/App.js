@@ -527,7 +527,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				var $link = $( '<a>' )
 					.attr( 'href', 'embed.html#' + b + window.location.hash.substring( 1 ) );
 				var $html = $( '<textarea>' ).text(
-					'<iframe style="width:80vw; height:50vh;" scrolling="yes" frameborder="0" src="'
+					'<iframe style="width:80vw; height:50vh;" frameborder="0" src="'
 					+ $link[0].href + '">'
 				).click( function() {
 					$html.select();
