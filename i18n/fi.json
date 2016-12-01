@@ -18,12 +18,14 @@
 	"wdqs-app-button-link": "Linkki",
 	"wdqs-app-help-feedback": "Anna palautetta!",
 	"wdqs-app-help-manual": "Käyttöohje",
+	"wdqs-app-help-prefixes": "Luettelo etuliitteistä",
 	"wdqs-app-footer-updated": "Tiedot päivitetty $1 sitten",
 	"wdqs-app-footer-updated-seconds": "Tiedot päivitetty $1 sekuntia sitten",
 	"wdqs-app-result-shorturl": "Lyhyt URL tulokselle",
 	"wdqs-app-result-embed": "Upota tulos",
 	"wdqs-app-shorturl-page-title": "Lyhyt URL tälle sivulle",
 	"wdqs-dialog-examples-preview-query": "Kyselyn esikatselu",
+	"wdqs-dialog-examples-preview-result": "Esikatsele tulos",
 	"wdqs-ve-find": "Etsi",
 	"wdqs-ve-show": "Näytä",
 	"wdqs-ve-with": "jossa",
@@ -32,5 +34,7 @@
 	"wdqs-ve-any": "kaikki",
 	"wdqs-ve-or": "tai",
 	"wdqs-ve-subtype": "alatyyppi",
+	"wdqs-action-server-error": "Palvelinvirhe",
+	"wdqs-action-unknow-error": "Tuntematon virhe",
 	"wdqs-result-map-layers-all": "Kaikki tasot"
 }

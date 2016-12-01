@@ -15,6 +15,8 @@
 	"wdqs-app-button-download": "डाउनलोड",
 	"wdqs-app-button-link": "लिङ्क",
 	"wdqs-app-help-feedback": "प्रतिक्रिया दिय।",
+	"wdqs-app-help-request-query": "क्वेरी अनुरोध अरऽ",
+	"wdqs-app-help-portal": "मद्दत पोर्टल",
 	"wdqs-app-help-manual": "प्रयोगकर्ता किताप",
 	"wdqs-app-help-examples": "उदाहरण सोधखोजअन",
 	"wdqs-app-help-datamodel": "RFD डाटा नमुना",
@@ -27,6 +29,7 @@
 	"wdqs-app-result-embed": "नतिजा जेण्या:",
 	"wdqs-app-result-endpoint": "SPARQL अन्तिमबिन्दु",
 	"wdqs-app-result-endpoint-title": "SPARQL अन्तिमबिन्दुओ लिङ्क नतिजा फिर्ता अद्दाछ़",
+	"wdqs-app-result-formatter-title-datetime": "रऽ आईएसओ टाइमस्ट्याम्प",
 	"wdqs-app-shorturl-page-title": "येइ पन्नाआ छोटो URL",
 	"wdqs-app-editor-placeholder": "(SPARQL क्वेरी हाल: या क्वेरी उदाहरण छान:)",
 	"wdqs-app-editor-addprefixes": "मानक उपसर्गअन थपअ।",
@@ -45,5 +48,7 @@
 	"wdqs-action-error-display": "नतिजा धेकाउनाइ असमर्थ",
 	"wdqs-action-timeout": "क्वेरी टाएमआउट ओणा पुगिग्यो",
 	"wdqs-action-malformed-query": "क्वेरि विकृत छ",
+	"wdqs-action-server-error": "सर्भर त्रुटी",
+	"wdqs-action-unknow-error": "नजाणीयाऽ त्रुटी",
 	"wdqs-result-map-layers-all": "जम्माइ तह"
 }
