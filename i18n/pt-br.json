@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"HenriqueCrang",
-			"Macofe"
+			"Macofe",
+			"!Silent"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -10,10 +11,32 @@
 	"wdqs-app-button-tools": "Ferramentas",
 	"wdqs-app-button-help": "Ajuda",
 	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-run-title": "Executar a consulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Limpar",
 	"wdqs-app-button-display": "Exibir",
 	"wdqs-app-button-download": "Baixar",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-help-feedback": "Dê sua opinião!",
+	"wdqs-app-help-request-query": "Solicitar una consulta",
+	"wdqs-app-help-portal": "Portal de ajuda",
+	"wdqs-app-help-manual": "Manual do usuário",
+	"wdqs-app-help-examples": "Consultas de exemplo",
+	"wdqs-app-help-datamodel": "Modelo de dados RDF",
+	"wdqs-app-help-prefixes": "Lista de prefixos",
+	"wdqs-app-footer-help": "Pressione <i>[CTRL-ESPAÇO]</i> para ativar a função de autocompletar.",
+	"wdqs-app-footer-updated": "Dados atualizados há $1 atrás",
+	"wdqs-app-footer-updated-seconds": "Dados atualizados há $1 segundos atrás",
+	"wdqs-app-result-shorturl": "URL curta para o resultado",
+	"wdqs-app-result-shorturl-title": "URL curta para este resultado",
+	"wdqs-app-result-embed": "Incorporar resultado",
+	"wdqs-app-result-endpoint": "Parâmetro SPARQL",
+	"wdqs-app-result-endpoint-title": "Link para o parâmetro SPARQL que devolve o resultado",
+	"wdqs-app-result-formatter-title-datetime": "Marca temporal ISO bruta",
+	"wdqs-app-shorturl-page-title": "URL curta para esta página",
+	"wdqs-app-editor-placeholder": "(escreva uma consulta SPARQL ou escolha uma consulta de exemplo)",
+	"wdqs-app-editor-addprefixes": "Adicione prefixos padrão",
+	"wdqs-dialog-examples-preview-query": "Vista prévia da consulta",
+	"wdqs-dialog-examples-preview-result": "Vista prévia do resultado",
 	"wdqs-ve-find": "Procurar",
 	"wdqs-ve-show": "Exibir",
 	"wdqs-ve-with": "com",
@@ -21,5 +44,13 @@
 	"wdqs-ve-anything": "qualquer coisa",
 	"wdqs-ve-any": "qualquer",
 	"wdqs-ve-or": "ou",
-	"wdqs-ve-subtype": "subtipo"
+	"wdqs-ve-subtype": "subtipo",
+	"wdqs-action-query": "Executando consulta",
+	"wdqs-action-render": "Renderização do resultado",
+	"wdqs-action-error-display": "Não é possível exibir o resultado",
+	"wdqs-action-timeout": "Atingido o tempo de limite da consulta",
+	"wdqs-action-malformed-query": "A consulta está mal formulada",
+	"wdqs-action-server-error": "Erro do servidor",
+	"wdqs-action-unknow-error": "Erro desconhecido",
+	"wdqs-result-map-layers-all": "Todas as camadas"
 }
