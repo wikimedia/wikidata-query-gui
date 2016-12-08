@@ -24,12 +24,13 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 * @param {wikibase.queryService.api.Wikibase} [api]
+	 * @param {wikibase.queryService.api.Sparql} [sparqlApi]
 	 * @param {wikibase.queryService.ui.visualEditor.SelectorBox} [selectorBox]
 	 */
-	function SELF( api, selectorBox ) {
+	function SELF( api, sparqlApi, selectorBox ) {
 		this._api = api || new wikibase.queryService.api.Wikibase();
 		this._selectorBox = selectorBox
-			|| new wikibase.queryService.ui.visualEditor.SelectorBox( this._api );
+			|| new wikibase.queryService.ui.visualEditor.SelectorBox( this._api, sparqlApi );
 		this._query = new wikibase.queryService.ui.visualEditor.SparqlQuery();
 	}
 
@@ -248,7 +249,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				.text( this._query.getLimit() ? this._query.getLimit() : '' );
 
 		var self = this;
-		this._selectorBox.add( $limit, function( value ) {
+		this._selectorBox.add( $limit, null, function( value ) {
 			if ( value === '0' ) {
 				value = null;
 			}
@@ -289,7 +290,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		// SelectorBox
 		var self = this;
-		this._selectorBox.add( $link, function( id, name ) {
+		this._selectorBox.add( $link, null, function( id, name ) {
 			var entity = 'http://www.wikidata.org/entity/' + id;// FIXME technical debt
 
 			var variable = self._query.getBoundVariables().shift();
@@ -335,7 +336,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		// SelectorBox
 		var self = this;
-		this._selectorBox.add( $link, function( id, name ) {
+		this._selectorBox.add( $link, null, function( id, name ) {
 			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
 
 			var subject = self._query.getBoundVariables().shift();
@@ -493,7 +494,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			} );
 
 			//TODO: refactor method
-			self._selectorBox.add( $link, function( selectedId ) {
+			self._selectorBox.add( $link, triple.triple, function( selectedId ) {
 				var newEntity = entity.replace( new RegExp( id + '$' ), '' ) + selectedId;// TODO: technical debt
 
 				$label.replaceWith( self._getTripleEntityHtml( newEntity, triple, key ) );

@@ -142,7 +142,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			}
 			self._rawData = data;
 
-			deferred.resolve();
+			deferred.resolve( data );
 		} ).fail( function( request, options, exception ) {
 			self._executionTime = null;
 			self._rawData = null;

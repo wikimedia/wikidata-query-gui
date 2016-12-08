@@ -38,15 +38,16 @@
 				setLanguage( lang );
 			} );
 
-			var rdfHint = new wb.ui.editor.hint.Rdf( api ),
-				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api );
+			var sparqlApi = new wb.api.Sparql( config.api.sparql.uri );
+
+			var rdfHint = new wb.ui.editor.hint.Rdf( api );
+			var rdfTooltip = new wb.ui.editor.tooltip.Rdf( api );
 
 			new wb.ui.App(
-				$( '.wikibase-queryservice ' ),
-				new wb.ui.editor.Editor( rdfHint, null, rdfTooltip ),
-				new wb.ui.visualEditor.VisualEditor( api ),
-				new wb.api.Sparql( config.api.sparql.uri )
-			);
+					$( '.wikibase-queryservice ' ),
+					new wb.ui.editor.Editor( rdfHint, null, rdfTooltip ),
+					new wb.ui.visualEditor.VisualEditor( api, sparqlApi ),
+					sparqlApi );
 		} );
 
 } )( jQuery, CONFIG, moment );
