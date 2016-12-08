@@ -11,7 +11,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	var SEARCH_ENTITES = {
 		action: 'wbsearchentities',
 		format: 'json',
-		contiunue: 0,
+		continue: 0,
 		language: LANGUAGE,
 		uselang: LANGUAGE
 	};
