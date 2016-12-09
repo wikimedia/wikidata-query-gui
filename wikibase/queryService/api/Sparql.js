@@ -289,9 +289,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	SELF.prototype.getResultAsCsv = function() {
 		var self = this,
 			data = self._rawData,
-			out = data.head.vars.map( this._encodeCsv ).join( ',' ) + '\n';
+			output = data.head.vars.map( this._encodeCsv ).join( ',' ) + '\n';
 
-		out = this._processData( data, function( row, out ) {
+		output = this._processData( data, function( row, out ) {
 			var rowOut = '';
 			var first = true;
 			var rowCSV;
@@ -310,8 +310,8 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			}
 			rowOut += '\n';
 			return out + rowOut;
-		}, out );
-		return out;
+		}, output );
+		return output;
 	};
 
 	/**
@@ -320,18 +320,18 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {string}
 	 */
 	SELF.prototype.getResultAsJson = function() {
-		var out = [],
+		var output = [],
 			data = this._rawData;
 
-		out = this._processData( data, function( row, out ) {
+		output = this._processData( data, function( row, out ) {
 			var extractRow = {};
 			for ( var rowVar in row ) {
 				extractRow[rowVar] = ( row[rowVar] || {} ).value;
 			}
 			out.push( extractRow );
 			return out;
-		}, out );
-		return JSON.stringify( out );
+		}, output );
+		return JSON.stringify( output );
 	};
 
 	/**
@@ -382,11 +382,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	SELF.prototype.getSparqlTsv = function() {
 		var self = this,
 			data = this._rawData,
-			out = data.head.vars.map( function( vname ) {
+			output = data.head.vars.map( function( vname ) {
 			return '?' + vname;
 		} ).join( '\t' ) + '\n';
 
-		out = this._processData( data, function( row, out ) {
+		output = this._processData( data, function( row, out ) {
 			var rowOut = '';
 			var first = true;
 			var rowTSV;
@@ -405,8 +405,8 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			}
 			rowOut += '\n';
 			return out + rowOut;
-		}, out );
-		return out;
+		}, output );
+		return output;
 	};
 
 	/**
@@ -415,8 +415,10 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {string}
 	 */
 	SELF.prototype.getSimpleTsv = function() {
-		var data = this._rawData, out = data.head.vars.join( '\t' ) + '\n';
-		out = this._processData( data, function( row, out ) {
+		var data = this._rawData,
+			output = data.head.vars.join( '\t' ) + '\n';
+
+		output = this._processData( data, function( row, out ) {
 			var rowOut = '';
 			var first = true;
 			var rowTSV;
@@ -435,8 +437,8 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			}
 			rowOut += '\n';
 			return out + rowOut;
-		}, out );
-		return out;
+		}, output );
+		return output;
 	};
 
 	return SELF;
