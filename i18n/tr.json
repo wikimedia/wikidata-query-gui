@@ -3,7 +3,8 @@
 		"authors": [
 			"Kumkumuk",
 			"MrSchipunov",
-			"Alpkant"
+			"Alpkant",
+			"By erdo can"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -11,12 +12,21 @@
 	"wdqs-app-button-tools": "Araçlar",
 	"wdqs-app-button-help": "Yardım",
 	"wdqs-app-button-run": "Çalıştır",
+	"wdqs-app-button-run-title": "Sorguyu çalıştır (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Temizle",
 	"wdqs-app-button-display": "Görüntüle",
 	"wdqs-app-button-download": "İndir",
 	"wdqs-app-button-link": "Bağlantı",
+	"wdqs-app-help-feedback": "Geri bildirim Ver!",
+	"wdqs-app-help-request-query": "Sorgu isteğinde bulun",
+	"wdqs-app-help-portal": "Yardım Portalı",
+	"wdqs-app-help-manual": "Kullanım Kılavuzu",
+	"wdqs-app-help-examples": "Örnek Sorgular",
+	"wdqs-app-help-datamodel": "RDF Veri Modeli",
+	"wdqs-app-help-prefixes": "Ön ek listeleri",
 	"wdqs-app-footer-updated": "Veri $1 önce güncellendi",
 	"wdqs-app-footer-updated-seconds": "Veri $1 saniye önce güncellendi.",
+	"wdqs-app-result-embed": "Sonucu göm",
 	"wdqs-dialog-examples-preview-query": "Sorgu önizleme",
 	"wdqs-dialog-examples-preview-result": "Önizleme sonucu",
 	"wdqs-ve-find": "Bul",
@@ -31,5 +41,7 @@
 	"wdqs-action-render": "Sonuçlar gösteriliyor",
 	"wdqs-action-error-display": "Sonuç görüntülenemiyor",
 	"wdqs-action-timeout": "Sorgu zaman aşımı sınırına ulaştı",
+	"wdqs-action-server-error": "Sunucu hatası",
+	"wdqs-action-unknow-error": "Bilinmeyen hata",
 	"wdqs-result-map-layers-all": "Tüm katmanlar"
 }
