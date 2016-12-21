@@ -78,6 +78,9 @@ api.query( query ).done( function(){
 } );
 ```
 See examples/sparql.html
+[JSFiddle.net](https://jsfiddle.net/jonaskress/qpuynfz8/)
+
+
 ## Result Views
 Views that allow rendering SPARQL results [see documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views).
 
@@ -90,6 +93,7 @@ api.query( query ).done(function() {
 } );
 ```
 See examples/result.html
+[JSFiddle.net](https://jsfiddle.net/jonaskress/9dhv0yLp/)
 
 ## Release Notes and npm package
 
