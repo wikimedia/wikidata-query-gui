@@ -3,8 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 
-wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, WikibaseRDFTooltip,
-		localStorage ) {
+wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, WikibaseRDFTooltip ) {
 	'use strict';
 
 	var CODEMIRROR_DEFAULTS = {
@@ -241,8 +240,11 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	 * @param {string} value
 	 */
 	SELF.prototype.storeValue = function( value ) {
-		if ( localStorage ) {
-			localStorage.setItem( LOCAL_STORAGE_KEY, value );
+		try {
+			if ( localStorage ) {
+				localStorage.setItem( LOCAL_STORAGE_KEY, value );
+			}
+		} catch ( e ) {
 		}
 	};
 
@@ -250,12 +252,15 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	 * Restores the value from the local storage
 	 */
 	SELF.prototype.restoreValue = function() {
-		if ( localStorage ) {
-			var value = localStorage.getItem( LOCAL_STORAGE_KEY );
-			if ( value ) {
-				this.setValue( value );
-				this.refresh();
+		try {
+			if ( localStorage ) {
+				var value = localStorage.getItem( LOCAL_STORAGE_KEY );
+				if ( value ) {
+					this.setValue( value );
+					this.refresh();
+				}
 			}
+		} catch ( e ) {
 		}
 	};
 
@@ -271,4 +276,4 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 
 	return SELF;
 
-}( jQuery, wikibase, CodeMirror, window.localStorage ) );
+}( jQuery, wikibase, CodeMirror ) );
