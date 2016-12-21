@@ -3,7 +3,7 @@ module.exports = function( grunt ) {
 	'use strict';
 	require( 'load-grunt-tasks' )( grunt );
 	var pkg = grunt.file.readJSON( 'package.json' );
-	var dist = 'dist';
+	var buildFolder = 'build';
 
 	grunt.initConfig( {
 		pkg: pkg,
@@ -12,7 +12,7 @@ module.exports = function( grunt ) {
 				jshintrc: true
 			},
 			all: [
-					'**/*.js', '!dist/**'
+					'**/*.js', '!dist/**', '!' + buildFolder + '/**'
 			]
 		},
 		jscs: {
@@ -20,7 +20,7 @@ module.exports = function( grunt ) {
 		},
 		jsonlint: {
 			all: [
-					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!polestar/**'
+					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!' + buildFolder + '/**', '!polestar/**'
 			]
 		},
 		qunit: {
@@ -36,10 +36,10 @@ module.exports = function( grunt ) {
 				},
 		clean: {
 			release: [
-				dist
+				buildFolder
 			],
 			deploy: [
-					dist + '/*', dist + '!.git/**'
+					buildFolder + '/*', buildFolder + '!.git/**'
 			]
 		},
 		useminPrepare: {
@@ -47,7 +47,7 @@ module.exports = function( grunt ) {
 					'index.html', 'embed.html'
 			],
 			options: {
-				dest: dist
+				dest: buildFolder
 			}
 		},
 		concat: {},
@@ -61,7 +61,7 @@ module.exports = function( grunt ) {
 							src: [
 								'**/*.{eot,ttf,woff,woff2}'
 							],
-							dest: dist + '/fonts/',
+							dest: buildFolder + '/fonts/',
 							filter: 'isFile'
 						},
 						{// uls images
@@ -70,7 +70,7 @@ module.exports = function( grunt ) {
 							src: [
 								'**/jquery.uls/images/*.{png,jpg,svg}'
 							],
-							dest: dist + '/images/',
+							dest: buildFolder + '/images/',
 							filter: 'isFile'
 						},
 						{// leaflet fullscreen images
@@ -79,7 +79,7 @@ module.exports = function( grunt ) {
 							src: [
 								'**/leaflet-fullscreen/**/*.png'
 							],
-							dest: dist + '/css/',
+							dest: buildFolder + '/css/',
 							filter: 'isFile'
 						},
 						{// leaflet images
@@ -88,7 +88,7 @@ module.exports = function( grunt ) {
 							src: [
 								'**/leaflet/dist/images/*.png'
 							],
-							dest: dist + '/css/images',
+							dest: buildFolder + '/css/images',
 							filter: 'isFile'
 						},{
 							expand: true,
@@ -97,13 +97,13 @@ module.exports = function( grunt ) {
 									'*.html',
 									'logo.svg', 'robots.txt'
 							],
-							dest: dist
+							dest: buildFolder
 						},{
 							expand: true,
 							src: [
 								'**/polestar/**'
 							],
-							dest: dist
+							dest: buildFolder
 						}
 				]
 			}
@@ -115,7 +115,7 @@ module.exports = function( grunt ) {
 					'!**/examples/**',
 					'!**/demo/**'
 				],
-				dest: dist + '/i18n'
+				dest: buildFolder + '/i18n'
 			}
 		},
 		cssmin: {
@@ -133,7 +133,7 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						src: [
-								dist + '/js/*.js', dist + '/css/*.css'
+								buildFolder + '/js/*.js', buildFolder + '/css/*.css'
 						]
 					}
 				]
@@ -141,11 +141,11 @@ module.exports = function( grunt ) {
 		},
 		usemin: {
 			html: [
-					dist + '/index.html', dist + '/embed.html'
+					buildFolder + '/index.html', buildFolder + '/embed.html'
 			]
 		},
 		htmlmin: {
-			dist: {
+			build: {
 				options: {
 					removeComments: true,
 					collapseWhitespace: true
@@ -153,9 +153,9 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						cwd: dist,
+						cwd: buildFolder,
 						src: '**/*.html',
-						dest: dist
+						dest: buildFolder
 					}
 				]
 			}
@@ -169,51 +169,51 @@ module.exports = function( grunt ) {
 			updateRepo: {// updates the gui repo
 				command: 'git remote update && git pull'
 			},
-			cloneDeploy: {// clone gui deploy to dist folder
+			cloneDeploy: {// clone gui deploy to build folder
 				command: 'git clone --branch <%= pkg.repository.deploy.branch %>' +
 						' --single-branch https://<%= pkg.repository.deploy.gerrit %>/r/<%= pkg.repository.deploy.repo %> ' +
-						dist
+						buildFolder
 			},
 			commitDeploy: {// get gui commit message and use it for deploy commit
 				command: [
 						'lastrev=$(git rev-parse HEAD)',
 						'message=$(git log -1 --pretty=%B)',
 						'newmessage=$(cat <<END\nMerging from $lastrev:\n\n$message\nEND\n)',
-						'cd ' + dist,
+						'cd ' + buildFolder,
 						'git add -A', 'git commit -m "$newmessage"',
 						'echo "$newmessage"'
 				].join( '&&' )
 			},
 			review: {
 				command: [
-						'cd ' + dist,
+						'cd ' + buildFolder,
 						'git review'
 				].join( '&&' )
 			}
 		}
 	} );
 
-	grunt.registerTask( 'configDeploy', 'Creates .git-review in dist folder', function() {
+	grunt.registerTask( 'configDeploy', 'Creates .git-review in build folder', function() {
 		var file = '[gerrit]\nhost=' + pkg.repository.deploy.gerrit + '\n' +
 			'port=29418\n' +
 			'project=' + pkg.repository.deploy.repo + '.git\n' +
 			'defaultbranch=' + pkg.repository.deploy.branch + '\n' +
 			'defaultrebase=0\n';
 
-		grunt.file.write( dist + '/.gitreview', file );
+		grunt.file.write( buildFolder + '/.gitreview', file );
 	} );
 
 	grunt.registerTask( 'test', [
 			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
-			'clean', 'build_dist'
+			'clean', 'create_build'
 	] );
-	grunt.registerTask( 'build_dist', [
+	grunt.registerTask( 'create_build', [
 			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
 	] );
 	grunt.registerTask( 'deploy', [
-			'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'build_dist', 'shell:commitDeploy', 'configDeploy', 'shell:review'
+			'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'create_build', 'shell:commitDeploy', 'configDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };
