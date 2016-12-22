@@ -177,7 +177,7 @@ module.exports = function( grunt ) {
 			commitDeploy: {// get gui commit message and use it for deploy commit
 				command: [
 						'lastrev=$(git rev-parse HEAD)',
-						'message=$(git log -1 --pretty=%B)',
+						'message=$(git log -1 --pretty=%B | grep -v Change-Id)',
 						'newmessage=$(cat <<END\nMerging from $lastrev:\n\n$message\nEND\n)',
 						'cd ' + buildFolder,
 						'git add -A', 'git commit -m "$newmessage"',
