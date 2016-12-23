@@ -170,6 +170,23 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	};
 
 	/**
+	 * Get bindings defined in this query
+	 *
+	 * @return {Object}
+	 */
+	SELF.prototype.getBindings = function() {
+		var bindings = {};
+
+		$.each( this._query.where, function( k, v ) {
+			if ( v.type && v.type === 'bind' ) {
+				bindings[ v.variable ] = v;
+			}
+		} );
+
+		return bindings;
+	};
+
+	/**
 	 * @private
 	 */
 	SELF.prototype._createTriples = function( triplesData, isOptional ) {

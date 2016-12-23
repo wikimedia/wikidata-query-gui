@@ -154,12 +154,22 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		cleanQuery = Object.keys( prefixes ).join( '\n' ) + '\n\n' + cleanQuery.trim();
 		return cleanQuery;
 	};
+
 	/**
 	 * Draw visual editor to given element
 	 *
 	 * @param {jQuery} $element
 	 */
 	SELF.prototype.draw = function( $element ) {
+		var template = this._getQueryTemplateDefinition();
+
+		if ( template !== null ) {
+			try {
+				return $element.html( this._getQueryTemplateHtml( template ) );
+			} catch ( e ) {
+			}
+		}
+
 		this._triples = this._query.getTriples();
 
 		var subqueries = this._query.getSubQueries();
@@ -171,6 +181,77 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		this._isSimpleMode = this._isSimpleQuery();
 		$element.html( this._getHtml() );
+	};
+
+	/**
+	 * Get the template definition from query comments
+	 *
+	 * @return {object}|null
+	 */
+	SELF.prototype._getQueryTemplateDefinition = function() {
+		var definition = '#TEMPLATE=',
+			template = null;
+
+		try {
+			$.each( this._queryComments, function( key, comment ) {
+				if ( comment.startsWith( definition ) ) {
+					template = JSON.parse(  comment.replace( definition, '' ) );
+				}
+			} );
+		} catch ( e ) {
+		}
+
+		return template;
+	};
+
+	/**
+	 * Get the template definition or null
+	 *
+	 * @param {object} definition
+	 */
+	SELF.prototype._getQueryTemplateHtml = function( definition ) {
+		var self = this,
+			template = '<span>' + definition.template + '</span>',
+			$html = $( '<div>' ),
+			bindings = this._query.getBindings();
+
+		$.each( definition.variables, function( variable, varDef ) {
+			var $label = $( '<span>' );
+
+			self._getLabel( bindings[variable].expression ).done(
+					function( label, id, description, type ) {
+						var $link = $( '<a>' ).text( label ).attr( {
+							'data-id': id,
+							'data-type': type,
+							href: '#'
+						} ).appendTo( $label );
+
+						if ( varDef.query ) {
+							$link.attr( 'data-sparql', varDef.query );
+						}
+
+						self._selectorBox.add( $link, null, function( selectedId, name ) {
+							bindings[variable].expression = bindings[variable].expression.replace(
+									new RegExp( id + '$' ), '' ) +
+									selectedId;// TODO: technical debt
+							$link.attr( {
+								'data-id': selectedId
+							} );
+							$link.text( name );
+
+							if ( self._changeListener ) {
+								self._changeListener( self );
+							}
+							id = selectedId;
+						} );
+
+						$html.find( '.' + variable.replace( '?', '' ) ).append( $label );
+					} );
+
+			template = template.replace( variable, '<span class="' + variable.replace( '?', '' ) + '"></span>' );
+		} );
+
+		return $html.append( $( template ) );
 	};
 
 	/**

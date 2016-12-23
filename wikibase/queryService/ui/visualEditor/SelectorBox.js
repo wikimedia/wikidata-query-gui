@@ -9,7 +9,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	var I18N_PREFIX = 'wdqs-ve-sb';
 
 /*jshint multistr: true */
-	var SPARQL_QUERY_SEARCH = {
+	var SPARQL_QUERY = {
 			item: {
 				suggest: null,
 // Disable for now as requested by Smalyshev
@@ -123,9 +123,37 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 					?props wdt:P1659 ?id.\
 					?id rdfs:label ?label.\
 					?id schema:description ?description.\
-					FILTER((LANG(?label)) = "en")\
+					FILTER((LANG(?label)) = "{LANGUAGE}")\
 					FILTER((LANG(?description)) = "{LANGUAGE}")\
 				}'
+		},
+
+		sparql: {
+			search:
+				'SELECT ?id ?label ?description WITH {\
+					{SPARQL}\
+					} AS %inner\
+				WHERE {\
+					INCLUDE %inner\
+					?id rdfs:label ?label.\
+					?id schema:description ?description.\
+					FILTER((LANG(?label)) = "{LANGUAGE}")\
+					FILTER((LANG(?description)) = "{LANGUAGE}")\
+					FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
+				} ORDER BY DESC(?count)\
+				LIMIT 20',
+			suggest:
+				'SELECT ?id ?label ?description WITH {\
+				{SPARQL}\
+				} AS %inner\
+			WHERE {\
+				INCLUDE %inner\
+				?id rdfs:label ?label.\
+				?id schema:description ?description.\
+				FILTER((LANG(?label)) = "{LANGUAGE}")\
+				FILTER((LANG(?description)) = "{LANGUAGE}")\
+			} ORDER BY DESC(?count)\
+			LIMIT 20'
 		}
 	};
 
@@ -295,11 +323,12 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._createLookupService = function( $element, triple ) {
 		var self = this,
-			type = $element.data( 'type' );
+			type = $element.data( 'type' ),
+			sparql = $element.data( 'sparql' );
 
 		return function( params, success, failure ) {
 			$.when(
-					self._searchEntitiesSparql( params.data.term, type, triple ),
+					self._searchEntitiesSparql( params.data.term, type, triple, sparql ),
 					self._searchEntities( params.data.term, type )
 					).done( function ( r1, r2 ) {
 
@@ -327,9 +356,16 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getSparglTemplate = function( term, type, triple ) {
-		var query = SPARQL_QUERY_SEARCH[ type ];
+	SELF.prototype._getSparqlTemplate = function( term, type, triple, sparql ) {
+		if ( sparql ) {
+			if ( term ) {
+				return SPARQL_QUERY.sparql.search.replace( '{SPARQL}', sparql );
+			}
 
+			return SPARQL_QUERY.sparql.suggest.replace( '{SPARQL}', sparql );
+		}
+
+		var query = SPARQL_QUERY[ type ];
 		if ( term && term.trim() !== '' ) {
 			if ( !triple ) {
 				return null;
@@ -359,8 +395,9 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._searchEntitiesSparqlCreateQuery = function( term, type, triple ) {
-		var query = this._getSparglTemplate( term, type, triple );
+	SELF.prototype._searchEntitiesSparqlCreateQuery = function( term, type, triple, sparql ) {
+
+		var query = this._getSparqlTemplate( term, type, triple, sparql );
 
 		function findFirstStringProperty( predicate ) {
 			if ( typeof predicate === 'string' ) {
@@ -370,11 +407,17 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 			}
 		}
 
-		if ( query && triple ) {
-			query = query.replace( '{PROPERTY_URI}', findFirstStringProperty( triple.predicate ) )
-			.replace( '{ITEM_URI}', triple.object )
-			.replace( /\{LANGUAGE\}/g, $.i18n && $.i18n().locale || 'en' )
-			.replace( '{TERM}', term );
+		if ( query ) {
+			if ( triple ) {
+				query = query
+						.replace( '{PROPERTY_URI}', findFirstStringProperty( triple.predicate ) )
+						.replace( '{ITEM_URI}', triple.object );
+			}
+			if ( term ) {
+				query = query.replace( '{TERM}', term );
+			}
+
+			query = query.replace( /\{LANGUAGE\}/g, $.i18n && $.i18n().locale || 'en' );
 		}
 
 		return query;
@@ -383,10 +426,10 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._searchEntitiesSparql = function( term, type, triple ) {
+	SELF.prototype._searchEntitiesSparql = function( term, type, triple, sparql ) {
 		var deferred = $.Deferred();
 
-		var query = this._searchEntitiesSparqlCreateQuery( term, type, triple );
+		var query = this._searchEntitiesSparqlCreateQuery( term, type, triple, sparql );
 		if ( !query ) {
 			return deferred.resolve( [] ).promise();
 		}
