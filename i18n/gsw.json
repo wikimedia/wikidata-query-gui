@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"Terfili"
+		]
+	},
+	"wdqs-app-button-examples": "Byspil",
+	"wdqs-app-button-prefixes": "Präfix",
+	"wdqs-app-button-tools": "Wärchzüg",
+	"wdqs-app-button-help": "Hilf",
+	"wdqs-app-button-run": "Ussfiere",
+	"wdqs-app-button-run-title": "Abfroog ussfiere(<STRG> + <ENTER>)",
+	"wdqs-app-button-clear": "Lääre",
+	"wdqs-app-button-display": "Aazeige",
+	"wdqs-app-button-download": "Abelade",
+	"wdqs-app-button-link": "Link",
+	"wdqs-app-help-feedback": "Ruggmäldig gee!",
+	"wdqs-app-help-request-query": "E Abfroog beaatraie",
+	"wdqs-app-help-portal": "Hilfportal",
+	"wdqs-app-help-manual": "Benutzerhandbuech",
+	"wdqs-app-help-examples": "Byspilabfrooge",
+	"wdqs-app-help-datamodel": "RDF-Datemodell",
+	"wdqs-app-help-prefixes": "Lischt vo Präfix",
+	"wdqs-app-footer-updated": "Date sin vor $1 aktualisiert worde",
+	"wdqs-app-footer-updated-seconds": "Date sin vor $1 Sekunde aktualisiert worde"
+}

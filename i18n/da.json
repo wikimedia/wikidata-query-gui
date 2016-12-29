@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tjernobyl"
+		]
+	},
+	"wdqs-app-button-examples": "Eksempler",
+	"wdqs-app-button-prefixes": "Præfikser",
+	"wdqs-app-button-tools": "Værktøjer",
+	"wdqs-app-button-help": "Hjælp",
+	"wdqs-app-button-run": "Kør",
+	"wdqs-app-button-run-title": "Udfør forespørgsel (<CTRL> + <ENTER>)",
+	"wdqs-app-button-clear": "Ryd",
+	"wdqs-app-button-display": "Vis",
+	"wdqs-app-button-download": "Download",
+	"wdqs-app-button-link": "Henvisning",
+	"wdqs-app-help-portal": "Hjælpeportal",
+	"wdqs-app-help-manual": "Brugervejledning",
+	"wdqs-app-help-examples": "Forespørgselseksempler",
+	"wdqs-app-help-datamodel": "RDF-datamodel",
+	"wdqs-app-help-prefixes": "Liste over præfikser",
+	"wdqs-app-footer-help": "Tryk på <i>[CTRL + SPACE]</i> for at aktivere autofuldførelse.",
+	"wdqs-app-footer-updated": "Data opdateret for $1 siden",
+	"wdqs-app-footer-updated-seconds": "Data opdateret for $1 sekunder siden",
+	"wdqs-app-result-shorturl": "Kort URL til resultat",
+	"wdqs-app-result-shorturl-title": "Kort URL til dette resultat",
+	"wdqs-app-result-embed": "Indlejr resultat",
+	"wdqs-ve-show": "Vis",
+	"wdqs-ve-with": "med",
+	"wdqs-ve-and": "og",
+	"wdqs-ve-anything": "hvad som helst",
+	"wdqs-ve-any": "enhver",
+	"wdqs-ve-or": "eller",
+	"wdqs-ve-subtype": "undertype",
+	"wdqs-action-query": "Kører forespørgslen",
+	"wdqs-action-render": "Renderer resultat",
+	"wdqs-action-error-display": "Ude af stand til at vise resultatet",
+	"wdqs-action-timeout": "Forespørgslens tidsgrænse er nået",
+	"wdqs-action-malformed-query": "Forespørgslen er fejlagtig",
+	"wdqs-action-server-error": "Serverfejl",
+	"wdqs-action-unknow-error": "Ukendt fejl",
+	"wdqs-result-map-layers-all": "Alle lag"
+}

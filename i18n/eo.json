@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Rafaneta"
 		]
 	},
 	"wdqs-app-button-examples": "Ekzemploj",
@@ -9,10 +10,24 @@
 	"wdqs-app-button-tools": "Iloj",
 	"wdqs-app-button-help": "Helpo",
 	"wdqs-app-button-run": "Plenumi",
+	"wdqs-app-button-run-title": "Plenumi informpeton (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Vakigi",
 	"wdqs-app-button-display": "Montri",
 	"wdqs-app-button-download": "Elŝuti",
 	"wdqs-app-button-link": "Ligilo",
+	"wdqs-app-help-feedback": "Donu al ni vian opinion!",
+	"wdqs-app-help-request-query": "Informpeti",
+	"wdqs-app-help-portal": "Helpa portalo",
+	"wdqs-app-help-manual": "Manlibro por uzanto",
+	"wdqs-app-help-examples": "Ekzemplaj informpetoj",
+	"wdqs-app-help-datamodel": "Modelo de RDF-datumoj",
+	"wdqs-app-help-prefixes": "Listo de prefiksoj",
+	"wdqs-app-footer-help": "Premu <i>[CTRL-SPACE]</i> por ŝalti aŭtomatan kompletadon.",
+	"wdqs-app-result-shorturl": "Eta URL de la rezulto",
+	"wdqs-app-result-shorturl-title": "Eta URL de ĉi tiu rezulto",
+	"wdqs-app-result-embed": "Enkorpigi la rezulton",
+	"wdqs-app-shorturl-page-title": "Eta URL de ĉi tiu paĝo",
+	"wdqs-app-editor-addprefixes": "Aldoni normajn prefiksojn",
 	"wdqs-dialog-examples-preview-query": "Antaŭrigardi informpeton",
 	"wdqs-dialog-examples-preview-result": "Antaŭrigardi rezulton",
 	"wdqs-ve-find": "Serĉi",
@@ -27,5 +42,8 @@
 	"wdqs-action-render": "Bildigado de rezulto",
 	"wdqs-action-error-display": "Montri rezulton ne eblas",
 	"wdqs-action-timeout": "Informpeta tempolimo atingita",
+	"wdqs-action-malformed-query": "Informpeto estas misformita",
+	"wdqs-action-server-error": "Servila eraro",
+	"wdqs-action-unknow-error": "Nekonata eraro",
 	"wdqs-result-map-layers-all": "Ĉiuj tavoloj"
 }
