@@ -57,8 +57,8 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 				url = null;
 				prevRow = row;
 
-                if ( row.rgb && self._getFormatter().isColor( row.rgb ) ) {
-                    item.color = self._getFormatter().getColorForHtml( row.rgb );
+				if ( row.rgb && self._getFormatter().isColor( row.rgb ) ) {
+					item.color = self._getFormatter().getColorForHtml( row.rgb );
 				}
 
 				if ( row[labelKey] && row[numberKey] ) {
