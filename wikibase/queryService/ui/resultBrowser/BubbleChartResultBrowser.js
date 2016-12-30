@@ -42,19 +42,14 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 		var data = {
 			'name': 'bubblechart',
 			'children': []
-		}, labelKey = this._getLabelColumns()[0], numberKey = this._getNumberColumns()[0], prevRow = null, url = null;
+		}, labelKey = this._getLabelColumns()[0], numberKey = this._getNumberColumns()[0], prevRow = null;
 
 		this._iterateResult( function( field, key, row ) {
 
-			if ( field && field.value && self._getFormatter().isExploreUrl( field.value ) ) {
-				url = field.value;
-			}
-
 			if ( row !== prevRow ) {
 				var item = {
-					url: url
+					url: null
 				};
-				url = null;
 				prevRow = row;
 
 				if ( row.rgb && self._getFormatter().isColor( row.rgb ) ) {
@@ -65,6 +60,13 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 					item.name = row[labelKey].value;
 					item.size = row[numberKey].value;
 					data.children.push( item );
+				}
+			}
+
+			if ( field && field.value && self._getFormatter().isExploreUrl( field.value ) ) {
+				var createdItem = data.children[data.children.length - 1];
+				if ( createdItem.url === null ) {
+					createdItem.url = field.value;
 				}
 			}
 		} );
