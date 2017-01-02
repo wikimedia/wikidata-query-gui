@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cedric31"
+			"Cedric31",
+			"Nicolas Eynaud"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -9,10 +10,26 @@
 	"wdqs-app-button-tools": "Aisinas",
 	"wdqs-app-button-help": "Ajuda",
 	"wdqs-app-button-run": "Executar",
+	"wdqs-app-button-run-title": "Executar la requista (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Escafar",
 	"wdqs-app-button-display": "Afichar",
 	"wdqs-app-button-download": "Telecargar",
 	"wdqs-app-button-link": "Ligam",
+	"wdqs-app-help-feedback": "Donatz vòstra retorn d'experiéncia !",
+	"wdqs-app-help-request-query": "Demandar una requista",
+	"wdqs-app-help-portal": "Portau d'ajuda",
+	"wdqs-app-help-manual": "Guida d'utilizacion",
+	"wdqs-app-help-examples": "Exemples de requistas",
+	"wdqs-app-help-datamodel": "Modèl de donadas RDF",
+	"wdqs-app-help-prefixes": "Lista dei prefixes",
+	"wdqs-app-footer-help": "Quichar <i>[CTRL-SPACE]</i> per activar la sasida automatica",
+	"wdqs-app-footer-updated": "Donadas mesas a jorn i a $1",
+	"wdqs-app-footer-updated-seconds": "Donadas mesas a jorn i a $1 segondas",
+	"wdqs-app-result-embed": "Integrar lo resultat",
+	"wdqs-app-editor-placeholder": "(Intrar una requista SPARQL o chausir un exemple de requista)",
+	"wdqs-app-editor-addprefixes": "Ajustar de prefixes estandards",
+	"wdqs-dialog-examples-preview-query": "Previsualizar la requista",
+	"wdqs-dialog-examples-preview-result": "Previsualizar lo resultat",
 	"wdqs-ve-find": "Recercar",
 	"wdqs-ve-show": "Afichar",
 	"wdqs-ve-with": "amb",
@@ -20,5 +37,12 @@
 	"wdqs-ve-anything": "qué que siá",
 	"wdqs-ve-any": "quin que siá",
 	"wdqs-ve-or": "o",
-	"wdqs-ve-subtype": "sostítol"
+	"wdqs-ve-subtype": "sostítol",
+	"wdqs-action-query": "Requista en cors",
+	"wdqs-action-render": "Visualizacion dau resultat",
+	"wdqs-action-error-display": "Impossible de mostrar lo resultat",
+	"wdqs-action-timeout": "Despassament dau limit dau delai de requista",
+	"wdqs-action-malformed-query": "Error(s) dins l'escritura de la requista",
+	"wdqs-action-server-error": "Error de servider",
+	"wdqs-action-unknow-error": "Error desconeguda"
 }
