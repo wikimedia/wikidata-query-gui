@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Jonas Kress"
+            "Jonas Kress",
+            "David Sn"
         ],
         "locale": "en",
         "message-documentation": "qqq"
@@ -13,9 +14,13 @@
     "wdqs-app-button-run": "Run",
     "wdqs-app-button-run-title": "Execute query (<CTRL> + <ENTER>)",
     "wdqs-app-button-clear": "Clear",
+    "wdqs-app-button-clear-title": "Clear query",
     "wdqs-app-button-display": "Display",
+    "wdqs-app-button-display-title": "Display result as table, image, ...",
     "wdqs-app-button-download": "Download",
+    "wdqs-app-button-download-title": "Download result",
     "wdqs-app-button-link": "Link",
+    "wdqs-app-button-link-title": "Get link to query",
     "wdqs-app-help-feedback": "Give Feedback!",
     "wdqs-app-help-request-query": "Request a query",
     "wdqs-app-help-portal": "Help Portal",

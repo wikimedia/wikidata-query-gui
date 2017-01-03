@@ -237,6 +237,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			}
 		} );
 
+		// add tooltip to dropdown
+		$( '#display-button' ).tooltip();
+		$( '#download-button' ).tooltip();
+		$( '#link-button' ).tooltip();
+
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
 	};
 

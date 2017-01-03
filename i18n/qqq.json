@@ -5,7 +5,8 @@
 		"authors": [
 			"Jonas Kress",
 			"Liuxinyu970226",
-			"Amire80"
+			"Amire80",
+			"David Sn"
 		]
 	},
 	"wdqs-app-button-examples": "Button to show examples dialog\n{{Identical|Example}}",
@@ -15,9 +16,13 @@
 	"wdqs-app-button-run": "Button to run SPARQL query\n{{Identical|Run}}",
 	"wdqs-app-button-run-title": "Title for button to run SPARQL query",
 	"wdqs-app-button-clear": "Button to clear SPARQL query editor\n{{Identical|Clear}}",
+	"wdqs-app-button-clear-title": "Title for button to clear SPARQL query editor",
 	"wdqs-app-button-display": "Button display result as table, image, ...\n{{Identical|Display}}",
+	"wdqs-app-button-display-title": "Title for button display result as table, image, ...",
 	"wdqs-app-button-download": "Button download result\n{{Identical|Download}}",
+	"wdqs-app-button-download-title": "Title for button download result",
 	"wdqs-app-button-link": "Button get link to query\n{{Identical|Link}}",
+	"wdqs-app-button-link-title": "Title for button get link to query",
 	"wdqs-app-help-feedback": "Button message in help dropdown",
 	"wdqs-app-help-request-query": "Button message in help dropdown",
 	"wdqs-app-help-portal": "Button message in help dropdown",

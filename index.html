@@ -110,10 +110,10 @@
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
-								<button type="submit" class="btn btn-info" id="execute-button" data-i18n="[title]wdqs-app-button-run-title">
+								<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
 									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run"></span>
 								</button>
-								<button type="button" class="btn btn-default" id="clear-button">
+								<button type="button" class="btn btn-default" id="clear-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-clear-title">
 									<span data-i18n="wdqs-app-button-clear"></span>
 								</button>
 								<span class="query-total">
@@ -121,12 +121,12 @@
 							</div>
 						</div>
 						<ul class="nav navbar-nav navbar-right query-total">
-							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span data-i18n="wdqs-app-button-display"></span><span class="caret"></span>
+							<li><a id="display-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-display-title"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span data-i18n="wdqs-app-button-display"></span><span class="caret"></span>
 							</a>
 								<ul id="result-browser-menu" class="dropdown-menu" role="menu">
 								</ul></li>
 							<li>
-							<li><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span data-i18n="wdqs-app-button-download"></span><span class="caret"></span>
+							<li><a id="download-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-download-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span data-i18n="wdqs-app-button-download"></span><span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a id="downloadJSON" href="#">JSON</a></li>
@@ -138,7 +138,7 @@
 								<li><a id="downloadCSV" href="#">CSV</a></li>
 							</ul></li>
 							<li>
-							<a data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+							<a id="link-button" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-placement="top" data-i18n="[title]wdqs-app-button-link-title">
 								    <span class="glyphicon glyphicon-link" aria-hidden="true"></span><span data-i18n="wdqs-app-button-link"></span><span class="caret"></span>
 								  </a>
 								  <ul class="dropdown-menu">
