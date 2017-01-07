@@ -31,8 +31,10 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:referenceValue',
 			'wikibase:statementValueNormalized', 'wikibase:qualifierValueNormalized',
 			'wikibase:referenceValueNormalized', 'wikibase:novalue',
+			// entity types
+			'wikibase:Property', // 'wikibase:Item' disabled on WDQS for performance reasons
 			// data types
-			'wikibase:Reference', 'wikibase:Dump',
+			'wikibase:Reference', 'wikibase:Dump', // 'wikibase:Statement' disabled on WDQS for performance reasons
 			// ranks
 			'wikibase:PreferredRank', 'wikibase:NormalRank', 'wikibase:DeprecatedRank', 'wikibase:BestRank',
 			// value types
@@ -40,7 +42,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			// property types
 			'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:Globecoordinate',
 			'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
-			'wikibase:Url', 'wikibase:ExternalId',
+			'wikibase:Url', 'wikibase:ExternalId', 'wikibase:WikibaseProperty', 'wikibase:Math',
 			// pageprops
 			'wikibase:statements', 'wikibase:sitelinks',
 			// time
