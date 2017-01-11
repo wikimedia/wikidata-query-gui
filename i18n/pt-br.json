@@ -3,7 +3,8 @@
 		"authors": [
 			"HenriqueCrang",
 			"Macofe",
-			"!Silent"
+			"!Silent",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -13,9 +14,13 @@
 	"wdqs-app-button-run": "Executar",
 	"wdqs-app-button-run-title": "Executar a consulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Limpar",
+	"wdqs-app-button-clear-title": "Limpar consulta",
 	"wdqs-app-button-display": "Exibir",
+	"wdqs-app-button-display-title": "Exibir resultado como tabela, imagem, ...",
 	"wdqs-app-button-download": "Baixar",
+	"wdqs-app-button-download-title": "Fazer o download do resultado",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-button-link-title": "Obter link para consulta",
 	"wdqs-app-help-feedback": "Dê sua opinião!",
 	"wdqs-app-help-request-query": "Solicitar una consulta",
 	"wdqs-app-help-portal": "Portal de ajuda",

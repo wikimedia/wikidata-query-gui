@@ -4,7 +4,8 @@
 			"Siebrand",
 			"Sjoerddebruin",
 			"MrLeopold",
-			"Wikibelgiaan"
+			"Wikibelgiaan",
+			"Mainframe98"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -15,7 +16,9 @@
 	"wdqs-app-button-run-title": "Zoekopdracht uitvoeren (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Wissen",
 	"wdqs-app-button-display": "Weergaven",
+	"wdqs-app-button-display-title": "Toon resultaat als tabel, afbeelding, ...",
 	"wdqs-app-button-download": "Downloaden",
+	"wdqs-app-button-download-title": "Resultaat downloaden",
 	"wdqs-app-button-link": "Koppeling",
 	"wdqs-app-help-feedback": "Geef ons feedback!",
 	"wdqs-app-help-request-query": "Zoekopdracht aanvragen",

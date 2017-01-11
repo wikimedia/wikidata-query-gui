@@ -4,7 +4,9 @@
 			"Kumkumuk",
 			"Mirzali",
 			"Asmen",
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Gambollar",
+			"Gırd"
 		]
 	},
 	"wdqs-app-button-examples": "Misali",
@@ -14,9 +16,13 @@
 	"wdqs-app-button-run": "Akar fi",
 	"wdqs-app-button-run-title": "Persen kerdış (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Pak ke",
-	"wdqs-app-button-display": "Bımotné",
+	"wdqs-app-button-clear-title": "Persi pak kı",
+	"wdqs-app-button-display": "Bımotne",
+	"wdqs-app-button-display-title": "Neticey tablo, resimi...  asenê",
 	"wdqs-app-button-download": "Ron",
+	"wdqs-app-button-download-title": "Neticey ron",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-button-link-title": "Şo gırey persi",
 	"wdqs-app-help-feedback": "Teklif ke!",
 	"wdqs-app-help-request-query": "Ju pers bıwaz",
 	"wdqs-app-help-portal": "Portala pheşti",

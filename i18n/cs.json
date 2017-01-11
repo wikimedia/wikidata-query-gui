@@ -15,10 +15,15 @@
 	"wdqs-app-button-run": "Spustit",
 	"wdqs-app-button-run-title": "Spustit dotaz (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Vymazat",
+	"wdqs-app-button-clear-title": "Vymazat dotaz",
 	"wdqs-app-button-display": "Zobrazení",
+	"wdqs-app-button-display-title": "Zobrazit výsledek jako tabulku, obrázek, ...",
 	"wdqs-app-button-download": "Stáhnout",
+	"wdqs-app-button-download-title": "Stáhnout výsledek",
 	"wdqs-app-button-link": "Odkaz",
+	"wdqs-app-button-link-title": "Získat odkaz na dotaz",
 	"wdqs-app-help-feedback": "Dát zpětnou vazbu!",
+	"wdqs-app-help-portal": "Nápověda",
 	"wdqs-app-help-manual": "Uživatelská příručka",
 	"wdqs-app-help-examples": "Příklady dotazů",
 	"wdqs-app-help-prefixes": "Seznam prefixů",
@@ -41,5 +46,7 @@
 	"wdqs-action-render": "Vykresluje se výsledek",
 	"wdqs-action-error-display": "Nelze zobrazit výsledek",
 	"wdqs-action-timeout": "Vypršel časový limit pro dotaz",
+	"wdqs-action-server-error": "Chyba serveru",
+	"wdqs-action-unknow-error": "Neznámá chyba",
 	"wdqs-result-map-layers-all": "Všechny vrstvy"
 }
