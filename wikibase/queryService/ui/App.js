@@ -587,7 +587,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				// see: http://danml.com/download.html
 				self._track( 'buttonClick.download.' + filename );
 				download( handler(), filename, mimetype );
-
 			};
 		};
 

@@ -86,14 +86,12 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 					id: row.o.value,
 					label: row.ol.value
 				} );
-
 			} );
 
 			deferred.resolve( result );
 		} );
 
 		return deferred;
-
 	};
 
 	/**
@@ -115,7 +113,6 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 							label: row.pl.value,
 							count: row.count.value
 						} );
-
 					} );
 
 					deferred.resolve( result );

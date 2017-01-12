@@ -188,7 +188,6 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 								/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ )
 						.pop().trim();
 			}
-
 		} catch ( e ) {
 		}
 
