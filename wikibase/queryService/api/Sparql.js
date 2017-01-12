@@ -126,11 +126,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {jQuery.Promise} query
 	 */
 	SELF.prototype.query = function( query ) {
-		var self = this, deferred = $.Deferred(), settings = {
-			headers: {
-				Accept: 'application/sparql-results+json'
-			}
-		};
+		var self = this,
+			deferred = $.Deferred(),
+			settings = { headers: { Accept: 'application/sparql-results+json' } };
 
 		this._queryUri = this._serviceUri + '?query=' + encodeURIComponent( query );
 

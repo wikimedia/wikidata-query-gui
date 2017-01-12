@@ -48,9 +48,10 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._createInput = function( $element, listener, toolbar ) {
-		var $input = $( '<input>' ).attr( 'type', $element.data( 'type' ) ), $close = this
-				._getCloseButton(), $toolbar = this._getToolbar( toolbar, $element ), $content = $(
-				'<div>' ).append( $close, ' ', $input, ' ', $toolbar );
+		var $input = $( '<input>' ).attr( 'type', $element.data( 'type' ) ),
+			$close = this._getCloseButton(),
+			$toolbar = this._getToolbar( toolbar, $element ),
+			$content = $( '<div>' ).append( $close, ' ', $input, ' ', $toolbar );
 
 		$element.clickover( {
 			placement: 'bottom',

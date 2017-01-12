@@ -50,8 +50,13 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 * @return {jQuery.Promise} Returns the completion as promise ({list:[], from:, to:})
 	 */
 	SELF.prototype.getHint = function( editorContent, lineContent, lineNum, cursorPos ) {
-		var deferred = new $.Deferred(), currentWord = this
-				._getCurrentWord( lineContent, cursorPos ), list, prefix, term, entityPrefixes, self = this;
+		var deferred = new $.Deferred(),
+			currentWord = this._getCurrentWord( lineContent, cursorPos ),
+			list,
+			prefix,
+			term,
+			entityPrefixes,
+			self = this;
 
 		if ( !currentWord.word.match( /\S+:\S*/ ) ) {
 			return deferred.reject().promise();
@@ -120,7 +125,8 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._searchEntities = function( term, type ) {
-		var entityList = [], deferred = $.Deferred();
+		var entityList = [],
+			deferred = $.Deferred();
 
 		this._api.searchEntities( term, type ).done( function( data ) {
 			$.each( data.search, function( key, value ) {
@@ -138,10 +144,9 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._getCurrentWord = function( line, position ) {
-		var pos = position - 1, colon = false;
-		var wordSeparator = [
-				'/', '*', '+', ' ', ';', '.', '\n', '\t', '(', ')', '{', '}', '[', ']'
-		];
+		var pos = position - 1,
+			colon = false,
+			wordSeparator = [ '/', '*', '+', ' ', ';', '.', '\n', '\t', '(', ')', '{', '}', '[', ']' ];
 
 		if ( pos < 0 ) {
 			pos = 0;
@@ -179,8 +184,10 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._extractPrefixes = function( text ) {
-		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES ), types = this._rdfNamespaces.ENTITY_TYPES, lines = text
-				.split( '\n' ), matches;
+		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES ),
+			types = this._rdfNamespaces.ENTITY_TYPES,
+			lines = text.split( '\n' ),
+			matches;
 
 		$.each( lines, function( index, line ) {
 			// PREFIX wd: <http://www.wikidata.org/entity/>

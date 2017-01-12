@@ -67,7 +67,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {jQuery} element
 	 */
 	SELF.prototype.formatValue = function( data, title, embed ) {
-		var value = data.value, $html = $( '<span>' );
+		var value = data.value,
+			$html = $( '<span>' );
 
 		if ( !title ) {
 			title = data.dataType || '';

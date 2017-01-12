@@ -647,7 +647,9 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._handleQueryError = function() {
 		$( '#execute-button' ).prop( 'disabled', false );
 
-		var error = this._sparqlApi.getError(), errorMessageKey = null, codes = this._sparqlApi.ERROR_CODES;
+		var error = this._sparqlApi.getError(),
+			errorMessageKey = null,
+			codes = this._sparqlApi.ERROR_CODES;
 
 		switch ( error.code ) {
 		case codes.TIMEOUT:

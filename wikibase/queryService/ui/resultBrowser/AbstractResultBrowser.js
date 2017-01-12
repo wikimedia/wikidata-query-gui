@@ -121,7 +121,8 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @param {String} columnKey
 	 */
 	SELF.prototype.processVisitors = function( data, columnKey ) {
-		var self = this, removeVisitors = {};
+		var self = this,
+			removeVisitors = {};
 
 		if ( this._visitors.length === 0 ) {
 			return;

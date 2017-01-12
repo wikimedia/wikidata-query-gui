@@ -89,7 +89,9 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 * @return {jQuery.Promise} Returns the completion as promise ({list:[], from:, to:})
 	 **/
 	SELF.prototype.getHint = function( editorContent, lineContent, lineNum, cursorPos ) {
-		var currentWord = this._getCurrentWord( lineContent, cursorPos ), hintList = [], deferred = new $.Deferred();
+		var currentWord = this._getCurrentWord( lineContent, cursorPos ),
+			hintList = [],
+			deferred = new $.Deferred();
 
 		if ( currentWord.word.indexOf( '?' ) === 0 ) {
 			hintList = hintList.concat( this._getVariableHints( currentWord.word, this

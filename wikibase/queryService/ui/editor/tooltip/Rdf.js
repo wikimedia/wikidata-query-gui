@@ -66,11 +66,12 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	};
 
 	SELF.prototype._createTooltip = function( e ) {
-		var posX = e.clientX, posY = e.clientY + $( window ).scrollTop(), token = this._editor
-				.getTokenAt( this._editor.coordsChar( {
-					left: posX,
-					top: posY
-				} ) ).string;
+		var posX = e.clientX,
+			posY = e.clientY + $( window ).scrollTop(),
+			token = this._editor.getTokenAt( this._editor.coordsChar( {
+				left: posX,
+				top: posY
+			} ) ).string;
 
 		if ( !token.match( /.+\:(Q|P)[0-9]*/ ) ) {
 			return;
@@ -112,8 +113,9 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	};
 
 	SELF.prototype._extractPrefixes = function( text ) {
-		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES ), lines = text
-				.split( '\n' ), matches;
+		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES ),
+			lines = text.split( '\n' ),
+			matches;
 
 		var self = this;
 		$.each( lines, function( index, line ) {
@@ -129,7 +131,8 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	};
 
 	SELF.prototype._searchEntities = function( term, type ) {
-		var entityList = [], deferred = $.Deferred();
+		var entityList = [],
+			deferred = $.Deferred();
 
 		this._api.searchEntities( term, type ).done(
 				function( data ) {

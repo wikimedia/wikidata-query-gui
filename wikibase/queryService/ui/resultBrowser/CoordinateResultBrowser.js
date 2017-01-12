@@ -207,7 +207,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._createMarkerGroups = function() {
-		var self = this, markers = {};
+		var self = this,
+			markers = {};
 		markers[ LAYER_DEFAULT_GROUP ] = [];
 
 		this._iterateResult( function( field, key, row ) {

@@ -36,8 +36,8 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 		this._iterateResult( function( field, key, row ) {
 			if ( field && self._isCommonsResource( field.value ) ) {
-				var url = field.value, fileName = self._getFormatter().getCommonsResourceFileName(
-						url );
+				var url = field.value,
+					fileName = self._getFormatter().getCommonsResourceFileName( url );
 
 				self._grid.append( self._getItem( self._getThumbnail( url ), self._getThumbnail(
 						url, 1000 ), fileName, row ) );

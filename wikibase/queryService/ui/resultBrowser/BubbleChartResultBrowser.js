@@ -38,11 +38,11 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 	 * @param {jQuery} $element to draw at
 	 **/
 	SELF.prototype.draw = function( $element ) {
-		var self = this;
-		var data = {
-			'name': 'bubblechart',
-			'children': []
-		}, labelKey = this._getLabelColumns()[0], numberKey = this._getNumberColumns()[0], prevRow = null;
+		var self = this,
+			data = { 'name': 'bubblechart', 'children': [] },
+			labelKey = this._getLabelColumns()[0],
+			numberKey = this._getNumberColumns()[0],
+			prevRow = null;
 
 		this._iterateResult( function( field, key, row ) {
 

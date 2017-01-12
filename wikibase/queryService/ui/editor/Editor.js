@@ -112,9 +112,10 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 							if ( editor !== self._editor ) {
 								return;
 							}
-							var lineContent = editor.getLine( editor.getCursor().line ), editorContent = editor.doc
-									.getValue(), cursorPos = editor.getCursor().ch, lineNum = editor
-									.getCursor().line;
+							var lineContent = editor.getLine( editor.getCursor().line ),
+								editorContent = editor.doc.getValue(),
+								cursorPos = editor.getCursor().ch,
+								lineNum = editor.getCursor().line;
 
 							self._getHints( editorContent, lineContent, lineNum, cursorPos ).done(
 									function( hint ) {
@@ -126,7 +127,8 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	};
 
 	SELF.prototype._getHints = function( editorContent, lineContent, lineNum, cursorPos ) {
-		var deferred = new $.Deferred(), self = this;
+		var deferred = new $.Deferred(),
+			self = this;
 
 		this._rdfHint.getHint( editorContent, lineContent, lineNum, cursorPos ).done(
 				function( hint ) {
@@ -195,7 +197,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	 * @param {string} description
 	 */
 	SELF.prototype.highlightError = function( description ) {
-		var line, character, match = description.match( /line (\d+), column (\d+)/ );
+		var line,
+			character,
+			match = description.match( /line (\d+), column (\d+)/ );
 		if ( match ) {
 			// highlight character at error position
 			line = match[1] - 1;

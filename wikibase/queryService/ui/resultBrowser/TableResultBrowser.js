@@ -111,7 +111,8 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @param {jQuery} $element to draw at
 	 */
 	SELF.prototype.drawBootstrapTable = function( $element ) {
-		var self = this, showPagination = ( this.rows.length > TABLE_PAGE_SIZE );
+		var self = this,
+			showPagination = ( this.rows.length > TABLE_PAGE_SIZE );
 
 		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data, row, index ) {
 			if ( !data ) {

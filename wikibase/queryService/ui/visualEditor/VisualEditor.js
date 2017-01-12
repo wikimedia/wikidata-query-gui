@@ -130,8 +130,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._cleanQueryPrefixes = function( query ) {
-		var prefixRegex = /PREFIX ([a-z]+): <(.*)>/gi, m;
-		var prefixes = {}, cleanQuery = query.replace( prefixRegex, '' ).trim();
+		var prefixRegex = /PREFIX ([a-z]+): <(.*)>/gi,
+			m,
+			prefixes = {},
+			cleanQuery = query.replace( prefixRegex, '' ).trim();
 
 		while ( ( m = prefixRegex.exec( query ) ) ) {
 			var prefix = m[1];
@@ -194,9 +196,11 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getHtml = function() {
-		var self = this;
-		var $html = $( '<div>' ), $find = this._getFindSection(), $show = this._getShowSection(), $spacer = $(
-				'<div>' ).addClass( 'spacer' );
+		var self = this,
+			$html = $( '<div>' ),
+			$find = this._getFindSection(),
+			$show = this._getShowSection(),
+			$spacer = $( '<div>' ).addClass( 'spacer' );
 
 		$html.append( $find, $spacer.clone(), $show, $spacer.clone(), this._getLimitSection() );
 
@@ -235,8 +239,12 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getLimitSection = function() {
-		var $limitSection = $( '<div>' ), $limit = $( '<a data-type="number">' ).attr( 'href', '#' )
-				.text( 'Limit' ).data( 'value', this._query.getLimit() ), $value = $( '<span>' )
+		var $limitSection = $( '<div>' ),
+			$limit = $( '<a data-type="number">' )
+				.attr( 'href', '#' )
+				.text( 'Limit' )
+				.data( 'value', this._query.getLimit() ),
+			$value = $( '<span>' )
 				.text( this._query.getLimit() ? this._query.getLimit() : '' );
 
 		var self = this;
@@ -432,7 +440,8 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getTripleEntityPathHtml = function( path, triple ) {
-		var self = this, $path = $( '<span>' );
+		var self = this,
+			$path = $( '<span>' );
 		$.each( path.items, function( k, v ) {
 			if ( v.type && v.type === 'path' ) {
 				$path.append( self._getTripleEntityPathHtml( v, triple ) );
