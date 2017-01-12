@@ -173,9 +173,9 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 * @private
 	 */
 	SELF.prototype._createTriples = function( triplesData, isOptional ) {
-		var triples = [];
+		var self = this,
+			triples = [];
 
-		var self = this;
 		$.each( triplesData, function( i, triple ) {
 			triples.push( {
 				optional: isOptional,

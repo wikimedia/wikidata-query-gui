@@ -142,9 +142,9 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._drawTagCloud = function( redraw ) {
-		var self = this;
+		var self = this,
+			jQCloudTags = [];
 
-		var jQCloudTags = [];
 		$.each( this._getCloudTags(), function( tag, weight ) {
 			jQCloudTags.push( {
 				text: tag,

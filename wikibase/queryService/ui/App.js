@@ -378,12 +378,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 * @private
 	 */
 	SELF.prototype._initDataUpdated = function() {
-		var self = this;
-		var $label = $( '.dataUpdated' );
+		var self = this,
+			$label = $( '.dataUpdated' );
 
 		var updateDataStatus = function() {
 			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
-
 				var updatestatustext = moment.duration( difference, 'seconds' ).humanize(),
 					labelClass,
 					badge;
@@ -436,10 +435,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				$.proxy( this._handleNamespaceSelected, this ) );
 
 		$( '.addPrefixes' ).click( function() {
-			var standardPrefixes = wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES;
-			var prefixes = Object.keys( standardPrefixes ).map( function( x ) {
-				return standardPrefixes[x];
-			} ).join( '\n' );
+			var standardPrefixes = wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES,
+				prefixes = Object.keys( standardPrefixes ).map( function( x ) {
+					return standardPrefixes[x];
+				} ).join( '\n' );
+
 			self._editor.prepandValue( prefixes + '\n\n' );
 			self._track( 'buttonClick.addPrefixes' );
 		} );

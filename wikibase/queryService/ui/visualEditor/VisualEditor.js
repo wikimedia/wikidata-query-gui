@@ -474,9 +474,9 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._getTripleEntityHtml = function( entity, triple, key ) {
-		var $label = $( '<span>' );
+		var self = this,
+			$label = $( '<span>' );
 
-		var self = this;
 		this._getLabel( entity ).done( function( label, id, description, type ) {
 			var $link = $( '<a>' )
 				.text( label )

@@ -172,8 +172,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		}
 
 		try {//extract error from server response
-			var errorToMatch = error.debug.substring( error.debug
-					.indexOf( 'java.util.concurrent.ExecutionException:' ) );
+			var errorToMatch = error.debug.substring(
+				error.debug.indexOf( 'java.util.concurrent.ExecutionException:' )
+			);
 
 			for ( var errorKey in ERROR_MAP ) {
 				if ( errorToMatch.indexOf( errorKey ) !== -1 ) {

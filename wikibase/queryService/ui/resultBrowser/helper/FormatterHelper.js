@@ -47,9 +47,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {jQuery} element
 	 */
 	SELF.prototype.formatRow = function( row, embed ) {
-		var self = this;
-
-		var $result = $( '<div/>' );
+		var self = this,
+			$result = $( '<div/>' );
 
 		$.each( row, function( key, value ) {
 			$result.prepend( $( '<div>' ).append( self.formatValue( value, key, embed ) ) );
@@ -406,9 +405,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {number} luminance of the color, or NaN if the color string is invalid
 	 */
 	SELF.prototype.calculateLuminance = function( color ) {
-		var r = parseInt( color.substr( 1, 2 ), 16 ) / 255;
-		var g = parseInt( color.substr( 3, 2 ), 16 ) / 255;
-		var b = parseInt( color.substr( 5, 2 ), 16 ) / 255;
+		var r = parseInt( color.substr( 1, 2 ), 16 ) / 255,
+			g = parseInt( color.substr( 3, 2 ), 16 ) / 255,
+			b = parseInt( color.substr( 5, 2 ), 16 ) / 255;
+
 		if ( isFinite( r ) && isFinite( g ) && isFinite( b ) ) {
 			// linearize gamma-corrected sRGB values
 			r = r <= 0.04045 ? r / 12.92 : Math.pow( ( r + 0.055 ) / 1.055, 2.4 );

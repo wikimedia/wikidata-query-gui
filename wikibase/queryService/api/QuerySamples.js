@@ -5,10 +5,10 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	'use strict';
 
-	var API_SERVER = 'https://www.wikidata.org/';
-	var API_ENDPOINT = API_SERVER + 'api/rest_v1/page/html/';
-	var PAGE_TITLE = 'Wikidata:SPARQL query service/queries/examples';
-	var PAGE_URL = API_SERVER + 'wiki/' + PAGE_TITLE;
+	var API_SERVER = 'https://www.wikidata.org/',
+		API_ENDPOINT = API_SERVER + 'api/rest_v1/page/html/',
+		PAGE_TITLE = 'Wikidata:SPARQL query service/queries/examples',
+		PAGE_URL = API_SERVER + 'wiki/' + PAGE_TITLE;
 
 	/**
 	 * QuerySamples API for the Wikibase query service
@@ -30,12 +30,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		var deferred = $.Deferred(),
 			self = this;
 
-		$.ajax(
-			{
-				url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
-				dataType: 'html'
-			}
-		).done(
+		$.ajax( {
+			url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
+			dataType: 'html'
+		} ).done(
 			function ( data ) {
 				deferred.resolve( self._parseHTML( data ) );
 			}
@@ -103,8 +101,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 				return;
 			}
 
-			var data = JSON.parse( dataMW );
-			var query;
+			var data = JSON.parse( dataMW ),
+				query;
 
 			if ( data.parts && data.parts[0].template.target.href === './Template:SPARQL' ) {
 				// SPARQL template

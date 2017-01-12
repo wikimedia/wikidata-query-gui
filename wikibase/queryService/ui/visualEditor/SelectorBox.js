@@ -75,12 +75,11 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._createSelect = function( $element, listener, toolbar ) {
-		var self = this;
-
-		var $select = this._getSelectBox( $element );
-		var $close = this._getCloseButton();
-		var $toolbar = this._getToolbar( toolbar, $element );
-		var $content = $( '<div>' ).append( $close, ' ', $select, ' ', $toolbar );
+		var self = this,
+			$select = this._getSelectBox( $element ),
+			$close = this._getCloseButton(),
+			$toolbar = this._getToolbar( toolbar, $element ),
+			$content = $( '<div>' ).append( $close, ' ', $select, ' ', $toolbar );
 
 		$element.clickover( {
 			placement: 'bottom',
@@ -164,8 +163,8 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._renderSelect2 = function( $select, $element ) {
-		var self = this;
-		var type = $element.data( 'type' );
+		var self = this,
+			type = $element.data( 'type' );
 
 		var formatter = function( item ) {
 			if ( !item.data ) {

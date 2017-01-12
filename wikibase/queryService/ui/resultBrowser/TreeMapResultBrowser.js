@@ -131,16 +131,16 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 		// with little modification
 
 		var supportsForeignObject = false;// FIXME:Modernizr.svgforeignobject;
-		var chartWidth = $( window ).width();
-		var chartHeight = $( window ).height();
-		var xscale = d3.scale.linear().range( [ 0, chartWidth ] );
-		var yscale = d3.scale.linear().range( [ 0, chartHeight ] );
-		var color = d3.scale.category10();
-		var headerHeight = 20;
-		var headerColor = '#555555';
-		var transitionDuration = 500;
-		var root;
-		var node;
+		var chartWidth = $( window ).width(),
+			chartHeight = $( window ).height(),
+			xscale = d3.scale.linear().range( [ 0, chartWidth ] ),
+			yscale = d3.scale.linear().range( [ 0, chartHeight ] ),
+			color = d3.scale.category10(),
+			headerHeight = 20,
+			headerColor = '#555555',
+			transitionDuration = 500,
+			root,
+			node;
 
 		var treemap = d3.layout.treemap().round( false ).size( [ chartWidth, chartHeight ] )
 				.sticky( true ).value( function( d ) {
@@ -274,9 +274,10 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 		}
 
 		function getRGBComponents( color ) {
-			var r = color.substring( 1, 3 );
-			var g = color.substring( 3, 5 );
-			var b = color.substring( 5, 7 );
+			var r = color.substring( 1, 3 ),
+				g = color.substring( 3, 5 ),
+				b = color.substring( 5, 7 );
+
 			return {
 				R: parseInt( r, 16 ),
 				G: parseInt( g, 16 ),

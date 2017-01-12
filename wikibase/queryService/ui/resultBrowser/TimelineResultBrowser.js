@@ -104,8 +104,8 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 				.appendTo( $toolbar );
 
 		function zoom( percentage ) {
-			var range = timeline.getWindow();
-			var interval = range.end - range.start;
+			var range = timeline.getWindow(),
+				interval = range.end - range.start;
 
 			timeline.setWindow( {
 				start: range.start.valueOf() - interval * percentage,

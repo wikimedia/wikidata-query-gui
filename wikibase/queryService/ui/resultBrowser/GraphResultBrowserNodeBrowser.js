@@ -71,9 +71,8 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 * @private
 	 */
 	SELF.prototype._getEntites = function( entityUri, propertyUri ) {
-		var self = this;
-
-		var deferred = $.Deferred();
+		var self = this,
+			deferred = $.Deferred();
 
 		this._sparql.query(
 				SPARQL_ENTITES.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
@@ -98,9 +97,8 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 * @private
 	 */
 	SELF.prototype._getProperties = function( entityUri ) {
-		var self = this;
-
-		var deferred = $.Deferred();
+		var self = this,
+			deferred = $.Deferred();
 
 		this._sparql.query( SPARQL_PROPERTIES.replace( '{entityUri}', entityUri ) ).done(
 				function() {
@@ -142,10 +140,10 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 * @private
 	 */
 	SELF.prototype._expandPropertyNode = function( nodeId ) {
-		var self = this;
-		var n = this._temporaryNodes[nodeId];
+		var self = this,
+			node = this._temporaryNodes[nodeId];
 
-		this._getEntites( n.entityId, n.id ).done( function( entites ) {
+		this._getEntites( node.entityId, node.id ).done( function( entites ) {
 			$.each( entites, function( i, e ) {
 				if ( self._nodes.get( e.id ) === null ) {
 					self._nodes.add( {
@@ -155,10 +153,10 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 				}
 				self._edges.add( {
 					dashes: true,
-					from: n.entityId,
+					from: node.entityId,
 					to: e.id,
-					label: n.propertyLabel,
-					linkType: n.id
+					label: node.propertyLabel,
+					linkType: node.id
 				} );
 			} );
 		} );
