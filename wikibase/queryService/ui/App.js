@@ -575,16 +575,25 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			},
 			'SVG': {
 				handler: function() {
-					var $svg = $( '#query-result svg' ).clone();
+					var $svg = $( '#query-result svg' );
+
+					if ( !$svg.length ) {
+						return null;
+					}
+
 					$svg.attr( {
-						'xmlns:svg': 'http://www.w3.org/2000/svg',
+						version: '1.1',
 						'xmlns': 'http://www.w3.org/2000/svg',
-						'xmlns:xlink': 'http://www.w3.org/1999/xlink',
-						version: '1.1'
+						'xmlns:svg': 'http://www.w3.org/2000/svg',
+						'xmlns:xlink': 'http://www.w3.org/1999/xlink'
 					} );
 
-					return $svg[0] ? '<?xml version="1.0" encoding="utf-8"?>\n' +
-							window.unescape( encodeURIComponent( $svg[0].outerHTML ) ) : null;
+					try {
+						return '<?xml version="1.0" encoding="utf-8"?>\n'
+							+ window.unescape( encodeURIComponent( $svg[0].outerHTML ) );
+					} catch ( ex ) {
+						return null;
+					}
 				},
 				mimetype: 'data:image/svg+xml;charset=utf-8',
 				ext: 'svg'
@@ -595,17 +604,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		var downloadHandler = function( filename, handler, mimetype ) {
 			return function( e ) {
 				e.preventDefault();
-				try {
-					var data = handler();
-					if ( !data ) {
-						return null;
-					}
-					// see: http://danml.com/download.html
-					self._track( 'buttonClick.download.' + filename );
-					download( data, filename, mimetype );
 
-				} catch ( ex ) {
-					return null;
+				// see: http://danml.com/download.html
+				self._track( 'buttonClick.download.' + filename );
+
+				var data = handler();
+
+				if ( data ) {
+					download( data, filename, mimetype );
 				}
 			};
 		};
@@ -613,9 +619,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		for ( var format in DOWNLOAD_FORMATS ) {
 			var extension = DOWNLOAD_FORMATS[format].ext || format.toLowerCase();
 			var formatName = format.replace( /\s/g, '-' );
-			$( '#download' + formatName ).click(
-					downloadHandler( 'query.' + extension, DOWNLOAD_FORMATS[format].handler,
-							DOWNLOAD_FORMATS[format].mimetype ) );
+			$( '#download' + formatName ).click( downloadHandler(
+				'query.' + extension,
+				DOWNLOAD_FORMATS[format].handler,
+				DOWNLOAD_FORMATS[format].mimetype
+			) );
 		}
 	};
 
