@@ -5,7 +5,8 @@
 			"Wolf Rex",
 			"Máté",
 			"Dj",
-			"R-Joe"
+			"R-Joe",
+			"BanKris"
 		]
 	},
 	"wdqs-app-button-examples": "Példák",
@@ -15,15 +16,20 @@
 	"wdqs-app-button-run": "Futtat",
 	"wdqs-app-button-run-title": "Lekérdezés végrehajtása (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Töröl",
+	"wdqs-app-button-clear-title": "Tiszta lekérdezés",
 	"wdqs-app-button-display": "Megjelenít",
 	"wdqs-app-button-download": "Letöltés",
+	"wdqs-app-button-download-title": "Eredmény letöltése",
 	"wdqs-app-button-link": "Hivatkozás",
 	"wdqs-app-help-feedback": "Adj visszajelzést!",
+	"wdqs-app-help-request-query": "Lekérdezés kérése",
+	"wdqs-app-help-portal": "Segítség Portál",
 	"wdqs-app-help-manual": "Felhasználói Kézikönyv",
 	"wdqs-app-help-examples": "Példa lekérdezések",
 	"wdqs-app-help-datamodel": "RDF Adatmodell",
 	"wdqs-app-help-prefixes": "Előtagok listája",
 	"wdqs-app-footer-help": "Nyomja meg a  <i>[CTRL-SPACE]</i> billentyűket az automatikus kiegészítés bekapcsolásához!",
+	"wdqs-app-footer-updated": "Adatok frissítve: $1",
 	"wdqs-app-footer-updated-seconds": "Adatok frissítve $1 másodperce",
 	"wdqs-app-result-shorturl": "Rövid URL az eredményhez",
 	"wdqs-app-result-shorturl-title": "Rövid URL ehhez az eredményhez",
@@ -49,5 +55,7 @@
 	"wdqs-action-error-display": "Nem tudtuk megjeleníteni az eredményt",
 	"wdqs-action-timeout": "Lekérdezési időkorlát elérve",
 	"wdqs-action-malformed-query": "Lekérdezés hibás",
+	"wdqs-action-server-error": "Szerverhiba",
+	"wdqs-action-unknow-error": "Ismeretlen hiba",
 	"wdqs-result-map-layers-all": "Minden réteg"
 }
