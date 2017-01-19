@@ -87,23 +87,32 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 
 		$( '<a class="btn btn-default">' ).click( function() {
 			network.stabilize( 100 );
-		} ).append( '<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>' )
-				.appendTo( $toolbar );
+		} ).append(
+			'<span class="glyphicon glyphicon-fullscreen" aria-hidden="true" title="' +
+			this._i18n( 'wdqs-app-resultbrowser-stabilize' ) +
+			'"></span>'
+		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default">' ).click( function() {
 			setLayout( 'LR' );
-		} ).append( '<span class="glyphicon glyphicon-indent-left" aria-hidden="true"></span>' )
-				.appendTo( $toolbar );
+		} ).append( '<span class="glyphicon glyphicon-indent-left" aria-hidden="true" title="' +
+			this._i18n( 'wdqs-app-resultbrowser-hierarchical-lr' ) +
+			'"></span>'
+		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default">' ).click( function() {
 			setLayout( 'UD' );
-		} ).append( '<span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>' )
-				.appendTo( $toolbar );
+		} ).append( '<span class="glyphicon glyphicon-align-center" aria-hidden="true" title="' +
+			this._i18n( 'wdqs-app-resultbrowser-hierarchical-ud' ) +
+			'"></span>'
+		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default">' ).click( function() {
 			setLayout( 'RL' );
-		} ).append( '<span class="glyphicon glyphicon-indent-right" aria-hidden="true"></span>' )
-				.appendTo( $toolbar );
+		} ).append( '<span class="glyphicon glyphicon-indent-right" aria-hidden="true" title="' +
+			this._i18n( 'wdqs-app-resultbrowser-hierarchical-rl' ) +
+			'"></span>'
+		).appendTo( $toolbar );
 
 		return $toolbar;
 	};
