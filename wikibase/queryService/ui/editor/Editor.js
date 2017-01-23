@@ -7,18 +7,20 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	'use strict';
 
 	var CODEMIRROR_DEFAULTS = {
-		'lineNumbers': true,
-		'matchBrackets': true,
-		'mode': 'sparql',
-		'extraKeys': {
-			'Ctrl-Space': 'autocomplete'
+			'lineNumbers': true,
+			'matchBrackets': true,
+			'mode': 'sparql',
+			'extraKeys': {
+				'Ctrl-Space': 'autocomplete'
+			},
+			'viewportMargin': Infinity,
+			'hintOptions': {
+				closeCharacters: /[]/,
+				completeSingle: false
+			}
 		},
-		'viewportMargin': Infinity,
-		'hintOptions': {
-			closeCharacters: /[]/,
-			completeSingle: false
-		}
-	}, ERROR_LINE_MARKER = null, ERROR_CHARACTER_MARKER = null;
+		ERROR_LINE_MARKER = null,
+		ERROR_CHARACTER_MARKER = null;
 
 	var LOCAL_STORAGE_KEY = 'wikibase.queryService.ui.Editor';
 

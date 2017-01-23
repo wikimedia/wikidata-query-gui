@@ -58,7 +58,6 @@
 	],
 
 	//TODO: Fix the this rules
-	"requireLineBreakAfterVariableAssignment": false,
 	"disallowQuotedKeysInObjects": false,
 	"requireSpaceAfterLineComment": false,
 
