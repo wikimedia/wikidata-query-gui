@@ -4,7 +4,8 @@
 			"Evropi",
 			"Geraki",
 			"Stam.nikos",
-			"Glavkos"
+			"Glavkos",
+			"GR"
 		]
 	},
 	"wdqs-app-button-examples": "Παραδείγματα",
@@ -16,6 +17,7 @@
 	"wdqs-app-button-clear": "Εκκαθάριση",
 	"wdqs-app-button-display": "Εμφάνιση",
 	"wdqs-app-button-download": "Λήψη",
+	"wdqs-app-button-download-title": "Κατεβάστε το αποτέλεσμα",
 	"wdqs-app-button-link": "Σύνδεσμος",
 	"wdqs-app-help-feedback": "Δώστε ανατροφοδότηση!",
 	"wdqs-app-help-request-query": "Ζητήστε ένα ερώτημα",

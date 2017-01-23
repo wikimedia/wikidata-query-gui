@@ -38,6 +38,8 @@
 	"wdqs-app-shorturl-page-title": "Кароткі URL да гэтай старонкі",
 	"wdqs-app-editor-placeholder": "(увядзіце запыт SPARQL ці абярыце прыклад запыту)",
 	"wdqs-app-editor-addprefixes": "Дадаць стандартныя прэфіксы",
+	"wdqs-app-resultbrowser-stabilize": "Стабілізаваць сетку",
+	"wdqs-app-resultbrowser-hierarchical-lr": "Герархічная разьметка зьлева направа",
 	"wdqs-dialog-examples-preview-query": "Перадпрагляд запыту",
 	"wdqs-dialog-examples-preview-result": "Папярэдні прагляд выніку",
 	"wdqs-ve-find": "Знайсьці",

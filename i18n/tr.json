@@ -4,7 +4,8 @@
 			"Kumkumuk",
 			"MrSchipunov",
 			"Alpkant",
-			"By erdo can"
+			"By erdo can",
+			"Sayginer"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -27,6 +28,9 @@
 	"wdqs-app-footer-updated": "Veri $1 önce güncellendi",
 	"wdqs-app-footer-updated-seconds": "Veri $1 saniye önce güncellendi.",
 	"wdqs-app-result-embed": "Sonucu göm",
+	"wdqs-app-resultbrowser-hierarchical-lr": "Soldan sağa hiyerarşik düzen",
+	"wdqs-app-resultbrowser-hierarchical-ud": "Aşağıdan yukarı hiyerarşik düzen",
+	"wdqs-app-resultbrowser-hierarchical-rl": "Sağdan sola hiyerarşik düzen",
 	"wdqs-dialog-examples-preview-query": "Sorgu önizleme",
 	"wdqs-dialog-examples-preview-result": "Önizleme sonucu",
 	"wdqs-ve-find": "Bul",
