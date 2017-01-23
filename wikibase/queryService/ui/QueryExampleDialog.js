@@ -182,39 +182,27 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 		// filter tags that don't effect the filter for examples
 		var tagsFilter = function( tags ) {
-			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags(), matches = true;
-			if ( selectedTags.length === 0 ) {
-				return true;
-			}
+			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags();
 
-			$.each( selectedTags, function( key, selectedTag ) {
-				if ( tags.indexOf( selectedTag ) === -1 ) {
-					matches = false;
-				}
+			return selectedTags.every( function ( selectedTag ) {
+				return tags.indexOf( selectedTag ) !== -1;
 			} );
-
-			return matches;
 		};
 
 		// filter selected tags from tag cloud
 		var tagFilter = function( tag ) {
 			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags();
-			if ( selectedTags.indexOf( tag ) === -1 ) {
-				return false;
-			}
 
-			return true;
+			return selectedTags.indexOf( tag ) !== -1;
 		};
 
 		var tagCloud = {};
 		$.each( self._examples, function( key, example ) {
-
 			if ( !tagsFilter( example.tags ) ) {
 				return;
 			}
 
 			$.each( example.tags, function( key, tag ) {
-
 				if ( tagFilter( tag ) ) {
 					return;
 				}

@@ -83,38 +83,37 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 */
 	SELF.prototype.queryDataUpdatedTime = function() {
 		// Cache the update time only for a minute
-		var deferred = $.Deferred(), query = encodeURI( 'prefix schema: <http://schema.org/> ' +
-				'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ), url = this._serviceUri +
-				'?query=' + query + '&nocache=' + Math.floor( Date.now() / 60000 ), settings = {
-			headers: {
-				Accept: 'application/sparql-results+json'
-			}
-		};
+		var deferred = $.Deferred(),
+			query = encodeURI( 'prefix schema: <http://schema.org/> '
+				+ 'SELECT * WHERE {<http://www.wikidata.org> schema:dateModified ?y}' ),
+			url = this._serviceUri + '?query=' + query + '&nocache='
+				+ Math.floor( Date.now() / 60000 ),
+			settings = {
+				headers: {
+					Accept: 'application/sparql-results+json'
+				}
+			};
 
-		$.ajax( url, settings )
-			.done(
-					function( data, textStatus, jqXHR ) {
-						if ( !data.results.bindings[0] ) {
-							deferred.reject();
-							return;
-						}
-						var updateDate = new Date(
-								data.results.bindings[0][data.head.vars[0]].value ), dateText = updateDate
-								.toLocaleTimeString( navigator.language, {
-									timeZoneName: 'short'
-								} ) +
-								', ' + updateDate.toLocaleDateString( navigator.language, {
-									month: 'short',
-									day: 'numeric',
-									year: 'numeric'
-								} );
-							var differenceInSeconds = Math
-									.round( ( new Date() - updateDate ) / 1000 );
-
-						deferred.resolve( dateText, differenceInSeconds );
-					} ).fail( function() {
+		$.ajax( url, settings ).done( function( data, textStatus, jqXHR ) {
+			if ( !data.results.bindings[0] ) {
 				deferred.reject();
-			} );
+				return;
+			}
+
+			var updateDate = new Date( data.results.bindings[0][data.head.vars[0]].value ),
+				dateText = updateDate.toLocaleTimeString( navigator.language, {
+						timeZoneName: 'short'
+					} ) + ', ' + updateDate.toLocaleDateString( navigator.language, {
+						month: 'short',
+						day: 'numeric',
+						year: 'numeric'
+					} ),
+				differenceInSeconds = Math.round( ( new Date() - updateDate ) / 1000 );
+
+			deferred.resolve( dateText, differenceInSeconds );
+		} ).fail( function() {
+			deferred.reject();
+		} );
 
 		return deferred;
 	};

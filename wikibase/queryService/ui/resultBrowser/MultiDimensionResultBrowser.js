@@ -65,13 +65,13 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		// source: http://bl.ocks.org/syntagmatic/94be812f8b410ae29ee2
 
 		var margin = {
-			top: 50,
-			right: 80,
-			bottom: 10,
-			left: 100
-		}, width = $( window ).width() - ( margin.left + margin.right ), height = $( window )
-				.height() -
-				( margin.top + margin.bottom );
+				top: 50,
+				right: 80,
+				bottom: 10,
+				left: 100
+			},
+			width = $( window ).width() - ( margin.left + margin.right ),
+			height = $( window ).height() - ( margin.top + margin.bottom );
 
 		var types = {
 			'NUMBER': {
@@ -158,19 +158,17 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		// Handles a brush event, toggling the display of foreground lines.
 		function brush() {
 			var actives = dimensions.filter( function( p ) {
-				return !p.brush.empty();
-			} ), extents = actives.map( function( p ) {
-				return p.brush.extent();
-			} );
-
-			var selected = [];
+					return !p.brush.empty();
+				} ),
+				extents = actives.map( function( p ) {
+					return p.brush.extent();
+				} );
 
 			d3.selectAll( '.foreground path' ).style( 'display', function( d ) {
 				if ( actives.every( function( dim, i ) {
 					// test if point is within extents for each active brush
 					return dim.type.within( d[dim.key], extents[i], dim );
 				} ) ) {
-					selected.push( d );
 					return null;
 				}
 				return 'none';
