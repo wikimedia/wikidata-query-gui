@@ -50,7 +50,7 @@
 				<div class="collapse navbar-collapse" id="header-navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li>
-							<button type="button" class="btn btn navbar-btn" data-toggle="modal" data-target="#QueryExamples" data-i18n="wdqs-app-button-examples">
+							<button type="button" class="btn navbar-btn btn-default" data-toggle="modal" data-target="#QueryExamples" data-i18n="wdqs-app-button-examples">
 							</button>
 						</li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -70,21 +70,29 @@
 								<li><a target="_blank" href="https://github.com/wikimedia/wikidata-query-rdf/blob/master/docs/exploring-linked-data.md"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Exploring Linked Data</a></li>
 								<li><a target="_blank" href="https://tools.wmflabs.org/wdq2sparql/w2s.php"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> WDQ Syntax Translator</a></li>
 								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual#SPARQL_endpoint"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> SPARQL REST Endpoint</a></li>
-							</ul></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="wdqs-app-button-help"></span><span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a target="_blank" href="https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new" data-i18n="wdqs-app-help-feedback"></a></li>
-								<li><a target="_blank" href="https://www.wikidata.org/wiki/Wikidata:Request_a_query" data-i18n="wdqs-app-help-request-query"></a></li>
-								<li role="separator" class="divider"></li>
-								<li><a target="_blank" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help" data-i18n="wdqs-app-help-portal"></a></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual" data-i18n="wdqs-app-help-manual"></a></li>
-								<li><a target="_blank" href="https://www.w3.org/TR/sparql11-query/">SPARQL</a></li>
-								<li><a target="_blank" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples" data-i18n="wdqs-app-help-examples"></a></li>
-								<li role="separator" class="divider"></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format" data-i18n="wdqs-app-help-datamodel"></a></li>
-								<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Full_list_of_prefixes" data-i18n="wdqs-app-help-prefixes"></a></li>
-							</ul></li>
+							</ul>
+						</li><li>
+							<div class="btn-group navbar-btn">
+								<a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help" target="_blank" class="btn btn-default">
+									<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-help"></span>
+								</a>
+								<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a target="_blank" href="https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new" data-i18n="wdqs-app-help-feedback"></a></li>
+									<li><a target="_blank" href="https://www.wikidata.org/wiki/Wikidata:Request_a_query" data-i18n="wdqs-app-help-request-query"></a></li>
+									<li role="separator" class="divider"></li>
+									<li><a target="_blank" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help" data-i18n="wdqs-app-help-portal"></a></li>
+									<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual" data-i18n="wdqs-app-help-manual"></a></li>
+									<li><a target="_blank" href="https://www.w3.org/TR/sparql11-query/">SPARQL</a></li>
+									<li><a target="_blank" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples" data-i18n="wdqs-app-help-examples"></a></li>
+									<li role="separator" class="divider"></li>
+									<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format" data-i18n="wdqs-app-help-datamodel"></a></li>
+									<li><a target="_blank" href="https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Full_list_of_prefixes" data-i18n="wdqs-app-help-prefixes"></a></li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
