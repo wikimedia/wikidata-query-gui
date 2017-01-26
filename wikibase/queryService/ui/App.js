@@ -572,6 +572,22 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				handler: $.proxy( api.getResultAsAllJson, api ),
 				mimetype: 'application/json;charset=utf-8',
 				ext: 'json'
+			},
+			'SVG': {
+				handler: function() {
+					var $svg = $( '#query-result svg' ).clone();
+					$svg.attr( {
+						'xmlns:svg': 'http://www.w3.org/2000/svg',
+						'xmlns': 'http://www.w3.org/2000/svg',
+						'xmlns:xlink': 'http://www.w3.org/1999/xlink',
+						version: '1.1'
+					} );
+
+					return $svg[0] ? '<?xml version="1.0" encoding="utf-8"?>\n' +
+							window.unescape( encodeURIComponent( $svg[0].outerHTML ) ) : null;
+				},
+				mimetype: 'data:image/svg+xml;charset=utf-8',
+				ext: 'svg'
 			}
 		};
 
@@ -579,14 +595,18 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		var downloadHandler = function( filename, handler, mimetype ) {
 			return function( e ) {
 				e.preventDefault();
+				try {
+					var data = handler();
+					if ( !data ) {
+						return null;
+					}
+					// see: http://danml.com/download.html
+					self._track( 'buttonClick.download.' + filename );
+					download( data, filename, mimetype );
 
-				if ( api.getResultLength() === null ) {
-					return '';
+				} catch ( ex ) {
+					return null;
 				}
-
-				// see: http://danml.com/download.html
-				self._track( 'buttonClick.download.' + filename );
-				download( handler(), filename, mimetype );
 			};
 		};
 
