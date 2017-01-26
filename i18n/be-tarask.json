@@ -40,6 +40,8 @@
 	"wdqs-app-editor-addprefixes": "Дадаць стандартныя прэфіксы",
 	"wdqs-app-resultbrowser-stabilize": "Стабілізаваць сетку",
 	"wdqs-app-resultbrowser-hierarchical-lr": "Герархічная разьметка зьлева направа",
+	"wdqs-app-resultbrowser-hierarchical-ud": "Герархічная разьметка зьверху ўніз",
+	"wdqs-app-resultbrowser-hierarchical-rl": "Герархічная разьметка справа налева",
 	"wdqs-dialog-examples-preview-query": "Перадпрагляд запыту",
 	"wdqs-dialog-examples-preview-result": "Папярэдні прагляд выніку",
 	"wdqs-ve-find": "Знайсьці",
