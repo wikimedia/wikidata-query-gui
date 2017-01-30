@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aftabuzzaman",
-			"আজিজ"
+			"আজিজ",
+			"Elias Ahmmad"
 		]
 	},
 	"wdqs-app-button-examples": "উদাহরণ",
@@ -12,10 +13,13 @@
 	"wdqs-app-button-run": "চালান",
 	"wdqs-app-button-run-title": "ক্যোয়ারী সঞ্চালন করুন (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "পরিস্কার",
+	"wdqs-app-button-clear-title": "অনুসন্ধান সাফ",
 	"wdqs-app-button-display": "প্রদর্শন",
+	"wdqs-app-button-display-title": "টেবিল, চিত্র অনুযায়ী ফলাফল প্রদর্শন ...",
 	"wdqs-app-button-download": "ডাউনলোড",
 	"wdqs-app-button-download-title": "ফলাফল ডাউনলোড করুন",
 	"wdqs-app-button-link": "সংযোগ",
+	"wdqs-app-button-link-title": "অনুসন্ধানের জন্য লিঙ্ক পান",
 	"wdqs-app-help-feedback": "প্রতিক্রিয়া দিন!",
 	"wdqs-app-help-request-query": "কোয়েরির অনুরোধ করুন",
 	"wdqs-app-help-portal": "সাহায্য প্রবেশদ্বার",
@@ -32,9 +36,16 @@
 	"wdqs-app-result-endpoint": "SPARQL শেষবিন্দু",
 	"wdqs-app-result-endpoint-title": "SPARQL শেষবিন্দু যোগসূত্র ফলাফল ফেরানো হচ্ছে",
 	"wdqs-app-result-formatter-title-datetime": "প্রাকৃতিক আইএসও সময়াংকন",
+	"wdqs-app-result-json": "JSON ফাইল",
+	"wdqs-app-result-json-verbose": "JSON ফাইল (শব্দবহুল)",
+	"wdqs-app-result-tsv": "TSV ফাইল",
+	"wdqs-app-result-tsv-verbose": "TSV ফাইল (শব্দবহুল)",
+	"wdqs-app-result-csv": "CSV ফাইল",
+	"wdqs-app-result-svg": "SVG ছবি",
 	"wdqs-app-shorturl-page-title": "এই পৃষ্ঠায় সংক্ষিপ্ত ইউআরএল",
 	"wdqs-app-editor-placeholder": "(একটি SPARQL ক্যোয়ারী দিন বা একটি ক্যোয়ারীর উদাহরণ চয়ন করুন)",
 	"wdqs-app-editor-addprefixes": "মান্য উপসর্গ যোগ করুন",
+	"wdqs-app-resultbrowser-stabilize": "স্থির নেটওয়ার্ক",
 	"wdqs-dialog-examples-preview-query": "ক্যোয়ারী প্রাকদর্শন",
 	"wdqs-dialog-examples-preview-result": "ফলাফল প্রাকদর্শন",
 	"wdqs-ve-find": "খুঁজুন",

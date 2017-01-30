@@ -35,6 +35,7 @@
 	"wdqs-app-result-endpoint": "кропка досягу SPARQL",
 	"wdqs-app-result-endpoint-title": "Спасылка на кропку досягу SPARQL, якая вяртае вынік",
 	"wdqs-app-result-formatter-title-datetime": "Неапрацаваная адзнака часу ISO",
+	"wdqs-app-result-json": "JSON-файл",
 	"wdqs-app-shorturl-page-title": "Кароткі URL да гэтай старонкі",
 	"wdqs-app-editor-placeholder": "(увядзіце запыт SPARQL ці абярыце прыклад запыту)",
 	"wdqs-app-editor-addprefixes": "Дадаць стандартныя прэфіксы",
