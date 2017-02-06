@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Woytecr"
+			"Woytecr",
+			"Sp5uhe"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -12,9 +13,13 @@
 	"wdqs-app-button-run": "Uruchom",
 	"wdqs-app-button-run-title": "Wykonaj zapytanie (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Wyczyść",
+	"wdqs-app-button-clear-title": "Wyczyść zapytanie",
 	"wdqs-app-button-display": "Wyświetl",
+	"wdqs-app-button-display-title": "Pokaż wynik w formie tabeli, obrazu, ...",
 	"wdqs-app-button-download": "Pobierz",
+	"wdqs-app-button-download-title": "Pobierz wynik",
 	"wdqs-app-button-link": "Link",
+	"wdqs-app-button-link-title": "Link do zapytania",
 	"wdqs-app-help-feedback": "Przekaż swoją opinię!",
 	"wdqs-app-help-request-query": "Poproś o napisanie zapytania",
 	"wdqs-app-help-portal": "Portal pomocy",
@@ -24,7 +29,7 @@
 	"wdqs-app-help-prefixes": "Lista prefiksów",
 	"wdqs-app-footer-help": "Naciśnij <i>[Ctrl + spacja]</i>, aby włączyć automatyczne uzupełnianie.",
 	"wdqs-app-footer-updated": "Dane zaktualizowano $1 temu",
-	"wdqs-app-footer-updated-seconds": "Dane zaktualizowano sekund $1 temu",
+	"wdqs-app-footer-updated-seconds": "Dane zaktualizowane {{PLURAL:$1|sekundę|sekundy|sekund}} temu",
 	"wdqs-app-result-shorturl": "Skrócony URL do wyniku",
 	"wdqs-app-result-shorturl-title": "Skrócony URL do tego wyniku",
 	"wdqs-app-result-embed": "Osadź wynik",
@@ -40,6 +45,10 @@
 	"wdqs-app-shorturl-page-title": "Krótki adres URL do tej strony",
 	"wdqs-app-editor-placeholder": "(Wprowadź zapytanie SPARQL lub wybierz przykładowe zapytanie)",
 	"wdqs-app-editor-addprefixes": "Dodaj standardowe prefiksy",
+	"wdqs-app-resultbrowser-stabilize": "Stabilizuj sieć",
+	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarchiczny układ od lewej do prawej",
+	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarchiczny układ z góry na dół",
+	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarchiczny układ od prawej do lewej",
 	"wdqs-dialog-examples-preview-query": "Podgląd zapytania",
 	"wdqs-dialog-examples-preview-result": "Podgląd wyniku",
 	"wdqs-ve-find": "Znajdź",
@@ -54,7 +63,7 @@
 	"wdqs-action-render": "Renderowanie wyniku",
 	"wdqs-action-error-display": "Nie można wyświetlić wyniku",
 	"wdqs-action-timeout": "Osiągnięto limit oczekiwania na wykonanie zapytania",
-	"wdqs-action-malformed-query": "Zapytania jest źle sformułowane",
+	"wdqs-action-malformed-query": "Zapytanie jest źle sformułowane",
 	"wdqs-action-server-error": "Błąd serwera",
 	"wdqs-action-unknow-error": "Nieznany błąd",
 	"wdqs-result-map-layers-all": "Wszystkie warstwy"
