@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sarchia",
-			"Hadi1989"
+			"Hadi1989",
+			"Lost Whispers"
 		]
 	},
 	"wdqs-app-button-examples": "نموونەکان",
@@ -12,10 +13,15 @@
 	"wdqs-app-button-clear": "سڕینەوە",
 	"wdqs-app-button-display": "پیشاندان",
 	"wdqs-app-button-download": "داگرتن",
+	"wdqs-app-button-download-title": "ئەنجامەکان دابگرە",
 	"wdqs-app-button-link": "بەستەر",
+	"wdqs-app-button-link-title": "بەستەرێک بۆ ڕیزەکە بەدەست بھێنە",
+	"wdqs-app-help-feedback": "فیدبەک بدە!",
+	"wdqs-app-help-portal": "یارمەتی دەروازە",
 	"wdqs-app-help-prefixes": "لیستەی پێشگرەکان",
 	"wdqs-app-footer-help": "<i>[CTRL-SPACE]</i> لێدەن بۆ چالاک کردنی تەواوکردنی خۆکار.",
 	"wdqs-app-footer-updated": "داتا بەڕۆژکراوە $1 پێش",
+	"wdqs-app-footer-updated-seconds": "داتاکان $1 چرکە لەمەوپێش نوێکراونەتەوە",
 	"wdqs-ve-find": "بیدۆزەرەوە",
 	"wdqs-ve-show": "نیشاندان",
 	"wdqs-ve-with": "لەگەڵ",

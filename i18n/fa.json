@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"AzorAhai",
-			"Reza1615"
+			"Reza1615",
+			"Dejavu",
+			"Ebraminio"
 		]
 	},
 	"wdqs-app-button-examples": "مثال‌ها",
@@ -10,10 +12,21 @@
 	"wdqs-app-button-tools": "ابزارها",
 	"wdqs-app-button-help": "راهنما",
 	"wdqs-app-button-run": "اجرا",
-	"wdqs-app-button-clear": "پاک‌کردن",
+	"wdqs-app-button-clear": "پاک کردن",
+	"wdqs-app-button-clear-title": "درخواست حذف",
 	"wdqs-app-button-display": "نمایش",
-	"wdqs-app-button-download": "دریافت",
+	"wdqs-app-button-display-title": "نمایش نتایج به صورت جدول، تصویر و یا ....",
+	"wdqs-app-button-download": "بارگیری",
+	"wdqs-app-button-download-title": "نتیجه بارگیری (دانلود)",
 	"wdqs-app-button-link": "پیوند",
+	"wdqs-app-help-feedback": "دریافت انتقادات و پیشنهادات",
+	"wdqs-app-help-manual": "دستورالعمل",
+	"wdqs-app-help-prefixes": "اسامی پیشوندها",
+	"wdqs-app-footer-help": "برای فعال سازی تکمیل خودکار دکمه <i>[CTRL-SPACE]</i> را همزمان بفشارید.",
+	"wdqs-app-footer-updated": "اطلاعات $1 قبل بروز شد.",
+	"wdqs-app-footer-updated-seconds": "اطلاعات $1 ثانیه قبل بروز شدند.",
+	"wdqs-app-result-shorturl": "آدرس ایتنرنتی کوتاه برای نتیجه",
+	"wdqs-app-result-shorturl-title": "آدرس ایتنرنتی کوتاه برای نتیجه بدست آمده.",
 	"wdqs-ve-find": "یافتن",
 	"wdqs-ve-show": "نمایش",
 	"wdqs-ve-with": "با",
@@ -21,5 +34,5 @@
 	"wdqs-ve-anything": "همه‌چیز",
 	"wdqs-ve-any": "هر",
 	"wdqs-ve-or": "یا",
-	"wdqs-ve-subtype": "زیرنوع"
+	"wdqs-ve-subtype": "زیرگروه"
 }

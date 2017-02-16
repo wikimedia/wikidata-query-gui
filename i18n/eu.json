@@ -11,6 +11,7 @@
 	"wdqs-app-button-run": "Exekutatu",
 	"wdqs-app-button-run-title": "Exekutatu kontsulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Garbitu",
+	"wdqs-app-button-clear-title": "Garbitu kontsulta",
 	"wdqs-app-button-display": "Erakutsi",
 	"wdqs-app-button-download": "Jaitsi",
 	"wdqs-app-button-link": "Lotura",
@@ -22,6 +23,10 @@
 	"wdqs-app-footer-help": "Klik egin <i>[CTRL-SPACE]</i> aurobetetzea aktibatzeko.",
 	"wdqs-app-footer-updated": "Datuak duela $1 eguneratuak",
 	"wdqs-app-footer-updated-seconds": "Datuak duela $1 segundu eguneratuak",
+	"wdqs-app-result-json": "JSON fitxategia",
+	"wdqs-app-result-tsv": "TSV fitxategia",
+	"wdqs-app-result-csv": "CSV fitxategia",
+	"wdqs-app-result-svg": "SVG Irudia",
 	"wdqs-app-editor-addprefixes": "Gehitu Aurrizki Estandarrak",
 	"wdqs-dialog-examples-preview-query": "Kontsulta aurreikuspena",
 	"wdqs-dialog-examples-preview-result": "Emaitzaren aurreikuspena",
@@ -37,5 +42,7 @@
 	"wdqs-action-render": "Emaitzaren aurkezpena",
 	"wdqs-action-error-display": "Ezin izan da emaitza erakutsi",
 	"wdqs-action-timeout": "Kontsultaren itxaron denbora agortu da",
+	"wdqs-action-server-error": "Zerbitzari errorea",
+	"wdqs-action-unknow-error": "Errore ezezaguna",
 	"wdqs-result-map-layers-all": "Geruza guztiak"
 }
