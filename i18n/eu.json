@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sator"
+			"Sator",
+			"Theklan"
 		]
 	},
 	"wdqs-app-button-examples": "Adibideak",
@@ -13,8 +14,13 @@
 	"wdqs-app-button-clear": "Garbitu",
 	"wdqs-app-button-clear-title": "Garbitu kontsulta",
 	"wdqs-app-button-display": "Erakutsi",
+	"wdqs-app-button-display-title": "Erakutsi emaitzak taula batean, irudi batean...",
 	"wdqs-app-button-download": "Jaitsi",
+	"wdqs-app-button-download-title": "Emaitza jaitsi",
 	"wdqs-app-button-link": "Lotura",
+	"wdqs-app-button-link-title": "Queryari lotura lortu",
+	"wdqs-app-help-feedback": "Eman iritzia!",
+	"wdqs-app-help-request-query": "Query bat eskatu",
 	"wdqs-app-help-portal": "Laguntza Ataria",
 	"wdqs-app-help-manual": "Erabiltzailearen eskuliburua",
 	"wdqs-app-help-examples": "Adibide kontsultak",
@@ -23,11 +29,25 @@
 	"wdqs-app-footer-help": "Klik egin <i>[CTRL-SPACE]</i> aurobetetzea aktibatzeko.",
 	"wdqs-app-footer-updated": "Datuak duela $1 eguneratuak",
 	"wdqs-app-footer-updated-seconds": "Datuak duela $1 segundu eguneratuak",
+	"wdqs-app-result-shorturl": "Emaitzaren URL laburra",
+	"wdqs-app-result-shorturl-title": "Emaitza honetara URL laburra",
+	"wdqs-app-result-embed": "Emaitza txertatu",
+	"wdqs-app-result-endpoint": "SPARQL bukaera",
+	"wdqs-app-result-endpoint-title": "Emaitza ematen duen SPARQL bukaerara lotura",
+	"wdqs-app-result-formatter-title-datetime": "ISO denbora-marka gordina",
 	"wdqs-app-result-json": "JSON fitxategia",
+	"wdqs-app-result-json-verbose": "JSON fitxategia (hitzontzia)",
 	"wdqs-app-result-tsv": "TSV fitxategia",
+	"wdqs-app-result-tsv-verbose": "TSV fitxategia (hitzontzia)",
 	"wdqs-app-result-csv": "CSV fitxategia",
 	"wdqs-app-result-svg": "SVG Irudia",
+	"wdqs-app-shorturl-page-title": "Orrialde honetar URL laburra",
+	"wdqs-app-editor-placeholder": "(Sartu SPARQL query bat edo adibide bat aukeratu)",
 	"wdqs-app-editor-addprefixes": "Gehitu Aurrizki Estandarrak",
+	"wdqs-app-resultbrowser-stabilize": "Sarea egonkortu",
+	"wdqs-app-resultbrowser-hierarchical-lr": "Antolatu hierarkikoki ezkerretik eskubira",
+	"wdqs-app-resultbrowser-hierarchical-ud": "Antolatu hierarkikoki goitik behera",
+	"wdqs-app-resultbrowser-hierarchical-rl": "Antolatu hierarkikoki eskubitik ezkerrera",
 	"wdqs-dialog-examples-preview-query": "Kontsulta aurreikuspena",
 	"wdqs-dialog-examples-preview-result": "Emaitzaren aurreikuspena",
 	"wdqs-ve-find": "Aurkitu",
@@ -42,6 +62,7 @@
 	"wdqs-action-render": "Emaitzaren aurkezpena",
 	"wdqs-action-error-display": "Ezin izan da emaitza erakutsi",
 	"wdqs-action-timeout": "Kontsultaren itxaron denbora agortu da",
+	"wdqs-action-malformed-query": "Querya gaizki egina dago",
 	"wdqs-action-server-error": "Zerbitzari errorea",
 	"wdqs-action-unknow-error": "Errore ezezaguna",
 	"wdqs-result-map-layers-all": "Geruza guztiak"
