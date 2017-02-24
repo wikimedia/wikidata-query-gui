@@ -117,7 +117,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				if ( example.category !==  category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
-							.append( $( '<td colspan="3">' ).text( category ) ) );
+							.append( $( '<td colspan="4">' ).text( category ) ) );
 				}
 				self._addExample( example.title, example.query, example.href, example.tags );
 			} );
@@ -235,7 +235,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					self._track( 'edit' );
 				} ),
 
-			source = $( '<span>' ).addClass( 'glyphicon glyphicon-eye-open' ).popover(
+			$source = $( '<span>' ).addClass( 'glyphicon glyphicon-eye-open' ).popover(
 				{
 					placement: 'bottom',
 					trigger: 'hover',
@@ -244,7 +244,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					content: $( '<pre style="white-space:pre-line; word-break:break-word;"/>' ).text( query ),
 					html: true
 				} ),
-			preview = $( '<a href="#">' ).addClass( 'glyphicon glyphicon-camera' ).clickover(
+			$preview = $( '<a href="#">' ).addClass( 'glyphicon glyphicon-camera' ).clickover(
 				{
 					placement: 'left',
 					'global_close': true,
@@ -258,19 +258,19 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				.click( function() {
 					self._track( 'preview' );
 				} );
-			$( '.exampleTable' ).scroll( function() {
-			if ( preview.clickover ) {
-				preview.clickover( 'hide' ).removeAttr( 'data-clickover-open' );
+
+		$( '.exampleTable' ).scroll( function() {
+			if ( $preview.clickover ) {
+				$preview.clickover( 'hide' ).removeAttr( 'data-clickover-open' );
 			}
 		} );
 
-		tags = $( '<td>' ).text( tags.join( '|' ) ).hide();
-
 		var example = $( '<tr>' );
 		example.append( $( '<td>' ).append( $link ).append( ' ', $edit ) );
-		example.append( $( '<td>' ).append( preview ) );
-		example.append( $( '<td>' ).append( source ) );
-		example.append( tags );
+		example.append( $( '<td>' ).append( $preview ) );
+		example.append( $( '<td>' ).append( $source ) );
+		example.append( $( '<td>' ).text( tags.join( '|' ) ).hide() );
+		example.append( $( '<td>' ).text( query ).hide() );
 
 		this._$element.find( '.searchable' ).append( example );
 	};
