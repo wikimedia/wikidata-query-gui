@@ -7,11 +7,12 @@ wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultB
 wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, moment ) {
 	'use strict';
 
-	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q';
-	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/';
-	var DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime';
-	var TYPE_URI = 'uri';
-	var DATATYPE_MATHML = 'http://www.w3.org/1998/Math/MathML';
+	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q',
+		COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/',
+		COMMONS_FILE_PATH_MEDIAVIEWER = 'https://commons.wikimedia.org/wiki/File:{FILENAME}',
+		DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime',
+		TYPE_URI = 'uri',
+		DATATYPE_MATHML = 'http://www.w3.org/1998/Math/MathML';
 
 	var NUMBER_TYPES = [
 			'http://www.w3.org/2001/XMLSchema#double', 'http://www.w3.org/2001/XMLSchema#float',
@@ -90,6 +91,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 									this.getCommonsResourceFileNameThumbnail( value, '120' ) ) )
 							.width( '120' );
 				} else {
+					$link.attr( { href: COMMONS_FILE_PATH_MEDIAVIEWER.replace( /{FILENAME}/g,
+							this.getCommonsResourceFileName( value ) ) } );
 					$link.text( 'commons:' +
 							decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
 					$html.prepend( this.createGalleryButton( value, title ), ' ' );
