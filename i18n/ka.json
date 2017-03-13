@@ -3,7 +3,8 @@
 		"authors": [
 			"David1010",
 			"MIKHEIL",
-			"Beqabai"
+			"Beqabai",
+			"Otogi"
 		]
 	},
 	"wdqs-app-button-examples": "მაგალითები",
@@ -35,6 +36,7 @@
 	"wdqs-app-result-embed": "შედეგების ჩასმა",
 	"wdqs-app-result-endpoint": "SPARQL-ზე წვდომა",
 	"wdqs-app-result-endpoint-title": "ამ მოთხოვნის შედეგის SPARQL-ზე წვდომის ბმული",
+	"wdqs-app-result-formatter-title-datetime": "დროის აღნიშვნა raw ISO-სთვის",
 	"wdqs-app-result-json": "JSON ფაილი",
 	"wdqs-app-result-json-verbose": "JSON ფაილი (დაწვრილებით)",
 	"wdqs-app-result-tsv": "TSV ფაილი",
@@ -52,6 +54,7 @@
 	"wdqs-dialog-examples-preview-result": "შედეგების გადახედვა",
 	"wdqs-ve-find": "ძიება",
 	"wdqs-ve-show": "ჩვენება",
+	"wdqs-ve-with": "თან",
 	"wdqs-ve-and": "და",
 	"wdqs-ve-anything": "რამე",
 	"wdqs-ve-any": "ნებისმიერი",

@@ -4,7 +4,8 @@
 			"Laboramus",
 			"Okras",
 			"Irus",
-			"Kareyac"
+			"Kareyac",
+			"Nitch"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -38,7 +39,9 @@
 	"wdqs-app-result-endpoint-title": "Ссылка на точку доступа SPARQL с результатом этого допроса",
 	"wdqs-app-result-formatter-title-datetime": "Отметка времени для raw ISO",
 	"wdqs-app-result-json": "JSON-файл",
+	"wdqs-app-result-json-verbose": "JSON-файл (подробнее)",
 	"wdqs-app-result-tsv": "TSV-файл",
+	"wdqs-app-result-tsv-verbose": "TSV-файл (подробнее)",
 	"wdqs-app-result-csv": "CSV-файл",
 	"wdqs-app-result-svg": "Изображение SVG",
 	"wdqs-app-shorturl-page-title": "Короткий URL-адрес к этой странице",
