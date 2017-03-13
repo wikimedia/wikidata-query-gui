@@ -76,7 +76,7 @@ body {
 		<div class="progress-bar progress-bar-danger">Error</div>
 	</div>
 
-	<div id="result"></div>
+	<div id="query-result"></div>
 	<a class="link" target="_blank" title="Wikidata Query Service SPARQL"><small>Edit on query.Wikidata.org</small></a>
 
 	<!-- JS files -->
@@ -185,7 +185,8 @@ body {
 			api.query( query ).done( function() {
 				try {
 					browser.setResult( api.getResultRawData() );
-					browser.draw( $( '#result' ) );
+					$( '#query-result' ).show();
+					browser.draw( $( '#query-result' ) );
 					$( '#progress' ).hide();
 				} catch ( e ) {
 					$( '#progress' ).hide();
