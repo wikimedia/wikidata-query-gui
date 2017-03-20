@@ -6,7 +6,8 @@
 			"Máté",
 			"Dj",
 			"R-Joe",
-			"BanKris"
+			"BanKris",
+			"Grin"
 		]
 	},
 	"wdqs-app-button-examples": "Példák",
@@ -18,6 +19,7 @@
 	"wdqs-app-button-clear": "Töröl",
 	"wdqs-app-button-clear-title": "Lekérdezés ürítése",
 	"wdqs-app-button-display": "Megjelenít",
+	"wdqs-app-button-display-title": "Az eredmény táblázatban, képként, …",
 	"wdqs-app-button-download": "Letöltés",
 	"wdqs-app-button-download-title": "Eredmény letöltése",
 	"wdqs-app-button-link": "Hivatkozás",
@@ -38,6 +40,7 @@
 	"wdqs-app-result-endpoint": "SPARQL végpont",
 	"wdqs-app-result-endpoint-title": "Ezt az eredmény visszaadó SPARQL végponthoz tartozó hivatkozás",
 	"wdqs-app-result-formatter-title-datetime": "Nyers ISO-időbélyeg",
+	"wdqs-app-result-json": "JSON file",
 	"wdqs-app-shorturl-page-title": "Rövid URL ehhez az oldalhoz",
 	"wdqs-app-editor-placeholder": "(Adjon meg egy SPARQL lekérdezést vagy válasszon egy példa lekérdezést)",
 	"wdqs-app-editor-addprefixes": "Add meg a standard előtagokat",
