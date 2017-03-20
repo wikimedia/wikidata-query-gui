@@ -20,7 +20,8 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'#defaultView:Map', '#defaultView:ImageGrid', '#defaultView:Map', '#defaultView:BubbleChart',
 			'#defaultView:TreeMap', '#defaultView:Timeline', '#defaultView:Dimensions', '#defaultView:Graph', '#defaultView:LineChart', '#defaultView:BarChart', '#defaultView:ScatterChart', '#defaultView:AreaChart',
 			'SERVICE wikibase:around {\n\t?place wdt:P625 ?location .\n\tbd:serviceParam wikibase:center ? .\n\tbd:serviceParam wikibase:radius ? .\n\tbd:serviceParam wikibase:distance ?dist .\n}',
-			'SERVICE wikibase:box {\n\t?place wdt:P625 ?location .\n\tbd:serviceParam wikibase:cornerWest ? .\n\tbd:serviceParam wikibase:cornerEast ? .\n}'
+			'SERVICE wikibase:box {\n\t?place wdt:P625 ?location .\n\tbd:serviceParam wikibase:cornerWest ? .\n\tbd:serviceParam wikibase:cornerEast ? .\n}',
+			'hint:Query hint:optimizer "None" .'
 	];
 
 	var SPARQL_PREDICATES = [
