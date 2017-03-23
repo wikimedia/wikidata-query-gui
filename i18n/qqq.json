@@ -30,6 +30,7 @@
 	"wdqs-app-help-examples": "Button message in help dropdown",
 	"wdqs-app-help-datamodel": "Button message in help dropdown",
 	"wdqs-app-help-prefixes": "Button message in help dropdown",
+	"wdqs-app-help-copy": "Link to page with licensing information",
 	"wdqs-app-footer-help": "Help message at the footer of the editor",
 	"wdqs-app-footer-updated": "Message displaying how long ago data was updated",
 	"wdqs-app-footer-updated-seconds": "Message displaying how many seconds ago data was updated",
