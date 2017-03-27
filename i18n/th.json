@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bluegram",
-			"Pon44695"
+			"Pon44695",
+			"Aefgh39622"
 		]
 	},
 	"wdqs-app-button-examples": "ตัวอย่าง",
@@ -12,15 +13,22 @@
 	"wdqs-app-button-run": "ดำเนินการ",
 	"wdqs-app-button-run-title": "ดำเนินการคิวรี (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "ล้าง",
+	"wdqs-app-button-clear-title": "ล้างคิวรี",
 	"wdqs-app-button-display": "แสดงผล",
+	"wdqs-app-button-display-title": "แสดงผลลัพธ์ในแบบตาราง รูปภาพ ฯลฯ",
 	"wdqs-app-button-download": "ดาวน์โหลด",
+	"wdqs-app-button-download-title": "ผลการดาวน์โหลด",
 	"wdqs-app-button-link": "ลิงก์",
+	"wdqs-app-button-link-title": "ขอรับลิงก์ไปที่คำถาม",
 	"wdqs-app-help-feedback": "ส่งฟีดแบค!",
 	"wdqs-app-help-request-query": "ร้องขอคิวรี",
+	"wdqs-app-help-portal": "สถานีย่อยวิธีใช้",
 	"wdqs-app-help-manual": "คู่มือผู้ใช้",
 	"wdqs-app-help-examples": "ตัวอย่างคิวรี",
 	"wdqs-app-help-datamodel": "ต้นแบบข้อมูล RDF",
 	"wdqs-app-help-prefixes": "รายการคำนำหน้า",
+	"wdqs-app-help-copy": "ข้อมูลสัญญาอนุญาต",
+	"wdqs-app-footer-help": "กดแป้น <i>[CTRL-SPACE]</i> เพื่อเปิดใช้ตัวเลือกเติมข้อความให้สมบูรณ์อัตโนมัติ",
 	"wdqs-app-footer-updated": "ข้อมูลอัปเดตเมื่อ $1ที่ผ่านมา",
 	"wdqs-app-footer-updated-seconds": "ข้อมูลอัปเดตเมื่อ $1 วินาทีที่ผ่านมา",
 	"wdqs-app-result-shorturl": "URL แบบสั้นไปยังผลลัพธ์",
@@ -41,8 +49,12 @@
 	"wdqs-ve-any": "ใด ๆ",
 	"wdqs-ve-or": "หรือ",
 	"wdqs-ve-subtype": "หมวดย่อย",
+	"wdqs-ve-sb-suggestions": "ข้อเสนอแนะ",
+	"wdqs-ve-sb-other": "อื่น ๆ",
 	"wdqs-action-query": "กำลังดำเนินการคิวรี",
 	"wdqs-action-render": "กำลังแปลผลลัพธ์",
+	"wdqs-action-error-display": "ไม่สามารถแสดงผลลัพธ์ได้",
+	"wdqs-action-timeout": "ถึงเวลาจำกัดสูงสุดของคิวรีแล้ว",
 	"wdqs-action-server-error": "เซิร์ฟเวอร์มีข้อผิดพลาด",
 	"wdqs-action-unknow-error": "เกิดข้อผิดพลาดไม่ทราบสาเหตุ",
 	"wdqs-result-map-layers-all": "ชั้นทั้งหมด"

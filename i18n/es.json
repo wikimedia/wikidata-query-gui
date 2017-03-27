@@ -7,7 +7,8 @@
 			"Dgstranz",
 			"Koavf",
 			"Fitoschido",
-			"Irus"
+			"Irus",
+			"Julián L"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -31,6 +32,7 @@
 	"wdqs-app-help-examples": "Consultas de ejemplo",
 	"wdqs-app-help-datamodel": "Modelo de datos de RDF",
 	"wdqs-app-help-prefixes": "Lista de prefijos",
+	"wdqs-app-help-copy": "Información de la licencia",
 	"wdqs-app-footer-help": "Presiona <i>[CTRL-ESPACIO]</i> para activar el autocompletado.",
 	"wdqs-app-footer-updated": "Datos actualizados hace $1",
 	"wdqs-app-footer-updated-seconds": "Datos actualizados hace $1 segundos",
@@ -63,6 +65,8 @@
 	"wdqs-ve-any": "cualquiera",
 	"wdqs-ve-or": "o",
 	"wdqs-ve-subtype": "subtipo",
+	"wdqs-ve-sb-suggestions": "Sugerencias",
+	"wdqs-ve-sb-other": "Otro",
 	"wdqs-action-query": "Ejecución de la consulta",
 	"wdqs-action-render": "Representación del resultado",
 	"wdqs-action-error-display": "No se puede mostrar el resultado",

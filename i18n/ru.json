@@ -5,7 +5,8 @@
 			"Okras",
 			"Irus",
 			"Kareyac",
-			"Nitch"
+			"Nitch",
+			"Redredsonia"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -29,6 +30,7 @@
 	"wdqs-app-help-examples": "Примеры запросов",
 	"wdqs-app-help-datamodel": "Модель данных RDF",
 	"wdqs-app-help-prefixes": "Список префиксов",
+	"wdqs-app-help-copy": "Информация о лицензировании",
 	"wdqs-app-footer-help": "Нажмите <i>[Ctrl + пробел]</i>, чтобы активировать автоматическое завершение.",
 	"wdqs-app-footer-updated": "Данные обновлены $1 назад",
 	"wdqs-app-footer-updated-seconds": "Данные обновлены $1 сек. назад",
@@ -61,6 +63,8 @@
 	"wdqs-ve-any": "любое",
 	"wdqs-ve-or": "или",
 	"wdqs-ve-subtype": "подтип",
+	"wdqs-ve-sb-suggestions": "Подсказки",
+	"wdqs-ve-sb-other": "Другое",
 	"wdqs-action-query": "Выполнение запроса",
 	"wdqs-action-render": "Обработка результата",
 	"wdqs-action-error-display": "Не удается отобразить результат",
