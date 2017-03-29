@@ -12,16 +12,16 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	var SPARQL_KEYWORDS = [
 			'SELECT', 'SELECT * WHERE {\n\n}', 'OPTIONAL', 'OPTIONAL {\n\n}', 'WHERE',
 			'WHERE {\n\n}', 'ORDER', 'ORDER BY', 'DISTINCT', 'SERVICE',
-			'SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }', 'BASE',
+			'SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }', 'BASE',
 			'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING', 'UNION', 'SAMPLE',
 			'(SAMPLE() AS )', 'COUNT', '(COUNT() AS )', 'DESC', 'DESC()', 'ASC', 'ASC()',
 			'FILTER ()', 'FILTER NOT EXISTS', 'FILTER NOT EXISTS {\n\n}', 'UNION', 'UNION {\n\n}',
 			'BIND', 'BIND ()', 'GROUP_CONCAT', '(GROUP_CONCAT() as )', 'ORDER BY',
 			'#defaultView:Map', '#defaultView:ImageGrid', '#defaultView:Map', '#defaultView:BubbleChart',
 			'#defaultView:TreeMap', '#defaultView:Timeline', '#defaultView:Dimensions', '#defaultView:Graph', '#defaultView:LineChart', '#defaultView:BarChart', '#defaultView:ScatterChart', '#defaultView:AreaChart',
-			'SERVICE wikibase:around {\n\t?place wdt:P625 ?location .\n\tbd:serviceParam wikibase:center ? .\n\tbd:serviceParam wikibase:radius ? .\n\tbd:serviceParam wikibase:distance ?dist .\n}',
-			'SERVICE wikibase:box {\n\t?place wdt:P625 ?location .\n\tbd:serviceParam wikibase:cornerWest ? .\n\tbd:serviceParam wikibase:cornerEast ? .\n}',
-			'hint:Query hint:optimizer "None" .'
+			'SERVICE wikibase:around {\n\t?place wdt:P625 ?location.\n\tbd:serviceParam wikibase:center ? .\n\tbd:serviceParam wikibase:radius ? .\n\tbd:serviceParam wikibase:distance ?dist.\n}',
+			'SERVICE wikibase:box {\n\t?place wdt:P625 ?location.\n\tbd:serviceParam wikibase:cornerWest ? .\n\tbd:serviceParam wikibase:cornerEast ? .\n}',
+			'hint:Query hint:optimizer "None".'
 	];
 
 	var SPARQL_PREDICATES = [
