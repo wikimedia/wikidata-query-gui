@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toniher"
+			"Toniher",
+			"Paucabot"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -36,6 +37,8 @@
 	"wdqs-ve-any": "qualsevol",
 	"wdqs-ve-or": "o",
 	"wdqs-ve-subtype": "subtipus",
+	"wdqs-ve-sb-suggestions": "Suggeriments",
+	"wdqs-ve-sb-other": "Altres",
 	"wdqs-action-query": "Execució de la consulta",
 	"wdqs-action-render": "Representació del resultat",
 	"wdqs-action-error-display": "No es pot mostrar el resultat",

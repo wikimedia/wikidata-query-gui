@@ -61,6 +61,8 @@
 	"wdqs-ve-any": "οτιδήποτε",
 	"wdqs-ve-or": "ή",
 	"wdqs-ve-subtype": "υποτύπος",
+	"wdqs-ve-sb-suggestions": "Προτάσεις",
+	"wdqs-ve-sb-other": "Άλλο",
 	"wdqs-action-query": "Εκτελούμενο ερώτημα",
 	"wdqs-action-render": "Παραγωγή αποτελέσματος",
 	"wdqs-action-error-display": "Αδυναμία προβολής αποτελέσματος",
