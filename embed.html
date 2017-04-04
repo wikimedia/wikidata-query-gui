@@ -9,6 +9,7 @@
 <!-- build:css css/embed.style.min.css -->
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+<link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
 <link rel="stylesheet" href="node_modules/vis/dist/vis.css">
 <link rel="stylesheet" href="node_modules/ekko-lightbox/dist/ekko-lightbox.css">
 <link rel="stylesheet" href="node_modules/bootstrap-table/dist/bootstrap-table.css">
@@ -64,6 +65,21 @@ body {
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index: 401; /* one above .leaflet-pane */
 }
+
+.edit {
+	position: fixed;
+	bottom: 0.5em;
+	left: 0;
+	font-size: 2em;
+	z-index: 401; /* one above .leaflet-pane */
+	padding: 0.2em;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.8);
+}
+.popover {
+	min-width: 300px;
+	white-space: nowrap;
+}
 </style>
 <body>
 
@@ -78,7 +94,9 @@ body {
 	</div>
 
 	<div id="query-result"></div>
-	<a class="link" target="_blank" title="Wikidata Query Service SPARQL"><small>Edit on query.Wikidata.org</small></a>
+	<a class="link edit-link" target="_blank" title="Wikidata Query Service SPARQL"><small>Edit on query.Wikidata.org</small></a>
+	<a href="#" class="edit edit-link" data-toggle="popover"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+
 
 	<!-- JS files -->
 	<!-- build:js js/embed.vendor.min.js -->
@@ -97,7 +115,10 @@ body {
 	<script src="node_modules/dimple-js/dist/dimple.latest.js"></script>
 	<script src="node_modules/js-cookie/src/js.cookie.js"></script>
 	<script src="node_modules/vis/dist/vis.js"></script>
+	<script src="node_modules/select2/dist/js/select2.js"></script>
 	<script src="node_modules/moment/min/moment-with-locales.js"></script>
+	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
+	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js js/embed.wdqs.min.js -->
@@ -119,8 +140,12 @@ body {
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowserNodeBrowser.js"></script>
 	<script src="wikibase/queryService/api/Sparql.js"></script>
+	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
+	<script src="wikibase/queryService/ui/visualEditor/VisualEditor.js"></script>
+	<script src="wikibase/queryService/ui/visualEditor/SparqlQuery.js"></script>
+	<script src="wikibase/queryService/ui/visualEditor/SelectorBox.js"></script>
 	<!-- endbuild -->
 
 	<script type="text/javascript">
@@ -165,38 +190,67 @@ body {
 		};
 
 		$( document ).ready( function() {
-			$( '.link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
+			function getResultBrowser( query ) {
+				var browser = null;
+				var browserPackage = wikibase.queryService.ui.resultBrowser;
 
-			var query = decodeURIComponent( window.location.hash.substr( 1 ) );
-			var browserPackage = wikibase.queryService.ui.resultBrowser;
+				try {
+					var browserKey = query.match( /#defaultView:(\w+)/ )[1];
+					var browserClass = RESULT_BROWSER[browserKey].class;
+					browser = new browserPackage[browserClass]();
+				} catch ( e ) {
+					var browserClass = RESULT_BROWSER.Table.class;
+					browser = new browserPackage[browserClass]();
+				}
 
-			try {
-				var browserKey = query.match( /#defaultView:(\w+)/ )[1];
-				var browserClass = RESULT_BROWSER[browserKey].class;
-				var browser = new browserPackage[browserClass]();
-			} catch ( e ) {
-				var browserClass = RESULT_BROWSER.Table.class;
-				var browser = new browserPackage[browserClass]();
+				var tracking = new wikibase.queryService.api.Tracking();
+				tracking.track( 'wikibase.queryService.ui.embed.' + ( browserKey || 'default' ) );
+				return browser;
 			}
 
-			var tracking = new wikibase.queryService.api.Tracking();
-			tracking.track( 'wikibase.queryService.ui.embed.' + ( browserKey || 'default' ) );
+			function renderEdit( query, callback ) {
+				var ve = new wikibase.queryService.ui.visualEditor.VisualEditor();
+				ve.setChangeListener( function( v ) {
+					callback( v.getQuery() );
+				} );
 
-			var api = new wikibase.queryService.api.Sparql();
-			api.query( query ).done( function() {
-				try {
-					browser.setResult( api.getResultRawData() );
-					$( '#query-result' ).show();
-					browser.draw( $( '#query-result' ) );
-					$( '#progress' ).hide();
-				} catch ( e ) {
+				var $editor = $( '<div>' );
+				ve.setQuery( query );
+				ve.draw( $editor );
+				$('.edit').on('click',function(e){
+				    e.preventDefault();
+				  }).popover( {
+						placement: 'top',
+						'html': true,
+						'content': $editor
+					} );
+			}
+
+			function renderQuery( query ) {
+				var browser = getResultBrowser( query );
+				var api = new wikibase.queryService.api.Sparql();
+				$( '#query-result' ).hide();
+				$( '#progress' ).show();
+				api.query( query ).done( function() {
+					try {
+						browser.setResult( api.getResultRawData() );
+						$( '#query-result' ).show();
+						browser.draw( $( '#query-result' ) );
+						$( '#progress' ).hide();
+					} catch ( e ) {
+						$( '#progress' ).hide();
+						$( '#error' ).show();
+					}
+				} ).fail( function() {
 					$( '#progress' ).hide();
 					$( '#error' ).show();
-				}
-			} ).fail( function() {
-				$( '#progress' ).hide();
-				$( '#error' ).show();
-			} );
+				} );
+			}
+
+			$( '.edit-link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
+			var query = decodeURIComponent( window.location.hash.substr( 1 ) );
+			renderQuery( query );
+			renderEdit( query, renderQuery );
 		} );
 	</script>
 </body>
