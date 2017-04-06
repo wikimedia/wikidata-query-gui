@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Rancher",
-			"Nikola Smolenski"
+			"Nikola Smolenski",
+			"Zoranzoki21"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -26,6 +27,7 @@
 	"wdqs-app-help-examples": "Примери упита̂",
 	"wdqs-app-help-datamodel": "RDF модел података",
 	"wdqs-app-help-prefixes": "Списак префикса",
+	"wdqs-app-help-copy": "Информације о лиценци",
 	"wdqs-app-footer-help": "Притисните <i>[Ктрл-размак]</i> да покренете аутоматско допуњавање.",
 	"wdqs-app-footer-updated": "Подаци освежени пре $1",
 	"wdqs-app-footer-updated-seconds": "Подаци освежени пре $1 секунди",
@@ -58,6 +60,8 @@
 	"wdqs-ve-any": "било које",
 	"wdqs-ve-or": "или",
 	"wdqs-ve-subtype": "подтип",
+	"wdqs-ve-sb-suggestions": "Предлози",
+	"wdqs-ve-sb-other": "Остало",
 	"wdqs-action-query": "Извршавам упит",
 	"wdqs-action-render": "Исцртавам резултат",
 	"wdqs-action-error-display": "Није могуће приказати резултат",
