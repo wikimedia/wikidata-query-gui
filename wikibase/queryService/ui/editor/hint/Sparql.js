@@ -30,7 +30,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			// property predicates
 			'wikibase:rank', 'wikibase:badge', 'wikibase:propertyType', 'wikibase:directClaim',
 			'wikibase:claim', 'wikibase:statementProperty', 'wikibase:statementValue',
-			'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:referenceValue',
+			'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:reference', 'wikibase:referenceValue',
 			'wikibase:statementValueNormalized', 'wikibase:qualifierValueNormalized',
 			'wikibase:referenceValueNormalized', 'wikibase:novalue',
 			// entity types
