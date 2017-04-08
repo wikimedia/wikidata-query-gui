@@ -11,21 +11,19 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 /*jshint multistr: true */
 	var SPARQL_QUERY = {
 			item: {
-				suggest: null,
-// Disable for now as requested by Smalyshev
-//				suggest:// Find items that are most often used with a specifc property
-//					'SELECT ?id ?label ?description WHERE {\
-//							{\
-//								SELECT ?id (COUNT(?id) AS ?count) WHERE { ?i <{PROPERTY_URI}> ?id. }\
-//								GROUP BY ?id\
-//							}\
-//						?id rdfs:label ?label.\
-//						?id schema:description ?description.\
-//						FILTER((LANG(?label)) = "{LANGUAGE}")\
-//						FILTER((LANG(?description)) = "{LANGUAGE}")\
-//					}\
-//					ORDER BY DESC(?count)\
-//					LIMIT 20',
+				suggest:// Find items that are used with a specifc property
+					'SELECT ?id ?label ?description WHERE {\
+					hint:Query hint:optimizer "None".\
+							{\
+								SELECT DISTINCT ?id WHERE { ?i <{PROPERTY_URI}> ?id. }\
+								LIMIT 20\
+							}\
+						?id rdfs:label ?label.\
+						?id schema:description ?description.\
+						FILTER((LANG(?label)) = "{LANGUAGE}")\
+						FILTER((LANG(?description)) = "{LANGUAGE}")\
+					}\
+					LIMIT 20',
 				search: null,
 // Disable for now as requested by Smalyshev
 //					'SELECT ?id ?label ?description WHERE {\
@@ -40,46 +38,38 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 //						FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
 //					}\
 //					LIMIT 20',
-//				LIMIT 20',
-				instanceOf: null
-// Disable for now as requested by Smalyshev
-//				instanceOf:// Find items that are most often used with property 'instance of'
-//					'SELECT ?id ?label ?description WHERE {\
-//						{\
-//							SELECT ?id (COUNT(?id) AS ?count) WHERE { ?i wdt:P31 ?id. }\
-//							GROUP BY ?id\
-//							ORDER BY DESC(?count)\
-//							LIMIT 20\
-//						}\
-//						?id rdfs:label ?label.\
-//						?id schema:description ?description.\
-//						FILTER((LANG(?label)) = "en")\
-//						FILTER((LANG(?description)) = "en")\
-//					}\
-//					ORDER BY DESC(?count)'
+				instanceOf:// Find items that are used with property 'instance of'
+					'SELECT ?id ?label ?description WHERE {\
+					hint:Query hint:optimizer "None".\
+						{\
+							SELECT DISTINCT ?id WHERE { ?i wdt:P31 ?id. }\
+							LIMIT 20\
+						}\
+						?id rdfs:label ?label.\
+						?id schema:description ?description.\
+						FILTER((LANG(?label)) = "en")\
+						FILTER((LANG(?description)) = "en")\
+					}\
+					LIMIT 20'
 		},
 		property: {
-			suggest: null,
-// Disable for now as requested by Smalyshev
-//			suggest:// Find properties that are most often used with a specific item
-//				'SELECT ?id ?label ?description WHERE {\
-//					{\
-//						SELECT ?id (COUNT(?id) AS ?count) WHERE {\
-//						?i ?prop <{ITEM_URI}>.\
-//						?id ?x ?prop.\
-//						?id rdf:type wikibase:Property.\
-//						}\
-//						GROUP BY ?id\
-//					}\
-//				?id rdfs:label ?label.\
-//				?id schema:description ?description.\
-//				FILTER((LANG(?label)) = "{LANGUAGE}")\
-//				FILTER((LANG(?description)) = "{LANGUAGE}")\
-//				}\
-//				ORDER BY DESC(?count)\
-//				LIMIT 20',
-			genericSuggest: null,
-// Disable for now as requested by Smalyshev
+			suggest:// Find properties that are used with a specific item
+				'SELECT ?id ?label ?description WHERE {\
+				hint:Query hint:optimizer "None".\
+					{\
+						SELECT DISTINCT ?id WHERE {\
+						?i ?prop <{ITEM_URI}>.\
+						?id ?x ?prop.\
+						?id rdf:type wikibase:Property.\
+						}\
+						LIMIT 20\
+					}\
+				?id rdfs:label ?label.\
+				?id schema:description ?description.\
+				FILTER((LANG(?label)) = "{LANGUAGE}")\
+				FILTER((LANG(?description)) = "{LANGUAGE}")\
+				}\
+				LIMIT 20',
 //			genericSuggest:// Find properties that are most often used with all items
 //				'SELECT ?id ?label ?description WITH {\
 //					SELECT ?pred (COUNT(?value) AS ?count) WHERE\
