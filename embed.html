@@ -210,9 +210,9 @@ body {
 
 			function renderEdit( query, callback ) {
 				var ve = new wikibase.queryService.ui.visualEditor.VisualEditor();
-				ve.setChangeListener( function( v ) {
+				ve.setChangeListener( _.debounce( function( v ) {
 					callback( v.getQuery() );
-				} );
+				}, 1500 ) );
 
 				var $editor = $( '<div>' );
 				ve.setQuery( query );
@@ -227,9 +227,13 @@ body {
 			}
 
 			function renderQuery( query ) {
+				$( '.edit-link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
+				window.location.hash = '#' + encodeURIComponent( query )
+
 				var browser = getResultBrowser( query );
 				var api = new wikibase.queryService.api.Sparql();
 				$( '#query-result' ).hide();
+				$( '#query-result' ).empty();
 				$( '#progress' ).show();
 				api.query( query ).done( function() {
 					try {
@@ -247,7 +251,6 @@ body {
 				} );
 			}
 
-			$( '.edit-link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
 			var query = decodeURIComponent( window.location.hash.substr( 1 ) );
 			renderQuery( query );
 			renderEdit( query, renderQuery );

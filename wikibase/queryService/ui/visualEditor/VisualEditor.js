@@ -424,7 +424,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			if ( !subject ) {
 				return;
 			}
-			var variable2 = '?_' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
+			var variable2 = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
 
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );
