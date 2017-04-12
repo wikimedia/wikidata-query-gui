@@ -6,7 +6,7 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( function( $, vis, window, _ ) {
 	'use strict';
 
-	var SPARQL_PROPERTIES = 'SELECT ?p (SAMPLE(?pl) AS ?pl) (COUNT(?o) AS ?count ) WHERE {'
+	var SPARQL_PROPERTIES = 'SELECT ?p (SAMPLE(?pl) AS ?pl) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol)  WHERE {'
 			+ '<{entityUri}> ?p ?o .'
 			+ '   ?o <http://www.w3.org/2000/01/rdf-schema#label> ?ol .'
 			+ '    FILTER ( LANG(?ol) = "en" )'
@@ -109,7 +109,8 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 						result.push( {
 							id: row.p.value,
 							label: row.pl.value,
-							count: row.count.value
+							count: row.count.value,
+							items: row.ol.value
 						} );
 					} );
 
@@ -181,9 +182,11 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 
 				var node = {
 					id: p.id,
-					label: p.count,
+					label: p.count === '1' ? p.items : p.count,
+					title: p.items,
 					entityId: nodeId,
-					propertyLabel: p.label
+					propertyLabel: p.label,
+					color: '#abc9f2'
 				};
 				var edge = {
 					id: p.id,
