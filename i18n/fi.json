@@ -4,7 +4,8 @@
 			"01miki10",
 			"Silvonen",
 			"Stryn",
-			"Pyscowicz"
+			"Pyscowicz",
+			"SMAUG"
 		]
 	},
 	"wdqs-app-button-examples": "Esimerkkejä",
@@ -28,6 +29,7 @@
 	"wdqs-app-help-examples": "Esimerkkikyselyt",
 	"wdqs-app-help-datamodel": "RDF-tietomalli",
 	"wdqs-app-help-prefixes": "Luettelo etuliitteistä",
+	"wdqs-app-help-copy": "Tietoa lisenssistä",
 	"wdqs-app-footer-help": "Paina <i>[CTRL-SPACE]</i> aktivoidaksesi automaattisen päätöksen.",
 	"wdqs-app-footer-updated": "Tiedot päivitetty $1 sitten",
 	"wdqs-app-footer-updated-seconds": "Tiedot päivitetty $1 sekuntia sitten",

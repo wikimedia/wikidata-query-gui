@@ -41,6 +41,8 @@
 	"wdqs-ve-any": "ஏதாவது",
 	"wdqs-ve-or": "அல்லது",
 	"wdqs-ve-subtype": "உள்வகை",
+	"wdqs-ve-sb-suggestions": "பரிந்துரைகள்",
+	"wdqs-ve-sb-other": "பிற",
 	"wdqs-action-query": "வினா ஓடுகிறது",
 	"wdqs-action-error-display": "முடிவை காட்ட முடியவில்லை",
 	"wdqs-action-timeout": "நேர காலாவதி எல்லையை வினா அடைந்துவிட்டது",

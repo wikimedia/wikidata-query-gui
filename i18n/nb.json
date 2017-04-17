@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Danmichaelo",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Event"
 		]
 	},
 	"wdqs-app-button-examples": "Eksempler",
@@ -26,6 +27,7 @@
 	"wdqs-app-help-examples": "Eksempelspørringer",
 	"wdqs-app-help-datamodel": "RDF-datamodell",
 	"wdqs-app-help-prefixes": "Liste over prefikser",
+	"wdqs-app-help-copy": "Lisensinformasjon",
 	"wdqs-app-footer-help": "Trykk <i>[CTRL-SPACE]</i> for å aktivere autofullføring.",
 	"wdqs-app-footer-updated": "Data oppdatert for $1 siden",
 	"wdqs-app-footer-updated-seconds": "Data oppdatert for $1 sekunder siden",
@@ -58,6 +60,8 @@
 	"wdqs-ve-any": "enhver",
 	"wdqs-ve-or": "eller",
 	"wdqs-ve-subtype": "undertype",
+	"wdqs-ve-sb-suggestions": "Forslag",
+	"wdqs-ve-sb-other": "Annet",
 	"wdqs-action-query": "Kjører spørring",
 	"wdqs-action-render": "Gjør klart resultat",
 	"wdqs-action-error-display": "Kunne ikke vise resultat",
