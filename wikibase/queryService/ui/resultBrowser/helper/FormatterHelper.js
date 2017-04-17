@@ -7,7 +7,7 @@ wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultB
 wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, moment ) {
 	'use strict';
 
-	var EXPLORE_URL = 'http://www.wikidata.org/entity/Q',
+	var EXPLORE_URL = 'http://www.wikidata.org/entity/',
 		COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/',
 		COMMONS_FILE_PATH_MEDIAVIEWER = 'https://commons.wikimedia.org/wiki/File:{FILENAME}',
 		DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime',
