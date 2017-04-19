@@ -52,25 +52,38 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$result = $( '<div/>' );
 
 		$.each( row, function( key, value ) {
-			if ( ( value = self._mergeEntityWithLabel( row, key, value ) ) === null ) {
+			if ( self._isLabelField( key, row ) ) {
 				return;
 			}
 
+			value = $.extend( {
+				label: self._getLabel( row, key )
+			}, value );
 			$result.prepend( $( '<div>' ).append( self.formatValue( value, key, embed ) ) );
 		} );
 
 		return $result;
 	};
 
-	SELF.prototype._mergeEntityWithLabel = function( row, key, value ) {
-		if ( row[ key + 'Label' ] ) {
-			value = $.extend( {}, value );
-			value.label = row[ key + 'Label' ].value;
-		}
-		if ( key.endsWith( 'Label' ) && row[ key.replace( 'Label', '' ) ] ) {
-			return null;
-		}
-		return value;
+	/**
+	 * @param {string} key
+	 * @param {object} row
+	 * @return {boolean}
+	 * @private
+	 */
+	SELF.prototype._isLabelField = function( key, row ) {
+		return key.endsWith( 'Label' ) && typeof row[key.slice( 0, -5 )] !== 'undefined';
+	};
+
+	/**
+	 * @param {object} row
+	 * @param {string} key
+	 * @return {string|null}
+	 * @private
+	 */
+	SELF.prototype._getLabel = function( row, key ) {
+		var field = row[key + 'Label'];
+		return field && field.value || null;
 	};
 
 	/**
