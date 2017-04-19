@@ -52,10 +52,25 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$result = $( '<div/>' );
 
 		$.each( row, function( key, value ) {
+			if ( ( value = self._mergeEntityWithLabel( row, key, value ) ) === null ) {
+				return;
+			}
+
 			$result.prepend( $( '<div>' ).append( self.formatValue( value, key, embed ) ) );
 		} );
 
 		return $result;
+	};
+
+	SELF.prototype._mergeEntityWithLabel = function( row, key, value ) {
+		if ( row[ key + 'Label' ] ) {
+			value = $.extend( {}, value );
+			value.label = row[ key + 'Label' ].value;
+		}
+		if ( key.endsWith( 'Label' ) && row[ key.replace( 'Label', '' ) ] ) {
+			return null;
+		}
+		return value;
 	};
 
 	/**
@@ -98,7 +113,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 					$html.prepend( this.createGalleryButton( value, title ), ' ' );
 				}
 			} else {
-				$link.text( this.abbreviateUri( value ) );
+				$link.text( data.label || this.abbreviateUri( value ) );
 
 				if ( this.isExploreUrl( value ) ) {
 					$html.prepend( this.createExploreButton( value ), ' ' );
