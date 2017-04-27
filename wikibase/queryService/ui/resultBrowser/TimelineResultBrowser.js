@@ -40,6 +40,32 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 		var $container = $( '<div>' );
 
 		var timeline = new vis.Timeline( $container[0], this._getItems(), TIMELINE_OPTIONS );
+		// copy width to min-width for T163984 hack
+		timeline.on(
+			'changed',
+			function() {
+				$( timeline.dom.root )
+					.find( '.vis-item.vis-range' )
+					.each(
+						function() {
+							var $this = $( this );
+							/*
+							 * First unset the min-width, so that $this.css( 'width' ) below returns the original width calculated by the timeline.
+							 * Otherwise, repeated calls of this function would only ever increase the min-width, but never decrease it:
+							 * .css() returns the *computed* style, i.e. min(width, min-width) if we don't unset min-width.
+							 */
+							$this.css( 'min-width', 'unset' );
+							/*
+							 * Now set the min-width to the width calculated by the timeline,
+							 * so that wide time ranges are not shortened when the CSS hack for T163984 unsets the width.
+							 * (Unsetting the width lets the browser expand the time range to fit its text content,
+							 * but if the range is already wide enough for that, we don’t want the browser to shorten it.)
+							 */
+							$this.css( 'min-width', $this.css( 'width' ) );
+						}
+					);
+			}
+		);
 		$element.append( $container.prepend( this._createToolbar( timeline ) ) );
 	};
 

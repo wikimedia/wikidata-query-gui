@@ -452,6 +452,17 @@ div.jqcloud span.w1 { color: rgba(51,122,183,0.45); }
 	border-color: #888a85;
 }
 
+/* T163984 */
+.vis-item.vis-range:hover {
+	/*
+	 * let hovered timeline ranges expand to fit their content
+	 * (needs !important because width is set directly on the element)
+	 */
+	width: unset !important;
+	/* also draw them over other, non-hovered ranges */
+	z-index: 100;
+}
+
 /*
 	MultiDimensionResultBrowser
 */
