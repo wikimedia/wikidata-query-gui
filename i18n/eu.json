@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sator",
-			"Theklan"
+			"Theklan",
+			"Subi"
 		]
 	},
 	"wdqs-app-button-examples": "Adibideak",
@@ -26,6 +27,7 @@
 	"wdqs-app-help-examples": "Adibide kontsultak",
 	"wdqs-app-help-datamodel": "RDF Data Modeloa",
 	"wdqs-app-help-prefixes": "Aurrizkien zerrenda",
+	"wdqs-app-help-copy": "Lizentziari buruzko informazioa",
 	"wdqs-app-footer-help": "Klik egin <i>[CTRL-SPACE]</i> aurobetetzea aktibatzeko.",
 	"wdqs-app-footer-updated": "Datuak duela $1 eguneratuak",
 	"wdqs-app-footer-updated-seconds": "Datuak duela $1 segundu eguneratuak",
@@ -58,6 +60,8 @@
 	"wdqs-ve-any": "edozein",
 	"wdqs-ve-or": "edo",
 	"wdqs-ve-subtype": "azpitipoa",
+	"wdqs-ve-sb-suggestions": "Iradokizunak",
+	"wdqs-ve-sb-other": "Bestelakoa",
 	"wdqs-action-query": "Kontsulta exekutatzen",
 	"wdqs-action-render": "Emaitzaren aurkezpena",
 	"wdqs-action-error-display": "Ezin izan da emaitza erakutsi",
