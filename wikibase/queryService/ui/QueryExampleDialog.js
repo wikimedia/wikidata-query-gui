@@ -14,6 +14,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
+     * @author Florian Rämisch, <raemisch@ub.uni-leipzig.de>
 	 * @constructor
 	 *
 	 * @param {jQuery} $element
@@ -248,6 +249,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				{
 					placement: 'left',
 					'global_close': true,
+                    'esc_close': true,
 					trigger: 'click',
 					container: 'body',
 					title: self._i18n( 'wdqs-dialog-examples-preview-result', 'Preview result'  ),
