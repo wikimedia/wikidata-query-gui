@@ -4,7 +4,8 @@
 			"David1010",
 			"MIKHEIL",
 			"Beqabai",
-			"Otogi"
+			"Otogi",
+			"Mehman97"
 		]
 	},
 	"wdqs-app-button-examples": "მაგალითები",
@@ -28,6 +29,7 @@
 	"wdqs-app-help-examples": "მოთხოვნების ნიმუში",
 	"wdqs-app-help-datamodel": "RDF-ის მონაცემების მოდელი",
 	"wdqs-app-help-prefixes": "პრეფიქსების სია",
+	"wdqs-app-help-copy": "ლიცენზირების ინფორმაცია",
 	"wdqs-app-footer-help": "ავტომატური დასრულების გასააქტიურებლად დააჭირეთ <i>[CTRL-SPACE]</i>.",
 	"wdqs-app-footer-updated": "მონაცემები განახლდა $1 წინ",
 	"wdqs-app-footer-updated-seconds": "მონაცემები განახლდა $1 წამის წინ",
@@ -60,6 +62,8 @@
 	"wdqs-ve-any": "ნებისმიერი",
 	"wdqs-ve-or": "ან",
 	"wdqs-ve-subtype": "ქვეტიპი",
+	"wdqs-ve-sb-suggestions": "წინადადებები",
+	"wdqs-ve-sb-other": "სხვა",
 	"wdqs-action-query": "მოთხოვნის შესრულება",
 	"wdqs-action-render": "შედეგის დამუშავება",
 	"wdqs-action-error-display": "შედეგის ასახვა ვერ ხერხდება",
