@@ -85,6 +85,10 @@ pre.CodeMirror-placeholder {
 	width: 160px;
 }
 
+.exampleIcons {
+    width: 0;
+}
+
 iframe.shortUrl {
 	border: none;
 	width: 250px;

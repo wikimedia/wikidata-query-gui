@@ -269,8 +269,8 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 
 		var example = $( '<tr>' );
 		example.append( $( '<td>' ).append( $link ).append( ' ', $edit ) );
-		example.append( $( '<td>' ).append( $preview ) );
-		example.append( $( '<td>' ).append( $source ) );
+		example.append( $( '<td>' ).addClass( 'exampleIcons' ).append( $preview ) );
+		example.append( $( '<td>' ).addClass( 'exampleIcons' ).append( $source ) );
 		example.append( $( '<td>' ).text( tags.join( '|' ) ).hide() );
 		example.append( $( '<td>' ).text( query ).hide() );
 
