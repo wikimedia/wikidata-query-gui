@@ -94,7 +94,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			self = this;
 		div.innerHTML = html;
 		// Find all SPARQL Templates
-		var examples = $( div ).find( 'div.mw-highlight' ).map( function() {
+		var examples = $( div ).find( '[data-mw]' ).map( function() {
 			var $this = $( this ),
 				dataMW = $this.attr( 'data-mw' );
 			if ( !dataMW ) {
@@ -104,7 +104,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			var data = JSON.parse( dataMW ),
 				query;
 
-			if ( data.parts && data.parts[0].template.target.href === './Template:SPARQL' ) {
+			if ( data.parts && data.parts[0].template && data.parts[0].template.target.href === './Template:SPARQL' ) {
 				// SPARQL template
 				query = data.parts[0].template.params.query.wt;
 			} else if ( data.body ) {
