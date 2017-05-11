@@ -61,6 +61,7 @@
 	"wdqs-ve-any": "kaikki",
 	"wdqs-ve-or": "tai",
 	"wdqs-ve-subtype": "alatyyppi",
+	"wdqs-ve-sb-suggestions": "Ehdotukset",
 	"wdqs-action-query": "Suoritetaan kyselyä",
 	"wdqs-action-render": "Renderöintitulos",
 	"wdqs-action-error-display": "Ei voi näyttää tulosta",

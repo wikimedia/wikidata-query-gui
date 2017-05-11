@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrumps",
 			"Woytecr",
-			"Sp5uhe"
+			"Sp5uhe",
+			"Szmyk"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -61,6 +62,7 @@
 	"wdqs-ve-or": "lub",
 	"wdqs-ve-subtype": "podtyp",
 	"wdqs-ve-sb-suggestions": "Sugestie",
+	"wdqs-ve-sb-other": "Inne",
 	"wdqs-action-query": "Uruchamianie zapytania",
 	"wdqs-action-render": "Renderowanie wyniku",
 	"wdqs-action-error-display": "Nie można wyświetlić wyniku",
