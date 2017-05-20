@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cedric31",
-			"Nicolas Eynaud"
+			"Nicolas Eynaud",
+			"McDutchie"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -32,7 +33,7 @@
 	"wdqs-app-footer-updated-seconds": "Donadas mesas a jorn i a $1 segondas",
 	"wdqs-app-result-shorturl": "URL corta cap al resultat",
 	"wdqs-app-result-shorturl-title": "URL corta cap a aqueste resultat",
-	"wdqs-app-result-embed": "Resultat inclús",
+	"wdqs-app-result-embed": "Integrar lo resultat",
 	"wdqs-app-result-endpoint": "punt de terminason SPARQL",
 	"wdqs-app-result-endpoint-title": "Ligam cao al punt de terminason SPARQL que renvia lo resultat",
 	"wdqs-app-result-formatter-title-datetime": "Orodatatge ISO brut",

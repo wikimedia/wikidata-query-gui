@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Wladek92"
+			"Wladek92",
+			"McDutchie"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -18,10 +19,10 @@
 	"wdqs-app-button-download": "Télécharger",
 	"wdqs-app-button-download-title": "Télécharger le résultat",
 	"wdqs-app-button-link": "Lien",
-	"wdqs-app-button-link-title": "Obtenir le lien à consulter",
+	"wdqs-app-button-link-title": "Obtenir un lien vers la requête",
 	"wdqs-app-help-feedback": "Donner votre avis !",
 	"wdqs-app-help-request-query": "Demander une requête",
-	"wdqs-app-help-portal": "Aide du portail",
+	"wdqs-app-help-portal": "Portail d'aide",
 	"wdqs-app-help-manual": "Manuel utilisateur",
 	"wdqs-app-help-examples": "Requêtes d’exemple",
 	"wdqs-app-help-datamodel": "Modèle de données RDF",
@@ -32,7 +33,7 @@
 	"wdqs-app-footer-updated-seconds": "Données mises à jour il y a $1 secondes",
 	"wdqs-app-result-shorturl": "URL courte vers le résultat",
 	"wdqs-app-result-shorturl-title": "URL courte vers ce résultat",
-	"wdqs-app-result-embed": "Résultat inclus",
+	"wdqs-app-result-embed": "Intégrer le résultat",
 	"wdqs-app-result-endpoint": "point de terminaison SPARQL",
 	"wdqs-app-result-endpoint-title": "Lien vers le point de terminaison SPARQL renvoyant le résultat",
 	"wdqs-app-result-formatter-title-datetime": "Horodatage ISO brut",

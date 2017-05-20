@@ -5,7 +5,8 @@
 			"Sjoerddebruin",
 			"MrLeopold",
 			"Wikibelgiaan",
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -65,7 +66,7 @@
 	"wdqs-ve-sb-suggestions": "Suggesties",
 	"wdqs-ve-sb-other": "Overige",
 	"wdqs-action-query": "Zoekopdracht uitvoeren",
-	"wdqs-action-render": "Resultaat van rendering",
+	"wdqs-action-render": "Weergeven resultaat",
 	"wdqs-action-error-display": "Niet in staat om de resultaten weer te geven",
 	"wdqs-action-timeout": "Time-out voor zoekopdrachtenlimiet is bereikt",
 	"wdqs-action-malformed-query": "Zoekopdracht is ongeldig",
