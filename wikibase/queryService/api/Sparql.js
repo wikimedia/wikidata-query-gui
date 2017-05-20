@@ -127,12 +127,16 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	SELF.prototype.query = function( query ) {
 		var self = this,
 			deferred = $.Deferred(),
-			settings = { headers: { Accept: 'application/sparql-results+json' } };
+			settings = {
+				headers: { Accept: 'application/sparql-results+json' },
+				data: 'query=' + encodeURIComponent( query ),
+				method: 'POST'
+			};
 
-		this._queryUri = this._serviceUri + '?query=' + encodeURIComponent( query );
+		this._queryUri = this._serviceUri + '?' + settings.data;
 
 		this._executionTime = Date.now();
-		$.ajax( this._queryUri, settings ).done( function( data, textStatus, request ) {
+		$.ajax( this._serviceUri, settings ).done( function( data, textStatus, request ) {
 			self._executionTime = Date.now() - self._executionTime;
 
 			if ( typeof data.boolean === 'boolean' ) {
