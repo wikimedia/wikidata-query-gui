@@ -463,8 +463,11 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._isInShowSection = function( triple ) {
+		var bindings = this._query.getBindings();
+
 		// Must match ?value wdt:Pxx ?item
-		if ( this._isVariable( triple.subject ) && this._isVariable( triple.object ) ) {
+		if ( this._isVariable( triple.subject ) && this._isVariable( triple.object ) &&
+				!bindings[triple.subject] && !bindings[triple.object] ) {
 			return true;
 		}
 
@@ -476,9 +479,15 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._getTripleHtml = function( triple ) {
 		var self = this,
-			$triple = $( '<span>' );
+			$triple = $( '<span>' ),
+			bindings = this._query.getBindings();
 
 		$.each( triple.triple, function( k, entity ) {
+			if ( self._isVariable( entity ) && bindings[entity] &&
+					typeof bindings[entity].expression === 'string' ) {
+				entity = bindings[entity].expression;
+			}
+
 			if ( self._isSimpleMode && self._isVariable( entity ) ) {
 				return;
 			}
@@ -579,7 +588,12 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 				var newEntity = entity.replace( new RegExp( id + '$' ), '' ) + selectedId;// TODO: technical debt
 
 				$label.replaceWith( self._getTripleEntityHtml( newEntity, triple, key ) );
-				triple.triple[key] = newEntity;
+
+				if ( !self._isVariable( triple.triple[key] ) ) {
+					triple.triple[key] = newEntity;
+				} else {
+					self._query.getBindings()[triple.triple[key]].expression = newEntity;
+				}
 
 				if ( self._changeListener ) {
 					self._changeListener( self );
