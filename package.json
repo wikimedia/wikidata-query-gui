@@ -29,6 +29,7 @@
     "jquery.i18n": "git+https://github.com/wikimedia/jquery.i18n.git",
     "jquery.uls": "git+https://github.com/wikimedia/jquery.uls.git",
     "js-cookie": "^2.1.2",
+    "jstree": "^3.3.4",
     "leaflet": "~1.0.0",
     "leaflet-fullscreen": "^1.0.1",
     "leaflet-zoombox": "^0.2.0",
