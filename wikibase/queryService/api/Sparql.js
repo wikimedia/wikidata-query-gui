@@ -129,14 +129,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			deferred = $.Deferred(),
 			settings = {
 				headers: { Accept: 'application/sparql-results+json' },
-				data: 'query=' + encodeURIComponent( query ),
-				method: 'POST'
+				data: 'query=' + encodeURIComponent( query )
 			};
-
-		this._queryUri = this._serviceUri + '?' + settings.data;
-
-		this._executionTime = Date.now();
-		$.ajax( this._serviceUri, settings ).done( function( data, textStatus, request ) {
+		function done( data, textStatus, request ) {
 			self._executionTime = Date.now() - self._executionTime;
 
 			if ( typeof data.boolean === 'boolean' ) {
@@ -147,13 +142,27 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			self._rawData = data;
 
 			deferred.resolve( data );
-		} ).fail( function( request, options, exception ) {
+		}
+		function fail( request, options, exception ) {
 			self._executionTime = null;
 			self._rawData = null;
 			self._resultLength = null;
 			self._generateErrorMessage( request, options, exception );
 
 			deferred.reject();
+		}
+
+		this._queryUri = this._serviceUri + '?' + settings.data;
+
+		this._executionTime = Date.now();
+		$.ajax( this._serviceUri, settings ).done( done ).fail( function( request, options, exception ) {
+			if ( request.getAllResponseHeaders() === '' ) {
+				// query might have been too long for GET, retry with POST
+				settings.method = 'POST';
+				$.ajax( self._serviceUri, settings ).done( done ).fail( fail );
+			} else {
+				fail.apply( this, arguments );
+			}
 		} );
 
 		return deferred;
