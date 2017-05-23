@@ -67,7 +67,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 				return this._sorter.number( Number( data1.value ), Number( data2.value ) );
 			}
 
-			if ( f.isExploreUrl( data1.value ) && f.isExploreUrl( data2.value ) ) {
+			if ( f.isEntityUri( data1.value ) && f.isEntityUri( data2.value ) ) {
 				return this._sorter.number( Number( data1.value.replace( /[^0-9]/gi, '' ) ),
 						Number( data2.value.replace( /[^0-9]/gi, '' ) ) );
 			}

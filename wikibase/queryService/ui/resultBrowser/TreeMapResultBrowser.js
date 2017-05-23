@@ -64,7 +64,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			if ( self._getFormatter().isNumber( field ) ) {
 				size = field.value;
 			}
-			if ( field && field.value && self._getFormatter().isExploreUrl( field.value ) ) {
+			if ( field && field.value && self._getFormatter().isEntityUri( field.value ) ) {
 				url = field.value;
 			}
 		} );

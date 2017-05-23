@@ -7,8 +7,7 @@ wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultB
 wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, moment ) {
 	'use strict';
 
-	var EXPLORE_URL = 'http://www.wikidata.org/entity/',
-		COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/',
+	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/',
 		COMMONS_FILE_PATH_MEDIAVIEWER = 'https://commons.wikimedia.org/wiki/File:{FILENAME}',
 		DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime',
 		TYPE_URI = 'uri',
@@ -128,7 +127,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			} else {
 				$link.text( data.label || this.abbreviateUri( value ) );
 
-				if ( this.isExploreUrl( value ) ) {
+				if ( this.isEntityUri( value ) ) {
 					$html.prepend( this.createExploreButton( value ), ' ' );
 				}
 			}
@@ -209,13 +208,14 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Checks whether given URL is available for explorer
+	 * Checks if a given URI appears to be a canonical Wikidata entity URI.
 	 *
-	 * @param {string} url
+	 * @param {string} uri
 	 * @return {boolean}
 	 */
-	SELF.prototype.isExploreUrl = function( url ) {
-		return typeof url === 'string' && url.startsWith( EXPLORE_URL );
+	SELF.prototype.isEntityUri = function( uri ) {
+		return typeof uri === 'string'
+			&& /^https?:\/\/www\.wikidata\.org\/entity\/./.test( uri );
 	};
 
 	/**
@@ -398,7 +398,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			return false;
 		}
 
-		return this.isExploreUrl( cell.value );
+		return this.isEntityUri( cell.value );
 	};
 
 	/**
