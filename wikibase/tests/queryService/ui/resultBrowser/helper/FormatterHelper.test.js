@@ -64,4 +64,26 @@
 		} );
 	} );
 
+	QUnit.test( 'abbreviateUri', function( assert ) {
+		var namespaces = wb.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS,
+			testCases = [],
+			groupName, group, prefixName, prefixUri;
+
+		for ( groupName in namespaces ) {
+			group = namespaces[ groupName ];
+			for ( prefixName in group ) {
+				prefixUri = group[ prefixName ];
+				testCases.push( [ prefixUri, prefixName + ':' ] );
+			}
+		}
+
+		assert.expect( testCases.length + 1 );
+
+		assert.ok( testCases.length > 0, "should have at least one test case" );
+
+		testCases.forEach( function( testCase ) {
+			assert.strictEqual( helper.abbreviateUri( testCase[0] ), testCase[1] );
+		} );
+	} );
+
 }( QUnit, wikibase ) );
