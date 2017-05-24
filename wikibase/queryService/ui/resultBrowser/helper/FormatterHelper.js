@@ -108,7 +108,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 		switch ( data.datatype || data.type ) {
 		case TYPE_URI:
-			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank' } );
+			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank', rel: 'noopener' } );
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
