@@ -37,6 +37,8 @@
 	"wdqs-app-footer-updated-seconds": "Message displaying how many seconds ago data was updated",
 	"wdqs-app-result-shorturl": "Link message in the footer link dropdown",
 	"wdqs-app-result-shorturl-title": "Title of link message in the footer link dropdown",
+    "wdqs-app-result-rawgraphs": "Link message in the footer link dropdown",
+    "wdqs-app-result-rawgraphs-title": "Title of link message in the footer link dropdown",
 	"wdqs-app-result-embed": "Link message in the footer link dropdown",
 	"wdqs-app-result-endpoint": "Link message in the footer link dropdown",
 	"wdqs-app-result-endpoint-title": "Title of link message in the footer link dropdown",

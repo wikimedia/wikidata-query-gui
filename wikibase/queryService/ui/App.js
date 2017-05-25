@@ -6,6 +6,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	'use strict';
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
+	var RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=';
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
 
@@ -539,6 +540,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		} );
 
 		$( '.queryUri' ).attr( 'href', self._sparqlApi.getQueryUri() );
+		$( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + encodeURIComponent( self._sparqlApi.getQueryUri() ) );
 	};
 
 	/**
