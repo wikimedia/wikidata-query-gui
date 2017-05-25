@@ -167,6 +167,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			try {
 				return $element.html( this._getQueryTemplateHtml( template ) );
 			} catch ( e ) {
+				window.console.log( e );
 			}
 		}
 
@@ -211,7 +212,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._getQueryTemplateHtml = function( definition ) {
 		var self = this,
-			template = '<span>' + definition.template + '</span>',
+			template = $( '<span>' ).text( definition.template )[0].outerHTML,
 			$html = $( '<div>' ),
 			bindings = this._query.getBindings();
 
@@ -248,7 +249,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 						$html.find( '.' + variable.replace( '?', '' ) ).append( $label );
 					} );
 
-			template = template.replace( variable, '<span class="' + variable.replace( '?', '' ) + '"></span>' );
+			template = template.replace( variable, $( '<span>' ).addClass( variable.replace( '?', '' ) )[0].outerHTML );
 		} );
 
 		return $html.append( $( template ) );
