@@ -46,12 +46,36 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	SELF.prototype._drawable = false;
 
 	/**
+	 * @property {wikibase.queryService.api.Sparql}
+	 * @private
+	 */
+	SELF.prototype._sparqlApi = null;
+
+	/**
 	 * Sets the result to be browsed
 	 *
 	 * @param {Object} result set
 	 */
 	SELF.prototype.setResult = function( result ) {
 		this._result = result;
+	};
+
+	/**
+	 * Sets the SPARQL API
+	 *
+	 * @param {wikibase.queryService.api.Sparql} sparqlApi
+	 */
+	SELF.prototype.setSparqlApi = function( sparqlApi ) {
+		this._sparqlApi = sparqlApi;
+	};
+
+	/**
+	 * Gets the SPARQL API
+	 *
+	 * @return {wikibase.queryService.api.Sparql}
+	 */
+	SELF.prototype.getSparqlApi = function() {
+		return this._sparqlApi;
 	};
 
 	/**

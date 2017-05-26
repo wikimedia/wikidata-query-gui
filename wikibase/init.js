@@ -30,15 +30,15 @@
 			var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language;
 			setLanguage( lang );
 
-			var api = new wb.api.Wikibase( config.api.wikibase.uri );
-			api.setLanguage( lang );
-			var languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
+			var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
+				sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
+				languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
+
 			languageSelector.setChangeListener( function( lang ) {
 				api.setLanguage( lang );
+				sparqlApi.setLanguage( lang );
 				setLanguage( lang );
 			} );
-
-			var sparqlApi = new wb.api.Sparql( config.api.sparql.uri );
 
 			var rdfHint = new wb.ui.editor.hint.Rdf( api );
 			var rdfTooltip = new wb.ui.editor.tooltip.Rdf( api );

@@ -18,7 +18,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 '         OPTIONAL { BIND(?value AS ?valueItem).  FILTER(STRSTARTS(STR(?value), STR(wd:))) }  '  +
 	 '       }  '  +
 	 '     }  '  +
-	 '     SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }  '  +
+	 '     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  '  +
 	 '  }  ' ;
 	// jscs:enable
 
@@ -34,7 +34,6 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 */
 	function SELF() {
 		this._labelColumns = {};
-		this._sparql = new wikibase.queryService.api.Sparql();// TODO: inject
 	}
 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser();
@@ -56,12 +55,6 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 * @private
 	 **/
 	SELF.prototype._nodes = null;
-
-	/**
-	 * @property {wikibase.queryService.api.Sparql}
-	 * @private
-	 */
-	SELF.prototype._sparql = null;
 
 	/**
 	 * Draw browser to the given element
@@ -158,9 +151,9 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	SELF.prototype._expandTree = function( node ) {
 		var self = this;
 
-		this._sparql.query( SPARQL_ITEM_PROPERTIES.replace( '{ENTITY_URI}', node.url ) ).done(
+		this.getSparqlApi().query( SPARQL_ITEM_PROPERTIES.replace( '{ENTITY_URI}', node.url ) ).done(
 			function() {
-				var data = self._sparql.getResultRawData(),
+				var data = self.getSparqlApi().getResultRawData(),
 					iterator = function( cb ) {
 						$.each( data.results.bindings, function( rowNum, row ) {
 							$.each( data.head.vars, function( rowNum1, key ) {

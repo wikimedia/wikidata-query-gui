@@ -39,6 +39,10 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		if ( endpoint ) {
 			this._endpoint = endpoint;
 		}
+
+		if ( defaultLanguage ) {
+			this._language = defaultLanguage;
+		}
 	}
 
 	/**

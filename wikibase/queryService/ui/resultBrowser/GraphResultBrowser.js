@@ -58,7 +58,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			}
 		} );
 
-		var nodeBrowser = new wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser( data.nodes, data.edges );
+		var nodeBrowser = new wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser( data.nodes, data.edges, this.getSparqlApi() );
 		network.on( 'click', function( properties ) {
 			var nodeId = properties.nodes[0] || null;
 			nodeBrowser.browse( nodeId );

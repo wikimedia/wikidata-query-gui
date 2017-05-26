@@ -5,19 +5,18 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.Sparql = ( function( $ ) {
 	'use strict';
 
-	var SPARQL_SERVICE_URI = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql';
-
-	var ERROR_CODES = {
+	var SPARQL_SERVICE_URI = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql',
+		ERROR_CODES = {
 			TIMEOUT: 10,
 			MALFORMED: 20,
 			SERVER: 30,
 			UNKNOWN: 100
-	};
-
-	var ERROR_MAP = {
+		},
+		ERROR_MAP = {
 		'QueryTimeoutException: Query deadline is expired': ERROR_CODES.TIMEOUT,
 		'MalformedQueryException: ': ERROR_CODES.MALFORMED
-	};
+		},
+		DEFAULT_LANGUAGE = 'en';
 
 	/**
 	 * SPARQL API for the Wikibase query service
@@ -31,8 +30,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @param {string} [serviceUri] Optional URI to the SPARQL service endpoint
 	 */
-	function SELF( serviceUri ) {
+	function SELF( serviceUri, language ) {
 		this._serviceUri = serviceUri || SPARQL_SERVICE_URI;
+		this._language = language || DEFAULT_LANGUAGE;
 	}
 
 	/**
@@ -75,6 +75,12 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._queryUri = null;
+
+	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._language = null;
 
 	/**
 	 * Submit a query to the API
@@ -125,6 +131,8 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {jQuery.Promise} query
 	 */
 	SELF.prototype.query = function( query ) {
+		query = this._replaceAutoLanguage( query );
+
 		var self = this,
 			deferred = $.Deferred(),
 			settings = {
@@ -449,6 +457,22 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			return out + rowOut;
 		}, output );
 		return output;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._replaceAutoLanguage = function( query ) {
+		return query.replace( /\[AUTO_LANGUAGE\]/g, this._language );
+	};
+
+	/**
+	 * Set the default language
+	 *
+	 * @param {string} language of search string default:en
+	 */
+	SELF.prototype.setLanguage = function( language ) {
+		this._language = language;
 	};
 
 	return SELF;
