@@ -73,6 +73,15 @@ module.exports = function( grunt ) {
 							dest: buildFolder + '/images/',
 							filter: 'isFile'
 						},
+						{// jstree
+							expand: true,
+							flatten: true,
+							src: [
+								'**/jstree/**/*.{png,gif}'
+							],
+							dest: buildFolder + '/css/',
+							filter: 'isFile'
+						},
 						{// leaflet fullscreen images
 							expand: true,
 							flatten: true,

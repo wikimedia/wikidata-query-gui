@@ -168,6 +168,13 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			object: null,
 			$element: null
 		},
+		Tree: {
+			icon: 'fa-tree',
+			label: 'Tree',
+			class: 'TreeResultBrowser',
+			object: null,
+			$element: null
+		},
 		Timeline: {
 			icon: 'glyphicon-calendar',
 			label: 'Timeline',

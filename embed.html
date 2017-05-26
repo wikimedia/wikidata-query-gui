@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
 <link rel="stylesheet" href="node_modules/leaflet-fullscreen/dist/leaflet.fullscreen.css">
 <link rel="stylesheet" href="node_modules/leaflet-zoombox/L.Control.ZoomBox.css">
+<link rel="stylesheet" href="node_modules/jstree/dist/themes/default/style.css" />
 <link rel="stylesheet" href="style.css">
 <!-- endbuild -->
 <link rel="shortcut icon" href="//www.wikidata.org/static/favicon/testwikidata.ico">
@@ -119,6 +120,7 @@ body {
 	<script src="node_modules/moment/min/moment-with-locales.js"></script>
 	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
 	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
+	<script src="node_modules/jstree/dist/jstree.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js js/embed.wdqs.min.js -->
@@ -130,6 +132,7 @@ body {
 	<script src="wikibase/queryService/ui/resultBrowser/TableResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/CoordinateResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/TreeMapResultBrowser.js"></script>
+	<script src="wikibase/queryService/ui/resultBrowser/TreeResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/BubbleChartResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/LineChartResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/BarChartResultBrowser.js"></script>
@@ -177,6 +180,9 @@ body {
 			},
 			TreeMap: {
 				class: 'TreeMapResultBrowser'
+			},
+			Tree: {
+				class: 'TreeResultBrowser'
 			},
 			Timeline: {
 				class: 'TimelineResultBrowser'
