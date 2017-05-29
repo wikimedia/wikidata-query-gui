@@ -56,7 +56,7 @@
 	"wdqs-ve-show": "Показване",
 	"wdqs-ve-with": "с",
 	"wdqs-ve-and": "и",
-	"wdqs-ve-anything": "нищо",
+	"wdqs-ve-anything": "каквото и да е",
 	"wdqs-ve-any": "всяко",
 	"wdqs-ve-or": "или",
 	"wdqs-ve-subtype": "подтип",
@@ -68,6 +68,6 @@
 	"wdqs-action-timeout": "Заявката отне прекалено много време",
 	"wdqs-action-malformed-query": "Невалидна заявка",
 	"wdqs-action-server-error": "Сървърна грешка",
-	"wdqs-action-unknow-error": "Неразпозната грешка",
+	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-result-map-layers-all": "Всички слоеве"
 }
