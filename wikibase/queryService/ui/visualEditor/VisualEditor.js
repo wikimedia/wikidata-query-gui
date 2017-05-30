@@ -246,10 +246,10 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 							id = selectedId;
 						} );
 
-						$html.find( '.' + variable.replace( '?', '' ) ).append( $label );
+						$html.find( '[data-variable="' + variable + '"]' ).append( $label );
 					} );
 
-			template = template.replace( variable, $( '<span>' ).addClass( variable.replace( '?', '' ) )[0].outerHTML );
+			template = template.replace( variable, $( '<span>' ).attr( 'data-variable', variable )[0].outerHTML );
 		} );
 
 		return $html.append( $( template ) );
