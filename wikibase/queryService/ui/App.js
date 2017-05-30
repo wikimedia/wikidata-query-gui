@@ -318,9 +318,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			$( '.visual-editor' ).delay( 500 ).fadeIn();
 		} catch ( e ) {
-			if ( e.stack ) {
-				window.console.log( e.stack );
-			}
+			window.console.error( e );
 		}
 	};
 
@@ -817,7 +815,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				self._actionBar.hide();
 			} catch ( e ) {
 				self._actionBar.show( 'wdqs-action-error-display', '', 'warning' );
-				window.console.log( e.stack );
+				window.console.error( e );
 			}
 
 			self._handleQueryResultBrowsers();

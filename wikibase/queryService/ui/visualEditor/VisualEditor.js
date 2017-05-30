@@ -167,7 +167,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 			try {
 				return $element.html( this._getQueryTemplateHtml( template ) );
 			} catch ( e ) {
-				window.console.log( e );
+				window.console.error( e );
 			}
 		}
 
