@@ -9,13 +9,13 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	var SPARQL_PROPERTIES = 'SELECT ?p (SAMPLE(?pl) AS ?pl) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol)  WHERE {'
 			+ '<{entityUri}> ?p ?o .'
 			+ '   ?o <http://www.w3.org/2000/01/rdf-schema#label> ?ol .'
-			+ '    FILTER ( LANG(?ol) = "en" )'
+			+ '    FILTER ( LANG(?ol) = "[AUTO_LANGUAGE]" )'
 			+ '    ?s <http://wikiba.se/ontology#directClaim> ?p .' + '    ?s rdfs:label ?pl .'
-			+ '    FILTER ( LANG(?pl) = "en" )' + '} group by ?p';
+			+ '    FILTER ( LANG(?pl) = "[AUTO_LANGUAGE]" )' + '} group by ?p';
 
 	var SPARQL_ENTITES = 'SELECT ?o ?ol WHERE {' + '<{entityUri}> <{propertyUri}> ?o .'
 			+ '?o <http://www.w3.org/2000/01/rdf-schema#label> ?ol .'
-			+ 'FILTER ( LANG(?ol) = "en" )' + '} LIMIT 50';
+			+ 'FILTER ( LANG(?ol) = "[AUTO_LANGUAGE]" )' + '} LIMIT 50';
 
 	/**
 	 * A browser for network nodes
@@ -23,12 +23,13 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 * @constructor
 	 * @param {DataSet} nodes
 	 * @param {DataSet} edges
+	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 */
-	function SELF( nodes, edges ) {
+	function SELF( nodes, edges, sparqlApi ) {
 		this._nodes = nodes;
 		this._edges = edges;
 
-		this._sparql = new wikibase.queryService.api.Sparql();// TODO: inject
+		this._sparql = sparqlApi;
 	}
 
 	/**

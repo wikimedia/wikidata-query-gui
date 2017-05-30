@@ -736,6 +736,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 * @return {Object} default result browser
 	 */
 	SELF.prototype._createResultBrowsers = function( resultData ) {
+		var self = this;
 
 		var defaultBrowser = this._getDefaultResultBrowser();
 
@@ -744,6 +745,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		// instantiate
 		$.each( this._resultBrowsers, function( key, b ) {
 			var instance = new wikibase.queryService.ui.resultBrowser[b.class]();
+			instance.setSparqlApi( self._sparqlApi );
+
 			if ( defaultBrowser === null || defaultBrowser === key ) {
 				defaultBrowser = instance;
 			}
