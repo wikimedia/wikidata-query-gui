@@ -303,16 +303,25 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	SELF.prototype.abbreviateUri = function( uri ) {
 		var NAMESPACE_SHORTCUTS = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS,
 			nsGroup,
-			ns;
+			ns,
+			length = 0,
+			longestNs;
 
 		for ( nsGroup in NAMESPACE_SHORTCUTS ) {
 			for ( ns in NAMESPACE_SHORTCUTS[nsGroup] ) {
 				if ( uri.indexOf( NAMESPACE_SHORTCUTS[nsGroup][ns] ) === 0 ) {
-					return uri.replace( NAMESPACE_SHORTCUTS[nsGroup][ns], ns + ':' );
+					if ( NAMESPACE_SHORTCUTS[nsGroup][ns].length > length ) {
+						length = NAMESPACE_SHORTCUTS[nsGroup][ns].length;
+						longestNs = ns;
+					}
 				}
 			}
 		}
-		return '<' + uri + '>';
+		if ( longestNs ) {
+			return longestNs + ':' + uri.substr( length );
+		} else {
+			return '<' + uri + '>';
+		}
 	};
 
 	/**
