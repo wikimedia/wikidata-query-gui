@@ -11,7 +11,11 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 			'matchBrackets': true,
 			'mode': 'sparql',
 			'extraKeys': {
-				'Ctrl-Space': 'autocomplete'
+				'Ctrl-Space': 'autocomplete',
+				'Tab': function( cm ) {
+					var spaces = Array( cm.getOption( 'indentUnit' ) + 1 ).join( ' ' );
+					cm.replaceSelection( spaces );
+				}
 			},
 			'viewportMargin': Infinity,
 			'hintOptions': {
@@ -101,7 +105,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 		this._rdfTooltip.setEditor( this._editor );
 
 		this._registerHints();
-		this._mapTabToSpaceIndent();
 	};
 
 	SELF.prototype._registerHints = function() {
@@ -127,15 +130,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 						} );
 
 		CodeMirror.hint.sparql.async = true;
-	};
-
-	SELF.prototype._mapTabToSpaceIndent = function() {
-		this._editor.setOption( 'extraKeys', {
-			Tab: function( cm ) {
-				var spaces = Array( cm.getOption( 'indentUnit' ) + 1 ).join( ' ' );
-				cm.replaceSelection( spaces );
-			}
-		} );
 	};
 
 	SELF.prototype._getHints = function( editorContent, lineContent, lineNum, cursorPos ) {
