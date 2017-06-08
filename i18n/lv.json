@@ -26,6 +26,7 @@
 	"wdqs-app-help-datamodel": "RDF datu modelis",
 	"wdqs-app-help-prefixes": "Prefiksu saraksts",
 	"wdqs-app-help-copy": "Licencēšanas informācija",
+	"wdqs-app-result-embed": "Iegult rezultātu",
 	"wdqs-app-result-json": "JSON fails",
 	"wdqs-app-result-tsv": "TSV fails",
 	"wdqs-app-result-csv": "CSV fails",
