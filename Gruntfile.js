@@ -199,6 +199,9 @@ module.exports = function( grunt ) {
 						'git review'
 				].join( '&&' )
 			}
+		},
+		'auto_install': {
+			local: {}
 		}
 	} );
 
@@ -216,7 +219,7 @@ module.exports = function( grunt ) {
 			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
-			'clean', 'test', 'create_build'
+			'clean', 'auto_install', 'test', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
 			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
