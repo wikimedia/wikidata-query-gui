@@ -216,7 +216,7 @@ module.exports = function( grunt ) {
 			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
-			'clean', 'create_build'
+			'clean', 'test', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
 			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
