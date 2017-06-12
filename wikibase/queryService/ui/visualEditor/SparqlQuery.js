@@ -38,8 +38,15 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 * @param {String} query SPARQL query string
 	 */
 	SELF.prototype.parse = function( query, prefixes ) {
-		var parser = new sparqljs.Parser( prefixes );
+		var parser = new sparqljs.Parser( prefixes ),
+			queryComments = [];
 		this._query = parser.parse( query );
+		$.each( query.split( '\n' ), function( index, line ) {
+			if ( line.indexOf( '#' ) === 0 ) {
+				queryComments.push( line );
+			}
+		} );
+		this._queryComments = queryComments;
 	};
 
 	/**
@@ -49,7 +56,14 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	 */
 	SELF.prototype.getQueryString = function() {
 		try {
-			return new sparqljs.Generator().stringify( this._query );
+			var sparql = new sparqljs.Generator().stringify( this._query ),
+				comments = this._queryComments.join( '\n' ).trim();
+
+			if ( comments !== '' ) {
+				return comments + '\n' + sparql;
+			} else {
+				return sparql;
+			}
 		} catch ( e ) {
 			return null;
 		}
@@ -278,6 +292,27 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 		} );
 
 		return Object.keys( variables );
+	};
+
+	/**
+	 * Get the content of a content beginning with start.
+	 *
+	 * For example, on a query with '#foo=bar',
+	 * getCommentContent( 'foo=' ) will return 'bar'.
+	 *
+	 * @param {string} start The beginning of the comment, *without* the comment mark ('#').
+	 *
+	 * @return {?string}
+	 */
+	SELF.prototype.getCommentContent = function( start ) {
+		var i, comment;
+		for ( i = 0; i < this._queryComments.length; i++ ) {
+			comment = this._queryComments[ i ];
+			if ( comment.startsWith( '#' + start ) ) {
+				return comment.substring( 1 + start.length );
+			}
+		}
+		return null;
 	};
 
 	return SELF;
