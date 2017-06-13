@@ -48,4 +48,16 @@
 			"should not be possible to manipulate the fragment list via regex characters in variables"
 		);
 	} );
+
+	QUnit.test( '_buildTemplate internal function', function( assert ) {
+		assert.expect( 4 );
+
+		var variables = {};
+		var template = QueryTemplate._buildTemplate( [ 'a ', '?b', ' c ', '?d', ' e ?f g' ], variables );
+
+		assert.equal( template.text(), 'a ?b c ?d e ?f g', 'template text should look like template' );
+		assert.ok( '?b' in variables, 'variables should contain the variables from the template' );
+		assert.ok( '?d' in variables, 'variables should contain the variables from the template' );
+		assert.equal( Object.getOwnPropertyNames( variables ).length, 2, 'variables should not contain any other properties' );
+	} );
 }( jQuery, QUnit, sinon, wikibase ) );
