@@ -146,11 +146,26 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @param {jQuery} $element
 	 */
 	SELF.prototype.draw = function( $element ) {
-		var template = this._getQueryTemplateDefinition();
+		var template = wikibase.queryService.ui.visualEditor.QueryTemplate.parse( this._query ),
+			self = this,
+			bindings = this._query.getBindings();
 
 		if ( template !== null ) {
 			try {
-				return $element.html( this._getQueryTemplateHtml( template ) );
+				return $element.html( template.getHtml(
+					function( variable ) {
+						return self._getLabel( bindings[ variable ].expression );
+					},
+					this._selectorBox,
+					function( variable, oldId, newId ) {
+						bindings[ variable ].expression = bindings[ variable ].expression
+							.replace( new RegExp( oldId + '$' ), '' )
+							+ newId;
+						if ( self._changeListener ) {
+							self._changeListener( self );
+						}
+					}
+				) );
 			} catch ( e ) {
 				window.console.error( e );
 			}
@@ -167,76 +182,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 
 		this._isSimpleMode = this._isSimpleQuery();
 		$element.html( this._getHtml() );
-	};
-
-	/**
-	 * Get the template definition from query comments
-	 *
-	 * @return {object}|null
-	 */
-	SELF.prototype._getQueryTemplateDefinition = function() {
-		var templateComment = null,
-			template = null;
-
-		try {
-			templateComment = this._query.getCommentContent( 'TEMPLATE=' );
-			if ( templateComment ) {
-				template = JSON.parse( templateComment );
-			}
-		} catch ( e ) {
-		}
-
-		return template;
-	};
-
-	/**
-	 * Get the template definition or null
-	 *
-	 * @param {object} definition
-	 */
-	SELF.prototype._getQueryTemplateHtml = function( definition ) {
-		var self = this,
-			template = $( '<span>' ).text( definition.template )[0].outerHTML,
-			$html = $( '<div>' ),
-			bindings = this._query.getBindings();
-
-		$.each( definition.variables, function( variable, varDef ) {
-			var $label = $( '<span>' );
-
-			self._getLabel( bindings[variable].expression ).done(
-					function( label, id, description, type ) {
-						var $link = $( '<a>' ).text( label ).attr( {
-							'data-id': id,
-							'data-type': type,
-							href: '#'
-						} ).appendTo( $label );
-
-						if ( varDef.query ) {
-							$link.attr( 'data-sparql', varDef.query );
-						}
-
-						self._selectorBox.add( $link, null, function( selectedId, name ) {
-							bindings[variable].expression = bindings[variable].expression.replace(
-									new RegExp( id + '$' ), '' ) +
-									selectedId;// TODO: technical debt
-							$link.attr( {
-								'data-id': selectedId
-							} );
-							$link.text( name );
-
-							if ( self._changeListener ) {
-								self._changeListener( self );
-							}
-							id = selectedId;
-						} );
-
-						$html.find( '[data-variable="' + variable + '"]' ).append( $label );
-					} );
-
-			template = template.replace( variable, $( '<span>' ).attr( 'data-variable', variable )[0].outerHTML );
-		} );
-
-		return $html.append( $( template ) );
 	};
 
 	/**
