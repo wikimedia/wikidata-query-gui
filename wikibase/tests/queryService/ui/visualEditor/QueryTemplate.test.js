@@ -60,4 +60,43 @@
 		assert.ok( '?d' in variables, 'variables should contain the variables from the template' );
 		assert.equal( Object.getOwnPropertyNames( variables ).length, 2, 'variables should not contain any other properties' );
 	} );
+
+	var testCases = [
+		{
+			description: 'query template with single variable',
+			sparql: '#TEMPLATE={ "template": "Find ?thing\u200Bs", "variables": { "?thing": {} } }\nSELECT ?human WHERE { BIND(wd:Q5 AS ?thing) ?human wdt:P31 ?thing }',
+			text: 'Find human\u200Bs'
+		},
+		{
+			description: 'query template with two variables',
+			sparql: '#TEMPLATE={ "template": "Find ?thing\u200Bs with ?prop", "variables": { "?thing": {}, "?prop": {} } }\nSELECT ?human ?other WHERE { BIND(wd:Q5 AS ?thing) BIND(wdt:P21 AS ?prop) ?human wdt:P31 ?thing; ?prop ?other }',
+			text: 'Find human\u200Bs with sex or gender'
+		},
+		{
+			description: 'query template with the same variable twice',
+			sparql: '#TEMPLATE={ "template": "Find ?thing\u200Bs that are ?thing\u200Bs", "variables": { "?thing": {} } }\nSELECT ?human WHERE { BIND(wd:Q5 AS ?thing) ?human wdt:P31 ?thing }',
+			text: 'Find human\u200Bs that are human\u200Bs'
+		}
+	];
+	var labels = {
+		'?thing': 'human',
+		'?prop': 'sex or gender'
+	};
+
+	$.each( testCases, function( index, testCase ) {
+		QUnit.test( testCase.description, function( assert ) {
+			assert.expect( 1 );
+
+			var query = new wb.queryService.ui.visualEditor.SparqlQuery();
+			query.parse( testCase.sparql, wb.queryService.RdfNamespaces.ALL_PREFIXES );
+			var qt = QueryTemplate.parse( query );
+			var $html = qt.getHtml(
+				function( variable ) { return $.Deferred().resolve( labels[variable] ).promise(); },
+				{ add: function() {} },
+				function() {}
+			);
+
+			assert.equal( $html.text(), testCase.text );
+		} );
+	} );
 }( jQuery, QUnit, sinon, wikibase ) );
