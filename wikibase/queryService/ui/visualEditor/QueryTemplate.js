@@ -61,5 +61,30 @@ wikibase.queryService.ui.visualEditor.QueryTemplate = ( function( $, wikibase ) 
 		return fragments;
 	};
 
+	/**
+	 * Assemble the template span out of the fragments.
+	 *
+	 * @param {string[]} fragments The template fragments (see {@link _getQueryTemplateFragments}).
+	 * @param {Object.<string, jQuery>} variables The individual variables are stored in this object, indexed by variable name.
+	 * @return {jQuery}
+	 */
+	SELF._buildTemplate = function( fragments, variables ) {
+		var template = $( '<span>' );
+
+		template.append( document.createTextNode( fragments[ 0 ] ) );
+		for ( var i = 1; i < fragments.length; i += 2 ) {
+			var variable = fragments[ i ],
+				$variable = $( '<span>' ).text( variable );
+			if ( !( variable in variables ) ) {
+				variables[variable] = [];
+			}
+			variables[variable].push( $variable );
+			template.append( $variable );
+			template.append( document.createTextNode( fragments[ i + 1 ] ) );
+		}
+
+		return template;
+	};
+
 	return SELF;
 }( jQuery, wikibase ) );
