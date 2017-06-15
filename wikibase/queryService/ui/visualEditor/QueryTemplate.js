@@ -19,6 +19,49 @@ wikibase.queryService.ui.visualEditor.QueryTemplate = ( function( $, wikibase ) 
 	}
 
 	/**
+	 * @property {Object} The parsed template definition.
+	 * @private
+	 */
+	SELF.prototype._definition = {};
+
+	/**
+	 * @property {jQuery} A span with the rendered template.
+	 * @private
+	 */
+	SELF.prototype._template = null;
+
+	/**
+	 * @property {Object.<string, Array.<jQuery>>} A map from variable names to lists of spans corresponding to that variable.
+	 * @private
+	 */
+	SELF.prototype._variables = [];
+
+	/**
+	 * @param {SparqlQuery} query
+	 * @return {?QueryTemplate}
+	 */
+	SELF.parse = function( query ) {
+		var templateComment = query.getCommentContent( 'TEMPLATE=' ),
+			templateJson,
+			template;
+
+		if ( !templateComment ) {
+			return null;
+		}
+		try {
+			templateJson = JSON.parse( templateComment );
+		} catch ( e ) {
+			return null;
+		}
+
+		template = new SELF;
+		template._definition = templateJson;
+		template._fragments = SELF._getQueryTemplateFragments( templateJson );
+
+		return template;
+	};
+
+	/**
 	 * Splits the template 'a ?b c ?d e' into
 	 * [ 'a ', '?b', ' c ', '?d', ' e' ].
 	 * Text and variable fragments always alternate,
@@ -84,6 +127,52 @@ wikibase.queryService.ui.visualEditor.QueryTemplate = ( function( $, wikibase ) 
 		}
 
 		return template;
+	};
+
+	/**
+	 * @param {Function} getLabel Called with {string} variable name, should return {Promise} for label, id, description, type.
+	 * @param {wikibase.queryService.ui.visualEditor.SelectorBox} selectorBox
+	 * @param {Function} changeListener Called with {string} variable name, {string} old value, {string} new value.
+	 * @return {jQuery}
+	 */
+	SELF.prototype.getHtml = function( getLabel, selectorBox, changeListener ) {
+		if ( this._template !== null ) {
+			return this._template;
+		}
+
+		this._template = SELF._buildTemplate( this._fragments, this._variables );
+
+		var self = this;
+
+		$.each( this._definition.variables, function( variable, variableDefinition ) {
+			getLabel( variable ).done( function( label, id, description, type ) {
+				$.each( self._variables[ variable ], function( index, $variable ) {
+					$variable.text( '' );
+					var $link = $( '<a>' ).text( label ).attr( {
+						'data-id': id,
+						'data-type': type,
+						href: '#'
+					} ).appendTo( $variable );
+
+					if ( variableDefinition.query ) {
+						$link.attr( 'data-sparql', variableDefinition.query );
+					}
+
+					selectorBox.add( $link, null, function( selectedId, name ) {
+						for ( var j in self._variables[ variable ] ) {
+							var $variable = self._variables[ variable ][ j ];
+							$variable.find( 'a[data-id="' + id + '"]' )
+								.attr( 'data-id', selectedId )
+								.text( name );
+							changeListener( variable, id, selectedId );
+							id = selectedId;
+						}
+					} );
+				} );
+			} );
+		} );
+
+		return this._template;
 	};
 
 	return SELF;
