@@ -12,6 +12,7 @@
 		TRIPLES: 'SELECT ?x1 ?x2 ?x3 WHERE { <S> <P> <O>.  OPTIONAL{ <S1> <P1> <O1> }  <S2> <P2> <O2>.}',
 		SUBQUERIES: 'SELECT * WHERE {  {SELECT * WHERE { {SELECT * WHERE {}} }} }',
 		BOUND: 'SELECT * WHERE { ?bound <P> <O>.  OPTIONAL{ <S1> ?x ?bound2 }  <S2> <P2> <O2>.}',
+		COMMENTS: '#foo:bar\n#6*9=42\nSELECT * WHERE {  }',
 	};
 
 	QUnit.test( 'When instantiating new SparqlQuery then', function( assert ) {
@@ -237,6 +238,20 @@
 		assert.deepEqual( q.getBoundVariables(), [
 				"?bound", "?bound2"
 		], 'bound subject variables must be ?bound and ?bound2' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.COMMENTS + '\'', function( assert ) {
+		assert.expect( 3 );
+
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.COMMENTS );
+
+		assert.strictEqual( q.getQueryString(), QUERY.COMMENTS,
+			'formatted query must be identical' );
+		assert.strictEqual( q.getCommentContent( 'foo:' ), 'bar',
+			'content of #foo: comment must be bar' );
+		assert.strictEqual( q.getCommentContent( '6*9=' ), '42',
+			'six times nine must be forty-two' );
 	} );
 
 }( jQuery, QUnit, sinon, wikibase ) );

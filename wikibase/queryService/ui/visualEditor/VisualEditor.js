@@ -59,12 +59,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._query = null;
 
 	/**
-	 * @property {string[]}
-	 * @private
-	 */
-	SELF.prototype._queryComments = null;
-
-	/**
 	 * @property {Object}
 	 * @private
 	 */
@@ -97,14 +91,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @param {string} query SPARQL query string
 	 */
 	SELF.prototype.setQuery = function( query ) {
-		var self = this;
-		this._queryComments = [];
-		$.each( query.split( '\n' ), function( k, v ) {
-			if ( v.indexOf( '#' ) === 0 ) {
-				self._queryComments.push( v );
-			}
-		} );
-
 		var prefixes = wikibase.queryService.RdfNamespaces.ALL_PREFIXES;
 		this._query.parse( query, prefixes );
 	};
@@ -118,7 +104,6 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		try {
 			var q = this._query.getQueryString();
 			q = this._cleanQueryPrefixes( q ).trim();
-			q = this._queryComments.join( '\n' ) + '\n' + q;
 			return q.trim();
 		} catch ( e ) {
 			return null;
@@ -134,7 +119,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 		var prefixRegex = /PREFIX ([a-z]+): <(.*)>/gi,
 			m,
 			prefixes = {},
-			cleanQuery = query.replace( prefixRegex, '' ).trim();
+			cleanQuery = query.replace( prefixRegex, '' ).replace( /\n+/g, '\n' );
 
 		while ( ( m = prefixRegex.exec( query ) ) ) {
 			var prefix = m[1];
@@ -190,15 +175,14 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @return {object}|null
 	 */
 	SELF.prototype._getQueryTemplateDefinition = function() {
-		var definition = '#TEMPLATE=',
+		var templateComment = null,
 			template = null;
 
 		try {
-			$.each( this._queryComments, function( key, comment ) {
-				if ( comment.startsWith( definition ) ) {
-					template = JSON.parse(  comment.replace( definition, '' ) );
-				}
-			} );
+			templateComment = this._query.getCommentContent( 'TEMPLATE=' );
+			if ( templateComment ) {
+				template = JSON.parse( templateComment );
+			}
 		} catch ( e ) {
 		}
 
