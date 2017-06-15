@@ -1,9 +1,9 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
+wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {};
 
-wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
+wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	'use strict';
 
 	var FILTER_PREDICATES = {
@@ -18,20 +18,20 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	/**
 	 * A visual SPARQL editor for the Wikibase query service
 	 *
-	 * @class wikibase.queryService.ui.visualEditor.VisualEditor
+	 * @class wikibase.queryService.ui.queryHelper.QueryHelper
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
 	 * @constructor
 	 * @param {wikibase.queryService.api.Wikibase} [api]
 	 * @param {wikibase.queryService.api.Sparql} [sparqlApi]
-	 * @param {wikibase.queryService.ui.visualEditor.SelectorBox} [selectorBox]
+	 * @param {wikibase.queryService.ui.queryHelper.SelectorBox} [selectorBox]
 	 */
 	function SELF( api, sparqlApi, selectorBox ) {
 		this._api = api || new wikibase.queryService.api.Wikibase();
 		this._selectorBox = selectorBox
-			|| new wikibase.queryService.ui.visualEditor.SelectorBox( this._api, sparqlApi );
-		this._query = new wikibase.queryService.ui.visualEditor.SparqlQuery();
+			|| new wikibase.queryService.ui.queryHelper.SelectorBox( this._api, sparqlApi );
+		this._query = new wikibase.queryService.ui.queryHelper.SparqlQuery();
 	}
 
 	/**
@@ -41,7 +41,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._api = null;
 
 	/**
-	 * @property {wikibase.queryService.ui.visualEditor.SelectorBox}
+	 * @property {wikibase.queryService.ui.queryHelper.SelectorBox}
 	 * @private
 	 */
 	SELF.prototype._selectorBox = null;
@@ -53,7 +53,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	SELF.prototype._changeListener = null;
 
 	/**
-	 * @property {wikibase.queryService.ui.visualEditor.SparqlQuery}
+	 * @property {wikibase.queryService.ui.queryHelper.SparqlQuery}
 	 * @private
 	 */
 	SELF.prototype._query = null;
@@ -146,7 +146,7 @@ wikibase.queryService.ui.visualEditor.VisualEditor = ( function( $, wikibase ) {
 	 * @param {jQuery} $element
 	 */
 	SELF.prototype.draw = function( $element ) {
-		var template = wikibase.queryService.ui.visualEditor.QueryTemplate.parse( this._query ),
+		var template = wikibase.queryService.ui.queryHelper.QueryTemplate.parse( this._query ),
 			self = this,
 			bindings = this._query.getBindings();
 

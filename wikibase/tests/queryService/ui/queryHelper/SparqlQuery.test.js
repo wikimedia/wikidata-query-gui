@@ -1,9 +1,9 @@
 ( function( $, QUnit, sinon, wb ) {
 	'use strict';
 
-	QUnit.module( 'wikibase.queryService.ui.visualEditor' );
+	QUnit.module( 'wikibase.queryService.ui.queryHelper' );
 
-	var PACKAGE = wb.queryService.ui.visualEditor;
+	var PACKAGE = wb.queryService.ui.queryHelper;
 	var QUERY = {
 		SIMPLE: 'SELECT * WHERE {}',
 		LIMIT: 'SELECT * WHERE {} LIMIT 10',

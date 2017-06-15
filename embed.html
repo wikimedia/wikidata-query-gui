@@ -146,10 +146,10 @@ body {
 	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/VisualEditor.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/SparqlQuery.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/SelectorBox.js"></script>
-	<script src="wikibase/queryService/ui/visualEditor/QueryTemplate.js"></script>
+	<script src="wikibase/queryService/ui/queryHelper/QueryHelper.js"></script>
+	<script src="wikibase/queryService/ui/queryHelper/SparqlQuery.js"></script>
+	<script src="wikibase/queryService/ui/queryHelper/SelectorBox.js"></script>
+	<script src="wikibase/queryService/ui/queryHelper/QueryTemplate.js"></script>
 	<!-- endbuild -->
 
 	<script type="text/javascript">
@@ -216,7 +216,7 @@ body {
 			}
 
 			function renderEdit( query, callback ) {
-				var ve = new wikibase.queryService.ui.visualEditor.VisualEditor();
+				var ve = new wikibase.queryService.ui.queryHelper.QueryHelper();
 				ve.setChangeListener( _.debounce( function( v ) {
 					callback( v.getQuery() );
 				}, 1500 ) );

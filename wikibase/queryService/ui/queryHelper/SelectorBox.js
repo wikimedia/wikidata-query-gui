@@ -1,9 +1,9 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
+wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {};
 
-wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
+wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	'use strict';
 
 	var I18N_PREFIX = 'wdqs-ve-sb';
@@ -150,7 +150,7 @@ wikibase.queryService.ui.visualEditor.SelectorBox = ( function( $, wikibase ) {
 	/**
 	 * A selector box for selecting and changing properties and items
 	 *
-	 * @class wikibase.queryService.ui.visualEditor.SelectorBox
+	 * @class wikibase.queryService.ui.queryHelper.SelectorBox
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress

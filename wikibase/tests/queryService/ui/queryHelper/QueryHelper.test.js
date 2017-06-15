@@ -1,7 +1,7 @@
 ( function ( $, QUnit, sinon, wb ) {
 	'use strict';
 
-	QUnit.module( 'wikibase.queryService.ui.visualEditor' );
+	QUnit.module( 'wikibase.queryService.ui.queryHelper' );
 
 	var TEST_CASES = [
 			{
@@ -57,18 +57,18 @@
 		Q33999: 'actor'
 	};
 
-	QUnit.test( 'When instantiating VisualEditor there should be no error ', function ( assert ) {
+	QUnit.test( 'When instantiating QueryHelper there should be no error ', function ( assert ) {
 		assert.expect( 2 );
-		var ve = new wb.queryService.ui.visualEditor.VisualEditor();
+		var qh = new wb.queryService.ui.queryHelper.QueryHelper();
 
 		assert.ok( true, 'Instantiating must not throw an error' );
-		assert.ok( ( ve instanceof wb.queryService.ui.visualEditor.VisualEditor ),
+		assert.ok( ( qh instanceof wb.queryService.ui.queryHelper.QueryHelper ),
 				'Instantiating must not throw an error' );
 	} );
 
 	$.each( TEST_CASES, function ( index, testCase ) {
 		QUnit.test( 'When setting SPARQL  \'' + testCase.name
-				+ '\' query to VisualEditor then there should be the expected outcome', function (
+				+ '\' query to QueryHelper then there should be the expected outcome', function (
 				assert ) {
 			assert.expect( 2 );
 
@@ -87,13 +87,13 @@
 				} ).promise();
 			} );
 
-			var ve = new wb.queryService.ui.visualEditor.VisualEditor( api );
-			ve.setQuery( testCase.sparqlIn );
+			var qh = new wb.queryService.ui.queryHelper.QueryHelper( api );
+			qh.setQuery( testCase.sparqlIn );
 
 			var $html = $( '<div>' );
-			ve.draw( $html );
+			qh.draw( $html );
 
-			assert.equal( ve.getQuery().trim(), testCase.sparqlOut );
+			assert.equal( qh.getQuery().trim(), testCase.sparqlOut );
 			assert.equal( $html.text().trim(), testCase.text );
 		} );
 	} );

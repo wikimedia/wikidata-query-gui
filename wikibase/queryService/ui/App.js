@@ -21,12 +21,12 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 *
 	 * @param {jQuery} $element
 	 * @param {wikibase.queryService.ui.editor.Editor} editor
-	 * @param {wikibase.queryService.api.Sparql} visualEditor
+	 * @param {wikibase.queryService.api.Sparql} queryHelper
 	 */
-	function SELF( $element, editor, visualEditor, sparqlApi, querySamplesApi ) {
+	function SELF( $element, editor, queryHelper, sparqlApi, querySamplesApi ) {
 		this._$element = $element;
 		this._editor = editor;
-		this._visualEditor = visualEditor;
+		this._queryHelper = queryHelper;
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
 
@@ -58,10 +58,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._editor = null;
 
 	/**
-	 * @property {wikibase.queryService.ui.visualEditor.VisualEditor}
+	 * @property {wikibase.queryService.ui.queryHelper.QueryHelper}
 	 * @private
 	 */
-	SELF.prototype._visualEditor = null;
+	SELF.prototype._queryHelper = null;
 
 	/**
 	 * @property {boolean}
@@ -224,7 +224,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 		this._initApp();
 		this._initEditor();
-		this._initVisualEditor();
+		this._initQueryHelper();
 		this._initExamples();
 		this._initDataUpdated();
 		this._initQuery();
@@ -266,14 +266,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	/**
 	 * @private
 	 */
-	SELF.prototype._initVisualEditor = function() {
+	SELF.prototype._initQueryHelper = function() {
 		var self = this,
 			cookieHide = 'visual-editor-hide';
 
-		if ( !this._visualEditor ) {
-			this._visualEditor = new wikibase.queryService.ui.visualEditor.VisualEditor();
+		if ( !this._queryHelper ) {
+			this._queryHelper = new wikibase.queryService.ui.queryHelper.QueryHelper();
 		}
-		this._visualEditor.setChangeListener( function( ve ) {
+		this._queryHelper.setChangeListener( function( ve ) {
 			self._editor.setValue( ve.getQuery() );
 		} );
 
@@ -284,12 +284,12 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		if ( this._editor ) {
 			this._editor.registerCallback( 'change', _.debounce( function() {
 				if ( $( '.visual-editor-trigger' ).is( ':visible' ) ||
-						self._editor.getValue() === self._visualEditor.getQuery() ) {
+						self._editor.getValue() === self._queryHelper.getQuery() ) {
 					return;
 				}
 
 				$( '.visual-editor' ).hide();
-				self._drawVisualEditor();
+				self._drawQueryHelper();
 			}, 1500 ) );
 		}
 
@@ -303,7 +303,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( '.visual-editor-trigger' ).click( function() {
 			$( '.visual-editor-trigger' ).hide();
 			Cookies.set( cookieHide, false );
-			self._drawVisualEditor();
+			self._drawQueryHelper();
 			return false;
 		} );
 	};
@@ -311,10 +311,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	/**
 	 * @private
 	 */
-	SELF.prototype._drawVisualEditor = function() {
+	SELF.prototype._drawQueryHelper = function() {
 		try {
-			this._visualEditor.setQuery( this._editor.getValue() );
-			this._visualEditor.draw( $( '.visual-editor .panel-body' ) );
+			this._queryHelper.setQuery( this._editor.getValue() );
+			this._queryHelper.draw( $( '.visual-editor .panel-body' ) );
 
 			$( '.visual-editor' ).delay( 500 ).fadeIn();
 		} catch ( e ) {

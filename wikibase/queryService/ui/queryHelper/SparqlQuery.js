@@ -1,15 +1,15 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
+wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {};
 
-wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, sparqljs ) {
+wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, sparqljs ) {
 	'use strict';
 
 	/**
 	 * A SPARQL query representation
 	 *
-	 * @class wikibase.queryService.ui.visualEditor.SparqlQuery
+	 * @class wikibase.queryService.ui.queryHelper.SparqlQuery
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
@@ -224,7 +224,7 @@ wikibase.queryService.ui.visualEditor.SparqlQuery = ( function( $, wikibase, spa
 	/**
 	 * Get triples defined in this query
 	 *
-	 * @return {wikibase.queryService.ui.visualEditor.SparqlQuery[]}
+	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery[]}
 	 */
 	SELF.prototype.getSubQueries = function() {
 		var queries = [];

@@ -1,9 +1,9 @@
 ( function ( $, QUnit, sinon, wb ) {
 	'use strict';
 
-	QUnit.module( 'wikibase.queryService.ui.visualEditor' );
+	QUnit.module( 'wikibase.queryService.ui.queryHelper' );
 
-	var QueryTemplate = wb.queryService.ui.visualEditor.QueryTemplate;
+	var QueryTemplate = wb.queryService.ui.queryHelper.QueryTemplate;
 
 	QUnit.test( '_getQueryTemplateFragments internal function', function( assert ) {
 		assert.expect( 7 );
@@ -87,7 +87,7 @@
 		QUnit.test( testCase.description, function( assert ) {
 			assert.expect( 1 );
 
-			var query = new wb.queryService.ui.visualEditor.SparqlQuery();
+			var query = new wb.queryService.ui.queryHelper.SparqlQuery();
 			query.parse( testCase.sparql, wb.queryService.RdfNamespaces.ALL_PREFIXES );
 			var qt = QueryTemplate.parse( query );
 			var $html = qt.getHtml(

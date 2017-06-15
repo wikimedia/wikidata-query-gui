@@ -46,7 +46,7 @@
 			new wb.ui.App(
 					$( '.wikibase-queryservice ' ),
 					new wb.ui.editor.Editor( rdfHint, null, rdfTooltip ),
-					new wb.ui.visualEditor.VisualEditor( api, sparqlApi ),
+					new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
 					sparqlApi );
 		} );
 

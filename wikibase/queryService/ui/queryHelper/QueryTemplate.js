@@ -1,15 +1,15 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
-wikibase.queryService.ui.visualEditor = wikibase.queryService.ui.visualEditor || {};
+wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {};
 
-wikibase.queryService.ui.visualEditor.QueryTemplate = ( function( $, wikibase ) {
+wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	'use strict';
 
 	/**
 	 * A template for a SPARQL query
 	 *
-	 * @class wikibase.queryService.ui.visualEditor.QueryTemplate
+	 * @class wikibase.queryService.ui.queryHelper.QueryTemplate
 	 * @license GNU GPL v2+
 	 *
 	 * @author Lucas Werkmeister
@@ -131,7 +131,7 @@ wikibase.queryService.ui.visualEditor.QueryTemplate = ( function( $, wikibase ) 
 
 	/**
 	 * @param {Function} getLabel Called with {string} variable name, should return {Promise} for label, id, description, type.
-	 * @param {wikibase.queryService.ui.visualEditor.SelectorBox} selectorBox
+	 * @param {wikibase.queryService.ui.queryHelper.SelectorBox} selectorBox
 	 * @param {Function} changeListener Called with {string} variable name, {string} old value, {string} new value.
 	 * @return {jQuery}
 	 */
