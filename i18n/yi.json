@@ -13,6 +13,11 @@
 	"wdqs-app-button-display": "אויסשטעלונג",
 	"wdqs-app-button-download": "אראָפלאָדן",
 	"wdqs-app-button-link": "לינק",
+	"wdqs-app-help-portal": "הילף־פארטאל",
+	"wdqs-app-help-manual": "באניצער־האנטבוך",
+	"wdqs-app-result-json": "JSON טעקע",
+	"wdqs-app-result-csv": "CSV טעקע",
+	"wdqs-app-result-svg": "SVG בילד",
 	"wdqs-ve-find": "טרעפֿן",
 	"wdqs-ve-show": "ווייזן",
 	"wdqs-ve-with": "מיט",
@@ -21,5 +26,8 @@
 	"wdqs-ve-any": "אַלע",
 	"wdqs-ve-or": "אדער",
 	"wdqs-ve-subtype": "אונטערטיפ",
-	"wdqs-action-render": "רענדער רעזולטאַט"
+	"wdqs-ve-sb-suggestions": "הצעות",
+	"wdqs-ve-sb-other": "אַנדער",
+	"wdqs-action-render": "רענדער רעזולטאַט",
+	"wdqs-result-map-layers-all": "אלע שיכטעס"
 }
