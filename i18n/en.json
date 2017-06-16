@@ -29,6 +29,7 @@
     "wdqs-app-help-datamodel": "RDF Data Model",
     "wdqs-app-help-prefixes": "List of prefixes",
     "wdqs-app-help-copy": "Licensing information",
+    "wdqs-app-help-queryhelper": "Query Helper",
     "wdqs-app-footer-help": "Press <i>[CTRL-SPACE]</i> to activate auto completion.",
     "wdqs-app-footer-updated": "Data updated $1 ago",
     "wdqs-app-footer-updated-seconds": "Data updated $1 seconds ago",

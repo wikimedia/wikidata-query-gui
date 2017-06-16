@@ -268,7 +268,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._initQueryHelper = function() {
 		var self = this,
-			cookieHide = 'visual-editor-hide';
+			cookieHide = 'query-helper-hide';
 
 		if ( !this._queryHelper ) {
 			this._queryHelper = new wikibase.queryService.ui.queryHelper.QueryHelper();
@@ -278,30 +278,30 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		} );
 
 		if ( Cookies.get( cookieHide ) === 'true' ) {
-			$( '.visual-editor-trigger' ).show();
+			$( '.query-helper-trigger' ).show();
 		}
 
 		if ( this._editor ) {
 			this._editor.registerCallback( 'change', _.debounce( function() {
-				if ( $( '.visual-editor-trigger' ).is( ':visible' ) ||
+				if ( $( '.query-helper-trigger' ).is( ':visible' ) ||
 						self._editor.getValue() === self._queryHelper.getQuery() ) {
 					return;
 				}
 
-				$( '.visual-editor' ).hide();
+				$( '.query-helper' ).hide();
 				self._drawQueryHelper();
 			}, 1500 ) );
 		}
 
-		$( '.visual-editor .panel-heading .close' ).click( function() {
+		$( '.query-helper .panel-heading .close' ).click( function() {
 			Cookies.set( cookieHide, true );
-			$( '.visual-editor' ).hide();
-			$( '.visual-editor-trigger' ).show();
+			$( '.query-helper' ).hide();
+			$( '.query-helper-trigger' ).show();
 			return false;
 		} );
 
-		$( '.visual-editor-trigger' ).click( function() {
-			$( '.visual-editor-trigger' ).hide();
+		$( '.query-helper-trigger' ).click( function() {
+			$( '.query-helper-trigger' ).hide();
 			Cookies.set( cookieHide, false );
 			self._drawQueryHelper();
 			return false;
@@ -314,9 +314,9 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._drawQueryHelper = function() {
 		try {
 			this._queryHelper.setQuery( this._editor.getValue() );
-			this._queryHelper.draw( $( '.visual-editor .panel-body' ) );
+			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
 
-			$( '.visual-editor' ).delay( 500 ).fadeIn();
+			$( '.query-helper' ).delay( 500 ).fadeIn();
 		} catch ( e ) {
 			window.console.error( e );
 		}
@@ -474,26 +474,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._initPopovers = function() {
 		var self = this;
-
-		$( '.visual-editor .help' )
-		.clickover( {
-			placement: 'bottom',
-			'global_close': true,
-			'html': true,
-			'content': function() {
-				return $( '<div>' ).append(
-					$( '<span>' ).html(
-						'This is a basic textual representation of the SPARQL query.<br/>If your query doesn\'t work well, please give '
-					),
-					$( '<a>' )
-					.text( 'feedback here!' )
-					.attr( {
-						href: 'https://www.mediawiki.org/w/index.php?title=Talk:Wikidata_query_service&action=edit&section=new',
-						target: '_B'
-					} )
-				);
-			}
-		} );
 
 		$( '.shortUrlTrigger.query' ).clickover( {
 			placement: 'left',

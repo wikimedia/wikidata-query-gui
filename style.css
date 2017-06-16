@@ -402,7 +402,7 @@ div.jqcloud span.w1 {
 /*
 	Visual Editor
 */
-.visual-editor-trigger {
+.query-helper-trigger {
 	display: none;
 	z-index: 100;
 	position: absolute;
@@ -411,7 +411,7 @@ div.jqcloud span.w1 {
 	font-size: 25px;
 }
 
-.visual-editor {
+.query-helper {
 	display: none;
 	min-width: 300px;
 	max-width: 500px;
@@ -422,6 +422,7 @@ div.jqcloud span.w1 {
 	font-size: 15px;
 	padding-left: 35px;
 }
+
 .visual-editor .panel-info {
 	background: rgba( 255, 255, 255, 0.9 );
 }
@@ -431,7 +432,7 @@ div.jqcloud span.w1 {
 	padding: 8px 10px;
 }
 
-.visual-editor .panel-body {
+.query-helper .panel-body {
 	font-size: 120%;
 }
 
@@ -439,12 +440,12 @@ div.jqcloud span.w1 {
 	z-index: 2000;
 	min-width: 200px;
 }
-.visual-editor .popover {
+.query-helper .popover {
 	min-width: 250px;
 	white-space: nowrap;
 }
 
-.visual-editor .spacer {
+.query-helper .spacer {
 	min-height: 0.8em;
 }
 
