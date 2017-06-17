@@ -35,7 +35,8 @@ wikibase.queryService.RdfNamespaces = {};
 			prov: 'http://www.w3.org/ns/prov#'
 		},
 		'Social/Other': {
-			schema: 'http://schema.org/'
+			schema: 'http://schema.org/',
+			geof: 'http://www.opengis.net/def/geosparql/function/'
 		},
 		Blazegraph: {
 			bd: 'http://www.bigdata.com/rdf#',
