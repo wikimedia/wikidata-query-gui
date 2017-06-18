@@ -6,7 +6,8 @@ wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {
 wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	'use strict';
 
-	var I18N_PREFIX = 'wdqs-ve-sb';
+	var I18N_PREFIX = 'wdqs-ve-sb',
+		SPARQL_TIMEOUT = 4 * 1000;
 
 /*jshint multistr: true */
 	var SPARQL_QUERY = {
@@ -70,22 +71,41 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 				FILTER((LANG(?description)) = "{LANGUAGE}")\
 				}\
 				LIMIT 20',
-//			genericSuggest:// Find properties that are most often used with all items
-//				'SELECT ?id ?label ?description WITH {\
-//					SELECT ?pred (COUNT(?value) AS ?count) WHERE\
-//					{\
-//					?subj ?pred ?value .\
-//					} GROUP BY ?pred ORDER BY DESC(?count) LIMIT 1000\
-//					} AS %inner\
-//				WHERE {\
-//					INCLUDE %inner\
-//					?id wikibase:claim ?pred.\
-//					?id rdfs:label ?label.\
-//					?id schema:description ?description.\
-//					FILTER((LANG(?label)) = "en")\
-//					FILTER((LANG(?description)) = "en")\
-//				} ORDER BY DESC(?count)\
-//				LIMIT 20',
+			genericSuggest: function() { // Find properties that are most often used with the first selected item of the current query
+				var template = '{PREFIXES}\n\
+					SELECT ?id ?label ?description WITH {\n\
+						{QUERY}\n\
+					} AS %query WITH {\n\
+						SELECT ({VARIABLE} AS ?item) WHERE {\n\
+							INCLUDE %query.\n\
+						}\n\
+					} AS %item WITH {\n\
+						SELECT ?property (COUNT(?statement) AS ?count) WHERE {\n\
+							INCLUDE %item.\n\
+							?item ?p ?statement.\n\
+							?property a wikibase:Property; wikibase:claim ?p.\n\
+						}\n\
+						GROUP BY ?property\n\
+						ORDER BY DESC(?count)\n\
+						LIMIT 20\n\
+					} AS %properties WHERE {\n\
+						INCLUDE %properties.\n\
+						BIND(?property AS ?id).\n\
+						SERVICE wikibase:label {\n\
+							bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".\n\
+							?id rdfs:label ?label; schema:description ?description.\n\
+						}\n\
+					}\n\
+					ORDER BY DESC(?count)',
+					query = this._query.clone().setLimit( 100 ).getQueryString(),
+					variable = this._query.getBoundVariables().shift(),
+					prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
+
+				query = query.replace( /.*\bPREFIX\b.*/gi, '' );
+				return template.replace( '{QUERY}', query )
+					.replace( '{VARIABLE}', variable )
+					.replace( '{PREFIXES}', prefixes );
+			},
 			search: null,
 //			search:// Find properties that are most often used with a specific item and filter with term prefix
 //				'SELECT ?id ?label ?description WHERE {\
@@ -173,6 +193,19 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._sparqlApi = null;
+
+	/**
+	 * @property {wikibase.queryService.ui.queryHelper.SparqlQuery}
+	 * @private
+	 */
+	SELF.prototype._query = null;
+
+	/**
+	 * @param {wikibase.queryService.ui.queryHelper.SparqlQuery} query
+	 */
+	SELF.prototype.setQuery = function( query ) {
+		this._query = query;
+	};
 
 	/**
 	 * Add selector box to element
@@ -345,14 +378,34 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 	/**
 	 * @private
+	 * @param {string} term
+	 * @param {string} type
+	 * @param {Object} triple
+	 * @param {string} [sparql]
+	 * @return {string}
 	 */
 	SELF.prototype._getSparqlTemplate = function( term, type, triple, sparql ) {
+		var definition = this._getSparqlTemplateDefinition( term, type, triple, sparql ),
+			template =  typeof definition === 'function' ? definition.apply( this ) : definition;
+
+		if ( sparql ) {
+			template = template.replace( '{SPARQL}', sparql );
+		}
+
+		return template;
+	};
+
+	/**
+	 * @private
+	 * @return {string|Function|null}
+	 */
+	SELF.prototype._getSparqlTemplateDefinition = function( term, type, triple, sparql ) {
 		if ( sparql ) {
 			if ( term ) {
-				return SPARQL_QUERY.sparql.search.replace( '{SPARQL}', sparql );
+				return SPARQL_QUERY.sparql.search;
 			}
 
-			return SPARQL_QUERY.sparql.suggest.replace( '{SPARQL}', sparql );
+			return SPARQL_QUERY.sparql.suggest;
 		}
 
 		var query = SPARQL_QUERY[ type ];
@@ -424,7 +477,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			return deferred.resolve( [] ).promise();
 		}
 
-		this._sparqlApi.query( query ).done( function( data ) {
+		this._sparqlApi.query( query, SPARQL_TIMEOUT ).done( function( data ) {
 			var r = data.results.bindings.map( function( d ) {
 				var id = d.id.value.split( '/' ).pop();
 				return {
@@ -438,7 +491,9 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			} );
 
 			deferred.resolve( r );
-		} ).fail( deferred.reject );
+		} ).always( function () {
+			deferred.resolve( [] );
+		} );
 
 		return deferred.promise();
 	};

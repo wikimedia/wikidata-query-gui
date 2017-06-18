@@ -128,16 +128,22 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * Submit a query to the API
 	 *
 	 * @param {string[]} query
+	 * @param {Number} [timeout] in millis
 	 * @return {jQuery.Promise} query
 	 */
-	SELF.prototype.query = function( query ) {
+	SELF.prototype.query = function( query, timeout ) {
 		query = this._replaceAutoLanguage( query );
+
+		var data = 'query=' + encodeURIComponent( query );
+		if ( timeout ) {
+			data += '&maxQueryTimeMillis=' + timeout;
+		}
 
 		var self = this,
 			deferred = $.Deferred(),
 			settings = {
 				headers: { Accept: 'application/sparql-results+json' },
-				data: 'query=' + encodeURIComponent( query )
+				data: data
 			};
 		function done( data, textStatus, request ) {
 			self._executionTime = Date.now() - self._executionTime;

@@ -422,11 +422,11 @@ div.jqcloud span.w1 {
 	padding-left: 35px;
 }
 
-.visual-editor .panel-info {
+.query-helper .panel-info {
 	background: rgba( 255, 255, 255, 0.9 );
 }
 
-.visual-editor .panel-heading {
+.query-helper .panel-heading {
 	background: rgba( 255, 255, 255, 0.9 );
 	padding: 8px 10px;
 }

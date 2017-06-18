@@ -86,6 +86,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	 * Set LIMIT
 	 *
 	 * @param {int} limit
+	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
 	 */
 	SELF.prototype.setLimit = function( limit ) {
 		if ( !limit ) {
@@ -93,6 +94,8 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 		}
 
 		this._query.limit = limit;
+
+		return this;
 	};
 
 	/**
@@ -313,6 +316,17 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			}
 		}
 		return null;
+	};
+
+	/**
+	 * Clone query
+	 *
+	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
+	 */
+	SELF.prototype.clone = function() {
+		var query = new SELF();
+		query.parse( this.getQueryString() );
+		return query;
 	};
 
 	return SELF;

@@ -95,6 +95,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	SELF.prototype.setQuery = function( query ) {
 		var prefixes = wikibase.queryService.RdfNamespaces.ALL_PREFIXES;
 		this._query.parse( query, prefixes );
+
+		this._selectorBox.setQuery( this._query );
 	};
 
 	/**
