@@ -28,6 +28,11 @@ module.exports = function( grunt ) {
 				'wikibase/tests/*.html'
 			]
 		},
+		stylelint: {
+			all: [
+				'style.css'
+			]
+		},
 		banana: {
 			all: 'i18n/',
 					options: {
@@ -216,7 +221,7 @@ module.exports = function( grunt ) {
 	} );
 
 	grunt.registerTask( 'test', [
-			'jshint', 'jscs', 'jsonlint', 'banana', 'qunit'
+			'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
 			'clean', 'auto_install', 'test', 'create_build'
