@@ -25,6 +25,43 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						FILTER((LANG(?description)) = "{LANGUAGE}")\
 					}\
 					LIMIT 20',
+				genericSuggest: function() { // Find items that are most often used with the first selected item of the current query
+					var template = '{PREFIXES}\n\
+						SELECT ?id ?label ?description ?property WITH {\n\
+							{QUERY}\n\
+						} AS %query WITH {\n\
+							SELECT ({VARIABLE} AS ?item) WHERE {\n\
+								INCLUDE %query.\n\
+							}\n\
+						} AS %item WITH {\n\
+							SELECT ?value ?property (COUNT(?statement) AS ?count) WHERE {\n\
+								INCLUDE %item.\n\
+								?item ?p ?statement.\n\
+								?statement ?ps ?value.\n\
+								?property a wikibase:Property; wikibase:claim ?p; wikibase:statementProperty ?ps.\n\
+							}\n\
+							GROUP BY ?value ?property\n\
+							HAVING(isIRI(?value) && STRSTARTS(STR(?value), STR(wd:Q)))\n\
+							ORDER BY DESC(?count)\n\
+							LIMIT 20\n\
+						} AS %values WHERE {\n\
+							INCLUDE %values.\n\
+							BIND(?value AS ?id).\n\
+							SERVICE wikibase:label {\n\
+								bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".\n\
+								?id rdfs:label ?label; schema:description ?description.\n\
+							}\n\
+						}\n\
+						ORDER BY DESC(?count)',
+						query = this._query.clone().setLimit( 1000 ).getQueryString(),
+						variable = this._query.getBoundVariables().shift(),
+						prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
+
+					query = query.replace( /.*\bPREFIX\b.*/gi, '' );
+					return template.replace( '{QUERY}', query )
+						.replace( '{VARIABLE}', variable )
+						.replace( '{PREFIXES}', prefixes );
+				},
 				search: null,
 // Disable for now as requested by Smalyshev
 //					'SELECT ?id ?label ?description WHERE {\
@@ -287,7 +324,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		$select.change( function( e ) {
 			if ( listener ) {
-				listener( $select.val(), $select.find( 'option:selected' ).text() );
+				listener( $select.val(), $select.find( 'option:selected' ).text(), $( e.target ).data( 'options' ) );
 			}
 			$element.click();// hide clickover
 			$select.html( '' );
@@ -427,7 +464,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 				}
 			} else {
 				if ( !triple ) {
-					return query.instanceOf;
+					return query.genericSuggest;
 				}
 			}
 			return query.suggest;
@@ -480,11 +517,13 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 		this._sparqlApi.query( query, SPARQL_TIMEOUT ).done( function( data ) {
 			var r = data.results.bindings.map( function( d ) {
 				var id = d.id.value.split( '/' ).pop();
+				var propertyId = d.property && d.property.value.split( '/' ).pop() || null;
 				return {
 					id: id,
 					text: d.label.value,
 					data: {
 						id: id,
+						propertyId: propertyId,
 						description: d.description.value
 					}
 				};
@@ -526,12 +565,21 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._renderSelect2 = function( $select, $element, triple ) {
-		var formatter = function( item ) {
+		var data = {},
+			formatter = function( item, li ) {
 				if ( !item.data ) {
 					return item.text;
 				}
+
+				data[ item.data.id  ] = {
+						text: item.text,
+						propertyId: item.data.propertyId
+				};
+				$select.attr( 'data-options', JSON.stringify( data ) );
+
 				return $( '<span><b>' + item.text + ' (' + item.data.id + ')' + '</b></span><br/><small>' +
 						item.data.description + '</small>' );
+
 			},
 			transport = this._createLookupService( $element, triple );
 

@@ -301,7 +301,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 
 		// SelectorBox
 		var self = this;
-		this._selectorBox.add( $button, null, function( id, name ) {
+		this._selectorBox.add( $button, null, function( id, name, data ) {
 			var entity = 'http://www.wikidata.org/entity/' + id;// FIXME technical debt
 
 			var variable = self._query.getBoundVariables().shift();
@@ -309,7 +309,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 				variable = '?' + '_' + name.replace( /( |[^a-z0-9])/gi, '_' );
 			}
 
-			var prop = 'http://www.wikidata.org/prop/direct/P31';// FIXME technical debt
+			var prop = 'http://www.wikidata.org/prop/direct/' + ( data && data[id] && data[id].propertyId || 'P31' );// FIXME technical debt
 			var triple = self._query.addTriple( variable, prop, entity, false );
 			if ( !self._query.hasVariable( variable ) ) {
 				self._query.addVariable( variable );
