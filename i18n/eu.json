@@ -28,6 +28,7 @@
 	"wdqs-app-help-datamodel": "RDF Data Modeloa",
 	"wdqs-app-help-prefixes": "Aurrizkien zerrenda",
 	"wdqs-app-help-copy": "Lizentziari buruzko informazioa",
+	"wdqs-app-help-queryhelper": "Eskaera Laguntzailea",
 	"wdqs-app-footer-help": "Klik egin <i>[CTRL-SPACE]</i> aurobetetzea aktibatzeko.",
 	"wdqs-app-footer-updated": "Datuak duela $1 eguneratuak",
 	"wdqs-app-footer-updated-seconds": "Datuak duela $1 segundu eguneratuak",

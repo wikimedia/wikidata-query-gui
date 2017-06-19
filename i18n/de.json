@@ -27,6 +27,7 @@
 	"wdqs-app-help-datamodel": "RDF-Datenmodell",
 	"wdqs-app-help-prefixes": "Liste der Präfixe",
 	"wdqs-app-help-copy": "Lizenzinformationen",
+	"wdqs-app-help-queryhelper": "Abfragehelfer",
 	"wdqs-app-footer-help": "<i>[STRG-LEERTASTE]</i> drücken, um die Autovervollständigung zu aktivieren.",
 	"wdqs-app-footer-updated": "Daten vor $1 aktualisiert",
 	"wdqs-app-footer-updated-seconds": "Daten vor $1 Sekunden aktualisiert",

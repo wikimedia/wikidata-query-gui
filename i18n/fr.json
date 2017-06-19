@@ -4,7 +4,8 @@
 			"Gomoko",
 			"Wladek92",
 			"McDutchie",
-			"Djiboun"
+			"Djiboun",
+			"Tubezlob"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -23,7 +24,7 @@
 	"wdqs-app-button-link-title": "Obtenir le lien vers la requête",
 	"wdqs-app-help-feedback": "Donnez votre avis !",
 	"wdqs-app-help-request-query": "Demander une requête",
-	"wdqs-app-help-portal": "Portail d'aide",
+	"wdqs-app-help-portal": "Portail d’aide",
 	"wdqs-app-help-manual": "Manuel utilisateur",
 	"wdqs-app-help-examples": "Exemples de requêtes",
 	"wdqs-app-help-datamodel": "Modèle de données RDF",
