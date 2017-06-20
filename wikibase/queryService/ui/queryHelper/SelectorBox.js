@@ -524,7 +524,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					data: {
 						id: id,
 						propertyId: propertyId,
-						description: d.description.value
+						description: d.description && d.description.value || ''
 					}
 				};
 			} );
