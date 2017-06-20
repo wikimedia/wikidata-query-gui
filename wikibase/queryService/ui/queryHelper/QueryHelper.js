@@ -294,7 +294,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 		var $button = $( '<a class="btn">' )
 			.text( this._i18n( 'filter' ) )
 			.attr( 'href', '#' ).prepend(
-				'<span class="fa fa-plus-square-o" aria-hidden="true"></span>', ' ' )
+				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
 					title: 'Click to add new item'
 				} ).attr( 'data-type', 'item' ).attr( 'data-auto_open', true );
@@ -333,7 +333,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 		var $button = $( '<a class="btn">' )
 			.text( this._i18n( 'show' ) )
 			.attr( 'href', '#' ).prepend(
-				'<span class="fa fa-plus-square-o" aria-hidden="true"></span>', ' ' )
+				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
 					title: 'Click to add new property'
 				} ).attr( 'data-type', 'property' ).attr( 'data-auto_open', true );
