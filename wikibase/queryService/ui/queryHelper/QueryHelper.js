@@ -532,8 +532,10 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 					}
 					$label.closest( 'tr' ).remove();
 
-					self._query.removeVariable( variable );
-					self._query.removeVariable( variable + 'Label' );
+					if ( self._query.getBoundVariables().indexOf( variable ) === -1 ) {
+						self._query.removeVariable( variable );
+						self._query.removeVariable( variable + 'Label' );
+					}
 
 					if ( self._changeListener ) {
 						self._changeListener( self );
