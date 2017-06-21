@@ -1,11 +1,11 @@
-#Wikibase Query Service GUI
+# Wikibase Query Service GUI
 
 This repository contains the GUI for the [Wikidata Query Service](https://query.wikidata.org/).
 
 Please see more details about the service in the [User Manual](https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual).
 
 
-#Download & setup
+## Download & setup
 
 Clone git repo, go into created folder and then pull all dependencies via npm package manager.
 
@@ -15,13 +15,13 @@ $ cd gui
 $ npm install
 ```
 
-Alternative use npm install
+Alternatively, use `npm install`.
 
 ```bash
 npm install wikidata-query-gui
 ```
 
-#Run tests
+## Run tests
 
 Run JSHint, JSCS and QUnit tests.
 
@@ -29,7 +29,7 @@ Run JSHint, JSCS and QUnit tests.
 $ grunt test
 ```
 
-#Build
+## Build
 Create a build with bundled and minified files.
 
 ```bash
@@ -37,8 +37,8 @@ $ grunt build
 ```
 
 
-#Deploy
-Creates a build and pushes it to the deployment branch via git review
+## Deploy
+Create a build and push it to the deployment branch via git review.
 
 ```bash
 $ grunt deploy
@@ -51,24 +51,24 @@ git config --global --add gitreview.username "[username]"
 ```
 
 
-#Components
-## Editor
-A [CodeMirror](https://codemirror.net/) based SPARQL editor with code completion (ctrl+space) and tooltips (hover)
+## Components
+### Editor
+A [CodeMirror](https://codemirror.net/) based SPARQL editor with code completion (ctrl+space) and tooltips (hover).
 ```
 var editor = new wikibase.queryService.ui.editor.Editor();
 editor.fromTextArea( $( '.editor' )[0] );
 ```
-See examples/editor.html
+See `examples/editor.html`.
 
-## Example dialog
+### Example dialog
 
-A dialog that allows browsing of SPARQL examples
+A dialog that allows browsing of SPARQL examples.
 ```
 new wikibase.queryService.ui.QueryExampleDialog(  $element, querySamplesApi, callback, previewUrl );
 ```
-See examples/dialog.html
+See `examples/dialog.html`.
 
-## SPARQL
+### SPARQL
 
 ```
 var api = new wikibase.queryService.api.Sparql();
@@ -77,12 +77,12 @@ api.query( query ).done( function(){
 
 } );
 ```
-See examples/sparql.html
+See `examples/sparql.html`.
 [JSFiddle.net](https://jsfiddle.net/jonaskress/qpuynfz8/)
 
 
-## Result Views
-Views that allow rendering SPARQL results [see documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views).
+### Result Views
+Views that allow rendering SPARQL results ([see documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views)).
 
 ```
 var api = new wikibase.queryService.api.Sparql();
@@ -92,10 +92,10 @@ api.query( query ).done(function() {
 	result.draw( element );
 } );
 ```
-See examples/result.html
+See `examples/result.html`.
 [JSFiddle.net](https://jsfiddle.net/jonaskress/9dhv0yLp/)
 
-## Release Notes and npm package
+### Release Notes and npm package
 
 Unfortunately there are no releases and the provided code and interfaces are not considered to be stable.
 Also the dist/ folder contains a build that may not reflect the current code on master branch.
