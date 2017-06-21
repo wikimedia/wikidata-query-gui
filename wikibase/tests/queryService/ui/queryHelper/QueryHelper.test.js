@@ -8,37 +8,37 @@
 				name: 'Cat query',
 				sparqlIn: 'SELECT ?item ?itemLabel WHERE { ?item wdt:P31 wd:Q146 . SERVICE wikibase:label { bd:serviceParam wikibase:language "en" } }',
 				sparqlOut: 'SELECT ?item ?itemLabel WHERE {\n  ?item wdt:P31 wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }\n}',
-				text: 'Find instance of cat  Show Limit'
+				text: 'instance of cat Limit'
 			},
 			{
 				name: 'Any cat query',
 				sparqlIn: 'SELECT ?item ?itemLabel WHERE { ?item wdt:P31* wd:Q146 . SERVICE wikibase:label { bd:serviceParam wikibase:language "en" } }',
 				sparqlOut: 'SELECT ?item ?itemLabel WHERE {\n  ?item wdt:P31* wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }\n}',
-				text: 'Find  any instance of cat  Show Limit'
+				text: 'any instance of cat Limit'
 			},
 			{
 				name: 'Subtype cat query',
 				sparqlIn: 'SELECT * WHERE {?c  p:P31/ps:P31 wd:Q146 .}',
 				sparqlOut: 'SELECT * WHERE { ?c (p:P31/ps:P31) wd:Q146. }',
-				text: 'Find instance of or subtype instance of cat  Show Limit'
+				text: 'instance of or subtype instance of cat Limit'
 			},
 			{
 				name: 'List of presidents with causes of death',
 				sparqlIn: 'SELECT ?h ?cause ?hl ?causel WHERE { ?h wdt:P39 wd:Q11696 . ?h wdt:P509 ?cause . OPTIONAL {    ?h rdfs:label ?hl filter (lang(?hl) = "en") . } OPTIONAL {   ?cause rdfs:label ?causel filter (lang(?causel) = "en").  }}',
 				sparqlOut: 'SELECT ?h ?cause ?hl ?causel WHERE {\n  ?h wdt:P39 wd:Q11696.\n  ?h wdt:P509 ?cause.\n  OPTIONAL {\n    ?h rdfs:label ?hl.\n    FILTER((LANG(?hl)) = \"en\")\n  }\n  OPTIONAL {\n    ?cause rdfs:label ?causel.\n    FILTER((LANG(?causel)) = \"en\")\n  }\n}',
-				text: 'Find position held President of the United States of America  Show cause of death Limit'
+				text: 'position held President of the United States of America cause of death Limit'
 			},
 			{
 				name: 'List of actors with pictures with year of birth and/or death',
 				sparqlIn: 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE{ ?human wdt:P31 wd:Q5 ; wdt:P106 wd:Q33999 . ?human wdt:P18 ?picture . OPTIONAL { ?human wdt:P569 ?dob . ?human wdt:P570 ?dod }. BIND(YEAR(?dob) as ?yob) . BIND(YEAR(?dod) as ?yod) . SERVICE wikibase:label {  bd:serviceParam wikibase:language "en" . }}LIMIT 88',
 				sparqlOut: 'SELECT ?human ?humanLabel ?yob ?yod ?picture WHERE {\n  ?human wdt:P31 wd:Q5.\n  ?human wdt:P106 wd:Q33999.\n  ?human wdt:P18 ?picture.\n  OPTIONAL {\n    ?human wdt:P569 ?dob.\n    ?human wdt:P570 ?dod.\n  }\n  BIND(YEAR(?dob) AS ?yob)\n  BIND(YEAR(?dod) AS ?yod)\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"en\". }\n}\nLIMIT 88',
-				text: 'Find instance of human with occupation actor  Show image Limit 88'
+				text: 'instance of human occupation actor image Limit 88'
 			},
 			{
 				name: 'Find instance of human using BIND()',
 				sparqlIn: 'SELECT ?pid WHERE {  BIND(wd:Q5 AS ?thing)  ?pid wdt:P31 ?thing.}',
 				sparqlOut: 'SELECT ?pid WHERE {\n  BIND(wd:Q5 AS ?thing)\n  ?pid wdt:P31 ?thing.\n}',
-				text: 'Find instance of human  Show Limit'
+				text: 'instance of human Limit'
 			}
 
 	];
@@ -92,6 +92,7 @@
 
 			var $html = $( '<div>' );
 			qh.draw( $html );
+			$html.find( '.btn' ).remove();
 
 			assert.equal( qh.getQuery().trim(), testCase.sparqlOut );
 			assert.equal( $html.text().trim(), testCase.text );

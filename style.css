@@ -413,8 +413,7 @@ div.jqcloud span.w1 {
 
 .query-helper {
 	display: none;
-	min-width: 300px;
-	max-width: 500px;
+	min-width: 400px;
 	z-index: 100;
 	position: absolute;
 	top: 5px;
@@ -434,6 +433,7 @@ div.jqcloud span.w1 {
 
 .query-helper .panel-body {
 	font-size: 120%;
+	padding: 10px;
 }
 
 .select2-container {
@@ -444,9 +444,8 @@ div.jqcloud span.w1 {
 	min-width: 250px;
 	white-space: nowrap;
 }
-
-.query-helper .spacer {
-	min-height: 0.8em;
+.query-helper td {
+	vertical-align: top;
 }
 
 /*

@@ -7,13 +7,16 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	'use strict';
 
 	var FILTER_PREDICATES = {
-		'http://www.w3.org/2000/01/rdf-schema#label': true,
-		'http://schema.org/description': true,
-		'http://www.bigdata.com/queryHints#optimizer': true,
-		'http://www.w3.org/1999/02/22-rdf-syntax-ns#type': true
-	};
-
-	var I18N_PREFIX = 'wdqs-ve-';
+			'http://www.w3.org/2000/01/rdf-schema#label': true,
+			'http://schema.org/description': true,
+			'http://www.bigdata.com/queryHints#optimizer': true,
+			'http://www.w3.org/1999/02/22-rdf-syntax-ns#type': true
+		},
+		I18N_PREFIX = 'wdqs-ve-',
+		TABLE_OPTIONS = {
+			formatNoMatches: function () {
+			}
+		};
 
 	/**
 	 * A visual SPARQL editor for the Wikibase query service
@@ -75,11 +78,10 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._labels = {
-		find: 'Find',
+		filter: 'Filter',
 		show: 'Show',
 		anything: 'anything',
 		'with': 'with',
-		and: 'and',
 		any: 'any',
 		or: 'or',
 		subtype: 'subtype'
@@ -210,11 +212,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	SELF.prototype._getHtml = function() {
 		var self = this,
 			$html = $( '<div>' ),
-			$find = this._getFindSection(),
-			$show = this._getShowSection(),
-			$spacer = $( '<div>' ).addClass( 'spacer' );
-
-		$html.append( $find, $spacer.clone(), $show, $spacer.clone(), this._getLimitSection() );
+			$findTable = $( '<table>' ).bootstrapTable( TABLE_OPTIONS ),
+			$showTable = $( '<table>' ).bootstrapTable( TABLE_OPTIONS );
 
 		$.each( this._triples, function( k, triple ) {
 			if ( self._isNotRelevant( triple.triple ) ) {
@@ -222,29 +221,18 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 			}
 
 			if ( self._isInShowSection( triple.triple ) ) {
-				if ( $show.children().length > 1 ) {
-					$show.append( $( '<span>' ).text( ', ' ) );
-				}
-				$show.append( self._getTripleHtml( triple ) );
+				$showTable.append( self._getTripleHtml( triple ) );
 				return;
 			}
 
-			if ( $find.children().length > 1 ) {
-				if ( $find.children().length === 2 ) {
-					$find.append( $( '<span>' ).text( self._i18n( 'with' ) + ' ' ) );
-				} else {
-					$find.append(  $( '<span>' ).text( self._i18n( 'and' ) + ' ' ) );
-				}
-			}
-
-			$find.append( self._getTripleHtml( triple ) );
+			$findTable.append( self._getTripleHtml( triple ) );
 		} );
 
-		if ( $find.children().length === 1 ) {
-			$find.append( $( '<span>' ).text( this._i18n( 'anything' ) + ' ' ) );
-		}
-
-		return $html;
+		return $html.append(
+				this._createSection( $findTable, this._createFindButton( $findTable ) ),
+				this._createSection( $showTable, this._createShowButton( $showTable ) ),
+				this._getLimitSection()
+			);
 	};
 
 	/**
@@ -289,19 +277,29 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getFindSection = function() {
-		var $findSection = $( '<div>' );
+	SELF.prototype._createSection = function( $table, $button ) {
+		return $( '<table>' ).append( $( '<tr>' ).append(
+				$( '<td>' ).append( $button ),
+				$( '<td>' ).append( $table )
+			) );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createFindButton = function( $table ) {
 		// Show link
-		var $link = $( '<a class="btn btn-default">' ).text( this._i18n( 'find' ) );
-		$link.attr( 'href', '#' ).prepend(
-				'<span class="glyphicon glyphicon-search" aria-hidden="true"></span>', ' ' )
+		var $button = $( '<a class="btn">' )
+			.text( this._i18n( 'filter' ) )
+			.attr( 'href', '#' ).prepend(
+				'<span class="fa fa-plus-square-o" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
 					title: 'Click to add new item'
 				} ).attr( 'data-type', 'item' ).attr( 'data-auto_open', true );
 
 		// SelectorBox
 		var self = this;
-		this._selectorBox.add( $link, null, function( id, name ) {
+		this._selectorBox.add( $button, null, function( id, name ) {
 			var entity = 'http://www.wikidata.org/entity/' + id;// FIXME technical debt
 
 			var variable = self._query.getBoundVariables().shift();
@@ -315,39 +313,32 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 				self._query.addVariable( variable );
 			}
 
-			if ( $findSection.children().length >= 3 ) {
-				if ( $findSection.children().length === 3 ) {
-					$findSection.append( $( '<span>' ).text( self._i18n( 'with' ) + ' ' ) );
-				} else {
-					$findSection.append( $( '<span>' ).text( self._i18n( 'and' ) + ' ' ) );
-				}
-			}
-			$findSection.append( self._getTripleHtml( triple ) );
+			$table.append( self._getTripleHtml( triple ) );
 
 			if ( self._changeListener ) {
 				self._changeListener( self );
 			}
 		} );
 
-		return $findSection.append( $link, ' ' );
+		return $button;
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getShowSection = function() {
-		var $showSection = $( '<div>' );
+	SELF.prototype._createShowButton = function( $table ) {
 		// Show link
-		var $link = $( '<a class="btn btn-default">' ).text( this._i18n( 'show' ) );
-		$link.attr( 'href', '#' ).prepend(
-				'<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>', ' ' )
+		var $button = $( '<a class="btn">' )
+			.text( this._i18n( 'show' ) )
+			.attr( 'href', '#' ).prepend(
+				'<span class="fa fa-plus-square-o" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
 					title: 'Click to add new property'
 				} ).attr( 'data-type', 'property' ).attr( 'data-auto_open', true );
 
 		// SelectorBox
 		var self = this;
-		this._selectorBox.add( $link, null, function( id, name ) {
+		this._selectorBox.add( $button, null, function( id, name ) {
 			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
 
 			var subject = self._query.getBoundVariables().shift();
@@ -359,17 +350,14 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );
 
-			if ( $showSection.children().length > 2 ) {
-				$showSection.append( $( '<span>' ).text( ', ' ) );
-			}
-			$showSection.append( self._getTripleHtml( triple ) );
+			$table.append( self._getTripleHtml( triple ) );
 
 			if ( self._changeListener ) {
 				self._changeListener( self );
 			}
 		} );
 
-		return $showSection.append( $link, ' ' );
+		return $button;
 	};
 
 	/**
@@ -409,7 +397,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._getTripleHtml = function( triple ) {
 		var self = this,
-			$triple = $( '<span>' ),
+			$triple = $( '<tr>' ),
 			bindings = this._query.getBindings();
 
 		$.each( triple.triple, function( k, entity ) {
@@ -418,14 +406,17 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 				entity = bindings[entity].expression;
 			}
 
-			if ( self._isSimpleMode && self._isVariable( entity ) ) {
-				return;
+			if (  self._isVariable( entity ) ) {
+				if ( self._isSimpleMode ) {
+					return;
+				}
+				entity = entity.replace( '?', '' );
 			}
 
 			if ( entity.type && entity.type === 'path' ) {
-				$triple.append( self._getTripleEntityPathHtml( entity, triple, k ), ' ' );
+				$triple.append( $( '<td>' ).append( self._getTripleEntityPathHtml( entity, triple, k ) ), ' ' );
 			} else {
-				$triple.append( self._getTripleEntityHtml( entity, triple, k ), ' ' );
+				$triple.append(  $( '<td>' ).append( self._getTripleEntityHtml( entity, triple, k ) ), ' ' );
 			}
 		} );
 
@@ -537,12 +528,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 							( triple.triple.object.startsWith( '?' ) === false && triple.triple.predicate === entity ) ) {
 						variable = triple.triple.subject;
 					}
-					if ( $label.parent().next( 'span' ).length ) {
-						$label.parent().next( 'span' ).remove();
-					} else {
-						$label.parent().prev( 'span' ).remove();
-					}
-					$label.parent().remove();
+					$label.closest( 'tr' ).remove();
 
 					self._query.removeVariable( variable );
 					self._query.removeVariable( variable + 'Label' );
