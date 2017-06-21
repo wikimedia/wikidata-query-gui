@@ -221,16 +221,16 @@ module.exports = function( grunt ) {
 	} );
 
 	grunt.registerTask( 'test', [
-			'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
+		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
-			'clean', 'auto_install', 'test', 'create_build'
+		'clean', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
-			'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
+		'auto_install', 'test', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
 	] );
 	grunt.registerTask( 'deploy', [
-			'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'create_build', 'shell:commitDeploy', 'configDeploy', 'shell:review'
+		'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'create_build', 'shell:commitDeploy', 'configDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };
