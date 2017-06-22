@@ -376,6 +376,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				return '<iframe ' +
 					'class="shortUrl" ' +
 					'src="' + SHORTURL_API + encodeURIComponent( window.location ) + '" ' +
+					'referrerpolicy="origin" ' +
+					'sandbox="" ' +
 					'></iframe>';
 			}
 		} ).click( function() {
@@ -392,6 +394,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				return '<iframe ' +
 					'class="shortUrl" ' +
 					'src="' + SHORTURL_API + encodeURIComponent( $link[0].href ) + '" ' +
+					'referrerpolicy="origin" ' +
+					'sandbox="" ' +
 					'></iframe>';
 			}
 		} ).click( function() {
@@ -416,6 +420,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 					'<iframe ' +
 						'style="width: 80vw; height: 50vh; border: none;" ' +
 						'src="' + $link[0].href + '" ' +
+						'referrerpolicy="origin" ' +
+						'sandbox="allow-scripts allow-same-origin allow-popups" ' +
 						'></iframe>'
 				).click( function() {
 					$html.select();
