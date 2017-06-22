@@ -29,6 +29,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @constructor
 	 *
 	 * @param {string} [serviceUri] Optional URI to the SPARQL service endpoint
+	 * @param {string} [language]
 	 */
 	function SELF( serviceUri, language ) {
 		this._serviceUri = serviceUri || SPARQL_SERVICE_URI;
@@ -41,13 +42,13 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	SELF.prototype.ERROR_CODES = ERROR_CODES;
 
 	/**
-	 * @property {Number}
+	 * @property {string}
 	 * @private
 	 */
 	SELF.prototype._serviceUri = null;
 
 	/**
-	 * @property {Number}
+	 * @property {number}
 	 * @private
 	 */
 	SELF.prototype._executionTime = null;
@@ -59,7 +60,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	SELF.prototype._error = null;
 
 	/**
-	 * @property {Number}
+	 * @property {number}
 	 * @private
 	 */
 	SELF.prototype._resultLength = null;
@@ -128,7 +129,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * Submit a query to the API
 	 *
 	 * @param {string[]} query
-	 * @param {Number} [timeout] in millis
+	 * @param {number} [timeout] in millis
 	 * @return {jQuery.Promise} query
 	 */
 	SELF.prototype.query = function( query, timeout ) {
@@ -224,7 +225,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	/**
 	 * Get execution time in seconds of the submitted query
 	 *
-	 * @return {Number}
+	 * @return {number}
 	 */
 	SELF.prototype.getExecutionTime = function() {
 		return this._executionTime;
@@ -242,7 +243,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	/**
 	 * Get result length of the submitted query if it has failed
 	 *
-	 * @return {Number}
+	 * @return {number}
 	 */
 	SELF.prototype.getResultLength = function() {
 		return this._resultLength;

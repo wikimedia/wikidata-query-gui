@@ -33,7 +33,7 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	 * @param {string} messageKey primary message key
 	 * @param {string} extraText to be appended to the primary message
 	 * @param {string} type of message: primary, success, info, warning, danger
-	 * @param {Number|boolean} [progress] false if no progress, or actual progress 0-100
+	 * @param {number|boolean} [progress] false if no progress, or actual progress 0-100
 	 */
 	SELF.prototype.show = function( messageKey, extraText, type, progress ) {
 		var text = messageKey;
@@ -63,7 +63,7 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	/**
 	 * @param {string} text
 	 * @param {string} type
-	 * @param {Number} progress in percent (0 to 100)
+	 * @param {number} progress in percent (0 to 100)
 	 * @private
 	 */
 	SELF.prototype._getProgressbar = function( text, type, progress ) {

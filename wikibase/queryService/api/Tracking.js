@@ -33,7 +33,7 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 
 	/**
 	 * @param {string} metricName
-	 * @param {Number} value
+	 * @param {number} value
 	 * @param {string} valueType
 	 *
 	 * @return {jQuery.Promise}

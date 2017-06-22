@@ -247,7 +247,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 				.text( 'Limit' )
 				.data( 'value', this._query.getLimit() ),
 			$value = $( '<span>' )
-				.text( this._query.getLimit() ? this._query.getLimit() : '' );
+				.text( this._query.getLimit() || '' );
 
 		var self = this;
 		this._selectorBox.add( $limit, null, function( value ) {

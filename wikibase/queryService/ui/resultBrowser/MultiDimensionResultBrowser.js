@@ -202,12 +202,12 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 				} );
 
 		axes.append( 'g' ).attr( 'class', 'axis' ).each( function( d ) {
-			var renderAxis = 'axis' in d ? d.axis.scale( d.scale ) // custom axis
-			: yAxis.scale( d.scale ); // default axis
+			var renderAxis = ( d.axis && d.axis.scale( d.scale ) ) // custom axis
+				|| yAxis.scale( d.scale ); // default axis
 			d3.select( this ).call( renderAxis );
 		} ).append( 'text' ).attr( 'class', 'title' ).attr( 'text-anchor', 'start' ).text(
 				function( d ) {
-					return 'description' in d ? d.description : d.key;
+					return d.description || d.key;
 				} );
 
 		// Add and store a brush for each axis.

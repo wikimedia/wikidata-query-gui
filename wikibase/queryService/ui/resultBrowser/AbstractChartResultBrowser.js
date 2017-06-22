@@ -39,7 +39,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	/**
 	 * Returns all columns that contain numbers
 	 * @protected
-	 * @return {Number[]}
+	 * @return {number[]}
 	 **/
 	SELF.prototype._getNumberColumns = function() {
 		var self = this,

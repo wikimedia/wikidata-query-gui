@@ -71,26 +71,22 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	};
 
 	/**
-	 * @return {Number|null}
+	 * @return {number|null}
 	 */
 	SELF.prototype.getLimit = function() {
-		if ( !this._query.limit ) {
-			return null;
-		}
-
-		return this._query.limit;
+		return this._query.limit || null;
 	};
 
 	/**
-	 * @param {Number|null} limit
+	 * @param {number|null} limit
 	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
 	 */
 	SELF.prototype.setLimit = function( limit ) {
 		if ( !limit ) {
 			delete this._query.limit;
+		} else {
+			this._query.limit = limit;
 		}
-
-		this._query.limit = limit;
 
 		return this;
 	};

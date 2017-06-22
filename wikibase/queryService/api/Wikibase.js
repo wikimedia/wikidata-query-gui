@@ -74,8 +74,8 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 			query.type = type;
 		}
 		if ( this._language || language ) {
-			query.language = language ? language : this._language;
-			query.uselang = language ? language : this._language;
+			query.language = language || this._language;
+			query.uselang = language || this._language;
 		}
 
 		return this._query( query );

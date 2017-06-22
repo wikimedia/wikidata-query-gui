@@ -136,10 +136,9 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 
 		this._api.searchEntities( term, type ).done(
 				function( data ) {
-
 					$.each( data.search, function( key, value ) {
 						entityList.push( value.label + ' (' + value.id + ')<br/><small>' +
-								( value.description ? value.description : '' ) + '</small>' );
+							( value.description || '' ) + '</small>' );
 					} );
 
 					deferred.resolve( entityList );

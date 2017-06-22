@@ -258,7 +258,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Creates a thumbnail URL from given commons resource URL
 	 *
 	 * @param {string} url
-	 * @param {Number} [width]
+	 * @param {number} [width]
 	 * @return {string}
 	 */
 	SELF.prototype.getCommonsResourceFileNameThumbnail = function( url, width ) {
@@ -375,11 +375,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 */
 	SELF.prototype.isNumber = function( cell ) {
-		if ( !cell || !cell.datatype ) {
-			return false;
-		}
-
-		return NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
+		return cell
+			&& cell.datatype
+			&& NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
 	};
 
 	/**
@@ -389,11 +387,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 */
 	SELF.prototype.isDateTime = function( cell ) {
-		if ( !cell || !cell.datatype ) {
-			return false;
-		}
-
-		return cell.datatype === DATATYPE_DATETIME;
+		return cell
+			&& cell.datatype === DATATYPE_DATETIME;
 	};
 
 	/**
@@ -403,11 +398,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 */
 	SELF.prototype.isEntity = function( cell ) {
-		if ( !cell || !cell.value ) {
-			return false;
-		}
-
-		return this.isEntityUri( cell.value );
+		return cell
+			&& cell.value
+			&& this.isEntityUri( cell.value );
 	};
 
 	/**
