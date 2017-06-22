@@ -3,7 +3,8 @@
 		"authors": [
 			"Otokoume",
 			"Fryed-peach",
-			"組曲師"
+			"組曲師",
+			"Wicklo"
 		]
 	},
 	"wdqs-app-button-examples": "例",
@@ -11,16 +12,35 @@
 	"wdqs-app-button-tools": "ツール",
 	"wdqs-app-button-help": "ヘルプ",
 	"wdqs-app-button-run": "実行",
+	"wdqs-app-button-run-title": "クエリを実行 (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "消去",
+	"wdqs-app-button-clear-title": "クエリを消去",
 	"wdqs-app-button-display": "表示",
 	"wdqs-app-button-download": "ダウンロード",
+	"wdqs-app-button-download-title": "実行結果をダウンロード",
 	"wdqs-app-button-link": "リンク",
+	"wdqs-app-footer-help": "<i>[CTRL-SPACE]</i> で補完",
 	"wdqs-app-footer-updated": "$1前にデータを更新",
 	"wdqs-app-footer-updated-seconds": "$1秒前にデータを更新",
-	"wdqs-ve-find": "検索",
+	"wdqs-app-result-shorturl": "実行結果の短縮 URL",
+	"wdqs-app-result-shorturl-title": "実行結果の短縮 URL",
+	"wdqs-app-result-embed": "実行結果をエンベッド",
+	"wdqs-app-result-endpoint": "SPARQL エンドポイント",
+	"wdqs-app-result-json": "JSONファイル",
+	"wdqs-app-result-tsv": "TSVファイル",
+	"wdqs-app-result-csv": "CSVファイル",
+	"wdqs-app-result-svg": "SVG画像",
+	"wdqs-app-shorturl-page-title": "このページの短縮 URL",
+	"wdqs-dialog-examples-preview-query": "クエリのプレビュー",
+	"wdqs-dialog-examples-preview-result": "結果のプレビュー",
 	"wdqs-ve-show": "表示",
-	"wdqs-ve-and": "かつ",
 	"wdqs-ve-or": "または",
+	"wdqs-ve-sb-suggestions": "候補",
 	"wdqs-action-query": "\n実行中のクエリ",
-	"wdqs-action-render": "結果をレンダリング"
+	"wdqs-action-render": "実行結果をレンダリング",
+	"wdqs-action-error-display": "実行結果を表示できません",
+	"wdqs-action-timeout": "クエリがタイムアウトしました",
+	"wdqs-action-malformed-query": "不正なクエリです",
+	"wdqs-action-server-error": "サーバーエラー",
+	"wdqs-action-unknow-error": "不明なエラー"
 }

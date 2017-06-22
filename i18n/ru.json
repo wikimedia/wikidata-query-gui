@@ -6,7 +6,8 @@
 			"Irus",
 			"Kareyac",
 			"Nitch",
-			"Redredsonia"
+			"Redredsonia",
+			"Facenapalm"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -31,6 +32,7 @@
 	"wdqs-app-help-datamodel": "Модель данных RDF",
 	"wdqs-app-help-prefixes": "Список префиксов",
 	"wdqs-app-help-copy": "Информация о лицензировании",
+	"wdqs-app-help-queryhelper": "Помощь по запросам",
 	"wdqs-app-footer-help": "Нажмите <i>[Ctrl + пробел]</i>, чтобы активировать автоматическое завершение.",
 	"wdqs-app-footer-updated": "Данные обновлены $1 назад",
 	"wdqs-app-footer-updated-seconds": "Данные обновлены $1 сек. назад",
@@ -55,10 +57,9 @@
 	"wdqs-app-resultbrowser-hierarchical-rl": "Иерархическая разметка справа налево",
 	"wdqs-dialog-examples-preview-query": "Посмотреть запрос",
 	"wdqs-dialog-examples-preview-result": "Посмотреть результат",
-	"wdqs-ve-find": "Найти",
+	"wdqs-ve-filter": "Фильтр",
 	"wdqs-ve-show": "Показать",
 	"wdqs-ve-with": "с",
-	"wdqs-ve-and": "и",
 	"wdqs-ve-anything": "что-нибудь",
 	"wdqs-ve-any": "любое",
 	"wdqs-ve-or": "или",

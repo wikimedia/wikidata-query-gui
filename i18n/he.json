@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Guycn2"
+			"Guycn2",
+			"המקיסט"
 		]
 	},
 	"wdqs-app-button-examples": "דוגמאות",
@@ -27,6 +28,7 @@
 	"wdqs-app-help-datamodel": "דגם נתונים ב־RDF",
 	"wdqs-app-help-prefixes": "רשימת תחיליות",
 	"wdqs-app-help-copy": "מידע על רישיון",
+	"wdqs-app-help-queryhelper": "סייען לשאלות",
 	"wdqs-app-footer-help": "יש ללחוץ <i>[קונטרול-רווח]</i> כדי להפעיל השלמה אוטומטית.",
 	"wdqs-app-footer-updated": "הנתונים עודכנו לפני $1",
 	"wdqs-app-footer-updated-seconds": "הנתונים עודכנו לפני $1 שניות",
@@ -51,10 +53,9 @@
 	"wdqs-app-resultbrowser-hierarchical-rl": "סידור היררכי מימין לשמאל",
 	"wdqs-dialog-examples-preview-query": "תצוגה מקדימה של שאילתה",
 	"wdqs-dialog-examples-preview-result": "תצוגה מקדימה של תוצאה",
-	"wdqs-ve-find": "מציאה",
+	"wdqs-ve-filter": "סינון",
 	"wdqs-ve-show": "הצגה",
 	"wdqs-ve-with": "עם",
-	"wdqs-ve-and": "וגם",
 	"wdqs-ve-anything": "כל דבר",
 	"wdqs-ve-any": "הכול",
 	"wdqs-ve-or": "או",
