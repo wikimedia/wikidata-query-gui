@@ -16,7 +16,7 @@ wikibase.queryService.ui.i18n.LanguageSelector = ( function( $, wikibase ) {
 	 * @constructor
 	 * @param {jQuery} $element
 	 * @param {wikibase.queryService.api.Wikibase} api
-	 * @param {String} lang default language
+	 * @param {string} lang default language
 	 */
 	function SELF( $element, api, lang ) {
 		this._$element = $element;
@@ -45,7 +45,7 @@ wikibase.queryService.ui.i18n.LanguageSelector = ( function( $, wikibase ) {
 	SELF.prototype._$element = null;
 
 	/**
-	 * @property {String}
+	 * @property {string}
 	 * @private
 	 */
 	SELF.prototype._defaultLanguage = null;

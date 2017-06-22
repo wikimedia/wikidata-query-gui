@@ -35,7 +35,8 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	/**
 	 * Set the SPARQL query string
 	 *
-	 * @param {String} query SPARQL query string
+	 * @param {string} query SPARQL query string
+	 * @param {Object} prefixes
 	 */
 	SELF.prototype.parse = function( query, prefixes ) {
 		var parser = new sparqljs.Parser( prefixes ),
@@ -52,7 +53,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	/**
 	 * Get the SPARQL query string
 	 *
-	 * @return {String|null}
+	 * @return {string|null}
 	 */
 	SELF.prototype.getQueryString = function() {
 		try {
@@ -70,8 +71,6 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	};
 
 	/**
-	 * Get LIMIT
-	 *
 	 * @return {Number|null}
 	 */
 	SELF.prototype.getLimit = function() {
@@ -83,9 +82,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	};
 
 	/**
-	 * Set LIMIT
-	 *
-	 * @param {int} limit
+	 * @param {Number|null} limit
 	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
 	 */
 	SELF.prototype.setLimit = function( limit ) {
@@ -244,10 +241,10 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	/**
 	 * Add a triple to the query
 	 *
-	 * @param {String} subject
-	 * @param {String} predicate
-	 * @param {String} object
-	 * @param {Boolean} isOptional
+	 * @param {string} subject
+	 * @param {string} predicate
+	 * @param {string} object
+	 * @param {boolean} isOptional
 	 */
 	SELF.prototype.addTriple = function( subject, predicate, object, isOptional ) {
 		var triple = {
@@ -279,7 +276,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	/**
 	 * Get variables that are bound to a certain value
 	 *
-	 * @return {String[]}
+	 * @return {string[]}
 	 */
 	SELF.prototype.getBoundVariables = function() {
 		var variables = {};

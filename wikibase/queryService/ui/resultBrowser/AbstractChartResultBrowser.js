@@ -25,7 +25,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	 * Returns all columns that contain numbers
 	 *
 	 * @protected
-	 * @return {String[]}
+	 * @return {string[]}
 	 */
 	SELF.prototype._getLabelColumns = function() {
 		var self = this,
@@ -52,7 +52,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 
 	/**
 	 * @protected
-	 * @return {String[]}
+	 * @return {string[]}
 	 **/
 	SELF.prototype._getColumns = function() {
 		return this._result.head.vars;
