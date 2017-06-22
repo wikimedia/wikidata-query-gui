@@ -373,8 +373,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			'html': true,
 			'content': function() {
 				self._updateQueryUrl();
-				return '<iframe class="shortUrl" src="' + SHORTURL_API
-					+ encodeURIComponent( window.location ) + '">';
+				return '<iframe ' +
+					'class="shortUrl" ' +
+					'src="' + SHORTURL_API + encodeURIComponent( window.location ) + '" ' +
+					'></iframe>';
 			}
 		} ).click( function() {
 			self._track( 'buttonClick.shortUrlQuery' );
@@ -387,8 +389,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			'content': function() {
 				self._updateQueryUrl();
 				var $link = $( '<a>' ).attr( 'href', 'embed.html' + window.location.hash );
-				return '<iframe class="shortUrl" src="' + SHORTURL_API
-					+ encodeURIComponent( $link[0].href ) + '">';
+				return '<iframe ' +
+					'class="shortUrl" ' +
+					'src="' + SHORTURL_API + encodeURIComponent( $link[0].href ) + '" ' +
+					'></iframe>';
 			}
 		} ).click( function() {
 			self._track( 'buttonClick.shortUrlResult' );
@@ -409,8 +413,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				var $link = $( '<a>' )
 					.attr( 'href', 'embed.html#' + b + window.location.hash.substring( 1 ) );
 				var $html = $( '<textarea>' ).text(
-					'<iframe style="width:80vw; height:50vh;" frameborder="0" src="'
-					+ $link[0].href + '">'
+					'<iframe ' +
+						'style="width: 80vw; height: 50vh; border: none;" ' +
+						'src="' + $link[0].href + '" ' +
+						'></iframe>'
 				).click( function() {
 					$html.select();
 				} );
