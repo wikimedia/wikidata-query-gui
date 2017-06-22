@@ -417,11 +417,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 */
 	SELF.prototype.isColor = function ( cell ) {
-		if ( !cell || !cell.type || !cell.value ) {
-			return false;
-		}
-
-		return cell.type === 'literal' && cell.value.match( /^[0-9A-F]{6}$/ );
+		return cell
+			&& cell.type === 'literal'
+			&& cell.value
+			&& /^([\dA-F]{1,2}){3}$/i.test( cell.value );
 	};
 
 	/**
