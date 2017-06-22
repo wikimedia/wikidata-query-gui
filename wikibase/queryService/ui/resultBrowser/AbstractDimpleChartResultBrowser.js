@@ -75,7 +75,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 * @property {bool}
 	 * @private
 	 */
-	SELF.prototype._isStoryPause = false;
+	SELF.prototype._isStoryPaused = false;
 
 	/**
 	 * Draw browser to the given element
