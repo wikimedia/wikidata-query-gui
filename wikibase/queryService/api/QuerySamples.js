@@ -61,7 +61,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * Find previous element matching the selector
 	 *
 	 * @param {Element} element
-	 * @param {String} selector
+	 * @param {string} selector
 	 * @return {Element}
      * @private
      */
@@ -82,7 +82,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * Get list of tags from UL list
 	 *
 	 * @param {Element} tagUL
-	 * @return {String[]}
+	 * @return {string[]}
      * @private
      */
 	SELF.prototype._extractTagsFromUL = function( tagUL ) {
@@ -132,7 +132,6 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 				tags:     self._extractTagsFromUL( tagUL ),
 				category: self._findPrevHeader( titleEl ).text().trim()
 			};
-
 		} ).get();
 		// group by category
 		return _.flatten( _.toArray( _.groupBy( examples, 'category' ) ) );

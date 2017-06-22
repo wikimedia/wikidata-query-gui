@@ -378,6 +378,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 * Receiving data from the a visit
 	 *
 	 * @param {Object} data
+	 * @param {string} key
 	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( data, key ) {
@@ -385,7 +386,10 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	};
 
 	/**
-	 * Check if this value contains an coordinate value.
+	 * @param {Object} value
+	 * @param {string} key
+	 * @return {boolean}
+	 * @private
 	 */
 	SELF.prototype._checkColumn = function( value, key ) {
 		if ( this._getFormatter().isLabel( value, key ) ) {

@@ -89,8 +89,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Format a data value
 	 *
 	 * @param {Object} data
-	 * @param {string} title (optional)
-	 * @param {boolean} embed (optional) media files
+	 * @param {string} [title]
+	 * @param {boolean} [embed] media files
 	 * @return {jQuery} element
 	 */
 	SELF.prototype.formatValue = function( data, title, embed ) {
@@ -258,8 +258,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Creates a thumbnail URL from given commons resource URL
 	 *
 	 * @param {string} url
-	 * @param {number} [width]
-	 * @return {String}
+	 * @param {Number} [width]
+	 * @return {string}
 	 */
 	SELF.prototype.getCommonsResourceFileNameThumbnail = function( url, width ) {
 		if ( !this.isCommonsResource( url ) ) {
@@ -428,7 +428,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Returns an HTML color string for the current cell
 	 *
 	 * @param {Object} cell
-	 * @return {String}
+	 * @return {string}
 	 */
 	SELF.prototype.getColorForHtml = function ( cell ) {
 		return '#' + cell.value;
@@ -442,7 +442,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * to calculate the luminance (Y coordinate in the CIE XYZ model).
 	 *
 	 * @param {string} color as six hex digits (no #)
-	 * @return {number} luminance of the color, or NaN if the color string is invalid
+	 * @return {Number} luminance of the color, or NaN if the color string is invalid
 	 */
 	SELF.prototype.calculateLuminance = function( color ) {
 		var r = parseInt( color.substr( 1, 2 ), 16 ) / 255,
@@ -465,11 +465,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Get an i18n string
 	 *
-	 * @private
 	 * @param {string} key for the i18n message
 	 * @param {string} message default text
-	 *
 	 * @return {string}
+	 * @private
 	 */
 	SELF.prototype._i18n = function( key, message ) {
 		var i18nMessage;

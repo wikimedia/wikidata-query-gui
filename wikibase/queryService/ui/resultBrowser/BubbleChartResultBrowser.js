@@ -166,6 +166,10 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 
 	/**
 	 * Check if this value contains an numeric value.
+	 *
+	 * @param {Object} value
+	 * @return {boolean}
+	 * @private
 	 */
 	SELF.prototype._checkColumn = function( value ) {
 		if ( this._getFormatter().isNumber( value ) ) {

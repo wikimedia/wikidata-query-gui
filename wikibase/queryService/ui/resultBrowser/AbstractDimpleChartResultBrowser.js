@@ -30,7 +30,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	SELF.prototype._dataColumns = null;
 
 	/**
-	 * @property {String[]}
+	 * @property {string[]}
 	 * @private
 	 */
 	SELF.prototype._data = null;
@@ -60,19 +60,19 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	SELF.prototype._chartLegend = null;
 
 	/**
-	 * @property {String}
+	 * @property {string}
 	 * @private
 	 */
 	SELF.prototype._chartSeriesKey = null;
 
 	/**
-	 * @property {String}
+	 * @property {string}
 	 * @private
 	 */
 	SELF.prototype._chartStoryKey = null;
 
 	/**
-	 * @property {bool}
+	 * @property {boolean}
 	 * @private
 	 */
 	SELF.prototype._isStoryPause = false;
@@ -260,6 +260,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 * Receiving data from the a visit
 	 *
 	 * @param {Object} value
+	 * @param {string} key
 	 * @return {boolean} false if there is no revisit needed
 	 */
 	SELF.prototype.visit = function( value, key ) {
@@ -268,6 +269,11 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 
 	/**
 	 * Check if this value contains an coordinate value.
+	 *
+	 * @param {Object} value
+	 * @param {string} key
+	 * @return {boolean}
+	 * @private
 	 */
 	SELF.prototype._checkColumn = function( value, key ) {
 		if ( this._getFormatter().isLabel( value ) ) {

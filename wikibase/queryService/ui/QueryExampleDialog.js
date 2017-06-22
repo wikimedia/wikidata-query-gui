@@ -44,7 +44,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	SELF.prototype._callback = null;
 
 	/**
-	 * @property {String}
+	 * @property {string}
 	 * @private
 	 */
 	SELF.prototype._previewUrl = null;

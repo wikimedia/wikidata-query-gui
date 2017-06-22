@@ -142,7 +142,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @protected
 	 * @param {Object} data
-	 * @param {String} columnKey
+	 * @param {string} columnKey
 	 */
 	SELF.prototype.processVisitors = function( data, columnKey ) {
 		var self = this,
