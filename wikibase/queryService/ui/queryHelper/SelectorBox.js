@@ -17,14 +17,14 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					hint:Query hint:optimizer "None".\
 							{\
 								SELECT DISTINCT ?id WHERE { ?i <{PROPERTY_URI}> ?id. }\
-								LIMIT 20\
+								LIMIT 100\
 							}\
 						?id rdfs:label ?label.\
 						?id schema:description ?description.\
 						FILTER((LANG(?label)) = "{LANGUAGE}")\
 						FILTER((LANG(?description)) = "{LANGUAGE}")\
 					}\
-					LIMIT 20',
+					LIMIT 100',
 				genericSuggest: function() { // Find items that are most often used with the first selected item of the current query
 					var template = '{PREFIXES}\n\
 						SELECT ?id ?label ?description ?property WITH {\n\
@@ -43,7 +43,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 							GROUP BY ?value ?property\n\
 							HAVING(isIRI(?value) && STRSTARTS(STR(?value), STR(wd:Q)))\n\
 							ORDER BY DESC(?count)\n\
-							LIMIT 20\n\
+							LIMIT 100\n\
 						} AS %values WHERE {\n\
 							INCLUDE %values.\n\
 							BIND(?value AS ?id).\n\
@@ -81,14 +81,14 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					hint:Query hint:optimizer "None".\
 						{\
 							SELECT DISTINCT ?id WHERE { ?i wdt:P31 ?id. }\
-							LIMIT 20\
+							LIMIT 100\
 						}\
 						?id rdfs:label ?label.\
 						?id schema:description ?description.\
 						FILTER((LANG(?label)) = "en")\
 						FILTER((LANG(?description)) = "en")\
 					}\
-					LIMIT 20'
+					LIMIT 100'
 		},
 		property: {
 			suggest:// Find properties that are used with a specific item
@@ -100,14 +100,14 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						?id ?x ?prop.\
 						?id rdf:type wikibase:Property.\
 						}\
-						LIMIT 20\
+						LIMIT 100\
 					}\
 				?id rdfs:label ?label.\
 				?id schema:description ?description.\
 				FILTER((LANG(?label)) = "{LANGUAGE}")\
 				FILTER((LANG(?description)) = "{LANGUAGE}")\
 				}\
-				LIMIT 20',
+				LIMIT 100',
 			genericSuggest: function() { // Find properties that are most often used with the first selected item of the current query
 				var template = '{PREFIXES}\n\
 					SELECT ?id ?label ?description WITH {\n\
@@ -124,7 +124,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						}\n\
 						GROUP BY ?property\n\
 						ORDER BY DESC(?count)\n\
-						LIMIT 20\n\
+						LIMIT 100\n\
 					} AS %properties WHERE {\n\
 						INCLUDE %properties.\n\
 						BIND(?property AS ?id).\n\
@@ -134,7 +134,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						}\n\
 					}\n\
 					ORDER BY DESC(?count)',
-					query = this._query.clone().setLimit( 100 ).getQueryString(),
+					query = this._query.clone().setLimit( 500 ).getQueryString(),
 					variable = this._query.getBoundVariables().shift(),
 					prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
 
@@ -188,7 +188,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					FILTER((LANG(?description)) = "{LANGUAGE}")\
 					FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
 				} ORDER BY DESC(?count)\
-				LIMIT 20',
+				LIMIT 100',
 			suggest:
 				'SELECT ?id ?label ?description WITH {\
 				{SPARQL}\
@@ -200,7 +200,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 				FILTER((LANG(?label)) = "{LANGUAGE}")\
 				FILTER((LANG(?description)) = "{LANGUAGE}")\
 			} ORDER BY DESC(?count)\
-			LIMIT 20'
+			LIMIT 100'
 		}
 	};
 
