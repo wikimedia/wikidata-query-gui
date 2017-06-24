@@ -292,9 +292,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			return null;
 		}
 
-		point = point.match( /Point\((.*)\)/ ).pop();
+		var match = point.match( /Point\((.*)\)/i );
 
-		return point.split( ' ' );
+		if ( !match ) {
+			return null;
+		}
+
+		return match.pop().split( ' ' );
 	};
 
 	/**
