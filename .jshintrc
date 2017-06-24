@@ -44,6 +44,7 @@
 		"Cookies": false,
 		"vis": false,
 		"moment": false,
-		"dimple": false
+		"dimple": false,
+		"wellknown": false
 	}
 }
