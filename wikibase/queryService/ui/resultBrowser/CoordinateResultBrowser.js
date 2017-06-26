@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, d3, _, window ) {
+wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, d3, _, wellknown, window ) {
 	'use strict';
 
 	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
@@ -223,27 +223,29 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		this._iterateResult( function( field, key, row ) {
 			if ( field && field.datatype === MAP_DATATYPE ) {
-				var longLat = self._extractLongLat( field.value );
-				if ( longLat === null || !longLat[0] || !longLat[1] ) {
-					return true;
+				var geoJson = self._extractGeoJson( field.value );
+				if ( !geoJson ) {
+					return;
 				}
 
-				var popup = L.popup(),
-					lon = longLat[0],
-					lat = longLat[1];
-
 				var layer = self._getMarkerGroupsLayer( row );
-				var marker = L.circleMarker( [ lat, lon ], self._getMarkerStyle( layer ) )
-					.bindPopup( popup );
-
-				marker.on( 'click', function() {
-					var info = self._getItemDescription( row );
-					popup.setContent( info[0] );
-				} );
-
 				if ( !markers[ layer ] ) {
 					markers[ layer ] = [];
 				}
+				var marker = L.geoJson( geoJson, {
+					style: self._getMarkerStyle( layer ),
+					pointToLayer: function( geoJsonPoint, latLon ) {
+						return L.circleMarker( latLon, self._getMarkerStyle( layer ) );
+					},
+					onEachFeature: function( feature, layer ) {
+						var popup = L.popup();
+						layer.bindPopup( popup );
+						layer.on( 'click', function() {
+							var info = self._getItemDescription( row );
+							popup.setContent( info[0] );
+						} );
+					}
+				} );
 				markers[ layer ].push( marker );
 				markers[ LAYER_DEFAULT_GROUP ].push( marker );
 			}
@@ -316,10 +318,14 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	/**
+	 * Extract a GeoJSON object from the given geo:wktLiteral.
+	 *
 	 * @private
+	 * @param {string} literal
+	 * @return {?Object} GeoJSON
 	 */
-	SELF.prototype._extractLongLat = function( point ) {
-		var split = this._splitWktLiteral( point );
+	SELF.prototype._extractGeoJson = function( literal ) {
+		var split = this._splitWktLiteral( literal );
 		if ( !split ) {
 			return null;
 		}
@@ -328,13 +334,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			return null;
 		}
 
-		var match = split.wkt.match( /^Point\((.*)\)$/i );
-
-		if ( !match ) {
-			return null;
-		}
-
-		return match.pop().split( ' ' );
+		return wellknown.parse( split.wkt );
 	};
 
 	/**
@@ -376,7 +376,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._checkCoordinate = function( value ) {
 		if ( value && value.datatype === MAP_DATATYPE ) {
-			var longLat = this._extractLongLat( value.value );
+			var longLat = this._extractGeoJson( value.value );
 			if ( longLat !== null ) {
 				this._drawable = true;
 				return false;
@@ -386,4 +386,4 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	return SELF;
-}( jQuery, L, d3, _, window ) );
+}( jQuery, L, d3, _, wellknown, window ) );

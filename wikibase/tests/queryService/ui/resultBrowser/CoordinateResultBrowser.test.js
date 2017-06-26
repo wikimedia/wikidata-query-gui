@@ -20,25 +20,31 @@
 		);
 	} );
 
-	QUnit.test( '_extractLongLat internal helper function', function( assert ) {
-		assert.expect( 3 );
+	QUnit.test( '_extractGeoJson internal helper function', function( assert ) {
+		assert.expect( 4 );
 
 		assert.deepEqual(
-			crb._extractLongLat( '<http://www.wikidata.org/entity/Q2> Point(1 2)' ),
-			[ "1", "2" ],
-			'_extractLongLat should extract Wikidata terrestrial coordinate values'
+			crb._extractGeoJson( '<http://www.wikidata.org/entity/Q2> Point(1 2)' ),
+			{ "type": "Point", "coordinates": [ 1, 2 ] },
+			'_extractGeoJson should extract Wikidata terrestrial coordinate values'
 		);
 
 		assert.strictEqual(
-			crb._extractLongLat( '<http://www.wikidata.org/entity/Q405> Point(1 2)' ),
+			crb._extractGeoJson( '<http://www.wikidata.org/entity/Q405> Point(1 2)' ),
 			null,
-			'_extractLongLat should not extract Wikidata lunar coordinate values'
+			'_extractGeoJson should not extract Wikidata lunar coordinate values'
 		);
 
 		assert.deepEqual(
-			crb._extractLongLat( 'Point(1 2)' ),
-			[ "1", "2" ],
-			'_extractLongLat should extract coordinate values without explicit reference system'
+			crb._extractGeoJson( 'Point(1 2)' ),
+			{ "type": "Point", "coordinates": [ 1, 2 ] },
+			'_extractGeoJson should extract coordinate values without explicit reference system'
+		);
+
+		assert.deepEqual(
+			crb._extractGeoJson( 'Linestring(1 2,3 4)' ),
+			{ "type": "LineString", "coordinates": [ [ 1, 2 ], [ 3, 4 ] ] },
+			'_extractGeoJson should extract non-point literals'
 		);
 	} );
 
