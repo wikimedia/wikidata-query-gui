@@ -7,7 +7,17 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	'use strict';
 
 	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
-	var GLOBE_EARTH = 'Q2';
+	var GLOBE_EARTH = 'http://www.wikidata.org/entity/Q2';
+	var CRS84 = 'http://www.opengis.net/def/crs/OGC/1.3/CRS84';
+	/**
+	 * A list of coordinate reference systems / spatial reference systems
+	 * that refer to Earth and use longitude-latitude axis order.
+	 * @private
+	 */
+	var EARTH_LONGLAT_SYSTEMS = [
+		GLOBE_EARTH,
+		CRS84
+	];
 
 	var LAYER_COLUMNS = [ 'layerLabel', 'layer' ];
 	var LAYER_DEFAULT_GROUP = '_LAYER_DEFAULT_GROUP';
@@ -283,35 +293,48 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	/**
+	 * Split a geo:wktLiteral or compatible value
+	 * into coordinate reference system URI
+	 * and Simple Features Well Known Text (WKT) string,
+	 * according to GeoSPARQL, Req 10.
+	 *
+	 * If the coordinate reference system is not specified,
+	 * CRS84 is used as default value, according to GeoSPARQL, Req 11.
+	 *
+	 * @private
+	 * @param {string} literal
+	 * @return {?{ crs: string, wkt: string }}
+	 */
+	SELF.prototype._splitWktLiteral = function( literal ) {
+		var match = literal.match( /(<([^>]*)> +)?(.*)/ ); // only U+0020 spaces as separator, not other whitespace, according to GeoSPARQL, Req 10
+
+		if ( match ) {
+			return { crs: match[2] || CRS84, wkt: match[3] };
+		} else {
+			return null;
+		}
+	};
+
+	/**
 	 * @private
 	 */
 	SELF.prototype._extractLongLat = function( point ) {
-		var globe = this._extractGlobe( point );
-
-		if ( globe !== null && globe !== GLOBE_EARTH ) {
+		var split = this._splitWktLiteral( point );
+		if ( !split ) {
 			return null;
 		}
 
-		var match = point.match( /Point\((.*)\)/i );
+		if ( EARTH_LONGLAT_SYSTEMS.indexOf( split.crs ) === -1 ) {
+			return null;
+		}
+
+		var match = split.wkt.match( /^Point\((.*)\)$/i );
 
 		if ( !match ) {
 			return null;
 		}
 
 		return match.pop().split( ' ' );
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._extractGlobe = function( point ) {
-		var globe = null;
-
-		if ( ( globe = point.match( /<http\:\/\/www\.wikidata\.org\/entity\/(.+)>/i ) ) ) {
-			globe = globe.pop();
-		}
-
-		return globe;
 	};
 
 	/**
@@ -353,8 +376,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype._checkCoordinate = function( value ) {
 		if ( value && value.datatype === MAP_DATATYPE ) {
-			var globe = this._extractGlobe( value.value );
-			if ( globe === null || globe === GLOBE_EARTH ) {
+			var longLat = this._extractLongLat( value.value );
+			if ( longLat !== null ) {
 				this._drawable = true;
 				return false;
 			}
