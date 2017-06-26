@@ -34,6 +34,8 @@
 	"wdqs-app-footer-updated-seconds": "数据更新于$1秒前",
 	"wdqs-app-result-shorturl": "至结果的短URL",
 	"wdqs-app-result-shorturl-title": "至此结果的短URL",
+	"wdqs-app-result-rawgraphs": "在RAWGraphs.io中打开",
+	"wdqs-app-result-rawgraphs-title": "通过RAWGraphs.io使用当前结果数据创建图表",
 	"wdqs-app-result-embed": "嵌入结果",
 	"wdqs-app-result-endpoint": "SPARQL末端",
 	"wdqs-app-result-endpoint-title": "链接至SPARQL末端返回结果",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Sator",
 			"Theklan",
-			"Subi"
+			"Subi",
+			"Mikel Ibaiba"
 		]
 	},
 	"wdqs-app-button-examples": "Adibideak",
@@ -34,6 +35,8 @@
 	"wdqs-app-footer-updated-seconds": "Datuak duela $1 segundu eguneratuak",
 	"wdqs-app-result-shorturl": "Emaitzaren URL laburra",
 	"wdqs-app-result-shorturl-title": "Emaitza honetara URL laburra",
+	"wdqs-app-result-rawgraphs": "RAWGraphs.io erabili irekitzeko",
+	"wdqs-app-result-rawgraphs-title": "Emaitza datu hauekin eratu grafiko bat RAWGraphs.io erabiliz",
 	"wdqs-app-result-embed": "Emaitza txertatu",
 	"wdqs-app-result-endpoint": "SPARQL bukaera",
 	"wdqs-app-result-endpoint-title": "Emaitza ematen duen SPARQL bukaerara lotura",
@@ -53,6 +56,7 @@
 	"wdqs-app-resultbrowser-hierarchical-rl": "Antolatu hierarkikoki eskubitik ezkerrera",
 	"wdqs-dialog-examples-preview-query": "Kontsulta aurreikuspena",
 	"wdqs-dialog-examples-preview-result": "Emaitzaren aurreikuspena",
+	"wdqs-ve-filter": "Iragazi",
 	"wdqs-ve-show": "Erakutsi",
 	"wdqs-ve-with": "honekin",
 	"wdqs-ve-anything": "edozein gauza",

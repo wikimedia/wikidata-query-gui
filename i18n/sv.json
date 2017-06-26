@@ -34,6 +34,8 @@
 	"wdqs-app-footer-updated-seconds": "Data uppdaterades $1 sekunder sedan",
 	"wdqs-app-result-shorturl": "Kort webbadress till resultatet",
 	"wdqs-app-result-shorturl-title": "Kort webbadress till detta resultat",
+	"wdqs-app-result-rawgraphs": "Öppna i RAWGraphs.io",
+	"wdqs-app-result-rawgraphs-title": "Skapa ett diagram med aktuellt resultatdata i RAWGraphs.io",
 	"wdqs-app-result-embed": "Bädda in resultat",
 	"wdqs-app-result-endpoint": "SPARQL-slutpunkt",
 	"wdqs-app-result-endpoint-title": "Länk till SPARQL-slutpunkten som returnerar resultatet",

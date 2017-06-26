@@ -33,6 +33,8 @@
 	"wdqs-app-footer-updated-seconds": "Daten vor $1 Sekunden aktualisiert",
 	"wdqs-app-result-shorturl": "Kurz-URL auf das Ergebnis",
 	"wdqs-app-result-shorturl-title": "Kurz-URL auf dieses Ergebnis",
+	"wdqs-app-result-rawgraphs": "In RAWGraphs.io öffnen",
+	"wdqs-app-result-rawgraphs-title": "Erstelle mithilfe RAWGraphs.io eine Grafik mit den aktuellen Ergebnisdaten",
 	"wdqs-app-result-embed": "Ergebnis einbetten",
 	"wdqs-app-result-endpoint": "SPARQL-Endpunkt",
 	"wdqs-app-result-endpoint-title": "Link auf den SPARQL-Endpunkt, der das Ergebnis zurückgibt",
