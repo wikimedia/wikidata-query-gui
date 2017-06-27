@@ -53,7 +53,9 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 							}\n\
 						}\n\
 						ORDER BY DESC(?count)',
-						query = this._query.clone().setLimit( 1000 ).getQueryString(),
+						query = this._query.clone().setLimit( 1000 )
+							.removeService( 'http://wikiba.se/ontology#label' )
+							.getQueryString(),
 						variable = this._query.getBoundVariables().shift(),
 						prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
 
@@ -134,7 +136,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						}\n\
 					}\n\
 					ORDER BY DESC(?count)',
-					query = this._query.clone().setLimit( 500 ).getQueryString(),
+					query = this._query.clone().setLimit( 500 ).removeService( 'http://wikiba.se/ontology#label' ).getQueryString(),
 					variable = this._query.getBoundVariables().shift(),
 					prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
 

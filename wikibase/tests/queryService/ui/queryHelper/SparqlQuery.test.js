@@ -13,6 +13,7 @@
 		SUBQUERIES: 'SELECT * WHERE {  {SELECT * WHERE { {SELECT * WHERE {}} }} }',
 		BOUND: 'SELECT * WHERE { ?bound <P> <O>.  OPTIONAL{ <S1> ?x ?bound2 }  <S2> <P2> <O2>.}',
 		COMMENTS: '#foo:bar\n#6*9=42\nSELECT * WHERE {  }',
+		LABEL_SERVICE: 'PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX bd: <http://www.bigdata.com/rdf#> SELECT * WHERE { SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" } }',
 	};
 
 	QUnit.test( 'When instantiating new SparqlQuery then', function( assert ) {
@@ -252,6 +253,36 @@
 			'content of #foo: comment must be bar' );
 		assert.strictEqual( q.getCommentContent( '6*9=' ), '42',
 			'six times nine must be forty-two' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.LABEL_SERVICE + '\'', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.LABEL_SERVICE );
+		var s = q.getServices();
+
+		assert.equal( s.length, 1, 'There should be one service' );
+		assert.equal( s[0].name, 'http://wikiba.se/ontology#label', 'Wikibase label service should be in services' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.LABEL_SERVICE + '\' and Wikibase label is removed', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.LABEL_SERVICE );
+		q.removeService( 'http://wikiba.se/ontology#label' );
+
+		var s = q.getServices();
+
+		assert.equal( s.length, 0, 'There should be no services' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.LABEL_SERVICE + '\' and some service is removed', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.LABEL_SERVICE );
+		q.removeService( 'SOME_SERVICE' );
+
+		var s = q.getServices();
+
+		assert.equal( s.length, 1, 'There should be one service' );
+		assert.equal( s[0].name, 'http://wikiba.se/ontology#label', 'Wikibase label service should be in services' );
 	} );
 
 }( jQuery, QUnit, sinon, wikibase ) );

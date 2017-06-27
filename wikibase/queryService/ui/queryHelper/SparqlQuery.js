@@ -291,6 +291,43 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	};
 
 	/**
+	 * Get services defined in query
+	 *
+	 * @return {object[]}
+	 */
+	SELF.prototype.getServices = function() {
+		var services = [];
+
+		$.each( this._query.where, function( i, node ) {
+			if ( node && node.type === 'service' ) {
+				services.push( node );
+			}
+
+		} );
+
+		return services;
+	};
+
+	/**
+	 * Remove a certain service from the query
+	 *
+	 * @param {string} serviceId of the service to be removed
+	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
+	 */
+	SELF.prototype.removeService = function( serviceId ) {
+		var self = this;
+
+		$.each( this._query.where, function ( i, node ) {
+			if ( node.type === 'service' && node.name === serviceId ) {
+				delete self._query.where[i];
+			}
+
+		} );
+
+		return this;
+	};
+
+	/**
 	 * Get the content of a content beginning with start.
 	 *
 	 * For example, on a query with '#foo=bar',
