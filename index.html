@@ -104,7 +104,7 @@
 			</nav>
 
 			<div id="query-box">
-				<form id="query-form">
+				<form id="query-form" action="https://query.wikidata.org/bigdata/namespace/wdq/sparql">
 					<textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea>
           <div class="status navbar navbar-default">
             <div class="navbar-left">
@@ -120,7 +120,7 @@
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
 								<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
-									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run"></span>
+									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run">Run</span>
 								</button>
 								<button type="button" class="btn btn-default" id="clear-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-clear-title">
 									<span data-i18n="wdqs-app-button-clear"></span>
@@ -182,6 +182,16 @@
 		<div class="row action-bar">
 			<div class="message"></div>
 		</div>
+		<noscript>
+			<div class="row action-bar" style="display: block">
+				<div class="message">
+					<div class="label label-warning">
+						For interactive query editing, a localized user interface, and other improvements,
+						please enable JavaScript or use a browser that supports it.
+					</div>
+				</div>
+			</div>
+		</noscript>
 		<div class="row">
 			<div id="query-result">Test result</div>
 		</div>
