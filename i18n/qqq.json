@@ -17,6 +17,7 @@
 	"wdqs-app-button-run-title": "Title for button to run SPARQL query",
 	"wdqs-app-button-clear": "Button to clear SPARQL query editor\n{{Identical|Clear}}",
 	"wdqs-app-button-clear-title": "Title for button to clear SPARQL query editor",
+	"wdqs-app-button-restore-title": "Title for button to restore SPARQL query in editor",
 	"wdqs-app-button-display": "Button display result as table, image, ...\n{{Identical|Display}}",
 	"wdqs-app-button-display-title": "Title for button display result as table, image, ...",
 	"wdqs-app-button-download": "Button download result\n{{Identical|Download}}",

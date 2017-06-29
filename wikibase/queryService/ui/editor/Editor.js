@@ -92,7 +92,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 
 		this._editor = CodeMirror.fromTextArea( element, CODEMIRROR_DEFAULTS );
 		this._editor.on( 'change', function( editor, changeObj ) {
-			self.storeValue( self.getValue() );
+			if ( self.getValue() !== '' ) {
+				self.storeValue( self.getValue() );
+			}
 			self.clearError();
 			if ( changeObj.text[0] === '?' || changeObj.text[0] === '#' ) {
 				editor.showHint( {

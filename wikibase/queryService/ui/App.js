@@ -356,6 +356,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			$( '.explorer-panel' ).hide();
 		} );
 
+		$( '.restore' ).click( function( e ) {
+			e.preventDefault();
+			self._editor.restoreValue();
+		} );
+
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
 
 		this._initPopovers();
