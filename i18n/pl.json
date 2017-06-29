@@ -4,7 +4,8 @@
 			"Chrumps",
 			"Woytecr",
 			"Sp5uhe",
-			"Szmyk"
+			"Szmyk",
+			"InternerowyGołąb"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -29,11 +30,14 @@
 	"wdqs-app-help-datamodel": "Model danych RDF",
 	"wdqs-app-help-prefixes": "Lista prefiksów",
 	"wdqs-app-help-copy": "Informacje o licencji",
+	"wdqs-app-help-queryhelper": "Pomocnik zapytania",
 	"wdqs-app-footer-help": "Naciśnij <i>[Ctrl + spacja]</i>, aby włączyć automatyczne uzupełnianie.",
 	"wdqs-app-footer-updated": "Dane zaktualizowano $1 temu",
 	"wdqs-app-footer-updated-seconds": "Dane zaktualizowane {{PLURAL:$1|sekundę|sekundy|sekund}} temu",
 	"wdqs-app-result-shorturl": "Skrócony URL do wyniku",
 	"wdqs-app-result-shorturl-title": "Skrócony URL do tego wyniku",
+	"wdqs-app-result-rawgraphs": "Otwórz w RAWGraphs.io",
+	"wdqs-app-result-rawgraphs-title": "Stwórz graf z rezultatami danych używając RAWGraphs.io",
 	"wdqs-app-result-embed": "Osadź wynik",
 	"wdqs-app-result-endpoint": "Punkt końcowy SPARQL",
 	"wdqs-app-result-endpoint-title": "Link do punktu końcowego SPARQL zwracającego wynik",
@@ -53,6 +57,7 @@
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarchiczny układ od prawej do lewej",
 	"wdqs-dialog-examples-preview-query": "Podgląd zapytania",
 	"wdqs-dialog-examples-preview-result": "Podgląd wyniku",
+	"wdqs-ve-filter": "Filtr",
 	"wdqs-ve-show": "Pokaż",
 	"wdqs-ve-with": "z",
 	"wdqs-ve-anything": "cokolwiek",
