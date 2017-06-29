@@ -6,7 +6,14 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, d3, _, wellknown, window ) {
 	'use strict';
 
-	var MAP_DATATYPE = 'http://www.opengis.net/ont/geosparql#wktLiteral';
+	/**
+	 * A list of datatypes that contain geo:wktLiteral values conforming with GeoSPARQL.
+	 * @private
+	 */
+	var MAP_DATATYPES = [
+		'http://www.opengis.net/ont/geosparql#wktLiteral', // used by Wikidata
+		'http://www.openlinksw.com/schemas/virtrdf#Geometry' // used by LinkedGeoData.org
+	];
 	var GLOBE_EARTH = 'http://www.wikidata.org/entity/Q2';
 	var CRS84 = 'http://www.opengis.net/def/crs/OGC/1.3/CRS84';
 	/**
@@ -222,7 +229,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		markers[ LAYER_DEFAULT_GROUP ] = [];
 
 		this._iterateResult( function( field, key, row ) {
-			if ( field && field.datatype === MAP_DATATYPE ) {
+			if ( field && MAP_DATATYPES.indexOf( field.datatype ) !== -1 ) {
 				var geoJson = self._extractGeoJson( field.value );
 				if ( !geoJson ) {
 					return;
@@ -375,7 +382,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * Check if this value contains an coordinate value.
 	 */
 	SELF.prototype._checkCoordinate = function( value ) {
-		if ( value && value.datatype === MAP_DATATYPE ) {
+		if ( value && MAP_DATATYPES.indexOf( value.datatype ) !== -1 ) {
 			var longLat = this._extractGeoJson( value.value );
 			if ( longLat !== null ) {
 				this._drawable = true;
