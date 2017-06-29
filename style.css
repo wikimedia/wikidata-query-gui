@@ -8,10 +8,6 @@ body {
 	white-space: pre;
 }
 
-#clear-button {
-	margin-right: 10px;
-}
-
 .query-total,
 #query-result,
 #hide-explorer {
@@ -120,13 +116,20 @@ iframe.shortUrl {
 #query-box .nav {
 	margin-left: 0;
 }
-.shareQuery {
-	z-index: 100;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-size: 25px;
-	background: rgba( 255, 255, 255, 0.5 );
+
+#query-box table {
+	width: 100%;
+}
+
+#query-box .toolbar {
+	width: 1.5em;
+	padding-top: 0.5em;
+	vertical-align: top;
+	text-align: left;
+}
+
+#query-box .toolbar .fa {
+	font-size: 1.5em;
 }
 
 /**
@@ -408,8 +411,8 @@ div.jqcloud span.w1 {
 	display: none;
 	z-index: 100;
 	position: absolute;
-	top: 10px;
-	right: 45px;
+	top: 0.5em;
+	right: 0.5em;
 	font-size: 25px;
 }
 
@@ -419,7 +422,7 @@ div.jqcloud span.w1 {
 	z-index: 100;
 	position: absolute;
 	top: 5px;
-	right: 45px;
+	right: 0.5em;
 	font-size: 15px;
 	padding-left: 35px;
 }

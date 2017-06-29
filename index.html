@@ -54,13 +54,6 @@
 							</button>
 						</li>
 						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span><span data-i18n="wdqs-app-button-prefixes"></span><span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><div class="namespace-shortcuts"></div></li>
-								<li role="separator" class="divider"></li>
-								<li><a class="addPrefixes" data-i18n="wdqs-app-editor-addprefixes"></a></li>
-							</ul></li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span data-i18n="wdqs-app-button-tools"></span><span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/hay/propbrowse/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Hay's Properties Browser</a></li>
@@ -105,25 +98,49 @@
 
 			<div id="query-box">
 				<form id="query-form" action="https://query.wikidata.org/bigdata/namespace/wdq/sparql">
-					<textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea>
-          <div class="status navbar navbar-default">
-            <div class="navbar-left">
-                <span data-i18n="[html]wdqs-app-footer-help"></span>
-            </div>
-            <div class="navbar-right">
-						        <span class="dataUpdated">
-						        </span>
-            </div>
+					<table>
+						<tr>
+							<td class="toolbar">
+								<div class="dropdown">
+									<a class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[title]wdqs-app-button-prefixes">
+									<span class="fa fa-thumb-tack" aria-hidden="true"></span><span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><strong data-i18n="wdqs-app-button-prefixes"></strong></li>
+										<li role="separator" class="divider"></li>
+										<li><div class="namespace-shortcuts"></div></li>
+										<li role="separator" class="divider"></li>
+										<li><a class="addPrefixes" data-i18n="wdqs-app-editor-addprefixes"></a></li>
+									</ul>
+								</div>
+								<div>
+									<a class="btn" data-i18n="[title]wdqs-app-button-examples" data-toggle="modal" data-target="#QueryExamples"> <span class="fa fa-folder-open-o" aria-hidden="true"></span>
+									</a>
+								</div>
+								<div>
+									<a class="btn" id="clear-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-clear-title"> <span class="fa fa-trash-o" aria-hidden="true"></span>
+									</a>
+								</div>
+								<div>
+									<a href="#" class="btn shareQuery shortUrlTrigger query" target="_blank" data-i18n="[title]wdqs-app-shorturl-page-title" data-toggle="popover"> <span class="fa fa-link" aria-hidden="true"></span></a>
+								</div>
+							</td>
+							<td><textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea></td>
+						</tr>
+					</table>
+					<div class="status navbar navbar-default">
+						<div class="navbar-left">
+							<span data-i18n="[html]wdqs-app-footer-help"></span>
+						</div>
+						<div class="navbar-right">
+							<span class="dataUpdated"> </span>
+						</div>
 
-          </div>
+					</div>
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
 								<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
 									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run">Run</span>
-								</button>
-								<button type="button" class="btn btn-default" id="clear-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-clear-title">
-									<span data-i18n="wdqs-app-button-clear"></span>
 								</button>
 								<span class="query-total">
 								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
@@ -176,7 +193,6 @@
 						<div class="panel-body"></div>
 					</div>
 				</div>
-				<a href="#" class="shareQuery shortUrlTrigger query" target="_blank" data-i18n="[title]wdqs-app-shorturl-page-title" data-toggle="popover"> <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
 			</div>
 		</div>
 		<div class="row action-bar">

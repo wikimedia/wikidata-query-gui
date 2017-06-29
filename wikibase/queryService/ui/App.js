@@ -369,7 +369,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		var self = this;
 
 		$( '.shortUrlTrigger.query' ).clickover( {
-			placement: 'left',
+			placement: 'right',
 			'global_close': true,
 			'html': true,
 			'content': function() {
