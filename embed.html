@@ -232,6 +232,10 @@ body {
 						'html': true,
 						'content': $editor
 					} );
+				if ( /^#TEMPLATE=/m.test( query ) ) {
+					// expand query template popover after allowing some time for labels to load
+					setTimeout( function() { $( '.edit' ).click(); }, 500 );
+				}
 			}
 
 			function renderQuery( query ) {
