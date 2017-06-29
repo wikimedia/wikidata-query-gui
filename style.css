@@ -77,9 +77,11 @@ body {
 }
 
 .queryEditor {
+	border: 0;
+	font-family: monospace;
 	min-height: 273px;
-	visibility: hidden;
 	padding: 0;
+	width: 100%;
 }
 
 pre.CodeMirror-placeholder {
