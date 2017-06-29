@@ -124,7 +124,16 @@
 									<a href="#" class="btn shareQuery shortUrlTrigger query" target="_blank" data-i18n="[title]wdqs-app-shorturl-page-title" data-toggle="popover"> <span class="fa fa-link" aria-hidden="true"></span></a>
 								</div>
 							</td>
-							<td><textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea></td>
+							<td rowspan="2"><textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea></td>
+						</tr>
+						<tr>
+							<td class="toolbar-bottom">
+								<div>
+									<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
+										<span class="fa fa-play" aria-hidden="true"></span>
+									</button>
+								</div>
+							</td>
 						</tr>
 					</table>
 					<div class="status navbar navbar-default">
@@ -139,9 +148,6 @@
 					<nav class="navbar navbar-default">
 						<div class="nav navbar-form navbar-left">
 							<div class="form-group">
-								<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
-									<span class="glyphicon glyphicon-play" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-run">Run</span>
-								</button>
 								<span class="query-total">
 								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
 							</div>

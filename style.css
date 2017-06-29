@@ -132,6 +132,16 @@ iframe.shortUrl {
 	font-size: 1.5em;
 }
 
+#query-box .toolbar-bottom {
+	padding-bottom: 0.5em;
+	vertical-align: bottom;
+	text-align: center;
+}
+
+#query-box .toolbar-bottom .fa {
+	font-size: 1.5em;
+}
+
 /**
 	Bootstrap Styles
 **/
