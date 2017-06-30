@@ -15,6 +15,14 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 				'Tab': function( cm ) {
 					var spaces = Array( cm.getOption( 'indentUnit' ) + 1 ).join( ' ' );
 					cm.replaceSelection( spaces );
+				},
+				'F11': function( cm ) {
+					cm.setOption( 'fullScreen', !cm.getOption( 'fullScreen' ) );
+				},
+				'Esc': function( cm ) {
+					if ( cm.getOption( 'fullScreen' ) ) {
+						cm.setOption( 'fullScreen', false );
+					}
 				}
 			},
 			'viewportMargin': Infinity,
@@ -284,6 +292,20 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	 */
 	SELF.prototype.registerCallback = function( type, callback ) {
 		this._editor.on( type, callback );
+	};
+
+	/**
+	 * Toggle editor fullscreen
+	 */
+	SELF.prototype.toggleFullscreen = function( fullscreen ) {
+		this._editor.setOption( 'fullScreen', !this._editor.getOption( 'fullScreen' ) );
+	};
+
+	/**
+	 * Set focus on the editor
+	 */
+	SELF.prototype.focus = function() {
+		this._editor.focus();
 	};
 
 	return SELF;

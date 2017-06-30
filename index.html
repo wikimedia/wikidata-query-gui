@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
 	<link rel="stylesheet" href="node_modules/codemirror/addon/hint/show-hint.css">
+	<link rel="stylesheet" href="node_modules/codemirror/addon/display/fullscreen.css">
 	<link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
 	<link rel="stylesheet" href="node_modules/vis/dist/vis.css">
 	<link rel="stylesheet" href="node_modules/ekko-lightbox/dist/ekko-lightbox.css">
@@ -101,9 +102,14 @@
 					<table>
 						<tr>
 							<td class="toolbar">
+								<div>
+									<a class="btn fullscreen" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-fullscreen-title"> <span class="fa fa-arrows-alt" aria-hidden="true"></span>
+									</a>
+								</div>
 								<div class="dropdown">
-									<a class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[title]wdqs-app-button-prefixes">
-									<span class="fa fa-thumb-tack" aria-hidden="true"></span><span class="caret"></span></a>
+									<a class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[title]wdqs-app-button-prefixes"> <span class="fa fa-thumb-tack"
+										aria-hidden="true"
+									></span><span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><strong data-i18n="wdqs-app-button-prefixes"></strong></li>
 										<li role="separator" class="divider"></li>
@@ -269,6 +275,7 @@
 	<script src="node_modules/codemirror/mode/sparql/sparql.js"></script>
 	<script src="node_modules/codemirror/addon/hint/show-hint.js"></script>
 	<script src="node_modules/codemirror/addon/display/placeholder.js"></script>
+	<script src="node_modules/codemirror/addon/display/fullscreen.js"></script>
 	<script src="node_modules/bootstrap-table/dist/bootstrap-table.js"></script>
 	<script src="node_modules/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.js"></script>
 	<script src="node_modules/bootstrap-table/dist/extensions/key-events/bootstrap-table-key-events.js"></script>
