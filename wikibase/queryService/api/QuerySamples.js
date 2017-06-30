@@ -20,8 +20,15 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 */
-	function SELF() {
+	function SELF( language ) {
+		this._language = language;
 	}
+
+	/**
+	 * @type {string}
+	 * @private
+	 */
+	SELF.prototype._language = null;
 
 	/**
 	 * @return {jQuery.Promise} Object taking list of example queries { title:, query: }
@@ -31,11 +38,23 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			self = this;
 
 		$.ajax( {
-			url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
+			url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE + '/' + self._language ) + '?redirect=false',
 			dataType: 'html'
 		} ).done(
 			function ( data ) {
 				deferred.resolve( self._parseHTML( data ) );
+			}
+		).fail(
+			function() {
+				// retry without language
+				$.ajax( {
+					url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
+					dataType: 'html'
+				} ).done(
+					function ( data ) {
+						deferred.resolve( self._parseHTML( data ) );
+					}
+				);
 			}
 		);
 
@@ -135,6 +154,15 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		} ).get();
 		// group by category
 		return _.flatten( _.toArray( _.groupBy( examples, 'category' ) ) );
+	};
+
+	/**
+	 * Set the language for the query samples.
+	 *
+	 * @param {string} language
+	 */
+	SELF.prototype.setLanguage = function( language ) {
+		this._language = language;
 	};
 
 	return SELF;
