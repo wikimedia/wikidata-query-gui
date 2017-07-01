@@ -105,6 +105,9 @@
 						<tr>
 							<td class="toolbar toolbar-top">
 								<div>
+									<a class="btn query-helper-trigger" target="_blank" title="Show query explanation"> <span class="fa fa-info-circle" aria-hidden="true"></span></a>
+								</div>
+								<div>
 									<a class="btn fullscreen" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-fullscreen-title"> <span class="fa fa-arrows-alt" aria-hidden="true"></span>
 									</a>
 								</div>
@@ -136,7 +139,22 @@
 									<a href="#" class="btn shareQuery shortUrlTrigger query" target="_blank" data-i18n="[title]wdqs-app-shorturl-page-title" data-toggle="popover"> <span class="fa fa-link" aria-hidden="true"></span></a>
 								</div>
 							</td>
-							<td rowspan="2"><textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea></td>
+							<td rowspan="2" class="split-panel query-helper query-helper-hidden">
+								<div class="">
+									<div class="panel panel-info">
+										<div class="panel-heading">
+											<strong data-i18n="wdqs-app-help-queryhelper"></strong> <a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Query_Helper"><span
+												class="glyphicon glyphicon-question-sign"
+											></span></a>
+											<button type="button" class="close" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="panel-body"></div>
+									</div>
+								</div>
+							</td>
+							<td rowspan="2" class="split-panel"><textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea></td>
 						</tr>
 						<tr>
 							<td class="toolbar toolbar-bottom">
@@ -198,19 +216,6 @@
 						</ul>
 					</nav>
 				</form>
-
-				<a href="#" class="query-helper-trigger" target="_blank" title="Show query explanation"> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
-				<div class="query-helper">
-					<div class="panel panel-info">
-						<div class="panel-heading">
-							<strong data-i18n="wdqs-app-help-queryhelper"></strong> <a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Query_Helper"><span class="glyphicon glyphicon-question-sign"></span></a>
-							<button type="button" class="close" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="panel-body"></div>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="row action-bar">

@@ -180,33 +180,30 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			self._editor.setValue( ve.getQuery() );
 		} );
 
-		if ( Cookies.get( cookieHide ) === 'true' ) {
-			$( '.query-helper-trigger' ).show();
+		if ( Cookies.get( cookieHide ) !== 'true' ) {
+			$( '.query-helper' ).removeClass( 'query-helper-hidden' );
 		}
 
 		if ( this._editor ) {
 			this._editor.registerCallback( 'change', _.debounce( function() {
-				if ( $( '.query-helper-trigger' ).is( ':visible' ) ||
-						self._editor.getValue() === self._queryHelper.getQuery() ) {
+				if ( self._editor.getValue() === self._queryHelper.getQuery() ) {
 					return;
 				}
 
-				$( '.query-helper' ).hide();
 				self._drawQueryHelper();
 			}, 1500 ) );
 		}
 
 		$( '.query-helper .panel-heading .close' ).click( function() {
 			Cookies.set( cookieHide, true );
-			$( '.query-helper' ).hide();
-			$( '.query-helper-trigger' ).show();
+			$( '.query-helper' ).addClass( 'query-helper-hidden' );
 			return false;
 		} );
 
-		$( '.query-helper-trigger' ).click( function() {
-			$( '.query-helper-trigger' ).hide();
-			Cookies.set( cookieHide, false );
-			self._drawQueryHelper();
+		$( '.query-helper-trigger' ).click( function () {
+			$( '.query-helper' ).toggleClass( 'query-helper-hidden' );
+			Cookies.set( cookieHide, !$( '.query-helper' ).is( ':visible' ) );
+
 			return false;
 		} );
 	};
@@ -218,8 +215,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		try {
 			this._queryHelper.setQuery( this._editor.getValue() );
 			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
-
-			$( '.query-helper' ).delay( 500 ).fadeIn();
 		} catch ( e ) {
 
 			this._editor.highlightError( e.message );

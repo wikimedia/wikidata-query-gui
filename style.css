@@ -124,8 +124,18 @@ iframe.shortUrl {
 	width: 100%;
 }
 
+#query-box td {
+	vertical-align: top;
+	max-width: 40vw;
+}
+
+#query-box .split-panel {
+	min-width: 40vw;
+}
+
 #query-box .toolbar {
 	width: 1.5em;
+	border-right: 1px solid #bce8f1;
 }
 
 #query-box .toolbar .fa {
@@ -434,24 +444,15 @@ div.jqcloud span.w1 {
 /*
 	Visual Editor
 */
-.query-helper-trigger {
-	display: none;
-	z-index: 100;
-	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
-	font-size: 25px;
-}
 
 .query-helper {
-	display: none;
-	min-width: 400px;
+	min-width: 300px;
 	z-index: 100;
-	position: absolute;
-	top: 5px;
-	right: 0.5em;
-	font-size: 15px;
-	padding-left: 35px;
+}
+
+.query-helper .panel {
+	border: none;
+	margin: 0 1em 0 1em;
 }
 
 .query-helper .panel-info {
@@ -476,8 +477,9 @@ div.jqcloud span.w1 {
 	min-width: 250px;
 	white-space: nowrap;
 }
-.query-helper td {
-	vertical-align: top;
+
+.query-helper-hidden {
+	display: none;
 }
 
 /*
