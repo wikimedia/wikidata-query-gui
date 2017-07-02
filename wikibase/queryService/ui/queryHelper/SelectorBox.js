@@ -53,10 +53,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 							}\n\
 						}\n\
 						ORDER BY DESC(?count)',
+						variable = this._query.getBoundVariables().shift(),
 						query = this._query.clone().setLimit( 1000 )
 							.removeService( 'http://wikiba.se/ontology#label' )
+							.addVariable( variable )
 							.getQueryString(),
-						variable = this._query.getBoundVariables().shift(),
 						prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
 
 					query = query.replace( /.*\bPREFIX\b.*/gi, '' );
@@ -136,8 +137,12 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						}\n\
 					}\n\
 					ORDER BY DESC(?count)',
-					query = this._query.clone().setLimit( 500 ).removeService( 'http://wikiba.se/ontology#label' ).getQueryString(),
 					variable = this._query.getBoundVariables().shift(),
+					query = this._query.clone()
+						.setLimit( 500 )
+						.removeService( 'http://wikiba.se/ontology#label' )
+						.addVariable( variable )
+						.getQueryString(),
 					prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
 
 				query = query.replace( /.*\bPREFIX\b.*/gi, '' );
