@@ -126,6 +126,10 @@ iframe.shortUrl {
 	padding-top: 0.5em;
 	vertical-align: top;
 	text-align: left;
+	opacity: 0.5;
+}
+#query-box .toolbar:hover {
+	opacity: 1;
 }
 
 #query-box .toolbar .fa {
@@ -134,6 +138,7 @@ iframe.shortUrl {
 
 #query-box .toolbar-bottom {
 	padding-bottom: 0.5em;
+	padding-top: 1em;
 	vertical-align: bottom;
 	text-align: center;
 }
