@@ -7,7 +7,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 
 	var API_SERVER = 'https://www.wikidata.org/',
 		API_ENDPOINT = API_SERVER + 'api/rest_v1/page/html/',
-		PAGE_TITLE = 'Wikidata:SPARQL query service/queries/examples',
+		PAGE_TITLE = 'Wikidata:SPARQL_query_service/queries/examples',
 		PAGE_URL = API_SERVER + 'wiki/' + PAGE_TITLE;
 
 	/**
