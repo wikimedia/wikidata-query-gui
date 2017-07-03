@@ -13,6 +13,8 @@
 	"wdqs-app-button-run-title": "Выканаць запыт (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Ачысьціць",
 	"wdqs-app-button-clear-title": "Ачысьціць запыт",
+	"wdqs-app-button-restore-title": "Аднавіць папярэдні запыт",
+	"wdqs-app-button-fullscreen-title": "Уключыць поўнаэкранны рэжым рэдактара",
 	"wdqs-app-button-display": "Фармат",
 	"wdqs-app-button-display-title": "Паказаць вынік як табліцу, выяву, …",
 	"wdqs-app-button-download": "Спампаваць",

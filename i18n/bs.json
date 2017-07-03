@@ -12,6 +12,8 @@
 	"wdqs-app-button-run-title": "Izvrši upit (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Očisti",
 	"wdqs-app-button-clear-title": "Očisti upit",
+	"wdqs-app-button-restore-title": "Vrati prethodni upit",
+	"wdqs-app-button-fullscreen-title": "Uključi/isključi režim cijelog ekrana uređivača",
 	"wdqs-app-button-display": "Prikaži",
 	"wdqs-app-button-display-title": "Prikaži rezultat kao tabelu, sliku, ...",
 	"wdqs-app-button-download": "Preuzmi",

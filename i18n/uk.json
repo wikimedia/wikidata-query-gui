@@ -16,6 +16,8 @@
 	"wdqs-app-button-run-title": "Виконати запит (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Очистити",
 	"wdqs-app-button-clear-title": "Очистити запит",
+	"wdqs-app-button-restore-title": "Відновити попередній запит",
+	"wdqs-app-button-fullscreen-title": "Запустити повноекранний режим редактора",
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-display-title": "Показати результат як таблицю, зображення, ...",
 	"wdqs-app-button-download": "Завантажити",

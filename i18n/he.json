@@ -14,6 +14,8 @@
 	"wdqs-app-button-run-title": "ביצוע שאילתה (<קונטרול> + <אנטר>)",
 	"wdqs-app-button-clear": "ניקוי",
 	"wdqs-app-button-clear-title": "ניקוי שאילתה",
+	"wdqs-app-button-restore-title": "שחזור השאילתה הקודמת",
+	"wdqs-app-button-fullscreen-title": "שינוי מצב מסך מלא של העורך",
 	"wdqs-app-button-display": "הצגה",
 	"wdqs-app-button-display-title": "הצגת התוצאה כטבלה, תמונה, ...",
 	"wdqs-app-button-download": "הורדה",

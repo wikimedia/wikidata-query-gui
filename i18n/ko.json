@@ -16,6 +16,8 @@
 	"wdqs-app-button-run-title": "쿼리 실행 (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "지우기",
 	"wdqs-app-button-clear-title": "쿼리 초기화",
+	"wdqs-app-button-restore-title": "이전 쿼리 복원",
+	"wdqs-app-button-fullscreen-title": "편집지 전체 화면 모드 토글",
 	"wdqs-app-button-display": "표시",
 	"wdqs-app-button-display-title": "표, 그림 등으로 결과 표시",
 	"wdqs-app-button-download": "다운로드",

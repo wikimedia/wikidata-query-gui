@@ -14,6 +14,8 @@
 	"wdqs-app-button-run-title": "Utför förfrågan (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Rensa",
 	"wdqs-app-button-clear-title": "Rensa förfrågan",
+	"wdqs-app-button-restore-title": "Återställ föregående fråga",
+	"wdqs-app-button-fullscreen-title": "Växla helskärmsläge för redigerare",
 	"wdqs-app-button-display": "Visning",
 	"wdqs-app-button-display-title": "Visa resultat som tabell, bild, ...",
 	"wdqs-app-button-download": "Ladda ned",
