@@ -123,17 +123,20 @@ iframe.shortUrl {
 
 #query-box .toolbar {
 	width: 1.5em;
+}
+
+#query-box .toolbar .fa {
+	font-size: 1.5em;
+}
+
+#query-box .toolbar-top {
 	padding-top: 0.5em;
 	vertical-align: top;
 	text-align: left;
 	opacity: 0.5;
 }
-#query-box .toolbar:hover {
+#query-box .toolbar-top:hover {
 	opacity: 1;
-}
-
-#query-box .toolbar .fa {
-	font-size: 1.5em;
 }
 
 #query-box .toolbar-bottom {
@@ -141,10 +144,6 @@ iframe.shortUrl {
 	padding-top: 1em;
 	vertical-align: bottom;
 	text-align: center;
-}
-
-#query-box .toolbar-bottom .fa {
-	font-size: 1.5em;
 }
 
 /**
