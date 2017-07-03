@@ -112,21 +112,24 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	 * Add a variable to the query SELECT
 	 *
 	 * @param {string} name
+	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
 	 */
 	SELF.prototype.addVariable = function( name ) {
 		if ( !name.startsWith( '?' ) ) {
-			return;
+			return this;
 		}
 
 		if ( this._query.variables.length === 1 && this._query.variables[0] === '*' ) {
-			return;
+			return this;
 		}
 
 		if ( this._query.variables.indexOf( name ) >= 0 ) {
-			return;
+			return this;
 		}
 
 		this._query.variables.push( name );
+
+		return this;
 	};
 
 	/**
