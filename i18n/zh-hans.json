@@ -14,6 +14,7 @@
 	"wdqs-app-button-run-title": "执行查询（<CTRL> + <ENTER>）",
 	"wdqs-app-button-clear": "清除",
 	"wdqs-app-button-clear-title": "清空查询",
+	"wdqs-app-button-restore-title": "恢复上次查询",
 	"wdqs-app-button-display": "显示",
 	"wdqs-app-button-display-title": "显示结果为表格、图片...",
 	"wdqs-app-button-download": "下载",

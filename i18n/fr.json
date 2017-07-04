@@ -16,6 +16,8 @@
 	"wdqs-app-button-run-title": "Lancer la requête (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Effacer",
 	"wdqs-app-button-clear-title": "Effacer la requête",
+	"wdqs-app-button-restore-title": "Rétablir la requête précédente",
+	"wdqs-app-button-fullscreen-title": "Basculer en mode plein écran de l’éditeur",
 	"wdqs-app-button-display": "Afficher",
 	"wdqs-app-button-display-title": "Afficher le résultat sous forme de table, d’image, …",
 	"wdqs-app-button-download": "Télécharger",
