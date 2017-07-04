@@ -301,6 +301,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 			instance.setSparqlApi( self._sparqlApi );
 
 			if ( defaultBrowser === null || defaultBrowser === key ) {
+				self._setSelectedDisplayType( b );
+
 				defaultBrowser = instance;
 			}
 			b.object = instance;
@@ -344,6 +346,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 				b.$element.click( function() {
 					$( this ).closest( '.open' ).removeClass( 'open' );
 
+					self._setSelectedDisplayType( b );
+
 					$( '#query-result' ).html( '' );
 					self._drawResult( b.object );
 					self._selectedResultBrowser = key;
@@ -375,6 +379,14 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 			self._handleQueryResultBrowsers();
 		}, 20 );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._setSelectedDisplayType = function ( browser ) {
+		$( '#display-button-icon' ).attr( 'class', browser.icon.split( '-', 1 )[0] + ' ' + browser.icon );
+		$( '#display-button-label' ).text( browser.label );
 	};
 
 	/**
