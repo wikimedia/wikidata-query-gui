@@ -32,11 +32,13 @@
 
 			var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
+				querySamplesApi = new wb.api.QuerySamples( lang ),
 				languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
 
 			languageSelector.setChangeListener( function( lang ) {
 				api.setLanguage( lang );
 				sparqlApi.setLanguage( lang );
+				querySamplesApi.setLanguage( lang );
 				setLanguage( lang );
 			} );
 
@@ -44,10 +46,12 @@
 			var rdfTooltip = new wb.ui.editor.tooltip.Rdf( api );
 
 			new wb.ui.App(
-					$( '.wikibase-queryservice ' ),
-					new wb.ui.editor.Editor( rdfHint, null, rdfTooltip ),
-					new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
-					sparqlApi );
+				$( '.wikibase-queryservice ' ),
+				new wb.ui.editor.Editor( rdfHint, null, rdfTooltip ),
+				new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
+				sparqlApi,
+				querySamplesApi
+			);
 		} );
 
 } )( jQuery, CONFIG, moment );
