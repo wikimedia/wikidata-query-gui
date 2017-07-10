@@ -101,9 +101,9 @@
 
 			<div id="query-box">
 				<form id="query-form" action="https://query.wikidata.org/bigdata/namespace/wdq/sparql">
-					<table>
-						<tr>
-							<td class="toolbar toolbar-top">
+					<div class="query-main">
+						<div class="toolbar">
+							<div class="toolbar-top">
 								<div>
 									<a class="btn query-helper-trigger" target="_blank" title="Show query explanation"> <span class="fa fa-info-circle" aria-hidden="true"></span></a>
 								</div>
@@ -138,34 +138,33 @@
 								<div>
 									<a href="#" class="btn shareQuery shortUrlTrigger query" target="_blank" data-i18n="[title]wdqs-app-shorturl-page-title" data-toggle="popover"> <span class="fa fa-link" aria-hidden="true"></span></a>
 								</div>
-							</td>
-							<td rowspan="2" class="split-panel query-helper query-helper-hidden">
-								<div class="">
-									<div class="panel panel-info">
-										<div class="panel-heading">
-											<strong data-i18n="wdqs-app-help-queryhelper"></strong> <a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Query_Helper"><span
-												class="glyphicon glyphicon-question-sign"
-											></span></a>
-											<button type="button" class="close" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="panel-body"></div>
+							</div>
+							<div class="toolbar-bottom">
+								<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
+									<span class="fa fa-play" aria-hidden="true"></span>
+								</button>
+							</div>
+						</div>
+						<div class="query-helper-and-editor">
+							<div class="query-helper query-helper-hidden">
+								<div class="panel panel-info">
+									<div class="panel-heading">
+										<strong data-i18n="wdqs-app-help-queryhelper"></strong> <a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Query_Helper"><span
+											class="glyphicon glyphicon-question-sign"
+										></span></a>
+										<button type="button" class="close" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
 									</div>
+									<div class="panel-body"></div>
 								</div>
-							</td>
-							<td rowspan="2" class="split-panel"><textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea></td>
-						</tr>
-						<tr>
-							<td class="toolbar toolbar-bottom">
-								<div>
-									<button type="submit" class="btn btn-info" id="execute-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-run-title">
-										<span class="fa fa-play" aria-hidden="true"></span>
-									</button>
-								</div>
-							</td>
-						</tr>
-					</table>
+							</div>
+							<div class="splitter"></div>
+							<div class="query-editor-container">
+								<textarea class="queryEditor" name="query" data-i18n="[placeholder]wdqs-app-editor-placeholder" placeholder="(Input a SPARQL query or choose a query example)"></textarea>
+							</div>
+						</div>
+					</div>
 					<div class="status navbar navbar-default">
 						<div class="navbar-right">
 							<span class="dataUpdated"> </span>
@@ -311,6 +310,7 @@
 	<script src="node_modules/jquery.i18n/src/jquery.i18n.parser.js"></script>
 	<script src="node_modules/jquery.i18n/src/jquery.i18n.emitter.js"></script>
 	<script src="node_modules/jquery.i18n/src/jquery.i18n.language.js"></script>
+	<script src="node_modules/jquery-resizable-dom/dist/jquery-resizable.js"></script>
 	<script src="node_modules/jstree/dist/jstree.js"></script>
 	<script src="node_modules/wellknown/wellknown.js"></script>
 	<script src="vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>

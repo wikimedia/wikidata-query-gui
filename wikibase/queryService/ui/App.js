@@ -180,6 +180,12 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			self._editor.setValue( ve.getQuery() );
 		} );
 
+		$( '.query-helper' ).resizable( {
+			handleSelector: '.splitter',
+			resizeHeight: false,
+			onDragEnd: this._updateQueryEditorSize.bind( this )
+		} );
+
 		if ( Cookies.get( cookieHide ) !== 'true' ) {
 			$( '.query-helper' ).removeClass( 'query-helper-hidden' );
 		}
@@ -197,12 +203,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( '.query-helper .panel-heading .close' ).click( function() {
 			Cookies.set( cookieHide, true );
 			$( '.query-helper' ).addClass( 'query-helper-hidden' );
+			self._updateQueryEditorSize();
 			return false;
 		} );
 
 		$( '.query-helper-trigger' ).click( function () {
 			$( '.query-helper' ).toggleClass( 'query-helper-hidden' );
 			Cookies.set( cookieHide, !$( '.query-helper' ).is( ':visible' ) );
+			self._updateQueryEditorSize();
 
 			return false;
 		} );
@@ -219,6 +227,17 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			this._editor.highlightError( e.message );
 			window.console.error( e );
+		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._updateQueryEditorSize = function() {
+		if ( this._editor ) {
+			// set CodeMirror width to container width determined by Flex
+			this._editor._editor.setSize( 0, null ); // unset width so container width is unaffected by CodeMirror
+			this._editor._editor.setSize( $( '.query-editor-container' ).width(), null ); // set width to container width
 		}
 	};
 
