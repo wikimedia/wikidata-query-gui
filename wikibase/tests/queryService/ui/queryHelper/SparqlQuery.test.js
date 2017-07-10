@@ -8,6 +8,7 @@
 		SIMPLE: 'SELECT * WHERE {}',
 		LIMIT: 'SELECT * WHERE {} LIMIT 10',
 		VARIABLES: 'SELECT ?x1 ?x2 ?x3 WHERE {} LIMIT 10',
+		TRIPLE_VARIABLES: 'SELECT ?y1 ?y2 ?y3 WHERE { ?x1 ?x2 ?x3. }\nLIMIT 10',
 		TRIPLES_UNION: 'SELECT ?x1 ?x2 ?x3 WHERE { <S> <P> <O>.  OPTIONAL{ <S1> <P1> <O1> }  <S2> <P2> <O2>. { <SU1> <PU1> <OU1> } UNION { <SU2> <PU2> <OU2> } }',
 		TRIPLES: 'SELECT ?x1 ?x2 ?x3 WHERE { <S> <P> <O>.  OPTIONAL{ <S1> <P1> <O1> }  <S2> <P2> <O2>.}',
 		SUBQUERIES: 'SELECT * WHERE {  {SELECT * WHERE { {SELECT * WHERE {}} }} }',
@@ -99,14 +100,10 @@
 	} );
 
 	QUnit.test( 'When query is \'' + QUERY.SIMPLE + '\' THEN', function( assert ) {
-		assert.expect( 6 );
-
 		var q = new PACKAGE.SparqlQuery();
 		q.parse( QUERY.SIMPLE );
 
-		assert.ok( q.hasVariable( '?XX' ), '?XX must be a variable' );
-		assert.ok( q.hasVariable( '?YYY' ), '?YYY must be a variable' );
-		assert.ok( q.hasVariable( '?ZZLABEL' ), '?ZZLABEL must be a variable' );
+		assert.notOk( q.hasVariable( '?XX' ), '?XX must not be a variable' );
 		assert.notOk( q.hasVariable( 'XX' ), 'XX must not be a variable' );
 		assert.notOk( q.hasVariable( 'YY' ), 'XX must not be a variable' );
 		assert.notOk( q.hasVariable( 'ZZ' ), 'XX must not be a variable' );
@@ -283,6 +280,44 @@
 
 		assert.equal( s.length, 1, 'There should be one service' );
 		assert.equal( s[0].name, 'http://wikiba.se/ontology#label', 'Wikibase label service should be in services' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.TRIPLE_VARIABLES + '\'', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.TRIPLE_VARIABLES );
+
+		assert.deepEqual( q.getTripleVariables(), [ '?x1', '?x2', '?x3' ], 'all variables should be returned' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.TRIPLE_VARIABLES + '\' and variables are cleaned up ', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.TRIPLE_VARIABLES );
+		q.cleanupVariables();
+
+		assert.deepEqual( q.getQueryString(), QUERY.TRIPLE_VARIABLES.replace( /SELECT(.*)WHERE/, 'SELECT * WHERE' ),
+				'Unused variables should be removed' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.TRIPLE_VARIABLES + '\' and variables are cleaned up with filter ', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.TRIPLE_VARIABLES );
+		q.cleanupVariables( [ '?someUnrelatedVariable' ] );
+
+		assert.deepEqual( q.getQueryString(), QUERY.TRIPLE_VARIABLES , 'Unused variables in filter list should not be removed' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.SIMPLE + '\' ', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.SIMPLE );
+
+		assert.ok( q.isWildcardQuery(), 'isWildcardQuery returns true' );
+	} );
+
+	QUnit.test( 'When query is \'' + QUERY.VARIABLES + '\' ', function( assert ) {
+		var q = new PACKAGE.SparqlQuery();
+		q.parse( QUERY.VARIABLES );
+
+		assert.notOk( q.isWildcardQuery(), 'isWildcardQuery returns false' );
 	} );
 
 }( jQuery, QUnit, sinon, wikibase ) );

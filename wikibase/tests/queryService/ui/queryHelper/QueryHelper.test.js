@@ -39,8 +39,19 @@
 				sparqlIn: 'SELECT ?pid WHERE {  BIND(wd:Q5 AS ?thing)  ?pid wdt:P31 ?thing.}',
 				sparqlOut: 'SELECT ?pid WHERE {\n  BIND(wd:Q5 AS ?thing)\n  ?pid wdt:P31 ?thing.\n}',
 				text: 'instance of human Limit'
+			},
+			{
+				name: 'Wildcard query with unbound variables',
+				sparqlIn: 'SELECT * WHERE { ?item wdt:P31 ?instance. }',
+				sparqlOut: 'SELECT * WHERE { ?item wdt:P31 ?instance. }',
+				text: 'instance of Limit'
+			},
+			{
+				name: 'Wildcard query with show section and unbound query',
+				sparqlIn: 'SELECT * WHERE { ?item wdt:P31 wd:Q146.  OPTIONAL { ?item wdt:P39 ?position. } }',
+				sparqlOut: 'SELECT * WHERE {\n  ?item wdt:P31 wd:Q146.\n  OPTIONAL { ?item wdt:P39 ?position. }\n}',
+				text: 'instance of cat position held Limit'
 			}
-
 	];
 
 	var LABELS = {
