@@ -5,10 +5,10 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, moment ) {
 	'use strict';
 
-	var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
-	var RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=';
-
-	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
+	var SHORTURL_API = '//tinyurl.com/api-create.php?url=',
+		RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=',
+		TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
+		DEFAULT_QUERY = 'SELECT * WHERE {} LIMIT 20';
 
 	/**
 	 * A ui application for the Wikibase query service
@@ -221,6 +221,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			return false;
 		} );
+
+		window.setTimeout( $.proxy( this._drawQueryHelper, this ), 500 );
 	};
 
 	/**
@@ -228,7 +230,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._drawQueryHelper = function() {
 		try {
-			this._queryHelper.setQuery( this._editor.getValue() );
+			this._queryHelper.setQuery( this._editor.getValue() || DEFAULT_QUERY );
 			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
 			$( '.query-helper' ).css( 'min-width', '' );
 			this._updateQueryHelperMinWidth(); // TODO also do this after labels in the query helper have loaded
