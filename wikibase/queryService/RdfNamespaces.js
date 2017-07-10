@@ -36,6 +36,7 @@ wikibase.queryService.RdfNamespaces = {};
 		},
 		'Social/Other': {
 			schema: 'http://schema.org/',
+			geo: 'http://www.opengis.net/ont/geosparql#',
 			geof: 'http://www.opengis.net/def/geosparql/function/'
 		},
 		Blazegraph: {
