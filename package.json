@@ -20,7 +20,7 @@
     "codemirror": "^5.27.4",
     "d3": "^3.5.17",
     "dimple-js": "^2.1.4",
-    "downloadjs": "^1.4.7",
+    "downloadjs": "1.4.4",
     "ekko-lightbox": "^4.0.1",
     "es6-shim": "^0.35.3",
     "font-awesome": "^4.7.0",
