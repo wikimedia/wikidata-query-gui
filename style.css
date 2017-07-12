@@ -259,9 +259,10 @@ iframe.shortUrl {
 	.navbar-collapse.collapse {
 		display: none !important;
 	}
-	.navbar-nav {
+	.navbar-nav,
+	.navbar-form {
 		float: none !important;
-		margin: 7.5px -15px;
+		margin: 0;
 	}
 	.navbar-nav > li > a {
 		padding-top: 10px;
