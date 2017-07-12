@@ -125,7 +125,8 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			edges = {},
 			rows = [],
 			format = this._getFormatter(),
-			node = {};
+			node = {},
+			edge = {};
 
 		this._iterateResult( function( field, key, row, rowIndex ) {
 			if ( !field || !field.value ) {
@@ -141,7 +142,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 					title: label
 				};
 				if ( rows[rowIndex] ) {// create new edge
-					var edge = {
+					edge = {
 							from: rows[rowIndex],
 							to: nodeId
 						};
@@ -173,6 +174,10 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 					var foreground = format.calculateLuminance( field.value ) <= 0.5 ? '#FFF' : '#000';
 					node.font = { color: foreground };
 				}
+			}
+
+			if ( key === 'edgeLabel' ) {
+				edge.label = field.value;
 			}
 		} );
 
