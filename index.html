@@ -155,19 +155,22 @@
 						</div>
 
 					</div>
-					<nav class="navbar navbar-default">
-						<div class="nav navbar-form navbar-left">
-							<div class="form-group">
-								<span class="query-total">
-								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
-							</div>
-						</div>
-						<ul class="nav navbar-nav navbar-right query-total">
+					<nav class="navbar navbar-default result">
+						<ul class="nav navbar-nav navbar-left">
 							<li><a id="display-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-display-title"><span id="display-button-icon" class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span id="display-button-label"></span><span class="caret"></span>
 							</a>
 								<ul id="result-browser-menu" class="dropdown-menu" role="menu">
 								</ul></li>
 							<li>
+							<li>
+								<a target="_blank" class="help" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views"><span class="fa fa-question-circle"></span></a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="navbar-text">
+								<span class="query-total">
+								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
+							</li>
 							<li><a id="download-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-download-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span data-i18n="wdqs-app-button-download"></span><span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">

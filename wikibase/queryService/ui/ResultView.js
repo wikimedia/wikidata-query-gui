@@ -211,7 +211,7 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 		this._actionBar.show( 'wdqs-action-query', '', 'info', 100 );
 
 		$( '#query-result' ).empty().hide();
-		$( '.query-total' ).hide();
+		$( '.result' ).hide();
 		$( '#query-error' ).hide();
 
 		this._sparqlApi.query( query )
@@ -270,7 +270,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 		$( '#total-results' ).text( api.getResultLength() );
 		$( '#query-time' ).text( api.getExecutionTime() );
-		$( '.query-total' ).show();
+		$( '.result' ).show();
+
 		$( '#execute-button' ).prop( 'disabled', false );
 
 		var defaultBrowser = this._createResultBrowsers( api.getResultRawData() );
