@@ -146,6 +146,10 @@ iframe.shortUrl {
 	text-align: center;
 }
 
+.jq-toast-single a {
+	border: none;
+}
+
 /**
 	Bootstrap Styles
 **/

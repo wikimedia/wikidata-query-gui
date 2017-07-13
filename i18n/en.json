@@ -56,6 +56,7 @@
     "wdqs-app-resultbrowser-hierarchical-lr": "Hierarchical layout left to right",
     "wdqs-app-resultbrowser-hierarchical-ud": "Hierarchical layout up to down",
     "wdqs-app-resultbrowser-hierarchical-rl": "Hierarchical layout right to left",
+    "wdqs-app-toast-leave-fullscreen": "Press [esc] to leave fullscreen",
     "wdqs-dialog-examples-preview-query": "Preview query",
     "wdqs-dialog-examples-preview-result": "Preview result",
     "wdqs-ve-filter": "Filter",
