@@ -215,7 +215,14 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	SELF.prototype.highlightError = function( description ) {
 		var line,
 			character,
-			match = description.match( /line (\d+), column (\d+)/ );
+			match = null;
+
+		match = description.match( /line ([0-9]*)\:/i );
+		if ( match ) {
+			line = match[1];
+		}
+
+		match = description.match( /line (\d+), column (\d+)/ );
 		if ( match ) {
 			// highlight character at error position
 			line = match[1] - 1;
@@ -224,14 +231,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 				character = this._editor.doc.getLine( line ).length - 1;
 			}
 
-			ERROR_LINE_MARKER = this._editor.doc.markText( {
-				'line': line,
-				'ch': 0
-			}, {
-				'line': line
-			}, {
-				'className': 'error-line'
-			} );
 			ERROR_CHARACTER_MARKER = this._editor.doc.markText( {
 				'line': line,
 				'ch': character
@@ -242,6 +241,17 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 				'className': 'error-character'
 			} );
 		}
+
+		if ( line ) {
+			ERROR_LINE_MARKER = this._editor.doc.markText( {
+				'line': line,
+				'ch': 0
+			}, {
+				'line': line
+			}, {
+				'className': 'error-line'
+			} );
+		}
 	};
 
 	/**
@@ -250,6 +260,8 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	SELF.prototype.clearError = function() {
 		if ( ERROR_LINE_MARKER ) {
 			ERROR_LINE_MARKER.clear();
+		}
+		if ( ERROR_CHARACTER_MARKER ) {
 			ERROR_CHARACTER_MARKER.clear();
 		}
 	};

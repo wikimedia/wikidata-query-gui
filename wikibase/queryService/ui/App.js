@@ -221,6 +221,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			$( '.query-helper' ).delay( 500 ).fadeIn();
 		} catch ( e ) {
+
+			this._editor.highlightError( e.message );
 			window.console.error( e );
 		}
 	};
