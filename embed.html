@@ -198,6 +198,8 @@ body {
 		};
 
 		$( document ).ready( function() {
+			var sparqlApi = new wikibase.queryService.api.Sparql();
+
 			function getResultBrowser( query ) {
 				var browser = null;
 				var browserPackage = wikibase.queryService.ui.resultBrowser;
@@ -210,6 +212,7 @@ body {
 					var browserClass = RESULT_BROWSER.Table.class;
 					browser = new browserPackage[browserClass]();
 				}
+				browser.setSparqlApi( sparqlApi );
 
 				var tracking = new wikibase.queryService.api.Tracking();
 				tracking.track( 'wikibase.queryService.ui.embed.' + ( browserKey || 'default' ) );
@@ -243,13 +246,12 @@ body {
 				window.location.hash = '#' + encodeURIComponent( query )
 
 				var browser = getResultBrowser( query );
-				var api = new wikibase.queryService.api.Sparql();
 				$( '#query-result' ).hide();
 				$( '#query-result' ).empty();
 				$( '#progress' ).show();
-				api.query( query ).done( function() {
+				sparqlApi.query( query ).done( function() {
 					try {
-						browser.setResult( api.getResultRawData() );
+						browser.setResult( sparqlApi.getResultRawData() );
 						$( '#query-result' ).show();
 						browser.draw( $( '#query-result' ) );
 						$( '#progress' ).hide();
