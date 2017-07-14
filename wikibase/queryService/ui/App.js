@@ -149,13 +149,15 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 * @private
 	 */
 	SELF.prototype._initEditor = function() {
+		var self = this;
+
 		this._editor.fromTextArea( this._$element.find( '.queryEditor' )[0] );
 
 		this._editor.registerCallback( 'change', function( editor, changeObj ) {
 			if ( changeObj.text[0] === ':' ) {
 				var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Code_Completion">' )
 					.append( $.i18n( 'wdqs-app-footer-help' ) );
-				$.toast( $help[0].outerHTML );
+				self._toast( $help, 'wdqs-app-footer-help' );
 			}
 		} );
 
@@ -376,7 +378,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Editor_Toolbar">' )
 				.append( $.i18n( 'wdqs-app-toast-leave-fullscreen' ) );
-			$.toast( $help[0].outerHTML );
+			self._toast( $help, 'wdqs-app-toast-leave-fullscreen' );
 		} );
 
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
@@ -603,6 +605,27 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				window.location.hash = hash;
 			}
 		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._toast = function( $el, id ) {
+		var cookie = 'hide-toast-' + id;
+		if ( Cookies.get( cookie ) ) {
+			return;
+		}
+
+		$.toast( {
+			loader: false,
+			stack: 1,
+			text: $el[0].outerHTML,
+			afterShown: function () {
+				$( '.close-jq-toast-single' ).click( function () {
+					Cookies.set( cookie, true );
+				} );
+			}
+		} );
 	};
 
 	/**
