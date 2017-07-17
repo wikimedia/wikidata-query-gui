@@ -73,7 +73,7 @@
 			assert.expect( 2 );
 
 			var api = new wb.queryService.api.Wikibase();
-			sinon.stub( api, 'searchEntities', function ( id ) {
+			sinon.stub( api, 'searchEntities' ).callsFake( function ( id ) {
 				var label = id;
 				if ( LABELS[id] ) {
 					label = LABELS[id];
