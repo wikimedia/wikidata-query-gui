@@ -2,8 +2,20 @@
 var CONFIG = ( function ( window, $ ) {
 	'use strict';
 
+	function getUserLanguage() {
+		var lang = ( navigator.languages && navigator.languages[0] ) ||
+			navigator.language ||
+			navigator.userLanguage;
+
+		if ( lang && typeof lang === 'string' ) {
+			return lang.split( '-' ).shift();
+		}
+
+		return null;
+	}
+
 	var configDeploy = {
-		language: 'en',
+		language: getUserLanguage() || 'en',
 		api: {
 			sparql: {
 				uri: '/bigdata/namespace/wdq/sparql'
