@@ -151,6 +151,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._initEditor = function() {
 		this._editor.fromTextArea( this._$element.find( '.queryEditor' )[0] );
 
+		this._editor.registerCallback( 'change', function( editor, changeObj ) {
+			if ( changeObj.text[0] === ':' ) {
+				var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Code_Completion">' )
+					.append( $.i18n( 'wdqs-app-footer-help' ) );
+				$.toast( $help[0].outerHTML );
+			}
+		} );
+
 		// if(window.history.pushState) {//this works only in modern browser
 		// this._editor.registerCallback( 'change', $.proxy( this._updateQueryUrl, this) );
 		// }
