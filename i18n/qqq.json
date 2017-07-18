@@ -58,6 +58,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Button message in graph browser toolbar",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Button message in graph browser toolbar",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Button message in graph browser toolbar",
+    "wdqs-app-toast-leave-fullscreen": "Explaination how to exit fullscreen",
 	"wdqs-dialog-examples-preview-query": "Label to preview query in example dialog",
 	"wdqs-dialog-examples-preview-result": "Label to preview result in example dialog",
 	"wdqs-ve-filter": "Label to add a filter in Query Helper\n{{Identical|Filter}}",

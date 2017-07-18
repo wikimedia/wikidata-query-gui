@@ -365,6 +365,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			e.preventDefault();
 			self._editor.toggleFullscreen();
 			self._editor.focus();
+
+			var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Editor_Toolbar">' )
+				.append( $.i18n( 'wdqs-app-toast-leave-fullscreen' ) );
+			$.toast( $help[0].outerHTML );
 		} );
 
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
