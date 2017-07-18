@@ -550,6 +550,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	SELF.prototype._handleQuerySubmit = function( e ) {
 		var self = this;
 
+		this._track( 'buttonClick.execute' );
 		if ( !this._hasRunFirstQuery ) {
 			this._track( 'firstQuery' );
 			this._hasRunFirstQuery = true;
