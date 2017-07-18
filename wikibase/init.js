@@ -8,8 +8,10 @@
 		$( '.navbar-brand a > span' ).text( config.brand.title );
 	}
 
-	function setLanguage( lang ) {
-		Cookies.set( 'lang', lang );
+	function setLanguage( lang, save ) {
+		if ( save ) {
+			Cookies.set( 'lang', lang );
+		}
 
 		$.i18n.debug = true;
 		$.i18n().locale = lang;
@@ -28,7 +30,7 @@
 			setBrand();
 
 			var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language;
-			setLanguage( lang );
+			setLanguage( lang, false );
 
 			var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
@@ -39,7 +41,7 @@
 				api.setLanguage( lang );
 				sparqlApi.setLanguage( lang );
 				querySamplesApi.setLanguage( lang );
-				setLanguage( lang );
+				setLanguage( lang, true );
 			} );
 
 			var rdfHint = new wb.ui.editor.hint.Rdf( api );
