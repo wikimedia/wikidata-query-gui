@@ -1,5 +1,15 @@
+html {
+	background-color: white;
+}
+
 body {
 	overflow-y: scroll;
+	width: 100%;
+	height: 100%;
+}
+
+.wikibase-queryservice {
+	background-color: white;
 }
 .error {
 	margin: 20px;

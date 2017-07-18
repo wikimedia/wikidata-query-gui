@@ -375,18 +375,44 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 		$( '.fullscreen' ).click( function( e ) {
 			e.preventDefault();
-			self._editor.toggleFullscreen();
-			self._editor.focus();
-
-			var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Editor_Toolbar">' )
-				.append( $.i18n( 'wdqs-app-toast-leave-fullscreen' ) );
-			self._toast( $help, 'wdqs-app-toast-leave-fullscreen' );
+			self._toggleFullscreen();
 		} );
 
 		$( window ).on( 'popstate', $.proxy( this._initQuery, this ) );
 
 		this._initPopovers();
 		this._initHandlersDownloads();
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._toggleFullscreen = function () {
+		if ( document.fullscreenElement || document.mozFullScreenElement ||
+				document.webkitIsFullScreen || document.msFullscreenElement ) {
+			if ( document.exitFullscreen ) {
+				document.exitFullscreen();
+			} else if ( document.msExitFullscreen ) {
+				document.msExitFullscreen();
+			} else if ( document.mozCancelFullScreen ) {
+				document.mozCancelFullScreen();
+			} else if ( document.webkitExitFullscreen ) {
+				document.webkitExitFullscreen();
+			}
+		} else {
+			var el = document.documentElement;
+
+			if ( el.requestFullscreen ) {
+				el.requestFullscreen();
+			} else if ( el.msRequestFullscreen ) {
+				el = document.body; // overwrite the element (for IE)
+				el.msRequestFullscreen();
+			} else if ( el.mozRequestFullScreen ) {
+				el.mozRequestFullScreen();
+			} else if ( el.webkitRequestFullscreen ) {
+				el.webkitRequestFullScreen();
+			}
+		}
 	};
 
 	/**
