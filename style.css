@@ -8,7 +8,6 @@ body {
 	white-space: pre;
 }
 
-.query-total,
 #query-result,
 #hide-explorer {
 	display: none;
@@ -32,6 +31,10 @@ body {
 
 .error-character {
 	background: lightsalmon;
+}
+
+.result {
+	display: none;
 }
 
 #query-result pre {
@@ -161,6 +164,9 @@ iframe.shortUrl {
 	margin-bottom: 0;
 }
 
+.navbar .help {
+	padding-left: 0;
+}
 .navbar-right {
 	margin-right: 0;
 }
