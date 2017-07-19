@@ -183,6 +183,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( '.query-helper' ).resizable( {
 			handleSelector: '.splitter',
 			resizeHeight: false,
+			onDrag: this._updateQueryHelperMinWidth.bind( this ),
 			onDragEnd: this._updateQueryEditorSize.bind( this )
 		} );
 
@@ -223,10 +224,32 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		try {
 			this._queryHelper.setQuery( this._editor.getValue() );
 			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
+			$( '.query-helper' ).css( 'min-width', '' );
+			this._updateQueryHelperMinWidth(); // TODO also do this after labels in the query helper have loaded
 		} catch ( e ) {
 
 			this._editor.highlightError( e.message );
 			window.console.error( e );
+		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._updateQueryHelperMinWidth = function() {
+		var $queryHelper = $( '.query-helper' ),
+			$tables = $queryHelper.find( 'table' ),
+			tableWidth = _.max( _.map(
+				$tables,
+				function( e ) {
+					return $( e ).width();
+				}
+			) );
+		if ( tableWidth > $queryHelper.width() ) {
+			$queryHelper.css(
+				'min-width',
+				tableWidth + $tables.offset().left - $queryHelper.offset().left
+			);
 		}
 	};
 
