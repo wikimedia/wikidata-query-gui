@@ -120,7 +120,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
 							.append( $( '<td colspan="4">' ).text( category ) ) );
 				}
-				self._addExample( example.title, example.query, example.href, example.tags );
+				self._addExample( example.title, example.query, example.href, example.tags, category );
 			} );
 		} );
 	};
@@ -222,12 +222,13 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._addExample = function( title, query, href, tags ) {
+	SELF.prototype._addExample = function( title, query, href, tags, category ) {
 		var self = this,
 			$link = $( '<a title="Select" data-dismiss="modal">' ).text( title ).attr( 'href', '#' )
 					.click( function() {
 						self._callback( query, title );
 						self._track( 'select' );
+						self._track( 'select.category.' + category.replace( /[^a-zA-Z0-9]/g, '_' ) );
 					} ),
 			$edit = $( '<a>' )
 				.attr( { title: 'Edit', href: href, target: '_blank' } )
