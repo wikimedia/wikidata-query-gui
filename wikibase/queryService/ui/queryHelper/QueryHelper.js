@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {};
 
-wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
+wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) {
 	'use strict';
 
 	var FILTER_PREDICATES = {
@@ -306,7 +306,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 
 			var variable = self._query.getBoundVariables().shift();
 			if ( !variable ) {
-				variable = '?' + '_' + name.replace( /( |[^a-z0-9])/gi, '_' );
+				variable = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );
 			}
 
 			var prop = 'http://www.wikidata.org/prop/direct/' + ( data && data[id] && data[id].propertyId || 'P31' );// FIXME technical debt
@@ -372,7 +372,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 
 		if ( this._isSimpleMode && this._isInShowSection( triple ) &&
 				( this._query.hasVariable( triple.object ) === false &&
-						this._query.hasVariable( triple.object + 'Label' ) === false ) ) {
+						this._query.hasVariable( triple.object + 'Label' ) === false &&
+						this._query.isWildcardQuery() === false ) ) {
 			return true;
 		}
 
@@ -422,7 +423,35 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 			}
 		} );
 
-		return $triple;
+		return $triple.append( this._getTripleHtmlToolbar( $triple, triple ) );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._getTripleHtmlToolbar = function( $triple, triple ) {
+		var self = this;
+
+		var $delete = $( '<a href="#">' ).addClass( 'fa fa-trash-o' ).click( function () {
+			var variables = _.compact( triple.triple ).filter( function ( v ) {
+					return typeof v === 'string' && v.startsWith( '?' );
+				} ),
+				variablesLabels = variables.map( function ( v ) {
+					return v + 'Label';
+				} );
+
+			triple.remove();
+			$triple.remove();
+			self._query.cleanupVariables( variables.concat( variablesLabels ) );
+
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+
+			return false;
+		} );
+
+		return $( '<td class="toolbar">' ).append( $delete );
 	};
 
 	/**
@@ -522,27 +551,6 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 					self._changeListener( self );
 				}
 			}, {
-				trash: function() {
-					triple.remove();
-
-					var variable = triple.triple.object;
-					if ( triple.triple.object === entity ||
-							( triple.triple.object.startsWith( '?' ) === false && triple.triple.predicate === entity ) ) {
-						variable = triple.triple.subject;
-					}
-					$label.closest( 'tr' ).remove();
-
-					if ( self._query.getBoundVariables().indexOf( variable ) === -1 ) {
-						self._query.removeVariable( variable );
-						self._query.removeVariable( variable + 'Label' );
-					}
-
-					if ( self._changeListener ) {
-						self._changeListener( self );
-					}
-					$( '.tooltip' ).hide();
-					return true;//close popover
-				},
 				tag: function() {
 					if ( triple.triple.object.startsWith( '?' ) ) {
 						self._query
@@ -596,4 +604,4 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase ) {
 	};
 
 	return SELF;
-}( jQuery, wikibase ) );
+}( jQuery, wikibase, _ ) );

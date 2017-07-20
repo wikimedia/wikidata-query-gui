@@ -476,7 +476,7 @@ div.jqcloud span.w1 {
 }
 
 /*
-	Visual Editor
+	Query Helper
 */
 
 .query-helper {
@@ -502,6 +502,20 @@ div.jqcloud span.w1 {
 .query-helper .panel-body {
 	font-size: 120%;
 	padding: 10px;
+}
+
+#query-box .query-helper .toolbar {
+	padding-left: 1.5em;
+	text-align: right;
+	opacity: 0.3;
+}
+
+#query-box .query-helper .toolbar .fa {
+	font-size: 1.2em;
+}
+
+#query-box .query-helper tr:hover > .toolbar {
+	opacity: 1;
 }
 
 .select2-container {

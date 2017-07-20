@@ -101,11 +101,18 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			return false;
 		}
 
-		if ( this._query.variables[0] === '*' && name.startsWith( '?' ) ) {
+		return this._query.variables.indexOf( name ) >= 0;
+	};
+
+	/**
+	 * Check whether query uses wildcard SELECT *
+	 */
+	SELF.prototype.isWildcardQuery = function() {
+		if ( this._query.variables && this._query.variables[0] === '*' ) {
 			return true;
 		}
 
-		return this._query.variables.indexOf( name ) >= 0;
+		return false;
 	};
 
 	/**
@@ -115,15 +122,15 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	 * @return {wikibase.queryService.ui.queryHelper.SparqlQuery}
 	 */
 	SELF.prototype.addVariable = function( name ) {
-		if ( !name.startsWith( '?' ) ) {
-			return this;
-		}
-
-		if ( this._query.variables.length === 1 && this._query.variables[0] === '*' ) {
+		if ( !name || !name.startsWith( '?' ) ) {
 			return this;
 		}
 
 		if ( this._query.variables.indexOf( name ) >= 0 ) {
+			return this;
+		}
+
+		if ( this.isWildcardQuery() ) {
 			return this;
 		}
 
@@ -142,7 +149,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			return;
 		}
 
-		if ( this._query.variables.length === 1 && this._query.variables[0] === '*' ) {
+		if ( this.isWildcardQuery() ) {
 			return;
 		}
 
@@ -150,6 +157,38 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 		if ( index >= 0 ) {
 			this._query.variables.splice( index, 1 );
 		}
+
+		if ( this._query.variables.length === 0 ) {
+			this._query.variables.push( '*' );
+		}
+	};
+
+	/**
+	 * Removes unused variables from the query SELECT
+	 * Disclaimer: may remove too much
+	 *
+	 * @param {string[]} [variables] cleanup only variables in this list
+	 */
+	SELF.prototype.cleanupVariables = function( variables ) {
+		var self = this,
+			usedVariables = this.getTripleVariables();
+
+		// TODO check sub queries
+		var toRemove = this._query.variables.filter( function ( variable ) {
+			if ( variables && variables.indexOf( variable ) === -1 ) {
+				return false;
+			}
+
+			if ( usedVariables.indexOf( variable ) === -1 ) {
+				return true;
+			}
+
+			return false;
+		} );
+
+		toRemove.map( function ( v ) {
+			self.removeVariable( v );
+		} );
 	};
 
 	/**
@@ -270,6 +309,30 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 		}
 
 		return this._createTriples( triple.triples, isOptional )[0];
+	};
+
+	/**
+	 * Get all variables used in triples
+	 *
+	 * @return {string[]}
+	 */
+	SELF.prototype.getTripleVariables = function() {
+		var variables = {};
+
+		$.each( this.getTriples(), function( i, t ) {
+			if ( typeof t.triple.subject === 'string' && t.triple.subject.startsWith( '?' ) ) {
+				variables[t.triple.subject] = true;
+			}
+			if ( typeof t.triple.predicate === 'string'  && t.triple.predicate.startsWith( '?' ) ) {
+				variables[t.triple.predicate] = true;
+			}
+			if ( typeof t.triple.object === 'string' && t.triple.object.startsWith( '?' ) ) {
+				variables[t.triple.object] = true;
+			}
+
+		} );
+
+		return Object.keys( variables );
 	};
 
 	/**
