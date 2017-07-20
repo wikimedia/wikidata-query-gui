@@ -437,11 +437,13 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		} );
 
 		$( '.restore' ).click( function( e ) {
+			self._track( 'buttonClick.restore' );
 			e.preventDefault();
 			self._editor.restoreValue();
 		} );
 
 		$( '.fullscreen' ).click( function( e ) {
+			self._track( 'buttonClick.fullscreen' );
 			e.preventDefault();
 			self._toggleFullscreen();
 		} );
