@@ -184,7 +184,10 @@ iframe.shortUrl {
 .splitter {
 	flex: 0 0 auto;
 	width: 1em;
-	background: url( node_modules/jquery-resizable-dom/assets/vsizegrip.png ) center center no-repeat #eaf3ff; /* Accent90 */
+	background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAhCAQAAABOpSL+AAAAIklEQVR4AWMwbb/PdR+JZDD9f1/oPhI5sgVGBSruc9xHIgGdSQqqQJGkRgAAAABJRU5ErkJggg== ); /* node_modules/jquery-resizable-dom/assets/vsizegrip.png */
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: #eaf3ff; /* Accent90 */
 	cursor: col-resize;
 }
 
