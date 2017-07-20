@@ -162,7 +162,7 @@ iframe.shortUrl {
 
 #query-box .toolbar-top {
 	padding-top: 0.5em;
-	vertical-align: top;
+	flex-grow: 1;
 	text-align: left;
 	opacity: 0.5;
 }
@@ -172,7 +172,7 @@ iframe.shortUrl {
 
 #query-box .toolbar-bottom {
 	padding-top: 1em;
-	vertical-align: bottom;
+	flex-grow: 0;
 	text-align: center;
 }
 
