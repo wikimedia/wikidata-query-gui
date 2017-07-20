@@ -205,6 +205,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			Cookies.set( cookieHide, true );
 			$( '.query-helper' ).addClass( 'query-helper-hidden' );
 			self._updateQueryEditorSize();
+
+			self._track( 'buttonClick.queryHelperTrigger.close' );
 			return false;
 		} );
 
@@ -212,6 +214,9 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			$( '.query-helper' ).toggleClass( 'query-helper-hidden' );
 			Cookies.set( cookieHide, !$( '.query-helper' ).is( ':visible' ) );
 			self._updateQueryEditorSize();
+
+			self._track( $( '.query-helper' ).is( ':visible' ) ? 'buttonClick.queryHelperTrigger.open'
+							: 'buttonClick.queryHelperTrigger.close' );
 
 			return false;
 		} );
