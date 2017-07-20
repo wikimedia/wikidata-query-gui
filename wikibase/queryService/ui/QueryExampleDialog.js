@@ -38,6 +38,12 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	SELF.prototype._querySamplesApi = null;
 
 	/**
+	 * @property {wikibase.queryService.api.Wikibase}
+	 * @private
+	 */
+	SELF.prototype._wikibaseApi = null;
+
+	/**
 	 * @property {Function}
 	 * @private
 	 */
@@ -74,6 +80,8 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		if ( !this._trackingApi ) {
 			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}
+
+		this._wikibaseApi = new wikibase.queryService.api.Wikibase();
 
 		this._initFilter();
 		this._initExamples();
@@ -146,32 +154,38 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var self = this,
 			jQCloudTags = [];
 
-		$.each( this._getCloudTags(), function( tag, weight ) {
-			jQCloudTags.push( {
-				text: tag,
-				weight: weight,
-				link: '#',
-				html: {
-					title: weight + ' match(es)'
-				},
-				handlers: {
-					click: function( e ) {
-						self._$element.find( '.tagFilter' ).tags().addTag( $( this ).text() );
-						self._drawTagCloud( true );
-						return false;
+		this._getCloudTags().done( function ( tags ) {
+			$.each( tags, function ( i, tag ) {
+				var label =  tag.label + ' (' + tag.id + ')';
+
+				jQCloudTags.push( {
+					text: label,
+					weight: tag.weight,
+					link: '#',
+					html: {
+						title: '(' + tag.weight + ')',
+						'data-id': tag.id
+					},
+					handlers: {
+						click: function ( e ) {
+							self._$element.find( '.tagFilter' ).tags().addTag( $( this ).text() );
+							self._drawTagCloud( true );
+							return false;
+						}
 					}
-				}
+				} );
 			} );
-		} );
 
-		if ( redraw ) {
-			$( '.tagCloud' ).jQCloud( 'update', jQCloudTags );
-			return;
-		}
+			if ( redraw ) {
+				$( '.tagCloud' ).jQCloud( 'update', jQCloudTags );
+				return;
+			}
 
-		$( '.tagCloud' ).jQCloud( jQCloudTags, {
-			delayedMode: true,
-			autoResize: true
+			$( '.tagCloud' ).jQCloud( jQCloudTags, {
+				delayedMode: true,
+				autoResize: true
+			} );
+
 		} );
 	};
 
@@ -182,17 +196,20 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var self = this;
 
 		// filter tags that don't effect the filter for examples
-		var tagsFilter = function( tags ) {
+		var tagsFilter = function ( tags ) {
 			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags();
 
 			return selectedTags.every( function ( selectedTag ) {
-				return tags.indexOf( selectedTag ) !== -1;
+				return tags.indexOf( selectedTag.match( /\((.*)\)/ )[1] ) !== -1;
 			} );
 		};
 
 		// filter selected tags from tag cloud
-		var tagFilter = function( tag ) {
-			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags();
+		var tagFilter = function ( tag ) {
+			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags().map(
+					function ( v ) {
+						return v.match( /\((.*)\)/ )[1];
+					} );
 
 			return selectedTags.indexOf( tag ) !== -1;
 		};
@@ -209,14 +226,36 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 				}
 
 				if ( !tagCloud[tag] ) {
-					tagCloud[tag] = 1;
+					tagCloud[tag] = { id: tag, weight: 1 };
 				} else {
-					tagCloud[tag]++;
+					tagCloud[tag].weight++;
 				}
 			} );
 		} );
 
-		return tagCloud;
+		tagCloud = _.compact( tagCloud ).sort( function ( a, b ) {
+			if ( a.weight > b.weight ) {
+				return -1;
+			}
+			if ( a.weight < b.weight ) {
+				return 1;
+			}
+			return 0;
+		} ).slice( 0, 50 );
+
+		var deferred = $.Deferred();
+		this._wikibaseApi.getLabels( tagCloud.map( function ( v ) {
+			return v.id;
+		} ) ).done( function ( data ) {
+			tagCloud.forEach( function ( tag ) {
+				tag.label = _.compact( data.entities[tag.id].labels )[0].value;
+
+			} );
+
+			deferred.resolve( tagCloud );
+		} );
+
+		return deferred.promise();
 	};
 
 	/**
@@ -293,7 +332,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			text = text.toLowerCase();
 
 			$.each( tags, function( key, tag ) {
-				if ( text.indexOf( tag.toLowerCase() ) === -1 ) {
+				if ( text.indexOf( tag.toLowerCase().match( /\((.*)\)/ )[1] ) === -1 ) {
 					matches = false;
 				}
 			} );

@@ -97,15 +97,14 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		return prev;
 	};
 
-	/**
-	 * Get list of tags from UL list
-	 *
-	 * @param {Element} tagUL
-	 * @return {string[]}
-     * @private
-     */
-	SELF.prototype._extractTagsFromUL = function( tagUL ) {
-		return tagUL.find( 'a[rel="mw:WikiLink"]' ).map( function() { return $( this ).text().trim(); } ).get();
+	SELF.prototype._extractTagsFromSPARQL = function ( sparql ) {
+		var tags = sparql.replace( /\n/g, '' ).match( /(Q|P)[0-9]+/g );
+
+		if ( !tags ) {
+			return [];
+		}
+
+		return tags;
 	};
 
 	SELF.prototype._parseHTML = function ( html ) {
@@ -141,14 +140,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 				return null;
 			}
 			var title = titleEl.text().trim();
-			// Get UL elements between header and query text
-			var tagUL = $this.prevUntil( titleEl ).filter( 'ul' );
 
 			return {
 				title:    title,
 				query:    query,
 				href:     PAGE_URL + '#' + encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
-				tags:     self._extractTagsFromUL( tagUL ),
+				tags:     self._extractTagsFromSPARQL( query ),
 				category: self._findPrevHeader( titleEl ).text().trim()
 			};
 		} ).get();

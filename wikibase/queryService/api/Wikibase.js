@@ -12,7 +12,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		action: 'wbsearchentities',
 		format: 'json',
 		continue: 0,
-		language: LANGUAGE,
+		languages: LANGUAGE,
 		uselang: LANGUAGE
 	};
 
@@ -21,6 +21,14 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		meta: 'siteinfo',
 		format: 'json',
 		siprop: 'languages'
+	};
+
+	var QUERY_LABELS = {
+		action: 'wbgetentities',
+		props: 'labels',
+		format: 'json',
+		languages: LANGUAGE,
+		languagefallback: '1'
 	};
 
 	/**
@@ -88,6 +96,27 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 */
 	SELF.prototype.getLanguages = function() {
 		return this._query( QUERY_LANGUGES );
+	};
+
+	/**
+	 * Get labels for given entities
+	 *
+	 * @return {jQuery.Promise}
+	 */
+	SELF.prototype.getLabels = function( ids ) {
+
+		if ( typeof ids === 'string' ) {
+			ids = [ ids ];
+		}
+
+		var query = QUERY_LABELS;
+		query.ids = ids.join( '|' );
+
+		if ( this._language  ) {
+			query.languages = this._language;
+		}
+
+		return this._query( query );
 	};
 
 	/**
