@@ -211,12 +211,13 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		} );
 
 		$( '.query-helper-trigger' ).click( function () {
-			$( '.query-helper' ).toggleClass( 'query-helper-hidden' );
-			Cookies.set( cookieHide, !$( '.query-helper' ).is( ':visible' ) );
+			var visible = $( '.query-helper' ).is( ':visible' );
+
+			$( '.query-helper' ).toggleClass( 'query-helper-hidden', visible );
+			Cookies.set( cookieHide, !visible );
 			self._updateQueryEditorSize();
 
-			self._track( $( '.query-helper' ).is( ':visible' ) ? 'buttonClick.queryHelperTrigger.open'
-							: 'buttonClick.queryHelperTrigger.close' );
+			self._track( 'buttonClick.queryHelperTrigger.' + ( visible ? 'close' : 'open' ) );
 
 			return false;
 		} );
