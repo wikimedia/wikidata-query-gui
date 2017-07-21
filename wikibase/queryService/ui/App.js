@@ -350,19 +350,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 		var updateDataStatus = function() {
 			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
-				var updatestatustext = moment.duration( difference, 'seconds' ).humanize(),
-					labelClass,
-					badge;
-
+				var labelClass = 'list-group-item-danger';
 				if ( difference <= 60 * 2 ) {
 					labelClass = 'list-group-item-success';
 				} else if ( difference <= 60 * 15 ) {
 					labelClass =  'list-group-item-warning';
-				} else {
-					labelClass = 'list-group-item-danger';
 				}
-				badge = '<span class="badge ' + labelClass + '">' + updatestatustext + '</span>';
-				$label.html( $.i18n( 'wdqs-app-footer-updated', badge ) );
+
+				$label.html( $( '<a>' ).addClass( 'fa fa-refresh badge ' + labelClass ).html( ' ' ) );
 			} );
 		};
 
@@ -375,15 +370,21 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			var e = $( this );
 			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
+				var text = moment.duration( difference, 'seconds' ).humanize(),
+					title = time,
+					badge = '<span class="badge">' + text + '</span>';
+
+				$label.attr( 'title', title );
 				e.popover( {
 					html: true,
+					trigger: 'hover',
 					placement: 'top',
-					content: $.i18n( 'wdqs-app-footer-updated-seconds', difference ) + '.</br>' + time
-				} ).popover( 'show' );
+					content: $.i18n( 'wdqs-app-footer-updated', badge )
+				} );
 			} ).fail( function() {
 				e.popover( {
 					content: '[unable to connect]'
-				} ).popover( 'show' );
+				} );
 			} );
 		}, function() {
 			var e = $( this );
