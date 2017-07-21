@@ -124,6 +124,20 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		this._initQuery();
 		this._initRdfNamespaces();
 		this._initHandlers();
+
+		$( window ).scroll( function () {
+			var minScroll = $( '#query-box' ).offset().top + $( '#query-box' ).height() - $( window ).height();
+
+			if ( minScroll + 100 < $( this ).scrollTop() && $( this ).scrollTop() > 1 ) {
+				$( '#query-box' ).hide( {
+					duration: 500
+				} );
+			} else {
+				$( '#query-box' ).show( {
+					duration: 100
+				} );
+			}
+		} );
 	};
 
 	/**
