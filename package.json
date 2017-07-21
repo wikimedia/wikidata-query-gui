@@ -65,6 +65,7 @@
     "load-grunt-tasks": "^3.5.2",
     "qunitjs": "1.23.1",
     "sinon": "^2.3.6",
+    "stylelint": "7.8.0",
     "stylelint-config-wikimedia": "0.4.1"
   }
 }
