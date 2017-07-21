@@ -218,7 +218,7 @@ iframe.shortUrl {
 }
 
 .popover {
-	max-width: 500px;
+	max-width: 80vw;
 	width: auto;
 }
 
