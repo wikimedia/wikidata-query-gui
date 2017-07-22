@@ -346,6 +346,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			$toolbar = this._getToolbar( toolbar, $element ),
 			$content = $( '<div>' ).append( $close, ' ', $select, ' ', $toolbar );
 
+		if ( $element.children().length === 0 ) {
+			this._createSelectInline( $element, triple, listener );
+			return;
+		}
+
 		$element.clickover( {
 			placement: 'bottom',
 			'global_close': false,
@@ -375,6 +380,23 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			$element.click();// hide clickover
 			$select.html( '' );
 		} );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createSelectInline = function( $element, triple, listener ) {
+		var $select = this._getSelectBox( $element );
+
+		$element.replaceWith( $select );
+		this._renderSelect2( $select, $element, triple );
+
+		$select.change( function( e ) {
+			if ( listener ) {
+				listener( $select.val(), $select.find( 'option:selected' ).text(), $( e.target ).data( 'options' ) );
+			}
+		} );
+
 	};
 
 	/**

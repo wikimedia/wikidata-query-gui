@@ -104,6 +104,7 @@
 			var $html = $( '<div>' );
 			qh.draw( $html );
 			$html.find( '.btn' ).remove();
+			$html.find( '.select2' ).remove();
 
 			assert.equal( qh.getQuery().trim(), testCase.sparqlOut );
 			assert.equal( $html.text().trim(), testCase.text );
