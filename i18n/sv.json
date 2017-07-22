@@ -55,6 +55,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkisk layout vänster till höger",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarkisk layout upp till ner",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarkisk layout höger till vänster",
+	"wdqs-app-toast-leave-fullscreen": "Tryck på [esc] för att lämna helskärmsläget",
 	"wdqs-dialog-examples-preview-query": "Förhandsvisa förfrågan",
 	"wdqs-dialog-examples-preview-result": "Förhandsvisa resultat",
 	"wdqs-ve-filter": "Filtrera",

@@ -61,6 +61,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Disposición jerárquica de izquierda a derecha",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Disposición jerárquica de arriba abajo",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disposición jerárquica de derecha a izquierda",
+	"wdqs-app-toast-leave-fullscreen": "Presiona [Esc] para salir de pantalla completa",
 	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
 	"wdqs-dialog-examples-preview-result": "Vista previa del resultado",
 	"wdqs-ve-filter": "Filtrar",

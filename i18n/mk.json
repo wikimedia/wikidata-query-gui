@@ -53,6 +53,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Чиноследен распоред од лево кон десно",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Чиноследен распоред од горе надолу",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Чиноследен распоред од десно кон лево",
+	"wdqs-app-toast-leave-fullscreen": "Стиснете на [esc] за да го напуштите целоекранскиот приказ",
 	"wdqs-dialog-examples-preview-query": "Преглед на барањето",
 	"wdqs-dialog-examples-preview-result": "Преглед на исходот",
 	"wdqs-ve-filter": "Филтер",

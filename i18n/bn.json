@@ -50,6 +50,7 @@
 	"wdqs-app-editor-placeholder": "(একটি SPARQL ক্যোয়ারী দিন বা একটি ক্যোয়ারীর উদাহরণ চয়ন করুন)",
 	"wdqs-app-editor-addprefixes": "মান্য উপসর্গ যোগ করুন",
 	"wdqs-app-resultbrowser-stabilize": "স্থির নেটওয়ার্ক",
+	"wdqs-app-toast-leave-fullscreen": "পূর্ণপর্দা থেকে বেরিয়ে যেতে [esc] চাপুন",
 	"wdqs-dialog-examples-preview-query": "ক্যোয়ারী প্রাকদর্শন",
 	"wdqs-dialog-examples-preview-result": "ফলাফল প্রাকদর্শন",
 	"wdqs-ve-filter": "ছাঁকনি",

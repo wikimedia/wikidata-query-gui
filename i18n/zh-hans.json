@@ -55,6 +55,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "分层布局从左到右",
 	"wdqs-app-resultbrowser-hierarchical-ud": "分层布局从上到下",
 	"wdqs-app-resultbrowser-hierarchical-rl": "分层布局从右到左",
+	"wdqs-app-toast-leave-fullscreen": "点击[esc]退出全屏模式",
 	"wdqs-dialog-examples-preview-query": "预览查询",
 	"wdqs-dialog-examples-preview-result": "预览结果",
 	"wdqs-ve-filter": "过滤器",

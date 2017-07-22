@@ -22,6 +22,7 @@
 	"wdqs-app-help-datamodel": "Տվյալների  RDF մոդել",
 	"wdqs-app-footer-updated": "Տվյալները թարմացվել են $1 առաջ",
 	"wdqs-app-footer-updated-seconds": "Տվյալները թարմացվել են $1 վրկ. առաջ",
+	"wdqs-app-toast-leave-fullscreen": "Սեղմեք [esc] լիաէկրան ռեժիմիցց դուրս գալու համար",
 	"wdqs-dialog-examples-preview-query": "Դիտել հարցումը",
 	"wdqs-dialog-examples-preview-result": "Դիտել արդյունքը",
 	"wdqs-ve-show": "Ցուցադրել",

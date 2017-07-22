@@ -54,6 +54,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Герархічная разьметка зьлева направа",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Герархічная разьметка зьверху ўніз",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Герархічная разьметка справа налева",
+	"wdqs-app-toast-leave-fullscreen": "Націсьніце [esc], каб выйсьці з поўнаэкраннага рэжыму",
 	"wdqs-dialog-examples-preview-query": "Перадпрагляд запыту",
 	"wdqs-dialog-examples-preview-result": "Папярэдні прагляд выніку",
 	"wdqs-ve-filter": "Фільтар",

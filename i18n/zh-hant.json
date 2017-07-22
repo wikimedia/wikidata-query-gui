@@ -53,6 +53,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "分層佈圖由左至右",
 	"wdqs-app-resultbrowser-hierarchical-ud": "分層佈圖由上至下",
 	"wdqs-app-resultbrowser-hierarchical-rl": "分層佈圖由右至左",
+	"wdqs-app-toast-leave-fullscreen": "按下[esc]退出全螢幕模式",
 	"wdqs-dialog-examples-preview-query": "預覽查詢",
 	"wdqs-dialog-examples-preview-result": "預覽結果",
 	"wdqs-ve-filter": "篩選",
