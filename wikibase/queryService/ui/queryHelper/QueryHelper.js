@@ -448,7 +448,23 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			return false;
 		} );
 
-		return $( '<td class="toolbar">' ).append( $delete );
+		var $label = $( '<a href="#">' ).addClass( 'fa fa-tag' ).click( function () {
+			if ( triple.triple.object.startsWith( '?' ) ) {
+				self._query
+						.addVariable( triple.triple.object +
+								'Label' );
+			} else {
+				self._query
+						.addVariable( triple.triple.subject +
+								'Label' );
+			}
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+			return false;
+		} );
+
+		return $( '<td class="toolbar">' ).append( $label, $delete );
 	};
 
 	/**
@@ -547,24 +563,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				if ( self._changeListener ) {
 					self._changeListener( self );
 				}
-			}, {
-				tag: function() {
-					if ( triple.triple.object.startsWith( '?' ) ) {
-						self._query
-								.addVariable( triple.triple.object +
-										'Label' );
-					} else {
-						self._query
-								.addVariable( triple.triple.subject +
-										'Label' );
-					}
-					if ( self._changeListener ) {
-						self._changeListener( self );
-					}
-					return true;
-				}
-			}
-			);
+			} );
+
 		} ).fail( function() {
 			$label.text( entity );
 		} );
