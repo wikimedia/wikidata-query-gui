@@ -233,7 +233,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			var visible = $( '.query-helper' ).is( ':visible' );
 
 			$( '.query-helper' ).toggleClass( 'query-helper-hidden', visible );
-			Cookies.set( cookieHide, !visible );
+			Cookies.set( cookieHide, visible );
 			self._updateQueryEditorSize();
 
 			self._track( 'buttonClick.queryHelperTrigger.' + ( visible ? 'close' : 'open' ) );
