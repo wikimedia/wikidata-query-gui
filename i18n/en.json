@@ -61,6 +61,8 @@
     "wdqs-dialog-examples-preview-result": "Preview result",
     "wdqs-ve-filter": "Filter",
     "wdqs-ve-show": "Show",
+    "wdqs-ve-add-label-title": "Add variable containing entity label",
+    "wdqs-ve-remove-row-title": "Remove this row",
     "wdqs-ve-with": "with",
     "wdqs-ve-anything": "anything",
     "wdqs-ve-any": "any",

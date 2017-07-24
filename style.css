@@ -512,7 +512,7 @@ div.jqcloud span.w1 {
 
 #query-box .query-helper .toolbar .fa {
 	font-size: 1.2em;
-	display: inherit;
+	display: inline-block;
 	padding: 0.1em;
 }
 

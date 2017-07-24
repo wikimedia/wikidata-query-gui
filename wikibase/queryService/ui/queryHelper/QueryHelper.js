@@ -446,6 +446,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			}
 
 			return false;
+		} ).tooltip( {
+			title: self._i18n( 'remove-row-title' )
 		} );
 
 		var $label = $( '<a href="#">' ).addClass( 'fa fa-tag' ).click( function () {
@@ -462,6 +464,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				self._changeListener( self );
 			}
 			return false;
+		} ).tooltip( {
+			title: self._i18n( 'add-label-title' )
 		} );
 
 		return $( '<td class="toolbar">' ).append( $label, $delete );
