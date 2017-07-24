@@ -129,9 +129,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			var minScroll = $( '#query-box' ).offset().top + $( '#query-box' ).height() - $( window ).height();
 
 			if ( minScroll + 100 < $( this ).scrollTop() && $( this ).scrollTop() > 1 ) {
-				$( '#query-box' ).hide( {
-					duration: 500
-				} );
+				if (
+					$( '#query-result' ).is( ':visible' ) &&
+					$( document ).height() - $( '#query-box' ).height() > $( window ).height()
+				) {
+					$( '#query-box' ).hide( {
+						duration: 500
+					} );
+				}
 			} else {
 				$( '#query-box' ).show( {
 					duration: 100
