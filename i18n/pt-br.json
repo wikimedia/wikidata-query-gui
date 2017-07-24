@@ -5,7 +5,8 @@
 			"Macofe",
 			"!Silent",
 			"Eduardo Addad de Oliveira",
-			"Luk3"
+			"Luk3",
+			"Jaideraf"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -57,6 +58,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Layout hierárquico da esquerda para a direita",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Layout hierárquico para cima e para baixo",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Layout hierárquico da direita para a esquerda",
+	"wdqs-app-toast-leave-fullscreen": "Pressione [esc] para sair da tela cheia",
 	"wdqs-dialog-examples-preview-query": "Vista prévia da consulta",
 	"wdqs-dialog-examples-preview-result": "Vista prévia do resultado",
 	"wdqs-ve-filter": "Filtro",

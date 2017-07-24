@@ -3,7 +3,8 @@
 		"authors": [
 			"Gwenn-Ael",
 			"Y-M D",
-			"Fulup"
+			"Fulup",
+			"VIGNERON"
 		]
 	},
 	"wdqs-app-button-examples": "Skouerioù",
@@ -14,6 +15,8 @@
 	"wdqs-app-button-run-title": "Seveniñ ar reked (<CTRL> + <KAS>)",
 	"wdqs-app-button-clear": "Diverkañ",
 	"wdqs-app-button-clear-title": "Diverkañ ar reked",
+	"wdqs-app-button-restore-title": "Reiñ en-dro ar reked a-raok",
+	"wdqs-app-button-fullscreen-title": "Cheñch an aozer da skramm leun",
 	"wdqs-app-button-display": "Diskwel",
 	"wdqs-app-button-display-title": "Diskwel an disoc'h e stumm un daolenn, ur skeudenn, ...",
 	"wdqs-app-button-download": "Pellgargañ",
@@ -35,6 +38,7 @@
 	"wdqs-app-result-shorturl": "URL berr war-zu an disoc'h",
 	"wdqs-app-result-shorturl-title": "URL berr war-zu an disoc'h-se",
 	"wdqs-app-result-rawgraphs": "Digeriñ e RAWGraphs.io",
+	"wdqs-app-result-rawgraphs-title": "Krouiñ ur graf gant roadennoù disoc'het dre RAWGraphs.io",
 	"wdqs-app-result-embed": "Enframmañ an disoc'h",
 	"wdqs-app-result-endpoint": "Poent dibenn SPARQL",
 	"wdqs-app-result-endpoint-title": "Liamm war-zu ar poent dibenn SPARQL a adkas an disoc'h",
@@ -52,12 +56,13 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Kinnig urzhazel a-gleiz da zehoù",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Kinnig urzhazel eus al laez d'an traoñ",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Kinnig urzhazel a-zehoù da gleiz",
+	"wdqs-app-toast-leave-fullscreen": "Gwaskit [esc] evit kuitaat skramm leun",
 	"wdqs-dialog-examples-preview-query": "Alberz ar reked",
 	"wdqs-dialog-examples-preview-result": "Alberz eus an disoc'h",
 	"wdqs-ve-filter": "Sil",
 	"wdqs-ve-show": "Diskouez",
-	"wdqs-ve-with": "gant :",
-	"wdqs-ve-anything": "Netra",
+	"wdqs-ve-with": "gant",
+	"wdqs-ve-anything": "netra",
 	"wdqs-ve-any": "forzh pehini",
 	"wdqs-ve-or": "pe",
 	"wdqs-ve-subtype": "Is-doare",
