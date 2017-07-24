@@ -270,7 +270,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		if ( tableWidth > $queryHelper.width() ) {
 			$queryHelper.css(
 				'min-width',
-				tableWidth + $tables.offset().left - $queryHelper.offset().left
+				Math.min(
+					tableWidth + $tables.offset().left - $queryHelper.offset().left,
+					$( window ).width() * 0.5
+				)
 			);
 		}
 	};
