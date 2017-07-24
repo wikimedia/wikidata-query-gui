@@ -26,6 +26,23 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					}\
 					LIMIT 100',
 				genericSuggest: function() { // Find items that are most often used with the first selected item of the current query
+					var instanceOfTemplate =// Find items that are used with property 'instance of'
+						'SELECT ?id ?label ?description WHERE {\
+						hint:Query hint:optimizer "None".\
+							{\
+								SELECT DISTINCT ?id WHERE { ?i wdt:P31 ?id. }\
+								LIMIT 100\
+							}\
+							?id rdfs:label ?label.\
+							?id schema:description ?description.\
+							FILTER((LANG(?label)) = "{LANGUAGE}")\
+							FILTER((LANG(?description)) = "{LANGUAGE}")\
+						}\
+						LIMIT 100';
+					if ( this._query.getTriples().length === 0 ) {
+						return instanceOfTemplate;
+					}
+
 					var template = '{PREFIXES}\n\
 						SELECT ?id ?label ?description ?property WITH {\n\
 							{QUERY}\n\
@@ -112,6 +129,28 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 				}\
 				LIMIT 100',
 			genericSuggest: function() { // Find properties that are most often used with the first selected item of the current query
+
+				var genericTemplate = // Find properties that are most often used with all items
+				'SELECT ?id ?label ?description WITH {\
+					SELECT ?pred (COUNT(?value) AS ?count) WHERE\
+					{\
+					?subj ?pred ?value .\
+					} GROUP BY ?pred ORDER BY DESC(?count) LIMIT 1000\
+					} AS %inner\
+				WHERE {\
+					INCLUDE %inner\
+					?id wikibase:claim ?pred.\
+					?id rdfs:label ?label.\
+					?id schema:description ?description.\
+					FILTER((LANG(?label)) = "en")\
+					FILTER((LANG(?description)) = "en")\
+				} ORDER BY DESC(?count)\
+				LIMIT 100';
+
+				if ( this._query.getTriples().length === 0 ) {
+					return genericTemplate;
+				}
+
 				var template = '{PREFIXES}\n\
 					SELECT ?id ?label ?description WITH {\n\
 						{QUERY}\n\

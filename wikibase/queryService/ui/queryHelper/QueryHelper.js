@@ -343,10 +343,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		this._selectorBox.add( $button, null, function( id, name ) {
 			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
 
-			var subject = self._query.getBoundVariables().shift();
-			if ( !subject ) {
-				return;
-			}
+			var subject = self._query.getBoundVariables().shift() || '?item';
 			var variable2 = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
 
 			var triple = self._query.addTriple( subject, prop, variable2, true );
