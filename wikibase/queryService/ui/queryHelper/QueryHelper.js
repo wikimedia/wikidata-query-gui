@@ -315,6 +315,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				self._query.addVariable( variable );
 			}
 
+			self._addLabelVariableAfterItemColumn( prop.split( '/' ).pop(), triple );
+
 			$table.append( self._getTripleHtml( triple ) );
 
 			if ( self._changeListener ) {
@@ -349,6 +351,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );
 
+			self._addLabelVariableAfterItemColumn( prop.split( '/' ).pop(), triple );
+
 			$table.append( self._getTripleHtml( triple ) );
 
 			if ( self._changeListener ) {
@@ -357,6 +361,19 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		} );
 
 		return $button;
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._addLabelVariableAfterItemColumn = function( propertyId, triple ) {
+		var self = this;
+
+		this._api.getDataType( propertyId ).done( function ( type ) {
+			if ( type === 'wikibase-item' ) {
+				self._addLabelVariable( triple );
+			}
+		} );
 	};
 
 	/**
@@ -469,6 +486,20 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		} );
 
 		return $( '<td class="toolbar">' ).append( $label, $delete );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._addLabelVariable = function( triple ) {
+		if ( triple.triple.object.startsWith( '?' ) ) {
+			this._query.addVariable( triple.triple.object + 'Label' );
+		} else {
+			this._query.addVariable( triple.triple.subject + 'Label' );
+		}
+		if ( this._changeListener ) {
+			this._changeListener( this );
+		}
 	};
 
 	/**

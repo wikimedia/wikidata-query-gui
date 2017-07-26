@@ -14,21 +14,24 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		continue: 0,
 		languages: LANGUAGE,
 		uselang: LANGUAGE
-	};
-
-	var QUERY_LANGUGES = {
+	},
+	QUERY_LANGUGES = {
 		action: 'query',
 		meta: 'siteinfo',
 		format: 'json',
 		siprop: 'languages'
-	};
-
-	var QUERY_LABELS = {
+	},
+	QUERY_LABELS = {
 		action: 'wbgetentities',
 		props: 'labels',
 		format: 'json',
 		languages: LANGUAGE,
 		languagefallback: '1'
+	},
+	QUERY_DATATYPE = {
+		action: 'wbgetentities',
+		props: 'datatype',
+		format: 'json'
 	};
 
 	/**
@@ -101,6 +104,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	/**
 	 * Get labels for given entities
 	 *
+	 * @param {string|string[]} ids entity IDs
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.getLabels = function( ids ) {
@@ -117,6 +121,29 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		}
 
 		return this._query( query );
+	};
+
+	/**
+	 * Get datatype of property
+	 *
+	 * @param {string} id property ID
+	 * @return {jQuery.Promise}
+	 */
+	SELF.prototype.getDataType = function( id ) {
+		var query = QUERY_DATATYPE,
+			deferred = $.Deferred();
+
+		query.ids = id;
+
+		this._query( query ).done( function( data ) {
+			if ( data.entities && data.entities[id] && data.entities[id].datatype ) {
+				deferred.resolve( data.entities[id].datatype );
+			}
+			deferred.reject();
+
+		} ).fail( deferred.reject );
+
+		return deferred.promise();
 	};
 
 	/**
