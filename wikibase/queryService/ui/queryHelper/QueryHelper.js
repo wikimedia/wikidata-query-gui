@@ -410,7 +410,9 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				if ( self._isSimpleMode ) {
 					return;
 				}
-				entity = entity.replace( '?', '' );
+				entity = entity.replace( '?', '' ).replace( /_/g, '_<wbr>' );
+				$triple.append(  $( '<td>' ).append( entity ) );
+				return;
 			}
 
 			if ( entity.type && entity.type === 'path' ) {
