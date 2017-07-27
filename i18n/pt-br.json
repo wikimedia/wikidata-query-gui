@@ -6,7 +6,8 @@
 			"!Silent",
 			"Eduardo Addad de Oliveira",
 			"Luk3",
-			"Jaideraf"
+			"Jaideraf",
+			"Felipe L. Ewald"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -63,6 +64,8 @@
 	"wdqs-dialog-examples-preview-result": "Vista prévia do resultado",
 	"wdqs-ve-filter": "Filtro",
 	"wdqs-ve-show": "Exibir",
+	"wdqs-ve-add-label-title": "Adicionar variável contendo o rótulo da entidade",
+	"wdqs-ve-remove-row-title": "Remova essa linha",
 	"wdqs-ve-with": "com",
 	"wdqs-ve-anything": "qualquer coisa",
 	"wdqs-ve-any": "qualquer",

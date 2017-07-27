@@ -59,6 +59,8 @@
 	"wdqs-dialog-examples-preview-result": "Vorschau des Ergebnisses",
 	"wdqs-ve-filter": "Filter",
 	"wdqs-ve-show": "Anzeigen",
+	"wdqs-ve-add-label-title": "Variable hinzufügen, die die Objektbezeichnung enthält",
+	"wdqs-ve-remove-row-title": "Diese Zeile entfernen",
 	"wdqs-ve-with": "mit",
 	"wdqs-ve-anything": "irgendetwas",
 	"wdqs-ve-any": "beliebiges",

@@ -62,6 +62,8 @@
 	"wdqs-dialog-examples-preview-result": "Aperçu du résultat",
 	"wdqs-ve-filter": "Filtre",
 	"wdqs-ve-show": "Afficher",
+	"wdqs-ve-add-label-title": "Ajouter une variable contenant un libellé d’entité",
+	"wdqs-ve-remove-row-title": "Supprimer cette ligne",
 	"wdqs-ve-with": "avec",
 	"wdqs-ve-anything": "quelque chose",
 	"wdqs-ve-any": "n'importe quel(le)",
