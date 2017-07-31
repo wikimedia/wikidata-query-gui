@@ -162,6 +162,14 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		this._language = language;
 	};
 
+	/**
+	 * Get the language for the query samples.
+	 *
+	 * @return {string} language
+	 */
+	SELF.prototype.getLanguage = function() {
+		return this._language;
+	};
 	return SELF;
 
 }( jQuery ) );

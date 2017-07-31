@@ -82,6 +82,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		}
 
 		this._wikibaseApi = new wikibase.queryService.api.Wikibase();
+		this._wikibaseApi.setLanguage( this._querySamplesApi.getLanguage() );
 
 		this._initFilter();
 		this._initExamples();
