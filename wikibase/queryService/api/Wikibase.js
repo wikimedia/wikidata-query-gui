@@ -12,7 +12,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		action: 'wbsearchentities',
 		format: 'json',
 		continue: 0,
-		languages: LANGUAGE,
+		language: LANGUAGE,
 		uselang: LANGUAGE
 	};
 
@@ -84,6 +84,9 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		if ( this._language || language ) {
 			query.language = language || this._language;
 			query.uselang = language || this._language;
+		} else {
+			query.language = LANGUAGE;
+			query.uselang = LANGUAGE;
 		}
 
 		return this._query( query );
