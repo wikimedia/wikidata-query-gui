@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pickle12"
+			"Pickle12",
+			"HairyFotr"
 		]
 	},
 	"wdqs-app-button-examples": "Vzorci",
@@ -11,24 +12,37 @@
 	"wdqs-app-button-run": "Zaženi",
 	"wdqs-app-button-run-title": "Pritisni (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Počisti",
+	"wdqs-app-button-clear-title": "Počisti poizvedbo",
+	"wdqs-app-button-restore-title": "Obnovi prejšnjo poizvedbo",
 	"wdqs-app-button-display": "Prikaz",
 	"wdqs-app-button-download": "Prenos",
 	"wdqs-app-button-link": "Povezava",
 	"wdqs-app-help-feedback": "Pošlji povratne informacije",
+	"wdqs-app-help-portal": "Portal pomoči",
 	"wdqs-app-help-manual": "Navodila za uporabo",
+	"wdqs-app-help-examples": "Primeri poizvedb",
 	"wdqs-app-help-prefixes": "Seznam predpon",
 	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za vklop samodejnega izpolnjevanja",
 	"wdqs-app-footer-updated": "Podatki posodobljeni pred $1",
 	"wdqs-app-footer-updated-seconds": "Podatki posodobljeni pred $1 sekundami",
+	"wdqs-app-result-json": "Datoteka JSON",
+	"wdqs-app-result-tsv": "Datoteka TSV",
+	"wdqs-app-result-csv": "Datoteka CSV",
+	"wdqs-app-result-svg": "Slika SVG",
 	"wdqs-app-editor-addprefixes": "Dodaj standardne predpone",
 	"wdqs-dialog-examples-preview-query": "Predogled",
+	"wdqs-dialog-examples-preview-result": "Predogled rezultata",
 	"wdqs-ve-show": "Prikaži",
+	"wdqs-ve-remove-row-title": "Odstrani to vrstico",
 	"wdqs-ve-with": "z",
 	"wdqs-ve-anything": "karkoli",
 	"wdqs-ve-any": "katerikoli",
 	"wdqs-ve-or": "ali",
 	"wdqs-ve-subtype": "podvrsta",
+	"wdqs-ve-sb-suggestions": "Predlogi",
 	"wdqs-action-render": "Priprava rezultatov",
 	"wdqs-action-error-display": "Prikaz rezultatov ni mogoč",
+	"wdqs-action-server-error": "Napaka strežnika",
+	"wdqs-action-unknow-error": "Neznana napaka",
 	"wdqs-result-map-layers-all": "Vsi sloji"
 }

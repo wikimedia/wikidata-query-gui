@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toniher",
-			"Paucabot"
+			"Paucabot",
+			"Ssola"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -27,6 +28,12 @@
 	"wdqs-app-help-datamodel": "Model de dades RDF",
 	"wdqs-app-help-prefixes": "Llista de prefixos",
 	"wdqs-app-result-embed": "Incrusta el resultat",
+	"wdqs-app-result-json": "Fitxer JSON",
+	"wdqs-app-result-json-verbose": "Fitxer JSON (detallat)",
+	"wdqs-app-result-tsv": "Fitxer TSV",
+	"wdqs-app-result-tsv-verbose": "Fitxer TSV (detallat)",
+	"wdqs-app-result-csv": "Fitxer CSV",
+	"wdqs-app-result-svg": "Imatge SVG",
 	"wdqs-dialog-examples-preview-query": "Previsualitza la consulta",
 	"wdqs-dialog-examples-preview-result": "Previsualitza el resultat",
 	"wdqs-ve-show": "Mostra",
@@ -40,6 +47,8 @@
 	"wdqs-action-query": "Execució de la consulta",
 	"wdqs-action-render": "Representació del resultat",
 	"wdqs-action-error-display": "No es pot mostrar el resultat",
+	"wdqs-action-timeout": "S'ha exhaurit el temps d'espera de la consulta",
+	"wdqs-action-malformed-query": "La consulta està mal formulada",
 	"wdqs-action-server-error": "Error del servidor",
 	"wdqs-action-unknow-error": "Error desconegut",
 	"wdqs-result-map-layers-all": "Totes les capes"

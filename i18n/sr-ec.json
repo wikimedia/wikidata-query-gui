@@ -4,7 +4,8 @@
 			"Rancher",
 			"Nikola Smolenski",
 			"Zoranzoki21",
-			"Obsuser"
+			"Obsuser",
+			"Милан Јелисавчић"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -51,8 +52,10 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Хијерархијски приказ слева надесно",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Хијерархијски приказ одозго надоле",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Хијерархијски приказ здесна налево",
+	"wdqs-app-toast-leave-fullscreen": "Притисните [esc] да бисте напустили приказ преко целог екрана",
 	"wdqs-dialog-examples-preview-query": "Претпреглед упита",
 	"wdqs-dialog-examples-preview-result": "Претпреглед резултата",
+	"wdqs-ve-filter": "Филтер",
 	"wdqs-ve-show": "Прикажи",
 	"wdqs-ve-with": "са",
 	"wdqs-ve-anything": "било шта",
