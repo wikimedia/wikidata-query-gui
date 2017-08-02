@@ -116,6 +116,21 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	};
 
 	/**
+	 * Convert wildcard query to use variables
+	 *
+	 * @deprecated workaround for T171194
+	 */
+	SELF.prototype.convertWildcardQueryToUseVariables = function() {
+
+		if ( !this.isWildcardQuery() ) {
+			return;
+		}
+
+		var variables = this.getQueryString().match( /(\?\w+)/g );
+		this._query.variables = $.unique( variables ) || '*';
+	};
+
+	/**
 	 * Add a variable to the query SELECT
 	 *
 	 * @param {string} name
