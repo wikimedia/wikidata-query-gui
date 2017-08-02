@@ -27,7 +27,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					LIMIT 100',
 				genericSuggest: function() { // Find items that are most often used with the first selected item of the current query
 					var instanceOfTemplate =// Find items that are used with property 'instance of'
-						'SELECT ?id ?label ?description WHERE {\
+						'SELECT ?id ?label ?description (wd:P31 AS ?property) WHERE {\
 						hint:Query hint:optimizer "None".\
 							{\
 								SELECT DISTINCT ?id WHERE { ?i wdt:P31 ?id. }\
@@ -375,11 +375,50 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		$select.change( function( e ) {
 			if ( listener ) {
-				listener( $select.val(), $select.find( 'option:selected' ).text(), $element.data( 'items' ) );
+				var id = $select.val(),
+					text = $select.find( 'option:selected' ).text(),
+					data = $element.data( 'items' ),
+					propertyId = data && data[id] && data[id].propertyId || null;
+
+				if ( propertyId ) {
+					listener( id, text, propertyId );
+				} else {
+					self._suggestPropertyId( id ).always( function ( propertyId ) {
+						listener( id, text, propertyId );
+					} );
+				}
 			}
 			$element.click();// hide clickover
 			$select.html( '' );
 		} );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._suggestPropertyId = function( id ) {
+		var deferred = $.Deferred(),
+				query = 'SELECT ?id (COUNT(?id) AS ?count) WHERE { { SELECT ?id WHERE {\
+							?i ?prop wd:{ITEM_ID}.\
+							?id wikibase:directClaim ?prop.\
+							?id rdf:type wikibase:Property.\
+							}\
+							LIMIT 10000 } } GROUP BY ?id ORDER BY DESC(?count) LIMIT 1'
+					.replace( '{ITEM_ID}', id );
+
+		this._sparqlApi.query( query, ( SPARQL_TIMEOUT / 2 ) ).done( function ( data ) {
+
+			try {
+				deferred.resolve( data.results.bindings[0].id.value.split( '/' ).pop() );
+			} catch ( e ) {
+				deferred.reject();
+			}
+
+		} ).fail( function() {
+			deferred.reject();
+		} );
+
+		return deferred.promise();
 	};
 
 	/**
@@ -393,7 +432,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		$select.change( function( e ) {
 			if ( listener ) {
-				listener( $select.val(), $select.find( 'option:selected' ).text(), $element.data( 'items' ) );
+				var id = $select.val(),
+					data = $element.data( 'items' ),
+					propertyId = data && data[id] && data[id].propertyId || null ;
+
+				listener( id, $select.find( 'option:selected' ).text(), propertyId );
 			}
 		} );
 
