@@ -375,7 +375,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		$select.change( function( e ) {
 			if ( listener ) {
-				listener( $select.val(), $select.find( 'option:selected' ).text(), $( e.target ).data( 'options' ) );
+				listener( $select.val(), $select.find( 'option:selected' ).text(), $element.data( 'items' ) );
 			}
 			$element.click();// hide clickover
 			$select.html( '' );
@@ -393,7 +393,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		$select.change( function( e ) {
 			if ( listener ) {
-				listener( $select.val(), $select.find( 'option:selected' ).text(), $( e.target ).data( 'options' ) );
+				listener( $select.val(), $select.find( 'option:selected' ).text(), $element.data( 'items' ) );
 			}
 		} );
 
@@ -460,6 +460,8 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					self._searchEntities( params.data.term, type )
 					).done( function ( r1, r2 ) {
 
+					self._addItemMetaData( $element, r1.concat( r2 ) );
+
 					if ( r1.length > 0 ) {
 						r1 = [ {
 								text: self._i18n( 'suggestions', 'Suggestions' ),
@@ -479,6 +481,29 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					} );
 			} );
 		};
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._addItemMetaData = function( $element, items ) {
+		var data = {};
+
+		items.forEach( function ( item ) {
+
+			if ( !data[item.data.id] ) {
+				data[item.data.id] = {};
+			}
+
+			data[item.data.id].text = item.text;
+
+			if ( item.data.propertyId ) {
+				data[item.data.id].propertyId = item.data.propertyId;
+			}
+
+		} );
+
+		$element.data( 'items', data );
 	};
 
 	/**
@@ -633,17 +658,10 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	 * @private
 	 */
 	SELF.prototype._renderSelect2 = function( $select, $element, triple ) {
-		var data = {},
-			formatter = function( item, li ) {
+		var formatter = function( item, li ) {
 				if ( !item.data ) {
 					return item.text;
 				}
-
-				data[ item.data.id  ] = {
-						text: item.text,
-						propertyId: item.data.propertyId
-				};
-				$select.attr( 'data-options', JSON.stringify( data ) );
 
 				return $( '<span><b>' + item.text + ' (' + item.data.id + ')' + '</b></span><br/><small>' +
 						item.data.description + '</small>' );
