@@ -470,15 +470,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		} );
 
 		var $label = $( '<a href="#">' ).addClass( 'fa fa-tag' ).click( function () {
-			if ( triple.triple.object.startsWith( '?' ) ) {
-				self._query
-						.addVariable( triple.triple.object +
-								'Label' );
-			} else {
-				self._query
-						.addVariable( triple.triple.subject +
-								'Label' );
-			}
+			self._addLabelVariable( triple );
 			if ( self._changeListener ) {
 				self._changeListener( self );
 			}
@@ -494,6 +486,9 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 * @private
 	 */
 	SELF.prototype._addLabelVariable = function( triple ) {
+
+		this._query.convertWildcardQueryToUseVariables();
+
 		if ( triple.triple.object.startsWith( '?' ) ) {
 			this._query.addVariable( triple.triple.object + 'Label' );
 		} else {
