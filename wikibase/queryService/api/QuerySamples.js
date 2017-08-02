@@ -120,14 +120,17 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			}
 
 			var data = JSON.parse( dataMW ),
+				templateHref,
 				query;
 
-			if ( data.parts && data.parts[0].template && data.parts[0].template.target.href === './Template:SPARQL' ) {
-				// SPARQL template
-				query = data.parts[0].template.params.query.wt;
-			} else if ( data.body ) {
-				// SPARQL2 template
-				query = data.body.extsrc;
+			if ( data.parts && data.parts[0].template ) {
+				templateHref = data.parts[0].template.target.href;
+				if ( templateHref === './Template:SPARQL' || templateHref === './Template:SPARQL2' ) {
+					// SPARQL/SPARQL2 template
+					query = data.parts[0].template.params.query.wt;
+				} else {
+					return null;
+				}
 			} else {
 				return null;
 			}
