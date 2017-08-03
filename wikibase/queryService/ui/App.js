@@ -8,7 +8,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=',
 		RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=',
 		TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
-		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 20';
+		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
 
 	/**
 	 * A ui application for the Wikibase query service
