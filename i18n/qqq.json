@@ -79,5 +79,6 @@
 	"wdqs-action-malformed-query": "Label for progressbar on syntax error",
 	"wdqs-action-server-error": "Label for progressbar displaying server error",
 	"wdqs-action-unknow-error": "Label for progressbar displaying unknown error",
+	"wdqs-action-preview": "Label for progressbar displaying preview",
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view"
 }

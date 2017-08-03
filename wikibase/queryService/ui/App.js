@@ -197,6 +197,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		}
 		this._queryHelper.setChangeListener( function( ve ) {
 			self._editor.setValue( ve.getQuery() );
+
+			_.debounce( function () {
+				self._resultView.drawPreview( ve.getQuery() );
+			}, 1000 )();
 		} );
 
 		$( '.query-helper' ).resizable( {

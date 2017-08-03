@@ -7,6 +7,9 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
 
+	var PREVIEW_TIMEOUT = 1000,
+		PREVIEW_LIMIT = 20;
+
 	/**
 	 * A result view for sparql queries
 	 *
@@ -29,6 +32,12 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 * @private
 	 */
 	SELF.prototype._query = null;
+
+	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._sparqlQuery = null;
 
 	/**
 	 * @property {wikibase.queryService.api.Sparql}
@@ -180,6 +189,9 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 		}
 
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
+
+		this._sparqlQuery = this._query = new wikibase.queryService.ui.queryHelper.SparqlQuery();
+
 		this._initResultBrowserMenu();
 	};
 
@@ -222,6 +234,46 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 			.fail( function() {
 				var error = self._handleQueryError();
 				deferred.reject( error );
+			} );
+
+		return deferred.promise();
+	};
+
+	/**
+	 * Render a preview of the given SPARQL query
+	 *
+	 * @param {String} query
+	 * @return {JQuery.Promise}
+	 */
+	SELF.prototype.drawPreview = function( query ) {
+		var self = this,
+			deferred = $.Deferred(),
+			prefixes = wikibase.queryService.RdfNamespaces.ALL_PREFIXES,
+			previousQueryString = this._sparqlQuery.getQueryString();
+
+		this._query = query;
+		this._sparqlQuery.parse( query, prefixes );
+		this._sparqlQuery.setLimit( PREVIEW_LIMIT );
+
+		if ( previousQueryString === this._sparqlQuery.getQueryString() ) {
+			return deferred.reject().promise();
+		}
+
+		$( '#query-result' ).empty().hide();
+		$( '.result' ).hide();
+		$( '#query-error' ).hide();
+		this._actionBar.hide();
+
+		this._sparqlApi.query( this._sparqlQuery.getQueryString(), PREVIEW_TIMEOUT )
+			.done( function () {
+				self._handleQueryResult();
+				deferred.resolve();
+				window.setTimeout( function() {
+					self._actionBar.show( 'wdqs-action-preview', '', 'default' );
+				}, 200 );
+			} )
+			.fail( function() {
+				deferred.reject();
 			} );
 
 		return deferred.promise();

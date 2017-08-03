@@ -77,5 +77,6 @@
     "wdqs-action-malformed-query": "Query is malformed",
     "wdqs-action-server-error": "Server error",
     "wdqs-action-unknow-error": "Unknown error",
+    "wdqs-action-preview": "Result preview",
     "wdqs-result-map-layers-all": "All layers"
 }
