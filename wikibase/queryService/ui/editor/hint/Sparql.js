@@ -42,7 +42,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			// value types
 			'wikibase:TimeValue', 'wikibase:QuantityValue', 'wikibase:GlobecoordinateValue',
 			// property types
-			'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:Globecoordinate',
+			'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:GlobeCoordinate',
 			'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
 			'wikibase:Url', 'wikibase:ExternalId', 'wikibase:WikibaseProperty', 'wikibase:Math',
 			// pageprops
