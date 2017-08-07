@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sfic",
-			"चक्रपाणी"
+			"चक्रपाणी",
+			"Anamdas"
 		]
 	},
 	"wdqs-app-button-examples": "उदाहरण",
@@ -66,5 +67,6 @@
 	"wdqs-action-malformed-query": "क्वेरी गलत तरह से निर्मित है",
 	"wdqs-action-server-error": "सर्वर एरर",
 	"wdqs-action-unknow-error": "अज्ञात एरर",
+	"wdqs-action-preview": "परिणाम का अवलोकन",
 	"wdqs-result-map-layers-all": "सारी लेयर्स"
 }

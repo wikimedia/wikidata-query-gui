@@ -75,5 +75,6 @@
 	"wdqs-action-malformed-query": "Die Abfrage ist beschädigt",
 	"wdqs-action-server-error": "Serverfehler",
 	"wdqs-action-unknow-error": "Unbekannter Fehler",
+	"wdqs-action-preview": "Vorschau des Ergebnisses",
 	"wdqs-result-map-layers-all": "Alle Ebenen"
 }

@@ -44,5 +44,6 @@
 	"wdqs-action-error-display": "Prikaz rezultatov ni mogoč",
 	"wdqs-action-server-error": "Napaka strežnika",
 	"wdqs-action-unknow-error": "Neznana napaka",
+	"wdqs-action-preview": "Predogled rezultata",
 	"wdqs-result-map-layers-all": "Vsi sloji"
 }

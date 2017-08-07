@@ -78,5 +78,6 @@
 	"wdqs-action-malformed-query": "La requête est mal formulée",
 	"wdqs-action-server-error": "Erreur du serveur",
 	"wdqs-action-unknow-error": "Erreur inconnue",
+	"wdqs-action-preview": "Aperçu du résultat",
 	"wdqs-result-map-layers-all": "Toutes les couches"
 }

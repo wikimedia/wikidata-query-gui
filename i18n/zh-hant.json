@@ -74,5 +74,6 @@
 	"wdqs-action-malformed-query": "查詢異常",
 	"wdqs-action-server-error": "伺服器錯誤",
 	"wdqs-action-unknow-error": "不明錯誤",
+	"wdqs-action-preview": "結果預覽",
 	"wdqs-result-map-layers-all": "所有圖層"
 }

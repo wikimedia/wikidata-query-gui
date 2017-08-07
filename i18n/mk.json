@@ -74,5 +74,6 @@
 	"wdqs-action-malformed-query": "Барањето е лошо срочено",
 	"wdqs-action-server-error": "Грешка во опслужувачот",
 	"wdqs-action-unknow-error": "Непозната грешка",
+	"wdqs-action-preview": "Преглед на исходот",
 	"wdqs-result-map-layers-all": "Сите слоеви"
 }

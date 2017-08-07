@@ -57,6 +57,7 @@
 	"wdqs-dialog-examples-preview-result": "Претпреглед резултата",
 	"wdqs-ve-filter": "Филтер",
 	"wdqs-ve-show": "Прикажи",
+	"wdqs-ve-remove-row-title": "Уклони овај ред",
 	"wdqs-ve-with": "са",
 	"wdqs-ve-anything": "било шта",
 	"wdqs-ve-any": "било које",
@@ -71,5 +72,6 @@
 	"wdqs-action-malformed-query": "Упит је лошег облика",
 	"wdqs-action-server-error": "Грешка сервера",
 	"wdqs-action-unknow-error": "Непозната грешка",
+	"wdqs-action-preview": "Приказ резултата",
 	"wdqs-result-map-layers-all": "Сви слојеви"
 }

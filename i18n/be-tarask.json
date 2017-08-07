@@ -75,5 +75,6 @@
 	"wdqs-action-malformed-query": "Запыт няслушны",
 	"wdqs-action-server-error": "Памылка сэрвэра",
 	"wdqs-action-unknow-error": "Невядомая памылка",
+	"wdqs-action-preview": "Папярэдні прагляд выніку",
 	"wdqs-result-map-layers-all": "Усе слаі"
 }

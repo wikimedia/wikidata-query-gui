@@ -76,5 +76,6 @@
 	"wdqs-action-malformed-query": "查询有缺陷",
 	"wdqs-action-server-error": "服务器错误",
 	"wdqs-action-unknow-error": "未知错误",
+	"wdqs-action-preview": "结果预览",
 	"wdqs-result-map-layers-all": "所有图层"
 }

@@ -49,5 +49,6 @@
 	"wdqs-action-malformed-query": "क्वेरीको स्वरूप मिलेको छैन",
 	"wdqs-action-server-error": "सर्भर त्रुटी",
 	"wdqs-action-unknow-error": "अज्ञात त्रुटि",
+	"wdqs-action-preview": "परिणाम पूर्वावलोकन",
 	"wdqs-result-map-layers-all": "सबै तहहरू"
 }
