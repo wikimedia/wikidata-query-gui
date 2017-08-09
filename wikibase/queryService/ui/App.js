@@ -668,7 +668,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		} );
 
 		$( '.queryUri' ).attr( 'href', self._sparqlApi.getQueryUri() );
-		$( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + encodeURIComponent( self._sparqlApi.getQueryUri() ) );
+		$( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + $( '.queryUri' )[0].href );
 	};
 
 	/**
