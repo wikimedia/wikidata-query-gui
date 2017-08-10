@@ -74,5 +74,6 @@
 	"wdqs-action-malformed-query": "Inderrogazione scritta male",
 	"wdqs-action-server-error": "Errore d'u server",
 	"wdqs-action-unknow-error": "Errore scanusciute",
+	"wdqs-action-preview": "Andeprime de le resultate",
 	"wdqs-result-map-layers-all": "Tutte le levélle"
 }

@@ -76,5 +76,6 @@
 	"wdqs-action-malformed-query": "A pescuda non ten un formato correcto",
 	"wdqs-action-server-error": "Erro do servidor",
 	"wdqs-action-unknow-error": "Erro descoñecido",
+	"wdqs-action-preview": "Previsualización do resultado",
 	"wdqs-result-map-layers-all": "Todas as capas"
 }

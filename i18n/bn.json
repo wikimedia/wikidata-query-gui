@@ -70,5 +70,6 @@
 	"wdqs-action-malformed-query": "ত্রুটিপূর্ণ অনুসন্ধান",
 	"wdqs-action-server-error": "সার্ভার ত্রুটি",
 	"wdqs-action-unknow-error": "অজানা ত্রুটি",
+	"wdqs-action-preview": "ফলাফল প্রাকদর্শন",
 	"wdqs-result-map-layers-all": "সব স্তর"
 }

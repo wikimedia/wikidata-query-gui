@@ -76,5 +76,6 @@
 	"wdqs-action-malformed-query": "Förfrågan är felformulerad",
 	"wdqs-action-server-error": "Serverfel",
 	"wdqs-action-unknow-error": "Okänt fel",
+	"wdqs-action-preview": "Resultatsförhandsvisning",
 	"wdqs-result-map-layers-all": "Alla lager"
 }

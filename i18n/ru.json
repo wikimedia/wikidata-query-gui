@@ -80,5 +80,6 @@
 	"wdqs-action-malformed-query": "Запрос плохо сформирован",
 	"wdqs-action-server-error": "Ошибка сервера",
 	"wdqs-action-unknow-error": "Неизвестная ошибка",
+	"wdqs-action-preview": "Предпросмотр результата",
 	"wdqs-result-map-layers-all": "Все слои"
 }
