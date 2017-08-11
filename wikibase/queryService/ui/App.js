@@ -224,6 +224,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			}, 1500 ) );
 		}
 
+		$( '.query-helper' ).bind( 'DOMSubtreeModified', _.debounce( function () {
+			self._updateQueryHelperMinWidth();
+			self._updateQueryEditorSize();
+		}, 100 ) );
+
 		$( '.query-helper .panel-heading .close' ).click( function() {
 			Cookies.set( cookieHide, true );
 			$( '.query-helper' ).addClass( 'query-helper-hidden' );
@@ -256,7 +261,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			this._queryHelper.setQuery( this._editor.getValue() || DEFAULT_QUERY );
 			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
 			$( '.query-helper' ).css( 'min-width', '' );
-			this._updateQueryHelperMinWidth(); // TODO also do this after labels in the query helper have loaded
 		} catch ( e ) {
 			// Temporarily disabled due to T171935
 			// TODO: Re-enable when handling of WITH is fixed
