@@ -124,7 +124,9 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		this._initQuery();
 		this._initRdfNamespaces();
 		this._initHandlers();
-
+		/*
+		// Temporarily disabled as fix for T172728
+		// TODO: re-enable once the problems are resolved
 		$( window ).scroll( function () {
 			var minScroll = $( '#query-box' ).offset().top + $( '#query-box' ).height() - $( window ).height();
 
@@ -142,7 +144,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 					duration: 100
 				} );
 			}
-		} );
+		} ); */
 	};
 
 	/**
