@@ -258,8 +258,9 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			$( '.query-helper' ).css( 'min-width', '' );
 			this._updateQueryHelperMinWidth(); // TODO also do this after labels in the query helper have loaded
 		} catch ( e ) {
-
-			this._editor.highlightError( e.message );
+			// Temporarily disabled due to T171935
+			// TODO: Re-enable when handling of WITH is fixed
+			// this._editor.highlightError( e.message );
 			window.console.error( e );
 		}
 	};
