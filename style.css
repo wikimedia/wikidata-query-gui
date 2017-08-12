@@ -491,6 +491,7 @@ div.jqcloud span.w1 {
 .query-helper {
 	flex: 0 0 auto;
 	min-width: 300px;
+	width: 30vw;
 	max-width: 80vw;
 	z-index: 100;
 }
