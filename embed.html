@@ -43,17 +43,15 @@ body {
 		url(https://upload.wikimedia.org/wikipedia/commons/6/66/Wikidata-logo-en.svg);
 	background-repeat: no-repeat;
 	background-position: center;
+	z-index: -1;
 }
 
 #error {
 	display: none;
 }
 
-.progress {
-	height: 30px;;
-}
-
-.progress-bar {
+.action-bar {
+	height: 30px;
 	width: 100%;
 	line-height: 30px;
 	font-size: 18px;
@@ -92,23 +90,71 @@ body {
 .tooltip {
 	z-index: 2001;
 }
+
+.header-toolbar {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 40vw;
+	opacity: 0.2;
+}
+.header-toolbar:hover {
+	opacity: 1;
+}
+
 </style>
 <body>
-
-	<div id="progress">
-		<div class="progress">
-			<div class="progress-bar progress-bar-striped active">Loading</div>
+	<div class="logo"></div>
+		<noscript>
+			<div class="row action-bar" style="display: block">
+				<div class="message">
+					<div class="label label-warning">
+						Please enable JavaScript or use a browser that supports it.
+					</div>
+				</div>
+			</div>
+		</noscript>
+		<div class="header-toolbar">
+			<nav class="navbar navbar-default result">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a id="display-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-display-title">
+					<span id="display-button-icon" class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span id="display-button-label"></span>
+					<span class="caret"></span>
+					</a>
+						<ul id="result-browser-menu" class="dropdown-menu" role="menu">
+						</ul></li>
+					<li>
+					<li>
+						<a target="_blank" class="help" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views">
+						<span class="fa fa-question-circle"></span></a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="navbar-text">
+						<span class="query-total">
+						<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
+					</li>
+				</ul>
+			</nav>
 		</div>
-		<div class="logo"></div>
-	</div>
-	<div id="error" class="progress">
-		<div class="progress-bar progress-bar-danger">Error</div>
-	</div>
+		<div class="action-bar">
+			<div class="message"></div>
+		</div>
+		<div id="query-result">Test result</div>
+		<div id="query-error" class="panel-heading">Test error</div>
 
-	<div id="query-result"></div>
+		<div class="explorer-panel panel panel-default">
+		    <div class="panel-heading clearfix">
+		      <h1 class="panel-title pull-left" style="padding-top: 7.5px;">Explorer</h1>
+		      <div class="btn-group pull-right">
+		        <a href="#" class="btn btn-default btn-sm explorer-close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Close</a>
+		      </div>
+		    </div>
+			<div class="panel-body">
+			</div>
+		</div>
 	<a class="link edit-link" target="_blank" title="Wikidata Query Service SPARQL"><small>Edit on query.Wikidata.org</small></a>
 	<a href="#" class="edit edit-link" data-toggle="popover"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-
 
 	<!-- JS files -->
 	<!-- build:js js/embed.vendor.min.js -->
@@ -133,9 +179,21 @@ body {
 	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
 	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
 	<script src="node_modules/jstree/dist/jstree.js"></script>
+	<script src="node_modules/jquery.uls/src/jquery.uls.data.js"></script>
+	<script src="node_modules/jquery.uls/src/jquery.uls.data.utils.js"></script>
+	<script src="node_modules/jquery.uls/src/jquery.uls.lcd.js"></script>
+	<script src="node_modules/jquery.uls/src/jquery.uls.languagefilter.js"></script>
+	<script src="node_modules/jquery.uls/src/jquery.uls.core.js"></script>
+	<script src="node_modules/jquery.i18n/src/jquery.i18n.js"></script>
+	<script src="node_modules/jquery.i18n/src/jquery.i18n.messagestore.js"></script>
+	<script src="node_modules/jquery.i18n/src/jquery.i18n.fallbacks.js"></script>
+	<script src="node_modules/jquery.i18n/src/jquery.i18n.parser.js"></script>
+	<script src="node_modules/jquery.i18n/src/jquery.i18n.emitter.js"></script>
+	<script src="node_modules/jquery.i18n/src/jquery.i18n.language.js"></script>
 	<!-- endbuild -->
 
 	<!-- build:js js/embed.wdqs.min.js -->
+	<script src="wikibase/queryService/ui/ResultView.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/AbstractResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/AbstractChartResultBrowser.js"></script>
@@ -154,6 +212,7 @@ body {
 	<script src="wikibase/queryService/ui/resultBrowser/MultiDimensionResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowserNodeBrowser.js"></script>
+	<script src="wikibase/queryService/ui/resultBrowser/PolestarResultBrowser.js"></script>
 	<script src="wikibase/queryService/api/Sparql.js"></script>
 	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>
@@ -162,123 +221,61 @@ body {
 	<script src="wikibase/queryService/ui/queryHelper/SparqlQuery.js"></script>
 	<script src="wikibase/queryService/ui/queryHelper/SelectorBox.js"></script>
 	<script src="wikibase/queryService/ui/queryHelper/QueryTemplate.js"></script>
+	<script src="wikibase/queryService/ui/toolbar/ActionBar.js"></script>
+	<script src="wikibase/config.js"></script>
 	<!-- endbuild -->
 
 	<script type="text/javascript">
-		// TODO: Put this to config and consolidate with the one in app.js
-		var RESULT_BROWSER = {
-			Table: {
-				class: 'TableResultBrowser'
-			},
-			ImageGrid: {
-				class: 'ImageResultBrowser'
-			},
-			Map: {
-				class: 'CoordinateResultBrowser'
-			},
-			BubbleChart: {
-				class: 'BubbleChartResultBrowser'
-			},
-			LineChart: {
-				class: 'LineChartResultBrowser',
-			},
-			BarChart: {
-				class: 'BarChartResultBrowser',
-			},
-			ScatterChart: {
-				class: 'ScatterChartResultBrowser',
-			},
-			AreaChart: {
-				class: 'AreaChartResultBrowser',
-			},
-			TreeMap: {
-				class: 'TreeMapResultBrowser'
-			},
-			Tree: {
-				class: 'TreeResultBrowser'
-			},
-			Timeline: {
-				class: 'TimelineResultBrowser'
-			},
-			Dimensions: {
-				class: 'MultiDimensionResultBrowser'
-			},
-			Graph: {
-				class: 'GraphResultBrowser'
+		function renderEdit( query, callback ) {
+			var qh = new wikibase.queryService.ui.queryHelper.QueryHelper();
+			qh.setChangeListener( _.debounce( function( v ) {
+				callback( v.getQuery() );
+			}, 1500 ) );
+
+			var $editor = $( '<div>' );
+			qh.setQuery( query );
+			qh.draw( $editor );
+
+			$('.edit').on('click',function(e){
+			    e.preventDefault();
+			  }).popover( {
+					placement: 'top',
+					'html': true,
+					'content': $editor
+				} );
+
+			if ( /^#TEMPLATE=/m.test( query ) ) {
+				// expand query template popover after allowing some time for labels to load
+				setTimeout( function() { $( '.edit' ).click(); }, 500 );
 			}
-		};
+		}
 
 		$( document ).ready( function() {
-			var sparqlApi = new wikibase.queryService.api.Sparql();
+			var config = CONFIG,
+				lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
+				sparqlApi = new wikibase.queryService.api.Sparql( config.api.sparql.uri, lang ),
+				resultView = new wikibase.queryService.ui.ResultView( sparqlApi ),
+				query = decodeURIComponent( window.location.hash.substr( 1 ) );
 
-			function getResultBrowser( query ) {
-				var browser = null;
-				var browserPackage = wikibase.queryService.ui.resultBrowser;
+			resultView.TRACKING_NAMESPACE = 'wikibase.queryService.ui.embed.';
 
-				try {
-					var browserKey = query.match( /#defaultView:(\w+)/ )[1];
-					var browserClass = RESULT_BROWSER[browserKey].class;
-					browser = new browserPackage[browserClass]();
-				} catch ( e ) {
-					var browserClass = RESULT_BROWSER.Table.class;
-					browser = new browserPackage[browserClass]();
-				}
-				browser.setSparqlApi( sparqlApi );
+			$.i18n().locale = lang;
+			$.when(
+				config.i18nLoad( lang )
+			).done( function() {
+				$( 'body' ).i18n();
+				$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
 
-				var tracking = new wikibase.queryService.api.Tracking();
-				tracking.track( 'wikibase.queryService.ui.embed.' + ( browserKey || 'default' ) );
-				return browser;
-			}
-
-			function renderEdit( query, callback ) {
-				var ve = new wikibase.queryService.ui.queryHelper.QueryHelper();
-				ve.setChangeListener( _.debounce( function( v ) {
-					callback( v.getQuery() );
-				}, 1500 ) );
-
-				var $editor = $( '<div>' );
-				ve.setQuery( query );
-				ve.draw( $editor );
-				$('.edit').on('click',function(e){
-				    e.preventDefault();
-				  }).popover( {
-						placement: 'top',
-						'html': true,
-						'content': $editor
-					} );
-				if ( /^#TEMPLATE=/m.test( query ) ) {
-					// expand query template popover after allowing some time for labels to load
-					setTimeout( function() { $( '.edit' ).click(); }, 500 );
-				}
-			}
-
-			function renderQuery( query ) {
-				$( '.edit-link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
-				window.location.hash = '#' + encodeURIComponent( query )
-
-				var browser = getResultBrowser( query );
-				$( '#query-result' ).hide();
-				$( '#query-result' ).empty();
-				$( '#progress' ).show();
-				sparqlApi.query( query ).done( function() {
-					try {
-						browser.setResult( sparqlApi.getResultRawData() );
-						$( '#query-result' ).show();
-						browser.draw( $( '#query-result' ) );
-						$( '#progress' ).hide();
-					} catch ( e ) {
-						$( '#progress' ).hide();
-						$( '#error' ).show();
-					}
-				} ).fail( function() {
-					$( '#progress' ).hide();
-					$( '#error' ).show();
+				resultView.draw( query );
+				renderEdit( query, function( q ){
+					resultView.draw( q );
+					window.location.hash = '#' + encodeURIComponent( q )
+					$( '.edit-link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
 				} );
-			}
 
-			var query = decodeURIComponent( window.location.hash.substr( 1 ) );
-			renderQuery( query );
-			renderEdit( query, renderQuery );
+				$( '.edit-link' ).attr( 'href', 'https://query.wikidata.org/' + window.location.hash )
+			} );
+
 		} );
 	</script>
 </body>
