@@ -3,7 +3,9 @@
   "license": "GPL-2.0+",
   "version": "0.1.4",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt build",
+    "deploy": "grunt deploy"
   },
   "repository": {
     "type": "git",

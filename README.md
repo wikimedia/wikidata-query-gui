@@ -26,14 +26,14 @@ npm install wikidata-query-gui
 Run JSHint, JSCS and QUnit tests.
 
 ```bash
-$ grunt test
+$ npm test
 ```
 
 ## Build
 Create a build with bundled and minified files.
 
 ```bash
-$ grunt build
+$ npm run build
 ```
 
 
@@ -41,7 +41,7 @@ $ grunt build
 Create a build and push it to the deployment branch via git review.
 
 ```bash
-$ grunt deploy
+$ npm run deploy
 ```
 
 
@@ -72,7 +72,7 @@ See `examples/dialog.html`.
 
 ```
 var api = new wikibase.queryService.api.Sparql();
-api.query( query ).done( function(){
+api.query( query ).done( function() {
 	var json = JSON.parse( api.getResultAsJson() );
 
 } );
