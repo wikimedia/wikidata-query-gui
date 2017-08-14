@@ -58,6 +58,8 @@
 	"wdqs-dialog-examples-preview-result": "Vista previa del resultáu",
 	"wdqs-ve-filter": "Filtru",
 	"wdqs-ve-show": "Amosar",
+	"wdqs-ve-add-label-title": "Añadir una variable que contenga la etiqueta d'entidá",
+	"wdqs-ve-remove-row-title": "Desaniciar esta filera",
 	"wdqs-ve-with": "con",
 	"wdqs-ve-anything": "cualquier cosa",
 	"wdqs-ve-any": "cualesquiera",
@@ -72,5 +74,6 @@
 	"wdqs-action-malformed-query": "La consulta ta mal formada",
 	"wdqs-action-server-error": "Error del sirvidor",
 	"wdqs-action-unknow-error": "Error desconocíu",
+	"wdqs-action-preview": "Vista previa del resultáu",
 	"wdqs-result-map-layers-all": "Toles capes"
 }

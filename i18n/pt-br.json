@@ -80,5 +80,6 @@
 	"wdqs-action-malformed-query": "A consulta está mal formulada",
 	"wdqs-action-server-error": "Erro do servidor",
 	"wdqs-action-unknow-error": "Erro desconhecido",
+	"wdqs-action-preview": "Visualização do resultado",
 	"wdqs-result-map-layers-all": "Todas as camadas"
 }

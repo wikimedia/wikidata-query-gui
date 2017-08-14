@@ -4,7 +4,8 @@
 			"Beta16",
 			"Matteocng",
 			"Anto",
-			"Selven"
+			"Selven",
+			"Greis"
 		]
 	},
 	"wdqs-app-button-examples": "Esempi",
@@ -61,6 +62,7 @@
 	"wdqs-dialog-examples-preview-result": "Anteprima risultato",
 	"wdqs-ve-filter": "Filtra",
 	"wdqs-ve-show": "Mostra",
+	"wdqs-ve-remove-row-title": "Rimuovi questa riga",
 	"wdqs-ve-with": "con",
 	"wdqs-ve-anything": "qualsiasi cosa",
 	"wdqs-ve-any": "qualsiasi",
@@ -75,5 +77,6 @@
 	"wdqs-action-malformed-query": "Query non valida",
 	"wdqs-action-server-error": "Errore del server",
 	"wdqs-action-unknow-error": "Errore sconosciuto",
+	"wdqs-action-preview": "Anteprima risultato",
 	"wdqs-result-map-layers-all": "Tutti i livelli"
 }

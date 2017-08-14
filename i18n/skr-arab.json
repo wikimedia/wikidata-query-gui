@@ -14,7 +14,15 @@
 	"wdqs-app-button-clear-title": "سوال مٹاؤ",
 	"wdqs-app-button-display": "ڈسپلے",
 	"wdqs-app-button-download": "ڈاؤن لوڈ ، لہاوݨ",
+	"wdqs-app-button-download-title": "ڈاؤنلوڈ نتیجہ",
 	"wdqs-app-button-link": "ربط",
+	"wdqs-app-help-feedback": "رائت ݙیوو",
+	"wdqs-app-help-request-query": "سوال پُچھو",
+	"wdqs-app-help-portal": "مدد پورٹل",
+	"wdqs-app-help-datamodel": "آر ڈی ایف ڈیٹا ماڈل",
+	"wdqs-app-help-prefixes": "سابقیاں دی فہرست",
+	"wdqs-app-help-copy": "اجازت نامہ دی معلومات",
+	"wdqs-app-help-queryhelper": "پچھݨ دی مدد کرݨ آلا",
 	"wdqs-app-footer-updated": "ڈیٹا $1 پہلے اپ ڈیٹ تھیا",
 	"wdqs-app-footer-updated-seconds": "ڈیٹا $1 سیکنڈ پہلے اپ ڈیٹ تھیا",
 	"wdqs-app-result-shorturl": "نتیجے دا مختصر یوآرایل",
@@ -39,5 +47,7 @@
 	"wdqs-ve-sb-suggestions": "تجویزاں",
 	"wdqs-ve-sb-other": "ٻئے",
 	"wdqs-action-server-error": "سرور غلطی",
-	"wdqs-action-unknow-error": "نامعلوم غلطی"
+	"wdqs-action-unknow-error": "نامعلوم غلطی",
+	"wdqs-action-preview": "نتیجے دا ݙکھالا",
+	"wdqs-result-map-layers-all": "ساریاں تہہاں"
 }
