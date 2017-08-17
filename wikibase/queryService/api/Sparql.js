@@ -13,8 +13,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			UNKNOWN: 100
 		},
 		ERROR_MAP = {
-		'QueryTimeoutException: Query deadline is expired': ERROR_CODES.TIMEOUT,
-		'MalformedQueryException: ': ERROR_CODES.MALFORMED
+			'QueryTimeoutException: Query deadline is expired': ERROR_CODES.TIMEOUT,
+			'java.util.concurrent.TimeoutException': ERROR_CODES.TIMEOUT,
+			'MalformedQueryException: ': ERROR_CODES.MALFORMED
 		},
 		DEFAULT_LANGUAGE = 'en';
 
