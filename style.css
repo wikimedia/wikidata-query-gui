@@ -181,6 +181,7 @@ iframe.shortUrl {
 
 #query-box .toolbar-bottom {
 	padding-top: 1em;
+	padding-bottom: 0.2em;
 	flex-grow: 0;
 	text-align: center;
 }
