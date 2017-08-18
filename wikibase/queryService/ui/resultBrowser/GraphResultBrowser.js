@@ -13,6 +13,12 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 				enabled: true,
 				iterations: 10,
 				fit: true
+			},
+			barnesHut: {
+				springLength: 150,
+				centralGravity: 0.5,
+				damping: 0.2,
+				avoidOverlap: 0.1
 			}
 		},
 		nodes: {
