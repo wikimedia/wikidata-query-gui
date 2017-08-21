@@ -3,7 +3,8 @@
 		"authors": [
 			"Termininja",
 			"StanProg",
-			"Vodnokon4e"
+			"Vodnokon4e",
+			"ShockD"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -14,6 +15,8 @@
 	"wdqs-app-button-run-title": "Изпълняване на заявката (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Изчистване",
 	"wdqs-app-button-clear-title": "Изчистване на заявката",
+	"wdqs-app-button-restore-title": "Възстановяване на предишна заявка",
+	"wdqs-app-button-fullscreen-title": "Преминаване към редактиране на цял екран",
 	"wdqs-app-button-display": "Показване",
 	"wdqs-app-button-display-title": "Показване на резултата като таблица, изображение, ...",
 	"wdqs-app-button-download": "Изтегляне",
@@ -28,12 +31,14 @@
 	"wdqs-app-help-datamodel": "Модел на данните RDF",
 	"wdqs-app-help-prefixes": "Списък на представките",
 	"wdqs-app-help-copy": "Лицензна информация",
+	"wdqs-app-help-queryhelper": "Помощник за заявки",
 	"wdqs-app-footer-help": "Натиснете <i>[Ctrl + интервал]</i>, за да активирате функцията за автоматично довършване.",
 	"wdqs-app-footer-updated": "Данните са обновени преди $1",
 	"wdqs-app-footer-updated-seconds": "Данните са обновени пред $1 секунди",
 	"wdqs-app-result-shorturl": "Кратък адрес на резултат",
 	"wdqs-app-result-shorturl-title": "Кратък адрес на този резултат",
 	"wdqs-app-result-rawgraphs": "Отваряне в RAWGraphs.io",
+	"wdqs-app-result-rawgraphs-title": "Създаване на графика от текущите резултати, използвайки RAWGraphs.io",
 	"wdqs-app-result-embed": "Вграждане на резултата",
 	"wdqs-app-result-endpoint": "Достъп до SPARQL",
 	"wdqs-app-result-endpoint-title": "Връзка до точката за достъп на SPARQL с резултата от заявката",
@@ -51,10 +56,13 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Йерархична подредба от ляво на дясно",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Йерархична подредба от горе на долу",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Йерархична подредба от дясно на ляво",
+	"wdqs-app-toast-leave-fullscreen": "Натиснете [esc] за напускане на режима на цял екран",
 	"wdqs-dialog-examples-preview-query": "Преглед на заявката",
 	"wdqs-dialog-examples-preview-result": "Преглед на резултата",
 	"wdqs-ve-filter": "Филтър",
 	"wdqs-ve-show": "Показване",
+	"wdqs-ve-add-label-title": "Добавяне на променлива с надпис на единицата",
+	"wdqs-ve-remove-row-title": "Премахване на този ред",
 	"wdqs-ve-with": "с",
 	"wdqs-ve-anything": "каквото и да е",
 	"wdqs-ve-any": "всяко",
@@ -69,5 +77,6 @@
 	"wdqs-action-malformed-query": "Невалидна заявка",
 	"wdqs-action-server-error": "Сървърна грешка",
 	"wdqs-action-unknow-error": "Непозната грешка",
+	"wdqs-action-preview": "Предварителен преглед на резултата",
 	"wdqs-result-map-layers-all": "Всички слоеве"
 }
