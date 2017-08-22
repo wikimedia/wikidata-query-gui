@@ -38,6 +38,9 @@ var CONFIG = ( function ( window, $ ) {
 		brand: {
 			logo: 'logo.svg',
 			title: 'Wikidata Query'
+		},
+		location: {
+			index: 'https://query.wikidata.org/'
 		}
 	};
 
@@ -55,6 +58,9 @@ var CONFIG = ( function ( window, $ ) {
 		},
 		brand: {
 			title: 'Localhost'
+		},
+		location: {
+			index: './index.html'
 		}
 	} );
 
