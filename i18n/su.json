@@ -32,6 +32,7 @@
 	"wdqs-app-footer-updated-seconds": "Data dianyarkeun $1 menit ka tukang",
 	"wdqs-app-result-shorturl": "Pondokeun URL pikeun hasil",
 	"wdqs-app-result-shorturl-title": "Pondokeun URL pikeun ieu hasil",
+	"wdqs-app-result-rawgraphs": "Buka dina RAWGraphs.io",
 	"wdqs-app-result-embed": "Cecebkeun hasil",
 	"wdqs-app-result-endpoint": "Titik ahir SPARQL",
 	"wdqs-app-result-endpoint-title": "Tumbukeun titik ahir SPARQL malik kana hasil",
@@ -49,9 +50,13 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Tata teundeun hirarkis kénca ka katuhu",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Tata teundeun hirarkis luhur ka handap",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Tata teundeun hirarkis katuhu ka kénca",
+	"wdqs-app-toast-leave-fullscreen": "Pencét [esc] pikeun ninggalkeun layar pinuh",
 	"wdqs-dialog-examples-preview-query": "Kuéri pramidang",
 	"wdqs-dialog-examples-preview-result": "Hasil pramidang",
+	"wdqs-ve-filter": "Saringan",
 	"wdqs-ve-show": "Témbongkeun",
+	"wdqs-ve-add-label-title": "Tambah variabel ngandung éntitas label",
+	"wdqs-ve-remove-row-title": "Pupus ieu baris",
 	"wdqs-ve-with": "jeung",
 	"wdqs-ve-anything": "sakumna",
 	"wdqs-ve-any": "sakumna",
@@ -66,5 +71,6 @@
 	"wdqs-action-malformed-query": "Kuéri salah format",
 	"wdqs-action-server-error": "Kadalahan sérver",
 	"wdqs-action-unknow-error": "Kasalahan teu dipikanyaho",
+	"wdqs-action-preview": "Pramidang hasil",
 	"wdqs-result-map-layers-all": "Sakabéh layer"
 }
