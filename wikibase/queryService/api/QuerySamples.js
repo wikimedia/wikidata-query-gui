@@ -87,7 +87,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	};
 
 	SELF.prototype._extractTagsFromSPARQL = function ( sparql ) {
-		var tags = sparql.replace( /\n/g, '' ).match( /(Q|P)[0-9]+/g );
+		var tags = sparql.replace( /\n/g, '' ).match( /[QP][0-9]+/g );
 
 		if ( !tags ) {
 			return [];
