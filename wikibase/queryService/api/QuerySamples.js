@@ -34,31 +34,20 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @return {jQuery.Promise} Object taking list of example queries { title:, query: }
 	 */
 	SELF.prototype.getExamples = function () {
-		var deferred = $.Deferred(),
-			self = this;
+		var self = this;
 
-		$.ajax( {
+		return $.ajax( {
 			url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE + '/' + self._language ) + '?redirect=false',
 			dataType: 'html'
-		} ).done(
-			function ( data ) {
-				deferred.resolve( self._parseHTML( data ) );
-			}
-		).fail(
-			function() {
-				// retry without language
-				$.ajax( {
-					url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
-					dataType: 'html'
-				} ).done(
-					function ( data ) {
-						deferred.resolve( self._parseHTML( data ) );
-					}
-				);
-			}
-		);
-
-		return deferred;
+		} ).catch( function() {
+			// retry without language
+			return $.ajax( {
+				url: API_ENDPOINT + encodeURIComponent( PAGE_TITLE ) + '?redirect=false',
+				dataType: 'html'
+			} );
+		} ).then( function ( data ) {
+			return self._parseHTML( data );
+		} );
 	};
 
 	/**

@@ -118,7 +118,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var self = this,
 			category = null;
 
-		this._querySamplesApi.getExamples().done( function( examples ) {
+		this._querySamplesApi.getExamples().then( function( examples ) {
 			self._examples = examples;
 			self._initTagCloud();
 			self._updateExamplesCount( examples.length );
@@ -155,7 +155,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		var self = this,
 			jQCloudTags = [];
 
-		this._getCloudTags().done( function ( tags ) {
+		this._getCloudTags().then( function ( tags ) {
 			$.each( tags, function ( i, tag ) {
 				var label =  tag.label + ' (' + tag.id + ')';
 
@@ -237,19 +237,14 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			return b.weight - a.weight;
 		} ).slice( 0, 50 );
 
-		var deferred = $.Deferred();
-		this._wikibaseApi.getLabels( tagCloud.map( function ( v ) {
+		return this._wikibaseApi.getLabels( tagCloud.map( function ( v ) {
 			return v.id;
-		} ) ).done( function ( data ) {
+		} ) ).then( function ( data ) {
 			tagCloud.forEach( function ( tag ) {
 				tag.label = _.compact( data.entities[tag.id].labels )[0].value;
-
 			} );
-
-			deferred.resolve( tagCloud );
+			return tagCloud;
 		} );
-
-		return deferred.promise();
 	};
 
 	/**

@@ -143,27 +143,18 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	};
 
 	SELF.prototype._getHints = function( editorContent, lineContent, lineNum, cursorPos ) {
-		var deferred = new $.Deferred(),
-			self = this;
+		var self = this;
 
-		this._rdfHint.getHint( editorContent, lineContent, lineNum, cursorPos ).done(
-				function( hint ) {
-					hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
-					hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
-
-					deferred.resolve( hint );
-				} ).fail(
-				function() {// if rdf hint is rejected try sparql hint
-					self._sparqlHint.getHint( editorContent, lineContent, lineNum, cursorPos )
-							.done( function( hint ) {
-								hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
-								hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
-
-								deferred.resolve( hint );
-							} );
-				} );
-
-		return deferred.promise();
+		return this._rdfHint.getHint(
+			editorContent, lineContent, lineNum, cursorPos
+		).catch( function() {
+			// if rdf hint is rejected try sparql hint
+			return self._sparqlHint.getHint( editorContent, lineContent, lineNum, cursorPos );
+		} ).then( function( hint ) {
+			hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
+			hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
+			return hint;
+		} );
 	};
 
 	/**
