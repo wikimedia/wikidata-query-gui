@@ -5,7 +5,8 @@
 			"Ата",
 			"Piramidion",
 			"Олександр",
-			"AS"
+			"AS",
+			"Alex Khimich"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -57,10 +58,13 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Ієрархічна композиція зліва направо",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Ієрархічна композиція зверху вниз",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Ієрархічна композиція справа наліво",
+	"wdqs-app-toast-leave-fullscreen": "Натисніть [esc] щоб вийти з повноекранного режиму",
 	"wdqs-dialog-examples-preview-query": "Попередній перегляд запиту",
 	"wdqs-dialog-examples-preview-result": "Попередній перегляд результату",
 	"wdqs-ve-filter": "Фільтр",
 	"wdqs-ve-show": "Показати",
+	"wdqs-ve-add-label-title": "Додати змінну, що містить мітку об'єкту",
+	"wdqs-ve-remove-row-title": "Видалити цей рядок",
 	"wdqs-ve-with": "з",
 	"wdqs-ve-anything": "будь-що",
 	"wdqs-ve-any": "будь-яке",
@@ -75,5 +79,6 @@
 	"wdqs-action-malformed-query": "Неправильний запит",
 	"wdqs-action-server-error": "Помилка сервера",
 	"wdqs-action-unknow-error": "Невідома помилка",
+	"wdqs-action-preview": "Попередній перегляд результату",
 	"wdqs-result-map-layers-all": "Всі шари"
 }
