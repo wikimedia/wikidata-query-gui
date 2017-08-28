@@ -194,20 +194,19 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._getCloudTags = function() {
-		var self = this;
+		var self = this,
+			filterTags = self._$element.find( '.tagFilter' ).tags().getTags();
 
 		// filter tags that don't effect the filter for examples
 		var tagsFilter = function ( tags ) {
-			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags();
-
-			return selectedTags.every( function ( selectedTag ) {
+			return filterTags.every( function ( selectedTag ) {
 				return tags.indexOf( selectedTag.match( /\((.*)\)/ )[1] ) !== -1;
 			} );
 		};
 
 		// filter selected tags from tag cloud
 		var tagFilter = function ( tag ) {
-			var selectedTags = self._$element.find( '.tagFilter' ).tags().getTags().map(
+			var selectedTags = filterTags.map(
 					function ( v ) {
 						return v.match( /\((.*)\)/ )[1];
 					} );
@@ -235,13 +234,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 		} );
 
 		tagCloud = _.compact( tagCloud ).sort( function ( a, b ) {
-			if ( a.weight > b.weight ) {
-				return -1;
-			}
-			if ( a.weight < b.weight ) {
-				return 1;
-			}
-			return 0;
+			return b.weight - a.weight;
 		} ).slice( 0, 50 );
 
 		var deferred = $.Deferred();
