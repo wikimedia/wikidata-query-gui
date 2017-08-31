@@ -59,6 +59,10 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		} );
 
 		this._draw( $element, data, _.values( dimensions ) );
+
+		$element.children( 'svg' ).css( {
+			display: 'block'
+		} );
 	};
 
 	SELF.prototype._draw = function( $graph, data, dimensions ) {
