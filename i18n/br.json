@@ -61,6 +61,8 @@
 	"wdqs-dialog-examples-preview-result": "Alberz eus an disoc'h",
 	"wdqs-ve-filter": "Sil",
 	"wdqs-ve-show": "Diskouez",
+	"wdqs-ve-add-label-title": "Ouzhpennañ un argemmenn enni un dikedenn entite",
+	"wdqs-ve-remove-row-title": "Lemel kuit al linenn-mañ",
 	"wdqs-ve-with": "gant",
 	"wdqs-ve-anything": "netra",
 	"wdqs-ve-any": "forzh pehini",
@@ -75,5 +77,6 @@
 	"wdqs-action-malformed-query": "Geriet fall eo ar reked",
 	"wdqs-action-server-error": "Fazi ar servijer",
 	"wdqs-action-unknow-error": "Fazi dianav",
+	"wdqs-action-preview": "Rakwel an disoc'h",
 	"wdqs-result-map-layers-all": "An holl wiskadoù"
 }
