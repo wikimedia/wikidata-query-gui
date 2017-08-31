@@ -47,6 +47,7 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 		}
 
 		if ( location.hostname !== 'query.wikidata.org' ) {
+			// FIXME: expected to return a promise
 			return;// only track on wikidata.org
 		}
 

@@ -14,7 +14,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
-     * @author Florian Rämisch, <raemisch@ub.uni-leipzig.de>
+	 * @author Florian Rämisch, <raemisch@ub.uni-leipzig.de>
 	 * @constructor
 	 *
 	 * @param {jQuery} $element
@@ -124,7 +124,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			self._updateExamplesCount( examples.length );
 
 			$.each( examples, function( key, example ) {
-				if ( example.category !==  category ) {
+				if ( example.category !== category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
 							.append( $( '<td colspan="4">' ).text( category ) ) );
@@ -156,8 +156,9 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			jQCloudTags = [];
 
 		this._getCloudTags().then( function ( tags ) {
+			var tagCloud = $( '.tagCloud' );
 			$.each( tags, function ( i, tag ) {
-				var label =  tag.label + ' (' + tag.id + ')';
+				var label = tag.label + ' (' + tag.id + ')';
 
 				jQCloudTags.push( {
 					text: label,
@@ -178,11 +179,11 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 			} );
 
 			if ( redraw ) {
-				$( '.tagCloud' ).jQCloud( 'update', jQCloudTags );
+				tagCloud.jQCloud( 'update', jQCloudTags );
 				return;
 			}
 
-			$( '.tagCloud' ).jQCloud( jQCloudTags, {
+			tagCloud.jQCloud( jQCloudTags, {
 				delayedMode: true,
 				autoResize: true
 			} );
@@ -271,7 +272,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 					trigger: 'hover',
 					container: 'body',
 					title: self._i18n( 'wdqs-dialog-examples-preview-query', 'Preview query' ),
-					content: $( '<pre style="white-space:pre-line; word-break:break-word;"/>' ).text( query ),
+					content: $( '<pre style="white-space:pre-line; word-break:normal;"/>' ).text( query ),
 					html: true
 				} ),
 			$preview = $( '<a href="#">' ).addClass( 'glyphicon glyphicon-camera' ).clickover(
@@ -281,7 +282,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
                     'esc_close': true,
 					trigger: 'click',
 					container: 'body',
-					title: self._i18n( 'wdqs-dialog-examples-preview-result', 'Preview result'  ),
+					title: self._i18n( 'wdqs-dialog-examples-preview-result', 'Preview result' ),
 					content: $( '<iframe width="400" height="350" frameBorder="0" src="' +
 							( self._previewUrl || 'embed.html#' ) +	encodeURIComponent( query ) + '">' ),
 					html: true
@@ -359,13 +360,11 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._i18n = function( key, message ) {
-		var i18nMessage = null;
-
-		if ( !$.i18n || ( i18nMessage = $.i18n( key ) ) === key ) {
+		if ( !$.i18n ) {
 			return message;
 		}
-
-		return i18nMessage;
+		var i18nMessage = $.i18n( key );
+		return i18nMessage === key ? message : i18nMessage;
 	};
 
 	return SELF;
