@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "Tuccḍa n uqeddac",
 	"wdqs-action-unknow-error": "Tuccḍa tarussint",
 	"wdqs-action-preview": "Taskant n ugmuḍ",
-	"wdqs-result-map-layers-all": "Akk tissiwin"
+	"wdqs-result-map-layers-all": "Akk tissiwin",
+	"wdqs-embed-button-edit-query": "Ẓreg tuttra-agi",
+	"wdqs-embed-button-edit-query-title": "Ẓreg tuttra-agi s umaẓrag SPARQL"
 }

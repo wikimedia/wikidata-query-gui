@@ -84,5 +84,6 @@
 	"wdqs-action-server-error": "خطأ بالخادم",
 	"wdqs-action-unknow-error": "خطأ غير معروف",
 	"wdqs-action-preview": "معاينة النتيجة",
-	"wdqs-result-map-layers-all": "كل الطبقات"
+	"wdqs-result-map-layers-all": "كل الطبقات",
+	"wdqs-embed-button-edit-query": "عدل هذا الاستعلام"
 }

@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "Грешка во опслужувачот",
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Преглед на исходот",
-	"wdqs-result-map-layers-all": "Сите слоеви"
+	"wdqs-result-map-layers-all": "Сите слоеви",
+	"wdqs-embed-button-edit-query": "Уреди го барањево",
+	"wdqs-embed-button-edit-query-title": "Уреди го барањето со SPARQL-уредник"
 }

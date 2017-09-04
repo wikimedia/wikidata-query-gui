@@ -81,6 +81,6 @@
 	"wdqs-action-unknow-error": "Label for progressbar displaying unknown error",
 	"wdqs-action-preview": "Label for progressbar displaying preview",
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view",
-    "wdqs-embed-button-edit-query": "Label for button in embed",
-    "wdqs-embed-button-edit-query-title": "Title for button in embed"
+	"wdqs-embed-button-edit-query": "Label for button in embed",
+	"wdqs-embed-button-edit-query-title": "Title for button in embed"
 }

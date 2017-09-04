@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Obaid Raza",
-			"امین اکبر"
+			"امین اکبر",
+			"Hindustanilanguage"
 		]
 	},
 	"wdqs-app-button-examples": "مثالیں",
@@ -28,5 +29,7 @@
 	"wdqs-ve-anything": "کوئی بھی چیز",
 	"wdqs-ve-any": "کوئی بھی",
 	"wdqs-ve-or": "یا",
-	"wdqs-ve-subtype": "ذیلی قسم"
+	"wdqs-ve-subtype": "ذیلی قسم",
+	"wdqs-embed-button-edit-query": "اس استفسار کی ترمیم کیجیے",
+	"wdqs-embed-button-edit-query-title": "اس استفسار کی ترمیم SPARQL مدیر سے کیجیے"
 }

@@ -78,5 +78,7 @@
 	"wdqs-action-server-error": "Сървърна грешка",
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Предварителен преглед на резултата",
-	"wdqs-result-map-layers-all": "Всички слоеве"
+	"wdqs-result-map-layers-all": "Всички слоеве",
+	"wdqs-embed-button-edit-query": "Редактиране на тази заявка",
+	"wdqs-embed-button-edit-query-title": "Редактиране на тази заявка със SPARQL редактора"
 }

@@ -76,5 +76,7 @@
 	"wdqs-action-server-error": "Serverfejl",
 	"wdqs-action-unknow-error": "Ukendt fejl",
 	"wdqs-action-preview": "Resultatforhåndsvisning",
-	"wdqs-result-map-layers-all": "Alle lag"
+	"wdqs-result-map-layers-all": "Alle lag",
+	"wdqs-embed-button-edit-query": "Rediger denne forespørgsel",
+	"wdqs-embed-button-edit-query-title": "Rediger denne forespørgsel med SPARQL-redigeringsprogrammet"
 }

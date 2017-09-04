@@ -76,5 +76,7 @@
 	"wdqs-action-server-error": "Lỗi máy chủ",
 	"wdqs-action-unknow-error": "Lỗi không rõ",
 	"wdqs-action-preview": "Xem trướng kết quả",
-	"wdqs-result-map-layers-all": "Tất cả các lớp"
+	"wdqs-result-map-layers-all": "Tất cả các lớp",
+	"wdqs-embed-button-edit-query": "Sửa đổi truy vấn này",
+	"wdqs-embed-button-edit-query-title": "Sửa đổi truy vấn này dùng trình soạn thảo SPARQL"
 }

@@ -78,5 +78,7 @@
 	"wdqs-action-server-error": "Fazi ar servijer",
 	"wdqs-action-unknow-error": "Fazi dianav",
 	"wdqs-action-preview": "Rakwel an disoc'h",
-	"wdqs-result-map-layers-all": "An holl wiskadoù"
+	"wdqs-result-map-layers-all": "An holl wiskadoù",
+	"wdqs-embed-button-edit-query": "Aozañ ar reked-mañ",
+	"wdqs-embed-button-edit-query-title": "Kemmañ ar reked-mañ gant an aozer SPARQL"
 }

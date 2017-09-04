@@ -69,5 +69,7 @@
 	"wdqs-action-server-error": "सर्वर एरर",
 	"wdqs-action-unknow-error": "अज्ञात एरर",
 	"wdqs-action-preview": "परिणाम का अवलोकन",
-	"wdqs-result-map-layers-all": "सारी परतें"
+	"wdqs-result-map-layers-all": "सारी परतें",
+	"wdqs-embed-button-edit-query": "इस सवाल को संपादित करें",
+	"wdqs-embed-button-edit-query-title": "SPARQL संपादक के साथ इस जांच को संपादित करें"
 }

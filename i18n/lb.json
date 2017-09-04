@@ -72,5 +72,6 @@
 	"wdqs-action-malformed-query": "Ufro ass schlecht formuléiert",
 	"wdqs-action-server-error": "Feeler vum Server",
 	"wdqs-action-unknow-error": "Onbekannte Feeler",
-	"wdqs-result-map-layers-all": "All Niveauen"
+	"wdqs-result-map-layers-all": "All Niveauen",
+	"wdqs-embed-button-edit-query": "Dës Ufro änneren"
 }

@@ -16,6 +16,7 @@
 	"wdqs-app-button-clear": "Garbitu",
 	"wdqs-app-button-clear-title": "Garbitu kontsulta",
 	"wdqs-app-button-restore-title": "Aurreko galdera berriz ezarri",
+	"wdqs-app-button-fullscreen-title": "Aldatu pantaila osoko modua editorean",
 	"wdqs-app-button-display": "Erakutsi",
 	"wdqs-app-button-display-title": "Erakutsi emaitzak taula batean, irudi batean...",
 	"wdqs-app-button-download": "Jaitsi",
@@ -60,6 +61,7 @@
 	"wdqs-dialog-examples-preview-result": "Emaitzaren aurreikuspena",
 	"wdqs-ve-filter": "Iragazi",
 	"wdqs-ve-show": "Erakutsi",
+	"wdqs-ve-add-label-title": "Gehitu entitateen etiketa duen aldagaia",
 	"wdqs-ve-remove-row-title": "Lerro hau ezabatu",
 	"wdqs-ve-with": "honekin",
 	"wdqs-ve-anything": "edozein gauza",
@@ -75,5 +77,8 @@
 	"wdqs-action-malformed-query": "Querya gaizki egina dago",
 	"wdqs-action-server-error": "Zerbitzari errorea",
 	"wdqs-action-unknow-error": "Errore ezezaguna",
-	"wdqs-result-map-layers-all": "Geruza guztiak"
+	"wdqs-action-preview": "Aurreikusi emaitza",
+	"wdqs-result-map-layers-all": "Geruza guztiak",
+	"wdqs-embed-button-edit-query": "Kontsulta hau aldatu",
+	"wdqs-embed-button-edit-query-title": "Kontsulta hau SPARQL editorearekin aldatu"
 }
