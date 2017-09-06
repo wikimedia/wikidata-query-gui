@@ -93,8 +93,8 @@ body {
 .header-toolbar {
 	z-index: 1000;
 	position: fixed;
-	top: 0;
-	left: 40vw;
+	bottom: 0;
+	right: 0;
 	opacity: 0.2;
 }
 .header-toolbar:hover {
@@ -278,6 +278,8 @@ body {
 
 				$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash )
 			} );
+
+			$( '#display-button' ).closest( '.navbar' ).addClass( 'dropup' );
 
 		} );
 	</script>
