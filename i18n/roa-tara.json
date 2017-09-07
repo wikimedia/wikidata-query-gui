@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "Errore d'u server",
 	"wdqs-action-unknow-error": "Errore scanusciute",
 	"wdqs-action-preview": "Andeprime de le resultate",
-	"wdqs-result-map-layers-all": "Tutte le levélle"
+	"wdqs-result-map-layers-all": "Tutte le levélle",
+	"wdqs-embed-button-edit-query": "Cange sta 'nderrogazione",
+	"wdqs-embed-button-edit-query-title": "Cange sta 'nderrogazione cu 'u cangiatore SPARQL"
 }

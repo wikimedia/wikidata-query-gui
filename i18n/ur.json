@@ -14,7 +14,9 @@
 	"wdqs-app-button-clear": "صاف",
 	"wdqs-app-button-display": "تظاہرہ",
 	"wdqs-app-button-download": "زیراثقال",
+	"wdqs-app-button-download-title": "نتیجہ ڈاؤن لوڈ کریں",
 	"wdqs-app-button-link": "ربط",
+	"wdqs-app-help-feedback": "رائے دیں!",
 	"wdqs-app-help-prefixes": "سابقوں کی فہرست",
 	"wdqs-app-footer-help": "خود کار تکمیل کے لیے <i>[CTRL-SPACE]</i> دبائیں۔",
 	"wdqs-app-footer-updated": "ڈیٹا $1 پہلے اپ ڈیٹ ہوا",
@@ -30,6 +32,8 @@
 	"wdqs-ve-any": "کوئی بھی",
 	"wdqs-ve-or": "یا",
 	"wdqs-ve-subtype": "ذیلی قسم",
+	"wdqs-action-error-display": "نتیجہ دکھانے کے قابل نہیں",
+	"wdqs-result-map-layers-all": "تمام پرتیں",
 	"wdqs-embed-button-edit-query": "اس استفسار کی ترمیم کیجیے",
 	"wdqs-embed-button-edit-query-title": "اس استفسار کی ترمیم SPARQL مدیر سے کیجیے"
 }

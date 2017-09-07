@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "Fela serwera",
 	"wdqs-action-unknow-error": "Nieznónô fela",
 	"wdqs-action-preview": "Pòdzérk rezulatatu",
-	"wdqs-result-map-layers-all": "Wszëtczé lédżi"
+	"wdqs-result-map-layers-all": "Wszëtczé lédżi",
+	"wdqs-embed-button-edit-query": "Editëjë to zapëtanié",
+	"wdqs-embed-button-edit-query-title": "Editëjë to zapëtanié z pòmòcą editora SPARQL"
 }

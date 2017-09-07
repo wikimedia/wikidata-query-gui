@@ -77,5 +77,7 @@
 	"wdqs-action-server-error": "Erro do servidor",
 	"wdqs-action-unknow-error": "Erro descoñecido",
 	"wdqs-action-preview": "Previsualización do resultado",
-	"wdqs-result-map-layers-all": "Todas as capas"
+	"wdqs-result-map-layers-all": "Todas as capas",
+	"wdqs-embed-button-edit-query": "Editar esta consulta",
+	"wdqs-embed-button-edit-query-title": "Editar esta consulta co editor SPARQL"
 }

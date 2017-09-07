@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "봉사기 오유",
 	"wdqs-action-unknow-error": "알수 없는 오유",
 	"wdqs-action-preview": "결과 미리보기",
-	"wdqs-result-map-layers-all": "모든 계층"
+	"wdqs-result-map-layers-all": "모든 계층",
+	"wdqs-embed-button-edit-query": "이 질문 편집",
+	"wdqs-embed-button-edit-query-title": "SPARQL 편집기로 이 질문 편집"
 }
