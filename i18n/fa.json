@@ -18,6 +18,7 @@
 	"wdqs-app-button-clear": "پاک کردن",
 	"wdqs-app-button-clear-title": "درخواست حذف",
 	"wdqs-app-button-restore-title": "بازگرداندن کوئری پیشین",
+	"wdqs-app-button-fullscreen-title": "تغییر وضعیت تمام صفحهٔ حالت ویرایش",
 	"wdqs-app-button-display": "نمایش",
 	"wdqs-app-button-display-title": "نمایش نتایج به صورت جدول، تصویر و یا ....",
 	"wdqs-app-button-download": "دریافت",
@@ -39,8 +40,10 @@
 	"wdqs-app-result-shorturl": "آدرس ایتنرنتی کوتاه برای نتیجه",
 	"wdqs-app-result-shorturl-title": "آدرس ایتنرنتی کوتاه برای نتیجه بدست آمده.",
 	"wdqs-app-result-rawgraphs": "در RAWGraphs.io باز شود",
+	"wdqs-app-result-rawgraphs-title": "ایجاد نمودار با نتایج داده به کمک RAWGraphs.io",
 	"wdqs-app-result-embed": "نتیجهٔ جاسازی‌شده",
 	"wdqs-app-result-endpoint": "نقطه پایانی SPARQL",
+	"wdqs-app-result-endpoint-title": "پیوند به SPARQL برای بازگشت پاسخ",
 	"wdqs-app-result-formatter-title-datetime": "برچسب زمانی خام ایزو",
 	"wdqs-app-result-json": "فایل JSON",
 	"wdqs-app-result-json-verbose": "پرونده جی‌سون (دراز)",
@@ -60,6 +63,7 @@
 	"wdqs-dialog-examples-preview-result": "پیش‌نمایش نتیجه",
 	"wdqs-ve-filter": "پالایه",
 	"wdqs-ve-show": "نمایش",
+	"wdqs-ve-add-label-title": "افزودن متغییر حاوی برچسب جوهره",
 	"wdqs-ve-remove-row-title": "حذف این سطر",
 	"wdqs-ve-with": "با",
 	"wdqs-ve-anything": "همه‌چیز",
@@ -76,5 +80,7 @@
 	"wdqs-action-server-error": "خطای سرور",
 	"wdqs-action-unknow-error": "خطای ناشناخته",
 	"wdqs-action-preview": "پیش‌نمایش نتیجه",
-	"wdqs-result-map-layers-all": "تمام لایه‌ها"
+	"wdqs-result-map-layers-all": "تمام لایه‌ها",
+	"wdqs-embed-button-edit-query": "ویرایش این پرسمان",
+	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL"
 }

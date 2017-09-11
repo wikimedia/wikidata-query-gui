@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "Kadalahan sérver",
 	"wdqs-action-unknow-error": "Kasalahan teu dipikanyaho",
 	"wdqs-action-preview": "Pramidang hasil",
-	"wdqs-result-map-layers-all": "Sakabéh layer"
+	"wdqs-result-map-layers-all": "Sakabéh layer",
+	"wdqs-embed-button-edit-query": "Édit ieu kuéri",
+	"wdqs-embed-button-edit-query-title": "Édit ieu kuéri maké éditor SPARQL"
 }
