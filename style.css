@@ -353,6 +353,15 @@ iframe.shortUrl {
 	width: 50vw;
 }
 
+/**
+	Code example dialog
+**/
+
+.CodeExamples .tab-content .url {
+	word-wrap: break-word;
+	margin: 2em;
+}
+
 /* colors */
 
 div.jqcloud {

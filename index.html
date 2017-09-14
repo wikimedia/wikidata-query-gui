@@ -203,6 +203,11 @@
 								<span class="query-total">
 								<span class="label label-default"><span id="total-results"></span> Results in <span id="query-time"></span> ms </span></span> &nbsp;
 							</li>
+							<li>
+								<a class="btn" data-toggle="modal" data-target="#CodeExamples" data-i18n="[title]wdqs-app-button-code-title">
+									<span class="fa fa-code"></span> <span data-i18n="wdqs-app-button-code"></span>
+								</a>
+							</li>
 							<li><a id="download-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-download-title"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span><span data-i18n="wdqs-app-button-download"></span><span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -276,6 +281,24 @@
 		</div>
 	</div>
 
+	<!-- Code Example Modal -->
+	<div class="modal fade CodeExamples" id="CodeExamples" tabindex="-1" role="dialog" aria-labelledby="CodeExamplesModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div>
+					  <!-- Nav tabs -->
+					  <ul class="nav nav-tabs" role="tablist">
+					  </ul>
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- JS files -->
 	<!-- build:js js/vendor.min.js -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
@@ -284,6 +307,16 @@
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="node_modules/codemirror/lib/codemirror.js"></script>
 	<script src="node_modules/codemirror/mode/sparql/sparql.js"></script>
+	<script src="node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="node_modules/codemirror/mode/xml/xml.js"></script>
+	<script src="node_modules/codemirror/mode/clike/clike.js"></script>
+	<script src="node_modules/codemirror/mode/php/php.js"></script>
+	<script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
+	<script src="node_modules/codemirror/mode/octave/octave.js"></script>
+	<script src="node_modules/codemirror/mode/python/python.js"></script>
+	<script src="node_modules/codemirror/mode/ruby/ruby.js"></script>
+	<script src="node_modules/codemirror/mode/r/r.js"></script>
+	<script src="node_modules/codemirror/addon/display/autorefresh.js"></script>
 	<script src="node_modules/codemirror/addon/hint/show-hint.js"></script>
 	<script src="node_modules/codemirror/addon/display/placeholder.js"></script>
 	<script src="node_modules/codemirror/addon/display/fullscreen.js"></script>
@@ -336,6 +369,7 @@
 	<script src="wikibase/queryService/ui/queryHelper/SelectorBox.js"></script>
 	<script src="wikibase/queryService/ui/queryHelper/QueryTemplate.js"></script>
 	<script src="wikibase/queryService/ui/QueryExampleDialog.js"></script>
+	<script src="wikibase/queryService/ui/dialog/CodeExample.js"></script>
 	<script src="wikibase/queryService/ui/ResultView.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/AbstractResultBrowser.js"></script>
@@ -357,6 +391,7 @@
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowserNodeBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/PolestarResultBrowser.js"></script>
 	<script src="wikibase/queryService/api/Sparql.js"></script>
+	<script src="wikibase/queryService/api/CodeSamples.js"></script>
 	<script src="wikibase/queryService/api/QuerySamples.js"></script>
 	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>

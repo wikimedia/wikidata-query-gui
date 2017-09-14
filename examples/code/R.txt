@@ -1,0 +1,10 @@
+#http://www.r-bloggers.com/sparql-with-r-in-less-than-5-minutes/
+
+library(SPARQL) # SPARQL querying package
+library(ggplot2)
+
+endpoint <- "{ENDPOINT_URL}"
+query <- {SPARQL_QUERY}
+
+qd <- SPARQL(endpoint,query)
+df <- qd$results

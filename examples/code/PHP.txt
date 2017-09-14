@@ -1,0 +1,6 @@
+<?php
+
+$endpointUrl = '{ENDPOINT_URL}';
+$sparqlQuery = {SPARQL_QUERY};
+
+echo file_get_contents( $endpointUrl . '?query=' . urlencode( $sparqlQuery )  );

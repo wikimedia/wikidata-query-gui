@@ -36,6 +36,7 @@
 			var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
 				querySamplesApi = new wb.api.QuerySamples( lang ),
+				codeSamplesApi = new wb.api.CodeSamples( config.api.sparql.uri, config.location.root ),
 				languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
 
 			languageSelector.setChangeListener( function( lang ) {
@@ -45,16 +46,28 @@
 				setLanguage( lang, true );
 			} );
 
-			var rdfHint = new wb.ui.editor.hint.Rdf( api );
-			var rdfTooltip = new wb.ui.editor.tooltip.Rdf( api );
+			var rdfHint = new wb.ui.editor.hint.Rdf( api ),
+					rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
+					editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip );
 
 			new wb.ui.App(
 				$( '.wikibase-queryservice ' ),
-				new wb.ui.editor.Editor( rdfHint, null, rdfTooltip ),
+				editor,
 				new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
 				sparqlApi,
 				querySamplesApi
 			);
+
+			if ( !config.showBirthdayPresents ) {
+				$( '[data-target="#CodeExamples"]' ).hide(); // TODO: remove after birthday
+			}
+			new wikibase.queryService.ui.dialog.CodeExample(
+				$( '#CodeExamples' ),
+				function () {
+					return codeSamplesApi.getExamples( editor.getValue() );
+				}
+			);
+
 		} );
 
 } )( jQuery, CONFIG, moment );
