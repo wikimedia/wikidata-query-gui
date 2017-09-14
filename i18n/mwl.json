@@ -41,9 +41,9 @@
 	"wdqs-app-result-endpoint-title": "Lhigaçon pa l parámetro SPARQL que debolbe l resultado",
 	"wdqs-app-result-formatter-title-datetime": "Marca temporal ISO bruta",
 	"wdqs-app-result-json": "Fexeiro JSON",
-	"wdqs-app-result-json-verbose": "Fexeiro JSON (detalhado)",
+	"wdqs-app-result-json-verbose": "Fexeiro JSON (deitalhado)",
 	"wdqs-app-result-tsv": "Fexeiro TSV",
-	"wdqs-app-result-tsv-verbose": "Fexeiro TSV (detalhado)",
+	"wdqs-app-result-tsv-verbose": "Fexeiro TSV (deitalhado)",
 	"wdqs-app-result-csv": "Fexeiro CSV",
 	"wdqs-app-result-svg": "Eimaige SVG",
 	"wdqs-app-shorturl-page-title": "Andereço URL cúrtio pa esta páigina",
@@ -73,7 +73,9 @@
 	"wdqs-action-timeout": "Atingido l tiempo de lhemite de la cunsulta",
 	"wdqs-action-malformed-query": "La cunsulta stá mal formulada",
 	"wdqs-action-server-error": "Erro de l serbidor",
-	"wdqs-action-unknow-error": "Erro çconhecido",
+	"wdqs-action-unknow-error": "Erro çcoincido",
 	"wdqs-action-preview": "Bisualizaçon de l resultado",
-	"wdqs-result-map-layers-all": "Todas las camadas"
+	"wdqs-result-map-layers-all": "Todas las camadas",
+	"wdqs-embed-button-edit-query": "Eiditar esta cunsulta",
+	"wdqs-embed-button-edit-query-title": "Eiditar esta cunsulta cul eiditor SPARQL"
 }

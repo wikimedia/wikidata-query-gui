@@ -71,5 +71,7 @@
 	"wdqs-action-server-error": "সার্ভার ত্রুটি",
 	"wdqs-action-unknow-error": "অজানা ত্রুটি",
 	"wdqs-action-preview": "ফলাফল প্রাকদর্শন",
-	"wdqs-result-map-layers-all": "সব স্তর"
+	"wdqs-result-map-layers-all": "সব স্তর",
+	"wdqs-embed-button-edit-query": "এই কোয়েরি সম্পাদনা করুন",
+	"wdqs-embed-button-edit-query-title": "SPARQL সম্পাদক দিয়ে এই কোয়েরি সম্পাদনা করুন"
 }
