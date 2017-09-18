@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mehtab ahmed"
+			"Mehtab ahmed",
+			"Indus Asia"
 		]
 	},
 	"wdqs-app-button-examples": "مثال",
@@ -14,7 +15,8 @@
 	"wdqs-app-button-download": "لاهيو",
 	"wdqs-app-button-link": "ڳنڍڻو",
 	"wdqs-app-help-feedback": "پذيرائي ڏيو!",
-	"wdqs-app-help-manual": "واھپ ھدايتنامو",
+	"wdqs-app-help-portal": "مددي دري (هيلپ پورٽل)",
+	"wdqs-app-help-manual": "واپرائيندڙ لاءِ ھدايتنامو",
 	"wdqs-app-help-examples": "مثالي پڇائون",
 	"wdqs-app-help-prefixes": "اڳياڙين جي فھرست",
 	"wdqs-app-footer-help": "خودڪار مڪملي کي سرگرم ڪرڻ لاءِ <i>[CTRL-SPACE]</i> دٻايو.",
@@ -22,10 +24,13 @@
 	"wdqs-app-footer-updated-seconds": "ڊيٽا $1 سيڪنڊ اڳ سنواريل",
 	"wdqs-app-result-shorturl": "نتيجي ڏانھن مختصر يوآرايل",
 	"wdqs-app-result-shorturl-title": "ھن نتيجي ڏانھن مختصر يوآرايل",
+	"wdqs-app-result-svg": "SVG عڪس",
 	"wdqs-app-shorturl-page-title": "ھن صفحي ڏانھن مختصر يوآرايل",
 	"wdqs-app-editor-addprefixes": "معياري اڳياڙيون شامل ڪريو",
+	"wdqs-app-resultbrowser-stabilize": "پائيدار ڳنڍڄار (اسٽيبلائز نيٽ ورڪ)",
 	"wdqs-dialog-examples-preview-query": "پڇا جي پيشِ نگاھ",
 	"wdqs-dialog-examples-preview-result": "رزلٽ جي پيشِ نگاھ",
+	"wdqs-ve-filter": "ڇاڻي (فلٽر)",
 	"wdqs-ve-show": "ڏيکاريو",
 	"wdqs-ve-with": "سان",
 	"wdqs-ve-anything": "ڪجھ بہ",

@@ -85,5 +85,6 @@
 	"wdqs-action-unknow-error": "خطأ غير معروف",
 	"wdqs-action-preview": "معاينة النتيجة",
 	"wdqs-result-map-layers-all": "كل الطبقات",
-	"wdqs-embed-button-edit-query": "عدل هذا الاستعلام"
+	"wdqs-embed-button-edit-query": "عدل هذا الاستعلام",
+	"wdqs-embed-button-edit-query-title": "تعديل هذا الاستعلام بمحرر SPARQL"
 }

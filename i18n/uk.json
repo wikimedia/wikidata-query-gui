@@ -80,5 +80,7 @@
 	"wdqs-action-server-error": "Помилка сервера",
 	"wdqs-action-unknow-error": "Невідома помилка",
 	"wdqs-action-preview": "Попередній перегляд результату",
-	"wdqs-result-map-layers-all": "Всі шари"
+	"wdqs-result-map-layers-all": "Всі шари",
+	"wdqs-embed-button-edit-query": "Редагувати цей запит",
+	"wdqs-embed-button-edit-query-title": "Редагувати цей запит через редактор SPARQL"
 }
