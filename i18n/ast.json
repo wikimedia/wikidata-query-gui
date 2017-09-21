@@ -75,5 +75,7 @@
 	"wdqs-action-server-error": "Error del sirvidor",
 	"wdqs-action-unknow-error": "Error desconocíu",
 	"wdqs-action-preview": "Vista previa del resultáu",
-	"wdqs-result-map-layers-all": "Toles capes"
+	"wdqs-result-map-layers-all": "Toles capes",
+	"wdqs-embed-button-edit-query": "Editar esta consulta",
+	"wdqs-embed-button-edit-query-title": "Editar esta consulta col editor de SPARQL"
 }
