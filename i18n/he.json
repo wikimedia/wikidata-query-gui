@@ -77,5 +77,7 @@
 	"wdqs-action-server-error": "שגיאת שרת",
 	"wdqs-action-unknow-error": "שגיאה בלתי־ידועה",
 	"wdqs-action-preview": "תצוגה מקדימה של תוצאה",
-	"wdqs-result-map-layers-all": "כל השכבות"
+	"wdqs-result-map-layers-all": "כל השכבות",
+	"wdqs-embed-button-edit-query": "עריכת השאילתה הזאת",
+	"wdqs-embed-button-edit-query-title": "עריכת השאילתה הזאת עם עורך SPARQL"
 }
