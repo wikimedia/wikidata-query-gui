@@ -81,6 +81,10 @@ body {
 	min-height: 320px;
 }
 
+.CodeMirror-hints {
+	direction: ltr;
+}
+
 .CodeMirror-hint {
 	max-width: 19em;
 }
