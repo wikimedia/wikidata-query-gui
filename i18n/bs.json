@@ -73,5 +73,8 @@
 	"wdqs-action-malformed-query": "Upit je u pogrešnom formatu",
 	"wdqs-action-server-error": "Serverska greška",
 	"wdqs-action-unknow-error": "Nepoznata greška",
-	"wdqs-result-map-layers-all": "Svi slojevi"
+	"wdqs-action-preview": "Pregled rezultata",
+	"wdqs-result-map-layers-all": "Svi slojevi",
+	"wdqs-embed-button-edit-query": "Uredi ovaj upit",
+	"wdqs-embed-button-edit-query-title": "Uredi ovaj upit pomoću uređivača SPARQL"
 }
