@@ -3,6 +3,7 @@
   "license": "GPL-2.0+",
   "version": "0.1.4",
   "scripts": {
+    "start": "http-server -o",
     "test": "grunt test",
     "build": "grunt build",
     "deploy": "grunt deploy"
@@ -63,6 +64,7 @@
     "grunt-shell": "^2.1.0",
     "grunt-stylelint": "^0.8.0",
     "grunt-usemin": "^3.1.1",
+    "http-server": "^0.10.0",
     "karma-qunit": "^1.2.1",
     "load-grunt-tasks": "^3.5.2",
     "qunitjs": "1.23.1",
