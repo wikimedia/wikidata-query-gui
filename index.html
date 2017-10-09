@@ -101,6 +101,7 @@
 			</nav>
 
 			<div id="query-box">
+				<!-- The action URL is also set dynamically inside wikibase/init.js -->
 				<form id="query-form" action="https://query.wikidata.org/bigdata/namespace/wdq/sparql">
 					<div class="query-main">
 						<div class="toolbar">
@@ -322,6 +323,7 @@
 	<!-- endbuild -->
 
 	<!-- build:js js/wdqs.min.js -->
+	<script src="wikibase/config.js"></script>
 	<script src="wikibase/queryService/ui/App.js"></script>
 	<script src="wikibase/queryService/ui/toolbar/ActionBar.js"></script>
 	<script src="wikibase/queryService/ui/i18n/LanguageSelector.js"></script>
@@ -359,7 +361,6 @@
 	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
-	<script src="wikibase/config.js"></script>
 	<script src="wikibase/init.js"></script>
 	<!-- endbuild -->
 </body>

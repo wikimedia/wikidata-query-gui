@@ -14,6 +14,8 @@ var CONFIG = ( function ( window, $ ) {
 		return null;
 	}
 
+	var root = 'https://query.wikidata.org/';
+
 	var configDeploy = {
 		language: getUserLanguage() || 'en',
 		api: {
@@ -40,34 +42,37 @@ var CONFIG = ( function ( window, $ ) {
 			title: 'Wikidata Query'
 		},
 		location: {
-			index: 'https://query.wikidata.org/'
+			root: root,
+			index: root
 		}
 	};
-
-	var configLocal = $.extend( true, {}, configDeploy, {
-		api: {
-			sparql: {
-				uri: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql'
-			}
-		},
-		i18nLoad: function( lang ) {
-			return $.when(
-					$.i18n().load( 'i18n/' + lang + '.json', lang ),
-					$.i18n().load( 'node_modules/jquery.uls/i18n/' + lang + '.json', lang )
-				);
-		},
-		brand: {
-			title: 'Localhost'
-		},
-		location: {
-			index: './index.html'
-		}
-	} );
 
 	var hostname = window.location.hostname.toLowerCase();
 
 	if ( hostname === '' || hostname === 'localhost' || hostname === '127.0.0.1' ) {
-		return configLocal;
+
+		// Override for local debugging
+		return $.extend( true, {}, configDeploy, {
+			api: {
+				sparql: {
+					uri: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql'
+
+				}
+			},
+			i18nLoad: function( lang ) {
+				return $.when(
+						$.i18n().load( 'i18n/' + lang + '.json', lang ),
+						$.i18n().load( 'node_modules/jquery.uls/i18n/' + lang + '.json', lang )
+					);
+			},
+			brand: {
+				title: 'Localhost'
+			},
+			location: {
+				root: './',
+				index: './index.html'
+			}
+		} );
 	}
 
 	return configDeploy;
