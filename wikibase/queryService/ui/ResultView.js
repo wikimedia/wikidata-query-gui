@@ -311,7 +311,7 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 		this._actionBar.show( errorMessageKey || '', error.message || '', 'danger' );
 		this._track( 'result.error.' + ( errorMessageKey || 'unknown' ) );
 
-		return error.debug;
+		return error.debug === undefined ? '' : error.debug;
 	};
 
 	/**
