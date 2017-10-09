@@ -33,6 +33,7 @@
 	"wdqs-app-help-datamodel": "Datový model RDF",
 	"wdqs-app-help-prefixes": "Seznam prefixů",
 	"wdqs-app-help-copy": "Informace o licenci",
+	"wdqs-app-help-queryhelper": "Dotazový pomocník",
 	"wdqs-app-footer-help": "Stisknutím <i>[CTRL-SPACE]</i> aktivujete automatické dokončení.",
 	"wdqs-app-footer-updated": "Stáří údajů: $1",
 	"wdqs-app-footer-updated-seconds": "Údaje aktualizovány před $1 sekundami",
@@ -52,7 +53,10 @@
 	"wdqs-app-resultbrowser-stabilize": "Stabilizace sítě",
 	"wdqs-dialog-examples-preview-query": "Náhled dotazu",
 	"wdqs-dialog-examples-preview-result": "Náhled výsledku",
+	"wdqs-ve-filter": "Filtrovat",
 	"wdqs-ve-show": "Zobrazit",
+	"wdqs-ve-add-label-title": "Přidat proměnnou obsahující štítek entity",
+	"wdqs-ve-remove-row-title": "Odstranit tento řádek",
 	"wdqs-ve-with": "s",
 	"wdqs-ve-anything": "cokoli",
 	"wdqs-ve-any": "libovolné",
@@ -62,7 +66,10 @@
 	"wdqs-action-render": "Vykresluje se výsledek",
 	"wdqs-action-error-display": "Nelze zobrazit výsledek",
 	"wdqs-action-timeout": "Vypršel časový limit pro dotaz",
+	"wdqs-action-malformed-query": "Dotaz je chybný",
 	"wdqs-action-server-error": "Chyba serveru",
 	"wdqs-action-unknow-error": "Neznámá chyba",
-	"wdqs-result-map-layers-all": "Všechny vrstvy"
+	"wdqs-result-map-layers-all": "Všechny vrstvy",
+	"wdqs-embed-button-edit-query": "Editovat tento dotaz",
+	"wdqs-embed-button-edit-query-title": "Editovat tento dotaz v editoru SPARQL"
 }
