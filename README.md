@@ -29,6 +29,13 @@ Run JSHint, JSCS and QUnit tests.
 $ npm test
 ```
 
+## Debug
+Start a test server for local debugging. Do not use it in production.
+
+```bash
+$ npm start
+```
+
 ## Build
 Create a build with bundled and minified files.
 
