@@ -6,3 +6,4 @@ build
 .idea
 package-lock.json
 *.iml
+npm-debug.log
