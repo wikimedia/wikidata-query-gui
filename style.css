@@ -68,6 +68,10 @@ body {
 	padding: 0 0.5em 0 0;
 }
 
+.fixed-table-pagination {
+	margin-bottom: 2.5em;
+}
+
 .cm-s-default .cm-bracket {
 	color: #000;
 }
