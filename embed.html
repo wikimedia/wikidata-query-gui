@@ -269,7 +269,9 @@ body {
 				$( 'body' ).i18n();
 				$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
 
-				resultView.draw( query );
+				resultView.draw( query ).done( function() {
+					$( '.logo' ).hide();
+				} );
 				renderEdit( query, function( q ){
 					resultView.draw( q );
 					window.location.hash = '#' + encodeURIComponent( q )
