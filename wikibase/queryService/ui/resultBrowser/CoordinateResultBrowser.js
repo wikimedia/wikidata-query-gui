@@ -59,7 +59,14 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 *
 	 */
 	function SELF() {
-		this._getMarkerGroupColor = d3.scale.category10();
+		this._markerGroupColors = {};
+		var _getDefaultMarkerGroupColor = d3.scale.category10();
+		this._getMarkerGroupColor = function( group ) {
+			if ( group in this._markerGroupColors ) {
+				return this._markerGroupColors[ group ];
+			}
+			return _getDefaultMarkerGroupColor( group );
+		};
 
 		ScrollToTopButton = L.Control.extend( {
 			options: {
@@ -96,6 +103,15 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._markerGroups = null;
+
+	/**
+	 * Sparse map from group to last-seen RGB color (?rgb column) for that group.
+	 * _getMarkerGroupColor uses this map to look up colors,
+	 * falling back to a static color map if no RGB color was recorded for a group.
+	 * @property {Object}
+	 * @private
+	 */
+	SELF.prototype._markerGroupColors = null;
 
 	/**
 	 * Maps group name to a certain color
@@ -240,9 +256,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 					markers[ layer ] = [];
 				}
 				var marker = L.geoJson( geoJson, {
-					style: self._getMarkerStyle( layer ),
+					style: self._getMarkerStyle( layer, row ),
 					pointToLayer: function( geoJsonPoint, latLon ) {
-						return L.circleMarker( latLon, self._getMarkerStyle( layer ) );
+						return L.circleMarker( latLon, self._getMarkerStyle( layer, row ) );
 					},
 					onEachFeature: function( feature, layer ) {
 						var popup = L.popup();
@@ -284,12 +300,19 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 * @param {string} group
+	 * @param {Object} row
 	 */
-	SELF.prototype._getMarkerStyle = function( group ) {
-		var color = '#e04545';
+	SELF.prototype._getMarkerStyle = function( group, row ) {
+		var color,
+			formatter = this._getFormatter();
 
-		if ( group !== LAYER_DEFAULT_GROUP ) {
+		if ( 'rgb' in row && formatter.isColor( row.rgb ) ) {
+			color = formatter.getColorForHtml( row.rgb );
+			this._markerGroupColors[ group ] = color;
+		} else if ( group !== LAYER_DEFAULT_GROUP ) {
 			color = this._getMarkerGroupColor( group );
+		} else {
+			color = '#e04545';
 		}
 
 		return {
