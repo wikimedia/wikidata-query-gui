@@ -65,7 +65,7 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 
 			if ( field && field.value && self._getFormatter().isEntityUri( field.value ) ) {
 				var createdItem = data.children[data.children.length - 1];
-				if ( createdItem.url === null ) {
+				if ( createdItem && createdItem.url === null ) {
 					createdItem.url = field.value;
 				}
 			}
