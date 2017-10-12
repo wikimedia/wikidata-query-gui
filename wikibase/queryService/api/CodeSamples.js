@@ -15,7 +15,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 */
-	function SELF( endpoint, root ) {
+	function SELF( endpoint, root, index ) {
 		this._endpoint = endpoint;
 		this._languages = {
 			URL: {
@@ -32,6 +32,11 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 						'sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
 				},
 				mimetype: 'text/html'
+			},
+			Wikilink: {
+				code: function( query ) {
+					return '[' + index + '#' + encodeURIComponent( query ) + ' Query]';
+				}
 			},
 			PHP: {
 				escape: function( query ) {
