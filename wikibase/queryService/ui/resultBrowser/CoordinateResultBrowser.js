@@ -108,6 +108,15 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype._markerGroups = null;
 
 	/**
+	 * Progress in loading the marker groups,
+	 * as a number within the interval [0, 1].
+	 *
+	 * @property {Float}
+	 * @private
+	 */
+	SELF.prototype._markerGroupsProgress = null;
+
+	/**
 	 * Sparse map from group to last-seen RGB color (?rgb column) for that group.
 	 * _getMarkerGroupColor uses this map to look up colors,
 	 * falling back to a static color map if no RGB color was recorded for a group.
@@ -149,6 +158,33 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 			$element.html( container );
 		} );
+
+		var interval = setInterval(
+			function() {
+				if ( self._markerGroupsProgress > 0 && self._markerGroupsProgress < 1 ) {
+					var percent = ( 100 * self._markerGroupsProgress ).toFixed( 2 ),
+						message = self._i18n(
+							'wdqs-result-map-progress',
+							'Loading map data: $1%',
+							[ percent ] );
+					container.html(
+						$( '<div>' )
+							.attr( 'id', 'map-progress' )
+							.css( {
+								position: 'relative',
+								top: '20%',
+								width: '100%',
+								textAlign: 'center'
+							} )
+							.text( message )
+					);
+				} else if ( self._markerGroupsProgress === 1 ) {
+					clearInterval( interval );
+					$( '#map-progress' ).remove();
+				}
+			},
+			200
+		);
 	};
 
 	/**
@@ -248,6 +284,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype._createMarkerGroups = function() {
 		var self = this,
 			promises = [],
+			donePromises = 0,
 			markers = {};
 		markers[ LAYER_DEFAULT_GROUP ] = [];
 
@@ -260,6 +297,10 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		$.each( promises, function( index, promise ) {
 			promise.done( function( geoJson, row ) {
+				donePromises++;
+				self._markerGroupsProgress = donePromises / promises.length;
+				// TODO can the above perhaps be done via deferred.notify / deferred.progress?
+
 				var layer = self._getMarkerGroupsLayer( row );
 				if ( !markers[ layer ] ) {
 					markers[ layer ] = [];
