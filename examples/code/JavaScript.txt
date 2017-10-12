@@ -1,0 +1,12 @@
+var endpointUrl = '{ENDPOINT_URL}',
+    sparqlQuery = {SPARQL_QUERY},
+    data = 'query=' + encodeURIComponent( sparqlQuery ),
+    settings = {
+        headers: { Accept: 'application/sparql-results+json' },
+        data: data
+    };
+
+$.ajax( endpointUrl, settings ).then( function ( data ) {
+    $( 'body' ).append( ( $('<pre>').text( JSON.stringify( data) ) ) );
+    console.log( data );
+} );

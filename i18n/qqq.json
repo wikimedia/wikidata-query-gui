@@ -25,6 +25,8 @@
 	"wdqs-app-button-download-title": "Title for button download result",
 	"wdqs-app-button-link": "Button get link to query\n{{Identical|Link}}",
 	"wdqs-app-button-link-title": "Title for button get link to query",
+    "wdqs-app-button-code": "Button display code example",
+    "wdqs-app-button-code-title": "Button title display code example",
 	"wdqs-app-help-feedback": "Button message in help dropdown",
 	"wdqs-app-help-request-query": "Button message in help dropdown",
 	"wdqs-app-help-portal": "Button message in help dropdown",
