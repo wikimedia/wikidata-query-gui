@@ -317,6 +317,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 					}
 
 					self._editor.setValue( '#' + title + '\n' + query );
+
+					$( '#QueryExamples' ).one( 'hidden.bs.modal', function() {
+						setTimeout( function() { self._editor.focus(); }, 0 );
+					} );
 				} );
 	};
 
