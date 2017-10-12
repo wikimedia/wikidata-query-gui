@@ -44,10 +44,12 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	 */
 	SELF.prototype._getNumberColumns = function() {
 		var self = this,
-			row = self._getRows()[0];
+			rows = self._getRows();
 
 		return self._getColumns().filter( function( column ) {
-			return self._getFormatter().isNumber( row[column] );
+			return rows.some( function( row ) {
+				return row[column] && self._getFormatter().isNumber( row[column] );
+			} );
 		} );
 	};
 
