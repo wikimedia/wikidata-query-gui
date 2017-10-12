@@ -22,7 +22,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	SELF.prototype = new wikibase.queryService.ui.resultBrowser.AbstractResultBrowser();
 
 	/**
-	 * Returns all columns that contain numbers
+	 * Returns all columns that contain labels
 	 *
 	 * @protected
 	 * @return {string[]}
