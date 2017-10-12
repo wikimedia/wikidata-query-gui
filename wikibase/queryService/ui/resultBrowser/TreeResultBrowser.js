@@ -41,25 +41,26 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	/**
 	 * @property {boolean}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._isDrawable = false;
 
 	/**
 	 * @property {object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._jsTree = null;
 
 	/**
 	 * @property {object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._nodes = null;
 
 	/**
 	 * Draw browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
+	 */
 	SELF.prototype.draw = function( $element ) {
 
 		var self = this;

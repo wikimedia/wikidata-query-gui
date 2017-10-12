@@ -24,19 +24,20 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function( $,
 	/**
 	 * @property {boolean}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._hasLabel = false;
 
 	/**
 	 * @property {boolean}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._hasNumber = false;
 
 	/**
 	 * Draw browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
+	 */
 	SELF.prototype.draw = function( $element ) {
 		var self = this,
 			data = { 'name': 'bubblechart', 'children': [] },

@@ -38,9 +38,10 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 
 	/**
 	 * Returns all columns that contain numbers
+	 *
 	 * @protected
 	 * @return {number[]}
-	 **/
+	 */
 	SELF.prototype._getNumberColumns = function() {
 		var self = this,
 			row = self._getRows()[0];
@@ -53,7 +54,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	/**
 	 * @protected
 	 * @return {string[]}
-	 **/
+	 */
 	SELF.prototype._getColumns = function() {
 		return this._result.head.vars;
 	};
@@ -61,7 +62,7 @@ wikibase.queryService.ui.resultBrowser.AbstractChartResultBrowser = ( function( 
 	/**
 	 * @protected
 	 * @return {Object[]}
-	 **/
+	 */
 	SELF.prototype._getRows = function() {
 		return this._result.results.bindings;
 	};

@@ -25,13 +25,14 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	/**
 	 * @property {Object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._labelColumns = null;
 
 	/**
 	 * Draw browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
+	 */
 	SELF.prototype.draw = function( $element ) {
 		var self = this,
 			data = {},

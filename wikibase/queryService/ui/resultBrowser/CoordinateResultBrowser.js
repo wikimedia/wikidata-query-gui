@@ -88,13 +88,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @property {L.Map}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._map = null;
 
 	/**
 	 * @property {Object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._markerGroups = null;
 
 	/**

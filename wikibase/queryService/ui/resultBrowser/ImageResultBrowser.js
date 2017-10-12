@@ -23,13 +23,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 	/**
 	 * @property {jQuery}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._grid = null;
 
 	/**
 	 * Draw browser to the given element
+	 *
 	 * @param {jQuery} $element to draw at
-	 **/
+	 */
 	SELF.prototype.draw = function( $element ) {
 		var self = this;
 		this._grid = $( '<div class="masonry">' );
@@ -49,7 +50,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
 		var $image = $( '<a>' )
 				.click( this._getFormatter().handleCommonResourceItem )
@@ -62,14 +63,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $ ) {
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._isCommonsResource = function( url ) {
 		return this._getFormatter().isCommonsResource( url );
 	};
 
 	/**
 	 * @private
-	 **/
+	 */
 	SELF.prototype._getThumbnail = function( url, width ) {
 		return this._getFormatter().getCommonsResourceFileNameThumbnail( url, width );
 	};

@@ -28,13 +28,13 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	/**
 	 * @property {Object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._columns = null;
 
 	/**
 	 * @property {Object}
 	 * @private
-	 **/
+	 */
 	SELF.prototype._rows = null;
 
 	/**
@@ -156,7 +156,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * Checks whether the browser can draw the given result
 	 *
 	 * @return {boolean}
-	 **/
+	 */
 	SELF.prototype.isDrawable = function() {
 		return true;
 	};
