@@ -31,6 +31,12 @@
 	<link rel="stylesheet" href="style.css">
  	<!-- endbuild -->
 
+	<!-- build:none -->
+	<link rel="stylesheet/less" type="text/css" href="style.less">
+	<script src="node_modules/less/dist/less.js" data-env="development"></script>
+	<script>less.watch()</script>
+	<!-- endbuild -->
+
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- build:js js/shim.min.js -->
 	<script src="node_modules/es6-shim/es6-shim.js"></script>
