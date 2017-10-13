@@ -138,11 +138,41 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 */
 	SELF.prototype.draw = function( $element ) {
 		var self = this,
-			container = $( '<div>' ).attr( 'id', 'map' ).height( '100vh' );
+			container = $( '<div>' ).attr( 'id', 'map' ).height( '100vh' ),
+			interval;
 
 		$element.html( container );
 
-		this._createMarkerGroups().done( function() {
+		function clearProgress() {
+			clearInterval( interval );
+			$( '#map-progress' ).remove();
+		}
+		function updateProgress() {
+			if ( self._markerGroupsProgress > 0 && self._markerGroupsProgress < 1 ) {
+				var percent = ( 100 * self._markerGroupsProgress ).toFixed( 2 ),
+					message = self._i18n(
+						'wdqs-result-map-progress',
+						'Loading map data: $1%',
+						[ percent ] );
+				container.html(
+					$( '<div>' )
+						.attr( 'id', 'map-progress' )
+						.css( {
+							position: 'relative',
+							top: '20%',
+							width: '100%',
+							textAlign: 'center'
+						} )
+						.text( message )
+				);
+			} else if ( self._markerGroupsProgress >= 1 ) {
+				clearProgress();
+			}
+		}
+		interval = setInterval( updateProgress, 200 );
+
+		function drawMap() {
+			clearProgress();
 			self._map = L.map( 'map', {
 				center: [ 0, 0 ],
 				maxZoom: 18,
@@ -157,34 +187,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			self._createMarkerZoomResize();
 
 			$element.html( container );
-		} );
+		}
 
-		var interval = setInterval(
-			function() {
-				if ( self._markerGroupsProgress > 0 && self._markerGroupsProgress < 1 ) {
-					var percent = ( 100 * self._markerGroupsProgress ).toFixed( 2 ),
-						message = self._i18n(
-							'wdqs-result-map-progress',
-							'Loading map data: $1%',
-							[ percent ] );
-					container.html(
-						$( '<div>' )
-							.attr( 'id', 'map-progress' )
-							.css( {
-								position: 'relative',
-								top: '20%',
-								width: '100%',
-								textAlign: 'center'
-							} )
-							.text( message )
-					);
-				} else if ( self._markerGroupsProgress === 1 ) {
-					clearInterval( interval );
-					$( '#map-progress' ).remove();
-				}
-			},
-			200
-		);
+		this._createMarkerGroups().done( drawMap ).fail( drawMap );
 	};
 
 	/**
@@ -324,18 +329,19 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			} );
 		} );
 
-		return $.when.apply( $, promises ).done( function() {
+		function createMarkers() {
 			if ( Object.keys( markers ).length === 0 ) {
 				var marker = L.marker( [ 0, 0 ] ).bindPopup( 'Nothing found!' ).openPopup();
 				return { null: L.featureGroup( [marker] ) };
 			}
 
+			self._markerGroups = {};
 			$.each( markers, function( key ) {
-				markers[ key ] = L.featureGroup( markers[ key ] );
+				self._markerGroups[ key ] = L.featureGroup( markers[ key ] );
 			} );
+		}
 
-			self._markerGroups = markers;
-		} );
+		return $.when.apply( $, promises ).done( createMarkers ).fail( createMarkers );
 	};
 
 	/**
