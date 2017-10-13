@@ -48,13 +48,23 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 					return '"' + escapedQuery + '"';
 				}
 			},
-			JavaScript: {
+			'JavaScript (jQuery)': {
 				escape: function( query ) {
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /"/g, '\\"' )
 						.replace( /\n/g, '\\n' );
 					return '"' + escapedQuery + '"';
+				},
+				mimetype: 'application/javascript'
+			},
+			'JavaScript (modern)': {
+				escape: function( query ) {
+					var escapedQuery = query
+						.replace( /\\/g, '\\\\' )
+						.replace( /`/g, '\\`' )
+						.replace( /\$/g, '\\$' );
+					return '`' + escapedQuery + '`';
 				},
 				mimetype: 'application/javascript'
 			},

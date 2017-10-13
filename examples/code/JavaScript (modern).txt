@@ -1,0 +1,14 @@
+const endpointUrl = '{ENDPOINT_URL}',
+      sparqlQuery = {SPARQL_QUERY},
+      fullUrl = endpointUrl + '?query=' + encodeURIComponent( sparqlQuery ),
+      headers = { 'Accept': 'application/sparql-results+json' };
+
+fetch( fullUrl, { headers } ).then( body => body.json() ).then( json => {
+    const { head: { vars }, results } = json;
+    for ( const result of results.bindings ) {
+        for ( const variable of vars ) {
+            console.log( '%s: %o', variable, result[variable] );
+        }
+        console.log( '---' );
+    }
+} );

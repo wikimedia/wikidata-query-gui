@@ -67,8 +67,21 @@ wikibase.queryService.ui.dialog.CodeExample = ( function( $, CodeMirror ) {
 			var code = data.code,
 				mode = data.mimetype;
 			var $text = $( '<textarea>' ).text( code );
-			$tabs.append( $tab.clone().addClass( $tabs.is( ':empty' ) ? 'active' : '' ).append( $button.clone().attr( 'href', '#' + lang ).text( lang ) ) );
-			$panes.append( $pane.clone().addClass( $panes.is( ':empty' ) ? 'active' : '' ).attr( 'id', lang ).append( $text )  );
+			$tabs.append(
+				$tab.clone()
+					.addClass( $tabs.is( ':empty' ) ? 'active' : '' )
+					.append(
+						$button.clone()
+							.attr( 'href', '#' + $.escapeSelector( lang ) )
+							.text( lang )
+					)
+			);
+			$panes.append(
+				$pane.clone()
+					.addClass( $panes.is( ':empty' ) ? 'active' : '' )
+					.attr( 'id', lang )
+					.append( $text )
+			);
 			CODEMIRROR_DEFAULTS.mode = mode;
 			CodeMirror.fromTextArea( $text[0], CODEMIRROR_DEFAULTS );
 		} );
