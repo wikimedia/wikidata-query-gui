@@ -1,9 +1,8 @@
 var endpointUrl = '{ENDPOINT_URL}',
     sparqlQuery = {SPARQL_QUERY},
-    data = 'query=' + encodeURIComponent( sparqlQuery ),
     settings = {
         headers: { Accept: 'application/sparql-results+json' },
-        data: data
+        data: { query: sparqlQuery }
     };
 
 $.ajax( endpointUrl, settings ).then( function ( data ) {
