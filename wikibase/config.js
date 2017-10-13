@@ -20,7 +20,7 @@ var CONFIG = ( function ( window, $ ) {
 		language: getUserLanguage() || 'en',
 		api: {
 			sparql: {
-				uri: '/bigdata/namespace/wdq/sparql'
+				uri: '/sparql'
 			},
 			wikibase: {
 				uri: 'https://www.wikidata.org/w/api.php'
@@ -56,7 +56,7 @@ var CONFIG = ( function ( window, $ ) {
 		return $.extend( true, {}, configDeploy, {
 			api: {
 				sparql: {
-					uri: 'https://query.wikidata.org/bigdata/namespace/wdq/sparql'
+					uri: 'https://query.wikidata.org/sparql'
 
 				}
 			},
