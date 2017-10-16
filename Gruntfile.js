@@ -28,9 +28,16 @@ module.exports = function( grunt ) {
 				'wikibase/tests/*.html'
 			]
 		},
+		less: {
+			all: {
+				files: {
+					'style.css': 'style.less'
+				}
+			}
+		},
 		stylelint: {
 			all: [
-				'style.css'
+				'style.less'
 			]
 		},
 		banana: {
@@ -227,7 +234,7 @@ module.exports = function( grunt ) {
 		'clean', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
-		'auto_install', 'test', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
+		'auto_install', 'test', 'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
 	] );
 	grunt.registerTask( 'deploy', [
 		'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'create_build', 'shell:commitDeploy', 'configDeploy', 'shell:review'
