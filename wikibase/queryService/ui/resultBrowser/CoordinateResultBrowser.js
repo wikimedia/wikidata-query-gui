@@ -26,6 +26,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		CRS84
 	];
 
+	var PREFIX_COMMONS_DATA = 'http://commons.wikimedia.org/data/main/';
+	var SUFFIX_COMMONS_MAP = '.map';
+
 	var LAYER_COLUMNS = [ 'layerLabel', 'layer' ];
 	var LAYER_DEFAULT_GROUP = '_LAYER_DEFAULT_GROUP';
 
@@ -125,25 +128,27 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {jQuery} $element target element
 	 */
 	SELF.prototype.draw = function( $element ) {
-		var container = $( '<div>' ).attr( 'id', 'map' ).height( '100vh' );
+		var self = this,
+			container = $( '<div>' ).attr( 'id', 'map' ).height( '100vh' );
 
 		$element.html( container );
 
-		this._createMarkerGroups();
-		this._map = L.map( 'map', {
-			center: [ 0, 0 ],
-			maxZoom: 18,
-			minZoom: 2,
-			fullscreenControl: true,
-			preferCanvas: true,
-			layers: _.compact( this._markerGroups ) // convert object to array
-		} ).fitBounds( this._markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
+		this._createMarkerGroups().done( function() {
+			self._map = L.map( 'map', {
+				center: [ 0, 0 ],
+				maxZoom: 18,
+				minZoom: 2,
+				fullscreenControl: true,
+				preferCanvas: true,
+				layers: _.compact( self._markerGroups ) // convert object to array
+			} ).fitBounds( self._markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
 
-		this._setTileLayer();
-		this._createControls();
-		this._createMarkerZoomResize();
+			self._setTileLayer();
+			self._createControls();
+			self._createMarkerZoomResize();
 
-		$element.html( container );
+			$element.html( container );
+		} );
 	};
 
 	/**
@@ -238,19 +243,23 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 	/**
 	 * @private
+	 * @return {$.Promise}
 	 */
 	SELF.prototype._createMarkerGroups = function() {
 		var self = this,
+			promises = [],
 			markers = {};
 		markers[ LAYER_DEFAULT_GROUP ] = [];
 
 		this._iterateResult( function( field, key, row ) {
-			if ( field && MAP_DATATYPES.indexOf( field.datatype ) !== -1 ) {
-				var geoJson = self._extractGeoJson( field.value );
-				if ( !geoJson ) {
-					return;
-				}
+			var geoJson = self._extractGeoJson( field );
+			if ( geoJson !== null ) {
+				promises.push( $.when( geoJson, row ) );
+			}
+		} );
 
+		$.each( promises, function( index, promise ) {
+			promise.done( function( geoJson, row ) {
 				var layer = self._getMarkerGroupsLayer( row );
 				if ( !markers[ layer ] ) {
 					markers[ layer ] = [];
@@ -271,19 +280,21 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				} );
 				markers[ layer ].push( marker );
 				markers[ LAYER_DEFAULT_GROUP ].push( marker );
+			} );
+		} );
+
+		return $.when.apply( $, promises ).done( function() {
+			if ( Object.keys( markers ).length === 0 ) {
+				var marker = L.marker( [ 0, 0 ] ).bindPopup( 'Nothing found!' ).openPopup();
+				return { null: L.featureGroup( [marker] ) };
 			}
+
+			$.each( markers, function( key ) {
+				markers[ key ] = L.featureGroup( markers[ key ] );
+			} );
+
+			self._markerGroups = markers;
 		} );
-
-		if ( Object.keys( markers ).length === 0 ) {
-			var marker = L.marker( [ 0, 0 ] ).bindPopup( 'Nothing found!' ).openPopup();
-			return { null: L.featureGroup( [marker] ) };
-		}
-
-		$.each( markers, function( key ) {
-			markers[ key ] = L.featureGroup( markers[ key ] );
-		} );
-
-		this._markerGroups = markers;
 	};
 
 	/**
@@ -348,13 +359,57 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	};
 
 	/**
+	 * Check if the value is a geo:wktLiteral.
+	 *
+	 * @private
+	 * @param {Object} value
+	 * @return {boolean}
+	 */
+	SELF.prototype._isWktLiteral = function( value ) {
+		return value &&
+			value.type === 'literal' &&
+			MAP_DATATYPES.indexOf( value.datatype ) !== -1;
+	};
+
+	/**
+	 * Check if the value is a Commons map URL.
+	 *
+	 * @private
+	 * @param {Object} value
+	 * @return {boolean}
+	 */
+	SELF.prototype._isCommonsMap = function( value ) {
+		return value &&
+			value.type === 'uri' &&
+			value.value.startsWith( PREFIX_COMMONS_DATA ) &&
+			value.value.endsWith( SUFFIX_COMMONS_MAP );
+	};
+
+	/**
+	 * Extract a GeoJSON object from the given geo:wktLiteral or Commons map URL.
+	 *
+	 * @private
+	 * @param {?Object} value
+	 * @return {?$.Promise} GeoJSON
+	 */
+	SELF.prototype._extractGeoJson = function( value ) {
+		if ( this._isWktLiteral( value ) ) {
+			return this._extractGeoJsonWktLiteral( value.value );
+		}
+		if ( this._isCommonsMap( value ) ) {
+			return this._extractGeoJsonCommonsMap( value.value );
+		}
+		return null;
+	};
+
+	/**
 	 * Extract a GeoJSON object from the given geo:wktLiteral.
 	 *
 	 * @private
 	 * @param {string} literal
-	 * @return {?Object} GeoJSON
+	 * @return {?$.Promise} GeoJSON
 	 */
-	SELF.prototype._extractGeoJson = function( literal ) {
+	SELF.prototype._extractGeoJsonWktLiteral = function( literal ) {
 		var split = this._splitWktLiteral( literal );
 		if ( !split ) {
 			return null;
@@ -364,7 +419,42 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			return null;
 		}
 
-		return wellknown.parse( split.wkt );
+		return $.when( wellknown.parse( split.wkt ) );
+	};
+
+	/**
+	 * Fetch a GeoJSON object from the given Commons URL.
+	 *
+	 * @private
+	 * @param {string} url
+	 * @return {?$.Promise} GeoJSON
+	 */
+	SELF.prototype._extractGeoJsonCommonsMap = function( url ) {
+		if ( !CONFIG.showBirthdayPresents ) {
+			// TODO remove this after the birthday
+			return null;
+		}
+		// rewrite data URL to API because the data URL doesn’t support CORS at all
+		var titleURI = url.match( /^http:\/\/commons.wikimedia.org\/data\/main\/(.*)$/ )[1],
+			title = decodeURIComponent( titleURI );
+		return $.getJSON(
+			'https://commons.wikimedia.org/w/api.php',
+			{
+				format: 'json',
+				action: 'query',
+				titles: title,
+				prop: 'revisions',
+				rvprop: 'content',
+				origin: '*',
+				maxage: 3600 // cache for one hour
+			}
+		).then( function( response ) {
+			var pageId, content;
+			for ( pageId in response.query.pages ) {
+				content = response.query.pages[ pageId ].revisions[ 0 ][ '*' ];
+				return JSON.parse( content ).data;
+			}
+		} ).promise();
 	};
 
 	/**
@@ -405,14 +495,12 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * Check if this value contains an coordinate value.
 	 */
 	SELF.prototype._checkCoordinate = function( value ) {
-		if ( value && MAP_DATATYPES.indexOf( value.datatype ) !== -1 ) {
-			var longLat = this._extractGeoJson( value.value );
-			if ( longLat !== null ) {
-				this._drawable = true;
-				return false;
-			}
+		if ( this._isWktLiteral( value ) || this._isCommonsMap( value ) ) {
+			this._drawable = true;
+			return false;
+		} else {
+			return true;
 		}
-		return true;
 	};
 
 	return SELF;

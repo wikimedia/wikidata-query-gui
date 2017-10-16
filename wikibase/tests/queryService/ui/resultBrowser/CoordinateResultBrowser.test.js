@@ -20,32 +20,45 @@
 		);
 	} );
 
-	QUnit.test( '_extractGeoJson internal helper function', function( assert ) {
-		assert.expect( 4 );
+	QUnit.test( '_extractGeoJsonWktLiteral internal helper function', function( assert ) {
+		var testCases = [
+			[
+				'<http://www.wikidata.org/entity/Q2> Point(1 2)',
+				{ "type": "Point", "coordinates": [ 1, 2 ] },
+				'should extract Wikidata terrestrial coordinate values'
+			],
+			[
+				'<http://www.wikidata.org/entity/Q405> Point(1 2)',
+				null,
+				'should not extract Wikidata lunar coordinate values'
+			],
+			[
+				'Point(1 2)',
+				{ "type": "Point", "coordinates": [ 1, 2 ] },
+				'should extract coordinate values without explicit reference system'
+			],
+			[
+				'Linestring(1 2,3 4)',
+				{ "type": "LineString", "coordinates": [ [ 1, 2 ], [ 3, 4 ] ] },
+				'should extract non-point literals'
+			]
+		];
+		assert.expect( testCases.length );
 
-		assert.deepEqual(
-			crb._extractGeoJson( '<http://www.wikidata.org/entity/Q2> Point(1 2)' ),
-			{ "type": "Point", "coordinates": [ 1, 2 ] },
-			'_extractGeoJson should extract Wikidata terrestrial coordinate values'
-		);
-
-		assert.strictEqual(
-			crb._extractGeoJson( '<http://www.wikidata.org/entity/Q405> Point(1 2)' ),
-			null,
-			'_extractGeoJson should not extract Wikidata lunar coordinate values'
-		);
-
-		assert.deepEqual(
-			crb._extractGeoJson( 'Point(1 2)' ),
-			{ "type": "Point", "coordinates": [ 1, 2 ] },
-			'_extractGeoJson should extract coordinate values without explicit reference system'
-		);
-
-		assert.deepEqual(
-			crb._extractGeoJson( 'Linestring(1 2,3 4)' ),
-			{ "type": "LineString", "coordinates": [ [ 1, 2 ], [ 3, 4 ] ] },
-			'_extractGeoJson should extract non-point literals'
-		);
+		testCases.forEach( function( testCase ) {
+			var done = assert.async();
+			var result = crb._extractGeoJsonWktLiteral( testCase[0] );
+			var message = '_extractGeoJsonWktLiteral ' + testCase[2];
+			if ( result === null ) {
+				assert.strictEqual( result, testCase[1], message );
+				done();
+			} else {
+				result.done( function( result ) {
+					assert.deepEqual( result, testCase[1], message );
+					done();
+				} );
+			}
+		} );
 	} );
 
 }( jQuery, QUnit, sinon, wikibase ) );
