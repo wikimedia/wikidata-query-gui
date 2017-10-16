@@ -484,6 +484,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		// rewrite data URL to API because the data URL doesn’t support CORS at all
 		var titleURI = url.match( /^http:\/\/commons.wikimedia.org\/data\/main\/(.*)$/ )[1],
 			title = decodeURIComponent( titleURI );
+		title = title.replace( /\+/g, ' ' ); // TODO workaround for T178184, remove when possible
 		return $.getJSON(
 			'https://commons.wikimedia.org/w/api.php',
 			{
