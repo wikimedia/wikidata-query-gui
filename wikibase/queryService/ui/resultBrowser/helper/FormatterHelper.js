@@ -455,18 +455,34 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Get an i18n string
+	 * Get an i18n message,
+	 * falling back to the default text if $.i18n is not available.
 	 *
+	 * @protected
 	 * @param {string} key for the i18n message
 	 * @param {string} message default text
+	 * @param {Array} [args] message arguments
+	 *
 	 * @return {string}
-	 * @private
 	 */
-	SELF.prototype._i18n = function( key, message ) {
-		var i18nMessage;
+	SELF.prototype._i18n = function( key, message, args ) {
+		var i18nMessage = null;
 
-		if ( !$.i18n || ( i18nMessage = $.i18n( key ) ) === key ) {
-			return message;
+		if ( $.i18n ) {
+			i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
+			if ( i18nMessage !== key ) {
+				return i18nMessage;
+			}
+		}
+
+		i18nMessage = message;
+		if ( args ) {
+			$.each( args, function( index, arg ) {
+				i18nMessage = i18nMessage.replace(
+					new RegExp( '\\$' + ( index + 1 ), 'g' ),
+					arg
+				);
+			} );
 		}
 
 		return i18nMessage;

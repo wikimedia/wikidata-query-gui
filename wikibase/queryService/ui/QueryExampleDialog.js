@@ -359,12 +359,27 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._i18n = function( key, message ) {
-		if ( !$.i18n ) {
-			return message;
+	SELF.prototype._i18n = function( key, message, args ) {
+		var i18nMessage = null;
+
+		if ( $.i18n ) {
+			i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
+			if ( i18nMessage !== key ) {
+				return i18nMessage;
+			}
 		}
-		var i18nMessage = $.i18n( key );
-		return i18nMessage === key ? message : i18nMessage;
+
+		i18nMessage = message;
+		if ( args ) {
+			$.each( args, function( index, arg ) {
+				i18nMessage = i18nMessage.replace(
+					new RegExp( '\\$' + ( index + 1 ), 'g' ),
+					arg
+				);
+			} );
+		}
+
+		return i18nMessage;
 	};
 
 	return SELF;
