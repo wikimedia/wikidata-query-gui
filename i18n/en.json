@@ -81,6 +81,7 @@
     "wdqs-action-unknow-error": "Unknown error",
     "wdqs-action-preview": "Result preview",
     "wdqs-result-map-layers-all": "All layers",
+    "wdqs-result-map-progress": "Loading map data: $1%",
     "wdqs-embed-button-edit-query": "Edit this query",
     "wdqs-embed-button-edit-query-title": "Edit this query with the SPARQL editor"
 }
