@@ -193,7 +193,9 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 */
 	SELF.prototype._getFormatter = function() {
 		if ( this._formatter === null ) {
-			this._formatter = new wikibase.queryService.ui.resultBrowser.helper.FormatterHelper();
+			this._formatter = new wikibase.queryService.ui.resultBrowser.helper.FormatterHelper(
+				this._i18n
+			);
 		}
 
 		return this._formatter;
