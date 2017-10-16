@@ -26,11 +26,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					}\
 					LIMIT 100',
 				genericSuggest: function() { // Find items that are most often used with the first selected item of the current query
-					var instanceOfTemplate =// Find items that are used with property 'instance of'
-						'SELECT ?id ?label ?description (wd:P31 AS ?property) WHERE {\
+					var popularItemsTemplate =// Find items that have topic's main template
+						'SELECT ?id ?label ?description WHERE {\
 						hint:Query hint:optimizer "None".\
 							{\
-								SELECT DISTINCT ?id WHERE { ?i wdt:P31 ?id. }\
+								SELECT DISTINCT ?id WHERE { ?id wdt:P1424 ?p. }\
 								LIMIT 100\
 							}\
 							?id rdfs:label ?label.\
@@ -40,7 +40,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						}\
 						LIMIT 100';
 					if ( this._query.getTriples().length === 0 ) {
-						return instanceOfTemplate;
+						return popularItemsTemplate;
 					}
 
 					var template = '{PREFIXES}\n\
