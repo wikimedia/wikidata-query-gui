@@ -24,6 +24,8 @@
 	"wdqs-app-button-download-title": "Télécharger le résultat",
 	"wdqs-app-button-link": "Lien",
 	"wdqs-app-button-link-title": "Obtenir le lien vers la requête",
+	"wdqs-app-button-code": "Code",
+	"wdqs-app-button-code-title": "Afficher des exemples de code",
 	"wdqs-app-help-feedback": "Donnez votre avis !",
 	"wdqs-app-help-request-query": "Demander une requête",
 	"wdqs-app-help-portal": "Portail d’aide",

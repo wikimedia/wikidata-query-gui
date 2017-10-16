@@ -3,7 +3,8 @@
 		"authors": [
 			"Toniher",
 			"Paucabot",
-			"Ssola"
+			"Ssola",
+			"Townie"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -14,12 +15,16 @@
 	"wdqs-app-button-run-title": "Executa la consulta (<CTRL> + <RETORN>)",
 	"wdqs-app-button-clear": "Neteja",
 	"wdqs-app-button-clear-title": "Neteja la consulta",
+	"wdqs-app-button-restore-title": "Restaura la consulta anterior",
+	"wdqs-app-button-fullscreen-title": "Activa el mode d'edició de pantalla completa",
 	"wdqs-app-button-display": "Mostra",
 	"wdqs-app-button-display-title": "Mostra el resultat com taula, imatge, ...",
 	"wdqs-app-button-download": "Descarrega",
 	"wdqs-app-button-download-title": "Baixa el resultat",
 	"wdqs-app-button-link": "Enllaç",
 	"wdqs-app-button-link-title": "Obté un enllaç a la consulta",
+	"wdqs-app-button-code": "Codi",
+	"wdqs-app-button-code-title": "Vegeu exemples de codi",
 	"wdqs-app-help-feedback": "Doneu-nos la vostra opinió!",
 	"wdqs-app-help-request-query": "Sol·licita una consulta",
 	"wdqs-app-help-portal": "Portal d'ajuda",
