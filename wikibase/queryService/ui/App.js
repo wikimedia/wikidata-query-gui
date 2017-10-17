@@ -234,6 +234,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		// if(window.history.pushState) {//this works only in modern browser
 		// this._editor.registerCallback( 'change', $.proxy( this._updateQueryUrl, this) );
 		// }
+
+		$( '#query-box .toolbar-top' ).css( { visibility: 'visible' } );
 	};
 
 	/**
