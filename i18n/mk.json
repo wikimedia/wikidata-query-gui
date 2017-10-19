@@ -78,6 +78,7 @@
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Преглед на исходот",
 	"wdqs-result-map-layers-all": "Сите слоеви",
+	"wdqs-result-map-progress": "Ги вчитувам картографските податоци: $1%",
 	"wdqs-embed-button-edit-query": "Уреди го барањево",
 	"wdqs-embed-button-edit-query-title": "Уреди го барањето со SPARQL-уредник"
 }

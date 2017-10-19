@@ -80,6 +80,7 @@
 	"wdqs-action-unknow-error": "Nekonata eraro",
 	"wdqs-action-preview": "Rezulta antaŭrigardo",
 	"wdqs-result-map-layers-all": "Ĉiuj tavoloj",
+	"wdqs-result-map-progress": "Ŝargado de map-datumoj: $1%",
 	"wdqs-embed-button-edit-query": "Redakti ĉi tiun informpeton",
 	"wdqs-embed-button-edit-query-title": "Redakti ĉi tiun informpeton per SPARQL-redaktilo"
 }

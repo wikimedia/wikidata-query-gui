@@ -24,6 +24,7 @@
 	"wdqs-app-button-download-title": "Pobierz wynik",
 	"wdqs-app-button-link": "Link",
 	"wdqs-app-button-link-title": "Link do zapytania",
+	"wdqs-app-button-code": "Kod",
 	"wdqs-app-help-feedback": "Przekaż swoją opinię!",
 	"wdqs-app-help-request-query": "Poproś o napisanie zapytania",
 	"wdqs-app-help-portal": "Portal pomocy",
@@ -80,6 +81,7 @@
 	"wdqs-action-unknow-error": "Nieznany błąd",
 	"wdqs-action-preview": "Podgląd wyniku",
 	"wdqs-result-map-layers-all": "Wszystkie warstwy",
+	"wdqs-result-map-progress": "Ładowanie danych mapy: $1%",
 	"wdqs-embed-button-edit-query": "Edytuj to zapytanie",
 	"wdqs-embed-button-edit-query-title": "Edytuj to zapytanie za pomocą edytora SPARQL"
 }

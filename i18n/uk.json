@@ -25,6 +25,8 @@
 	"wdqs-app-button-download-title": "Завантажити результат",
 	"wdqs-app-button-link": "Посилання",
 	"wdqs-app-button-link-title": "Отримати посилання на запит",
+	"wdqs-app-button-code": "Код",
+	"wdqs-app-button-code-title": "Переглянути приклади коду",
 	"wdqs-app-help-feedback": "Залиште відгук!",
 	"wdqs-app-help-request-query": "Запит на запит",
 	"wdqs-app-help-portal": "Портал довідки",
@@ -81,6 +83,7 @@
 	"wdqs-action-unknow-error": "Невідома помилка",
 	"wdqs-action-preview": "Попередній перегляд результату",
 	"wdqs-result-map-layers-all": "Всі шари",
+	"wdqs-result-map-progress": "Завантаження даних карти: $1%",
 	"wdqs-embed-button-edit-query": "Редагувати цей запит",
 	"wdqs-embed-button-edit-query-title": "Редагувати цей запит через редактор SPARQL"
 }

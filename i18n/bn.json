@@ -21,6 +21,7 @@
 	"wdqs-app-button-download-title": "ফলাফল ডাউনলোড করুন",
 	"wdqs-app-button-link": "সংযোগ",
 	"wdqs-app-button-link-title": "অনুসন্ধানের জন্য লিঙ্ক পান",
+	"wdqs-app-button-code": "কোড",
 	"wdqs-app-help-feedback": "প্রতিক্রিয়া দিন!",
 	"wdqs-app-help-request-query": "কোয়েরির অনুরোধ করুন",
 	"wdqs-app-help-portal": "সাহায্য প্রবেশদ্বার",
@@ -73,6 +74,7 @@
 	"wdqs-action-unknow-error": "অজানা ত্রুটি",
 	"wdqs-action-preview": "ফলাফল প্রাকদর্শন",
 	"wdqs-result-map-layers-all": "সব স্তর",
+	"wdqs-result-map-progress": "মানচিত্রের উপাত্ত লোড করা হচ্ছে: $1%",
 	"wdqs-embed-button-edit-query": "এই কোয়েরি সম্পাদনা করুন",
 	"wdqs-embed-button-edit-query-title": "SPARQL সম্পাদক দিয়ে এই কোয়েরি সম্পাদনা করুন"
 }

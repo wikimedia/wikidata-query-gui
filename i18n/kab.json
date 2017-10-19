@@ -20,6 +20,8 @@
 	"wdqs-app-button-download-title": "Sider agmuḍ",
 	"wdqs-app-button-link": "Aseɣwen",
 	"wdqs-app-button-link-title": "Awi-d aseɣwen ar tuttra",
+	"wdqs-app-button-code": "Tangalt",
+	"wdqs-app-button-code-title": "Sken imedyaten n tengalt",
 	"wdqs-app-help-feedback": "Mudd-d tiki!",
 	"wdqs-app-help-request-query": "Suter tuttra",
 	"wdqs-app-help-portal": "Tabburt n tallelt",
@@ -76,6 +78,7 @@
 	"wdqs-action-unknow-error": "Tuccḍa tarussint",
 	"wdqs-action-preview": "Taskant n ugmuḍ",
 	"wdqs-result-map-layers-all": "Akk tissiwin",
+	"wdqs-result-map-progress": "Asali n isefka n tkarḍa: $1",
 	"wdqs-embed-button-edit-query": "Ẓreg tuttra-agi",
 	"wdqs-embed-button-edit-query-title": "Ẓreg tuttra-agi s umaẓrag SPARQL"
 }

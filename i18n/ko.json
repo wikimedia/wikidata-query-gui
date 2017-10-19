@@ -83,6 +83,7 @@
 	"wdqs-action-unknow-error": "알 수 없는 오류",
 	"wdqs-action-preview": "결과 미리 보기",
 	"wdqs-result-map-layers-all": "모든 계층",
+	"wdqs-result-map-progress": "맵 데이터를 불러오는 중: $1%",
 	"wdqs-embed-button-edit-query": "이 쿼리 편집",
 	"wdqs-embed-button-edit-query-title": "SPARQL 편집기로 이 쿼리 편집"
 }

@@ -20,6 +20,8 @@
 	"wdqs-app-button-download-title": "Scareche 'u resultate",
 	"wdqs-app-button-link": "Collegamende",
 	"wdqs-app-button-link-title": "Pigghie 'u collegamende a l'inderrogazione",
+	"wdqs-app-button-code": "Codece",
+	"wdqs-app-button-code-title": "'Ndruche le esembie de codece",
 	"wdqs-app-help-feedback": "Lasse 'na segnalazione!",
 	"wdqs-app-help-request-query": "Cirche 'n'inderrogazione",
 	"wdqs-app-help-portal": "Portale d'aijute",
@@ -76,6 +78,7 @@
 	"wdqs-action-unknow-error": "Errore scanusciute",
 	"wdqs-action-preview": "Andeprime de le resultate",
 	"wdqs-result-map-layers-all": "Tutte le levélle",
+	"wdqs-result-map-progress": "Stoche a careche le date d'a mappe: $1%",
 	"wdqs-embed-button-edit-query": "Cange sta 'nderrogazione",
 	"wdqs-embed-button-edit-query-title": "Cange sta 'nderrogazione cu 'u cangiatore SPARQL"
 }

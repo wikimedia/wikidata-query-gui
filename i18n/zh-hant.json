@@ -78,6 +78,7 @@
 	"wdqs-action-unknow-error": "不明錯誤",
 	"wdqs-action-preview": "結果預覽",
 	"wdqs-result-map-layers-all": "所有圖層",
+	"wdqs-result-map-progress": "載入地圖資料：$1%",
 	"wdqs-embed-button-edit-query": "編輯此查詢",
 	"wdqs-embed-button-edit-query-title": "以 SPARQL 編輯器來編輯此查詢"
 }

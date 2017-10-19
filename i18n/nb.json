@@ -22,6 +22,8 @@
 	"wdqs-app-button-download-title": "Last ned resultatet",
 	"wdqs-app-button-link": "Lenke",
 	"wdqs-app-button-link-title": "Hent lenke til spørringen",
+	"wdqs-app-button-code": "Kode",
+	"wdqs-app-button-code-title": "Vis kodeeksempler",
 	"wdqs-app-help-feedback": "Gi tilbakemelding!",
 	"wdqs-app-help-request-query": "Be om en spørring",
 	"wdqs-app-help-portal": "Hjelpeportal",
@@ -78,6 +80,7 @@
 	"wdqs-action-unknow-error": "Ukjent feil",
 	"wdqs-action-preview": "Resultatforhåndsvisning",
 	"wdqs-result-map-layers-all": "Alle lag",
+	"wdqs-result-map-progress": "Laster kartdata: $1 %",
 	"wdqs-embed-button-edit-query": "Rediger denne spørringen",
 	"wdqs-embed-button-edit-query-title": "Rediger denne spørringen med SPARQL-redigereren"
 }

@@ -22,6 +22,8 @@
 	"wdqs-app-button-download-title": "Ladda ned resultat",
 	"wdqs-app-button-link": "Länk",
 	"wdqs-app-button-link-title": "Hämta länk till förfrågan",
+	"wdqs-app-button-code": "Kod",
+	"wdqs-app-button-code-title": "Visa kodexempel",
 	"wdqs-app-help-feedback": "Ge återkoppling!",
 	"wdqs-app-help-request-query": "Begär en förfrågan",
 	"wdqs-app-help-portal": "Hjälpportal",
@@ -78,6 +80,7 @@
 	"wdqs-action-unknow-error": "Okänt fel",
 	"wdqs-action-preview": "Resultatsförhandsvisning",
 	"wdqs-result-map-layers-all": "Alla lager",
+	"wdqs-result-map-progress": "Läser in kartdata: $1%",
 	"wdqs-embed-button-edit-query": "Redigera denna fråga",
 	"wdqs-embed-button-edit-query-title": "Redigera denna fråga med SPARQL-redigeraren"
 }

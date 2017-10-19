@@ -23,6 +23,8 @@
 	"wdqs-app-button-download-title": "Изтегляне на резултата",
 	"wdqs-app-button-link": "Препратка",
 	"wdqs-app-button-link-title": "Получаване на връзка до заявката",
+	"wdqs-app-button-code": "Код",
+	"wdqs-app-button-code-title": "Преглед на примери за код",
 	"wdqs-app-help-feedback": "Споделете мнението си!",
 	"wdqs-app-help-request-query": "Помоли за заявка",
 	"wdqs-app-help-portal": "Портал за помощ",
@@ -79,6 +81,7 @@
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Предварителен преглед на резултата",
 	"wdqs-result-map-layers-all": "Всички слоеве",
+	"wdqs-result-map-progress": "Зареждане на картографски данни: $1%",
 	"wdqs-embed-button-edit-query": "Редактиране на тази заявка",
 	"wdqs-embed-button-edit-query-title": "Редактиране на тази заявка със SPARQL редактора"
 }

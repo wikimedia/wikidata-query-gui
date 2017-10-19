@@ -80,6 +80,7 @@
 	"wdqs-action-unknow-error": "未知错误",
 	"wdqs-action-preview": "结果预览",
 	"wdqs-result-map-layers-all": "所有图层",
+	"wdqs-result-map-progress": "正在加载地图数据：$1%",
 	"wdqs-embed-button-edit-query": "编辑此查询",
 	"wdqs-embed-button-edit-query-title": "通过SPARQL编辑器编辑此查询"
 }
