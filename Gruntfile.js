@@ -125,6 +125,13 @@ module.exports = function( grunt ) {
 								'**/polestar/**'
 							],
 							dest: buildFolder
+						},{
+							expand: true,
+							src: [
+								'examples/code/*.txt'
+							],
+							dest: buildFolder,
+							filter: 'isFile'
 						}
 				]
 			}
