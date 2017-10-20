@@ -344,22 +344,32 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	SELF.prototype._createResultBrowsers = function( resultData ) {
 		var self = this;
 
-		var defaultBrowser = this._getDefaultResultBrowser();
+		var defaultBrowserOptions = this._getDefaultBrowserOptions();
+		var defaultBrowser = null;
 
-		this._track( 'result.browser.' + ( defaultBrowser || 'default' ) );
+		if ( defaultBrowserOptions !== null ) {
+			this._track( 'result.browser.' + defaultBrowserOptions.name );
+		} else {
+			this._track( 'result.browser.default' );
+		}
 
 		// instantiate
 		$.each( this._resultBrowsers, function( key, b ) {
 			var instance = new wikibase.queryService.ui.resultBrowser[b.class]();
 			instance.setSparqlApi( self._sparqlApi );
 
-			if ( defaultBrowser === null || defaultBrowser === key ) {
+			if ( defaultBrowserOptions !== null && defaultBrowserOptions.name === key ) {
 				self._setSelectedDisplayType( b );
-
 				defaultBrowser = instance;
+				if ( 'options' in defaultBrowserOptions ) {
+					instance.setOptions( defaultBrowserOptions.options );
+				}
 			}
 			b.object = instance;
 		} );
+		if ( defaultBrowser === null ) {
+			defaultBrowser = this._resultBrowsers.Table.object;
+		}
 
 		defaultBrowser.resetVisitors();
 
@@ -374,15 +384,24 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 	/**
 	 * @private
+	 * @return {?{name: string, options: ?Object}}
 	 */
-	SELF.prototype._getDefaultResultBrowser = function() {
-		var match = this._query.match( /#defaultView:(\w+)/ );
+	SELF.prototype._getDefaultBrowserOptions = function() {
+		var match = this._query.match( /#defaultView:(\w+)(\{.*\})?/ );
 
-		if ( match && this._resultBrowsers[match[1]] ) {
-			return match[1];
+		if ( match && this._resultBrowsers.hasOwnProperty( match[1] ) ) {
+			var result = { name: match[1] };
+			if ( match[2] ) {
+				try {
+					result.options = JSON.parse( match[2] );
+				} catch ( e ) {
+					window.console.error( e );
+				}
+			}
+			return result;
+		} else {
+			return null;
 		}
-
-		return null;
 	};
 
 	/**
