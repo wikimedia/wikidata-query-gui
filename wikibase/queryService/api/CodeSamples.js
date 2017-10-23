@@ -40,6 +40,18 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 			},
 			PHP: {
 				escape: function( query ) {
+					// try nowdoc first
+					var identifiers = [ 'SPARQL', 'QUERY', 'EOF' ];
+					for ( var index in identifiers ) {
+						var identifier = identifiers[ index ];
+						if ( !( new RegExp( '^' + identifier + '$', 'm' ).test( query ) ) ) {
+							return '<<< \'' + identifier + '\'\n'
+								+ query + '\n'
+								+ identifier;
+						}
+					}
+
+					// fall back to double quoted
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /"/g, '\\"' )
@@ -50,11 +62,22 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 			},
 			'JavaScript (jQuery)': {
 				escape: function( query ) {
-					var escapedQuery = query
-						.replace( /\\/g, '\\\\' )
-						.replace( /"/g, '\\"' )
-						.replace( /\n/g, '\\n' );
-					return '"' + escapedQuery + '"';
+					var code = '';
+					var lines = query.split( '\n' );
+					for ( var index in lines ) {
+						var line = lines[ index ];
+						var escapedLine = line
+							.replace( /\\/g, '\\\\' )
+							.replace( /"/g, '\\"' );
+						if ( index > 0 ) {
+							code += '\\n" +\n        ';
+						}
+						code += '"' + escapedLine;
+					}
+					if ( index > 0 ) {
+						code += '"';
+					}
+					return code;
 				},
 				mimetype: 'application/javascript'
 			},
@@ -70,24 +93,46 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 			},
 			Java: {
 				escape: function( query ) {
-					var escapedQuery = query
-						.replace( /\\/g, '\\\\' )
-						.replace( /"/g, '\\"' )
-						.replace( /\n/g, '\\n' );
-					return '"' + escapedQuery + '"';
+					var code = '';
+					var lines = query.split( '\n' );
+					for ( var index in lines ) {
+						var line = lines[ index ];
+						var escapedLine = line
+							.replace( /\\/g, '\\\\' )
+							.replace( /"/g, '\\"' );
+						if ( index > 0 ) {
+							code += '\\n" +\n                ';
+						}
+						code += '"' + escapedLine;
+					}
+					if ( index > 0 ) {
+						code += '"';
+					}
+					return code;
 				}
 			},
 			Python: {
 				escape: function( query ) {
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
-						.replace( /"/g, '\\"' )
-						.replace( /\n/g, '\\n' );
-					return '"' + escapedQuery + '"';
+						.replace( /"""/g, '""\\"' );
+					return '"""' + escapedQuery + '"""';
 				}
 			},
 			Ruby: {
 				escape: function( query ) {
+					// try heredoc first
+					var identifiers = [ 'SPARQL', 'QUERY', 'EOF' ];
+					for ( var index in identifiers ) {
+						var identifier = identifiers[ index ];
+						if ( !( new RegExp( '^' + identifier + '$', 'm' ).test( query ) ) ) {
+							return '<<\'' + identifier + '\'.chop\n' // .chop removes the trailing newline
+								+ query + '\n'
+								+ identifier;
+						}
+					}
+
+					// fall back to double quoted
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /"/g, '\\"' )
