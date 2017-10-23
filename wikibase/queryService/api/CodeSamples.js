@@ -179,7 +179,8 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 	SELF.prototype._endpoint = null;
 
 	/**
-	 * @return {jQuery.Promise} Object taking list of example queries { title:, query: }
+	 * @return {jQuery.Promise} yields a list of code examples for the current query
+	 * ({ code: string, mimetype: string })
 	 */
 	SELF.prototype.getExamples = function ( currentQuery ) {
 		var self = this,
