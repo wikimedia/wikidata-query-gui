@@ -20,6 +20,8 @@
 	"wdqs-app-button-download-title": "Çcargar l resultado",
 	"wdqs-app-button-link": "Lhigaçon",
 	"wdqs-app-button-link-title": "Oubter lhigaçon pa cunsulta",
+	"wdqs-app-button-code": "Código",
+	"wdqs-app-button-code-title": "Ber eisemplos de código",
 	"wdqs-app-help-feedback": "Dar la sue oupenion!",
 	"wdqs-app-help-request-query": "Solicitar ua cunsulta",
 	"wdqs-app-help-portal": "Portal de ajuda",
@@ -76,6 +78,7 @@
 	"wdqs-action-unknow-error": "Erro çcoincido",
 	"wdqs-action-preview": "Bisualizaçon de l resultado",
 	"wdqs-result-map-layers-all": "Todas las camadas",
+	"wdqs-result-map-progress": "Cargando ls dados giográficos: $1%",
 	"wdqs-embed-button-edit-query": "Eiditar esta cunsulta",
 	"wdqs-embed-button-edit-query-title": "Eiditar esta cunsulta cul eiditor SPARQL"
 }

@@ -23,6 +23,8 @@
 	"wdqs-app-button-download-title": "Descarregar o resultado",
 	"wdqs-app-button-link": "Ligação",
 	"wdqs-app-button-link-title": "Obter ligação para consulta",
+	"wdqs-app-button-code": "Código",
+	"wdqs-app-button-code-title": "Ver exemplos de código",
 	"wdqs-app-help-feedback": "Dar a sua opinião!",
 	"wdqs-app-help-request-query": "Solicitar uma consulta",
 	"wdqs-app-help-portal": "Portal de ajuda",
@@ -78,5 +80,6 @@
 	"wdqs-action-server-error": "Erro de servidor",
 	"wdqs-action-unknow-error": "Erro desconhecido",
 	"wdqs-action-preview": "Antevisão do resultado",
-	"wdqs-result-map-layers-all": "Todas as camadas"
+	"wdqs-result-map-layers-all": "Todas as camadas",
+	"wdqs-result-map-progress": "A carregar os dados cartográficos: $1%"
 }

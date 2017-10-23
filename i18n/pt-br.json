@@ -85,6 +85,7 @@
 	"wdqs-action-unknow-error": "Erro desconhecido",
 	"wdqs-action-preview": "Visualização do resultado",
 	"wdqs-result-map-layers-all": "Todas as camadas",
+	"wdqs-result-map-progress": "Carregando os dados cartográficos: $1%",
 	"wdqs-embed-button-edit-query": "Editar esta consulta",
 	"wdqs-embed-button-edit-query-title": "Editar esta consulta com o editor SPARQL"
 }

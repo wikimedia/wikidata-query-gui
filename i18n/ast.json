@@ -20,6 +20,8 @@
 	"wdqs-app-button-download-title": "Descargar el resultáu",
 	"wdqs-app-button-link": "Enllaz",
 	"wdqs-app-button-link-title": "Llograr l'enllaz a la consulta",
+	"wdqs-app-button-code": "Códigu",
+	"wdqs-app-button-code-title": "Ver exemplos de códigu",
 	"wdqs-app-help-feedback": "Unviar un comentariu",
 	"wdqs-app-help-request-query": "Solicitar una consulta",
 	"wdqs-app-help-portal": "Portal d'ayuda",
@@ -76,6 +78,7 @@
 	"wdqs-action-unknow-error": "Error desconocíu",
 	"wdqs-action-preview": "Vista previa del resultáu",
 	"wdqs-result-map-layers-all": "Toles capes",
+	"wdqs-result-map-progress": "Cargando los datos del mapa: $1%",
 	"wdqs-embed-button-edit-query": "Editar esta consulta",
 	"wdqs-embed-button-edit-query-title": "Editar esta consulta col editor de SPARQL"
 }
