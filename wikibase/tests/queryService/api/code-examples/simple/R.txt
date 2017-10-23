@@ -1,0 +1,10 @@
+#http://www.r-bloggers.com/sparql-with-r-in-less-than-5-minutes/
+
+library(SPARQL) # SPARQL querying package
+library(ggplot2)
+
+endpoint <- "http://sparql.example/endpoint"
+query <- '# cats\nSELECT ?cat ?catLabel WHERE {\n  ?cat wdt:P31 wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }\n}\n'
+
+qd <- SPARQL(endpoint,query)
+df <- qd$results

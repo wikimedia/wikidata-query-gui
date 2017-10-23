@@ -1,0 +1,13 @@
+<?php
+
+$endpointUrl = 'http://sparql.example/endpoint';
+$sparqlQuery = <<< 'SPARQL'
+# cats
+SELECT ?cat ?catLabel WHERE {
+  ?cat wdt:P31 wd:Q146.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+
+SPARQL;
+
+echo file_get_contents( $endpointUrl . '?query=' . urlencode( $sparqlQuery )  );

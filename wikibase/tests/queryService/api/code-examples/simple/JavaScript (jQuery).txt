@@ -1,0 +1,16 @@
+var endpointUrl = 'http://sparql.example/endpoint',
+    sparqlQuery = "# cats\n" +
+        "SELECT ?cat ?catLabel WHERE {\n" +
+        "  ?cat wdt:P31 wd:Q146.\n" +
+        "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n" +
+        "}\n" +
+        "",
+    settings = {
+        headers: { Accept: 'application/sparql-results+json' },
+        data: { query: sparqlQuery }
+    };
+
+$.ajax( endpointUrl, settings ).then( function ( data ) {
+    $( 'body' ).append( ( $('<pre>').text( JSON.stringify( data) ) ) );
+    console.log( data );
+} );
