@@ -1,0 +1,16 @@
+#pip install sparqlwrapper
+#https://rdflib.github.io/sparqlwrapper/
+
+from SPARQLWrapper import SPARQLWrapper, JSON
+sparql = SPARQLWrapper("http://sparql.example/endpoint")
+sparql.setQuery("""# cats
+SELECT ?cat ?catLabel WHERE {
+  ?cat wdt:P31 wd:Q146.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+""")
+sparql.setReturnFormat(JSON)
+results = sparql.query().convert()
+
+for result in results["results"]["bindings"]:
+    print(result)
