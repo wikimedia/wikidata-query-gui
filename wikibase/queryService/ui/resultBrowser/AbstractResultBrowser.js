@@ -32,6 +32,12 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	SELF.prototype._result = null;
 
 	/**
+	 * @property {Object}
+	 * @protected
+	 */
+	SELF.prototype._options = {};
+
+	/**
 	 * @property {Function}
 	 * List of visitor callbacks
 	 */
@@ -58,6 +64,24 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 */
 	SELF.prototype.setResult = function( result ) {
 		this._result = result;
+	};
+
+	/**
+	 * Sets the options
+	 *
+	 * @param {Object} options set
+	 */
+	SELF.prototype.setOptions = function( options ) {
+		this._options = options;
+	};
+
+	/**
+	 * Get options
+	 *
+	 * @return {Object} options set
+	 */
+	SELF.prototype.getOptions = function() {
+		return this._options || {};
 	};
 
 	/**
