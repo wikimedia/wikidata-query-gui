@@ -215,9 +215,12 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 			}
 		} );
 
-		$.when.apply( $, loadFiles ).then( function () {
-			deferred.resolve( data );
-		} );
+		$.when.apply( $, loadFiles ).then(
+			function () {
+				deferred.resolve( data );
+			},
+			deferred.reject.bind( deferred )
+		);
 
 		return deferred.promise();
 	};
