@@ -26,7 +26,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 			HTML: {
 				code: function( query ) {
 					return '<iframe style="width: 80vw; height: 50vh; border: none;" ' +
-						'src="' + root + '/embed.html#' +
+						'src="' + root + 'embed.html#' +
 						encodeURIComponent( query ) + '" ' +
 						'referrerpolicy="origin" ' +
 						'sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
