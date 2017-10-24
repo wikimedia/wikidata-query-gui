@@ -506,47 +506,56 @@ div.jqcloud span.w1 {
 	Query Helper
 */
 
-.query-helper {
+#query-box .query-helper {
 	flex: 0 0 auto;
 	min-width: 300px;
 	width: 30vw;
 	max-width: 80vw;
 	z-index: 100;
-}
 
-.query-helper .panel {
-	border: none;
-	margin: 0 1em 0 1em;
-}
+	.panel {
+		border: none;
+		margin: 0 1em 0 1em;
+		&-info {
+			background: rgba( 255, 255, 255, 0.9 );
+		}
+		&-heading {
+			background: rgba( 255, 255, 255, 0.9 );
+			padding: 8px 10px;
+		}
+		&-body {
+			font-size: 120%;
+			padding: 10px;
+		}
+	}
 
-.query-helper .panel-info {
-	background: rgba( 255, 255, 255, 0.9 );
-}
+	.toolbar {
+		padding-left: 0.5em;
+		text-align: right;
+		opacity: 0.3;
+		.fa {
+			font-size: 1.2em;
+			display: inline-block;
+			padding: 0.1em;
+		}
+	}
 
-.query-helper .panel-heading {
-	background: rgba( 255, 255, 255, 0.9 );
-	padding: 8px 10px;
-}
+	tr:hover > .toolbar {
+		opacity: 1;
+	}
 
-.query-helper .panel-body {
-	font-size: 120%;
-	padding: 10px;
-}
+	.popover {
+		min-width: 250px;
+		white-space: nowrap;
+	}
 
-#query-box .query-helper .toolbar {
-	padding-left: 0.5em;
-	text-align: right;
-	opacity: 0.3;
-}
+	&-hidden {
+		display: none;
+	}
+	&-hidden + .splitter {
+		display: none;
+	}
 
-#query-box .query-helper .toolbar .fa {
-	font-size: 1.2em;
-	display: inline-block;
-	padding: 0.1em;
-}
-
-#query-box .query-helper tr:hover > .toolbar {
-	opacity: 1;
 }
 
 .select2-container {
@@ -555,18 +564,6 @@ div.jqcloud span.w1 {
 
 .popover .select2-container {
 	min-width: 200px;
-}
-
-.query-helper .popover {
-	min-width: 250px;
-	white-space: nowrap;
-}
-
-.query-helper-hidden {
-	display: none;
-}
-.query-helper-hidden + .splitter {
-	display: none;
 }
 
 /*
