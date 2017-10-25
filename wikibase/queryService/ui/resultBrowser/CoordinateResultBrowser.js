@@ -29,7 +29,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	var PREFIX_COMMONS_DATA = 'http://commons.wikimedia.org/data/main/';
 	var SUFFIX_COMMONS_MAP = '.map';
 
-	var LAYER_COLUMNS = [ 'layerLabel', 'layer' ];
+	var DEFAULT_LAYER_VARIABLES = [ '?layerLabel', '?layer' ];
 	var LAYER_DEFAULT_GROUP = '_LAYER_DEFAULT_GROUP';
 
 	var TILE_LAYER = {
@@ -348,9 +348,11 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._getMarkerGroupsLayer = function( row ) {
-		var column = LAYER_COLUMNS.find( function( column ) {
-			return row[column];
-		} );
+		var variables = this.getOption( 'layer', DEFAULT_LAYER_VARIABLES ),
+			columns = this._getFormatter().getColumnNamesOption( variables ),
+			column = columns.find( function( column ) {
+				return row[column];
+			} );
 
 		return column ? row[column].value : LAYER_DEFAULT_GROUP;
 	};
