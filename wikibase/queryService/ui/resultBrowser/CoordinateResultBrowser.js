@@ -37,13 +37,13 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
 			options: {
 				id: 'wikipedia-map-01',
-				attribution: ' <a href="https://maps.wikimedia.org/">Wikimedia</a> | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				attribution: ' <a href="https://maps.wikimedia.org/">Wikimedia</a> | &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			}
 		},
 		osm: {
-			url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 			options: {
-				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			}
 		}
 	};
