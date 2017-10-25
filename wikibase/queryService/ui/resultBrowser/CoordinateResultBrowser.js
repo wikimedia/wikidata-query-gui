@@ -37,7 +37,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			url: 'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',
 			options: {
 				id: 'wikipedia-map-01',
-				attribution: ' <a href="https://maps.wikimedia.org/">Wikimedia</a> | &copy; <a href="http://openstreetmap.org/copyright">Open Street Map</a> contributors'
+				attribution: ' <a href="https://maps.wikimedia.org/">Wikimedia</a> | &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			}
 		},
 		osm: {
