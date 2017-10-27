@@ -74,7 +74,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 						}
 						code += '"' + escapedLine;
 					}
-					if ( index > 0 ) {
+					if ( index >= 0 ) {
 						code += '"';
 					}
 					return code;
@@ -105,7 +105,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 						}
 						code += '"' + escapedLine;
 					}
-					if ( index > 0 ) {
+					if ( index >= 0 ) {
 						code += '"';
 					}
 					return code;
