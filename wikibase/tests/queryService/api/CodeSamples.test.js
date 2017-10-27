@@ -16,7 +16,7 @@
 
 	$.each( tests, function( index, test ) {
 		QUnit.test( test.name, function( assert ) {
-			if ( typeof window !== 'undefined' ) {
+			if ( navigator.userAgent.indexOf( 'PhantomJS' ) === -1 ) {
 				// cannot load code examples in browser
 				assert.expect( 0 );
 				return;
