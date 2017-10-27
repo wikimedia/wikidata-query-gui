@@ -11,6 +11,12 @@
 			endpoint: 'http://sparql.example/endpoint',
 			root: 'http://sparql.example/',
 			index: 'http://sparql.example/index.html'
+		},
+		{
+			name: 'empty',
+			endpoint: '',
+			root: '/',
+			index: '/'
 		}
 	];
 

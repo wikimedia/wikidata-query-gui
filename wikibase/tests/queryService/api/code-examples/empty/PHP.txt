@@ -1,0 +1,8 @@
+<?php
+
+$endpointUrl = '';
+$sparqlQuery = <<< 'SPARQL'
+
+SPARQL;
+
+echo file_get_contents( $endpointUrl . '?query=' . urlencode( $sparqlQuery )  );

@@ -1,0 +1,41 @@
+//https://github.com/BorderCloud/SPARQL-JAVA
+import com.bordercloud.sparql.Endpoint;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Main {
+
+    public static void main(String[] args) {
+        try {
+            Endpoint sp = new Endpoint("", false);
+
+            String querySelect = "";
+
+            HashMap rs = sp.query(querySelect);
+            printResult(rs,30);
+
+        }catch(EndpointException eex) {
+            System.out.println(eex);
+            eex.printStackTrace();
+        }
+    }
+
+    public static void printResult(HashMap rs , int size) {
+
+      for (String variable : (ArrayList) rs.get("result").get("variables")) {
+        System.out.print(String.format("%-"+size+"."+size+"s", variable ) + " | ");
+      }
+      System.out.print("\n");
+      for (HashMap value : (ArrayList>) rs.get("result").get("rows")) {
+        //System.out.print(value);
+        /* for (String key : value.keySet()) {
+         System.out.println(value.get(key));
+         }*/
+        for (String variable : (ArrayList) rs.get("result").get("variables")) {
+          //System.out.println(value.get(variable));
+          System.out.print(String.format("%-"+size+"."+size+"s", value.get(variable)) + " | ");
+        }
+        System.out.print("\n");
+      }
+    }
+}
