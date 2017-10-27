@@ -84,6 +84,7 @@
 	"wdqs-action-unknow-error": "Неизвестная ошибка",
 	"wdqs-action-preview": "Предпросмотр результата",
 	"wdqs-result-map-layers-all": "Все слои",
+	"wdqs-result-map-progress": "Загрузка данных карты: $1%",
 	"wdqs-embed-button-edit-query": "Изменить этот запрос",
 	"wdqs-embed-button-edit-query-title": "Изменить этот запрос с помощью SPARQL-редактора"
 }

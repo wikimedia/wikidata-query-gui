@@ -25,6 +25,8 @@
 	"wdqs-app-button-download-title": "نتیجه دانلود",
 	"wdqs-app-button-link": "پیوند",
 	"wdqs-app-button-link-title": "دریافت پیوند کوئری",
+	"wdqs-app-button-code": "کد",
+	"wdqs-app-button-code-title": "نمایش نمونه کد",
 	"wdqs-app-help-feedback": "دریافت انتقادات و پیشنهادات",
 	"wdqs-app-help-request-query": "درخواست کوئری",
 	"wdqs-app-help-portal": "درگاه راهنما",
@@ -81,6 +83,7 @@
 	"wdqs-action-unknow-error": "خطای ناشناخته",
 	"wdqs-action-preview": "پیش‌نمایش نتیجه",
 	"wdqs-result-map-layers-all": "تمام لایه‌ها",
+	"wdqs-result-map-progress": "بارگیری اطلاعات نقشه: $1%",
 	"wdqs-embed-button-edit-query": "ویرایش این پرسمان",
 	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL"
 }

@@ -22,6 +22,8 @@
 	"wdqs-app-button-download-title": "הורדת תוצאה",
 	"wdqs-app-button-link": "קישור",
 	"wdqs-app-button-link-title": "קבלת קישור לשאילתה",
+	"wdqs-app-button-code": "קוד",
+	"wdqs-app-button-code-title": "הצגת דוגמאות קוד",
 	"wdqs-app-help-feedback": "שליחת משוב!",
 	"wdqs-app-help-request-query": "בקשת שאילתה",
 	"wdqs-app-help-portal": "פורטל עזרה",
@@ -78,6 +80,7 @@
 	"wdqs-action-unknow-error": "שגיאה בלתי־ידועה",
 	"wdqs-action-preview": "תצוגה מקדימה של תוצאה",
 	"wdqs-result-map-layers-all": "כל השכבות",
+	"wdqs-result-map-progress": "טעינת נתוני מפה: $1%",
 	"wdqs-embed-button-edit-query": "עריכת השאילתה הזאת",
 	"wdqs-embed-button-edit-query-title": "עריכת השאילתה הזאת עם עורך SPARQL"
 }

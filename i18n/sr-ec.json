@@ -82,6 +82,7 @@
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Приказ резултата",
 	"wdqs-result-map-layers-all": "Сви слојеви",
+	"wdqs-result-map-progress": "Учитавање података мапе: $1%",
 	"wdqs-embed-button-edit-query": "Уреди овај упит",
 	"wdqs-embed-button-edit-query-title": "Уреди овај упит са SPARQL уређивачем"
 }

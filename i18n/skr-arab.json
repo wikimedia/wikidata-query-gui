@@ -50,5 +50,6 @@
 	"wdqs-action-server-error": "سرور غلطی",
 	"wdqs-action-unknow-error": "نامعلوم غلطی",
 	"wdqs-action-preview": "نتیجے دا ݙکھالا",
-	"wdqs-result-map-layers-all": "ساریاں تہیاں"
+	"wdqs-result-map-layers-all": "ساریاں تہیاں",
+	"wdqs-embed-button-edit-query": "ایں سوال کوں بدلو"
 }
