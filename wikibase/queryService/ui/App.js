@@ -618,7 +618,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 					try {
 						return '<?xml version="1.0" encoding="utf-8"?>\n'
-							+ window.unescape( encodeURIComponent( $svg[0].outerHTML ) );
+							+ $svg[0].outerHTML;
 					} catch ( ex ) {
 						return null;
 					}
