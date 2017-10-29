@@ -16,6 +16,15 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 	 * @constructor
 	 */
 	function SELF( endpoint, root, index ) {
+		if ( endpoint.startsWith( '/' ) ) {
+			var origin;
+			if ( window.location.origin ) {
+				origin = window.location.origin;
+			} else {
+				origin = window.location.protocol + '//' + window.location.host;
+			}
+			endpoint = origin + endpoint;
+		}
 		this._endpoint = endpoint;
 		this._languages = {
 			URL: {
