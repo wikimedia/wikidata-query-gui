@@ -20,6 +20,8 @@
 	"wdqs-app-button-download-title": "Descarga resulta",
 	"wdqs-app-button-link": "Lia",
 	"wdqs-app-button-link-title": "Oteni lia a demanda",
+	"wdqs-app-button-code": "Codigo",
+	"wdqs-app-button-code-title": "Regarda esemplos de codigo",
 	"wdqs-app-help-feedback": "Dona comentas!",
 	"wdqs-app-help-request-query": "Solisita un demanda",
 	"wdqs-app-help-portal": "Porton de aida",
@@ -53,10 +55,13 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Table ierarcial de sinistra a destra",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Table ierarcial de supra a su",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Table ierarcial de destra a sinistra",
+	"wdqs-app-toast-leave-fullscreen": "Toca [esc] per parti de scermo plen",
 	"wdqs-dialog-examples-preview-query": "Previde demanda",
 	"wdqs-dialog-examples-preview-result": "Previde resulta",
 	"wdqs-ve-filter": "Filtri",
 	"wdqs-ve-show": "Mostra",
+	"wdqs-ve-add-label-title": "Ajunta variable cual conteni eticeta de esente",
+	"wdqs-ve-remove-row-title": "Sutrae esta linia",
 	"wdqs-ve-with": "con",
 	"wdqs-ve-anything": "cualce cosa",
 	"wdqs-ve-any": "cualce",
@@ -71,5 +76,9 @@
 	"wdqs-action-malformed-query": "Demanda es malformida",
 	"wdqs-action-server-error": "Era de servador",
 	"wdqs-action-unknow-error": "Era nonconoseda",
-	"wdqs-result-map-layers-all": "Tota niveles"
+	"wdqs-action-preview": "Previde la resulta",
+	"wdqs-result-map-layers-all": "Tota niveles",
+	"wdqs-result-map-progress": "Cargante datos de mapa: $1",
+	"wdqs-embed-button-edit-query": "Revise esta demanda",
+	"wdqs-embed-button-edit-query-title": "Revise esta demanda con la SPARQL editador"
 }
