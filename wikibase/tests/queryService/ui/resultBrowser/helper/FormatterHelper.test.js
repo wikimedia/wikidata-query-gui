@@ -86,4 +86,16 @@
 		} );
 	} );
 
+	QUnit.test( 'getColumnNamesOption', function( assert ) {
+		assert.deepEqual( helper.getColumnNamesOption( '?foo' ), [ 'foo' ], 'message foo' );
+
+		assert.deepEqual( helper.getColumnNamesOption( [ '?bar', '?baz' ] ), [ 'bar', 'baz' ] );
+
+		var realWarn = window.console.warn;
+		window.console.warn = sinon.spy();
+		assert.deepEqual( helper.getColumnNamesOption( 'reserved' ), [] );
+		assert.ok( window.console.warn.calledOnce );
+		window.console.warn = realWarn;
+	} );
+
 }( QUnit, wikibase ) );
