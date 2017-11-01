@@ -73,6 +73,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 */
 	SELF.prototype.setOptions = function( options ) {
 		this._options = options;
+		this._getFormatter().setOptions( options );
 	};
 
 	/**

@@ -36,10 +36,26 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @author Jonas Kress
 	 * @constructor
 	 * @param {Function} _i18n
+	 * @param {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
-	function SELF( _i18n ) {
+	function SELF( _i18n, options ) {
 		this._i18n = _i18n;
+		this._options = options || new wikibase.queryService.ui.resultBrowser.helper.Options( {} );
 	}
+
+	/**
+	 * @return {wikibase.queryService.ui.resultBrowser.helper.Options}
+	 */
+	SELF.prototype.getOptions = function() {
+		return this._options;
+	};
+
+	/**
+	 * @param {wikibase.queryService.ui.resultBrowser.helper.Options} options
+	 */
+	SELF.prototype.setOptions = function( options ) {
+		this._options = options;
+	};
 
 	/**
 	 * Format a data row
@@ -460,6 +476,12 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @see AbstractResultBrowser._i18n
 	 */
 	SELF.prototype._i18n = null;
+
+	/**
+	 * @property {wikibase.queryService.ui.resultBrowser.helper.Options}
+	 * @private
+	 */
+	SELF.prototype._options = null;
 
 	return SELF;
 }( jQuery, moment ) );
