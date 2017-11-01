@@ -86,4 +86,21 @@
 		} );
 	} );
 
+	QUnit.test( '_isHiddenField', function( assert ) {
+		var Options = wb.queryService.ui.resultBrowser.helper.Options;
+
+		helper.setOptions( new Options( {} ) );
+		assert.strictEqual( helper._isHiddenField( 'foo' ), false );
+
+		helper.setOptions( new Options( { hide: '?bar' } ) );
+		assert.strictEqual( helper._isHiddenField( 'bar' ), true );
+
+		helper.setOptions( new Options( { hide: [ '?bar', '?baz' ] } ) );
+		assert.strictEqual( helper._isHiddenField( 'foo' ), false );
+		assert.strictEqual( helper._isHiddenField( 'bar' ), true );
+		assert.strictEqual( helper._isHiddenField( 'baz' ), true );
+
+		helper.setOptions( new Options( {} ) );
+	} );
+
 }( QUnit, wikibase ) );
