@@ -32,10 +32,10 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	SELF.prototype._result = null;
 
 	/**
-	 * @property {Object}
+	 * @property {wikibase.queryService.ui.resultBrowser.helper.Options}
 	 * @protected
 	 */
-	SELF.prototype._options = {};
+	SELF.prototype._options = null;
 
 	/**
 	 * @property {Function}
@@ -67,44 +67,21 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	};
 
 	/**
-	 * Sets the options
+	 * Sets the options object.
 	 *
-	 * @param {Object} options set
+	 * @param {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
 	SELF.prototype.setOptions = function( options ) {
 		this._options = options;
 	};
 
 	/**
-	 * Get options
+	 * Gets the options object
 	 *
-	 * @return {Object} options set
+	 * @return {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
 	SELF.prototype.getOptions = function() {
-		return this._options || {};
-	};
-
-	/**
-	 * Get a single option,
-	 * using a certain default value
-	 * if the option is not specified.
-	 *
-	 * @param {string} name The name of the option.
-	 * @param {*} defaultValue The default value to use if the option is not specified.
-	 * This parameter is not optional – if the option may be absent,
-	 * explicitly pass undefined as the default value.
-	 * @return {*}
-	 */
-	SELF.prototype.getOption = function( name, defaultValue ) {
-		if ( arguments.length !== 2 ) {
-			throw new Error( 'getOption must be called with exactly two arguments' );
-		}
-
-		if ( name in this._options ) {
-			return this._options[ name ];
-		} else {
-			return defaultValue;
-		}
+		return this._options || new wikibase.queryService.ui.resultBrowser.helper.Options( {} );
 	};
 
 	/**

@@ -362,7 +362,10 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 				self._setSelectedDisplayType( b );
 				defaultBrowser = instance;
 				if ( 'options' in defaultBrowserOptions ) {
-					instance.setOptions( defaultBrowserOptions.options );
+					var options = new wikibase.queryService.ui.resultBrowser.helper.Options(
+						defaultBrowserOptions.options
+					);
+					instance.setOptions( options );
 				}
 			}
 			b.object = instance;
