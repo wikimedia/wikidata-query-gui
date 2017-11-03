@@ -672,9 +672,13 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		this._updateQueryUrl();
 
 		$( '#execute-button' ).prop( 'disabled', true );
-		this._resultView.draw( this._editor.getValue() ).fail( function ( error ) {
-			self._editor.highlightError( error );
-		} ).always( function () {
+		this._resultView.draw( this._editor.getValue() ).catch( function ( error ) {
+			try {
+				self._editor.highlightError( error );
+			} catch ( err ) {
+				// ignore
+			}
+		} ).then( function () {
 			$( '#execute-button' ).prop( 'disabled', false );
 		} );
 
