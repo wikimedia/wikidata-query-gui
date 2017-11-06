@@ -275,7 +275,7 @@ body {
 				$( 'body' ).i18n();
 				$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
 
-				resultView.draw( query ).done( function() {
+				resultView.draw( query ).then( function() {
 					$( '.logo' ).hide();
 				} );
 				renderEdit( query, function( q ){
