@@ -46,7 +46,7 @@ wikibase.queryService.ui.dialog.CodeExample = ( function( $, CodeMirror ) {
 	SELF.prototype._init = function() {
 		var self = this;
 
-		this._$element.focus( function () {
+		this._$element.on( 'show.bs.modal', function () {
 			self._getCodeExamples().then( function ( d ) {
 				self._update( d );
 			} );
