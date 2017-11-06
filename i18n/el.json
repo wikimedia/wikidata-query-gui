@@ -6,7 +6,8 @@
 			"Stam.nikos",
 			"Glavkos",
 			"GR",
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"KATRINE1992"
 		]
 	},
 	"wdqs-app-button-examples": "Παραδείγματα",
@@ -17,12 +18,16 @@
 	"wdqs-app-button-run-title": "Εκτέλεση ερωτήματος (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Εκκαθάριση",
 	"wdqs-app-button-clear-title": "Εκκαθάριση ερωτήματος",
+	"wdqs-app-button-restore-title": "Αποκατάσταση προηγούμενης καταχώρησης",
+	"wdqs-app-button-fullscreen-title": "Εναλλαγή στη λειτουργία πλήρους οθόνης του προγράμματος επεξεργασίας",
 	"wdqs-app-button-display": "Εμφάνιση",
 	"wdqs-app-button-display-title": "Εμφάνιση αποτελέσματος ως πίνακα, εικόνα, ...",
 	"wdqs-app-button-download": "Λήψη",
 	"wdqs-app-button-download-title": "Κατεβάστε το αποτέλεσμα",
 	"wdqs-app-button-link": "Σύνδεσμος",
 	"wdqs-app-button-link-title": "Πάρτε σύνδεσμο προς το ερώτημα",
+	"wdqs-app-button-code": "Κωδικός",
+	"wdqs-app-button-code-title": "Προβολή παραδειγμάτων κώδικα",
 	"wdqs-app-help-feedback": "Δώστε ανατροφοδότηση!",
 	"wdqs-app-help-request-query": "Ζητήστε ένα ερώτημα",
 	"wdqs-app-help-portal": "Πύλη Βοήθειας",
@@ -61,6 +66,8 @@
 	"wdqs-dialog-examples-preview-result": "Προεπισκόπηση αποτελέσματος",
 	"wdqs-ve-filter": "Φιλτράρισμα",
 	"wdqs-ve-show": "Εμφάνιση",
+	"wdqs-ve-add-label-title": "Προσθέστε μεταβλητή που περιέχει ετικέτα οντότητας",
+	"wdqs-ve-remove-row-title": "Αφαίρεση αυτού του εργαλείου",
 	"wdqs-ve-with": "με",
 	"wdqs-ve-anything": "οτιδήποτε",
 	"wdqs-ve-any": "οτιδήποτε",
@@ -75,5 +82,9 @@
 	"wdqs-action-malformed-query": "Το ερώτημα είναι ακατάλληλο",
 	"wdqs-action-server-error": "Σφάλμα διακομιστή",
 	"wdqs-action-unknow-error": "Άγνωστο σφάλμα",
-	"wdqs-result-map-layers-all": "Όλα τα στρώματα"
+	"wdqs-action-preview": "Αποτέλεσμα προεπισκόπησης",
+	"wdqs-result-map-layers-all": "Όλα τα στρώματα",
+	"wdqs-result-map-progress": "Φόρτωση δεδομένων χάρτη: $1%",
+	"wdqs-embed-button-edit-query": "Επεξεργασία καταχώρησης",
+	"wdqs-embed-button-edit-query-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL"
 }

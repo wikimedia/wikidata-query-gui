@@ -17,12 +17,14 @@
 	"wdqs-app-button-run-title": "Zoekopdracht uitvoeren (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Wissen",
 	"wdqs-app-button-clear-title": "Zoekopdracht wissen",
+	"wdqs-app-button-restore-title": "Vorige zoekopdracht terugzetten",
 	"wdqs-app-button-display": "Weergaven",
 	"wdqs-app-button-display-title": "Toon resultaat als tabel, afbeelding, ...",
 	"wdqs-app-button-download": "Downloaden",
 	"wdqs-app-button-download-title": "Resultaat downloaden",
 	"wdqs-app-button-link": "Koppeling",
 	"wdqs-app-button-link-title": "Koppeling naar zoekopdracht",
+	"wdqs-app-button-code": "Code",
 	"wdqs-app-help-feedback": "Geef ons feedback!",
 	"wdqs-app-help-request-query": "Zoekopdracht aanvragen",
 	"wdqs-app-help-portal": "Hulpportaal",
@@ -58,6 +60,7 @@
 	"wdqs-dialog-examples-preview-result": "Voorbeeld van resultaat",
 	"wdqs-ve-filter": "Fliteren",
 	"wdqs-ve-show": "Weergeven",
+	"wdqs-ve-remove-row-title": "Deze rij verwijderen",
 	"wdqs-ve-with": "met",
 	"wdqs-ve-anything": "alles",
 	"wdqs-ve-any": "alle",
@@ -72,5 +75,7 @@
 	"wdqs-action-malformed-query": "Zoekopdracht is ongeldig",
 	"wdqs-action-server-error": "Serverfout",
 	"wdqs-action-unknow-error": "Onbekende fout",
-	"wdqs-result-map-layers-all": "Alle lagen"
+	"wdqs-result-map-layers-all": "Alle lagen",
+	"wdqs-result-map-progress": "Kaartgegevens laden: $1%",
+	"wdqs-embed-button-edit-query": "Deze zoekopdracht bewerken"
 }

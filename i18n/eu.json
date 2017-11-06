@@ -23,6 +23,8 @@
 	"wdqs-app-button-download-title": "Emaitza jaitsi",
 	"wdqs-app-button-link": "Lotura",
 	"wdqs-app-button-link-title": "Queryari lotura lortu",
+	"wdqs-app-button-code": "Kodea",
+	"wdqs-app-button-code-title": "Ikusi kode ereduak",
 	"wdqs-app-help-feedback": "Eman iritzia!",
 	"wdqs-app-help-request-query": "Query bat eskatu",
 	"wdqs-app-help-portal": "Laguntza Ataria",
@@ -79,6 +81,7 @@
 	"wdqs-action-unknow-error": "Errore ezezaguna",
 	"wdqs-action-preview": "Aurreikusi emaitza",
 	"wdqs-result-map-layers-all": "Geruza guztiak",
+	"wdqs-result-map-progress": "Mapa datuak kargatzen: %$1",
 	"wdqs-embed-button-edit-query": "Kontsulta hau aldatu",
 	"wdqs-embed-button-edit-query-title": "Kontsulta hau SPARQL editorearekin aldatu"
 }
