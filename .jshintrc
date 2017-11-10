@@ -45,6 +45,7 @@
 		"vis": false,
 		"moment": false,
 		"dimple": false,
-		"wellknown": false
+		"wellknown": false,
+		"Map": false
 	}
 }
