@@ -20,6 +20,8 @@
 	"wdqs-app-button-download-title": "Hasil undeuran",
 	"wdqs-app-button-link": "Tutumbu",
 	"wdqs-app-button-link-title": "Comot tutumbu pikeun kuéri",
+	"wdqs-app-button-code": "Sandi",
+	"wdqs-app-button-code-title": "Ilikan conto sandi",
 	"wdqs-app-help-feedback": "Béré eupan balik!",
 	"wdqs-app-help-request-query": "Pénta kuéri",
 	"wdqs-app-help-portal": "Portal Pitulung",
@@ -76,6 +78,7 @@
 	"wdqs-action-unknow-error": "Kasalahan teu dipikanyaho",
 	"wdqs-action-preview": "Pramidang hasil",
 	"wdqs-result-map-layers-all": "Sakabéh layer",
+	"wdqs-result-map-progress": "Muat data péta: $1%",
 	"wdqs-embed-button-edit-query": "Édit ieu kuéri",
 	"wdqs-embed-button-edit-query-title": "Édit ieu kuéri maké éditor SPARQL"
 }
