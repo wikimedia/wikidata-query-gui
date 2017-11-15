@@ -69,7 +69,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$result = $( '<div/>' );
 
 		$.each( row, function( key, value ) {
-			if ( self._isLabelField( key, row ) ) {
+			if ( self._isLabelField( key, row ) || self._isHiddenField( key ) ) {
 				return;
 			}
 
@@ -90,6 +90,15 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype._isLabelField = function( key, row ) {
 		return key.endsWith( 'Label' ) && typeof row[key.slice( 0, -5 )] !== 'undefined';
+	};
+
+	/**
+	 * @param {string} key
+	 * @return {boolean}
+	 * @private
+	 */
+	SELF.prototype._isHiddenField = function( key ) {
+		return this.getOptions().getColumnNames( 'hide', [] ).indexOf( key ) !== -1;
 	};
 
 	/**
