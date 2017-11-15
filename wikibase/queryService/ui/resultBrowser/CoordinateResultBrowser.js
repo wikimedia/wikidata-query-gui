@@ -348,8 +348,8 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 */
 	SELF.prototype._getMarkerGroupsLayer = function( row ) {
-		var variables = this.getOption( 'layer', DEFAULT_LAYER_VARIABLES ),
-			columns = this._getFormatter().getColumnNamesOption( variables ),
+		var options = this.getOptions(),
+			columns = options.getColumnNames( 'layer', DEFAULT_LAYER_VARIABLES ),
 			column = columns.find( function( column ) {
 				return row[column];
 			} );

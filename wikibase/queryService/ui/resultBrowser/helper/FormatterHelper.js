@@ -457,33 +457,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Gets a list of column names from a result browser option
-	 * specifying one or more corresponding variable names.
-	 * (The variable names start with a question mark,
-	 * the returned column names don’t.)
-	 *
-	 * @param {string[]|string} optionValue
-	 * @return {string[]}
-	 */
-	SELF.prototype.getColumnNamesOption = function( optionValue ) {
-		if ( !Array.isArray( optionValue ) ) {
-			optionValue = [ optionValue ];
-		}
-		optionValue = optionValue.filter( function( variableName ) {
-			if ( !variableName.startsWith( '?' ) ) {
-				window.console.warn(
-					'column name ' + variableName + ' is not a variable name, ignoring'
-				);
-				return false;
-			}
-			return true;
-		} );
-		return optionValue.map( function( variableName ) {
-			return variableName.substring( 1 );
-		} );
-	};
-
-	/**
 	 * @see AbstractResultBrowser._i18n
 	 */
 	SELF.prototype._i18n = null;
