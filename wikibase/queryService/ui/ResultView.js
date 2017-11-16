@@ -344,11 +344,11 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	SELF.prototype._createResultBrowsers = function( resultData ) {
 		var self = this;
 
-		var defaultBrowserOptions = this._getDefaultBrowserOptions();
+		var browserOptions = this._getBrowserOptions();
 		var defaultBrowser = null;
 
-		if ( defaultBrowserOptions !== null ) {
-			this._track( 'result.browser.' + defaultBrowserOptions.name );
+		if ( browserOptions.defaultName !== null ) {
+			this._track( 'result.browser.' + browserOptions.defaultName );
 		} else {
 			this._track( 'result.browser.default' );
 		}
@@ -358,16 +358,18 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 			var instance = new wikibase.queryService.ui.resultBrowser[b.class]();
 			instance.setSparqlApi( self._sparqlApi );
 
-			if ( defaultBrowserOptions !== null && defaultBrowserOptions.name === key ) {
+			if ( browserOptions.defaultName === key ) {
 				self._setSelectedDisplayType( b );
 				defaultBrowser = instance;
-				if ( 'options' in defaultBrowserOptions ) {
-					var options = new wikibase.queryService.ui.resultBrowser.helper.Options(
-						defaultBrowserOptions.options
-					);
-					instance.setOptions( options );
-				}
 			}
+
+			if ( browserOptions.optionsMap.has( key ) ) {
+				var options = new wikibase.queryService.ui.resultBrowser.helper.Options(
+					browserOptions.optionsMap.get( key )
+				);
+				instance.setOptions( options );
+			}
+
 			b.object = instance;
 		} );
 		if ( defaultBrowser === null ) {
@@ -387,24 +389,36 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 	/**
 	 * @private
-	 * @return {?{name: string, options: ?Object}}
+	 * @return {{defaultName: string?, optionsMap: Map.<string, Object>}}
 	 */
-	SELF.prototype._getDefaultBrowserOptions = function() {
-		var match = this._query.match( /#defaultView:(\w+)(\{.*\})?/ );
+	SELF.prototype._getBrowserOptions = function() {
+		var defaultName = null,
+			optionsMap = new Map(),
+			regex = /#(defaultView|view):(\w+)(\{.*\})?/g,
+			match;
 
-		if ( match && this._resultBrowsers.hasOwnProperty( match[1] ) ) {
-			var result = { name: match[1] };
-			if ( match[2] ) {
+		while ( ( match = regex.exec( this._query ) ) !== null ) {
+			var name = match[2];
+			if ( !this._resultBrowsers.hasOwnProperty( name ) ) {
+				continue;
+			}
+			if ( match[1] === 'defaultView' ) {
+				defaultName = name;
+			}
+			if ( match[3] ) {
+				var options = optionsMap.has( name ) ? optionsMap.get( name ) : {};
 				try {
-					result.options = JSON.parse( match[2] );
+					optionsMap.set(
+						name,
+						$.extend( options, JSON.parse( match[3] ) )
+					);
 				} catch ( e ) {
 					window.console.error( e );
 				}
 			}
-			return result;
-		} else {
-			return null;
 		}
+
+		return { defaultName: defaultName, optionsMap: optionsMap };
 	};
 
 	/**
