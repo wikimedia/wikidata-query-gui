@@ -23,6 +23,8 @@
 	"wdqs-app-button-download-title": "Pellgargañ an disoc'h",
 	"wdqs-app-button-link": "Liammoù",
 	"wdqs-app-button-link-title": "Kaout al liamm war-zu ar reked",
+	"wdqs-app-button-code": "Kod",
+	"wdqs-app-button-code-title": "Gwelet skouerioù kodoù",
 	"wdqs-app-help-feedback": "Roit ho soñj !",
 	"wdqs-app-help-request-query": "Sevel ur reked",
 	"wdqs-app-help-portal": "Porched skoazellañ",
@@ -79,6 +81,7 @@
 	"wdqs-action-unknow-error": "Fazi dianav",
 	"wdqs-action-preview": "Rakwel an disoc'h",
 	"wdqs-result-map-layers-all": "An holl wiskadoù",
+	"wdqs-result-map-progress": "O kargañ roadennoù ar gartenn : $1%",
 	"wdqs-embed-button-edit-query": "Aozañ ar reked-mañ",
 	"wdqs-embed-button-edit-query-title": "Kemmañ ar reked-mañ gant an aozer SPARQL"
 }
