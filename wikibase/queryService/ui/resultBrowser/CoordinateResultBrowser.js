@@ -173,13 +173,21 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		function drawMap() {
 			clearProgress();
+			var layers = _.compact( self._markerGroups ); // convert object to array
+			var markerClusterOptions = self._getMarkerClusterOptions( layers.length );
+			if ( markerClusterOptions ) {
+				var cluster = L.markerClusterGroup( markerClusterOptions );
+				cluster.addLayers( layers );
+				layers = [ cluster ];
+			}
+
 			self._map = L.map( 'map', {
 				center: [ 0, 0 ],
 				maxZoom: 18,
 				minZoom: 2,
 				fullscreenControl: true,
 				preferCanvas: true,
-				layers: _.compact( self._markerGroups ) // convert object to array
+				layers: layers
 			} ).fitBounds( self._markerGroups[ LAYER_DEFAULT_GROUP ].getBounds() );
 
 			self._setTileLayer();
@@ -382,6 +390,56 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			fillOpacity: 0.9,
 			radius: this._getMarkerRadius()
 		};
+	};
+
+	/**
+	 * Return an icon that imitates the default circle marker.
+	 *
+	 * @private
+	 * @param {L.markerClusterGroup} cluster
+	 */
+	SELF.prototype._getMarkerIcon = function( cluster ) {
+		var options = cluster.getAllChildMarkers()[0].options;
+		var diameter = 2 * ( 1 + options.radius );
+		var html = '<div style="' +
+			'background-color: ' + options.color +
+			'; border-radius: 100%' +
+			'; width: ' + diameter + 'px' +
+			'; height: ' + diameter + 'px' +
+			'"></div>';
+		return new L.DivIcon( {
+			html: html,
+			className: '',
+			iconSize: new L.Point( diameter, diameter )
+		} );
+	};
+
+	/**
+	 * @private
+	 * @param {number} numLayers
+	 */
+	SELF.prototype._getMarkerClusterOptions = function( numLayers ) {
+		var markerClusterOptions = this.getOptions().get( 'markercluster', numLayers === 1 );
+		if ( !markerClusterOptions ) {
+			return false;
+		}
+
+		if ( markerClusterOptions === true ) {
+			// enabled but with no special options:
+			// use default options that spiderfy identical coordinates
+			// but don’t cluster nearby ones
+			return {
+				maxClusterRadius: 0,
+				iconCreateFunction: this._getMarkerIcon
+			};
+		} else {
+			// custom options, so use the default iconCreateFunction
+			// (use $.extend to make sure the options are an object)
+			return $.extend(
+				{},
+				markerClusterOptions
+			);
+		}
 	};
 
 	/**
