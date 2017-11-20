@@ -21,6 +21,7 @@
 	"wdqs-app-help-portal": "Portal pomoči",
 	"wdqs-app-help-manual": "Navodila za uporabo",
 	"wdqs-app-help-examples": "Primeri poizvedb",
+	"wdqs-app-help-datamodel": "Podatkovni model RDF",
 	"wdqs-app-help-prefixes": "Seznam predpon",
 	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za vklop samodejnega izpolnjevanja",
 	"wdqs-app-footer-updated": "Podatki posodobljeni pred $1",
@@ -45,5 +46,7 @@
 	"wdqs-action-server-error": "Napaka strežnika",
 	"wdqs-action-unknow-error": "Neznana napaka",
 	"wdqs-action-preview": "Predogled rezultata",
-	"wdqs-result-map-layers-all": "Vsi sloji"
+	"wdqs-result-map-layers-all": "Vsi sloji",
+	"wdqs-embed-button-edit-query": "Uredi to poizvedbo",
+	"wdqs-embed-button-edit-query-title": "Uredi to poizvedbo z urejevalnikom SPARQL"
 }
