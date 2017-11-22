@@ -482,7 +482,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 * @private
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
-		this._trackingApi.track( TRACKING_NAMESPACE + metricName, value, valueType );
+		var namespace = this.TRACKING_NAMESPACE || TRACKING_NAMESPACE;
+		this._trackingApi.track( namespace + metricName, value, valueType );
 	};
 
 	return SELF;
