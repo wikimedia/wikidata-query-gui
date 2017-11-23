@@ -46,9 +46,12 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 			valueType = 'c';
 		}
 
-		if ( location.hostname !== 'query.wikidata.org' ) {
-			// FIXME: expected to return a promise
-			return;// only track on wikidata.org
+		if (
+			location.hostname !== 'query.wikidata.org' ||
+			/^1|yes/.test( navigator.doNotTrack || window.doNotTrack )
+		) {
+			// skip tracking
+			return $.when();
 		}
 
 		// https://www.wikidata.org/beacon/statsv?test.statsv.foo2=5c
