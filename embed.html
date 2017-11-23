@@ -270,7 +270,7 @@ body {
 				resultView = new wikibase.queryService.ui.ResultView( sparqlApi ),
 				query = decodeURIComponent( window.location.hash.substr( 1 ) );
 
-			resultView.TRACKING_NAMESPACE = 'wikibase.queryService.ui.embed.';
+			resultView.trackingNamespace = 'wikibase.queryService.ui.embed.';
 
 			$.i18n().locale = lang;
 			$.when(

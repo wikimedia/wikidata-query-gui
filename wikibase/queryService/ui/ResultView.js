@@ -5,8 +5,6 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	'use strict';
 
-	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.';
-
 	var PREVIEW_TIMEOUT = 1000,
 		PREVIEW_LIMIT = 20;
 
@@ -173,6 +171,11 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 			$element: null
 		}
 	};
+
+	/**
+	 * @property {string}
+	 */
+	SELF.prototype.trackingNamespace = 'wikibase.queryService.ui.app.';
 
 	/**
 	 * Initialize private members and call delegate to specific init methods
@@ -482,8 +485,7 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 * @private
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
-		var namespace = this.TRACKING_NAMESPACE || TRACKING_NAMESPACE;
-		this._trackingApi.track( namespace + metricName, value, valueType );
+		this._trackingApi.track( this.trackingNamespace + metricName, value, valueType );
 	};
 
 	return SELF;
