@@ -45,7 +45,7 @@ var CONFIG = ( function ( window, $ ) {
 			root: root,
 			index: root
 		},
-		showBirthdayPresents: new Date().getTime() >= Date.UTC( 2017, 10 + 1, 29 )
+		showBirthdayPresents: new Date().getTime() >= Date.UTC( 2017, 10 - 1, 29 )
 	};
 
 	var hostname = window.location.hostname.toLowerCase();
