@@ -1,0 +1,16 @@
+# https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Pywikibot
+import pywikibot
+from pywikibot import pagegenerators
+
+site = pywikibot.Site()
+repo = site.data_repository()
+query = """# cats
+SELECT ?cat ?catLabel WHERE {
+  ?cat wdt:P31 wd:Q146.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+"""
+generator = pagegenerators.WikidataSPARQLPageGenerator(query, site=repo)
+
+for item in generator:
+    print(item)

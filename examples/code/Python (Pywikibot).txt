@@ -1,0 +1,11 @@
+# https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Pywikibot
+import pywikibot
+from pywikibot import pagegenerators
+
+site = pywikibot.Site()
+repo = site.data_repository()
+query = {SPARQL_QUERY}
+generator = pagegenerators.WikidataSPARQLPageGenerator(query, site=repo)
+
+for item in generator:
+    print(item)

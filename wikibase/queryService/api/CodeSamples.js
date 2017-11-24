@@ -16,6 +16,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 	 * @constructor
 	 */
 	function SELF( endpoint, root, index ) {
+		var self = this;
 		if ( endpoint.startsWith( '/' ) ) {
 			var origin;
 			if ( window.location.origin ) {
@@ -126,6 +127,11 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 						.replace( /\\/g, '\\\\' )
 						.replace( /"""/g, '""\\"' );
 					return '"""' + escapedQuery + '"""';
+				}
+			},
+			'Python (Pywikibot)': {
+				escape: function( query ) {
+					return self._languages.Python.escape( query );
 				}
 			},
 			Ruby: {
