@@ -3,7 +3,8 @@
 		"authors": [
 			"Aftabuzzaman",
 			"আজিজ",
-			"Elias Ahmmad"
+			"Elias Ahmmad",
+			"Rasal Lia"
 		]
 	},
 	"wdqs-app-button-examples": "উদাহরণ",
@@ -14,14 +15,14 @@
 	"wdqs-app-button-run-title": "প্রশ্ন সঞ্চালন করুন (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "পরিষ্কার করুন",
 	"wdqs-app-button-clear-title": "প্রশ্ন মুছুন",
-	"wdqs-app-button-restore-title": "পূর্ববর্তী প্রশ্ন পুনরুদ্ধার করুন",
+	"wdqs-app-button-restore-title": "পূর্ববর্তী প্রশ্ন পুনস্থাপন করুন",
 	"wdqs-app-button-fullscreen-title": "সম্পাদকের পূর্ণ পর্দা মোডে টগল করুন",
 	"wdqs-app-button-display": "প্রদর্শন",
 	"wdqs-app-button-display-title": "ফলাফল ছক, চিত্র, ... হিসেবে দেখান",
 	"wdqs-app-button-download": "ডাউনলোড",
 	"wdqs-app-button-download-title": "ফলাফল ডাউনলোড করুন",
 	"wdqs-app-button-link": "সংযোগ",
-	"wdqs-app-button-link-title": "অনুসন্ধানের জন্য লিংক পান",
+	"wdqs-app-button-link-title": "অনুসন্ধানের জন্য লিংকে নিন",
 	"wdqs-app-button-code": "কোড",
 	"wdqs-app-button-code-title": "কোডের উদাহরণ দেখুন",
 	"wdqs-app-help-feedback": "প্রতিক্রিয়া দিন!",
@@ -62,7 +63,7 @@
 	"wdqs-dialog-examples-preview-result": "ফলাফল প্রাকদর্শন",
 	"wdqs-ve-filter": "ছাঁকনি",
 	"wdqs-ve-show": "দেখাও",
-	"wdqs-ve-add-label-title": "পরিবর্তনশীল ধারণকারী সত্তার লেবেল যোগ করুন",
+	"wdqs-ve-add-label-title": "চলক যুক্ত করুন যা সত্তার লেবেল ধারণ করে",
 	"wdqs-ve-remove-row-title": "এই সারিটি সরান",
 	"wdqs-ve-with": "সহ",
 	"wdqs-ve-anything": "যে কোনো কিছু",
