@@ -1,8 +1,9 @@
 var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
+wikibase.queryService.ui.dialog = wikibase.queryService.ui.dialog || {};
 
-wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
+wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	'use strict';
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.examples.';
@@ -10,7 +11,7 @@ wikibase.queryService.ui.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * A ui dialog for selecting a query example
 	 *
-	 * @class wikibase.queryService.ui.QueryExampleDialog
+	 * @class wikibase.queryService.ui.dialog.QueryExampleDialog
 	 * @license GNU GPL v2+
 	 *
 	 * @author Jonas Kress
