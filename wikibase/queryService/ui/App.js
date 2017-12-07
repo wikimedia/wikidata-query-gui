@@ -310,7 +310,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._initExamples = function() {
 		var self = this;
-		new wikibase.queryService.ui.QueryExampleDialog( $( '#QueryExamples' ),
+		new wikibase.queryService.ui.dialog.QueryExampleDialog( $( '#QueryExamples' ),
 				this._querySamplesApi, function( query, title ) {
 					if ( !query || !query.trim() ) {
 						return;

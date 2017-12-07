@@ -71,7 +71,7 @@ See `examples/editor.html`.
 
 A dialog that allows browsing of SPARQL examples.
 ```
-new wikibase.queryService.ui.QueryExampleDialog(  $element, querySamplesApi, callback, previewUrl );
+new wikibase.queryService.ui.dialog.QueryExampleDialog(  $element, querySamplesApi, callback, previewUrl );
 ```
 See `examples/dialog.html`.
 

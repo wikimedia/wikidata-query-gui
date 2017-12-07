@@ -23,7 +23,7 @@
 	<script src="../wikibase/queryService/api/QuerySamples.js"></script>
 	<script src="../wikibase/queryService/api/Wikibase.js"></script>
 	<script src="../wikibase/queryService/api/Tracking.js"></script>
-	<script src="../wikibase/queryService/ui/QueryExampleDialog.js"></script>
+	<script src="../wikibase/queryService/ui/dialog/QueryExampleDialog.js"></script>
 
 		<button type="button" class="btn btn navbar-btn" data-toggle="modal" data-target="#QueryExamples">Dialog</button>
 
@@ -53,7 +53,7 @@
 	<script type="text/javascript">
 
 	$( document ).ready( function() {
-		new wikibase.queryService.ui.QueryExampleDialog(
+		new wikibase.queryService.ui.dialog.QueryExampleDialog(
 				$( '#QueryExamples' ),
 				null,
 				function( query, title ) {
