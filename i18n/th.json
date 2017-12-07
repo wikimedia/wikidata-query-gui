@@ -4,13 +4,14 @@
 			"Bluegram",
 			"Pon44695",
 			"Aefgh39622",
-			"Ans"
+			"Ans",
+			"Horus"
 		]
 	},
 	"wdqs-app-button-examples": "ตัวอย่าง",
 	"wdqs-app-button-prefixes": "คำนำหน้า",
 	"wdqs-app-button-tools": "เครื่องมือ",
-	"wdqs-app-button-help": "ช่วยเหลือ",
+	"wdqs-app-button-help": "คำอธิบาย",
 	"wdqs-app-button-run": "ดำเนินการ",
 	"wdqs-app-button-run-title": "ดำเนินการคิวรี (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "ล้าง",
@@ -24,7 +25,7 @@
 	"wdqs-app-button-link-title": "ขอรับลิงก์ไปที่คำถาม",
 	"wdqs-app-help-feedback": "ส่งฟีดแบค!",
 	"wdqs-app-help-request-query": "ร้องขอคิวรี",
-	"wdqs-app-help-portal": "สถานีย่อยวิธีใช้",
+	"wdqs-app-help-portal": "สถานีย่อยคำอธิบาย",
 	"wdqs-app-help-manual": "คู่มือผู้ใช้",
 	"wdqs-app-help-examples": "ตัวอย่างคิวรี",
 	"wdqs-app-help-datamodel": "ต้นแบบข้อมูล RDF",
