@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"NayiMuu",
+			"Ninjastrikers"
+		]
+	},
+	"wdqs-app-button-examples": "ဥပမာများ",
+	"wdqs-app-button-tools": "ကိရိယာများ",
+	"wdqs-app-button-help": "အကူအညီ",
+	"wdqs-app-button-run": "လည်ပတ်ခြင်း",
+	"wdqs-app-button-clear": "ရှင်းလင်းပါ။",
+	"wdqs-app-button-display": "မြင်ကွင်း",
+	"wdqs-app-button-display-title": "ရလဒ်များကို ဇယား၊ ပုံ အစရှိသဖြင့် ပြသထားသည်။",
+	"wdqs-app-button-download": "ဒေါင်းလုပ်ယူရန်",
+	"wdqs-app-button-link": "လင့်",
+	"wdqs-app-button-code": "ကုဒ်",
+	"wdqs-app-button-code-title": "ကုဒ်ဥပမာများ ကြည့်ရှုရန်။",
+	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲ",
+	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
+	"wdqs-app-footer-updated": "ဒေတာများကို $1 အချိန်က အဆင့်မြှင့်တင်ခဲ့သည်။",
+	"wdqs-app-footer-updated-seconds": "ဒေတာများကို $1 စက္ကန့်က အဆင့်မြှင့်တင်ခဲ့သည်။",
+	"wdqs-app-result-rawgraphs": "RAWGraphs.io တွင် ဖွင့်ပါ။",
+	"wdqs-app-result-rawgraphs-title": "RAWGraphs.io ကို အသုံးပြု၍ လက်ရှိ ရလဒ်ဒေတာများဖြင့် ဂရပ်ဖန်တီးပါ။",
+	"wdqs-app-result-json": "JSON ဖိုင်",
+	"wdqs-app-result-json-verbose": "JSON ဖိုင် (ထပ်မံ၍)",
+	"wdqs-app-result-tsv": "TSV ဖိုင်",
+	"wdqs-app-result-tsv-verbose": "TSV ဖိုင် (ထပ်မံ၍)",
+	"wdqs-app-result-csv": "CSV ဖိုင်",
+	"wdqs-app-result-svg": "SVG ပုံ",
+	"wdqs-dialog-examples-preview-result": "ရလဒ်နမူနာကြည့်ရန်",
+	"wdqs-ve-filter": "စိစစ်မှု",
+	"wdqs-ve-show": "ပြသရန်",
+	"wdqs-ve-anything": "မည်သည့်အရာဖြစ်စေ",
+	"wdqs-ve-any": "နှစ်သက်ရာ",
+	"wdqs-ve-or": "သို့မဟုတ်",
+	"wdqs-ve-sb-other": "အခြား",
+	"wdqs-action-error-display": "ရလဒ်များကို ပြသရန် မဖြစ်နိုင်ပါ။",
+	"wdqs-action-server-error": "ဆာဗာမှားယွင်းမှု",
+	"wdqs-action-unknow-error": "အမည်မသိအမှား",
+	"wdqs-action-preview": "ရလဒ် အစမ်းကြည့်ခြင်း",
+	"wdqs-result-map-progress": "မြေပုံဒေတာများအား တင်နေခြင်း: $1%"
+}
