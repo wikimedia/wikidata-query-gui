@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 
-wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, WikibaseRDFTooltip ) {
+wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	'use strict';
 
 	var CODEMIRROR_DEFAULTS = {
