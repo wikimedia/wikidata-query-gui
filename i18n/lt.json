@@ -3,7 +3,8 @@
 		"authors": [
 			"Zygimantus",
 			"Eitvys200",
-			"Hugo.arg"
+			"Hugo.arg",
+			"Manvydasz"
 		]
 	},
 	"wdqs-app-button-examples": "Pavyzdžiai",
@@ -21,6 +22,7 @@
 	"wdqs-app-button-link-title": "Gauti nuorodą į užklausą",
 	"wdqs-app-button-code": "Kodas",
 	"wdqs-app-button-code-title": "Žiūrėti kodo pavyzdžius",
+	"wdqs-app-help-feedback": "Pateikite atsiliepimą!",
 	"wdqs-app-help-request-query": "Prašyti užklausos",
 	"wdqs-app-help-portal": "Pagalbos Portalas",
 	"wdqs-app-help-manual": "Naudotojo vadovas",
@@ -36,9 +38,12 @@
 	"wdqs-app-result-svg": "SVG Paveikslėlis",
 	"wdqs-app-editor-addprefixes": "Pridėti standartinius priešdėlius",
 	"wdqs-app-resultbrowser-stabilize": "Stabilizuoti tinklą",
+	"wdqs-app-toast-leave-fullscreen": "Spauskite [esc], norėdami išeiti iš pilno ekrano režimo",
 	"wdqs-dialog-examples-preview-query": "Peržiūros užklausa",
 	"wdqs-dialog-examples-preview-result": "Peržiūrėti rezultatą",
+	"wdqs-ve-filter": "Filtras",
 	"wdqs-ve-show": "Rodyti",
+	"wdqs-ve-remove-row-title": "Pašalinti šią eilutę",
 	"wdqs-ve-with": "su",
 	"wdqs-ve-anything": "bet kas",
 	"wdqs-ve-any": "bet kuris",
@@ -46,6 +51,12 @@
 	"wdqs-ve-subtype": "potipis",
 	"wdqs-ve-sb-suggestions": "Pasiūlymai",
 	"wdqs-ve-sb-other": "Kita",
+	"wdqs-action-query": "Vykdoma užklausa",
 	"wdqs-action-render": "Atvaizdavimo rezultatas",
-	"wdqs-result-map-layers-all": "Visi sluoksniai"
+	"wdqs-action-error-display": "Nepavyko pateikti rezultato",
+	"wdqs-action-server-error": "Serverio klaida",
+	"wdqs-action-unknow-error": "Nežinoma klaida",
+	"wdqs-action-preview": "Rezultato peržiūra",
+	"wdqs-result-map-layers-all": "Visi sluoksniai",
+	"wdqs-result-map-progress": "Kraunami žemėlapio duomenys: $1%"
 }
