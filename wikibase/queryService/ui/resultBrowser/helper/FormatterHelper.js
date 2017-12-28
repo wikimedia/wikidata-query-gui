@@ -134,7 +134,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 		switch ( data.datatype || data.type ) {
 		case TYPE_URI:
-			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank', rel: 'noopener' } );
+			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank', class: 'item-link', rel: 'noopener' } );
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
@@ -252,7 +252,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.createExploreButton = function( url ) {
 		var $button = $( '<a href="' + url +
-				'" title="Explore item" class="explore glyphicon glyphicon-search" aria-hidden="true">' );
+				'" title="Explore item" class="explore glyphicon glyphicon-search" tabindex="-1" aria-hidden="true">' );
 		$button.click( $.proxy( this.handleExploreItem, this ) );
 
 		return $button;

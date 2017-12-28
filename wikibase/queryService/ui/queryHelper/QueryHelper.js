@@ -244,6 +244,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		var $limitSection = $( '<div>' ),
 			$limit = $( '<a data-type="number">' )
 				.attr( 'href', '#' )
+				.attr( 'id', 'query-helper-limit' )
 				.text( 'Limit' )
 				.data( 'value', this._query.getLimit() ),
 			$value = $( '<span>' )
@@ -297,7 +298,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
 					title: 'Click to add new item'
-				} ).attr( 'data-type', 'item' ).attr( 'data-auto_open', true );
+			} ).attr( 'id', 'query-helper-filter' )
+			.attr( 'data-type', 'item' ).attr( 'data-auto_open', true );
 
 		// SelectorBox
 		var self = this;
@@ -338,7 +340,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
 					title: 'Click to add new property'
-				} ).attr( 'data-type', 'property' ).attr( 'data-auto_open', true );
+			} ).attr( 'id', 'query-helper-show' )
+			.attr( 'data-type', 'property' ).attr( 'data-auto_open', true );
 
 		// SelectorBox
 		var self = this;

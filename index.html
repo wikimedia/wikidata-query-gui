@@ -60,7 +60,7 @@
 				<div class="collapse navbar-collapse" id="header-navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li>
-							<button type="button" class="btn navbar-btn btn-default" data-toggle="modal" data-target="#QueryExamples">
+							<button type="button" class="btn navbar-btn btn-default" id="open-example" data-toggle="modal" data-target="#QueryExamples">
 							<span class="fa fa-folder-open-o"></span> <span data-i18n="wdqs-app-button-examples"></span>
 							</button>
 						</li>
@@ -69,7 +69,7 @@
 								<a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help" target="_blank" class="btn btn-default">
 									<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-help"></span>
 								</a>
-								<button data-toggle="dropdown" class="btn btn-default dropdown-toggle">
+								<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="help-toggle">
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu">
@@ -102,7 +102,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="#" class="uls-trigger" data-toggle="tooltip"></a>
+							<a href="#" class="uls-trigger" id="language-toggle" data-toggle="tooltip"></a>
 						</li>
 					</ul>
 				</div>
@@ -115,14 +115,14 @@
 						<div class="toolbar">
 							<div class="toolbar-top">
 								<div>
-									<a class="btn query-helper-trigger" target="_blank" title="Show query explanation"> <span class="fa fa-info-circle" aria-hidden="true"></span></a>
+									<a href="#" class="btn query-helper-trigger" target="_blank" title="Show query explanation"> <span class="fa fa-info-circle" aria-hidden="true"></span></a>
 								</div>
 								<div>
-									<a class="btn fullscreen" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-fullscreen-title"> <span class="fa fa-arrows-alt" aria-hidden="true"></span>
+									<a href="#" class="btn fullscreen" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-fullscreen-title"> <span class="fa fa-arrows-alt" aria-hidden="true"></span>
 									</a>
 								</div>
 								<div class="dropdown">
-									<a class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[title]wdqs-app-button-prefixes"> <span class="fa fa-thumb-tack"
+									<a href="#" class="btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-i18n="[title]wdqs-app-button-prefixes"> <span class="fa fa-thumb-tack"
 										aria-hidden="true"
 									></span><span class="caret"></span></a>
 									<ul class="dropdown-menu">
@@ -134,15 +134,15 @@
 									</ul>
 								</div>
 								<div>
-									<a class="btn" data-i18n="[title]wdqs-app-button-examples" data-toggle="modal" data-target="#QueryExamples"> <span class="fa fa-folder-open-o" aria-hidden="true"></span>
+									<a href="#" class="btn" data-i18n="[title]wdqs-app-button-examples" data-toggle="modal" data-target="#QueryExamples"> <span class="fa fa-folder-open-o" aria-hidden="true"></span>
 									</a>
 								</div>
 								<div>
-									<a class="btn restore" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-restore-title"> <span class="fa fa-history" aria-hidden="true"></span>
+									<a href="#" class="btn restore" id="restore-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-restore-title"> <span class="fa fa-history" aria-hidden="true"></span>
 									</a>
 								</div>
 								<div>
-									<a class="btn" id="clear-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-clear-title"> <span class="fa fa-trash-o" aria-hidden="true"></span>
+									<a href="#" class="btn" id="clear-button" data-toggle="tooltip" data-placement="top" data-i18n="[title]wdqs-app-button-clear-title"> <span class="fa fa-trash-o" aria-hidden="true"></span>
 									</a>
 								</div>
 								<div>
@@ -159,7 +159,7 @@
 							<div class="query-helper query-helper-hidden">
 								<div class="panel panel-info">
 									<div class="panel-heading">
-										<strong data-i18n="wdqs-app-help-queryhelper"></strong> <a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Query_Helper"><span
+										<strong data-i18n="wdqs-app-help-queryhelper"></strong> <a target="_blank" rel="noopener" id="query-helper-help" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Query_Helper"><span
 											class="glyphicon glyphicon-question-sign"
 										></span></a>
 										<button type="button" class="close" aria-label="Close">

@@ -151,11 +151,10 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 * @private
 	 */
 	SELF.prototype._initApp = function() {
-		// ctr + enter executes query
+		var self = this;
+
 		$( window ).keydown( function( e ) {
-			if ( e.ctrlKey && e.keyCode === 13 ) {
-				$( '#execute-button' ).click();
-			}
+			return self._keyboardShortcut( e );
 		} );
 
 		// add tooltip to dropdown
@@ -164,6 +163,56 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( '#link-button' ).tooltip();
 
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._keyboardShortcut = function( e ) {
+		if ( ( e.ctrlKey || e.metaKey ) && e.key === 'Enter' ) {
+			// e.metaKey is used for Mac (https://stackoverflow.com/a/21996827)
+			$( 'button#execute-button' ).click();
+			return false;
+		}
+
+		if ( $( document.activeElement ).is( 'textarea, input' ) ) {
+			if ( e.key === 'Escape' ) {
+				$( document.activeElement ).blur();
+			}
+			return;
+		}
+
+		if ( this._KeyboardShortcutKeys( e ) ) {
+			return false;
+		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._KeyboardShortcutKeys = function( e ) {
+
+		if ( e.ctrlKey || e.metaKey || e.altKey ) {
+			return false;
+		}
+
+		var keys = {
+			'?': function () { $( 'button#help-toggle' ).click(); },
+			i: function () { $( '.CodeMirror textarea' ).focus(); },
+			r: function () { $( '#query-result' ).find( 'a.item-link' ).first().focus(); },
+			f: function () { $( 'a#query-helper-filter' ).focus(); },
+			s: function () { $( 'a#query-helper-show' ).focus(); },
+			m: function () { $( 'a#query-helper-limit' ).click(); },
+			e: function () { if ( !$( '#QueryExamples' ).is( ':visible' ) ) { $( 'button#open-example' ).click(); } },
+			l: function () { $( 'a#language-toggle' ).click(); }
+		};
+
+		if ( e.key in keys ) {
+			keys[e.key]();
+			return true;
+		}
+
+		return false;
 	};
 
 	/**
