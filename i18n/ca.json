@@ -4,7 +4,8 @@
 			"Toniher",
 			"Paucabot",
 			"Ssola",
-			"Townie"
+			"Townie",
+			"Fitoschido"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -47,6 +48,8 @@
 	"wdqs-app-result-tsv-verbose": "Fitxer TSV (detallat)",
 	"wdqs-app-result-csv": "Fitxer CSV",
 	"wdqs-app-result-svg": "Imatge SVG",
+	"wdqs-app-editor-addprefixes": "Afegeix els prefixos estàndards",
+	"wdqs-app-toast-leave-fullscreen": "Premeu [Esc] per a abandonar el mode de pantalla sencera",
 	"wdqs-dialog-examples-preview-query": "Previsualitza la consulta",
 	"wdqs-dialog-examples-preview-result": "Previsualitza el resultat",
 	"wdqs-ve-show": "Mostra",
@@ -64,5 +67,9 @@
 	"wdqs-action-malformed-query": "La consulta està mal formulada",
 	"wdqs-action-server-error": "Error del servidor",
 	"wdqs-action-unknow-error": "Error desconegut",
-	"wdqs-result-map-layers-all": "Totes les capes"
+	"wdqs-action-preview": "Previsualització del resultat",
+	"wdqs-result-map-layers-all": "Totes les capes",
+	"wdqs-result-map-progress": "S’estan carregant les dades del mapa: $1 %",
+	"wdqs-embed-button-edit-query": "Edita aquesta consulta",
+	"wdqs-embed-button-edit-query-title": "Edita aquesta consulta amb l’editor SPARQL"
 }

@@ -5,7 +5,8 @@
 			"Wladek92",
 			"McDutchie",
 			"Djiboun",
-			"Tubezlob"
+			"Tubezlob",
+			"Fitoschido"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -82,7 +83,7 @@
 	"wdqs-action-unknow-error": "Erreur inconnue",
 	"wdqs-action-preview": "Aperçu du résultat",
 	"wdqs-result-map-layers-all": "Toutes les couches",
-	"wdqs-result-map-progress": "Chargement des données cartographiques: $1%",
+	"wdqs-result-map-progress": "Chargement des données cartographiques: $1 %",
 	"wdqs-embed-button-edit-query": "Modifier cette requête",
 	"wdqs-embed-button-edit-query-title": "Modifier cette requête avec l'éditeur SPARQL"
 }
