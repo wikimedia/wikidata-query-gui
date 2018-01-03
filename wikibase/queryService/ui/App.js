@@ -197,13 +197,14 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		}
 
 		var keys = {
-			'?': function () { $( 'button#help-toggle' ).click(); },
+			'?': function () { $( '#keyboardShortcutHelpModal' ).modal( 'toggle' ); },
 			i: function () { $( '.CodeMirror textarea' ).focus(); },
 			r: function () { $( '#query-result' ).find( 'a.item-link' ).first().focus(); },
 			f: function () { $( 'a#query-helper-filter' ).focus(); },
 			s: function () { $( 'a#query-helper-show' ).focus(); },
 			m: function () { $( 'a#query-helper-limit' ).click(); },
 			e: function () { if ( !$( '#QueryExamples' ).is( ':visible' ) ) { $( 'button#open-example' ).click(); } },
+			h: function () { $( 'button#help-toggle' ).click(); },
 			l: function () { $( 'a#language-toggle' ).click(); }
 		};
 
