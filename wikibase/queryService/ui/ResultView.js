@@ -74,98 +74,98 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	SELF.prototype._resultBrowsers = {
 		Table: {
 			icon: 'glyphicon-th-list',
-			label: 'Table',
+			label: [ 'wdqs-app-resultbrowser-table', 'Table' ],
 			class: 'TableResultBrowser',
 			object: null,
 			$element: null
 		},
 		ImageGrid: {
 			icon: 'glyphicon-picture',
-			label: 'Image Grid',
+			label: [ 'wdqs-app-resultbrowser-image-grid', 'Image grid' ],
 			class: 'ImageResultBrowser',
 			object: null,
 			$element: null
 		},
 		Polestar: {
 			icon: 'fa-certificate',
-			label: 'Graph builder',
+			label: [ 'wdqs-app-resultbrowser-graph-builder', 'Graph builder' ],
 			class: 'PolestarResultBrowser',
 			object: null,
 			$element: null
 		},
 		Map: {
 			icon: 'glyphicon-map-marker',
-			label: 'Map',
+			label: [ 'wdqs-app-resultbrowser-map', 'Map' ],
 			class: 'CoordinateResultBrowser',
 			object: null,
 			$element: null
 		},
 		LineChart: {
 			icon: 'fa-line-chart',
-			label: 'Line Chart',
+			label: [ 'wdqs-app-resultbrowser-line-chart', 'Line chart' ],
 			class: 'LineChartResultBrowser',
 			object: null,
 			$element: null
 		},
 		BarChart: {
 			icon: 'fa-bar-chart',
-			label: 'Bar Chart',
+			label: [ 'wdqs-app-resultbrowser-bar-chart', 'Bar chart' ],
 			class: 'BarChartResultBrowser',
 			object: null,
 			$element: null
 		},
 		ScatterChart: {
 			icon: 'fa-braille',
-			label: 'Scatter Chart',
+			label: [ 'wdqs-app-resultbrowser-scatter-chart', 'Scatter chart' ],
 			class: 'ScatterChartResultBrowser',
 			object: null,
 			$element: null
 		},
 		AreaChart: {
 			icon: 'fa-area-chart',
-			label: 'Area Chart',
+			label: [ 'wdqs-app-resultbrowser-area-chart', 'Area chart' ],
 			class: 'AreaChartResultBrowser',
 			object: null,
 			$element: null
 		},
 		BubbleChart: {
 			icon: 'glyphicon-tint',
-			label: 'Bubble Chart',
+			label: [ 'wdqs-app-resultbrowser-bubble-chart', 'Bubble chart' ],
 			class: 'BubbleChartResultBrowser',
 			object: null,
 			$element: null
 		},
 		TreeMap: {
 			icon: 'glyphicon-th',
-			label: 'Tree Map',
+			label: [ 'wdqs-app-resultbrowser-tree-map', 'Tree map' ],
 			class: 'TreeMapResultBrowser',
 			object: null,
 			$element: null
 		},
 		Tree: {
 			icon: 'fa-tree',
-			label: 'Tree',
+			label: [ 'wdqs-app-resultbrowser-tree', 'Tree' ],
 			class: 'TreeResultBrowser',
 			object: null,
 			$element: null
 		},
 		Timeline: {
 			icon: 'glyphicon-calendar',
-			label: 'Timeline',
+			label: [ 'wdqs-app-resultbrowser-timeline', 'Timeline' ],
 			class: 'TimelineResultBrowser',
 			object: null,
 			$element: null
 		},
 		Dimensions: {
 			icon: 'glyphicon-random',
-			label: 'Dimensions',
+			label: [ 'wdqs-app-resultbrowser-dimensions', 'Dimensions' ],
 			class: 'MultiDimensionResultBrowser',
 			object: null,
 			$element: null
 		},
 		Graph: {
 			icon: 'glyphicon-retweet',
-			label: 'Graph',
+			label: [ 'wdqs-app-resultbrowser-graph', 'Graph' ],
 			class: 'GraphResultBrowser',
 			object: null,
 			$element: null
@@ -195,7 +195,22 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 		this._sparqlQuery = this._query = new wikibase.queryService.ui.queryHelper.SparqlQuery();
 
+		this._internationalizeCharts();
+
 		this._initResultBrowserMenu();
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._internationalizeCharts = function() {
+		var that = this;
+		$.each( this._resultBrowsers, function( key, chart ) {
+			var i18nKey = chart.label[0],
+				fallback = chart.label[1];
+
+			chart.label = that._i18n( i18nKey, fallback );
+		} );
 	};
 
 	/**
@@ -323,8 +338,13 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	SELF.prototype._handleQueryResult = function() {
 		var api = this._sparqlApi;
 
-		$( '#total-results' ).text( api.getResultLength() );
-		$( '#query-time' ).text( api.getExecutionTime() );
+		$( '#response-summary' ).html(
+			this._i18n(
+				'wdqs-app-resultbrowser-response-summary',
+				'$1 results in $2&nbsp;ms',
+				[ api.getResultLength(), api.getExecutionTime() ]
+			)
+		);
 		$( '.result' ).show();
 
 		$( '#execute-button' ).prop( 'disabled', false );
@@ -486,6 +506,32 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
 		this._trackingApi.track( this.trackingNamespace + metricName, value, valueType );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._i18n = function( key, message, args ) {
+		var i18nMessage = null;
+
+		if ( $.i18n ) {
+			i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
+			if ( i18nMessage !== key ) {
+				return i18nMessage;
+			}
+		}
+
+		i18nMessage = message;
+		if ( args ) {
+			$.each( args, function( index, arg ) {
+				i18nMessage = i18nMessage.replace(
+					new RegExp( '\\$' + ( index + 1 ), 'g' ),
+					arg
+				);
+			} );
+		}
+
+		return i18nMessage;
 	};
 
 	return SELF;

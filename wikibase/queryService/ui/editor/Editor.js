@@ -96,9 +96,20 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 	 * @param {HTMLElement} element
 	 */
 	SELF.prototype.fromTextArea = function( element ) {
-		var self = this;
+		var self = this,
+			$parent = $( element ).parent();
 
 		this._editor = CodeMirror.fromTextArea( element, CODEMIRROR_DEFAULTS );
+
+		// Editor placeholder is set 1 second after initialization of Editor, because it occurs
+		// before $.i18n populates `placeholder` attribute with internationalized string.
+		// FIXME: We should replace it with call in event handlers for $.i18n init and Editor init when they'll exist.
+		setTimeout( function() {
+			$parent.find( '.CodeMirror-placeholder' ).text(
+				$parent.find( '.queryEditor' ).prop( 'placeholder' )
+			);
+		}, 1000 );
+
 		this._editor.on( 'change', function( editor, changeObj ) {
 			if ( self.getValue() !== '' ) {
 				self.storeValue( self.getValue() );
@@ -109,6 +120,11 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror, Wi
 					closeCharacters: /[\s]/
 				} );
 			}
+
+			// Populate Editor's placeholder. Look at the comment ~20 lines above.
+			$parent.find( '.CodeMirror-placeholder' ).text(
+				$parent.find( '.queryEditor' ).prop( 'placeholder' )
+			);
 		} );
 		this._editor.focus();
 
