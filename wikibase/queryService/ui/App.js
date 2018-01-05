@@ -447,7 +447,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 			var e = $( this );
 			self._sparqlApi.queryDataUpdatedTime().done( function( time, difference ) {
-				var text = moment.duration( difference, 'seconds' ).humanize(),
+				var text = moment.duration( -difference, 'seconds' ).humanize( true ),
 					title = time,
 					badge = '<span class="badge">' + text + '</span>';
 
@@ -456,7 +456,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 					html: true,
 					trigger: 'hover',
 					placement: 'top',
-					content: $.i18n( 'wdqs-app-footer-updated', badge )
+					content: $.i18n( 'wdqs-app-footer-updated-ago', badge )
 				} );
 			} ).fail( function() {
 				e.popover( {
