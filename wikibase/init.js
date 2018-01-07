@@ -2,6 +2,7 @@
 	'use strict';
 
 	var wb = wikibase.queryService;
+	var app;
 
 	function setBrand() {
 		$( '.navbar-brand img' ).attr( 'src', config.brand.logo );
@@ -23,6 +24,7 @@
 			$( '.wikibase-queryservice' ).i18n();
 			$( '#keyboardShortcutHelpModal' ).i18n();
 			$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
+			app.resizeNavbar();
 		} );
 	}
 
@@ -55,7 +57,7 @@
 					rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
 					editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip );
 
-			new wb.ui.App(
+			app = new wb.ui.App(
 				$( '.wikibase-queryservice ' ),
 				editor,
 				new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
