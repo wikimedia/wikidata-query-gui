@@ -28,8 +28,6 @@
 	"wdqs-app-help-copy": "Information de licentia",
 	"wdqs-app-help-queryhelper": "Assistente de consultas",
 	"wdqs-app-footer-help": "Preme <i>[CTRL-SPACE]</i> pro activar auto-completion.",
-	"wdqs-app-footer-updated": "Datos actualisate $1 retro",
-	"wdqs-app-footer-updated-seconds": "Datos actualisate $1 secundas retro",
 	"wdqs-app-result-shorturl": "URL curte al resultato",
 	"wdqs-app-result-shorturl-title": "Un adresse URL curte verso iste resultato",
 	"wdqs-app-result-rawgraphs": "Aperir in RAWGraphs.io",

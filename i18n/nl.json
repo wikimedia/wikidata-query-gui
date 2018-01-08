@@ -35,8 +35,6 @@
 	"wdqs-app-help-copy": "Licentiegegevens",
 	"wdqs-app-help-queryhelper": "Zoekopdracht-assistent",
 	"wdqs-app-footer-help": "Druk op <i>[CTRL-SPATIE]</i> om automatisch aanvullen te activeren.",
-	"wdqs-app-footer-updated": "Gegevens $1 geleden bijgewerkt",
-	"wdqs-app-footer-updated-seconds": "Gegevens $1 seconden geleden bijgewerkt",
 	"wdqs-app-result-shorturl": "Korte URL naar resultaat",
 	"wdqs-app-result-shorturl-title": "Korte URL naar dit resultaat",
 	"wdqs-app-result-embed": "Resultaat invoegen",

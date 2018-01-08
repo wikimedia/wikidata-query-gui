@@ -26,8 +26,6 @@
 	"wdqs-app-help-manual": "பயனர் கையேடு",
 	"wdqs-app-help-examples": "எடுத்துக்காட்டு வினாக்கள்",
 	"wdqs-app-help-prefixes": "முன்னொட்டுகளின் பட்டியல்",
-	"wdqs-app-footer-updated": "தரவு $1 முன்பு புதிப்பிக்கப்பட்டது",
-	"wdqs-app-footer-updated-seconds": "தரவு $1 நொடிகளுக்கு முன்பு பதிப்பிக்கப்பட்டது",
 	"wdqs-app-result-embed": "விடையை பதி",
 	"wdqs-app-result-csv": "CSV கோப்பு",
 	"wdqs-app-result-svg": "SVG படம்",

@@ -32,8 +32,6 @@
 	"wdqs-app-help-prefixes": "接頭辞のリスト",
 	"wdqs-app-help-copy": "ライセンス情報",
 	"wdqs-app-footer-help": "<i>[CTRL-SPACE]</i> で補完",
-	"wdqs-app-footer-updated": "$1前にデータを更新",
-	"wdqs-app-footer-updated-seconds": "$1秒前にデータを更新",
 	"wdqs-app-result-shorturl": "実行結果の短縮 URL",
 	"wdqs-app-result-shorturl-title": "実行結果の短縮 URL",
 	"wdqs-app-result-embed": "実行結果をエンベッド",

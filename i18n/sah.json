@@ -32,8 +32,6 @@
 	"wdqs-app-help-copy": "Лиссиэнсийэ туһунан",
 	"wdqs-app-help-queryhelper": "Көрдөбүлгэ көмө",
 	"wdqs-app-footer-help": "<i>[Ctrl + арыт]</i> баттаан бэйэтэ түмүктэнэрин холбоо.",
-	"wdqs-app-footer-updated": "$1 ынараа өттүгэр саҥардыллыбыт",
-	"wdqs-app-footer-updated-seconds": "$1 сөк. ынараа өттүгэр саҥардыллыбыт",
 	"wdqs-app-result-shorturl": "Түмүук кылгас URL-а",
 	"wdqs-app-result-shorturl-title": "Бу көрдөбүл түмүгүн кылгас URL-ла",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io көмөтүнэн арыйыы",

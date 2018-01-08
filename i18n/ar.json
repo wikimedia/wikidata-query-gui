@@ -42,8 +42,6 @@
 	"wdqs-app-help-copy": "معلومات الترخيص",
 	"wdqs-app-help-queryhelper": "مساعد الاستعلام",
 	"wdqs-app-footer-help": "اضغط <i>[CTRL-SPACE]</i> لتشغيل الإكتمال التلقائي.",
-	"wdqs-app-footer-updated": "تحديث البيانات قبل $1",
-	"wdqs-app-footer-updated-seconds": "تحديث البيانات قبل $1 ثانية",
 	"wdqs-app-result-shorturl": "وصلة إلكترونيَّة قصيرة إلى النتيجة المرجُوَّة",
 	"wdqs-app-result-shorturl-title": "وصلة قصيرة إلى هذه النتيجة",
 	"wdqs-app-result-rawgraphs": "افتح في RAWGraphs.io",

@@ -34,8 +34,6 @@
 	"wdqs-app-help-copy": "Informoj pri permesilo",
 	"wdqs-app-help-queryhelper": "Informpeta helpilo",
 	"wdqs-app-footer-help": "Premu <i>[CTRL-SPACE]</i> por ŝalti aŭtomatan kompletigon.",
-	"wdqs-app-footer-updated": "Datumoj aktualigitaj antaŭ $1",
-	"wdqs-app-footer-updated-seconds": "Datumoj aktualigitaj antaŭ $1 sekundoj",
 	"wdqs-app-result-shorturl": "Eta URL de la rezulto",
 	"wdqs-app-result-shorturl-title": "Eta URL de ĉi tiu rezulto",
 	"wdqs-app-result-rawgraphs": "Malfermi per RAWGraphs.io",

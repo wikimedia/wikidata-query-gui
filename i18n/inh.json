@@ -26,8 +26,6 @@
 	"wdqs-app-help-datamodel": "RDF дараша модель",
 	"wdqs-app-help-prefixes": "Дешхьалхенай хьаязъяьр",
 	"wdqs-app-footer-help": "ТоIае <i>[Ctrl + пробел]</i>, ше-ше кхоачашхилар хьасомадоаккхадолаш.",
-	"wdqs-app-footer-updated": "Дараш кердадаьккхад $1 хьалха",
-	"wdqs-app-footer-updated-seconds": "Дараш кердадаьккхад $1 сек. хьалха",
 	"wdqs-app-result-shorturl": "Хьахиннара лоаца URL",
 	"wdqs-app-result-shorturl-title": "Укх дIадехара хьахиннара хетадаь лоаца URL",
 	"wdqs-app-result-embed": "Хьахиннараш чуоттадар",

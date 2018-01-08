@@ -32,8 +32,6 @@
 	"wdqs-app-help-copy": "Лицензияләү мәгълүматы",
 	"wdqs-app-help-queryhelper": "Сорауларга ярдәм",
 	"wdqs-app-footer-help": "Автоматика чыгуны билгеләү өчен <i>[Ctrl + пробел]</i> төймәсенә басыгыз.",
-	"wdqs-app-footer-updated": "Мәгълүмат $1 элек яңартылган",
-	"wdqs-app-footer-updated-seconds": "Мәгълүмат $1 сек. элек яңартылган",
 	"wdqs-app-result-shorturl": "Нәтиҗә өчен кыскача URL",
 	"wdqs-app-result-shorturl-title": "Сорау өчен кыскача URL",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io эчендә ачу",

@@ -36,8 +36,6 @@
 	"wdqs-app-help-copy": "Informacje o licencji",
 	"wdqs-app-help-queryhelper": "Pomocnik zapytania",
 	"wdqs-app-footer-help": "Naciśnij <i>[Ctrl + spacja]</i>, aby włączyć automatyczne uzupełnianie.",
-	"wdqs-app-footer-updated": "Dane zaktualizowano $1 temu",
-	"wdqs-app-footer-updated-seconds": "Dane zaktualizowane {{PLURAL:$1|sekundę|sekundy|sekund}} temu",
 	"wdqs-app-result-shorturl": "Skrócony URL do wyniku",
 	"wdqs-app-result-shorturl-title": "Skrócony URL do tego wyniku",
 	"wdqs-app-result-rawgraphs": "Otwórz w RAWGraphs.io",

@@ -32,8 +32,6 @@
 	"wdqs-app-help-copy": "Informa de lisensa",
 	"wdqs-app-help-queryhelper": "Aidador per demandas",
 	"wdqs-app-footer-help": "Presa <i>[CTRL-SPACE]</i> per ativi autocompleta.",
-	"wdqs-app-footer-updated": "Data corentida $1 ante aora",
-	"wdqs-app-footer-updated-seconds": "Data corentida $1 secondos ante aora",
 	"wdqs-app-result-shorturl": "URL corta a resulta",
 	"wdqs-app-result-shorturl-title": "URL corta a esta resulta",
 	"wdqs-app-result-rawgraphs": "Abri en RAWGraphs.io",

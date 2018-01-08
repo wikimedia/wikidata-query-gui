@@ -32,8 +32,6 @@
 	"wdqs-app-help-prefixes": "รายการคำนำหน้า",
 	"wdqs-app-help-copy": "ข้อมูลสัญญาอนุญาต",
 	"wdqs-app-footer-help": "กดแป้น <i>[CTRL-SPACE]</i> เพื่อเปิดใช้ตัวเลือกเติมข้อความให้สมบูรณ์อัตโนมัติ",
-	"wdqs-app-footer-updated": "ข้อมูลอัปเดตเมื่อ $1ที่ผ่านมา",
-	"wdqs-app-footer-updated-seconds": "ข้อมูลอัปเดตเมื่อ $1 วินาทีที่ผ่านมา",
 	"wdqs-app-result-shorturl": "URL แบบสั้นไปยังผลลัพธ์",
 	"wdqs-app-result-shorturl-title": "URL แบบสั้นไปยังผลลัพธ์นี้",
 	"wdqs-app-result-embed": "ฝังผลลัพธ์",

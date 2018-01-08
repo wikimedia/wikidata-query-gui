@@ -30,8 +30,6 @@
 	"wdqs-app-help-prefixes": "उपसर्गों की सूची",
 	"wdqs-app-help-copy": "लाइसेंसिंग जानकारी",
 	"wdqs-app-footer-help": "ऑटो कंप्लीशन एक्टिवेट करने हेतु <i>[CTRL-SPACE]</i> दबायें।",
-	"wdqs-app-footer-updated": "डेटा को $1 पहले अपडेट किया गया",
-	"wdqs-app-footer-updated-seconds": "डेटा को $1 सेकंड पहले अपडेट किया गया",
 	"wdqs-app-result-shorturl": "लघु URL परिणाम",
 	"wdqs-app-result-shorturl-title": "इस परिणाम हेतु लघु URL",
 	"wdqs-app-result-embed": "परिणाम जोड़ें",

@@ -34,8 +34,6 @@
 	"wdqs-app-help-copy": "מידע על רישיון",
 	"wdqs-app-help-queryhelper": "סייען לשאלות",
 	"wdqs-app-footer-help": "יש ללחוץ <i>[קונטרול-רווח]</i> כדי להפעיל השלמה אוטומטית.",
-	"wdqs-app-footer-updated": "הנתונים עודכנו לפני $1",
-	"wdqs-app-footer-updated-seconds": "הנתונים עודכנו לפני $1 שניות",
 	"wdqs-app-result-shorturl": "כתובת URL מקוצרת אל התוצאה",
 	"wdqs-app-result-shorturl-title": "כתובת URL מקוצרת אל התוצאה הזאת",
 	"wdqs-app-result-rawgraphs": "פתיחה ב־RAWGraphs.io",

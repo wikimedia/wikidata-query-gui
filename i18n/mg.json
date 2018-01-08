@@ -26,8 +26,6 @@
 	"wdqs-app-help-datamodel": "Môdelin'angona RDF",
 	"wdqs-app-help-prefixes": "Lisitry ny tovona",
 	"wdqs-app-footer-help": "Tsindrio <i>[CTRL-SPACE]</i> raha tia handefa ny famenoana ho azy.",
-	"wdqs-app-footer-updated": "Angona nohavaozina efa $1 lasa",
-	"wdqs-app-footer-updated-seconds": "Angona nohavaozina $1 segondra lasa",
 	"wdqs-app-result-shorturl": "URL nafohezina manondro ny valiny",
 	"wdqs-app-result-shorturl-title": "URL nafohezina manondro io valiny io",
 	"wdqs-app-result-embed": "Hanofoka ny valiny",

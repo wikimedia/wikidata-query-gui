@@ -31,8 +31,6 @@
 	"wdqs-app-help-prefixes": "Luettelo etuliitteistä",
 	"wdqs-app-help-copy": "Tietoa lisenssistä",
 	"wdqs-app-footer-help": "Paina <i>[CTRL-SPACE]</i> aktivoidaksesi automaattisen päätöksen.",
-	"wdqs-app-footer-updated": "Tiedot päivitetty $1 sitten",
-	"wdqs-app-footer-updated-seconds": "Tiedot päivitetty $1 sekuntia sitten",
 	"wdqs-app-result-shorturl": "Lyhyt URL tulokselle",
 	"wdqs-app-result-shorturl-title": "Lyhytosoite tälle tulokselle",
 	"wdqs-app-result-embed": "Upota tulos",

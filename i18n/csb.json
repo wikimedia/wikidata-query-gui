@@ -30,8 +30,6 @@
 	"wdqs-app-help-copy": "Wëdowiédzô ò licencëji",
 	"wdqs-app-help-queryhelper": "Pòmòcnik zapëtnia",
 	"wdqs-app-footer-help": "Wcesni <i>[Ctrl + spacja]</i> dlô wëłączeniô aùtomatnégò dofùlowaniô.",
-	"wdqs-app-footer-updated": "Pòdôwczi zaktualniono $1 nazôd",
-	"wdqs-app-footer-updated-seconds": "Pòdôwczi zaktualniono {{PLURAL:$1|sekùndé|sekùndë|sekùndów}} nazôd",
 	"wdqs-app-result-shorturl": "Skrodzony URL do rezultatu",
 	"wdqs-app-result-shorturl-title": "Skrodzony URL do negò rezultatu",
 	"wdqs-app-result-rawgraphs": "Òtëmkni w RAWGraphs.io",

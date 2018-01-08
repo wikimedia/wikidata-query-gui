@@ -27,8 +27,6 @@
 	"wdqs-app-help-prefixes": "Daftar awalan",
 	"wdqs-app-help-copy": "Informasi lisensi",
 	"wdqs-app-footer-help": "Tekan tombol <i>[CTRL-SPACE]</i> untuk mengaktifkan penyelesaian otomatis.",
-	"wdqs-app-footer-updated": "Data terbarukan $1 yang lalu",
-	"wdqs-app-footer-updated-seconds": "Data terbarukan $1 detik yang lalu",
 	"wdqs-app-result-json": "Berkas JSON",
 	"wdqs-app-result-tsv": "Berkas TSV",
 	"wdqs-app-result-svg": "Berkas SVG",

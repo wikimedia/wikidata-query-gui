@@ -34,8 +34,6 @@
 	"wdqs-app-help-copy": "Lisensinformasjon",
 	"wdqs-app-help-queryhelper": "Spørringshjelper",
 	"wdqs-app-footer-help": "Trykk <i>[CTRL-SPACE]</i> for å aktivere autofullføring.",
-	"wdqs-app-footer-updated": "Data oppdatert for $1 siden",
-	"wdqs-app-footer-updated-seconds": "Data oppdatert for $1 sekunder siden",
 	"wdqs-app-result-shorturl": "Kort URL til resultatet",
 	"wdqs-app-result-shorturl-title": "Kort URL til dette resultatet",
 	"wdqs-app-result-rawgraphs": "Åpne i RAWGraphs.io",

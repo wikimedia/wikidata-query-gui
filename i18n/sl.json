@@ -24,8 +24,6 @@
 	"wdqs-app-help-datamodel": "Podatkovni model RDF",
 	"wdqs-app-help-prefixes": "Seznam predpon",
 	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za vklop samodejnega izpolnjevanja",
-	"wdqs-app-footer-updated": "Podatki posodobljeni pred $1",
-	"wdqs-app-footer-updated-seconds": "Podatki posodobljeni pred $1 sekundami",
 	"wdqs-app-result-json": "Datoteka JSON",
 	"wdqs-app-result-tsv": "Datoteka TSV",
 	"wdqs-app-result-csv": "Datoteka CSV",

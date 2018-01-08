@@ -31,8 +31,6 @@
 	"wdqs-app-help-copy": "Thông tin giấy phép",
 	"wdqs-app-help-queryhelper": "Tiện ích truy vấn",
 	"wdqs-app-footer-help": "Bấm giữ Ctrl và bấm phím cách để kích hoạt chức năng tự động hoàn thành.",
-	"wdqs-app-footer-updated": "Dữ liệu được cập nhật cách đây $1",
-	"wdqs-app-footer-updated-seconds": "Dữ liệu được cập nhật cách đây $1 giây",
 	"wdqs-app-result-shorturl": "URL ngắn gọn đến kết quả",
 	"wdqs-app-result-shorturl-title": "URL ngắn gọn đến kết quả này",
 	"wdqs-app-result-rawgraphs": "Mở trong RAWGraphs.io",

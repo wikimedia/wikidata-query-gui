@@ -6,7 +6,8 @@
 			"Jonas Kress",
 			"Liuxinyu970226",
 			"Amire80",
-			"David Sn"
+			"David Sn",
+			"Robby"
 		]
 	},
 	"wdqs-app-button-examples": "Button to show examples dialog\n{{Identical|Example}}",
@@ -74,7 +75,7 @@
 	"wdqs-dialog-key-shortcut-show-example": "Label to show example in shortcut help dialog",
 	"wdqs-dialog-key-shortcut-help-menu": "Label to toggle help menu in shortcut help dialog",
 	"wdqs-dialog-key-shortcut-show-language": "Label to show language in shortcut help dialog",
-	"wdqs-dialog-key-shortcut-close-button": "Close button label of keyboard shortcut help dialog",
+	"wdqs-dialog-key-shortcut-close-button": "Close button label of keyboard shortcut help dialog\n{{Identical|Close}}",
 	"wdqs-ve-filter": "Label to add a filter in Query Helper\n{{Identical|Filter}}",
 	"wdqs-ve-show": "Label to show some item\n{{Identical|Show}}",
 	"wdqs-ve-add-label-title": "Title to add variable containing entity label",

@@ -32,8 +32,6 @@
 	"wdqs-app-help-datamodel": "Modelê Daneyan RDF",
 	"wdqs-app-help-prefixes": "Lista verbendan",
 	"wdqs-app-footer-help": "Otomatik temam kerdışi aktivi rê <i>[CTRL-SPACE]</i> bıploğnê",
-	"wdqs-app-footer-updated": "$1 veror data bıya rocaniye",
-	"wdqs-app-footer-updated-seconds": "$1 saniya veror data bıya rocane",
 	"wdqs-app-result-shorturl": "Kılm-URL be netice",
 	"wdqs-app-result-shorturl-title": "Kılm-URL be nê neticeyi",
 	"wdqs-app-result-embed": "Neticeyi pıra ke",

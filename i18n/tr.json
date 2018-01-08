@@ -10,7 +10,8 @@
 			"Asmen",
 			"HakanIST",
 			"Bulgu",
-			"Incelemeelemani"
+			"Incelemeelemani",
+			"Hedda"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -22,7 +23,7 @@
 	"wdqs-app-button-clear": "Temizle",
 	"wdqs-app-button-clear-title": "Sorguyu temizle",
 	"wdqs-app-button-restore-title": "Önceki sorguyu geri yükle",
-	"wdqs-app-button-fullscreen-title": "Düzenleyicinin tam ekran modunu aç/kapat",
+	"wdqs-app-button-fullscreen-title": "Düzenleyicinin tam ekran modunu değiştir",
 	"wdqs-app-button-display": "Görüntüle",
 	"wdqs-app-button-display-title": "Sonucu tablo, resim ... olarak göster",
 	"wdqs-app-button-download": "İndir",
@@ -41,8 +42,6 @@
 	"wdqs-app-help-copy": "Lisans bilgisi",
 	"wdqs-app-help-queryhelper": "Sorgu Yardımcısı",
 	"wdqs-app-footer-help": "Otomatik tamamlamayı etkinleştirmek için <i>[CTRL-SPACE]</i> tuşlarına basın.",
-	"wdqs-app-footer-updated": "Veri $1 önce güncellendi",
-	"wdqs-app-footer-updated-seconds": "Veri $1 saniye önce güncellendi.",
 	"wdqs-app-result-shorturl": "Sonuca giden Kısa URL",
 	"wdqs-app-result-shorturl-title": "Bu sonuç için kısa URL",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io'da açın",
@@ -67,6 +66,11 @@
 	"wdqs-app-toast-leave-fullscreen": "Tam ekrandan çıkmak için [esc] tuşuna basın",
 	"wdqs-dialog-examples-preview-query": "Sorgu önizleme",
 	"wdqs-dialog-examples-preview-result": "Önizleme sonucu",
+	"wdqs-dialog-key-shortcut-title": "Klavye Kısayolları",
+	"wdqs-dialog-key-shortcut-jump-to-result": "Sonuç sorgusuna git.",
+	"wdqs-dialog-key-shortcut-show-example": "Örnekleri göster.",
+	"wdqs-dialog-key-shortcut-show-language": "Dil menüsünü göster.",
+	"wdqs-dialog-key-shortcut-close-button": "Kapat",
 	"wdqs-ve-filter": "Süzgeç",
 	"wdqs-ve-show": "Göster",
 	"wdqs-ve-add-label-title": "Varlık etiketini içeren değişken ekle",
@@ -87,7 +91,7 @@
 	"wdqs-action-unknow-error": "Bilinmeyen hata",
 	"wdqs-action-preview": "Sonuç önizleme",
 	"wdqs-result-map-layers-all": "Tüm katmanlar",
-	"wdqs-result-map-progress": "Harita verileri yükleniyor: $1%",
+	"wdqs-result-map-progress": "Harita verileri yükleniyor: %$1",
 	"wdqs-embed-button-edit-query": "Bu sorguyu düzenle",
 	"wdqs-embed-button-edit-query-title": "Bu sorguyu SPARQL editörüyle düzenleyin"
 }

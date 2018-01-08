@@ -37,8 +37,6 @@
 	"wdqs-app-help-copy": "Інформація про ліцензування",
 	"wdqs-app-help-queryhelper": "Довідка щодо запитів",
 	"wdqs-app-footer-help": "Натисніть <i>[CTRL-SPACE]</i>, щоб активувати автозаповнення.",
-	"wdqs-app-footer-updated": "Дані оновлені $1 тому",
-	"wdqs-app-footer-updated-seconds": "Дані оновлені $1 секунд тому",
 	"wdqs-app-result-shorturl": "Коротка URL-адреса для результату",
 	"wdqs-app-result-shorturl-title": "Коротка URL-адреса для цього результату",
 	"wdqs-app-result-rawgraphs": "Відкрити в RAWGraphs.io",

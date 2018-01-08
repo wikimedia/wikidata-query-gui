@@ -5,7 +5,8 @@
 			"Nikola Smolenski",
 			"Zoranzoki21",
 			"Obsuser",
-			"Милан Јелисавчић"
+			"Милан Јелисавчић",
+			"Milicevic01"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -36,8 +37,6 @@
 	"wdqs-app-help-copy": "Информације о лиценци",
 	"wdqs-app-help-queryhelper": "Помоћ око упита",
 	"wdqs-app-footer-help": "Притисните <i>[CTRL–размак]</i> да покренете аутоматско допуњавање.",
-	"wdqs-app-footer-updated": "Подаци освежени пре $1",
-	"wdqs-app-footer-updated-seconds": "Подаци освежени пре $1 {{PLURAL:$1|секунде|секунде|секунди}}",
 	"wdqs-app-result-shorturl": "Кратак URL према резултату",
 	"wdqs-app-result-shorturl-title": "Кратак URL према овом резултату",
 	"wdqs-app-result-rawgraphs": "Отвори у RAWGraphs.io",
@@ -62,6 +61,8 @@
 	"wdqs-app-toast-leave-fullscreen": "Притисните [esc] да бисте напустили приказ преко целог екрана",
 	"wdqs-dialog-examples-preview-query": "Претпреглед упита",
 	"wdqs-dialog-examples-preview-result": "Претпреглед резултата",
+	"wdqs-dialog-key-shortcut-title": "Пречице на тастатури",
+	"wdqs-dialog-key-shortcut-close-button": "Затвори",
 	"wdqs-ve-filter": "Филтер",
 	"wdqs-ve-show": "Прикажи",
 	"wdqs-ve-add-label-title": "Додајте варијаблу која садржи ознаку ентитета",

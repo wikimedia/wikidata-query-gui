@@ -38,8 +38,6 @@
 	"wdqs-app-help-copy": "Πληροφορίες αδειοδότησης",
 	"wdqs-app-help-queryhelper": "Βοηθός Ερώτησης",
 	"wdqs-app-footer-help": "Πατήστε <i>[CTRL-SPACE]</i> για να ενεργοποιήσετε την αυτόματη συμπλήρωση.",
-	"wdqs-app-footer-updated": "Δεδομένα που ενημερώθηκαν $1 πριν",
-	"wdqs-app-footer-updated-seconds": "Τα δεδομένα ενημερώθηκαν $1 δευτερόλεπτα πριν",
 	"wdqs-app-result-shorturl": "Σύντομο URL για το αποτέλεσμα",
 	"wdqs-app-result-shorturl-title": "Σύντομο URL σε αυτό το αποτέλεσμα",
 	"wdqs-app-result-rawgraphs": "Ανοίξτε στο RAWGraphs.io",

@@ -33,8 +33,6 @@
 	"wdqs-app-help-copy": "इजाजतपत्रबारे जानकारी",
 	"wdqs-app-help-queryhelper": "क्वेरी सहायक",
 	"wdqs-app-footer-help": "<i>[CTRL-SPACE]</i> थिचेर स्वत सुझाव सक्रिय पार्नुहोस।",
-	"wdqs-app-footer-updated": "$1 पहिले डाटा अद्द्यावधिक गरियो",
-	"wdqs-app-footer-updated-seconds": "$1 सेकेन्ड पहिले डाटा अपडेट गरियो",
 	"wdqs-app-result-shorturl": "नतिजाको छोटो युआरएल",
 	"wdqs-app-result-shorturl-title": "यो नतिजाको लागि छोटो युआरएल",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io मा खोल्नुहोस्",

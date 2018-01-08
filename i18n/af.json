@@ -25,8 +25,6 @@
 	"wdqs-app-help-prefixes": "Lys van voorvoegsels",
 	"wdqs-app-help-copy": "Lisensie-inligting",
 	"wdqs-app-footer-help": "Druk <i>[CTRL-SPASIE]</i> om outomatiese invul te aktiveer.",
-	"wdqs-app-footer-updated": "Data $1 gelede bygewerk",
-	"wdqs-app-footer-updated-seconds": "Data $1 sekondes gelede bygewerk",
 	"wdqs-app-result-shorturl": "Kort URL na resultaat",
 	"wdqs-app-result-shorturl-title": "Kort URL na dié resultaat",
 	"wdqs-app-result-json": "JSON-lêer",

@@ -30,8 +30,6 @@
 	"wdqs-app-help-datamodel": "RDF duomenų modelis",
 	"wdqs-app-help-prefixes": "Priešdėlių sąrašas",
 	"wdqs-app-help-copy": "Licencijos informacija",
-	"wdqs-app-footer-updated": "Duomenys atnaujinti prieš $1",
-	"wdqs-app-footer-updated-seconds": "Duomenys atnaujinti prieš $1 sekundes",
 	"wdqs-app-result-json": "JSON failas",
 	"wdqs-app-result-tsv": "TSV failas",
 	"wdqs-app-result-csv": "CSV failas",

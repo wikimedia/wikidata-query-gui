@@ -37,8 +37,6 @@
 	"wdqs-app-help-copy": "اطلاعات مجوز",
 	"wdqs-app-help-queryhelper": "راهنمای کوئری",
 	"wdqs-app-footer-help": "برای فعال سازی تکمیل خودکار دکمه <i>[CTRL-SPACE]</i> را همزمان بفشارید.",
-	"wdqs-app-footer-updated": "اطلاعات $1 قبل بروز شد.",
-	"wdqs-app-footer-updated-seconds": "اطلاعات $1 ثانیه قبل بروز شدند.",
 	"wdqs-app-result-shorturl": "آدرس ایتنرنتی کوتاه برای نتیجه",
 	"wdqs-app-result-shorturl-title": "آدرس ایتنرنتی کوتاه برای نتیجه بدست آمده.",
 	"wdqs-app-result-rawgraphs": "در RAWGraphs.io باز شود",

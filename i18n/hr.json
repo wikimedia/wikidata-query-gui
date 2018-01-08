@@ -24,8 +24,6 @@
 	"wdqs-app-help-datamodel": "RDF model podataka",
 	"wdqs-app-help-prefixes": "Popis prefiksa",
 	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za uporabu auto-dopuna.",
-	"wdqs-app-footer-updated": "Podaci su ažurirani prije $1",
-	"wdqs-app-footer-updated-seconds": "Podaci su ažurirani prije $1 sek.",
 	"wdqs-app-result-shorturl": "Kratki link na rezultate",
 	"wdqs-app-result-shorturl-title": "Kratki link na ovaj rezultat",
 	"wdqs-app-result-embed": "Umetanje rezultata u web stranicu",

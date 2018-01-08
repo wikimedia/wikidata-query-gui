@@ -34,8 +34,6 @@
 	"wdqs-app-help-copy": "ლიცენზირების ინფორმაცია",
 	"wdqs-app-help-queryhelper": "მოთხოვნის დამხმარე",
 	"wdqs-app-footer-help": "ავტომატური დასრულების გასააქტიურებლად დააჭირეთ <i>[CTRL-SPACE]</i>.",
-	"wdqs-app-footer-updated": "მონაცემები განახლდა $1 წინ",
-	"wdqs-app-footer-updated-seconds": "მონაცემები განახლდა $1 წამის წინ",
 	"wdqs-app-result-shorturl": "შედეგის მოკლე URL",
 	"wdqs-app-result-shorturl-title": "ამ მოთხოვნის შედეგის მოკლე URL",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io-ში გახსნა",

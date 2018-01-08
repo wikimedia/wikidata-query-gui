@@ -35,8 +35,6 @@
 	"wdqs-app-help-copy": "লাইসেন্সকরণের তথ্য",
 	"wdqs-app-help-queryhelper": "প্রশ্ন সাহায্যকারী",
 	"wdqs-app-footer-help": "স্বয়ং সম্পূর্ণকরণ সক্রিয় করতে <i>[CTRL-SPACE]</i> চাপুন।",
-	"wdqs-app-footer-updated": "$1 আগে উপাত্ত হালনাগাদকৃত",
-	"wdqs-app-footer-updated-seconds": "$1 সেকেন্ড আগে উপাত্ত হালনাগাদকৃত",
 	"wdqs-app-result-shorturl": "ফলাফলে সংক্ষিপ্ত ইউআরএল",
 	"wdqs-app-result-shorturl-title": "এই ফলাফলে সংক্ষিপ্ত ইউআরএল",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io তে খুলুন",

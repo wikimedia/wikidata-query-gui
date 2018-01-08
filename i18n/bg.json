@@ -4,7 +4,8 @@
 			"Termininja",
 			"StanProg",
 			"Vodnokon4e",
-			"ShockD"
+			"ShockD",
+			"Panadora"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -35,8 +36,6 @@
 	"wdqs-app-help-copy": "Лицензна информация",
 	"wdqs-app-help-queryhelper": "Помощник за заявки",
 	"wdqs-app-footer-help": "Натиснете <i>[Ctrl + интервал]</i>, за да активирате функцията за автоматично довършване.",
-	"wdqs-app-footer-updated": "Данните са обновени преди $1",
-	"wdqs-app-footer-updated-seconds": "Данните са обновени пред $1 секунди",
 	"wdqs-app-result-shorturl": "Кратък адрес на резултат",
 	"wdqs-app-result-shorturl-title": "Кратък адрес на този резултат",
 	"wdqs-app-result-rawgraphs": "Отваряне в RAWGraphs.io",
@@ -61,6 +60,9 @@
 	"wdqs-app-toast-leave-fullscreen": "Натиснете [esc] за напускане на режима на цял екран",
 	"wdqs-dialog-examples-preview-query": "Преглед на заявката",
 	"wdqs-dialog-examples-preview-result": "Преглед на резултата",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Покажи помощното меню за клавишни комбинации.",
+	"wdqs-dialog-key-shortcut-show-language": "Покажи езиковото меню.",
+	"wdqs-dialog-key-shortcut-close-button": "Затваряне",
 	"wdqs-ve-filter": "Филтър",
 	"wdqs-ve-show": "Показване",
 	"wdqs-ve-add-label-title": "Добавяне на променлива с надпис на единицата",

@@ -26,8 +26,6 @@
 	"wdqs-app-help-datamodel": "आरडीएफ डाटा नमूना",
 	"wdqs-app-help-prefixes": "उपसर्गांची यादी",
 	"wdqs-app-footer-help": "आपोआप पूर्ण करण्यासाठी<i>[CTRL-SPACE]</i>हे दाबा.",
-	"wdqs-app-footer-updated": "$1 पूर्वी डाटा अद्यतन केला",
-	"wdqs-app-footer-updated-seconds": "$1 सेकंदांपूर्वी डाटा अद्यतन केला",
 	"wdqs-app-result-shorturl": "निकालाची लघु यूआरएल",
 	"wdqs-app-result-shorturl-title": "या निकालाची लघु यूआरएल",
 	"wdqs-app-result-embed": "निकाल बंदिस्त करा",
