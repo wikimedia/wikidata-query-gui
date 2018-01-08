@@ -175,7 +175,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			return false;
 		}
 
-		if ( $( document.activeElement ).is( 'textarea, input' ) ) {
+		if ( $( document.activeElement ).is( 'textarea, input' ) ||
+			$( document.activeElement ).hasClass( 'CodeMirror-code' ) ) {
 			if ( e.key === 'Escape' ) {
 				$( document.activeElement ).blur();
 			}
