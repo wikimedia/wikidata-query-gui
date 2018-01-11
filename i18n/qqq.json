@@ -72,7 +72,7 @@
 	"wdqs-app-resultbrowser-bubble-chart": "Label of Bubble chart result view, which shows data as bubbles the bigger they are the bigger the data is",
 	"wdqs-app-resultbrowser-tree-map": "Label of Tree map result view, which shows data as rectangles filling the more space the bigger the data is",
 	"wdqs-app-resultbrowser-tree": "Label of Tree result view",
-	"wdqs-app-resultbrowser-timeline": "Label of Timeline result view, which shows data on a time axis",
+	"wdqs-app-resultbrowser-timeline": "Label of Timeline result view, which shows data on a time axis\n{{Identical|Timeline}}",
 	"wdqs-app-resultbrowser-dimensions": "Label of Dimensions result view",
 	"wdqs-app-resultbrowser-graph": "Label of Graph result view",
 	"wdqs-app-toast-leave-fullscreen": "Explaination how to exit fullscreen",

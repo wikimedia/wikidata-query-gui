@@ -5,7 +5,8 @@
 			"Fryed-peach",
 			"組曲師",
 			"Wicklo",
-			"Yusuke1109"
+			"Yusuke1109",
+			"Kkairri"
 		]
 	},
 	"wdqs-app-button-examples": "例",
@@ -34,6 +35,8 @@
 	"wdqs-app-footer-help": "<i>[CTRL-SPACE]</i> で補完",
 	"wdqs-app-result-shorturl": "実行結果の短縮 URL",
 	"wdqs-app-result-shorturl-title": "実行結果の短縮 URL",
+	"wdqs-app-result-rawgraphs": "RAWGraphs.ioで開く",
+	"wdqs-app-result-rawgraphs-title": "RAWGraphs.ioを使って現在の結果データからグラフを作成する",
 	"wdqs-app-result-embed": "実行結果をエンベッド",
 	"wdqs-app-result-endpoint": "SPARQL エンドポイント",
 	"wdqs-app-result-json": "JSONファイル",
@@ -46,9 +49,14 @@
 	"wdqs-app-editor-placeholder": "(SPARQLクエリを入力するか、クエリの例を選択する)",
 	"wdqs-app-editor-addprefixes": "標準接頭辞を追加する",
 	"wdqs-app-resultbrowser-stabilize": "ネットワークの安定化",
+	"wdqs-app-resultbrowser-table": "表",
+	"wdqs-app-resultbrowser-bar-chart": "棒グラフ",
+	"wdqs-app-resultbrowser-graph": "グラフ",
 	"wdqs-app-toast-leave-fullscreen": "フルスクリーンを終了するには[esc]キーを押してください",
 	"wdqs-dialog-examples-preview-query": "クエリのプレビュー",
 	"wdqs-dialog-examples-preview-result": "結果のプレビュー",
+	"wdqs-dialog-key-shortcut-title": "キーボードショートカット",
+	"wdqs-dialog-key-shortcut-run-query": "クエリを実行する",
 	"wdqs-ve-filter": "フィルター",
 	"wdqs-ve-show": "表示",
 	"wdqs-ve-add-label-title": "エンティティラベルを含む変数を追加する",

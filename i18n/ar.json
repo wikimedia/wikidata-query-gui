@@ -11,7 +11,8 @@
 			"Shbib Al-Subaie",
 			"ButterflyOfFire",
 			"Mido",
-			"Antime"
+			"Antime",
+			"Ali1"
 		]
 	},
 	"wdqs-app-button-examples": "أمثلة",
@@ -42,6 +43,7 @@
 	"wdqs-app-help-copy": "معلومات الترخيص",
 	"wdqs-app-help-queryhelper": "مساعد الاستعلام",
 	"wdqs-app-footer-help": "اضغط <i>[CTRL-SPACE]</i> لتشغيل الإكتمال التلقائي.",
+	"wdqs-app-footer-updated-ago": "آخر تحديث: $1",
 	"wdqs-app-result-shorturl": "وصلة إلكترونيَّة قصيرة إلى النتيجة المرجُوَّة",
 	"wdqs-app-result-shorturl-title": "وصلة قصيرة إلى هذه النتيجة",
 	"wdqs-app-result-rawgraphs": "افتح في RAWGraphs.io",
@@ -66,6 +68,8 @@
 	"wdqs-app-toast-leave-fullscreen": "اضغط على [esc] للخروج من وضع تكبير الشاشة",
 	"wdqs-dialog-examples-preview-query": "معاينة الاستعلام",
 	"wdqs-dialog-examples-preview-result": "معاينة النتيجة",
+	"wdqs-dialog-key-shortcut-title": "اختصارات لوحة المفاتيح",
+	"wdqs-dialog-key-shortcut-close-button": "أغلق",
 	"wdqs-ve-filter": "فلتر",
 	"wdqs-ve-show": "إظهار",
 	"wdqs-ve-add-label-title": "إضافة متغير يحتوي على تسمية الكيان",
