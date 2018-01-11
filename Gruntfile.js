@@ -12,7 +12,7 @@ module.exports = function( grunt ) {
 				jshintrc: true
 			},
 			all: [
-					'**/*.js', '!dist/**', '!' + buildFolder + '/**'
+					'**/*.js', '!dist/**', '!' + buildFolder + '/**', '!target/**'
 			]
 		},
 		jscs: {
@@ -20,7 +20,7 @@ module.exports = function( grunt ) {
 		},
 		jsonlint: {
 			all: [
-					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!' + buildFolder + '/**', '!polestar/**'
+					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!' + buildFolder + '/**', '!polestar/**', '!target/**'
 			]
 		},
 		qunit: {
