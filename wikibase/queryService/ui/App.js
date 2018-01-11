@@ -88,6 +88,12 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._hasRunFirstQuery = false;
 
+	SELF.prototype._navbarLabelTexts = {};
+	SELF.prototype._navbarLabelIDs = [ '#help-label', '#examples-label', '#tools-label', '#language-toggle' ];
+
+	SELF.prototype._maximumWidthBeforeLineBroke = 0;
+	SELF.prototype._languageSelectorDefaultWidth = 0;
+
 	/**
 	 * Initialize private members and call delegate to specific init methods
 	 *
@@ -163,6 +169,91 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( '#link-button' ).tooltip();
 
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
+
+		$( 'body' ).on( 'transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', '.navbar-collapse', function ( event ) {
+			if ( $( this ).hasClass( 'in' ) ) {
+				// Normally this will not be called unless user is resizing browser with navbar hidden
+				$( window ).trigger( 'resize' );
+			}
+		} );
+
+		$( window ).on( 'resize', function() {
+			self._toggleLabelOnResize();
+			self._toggleBrandIconOnResize();
+		} );
+	};
+
+	SELF.prototype.resizeNavbar = function () {
+		this._calculateNavBarWidth();
+		this._calculateNavBarText();
+
+		$( window ).trigger( 'resize' );
+
+		// Hide navbar by default after getting sizes and texts
+		$( '.navbar-collapse' ).removeClass( 'in' );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._calculateNavBarWidth = function () {
+		var totalLeftNavBarWidth = 0;
+		$( '#left-navbar li' ).each( function () { totalLeftNavBarWidth += $( this ).width(); } );
+		// 30px here is .navbar-collapse's padding-left plus padding-right after collapse
+		this._maximumWidthBeforeLineBroke = 30 + totalLeftNavBarWidth;
+
+		this._languageSelectorDefaultWidth = $( '#language-toggle' ).outerWidth();
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._calculateNavBarText = function () {
+		var self = this;
+		self._navbarLabelIDs.forEach( function ( label ) {
+			self._navbarLabelTexts[label] = $( label ).text();
+		} );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._toggleLabelOnResize = function( e ) {
+		var self = this;
+
+		// To prevent getting .position and .width when the navbar is hidden
+		if ( !$( '.navbar-collapse' ).is( ':visible' ) ) {
+			return;
+		}
+
+		// This is to find a fix value, to prevent the following code run repeatingly during resizing because of #right-navbar's left and width's change
+		var languageLeft = $( '#right-navbar' ).position().left + $( '#right-navbar' ).width() - this._languageSelectorDefaultWidth;
+
+		if ( languageLeft < self._maximumWidthBeforeLineBroke ) {
+			self._navbarLabelIDs.forEach( function ( label ) {
+				var targetText = '';
+				if ( label === '#language-toggle' ) {
+					targetText = '&nbsp;';
+				}
+				$( label ).html( targetText );
+			} );
+		} else {
+			self._navbarLabelIDs.forEach( function ( label ) {
+				$( label ).text( self._navbarLabelTexts[label] );
+			} );
+		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._toggleBrandIconOnResize = function( e ) {
+		// Hide site name when the window width is way too small
+		if ( ( $( '.navbar-brand a span' ).position().top - $( '.navbar-brand a img' ).position().top ) > 30 ) {
+			$( '.navbar-brand a span' ).css( 'opacity', 0 );
+		} else {
+			$( '.navbar-brand a span' ).css( 'opacity', 1 );
+		}
 	};
 
 	/**

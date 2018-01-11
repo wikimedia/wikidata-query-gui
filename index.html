@@ -51,23 +51,23 @@
 			<nav class="navbar navbar-default">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar-collapse" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+						<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 					</button>
 					<div class="navbar-brand">
 						<a href="./"><img width="62" height="40" src="logo.svg"><span></span></a>
 					</div>
 				</div>
-				<div class="collapse navbar-collapse" id="header-navbar-collapse">
-					<ul class="nav navbar-nav">
+				<div class="collapse navbar-collapse in" id="header-navbar-collapse">
+					<ul class="nav navbar-nav navbar-left" id="left-navbar">
 						<li>
 							<button type="button" class="btn navbar-btn btn-default" id="open-example" data-toggle="modal" data-target="#QueryExamples">
-							<span class="fa fa-folder-open-o"></span> <span data-i18n="wdqs-app-button-examples"></span>
+							<span class="fa fa-folder-open-o"></span> <span data-i18n="wdqs-app-button-examples" id="examples-label"></span>
 							</button>
 						</li>
 						<li>
 							<div class="btn-group navbar-btn">
 								<a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help" target="_blank" class="btn btn-default">
-									<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-help"></span>
+									<span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-help" id="help-label"></span>
 								</a>
 								<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="help-toggle">
 									<span class="caret"></span>
@@ -87,20 +87,26 @@
 								</ul>
 							</div>
 						</li>
-						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span><span data-i18n="wdqs-app-button-tools"></span><span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/hay/propbrowse/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Hay's Properties Browser</a></li>
-								<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/sqid/#/browse?type=properties"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> SQID Properties Browser</a></li>
-								<li><a target="_blank" rel="noopener" href="https://angryloki.github.io/wikidata-graph-builder/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Wikidata Graph Builder</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a target="_blank" rel="noopener" href="https://github.com/wikimedia/wikidata-query-rdf/blob/master/docs/exploring-linked-data.md"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Exploring Linked Data</a></li>
-								<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/wdq2sparql/w2s.php"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> WDQ Syntax Translator</a></li>
-								<li><a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual#SPARQL_endpoint"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> SPARQL REST Endpoint</a></li>
-							</ul>
+						<li class="dropdown">
+							<div class="btn-group navbar-btn">
+								<button data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="tools-toggle">
+									<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+									<span data-i18n="wdqs-app-button-tools" id="tools-label"></span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/hay/propbrowse/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Hay's Properties Browser</a></li>
+									<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/sqid/#/browse?type=properties"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> SQID Properties Browser</a></li>
+									<li><a target="_blank" rel="noopener" href="https://angryloki.github.io/wikidata-graph-builder/"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Wikidata Graph Builder</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a target="_blank" rel="noopener" href="https://github.com/wikimedia/wikidata-query-rdf/blob/master/docs/exploring-linked-data.md"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Exploring Linked Data</a></li>
+									<li><a target="_blank" rel="noopener" href="https://tools.wmflabs.org/wdq2sparql/w2s.php"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> WDQ Syntax Translator</a></li>
+									<li><a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual#SPARQL_endpoint"><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> SPARQL REST Endpoint</a></li>
+								</ul>
+							</div>
 						</li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right" id="right-navbar">
 						<li>
 							<a href="#" class="uls-trigger" id="language-toggle" data-toggle="tooltip"></a>
 						</li>
