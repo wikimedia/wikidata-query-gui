@@ -180,6 +180,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( window ).on( 'resize', function() {
 			self._toggleLabelOnResize();
 			self._toggleBrandIconOnResize();
+			self._updateQueryEditorSize();
 		} );
 	};
 

@@ -157,18 +157,6 @@ iframe.shortUrl {
 	margin-left: 0;
 }
 
-@media ( max-width: 900px ) {
-	.CodeMirror-scroll {
-		min-height: 150px;
-	}
-	.query-helper-and-editor {
-		flex-direction: column;
-	}
-	.query-helper-and-editor > .splitter {
-		display: none;
-	}
-}
-
 #query-box .toolbar {
 	border-right: 1px solid #bce8f1;
 }
@@ -288,6 +276,9 @@ iframe.shortUrl {
 	}
 	.navbar-collapse.in {
 		overflow-y: visible;
+	}
+	.panel-body .table td {
+		display: inline-block;
 	}
 }
 
@@ -637,4 +628,26 @@ div.jqcloud span.w1 {
 	fill-opacity: 0.3;
 	stroke: #fff;
 	stroke-width: 1px;
+}
+
+@media ( max-width: 900px ) {
+	.CodeMirror-scroll {
+		min-height: 150px;
+	}
+
+	#query-box .query-helper {
+		width: 100%;
+		min-width: 0;
+		max-width: none;
+	}
+	#query-box .query-helper .panel {
+		margin: 0;
+	}
+
+	.query-helper-and-editor {
+		flex-direction: column;
+	}
+	.query-helper-and-editor > .splitter {
+		display: none;
+	}
 }
