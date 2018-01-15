@@ -85,7 +85,7 @@
 	"wdqs-dialog-key-shortcut-focus-textarea": "Focalisation sur la zone de texte de requête.",
 	"wdqs-dialog-key-shortcut-jump-to-result": "Sauter au résultat de la requête.",
 	"wdqs-dialog-key-shortcut-focus-filter": "Focalisation sur le bouton « Filtrer » dans l'aide de requête.",
-	"wdqs-dialog-key-shortcut-focus-show": "Focalisation sur le bouton « Afficher » dans l'aide de requête.",
+	"wdqs-dialog-key-shortcut-focus-show": "Focus sur le bouton « Afficher » dans l'aide de requête.",
 	"wdqs-dialog-key-shortcut-focus-limit": "Cliquer sur le bouton « Limiter » dans l'aide de requête.",
 	"wdqs-dialog-key-shortcut-show-example": "Afficher des exemples.",
 	"wdqs-dialog-key-shortcut-help-menu": "Basculer le menu d’aide.",

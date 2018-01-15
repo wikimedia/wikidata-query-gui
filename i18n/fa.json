@@ -6,7 +6,8 @@
 			"Dejavu",
 			"Ebraminio",
 			"Arash.pt",
-			"Alirezaaa"
+			"Alirezaaa",
+			"Alifakoor"
 		]
 	},
 	"wdqs-app-button-examples": "نمونه‌ها",
@@ -58,6 +59,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "طرح سلسله مراتبی چپ به راست",
 	"wdqs-app-resultbrowser-hierarchical-ud": "طرح سلسله مراتبی بالا به پائین",
 	"wdqs-app-resultbrowser-hierarchical-rl": "طرح سلسله مراتبی راست به چپ",
+	"wdqs-app-resultbrowser-map": "نقشه",
 	"wdqs-app-toast-leave-fullscreen": "دکمهٔ [esc] را برای خارج‌شدن از حالت تمام‌صفحه بفشارید",
 	"wdqs-dialog-examples-preview-query": "پیش‌نمایش کوئری",
 	"wdqs-dialog-examples-preview-result": "پیش‌نمایش نتیجه",
