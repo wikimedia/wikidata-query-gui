@@ -478,6 +478,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	SELF.prototype._drawResult = function( resultBrowser ) {
 		var self = this;
 
+		$( window ).off( 'scroll.resultBrowser' );
+		$( window ).off( 'resize.resultBrowser' );
 		this._actionBar.show( 'wdqs-action-render', '',  'success', 100 );
 		window.setTimeout( function() {
 			try {

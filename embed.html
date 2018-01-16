@@ -108,6 +108,9 @@ body {
 .header-toolbar:hover {
 	opacity: 1;
 }
+.img-grid {
+	width: 95vw;
+}
 
 </style>
 <body>
@@ -131,7 +134,6 @@ body {
 						<ul id="result-browser-menu" class="dropdown-menu" role="menu">
 						</ul></li>
 					<li>
-					<li>
 						<a target="_blank" class="help" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views">
 						<span class="fa fa-question-circle"></span></a>
 					</li>
@@ -151,6 +153,10 @@ body {
 		<div id="query-result">Test result</div>
 		<div id="query-error" class="panel-heading">Test error</div>
 
+		<div id="loading-spinner">
+			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			<span class="sr-only">Loading...</span>
+		</div>
 		<div class="explorer-panel panel panel-default">
 		    <div class="panel-heading clearfix">
 		      <h1 class="panel-title pull-left" style="padding-top: 7.5px;">Explorer</h1>
