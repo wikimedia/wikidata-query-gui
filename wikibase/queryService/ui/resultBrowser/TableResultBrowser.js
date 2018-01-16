@@ -41,6 +41,30 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @property {Object}
 	 * @private
 	 */
+	SELF.prototype._$selectedCell = {};
+
+	/**
+	 * @property {boolean}
+	 * @private
+	 */
+	SELF.prototype._selectedCellHighlighted = false;
+
+	/**
+	 * @property {number}
+	 * @private
+	 */
+	SELF.prototype._tableNumber = false;
+
+	/**
+ 	 * @property {boolean}
+ 	 * @private
+ 	 */
+	SELF.prototype._pageLoading = true;
+
+	/**
+	 * @property {Object}
+	 * @private
+	 */
 	SELF.prototype._sorter = {
 		string: function( val1, val2 ) {
 			return val1.localeCompare( val2 );
@@ -144,12 +168,175 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			showPaginationSwitch: showPagination,
 			pageSize: TABLE_PAGE_SIZE,
 			pageList: TABLE_PAGE_SIZE_LIST,
-			keyEvents: true,
+			keyEvents: false,
 			cookie: true,
 			cookieIdTable: '1',
 			cookieExpire: '1y',
-			cookiesEnabled: [ 'bs.table.pageList' ]
+			cookiesEnabled: [ 'bs.table.pageList' ],
+			onResetView: function( name, args ) {
+				if ( typeof window._currentTableNumber === 'undefined' ) {
+					window._currentTableNumber = 0;
+				}
+				window._currentTableNumber++;
+				self._tableNumber = window._currentTableNumber;
+				self._selectedCellHighlighted = false;
+				self._pageLoading = false;
+				self.selectFirstCell( $element );
+				$( 'button:focus' ).blur();
+			},
+			onClickCell: function( field, value, row, $cell ) {
+				self._selectedCellHighlighted = true;
+				self.selectCell( $cell );
+			}
+
 		} );
+		$( document ).keydown( function( e ) {
+			self.keyPressed( e );
+		} );
+		$( '#result-browser-menu a' ).on( 'click', function() {
+			if ( typeof window._currentTableNumber === 'undefined' ) {
+				window._currentTableNumber = 0;
+			}
+			window._currentTableNumber++;
+		} );
+	};
+
+	/**
+	 * Select the first cell of the table
+	 *
+	 * @private
+	 * @param {jQuery} $table in which to select the first cell
+	 */
+	SELF.prototype.selectFirstCell = function( $table ) {
+		var $cell = $table.find( 'td' ).first();
+		this.selectCell( $cell );
+	};
+
+	/**
+	 * Select and highlight a cell
+	 *
+	 * @private
+	 * @param {jQuery} $cell to be highlighted
+	 */
+	SELF.prototype.selectCell = function( $cell ) {
+		if ( this._selectedCellHighlighted !== true ) {
+			this._$selectedCell = $cell;
+			return;
+		}
+		if ( $cell.length ) { //if cell actually exists
+			$( '.table-cell-selected' ).removeClass( 'table-cell-selected' );
+			this._$selectedCell = $cell;
+			if ( !this._$selectedCell.parent().hasClass( 'no-records-found' ) ) { //make sure that the cell chosen isn't a 'No Matching Records Found' cell
+				this._$selectedCell.addClass( 'table-cell-selected' );
+			}
+		}
+	};
+
+	/**
+	 * Scroll to a selected cell
+	 *
+	 * @private
+	 * @param {jQuery} $cell to scroll to
+	 */
+	SELF.prototype.scrollToCell = function( $cell ) {
+		var offset = $cell.offset().top;
+		$( 'html, body' ).scrollTop( offset - window.innerHeight / 3 );
+	};
+
+	/**
+	 * Called when a key is pressed
+	 *
+	 * @private
+	 * @param {KeyboardEvent} e event element
+	 */
+	SELF.prototype.keyPressed = function( e ) {
+		if ( window._currentTableNumber !== this._tableNumber ) {
+			return;
+		}
+		if ( $( document.activeElement ).is( 'textarea, input, button' ) ) {
+			return;
+		}
+		if ( this._$selectedCell.length === 0 ) {
+			return;
+		}
+		if ( this._selectedCellHighlighted !== true ) { //activate highlighting for the selected cell only when one of the arrow keys is pressed
+			if ( e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowRight' || e.key === 'ArrowDown' ) {
+				this._selectedCellHighlighted = true;
+				this.selectCell( this._$selectedCell );
+				this.scrollToCell( this._$selectedCell );
+			}
+			e.stopImmediatePropagation();
+			return;
+		}
+		if ( ( e.ctrlKey || e.metaKey ) && ( e.key === 'c' || e.key === 'C' ) ) { //if Ctrl + C is pressed
+			this.copyToClipboard( this._$selectedCell );
+			e.stopImmediatePropagation();
+			return;
+		}
+		if ( e.ctrlKey || e.metaKey || e.altKey ) {
+			return;
+		}
+
+		switch ( e.key ) {
+			case 'Enter': //When the enter key is pressed, click on the first link with non-empty text. Links with empty text open the item explorer and do not link to another site
+				this._$selectedCell.find( 'a' ).each( function() {
+					if ( $( this ).text().trim().length ) {
+						window.open( $( this ).prop( 'href' ) );
+						return false;
+					}
+					return true;
+				} );
+				break;
+			case 'ArrowLeft':
+				var $leftCell = this._$selectedCell.prev();
+				if ( $leftCell.length === 0 ) { //if leftmost cell, go to the previous page
+					if ( this._pageLoading === false ) {
+						this._pageLoading = true;
+						$( '.page-pre a' ).click();
+					}
+				} else {
+					this.selectCell( this._$selectedCell.prev() );
+				}
+				break;
+			case 'ArrowUp':
+				if ( this._$selectedCell.parent().prev().children( 'td:nth-child(' + ( this._$selectedCell.index() + 1 ).toString() + ')' ).length ) {
+					this.selectCell( this._$selectedCell.parent().prev().children( 'td:nth-child(' + ( this._$selectedCell.index() + 1 ).toString() + ')' ) );
+					this.scrollToCell( this._$selectedCell );
+				}
+				break;
+			case 'ArrowRight':
+				var $rightCell = this._$selectedCell.next();
+				if ( $rightCell.length === 0 ) {
+					if ( this._pageLoading === false ) {
+						this._pageLoading = true;
+						$( '.page-next a' ).click();
+					}
+				} else {
+					this.selectCell( this._$selectedCell.next() );
+				}
+				break;
+			case 'ArrowDown':
+				if ( this._$selectedCell.parent().next().children( 'td:nth-child(' + ( this._$selectedCell.index() + 1 ).toString() + ')' ).length ) {
+					this.selectCell( this._$selectedCell.parent().next().children( 'td:nth-child(' + ( this._$selectedCell.index() + 1 ).toString() + ')' ) );
+					this.scrollToCell( this._$selectedCell );
+				}
+				break;
+		}
+		e.stopImmediatePropagation();
+	};
+
+	/**
+ 	 * Copies the text of an element to clipboard
+	 *
+ 	 * @private
+ 	 * @param {jQuery} $element whose text to copy
+ 	 */
+	SELF.prototype.copyToClipboard = function( $element ) {
+		var $temp = $( '<input>' );
+		$( 'body' ).append( $temp );
+		$temp.val( $element.text() ).select();
+		document.execCommand( 'copy' );
+		$temp.remove();
 	};
 
 	/**
