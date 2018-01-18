@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Şeyx Şamil"
+			"Şeyx Şamil",
+			"Neriman2003"
 		]
 	},
 	"wdqs-app-button-examples": "Nümunələr",
@@ -25,6 +26,10 @@
 	"wdqs-app-result-embed": "Yerləşdirilmiş nəticələr",
 	"wdqs-dialog-examples-preview-query": "Sorğuya əvvəlcədən bax",
 	"wdqs-dialog-examples-preview-result": "Nəticəyə əvvəlcədən bax",
+	"wdqs-dialog-key-shortcut-esc": "Cari giriş sahəsi/textarea buraxın.",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mövcud səhifə üçün klaviatura qısayolunu göstər.",
+	"wdqs-dialog-key-shortcut-show-language": "Dil menyusunu göstər",
+	"wdqs-dialog-key-shortcut-close-button": "Bağla",
 	"wdqs-ve-show": "Göstər",
 	"wdqs-ve-with": "ilə",
 	"wdqs-ve-anything": "bir şey",

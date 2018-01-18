@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Emem.calist",
-			"Leeheonjin"
+			"Leeheonjin",
+			"Ianlopez1115"
 		]
 	},
 	"wdqs-app-button-examples": "Mga halimbawa",
@@ -16,6 +17,7 @@
 	"wdqs-app-button-link": "Kawing",
 	"wdqs-app-help-feedback": "Magbigay ng Katugunan!",
 	"wdqs-app-help-portal": "Portal pangtulong",
+	"wdqs-app-help-manual": "Manwal ng Tagagamit",
 	"wdqs-app-result-shorturl": "Maikling URL sa resulta",
 	"wdqs-app-result-shorturl-title": "Maikling URL sa resultang ito",
 	"wdqs-app-result-rawgraphs": "Buksan sa RAWGraphs.io",
@@ -27,6 +29,7 @@
 	"wdqs-ve-anything": "kahit na ano pa man",
 	"wdqs-ve-any": "kahit na ano",
 	"wdqs-ve-or": "o",
+	"wdqs-ve-sb-other": "Iba pa",
 	"wdqs-action-error-display": "Hindi maipakita ang resulta",
 	"wdqs-action-unknow-error": "Hindi malamang pagkakamali"
 }

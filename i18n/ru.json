@@ -7,7 +7,8 @@
 			"Kareyac",
 			"Nitch",
 			"Redredsonia",
-			"Facenapalm"
+			"Facenapalm",
+			"Edible Melon"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -60,6 +61,10 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Иерархическая разметка слева направо",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Иерархическая разметка сверху вниз",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Иерархическая разметка справа налево",
+	"wdqs-app-resultbrowser-table": "Таблица",
+	"wdqs-app-resultbrowser-map": "Карта",
+	"wdqs-app-resultbrowser-tree": "Дерево",
+	"wdqs-app-resultbrowser-graph": "График",
 	"wdqs-app-toast-leave-fullscreen": "Нажмите [Esc], чтобы выйти из полноэкранного режима",
 	"wdqs-dialog-examples-preview-query": "Посмотреть запрос",
 	"wdqs-dialog-examples-preview-result": "Посмотреть результат",

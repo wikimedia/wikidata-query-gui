@@ -47,6 +47,7 @@
 	"wdqs-app-result-csv": "Fitxer CSV",
 	"wdqs-app-result-svg": "Imatge SVG",
 	"wdqs-app-editor-addprefixes": "Afegeix els prefixos estàndards",
+	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultat|resultats}} en $2&nbsp;ms",
 	"wdqs-app-resultbrowser-table": "Taula",
 	"wdqs-app-resultbrowser-tree": "Arbre",
 	"wdqs-app-resultbrowser-dimensions": "Dimensions",

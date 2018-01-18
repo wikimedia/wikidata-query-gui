@@ -57,6 +57,7 @@
 	"wdqs-dialog-examples-preview-result": "結果のプレビュー",
 	"wdqs-dialog-key-shortcut-title": "キーボードショートカット",
 	"wdqs-dialog-key-shortcut-run-query": "クエリを実行する",
+	"wdqs-dialog-key-shortcut-close-button": "閉じる",
 	"wdqs-ve-filter": "フィルター",
 	"wdqs-ve-show": "表示",
 	"wdqs-ve-add-label-title": "エンティティラベルを含む変数を追加する",
