@@ -30,11 +30,11 @@ var CONFIG = ( function ( window, $ ) {
 			var loadFallbackLang = null;
 			if ( lang !== this.language ) {
 				//load default language as fallback language
-				loadFallbackLang = $.i18n().load( 'i18n/' + this.language + '.json', this.language );
+				loadFallbackLang = $.i18n().load( 'i18n/', this.language );
 			}
 			return $.when(
 					loadFallbackLang,
-					$.i18n().load( 'i18n/' + lang + '.json', lang )
+					$.i18n().load( 'i18n/', lang )
 				);
 		},
 		brand: {
@@ -62,7 +62,7 @@ var CONFIG = ( function ( window, $ ) {
 			},
 			i18nLoad: function( lang ) {
 				return $.when(
-						$.i18n().load( 'i18n/' + lang + '.json', lang ),
+						$.i18n().load( 'i18n/', lang ),
 						$.i18n().load( 'node_modules/jquery.uls/i18n/' + lang + '.json', lang )
 					);
 			},
