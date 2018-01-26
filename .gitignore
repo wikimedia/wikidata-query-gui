@@ -9,3 +9,4 @@ package-lock.json
 npm-debug.log
 style.css
 target
+*.log
