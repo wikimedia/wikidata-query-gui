@@ -269,9 +269,15 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			return;
 		}
 		if ( ( e.ctrlKey || e.metaKey ) && ( e.key === 'c' || e.key === 'C' ) ) { //if Ctrl + C is pressed
-			this.copyToClipboard( this._$selectedCell );
-			e.stopImmediatePropagation();
-			return;
+			if ( window.getSelection().toString() !== '' ) {
+				// let normal copy operation happen
+				return;
+			} else {
+				// copy cell content
+				this.copyToClipboard( this._$selectedCell );
+				e.stopImmediatePropagation();
+				return;
+			}
 		}
 		if ( e.ctrlKey || e.metaKey || e.altKey ) {
 			return;
