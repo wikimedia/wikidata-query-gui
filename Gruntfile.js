@@ -132,18 +132,15 @@ module.exports = function( grunt ) {
 							],
 							dest: buildFolder,
 							filter: 'isFile'
+						},{ // i18n files
+							expand: true,
+							src: [
+								'**/i18n/*.json'
+							],
+							dest: buildFolder,
+							filter: 'isFile'
 						}
 				]
-			}
-		},
-		'merge-i18n': {
-			i18n: {
-				src: [
-					'**/i18n/*.json',
-					'!**/examples/**',
-					'!**/demo/**'
-				],
-				dest: buildFolder + '/i18n'
 			}
 		},
 		cssmin: {
@@ -241,7 +238,7 @@ module.exports = function( grunt ) {
 		'clean', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
-		'auto_install', 'test', 'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
+		'auto_install', 'test', 'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin'
 	] );
 	grunt.registerTask( 'deploy', [
 		'clean', 'shell:updateRepo', 'shell:cloneDeploy', 'clean:deploy', 'create_build', 'shell:commitDeploy', 'configDeploy', 'shell:review'
