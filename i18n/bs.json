@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Srdjan m"
+			"Srdjan m",
+			"Acamicamacaraca"
 		]
 	},
 	"wdqs-app-button-examples": "Primjeri",
@@ -20,6 +21,7 @@
 	"wdqs-app-button-download-title": "Preuzmi rezultat",
 	"wdqs-app-button-link": "Link",
 	"wdqs-app-button-link-title": "Daj link ka upitu",
+	"wdqs-app-button-code": "Kôd",
 	"wdqs-app-help-feedback": "Pošaljite povratne informacije!",
 	"wdqs-app-help-request-query": "Postavi upit",
 	"wdqs-app-help-portal": "Portal za pomoć",

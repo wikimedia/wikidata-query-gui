@@ -7,7 +7,8 @@
 			"Олександр",
 			"AS",
 			"Alex Khimich",
-			"Avatar6"
+			"Avatar6",
+			"Movses"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -56,6 +57,7 @@
 	"wdqs-app-shorturl-page-title": "Коротка URL-адреса цієї сторінки",
 	"wdqs-app-editor-placeholder": "(Введіть запит SPARQL або виберіть приклад запиту)",
 	"wdqs-app-editor-addprefixes": "Додати стандартні префікси",
+	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|запис|записи|записів}} за $2&nbsp;мс",
 	"wdqs-app-resultbrowser-stabilize": "Стабілізувати мережу",
 	"wdqs-app-resultbrowser-hierarchical-lr": "Ієрархічна композиція зліва направо",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Ієрархічна композиція зверху вниз",
@@ -66,6 +68,9 @@
 	"wdqs-app-resultbrowser-map": "Мапа",
 	"wdqs-app-resultbrowser-line-chart": "Лінійна діаграма",
 	"wdqs-app-resultbrowser-bar-chart": "Стовпчикова діаграма",
+	"wdqs-app-resultbrowser-scatter-chart": "Точкова діаграма",
+	"wdqs-app-resultbrowser-bubble-chart": "Бульбашкова діаграма",
+	"wdqs-app-resultbrowser-tree-map": "Деревоподібна карта",
 	"wdqs-app-resultbrowser-tree": "Дерево",
 	"wdqs-app-resultbrowser-timeline": "Часова шкала",
 	"wdqs-app-toast-leave-fullscreen": "Натисніть [esc] щоб вийти з повноекранного режиму",
