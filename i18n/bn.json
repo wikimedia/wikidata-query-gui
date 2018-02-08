@@ -4,7 +4,8 @@
 			"Aftabuzzaman",
 			"আজিজ",
 			"Elias Ahmmad",
-			"Rasal Lia"
+			"Rasal Lia",
+			"Bodhisattwa"
 		]
 	},
 	"wdqs-app-button-examples": "উদাহরণ",
@@ -35,6 +36,7 @@
 	"wdqs-app-help-copy": "লাইসেন্সকরণের তথ্য",
 	"wdqs-app-help-queryhelper": "প্রশ্ন সাহায্যকারী",
 	"wdqs-app-footer-help": "স্বয়ং সম্পূর্ণকরণ সক্রিয় করতে <i>[CTRL-SPACE]</i> চাপুন।",
+	"wdqs-app-footer-updated-ago": "$1উপাত্ত হালনাগাদ হয়েছে",
 	"wdqs-app-result-shorturl": "ফলাফলে সংক্ষিপ্ত ইউআরএল",
 	"wdqs-app-result-shorturl-title": "এই ফলাফলে সংক্ষিপ্ত ইউআরএল",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io তে খুলুন",
@@ -61,10 +63,12 @@
 	"wdqs-app-resultbrowser-map": "মানচিত্র",
 	"wdqs-app-resultbrowser-bar-chart": "দণ্ড চার্ট",
 	"wdqs-app-resultbrowser-tree": "গাছ",
+	"wdqs-app-resultbrowser-dimensions": "মাত্রা",
 	"wdqs-app-resultbrowser-graph": "লেখচিত্র",
 	"wdqs-app-toast-leave-fullscreen": "পূর্ণপর্দা থেকে বেরিয়ে যেতে [esc] চাপুন",
 	"wdqs-dialog-examples-preview-query": "প্রশ্ন প্রাকদর্শন",
 	"wdqs-dialog-examples-preview-result": "ফলাফল প্রাকদর্শন",
+	"wdqs-dialog-key-shortcut-title": "কীবোর্ড শর্টকাট",
 	"wdqs-dialog-key-shortcut-close-button": "বন্ধ করুন",
 	"wdqs-ve-filter": "ছাঁকনি",
 	"wdqs-ve-show": "দেখাও",
