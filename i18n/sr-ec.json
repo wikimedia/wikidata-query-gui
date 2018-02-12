@@ -7,7 +7,8 @@
 			"Obsuser",
 			"Милан Јелисавчић",
 			"Milicevic01",
-			"Acamicamacaraca"
+			"Acamicamacaraca",
+			"Prevodim"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -65,6 +66,7 @@
 	"wdqs-app-resultbrowser-image-grid": "Координатна мрежа слике",
 	"wdqs-app-resultbrowser-graph-builder": "Графичар",
 	"wdqs-app-resultbrowser-map": "Мапа",
+	"wdqs-app-resultbrowser-line-chart": "График",
 	"wdqs-app-resultbrowser-tree": "Дрво",
 	"wdqs-app-resultbrowser-timeline": "Временска линија",
 	"wdqs-app-resultbrowser-dimensions": "Димензије",
