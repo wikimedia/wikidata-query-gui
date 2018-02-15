@@ -4,7 +4,8 @@
 			"Liuxinyu970226",
 			"Yfdyh000",
 			"Arthur2e5",
-			"Suesue"
+			"Suesue",
+			"Fanjiayi"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -72,7 +73,7 @@
 	"wdqs-app-resultbrowser-timeline": "时间轴",
 	"wdqs-app-resultbrowser-dimensions": "大小",
 	"wdqs-app-resultbrowser-graph": "图表",
-	"wdqs-app-toast-leave-fullscreen": "点击[esc]退出全屏模式",
+	"wdqs-app-toast-leave-fullscreen": "按[esc]退出全屏模式",
 	"wdqs-dialog-examples-preview-query": "预览查询",
 	"wdqs-dialog-examples-preview-result": "预览结果",
 	"wdqs-dialog-key-shortcut-title": "键盘快捷键",

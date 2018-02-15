@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Fanjiayi"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -18,6 +19,7 @@
 	"wdqs-app-button-download-title": "Discargar le resultato",
 	"wdqs-app-button-link": "Ligamine",
 	"wdqs-app-button-link-title": "Obtener un ligamine al consulta",
+	"wdqs-app-button-code": "Codice",
 	"wdqs-app-help-feedback": "Da nos tu opinion!",
 	"wdqs-app-help-request-query": "Requestar un consulta",
 	"wdqs-app-help-portal": "Portal de adjuta",
@@ -49,8 +51,18 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Disposition hierarchic de sinistra a dextra",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Disposition hierarchic de alto in basso",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disposition hierarchic de dextra a sinistra",
+	"wdqs-app-resultbrowser-table": "Tabella",
+	"wdqs-app-resultbrowser-map": "Carta",
+	"wdqs-app-resultbrowser-tree-map": "Arbore carta",
+	"wdqs-app-resultbrowser-tree": "Arbore",
+	"wdqs-app-resultbrowser-timeline": "Chronologia",
+	"wdqs-app-resultbrowser-dimensions": "Dimensiones",
+	"wdqs-app-resultbrowser-graph": "Graphico",
 	"wdqs-dialog-examples-preview-query": "Previsualisar consulta",
 	"wdqs-dialog-examples-preview-result": "Previsualisar resultato",
+	"wdqs-dialog-key-shortcut-show-example": "Show exemplos.",
+	"wdqs-dialog-key-shortcut-show-language": "Show lingua menu.",
+	"wdqs-dialog-key-shortcut-close-button": "Clauder",
 	"wdqs-ve-filter": "Filtrar",
 	"wdqs-ve-show": "Monstrar",
 	"wdqs-ve-with": "con",
@@ -67,5 +79,6 @@
 	"wdqs-action-malformed-query": "Le consulta es mal formate",
 	"wdqs-action-server-error": "Error del servitor",
 	"wdqs-action-unknow-error": "Error incognite",
-	"wdqs-result-map-layers-all": "Tote le stratos"
+	"wdqs-result-map-layers-all": "Tote le stratos",
+	"wdqs-embed-button-edit-query": "Modificar isto entrata"
 }
