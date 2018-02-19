@@ -31,6 +31,7 @@
 	$( document ).ready(
 		function() {
 			setBrand();
+			wb.ui.resultBrowser.helper.FormatterHelper.initMoment();
 
 			$( '#query-form' ).attr( 'action', config.api.sparql.uri );
 			var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language;
