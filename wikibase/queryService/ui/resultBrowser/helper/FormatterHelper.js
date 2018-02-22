@@ -44,6 +44,20 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	}
 
 	/**
+	 * @static
+	 */
+	SELF.initMoment = function() {
+		// override default formats of en locale to match Wikibase
+		moment.updateLocale( 'en', {
+			longDateFormat: {
+				LL: 'D MMMM YYYY',
+				LLL: 'D MMMM YYYY h:mm A',
+				LLLL: 'dddd, D MMMM YYYY h:mm A'
+			}
+		} );
+	};
+
+	/**
 	 * @return {wikibase.queryService.ui.resultBrowser.helper.Options}
 	 */
 	SELF.prototype.getOptions = function() {
@@ -200,7 +214,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			formatted;
 
 		if ( moment.isValid() ) {
-			formatted = moment.format( 'll' );
+			formatted = moment.format( 'LL' );
 		} else {
 			var year = positiveDate.replace( /^\+?(\d+).*/, '$1' );
 			formatted = '0000'.slice( year.length ) + year;

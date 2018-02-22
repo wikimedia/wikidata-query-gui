@@ -3,6 +3,8 @@
 
 	QUnit.module( 'wikibase.queryService.ui.resultBrowser.helper' );
 
+	wb.queryService.ui.resultBrowser.helper.FormatterHelper.initMoment();
+
 	var helper = new wb.queryService.ui.resultBrowser.helper.FormatterHelper();
 
 	QUnit.test( 'Setup', function( assert ) {
@@ -42,17 +44,17 @@
 		var testCases = [
 			[ '-1000000-12-31T00:00:00Z', '1000001 BCE' ],
 			[ '-275760-01-01T00:00:00Z', '275761 BCE' ],
-			[ '-275759-01-01T00:00:00Z', 'Jan 1, 275760 BCE' ],
-			[ '-2016-12-31T00:00:00Z', 'Dec 31, 2017 BCE' ],
+			[ '-275759-01-01T00:00:00Z', '1 January 275760 BCE' ],
+			[ '-2016-12-31T00:00:00Z', '31 December 2017 BCE' ],
 			[ '-2016-00-00T00:00:00Z', '2017 BCE' ],
-			[ '-1-12-31T00:00:00Z', 'Dec 31, 0002 BCE' ],
+			[ '-1-12-31T00:00:00Z', '31 December 0002 BCE' ],
 			[ '0-00-00T00:00:00Z', '0001 BCE' ],
 			[ '+0-00-00T00:00:00Z', '0001 BCE' ],
 			[ '+000000-00-00T00:00:00Z', '0001 BCE' ],
-			[ '+1-12-31T00:00:00Z', 'Dec 31, 0001' ],
+			[ '+1-12-31T00:00:00Z', '31 December 0001' ],
 			[ '+2016-00-00T00:00:00Z', '2016' ],
-			[ '+2016-12-31T00:00:00Z', 'Dec 31, 2016' ],
-			[ '+275760-01-01T00:00:00Z', 'Jan 1, 275760' ],
+			[ '+2016-12-31T00:00:00Z', '31 December 2016' ],
+			[ '+275760-01-01T00:00:00Z', '1 January 275760' ],
 			[ '+275761-01-01T00:00:00Z', '275761' ],
 			[ '+1000000-12-31T00:00:00Z', '1000000' ]
 		];
