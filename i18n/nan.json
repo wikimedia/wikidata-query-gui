@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Luuva",
-			"進也"
+			"進也",
+			"Yoxem"
 		]
 	},
 	"wdqs-app-button-examples": "範例",
@@ -13,7 +14,7 @@
 	"wdqs-app-button-run-title": "Chip-hêng cha-sûn (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Piàⁿ-chheng",
 	"wdqs-app-button-display": "Tián-sī",
-	"wdqs-app-button-download": "Táuⁿ-ló͘",
+	"wdqs-app-button-download": "Hā-chài",
 	"wdqs-app-button-link": "Liân-kiat",
 	"wdqs-app-help-feedback": "Thê-kiong hoán-èng",
 	"wdqs-app-help-request-query": "Chhéng-kiû chi̍t hāng cha-sûn",
