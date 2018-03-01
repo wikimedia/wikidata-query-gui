@@ -256,7 +256,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.isEntityUri = function( uri ) {
 		return typeof uri === 'string'
-			&& /^https?:\/\/www\.wikidata\.org\/entity\/./.test( uri );
+			&& /\/entity\/(Q|P|L|M)[0-9]+$/.test( uri );
 	};
 
 	/**
