@@ -50,6 +50,7 @@
 	"wdqs-app-shorturl-page-title": "Lyhyt URL tälle sivulle",
 	"wdqs-app-editor-placeholder": "(Tuo SPARQL-kysely tai valitse esimerkkikysely)",
 	"wdqs-app-editor-addprefixes": "Lisää perusetuliitteet",
+	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|tulos|tulosta}} ajassa $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Vakauta verkko",
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkkinen asettelu vasemmalta oikealle",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarkkinen asettelu ylhäältä alas",
@@ -57,12 +58,14 @@
 	"wdqs-app-resultbrowser-map": "Kartta",
 	"wdqs-app-resultbrowser-tree": "Puu",
 	"wdqs-app-resultbrowser-timeline": "Aikajana",
+	"wdqs-app-resultbrowser-dimensions": "Mitat",
 	"wdqs-app-resultbrowser-graph": "Kaavio",
 	"wdqs-app-toast-leave-fullscreen": "Paina [esc] poistuaksesi kokoruututilasta",
 	"wdqs-dialog-examples-preview-query": "Kyselyn esikatselu",
 	"wdqs-dialog-examples-preview-result": "Esikatsele tulos",
 	"wdqs-dialog-key-shortcut-title": "Pikanäppäimet",
 	"wdqs-dialog-key-shortcut-run-query": "Suorita kysely.",
+	"wdqs-dialog-key-shortcut-esc": "Jätä nykyinen syöttökenttä/tekstialue.",
 	"wdqs-dialog-key-shortcut-show-example": "Näytä esimerkit.",
 	"wdqs-dialog-key-shortcut-show-language": "Näytä kielivalikko.",
 	"wdqs-dialog-key-shortcut-close-button": "Sulje",
@@ -83,5 +86,6 @@
 	"wdqs-action-server-error": "Palvelinvirhe",
 	"wdqs-action-unknow-error": "Tuntematon virhe",
 	"wdqs-result-map-layers-all": "Kaikki tasot",
-	"wdqs-embed-button-edit-query": "Muokkaa tätä kyselyä"
+	"wdqs-embed-button-edit-query": "Muokkaa tätä kyselyä",
+	"wdqs-embed-button-edit-query-title": "Muokkaa tätä tiedustelua SPARQL-muokkaimella"
 }
