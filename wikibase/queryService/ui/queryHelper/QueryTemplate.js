@@ -62,22 +62,75 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	};
 
 	/**
+	 * Extracts the effective text for the given language from the template definition.
+	 *
+	 * @param {{template: (string|Object)}} definition
+	 * @param {string} languageCode
+	 * @param {?Object.<string, string[]>} fallbacksPerLanguage map from language code to fallback langugae codes
+	 * @param {?string} finalFallback final fallback language code for all languages
+	 * @return {string}
+	 */
+	SELF._getQueryTemplateText = function( definition, languageCode, fallbacksPerLanguage, finalFallback ) {
+		var texts, fallbacks, index, fallback;
+
+		if ( [ 'string', 'object' ].indexOf( typeof definition.template ) === -1 ) {
+			throw new Error( 'unsupported template type, should be single string or map from language code to string' );
+		}
+
+		if ( typeof definition.template === 'string' ) {
+			return definition.template;
+		}
+
+		texts = definition.template;
+
+		if ( languageCode in texts ) {
+			return texts[languageCode];
+		}
+
+		fallbacks = fallbacksPerLanguage && fallbacksPerLanguage[languageCode] || {};
+		for ( index in fallbacks ) {
+			fallback = fallbacks[index];
+			if ( fallback in texts ) {
+				return texts[fallback];
+			}
+		}
+
+		fallback = finalFallback || 'en';
+		if ( fallback in texts ) {
+			return texts[fallback];
+		}
+
+		for ( index in texts ) {
+			return texts[index];
+		}
+
+		return '';
+	};
+
+	/**
 	 * Splits the template 'a ?b c ?d e' into
 	 * [ 'a ', '?b', ' c ', '?d', ' e' ].
 	 * Text and variable fragments always alternate,
 	 * and the first and last fragment are always text fragments
 	 * ('' if the template begins or ends in a variable).
 	 *
-	 * @param {{template: string, variables: string[]}} definition
+	 * @param {{template: (string|Object), variables: string[]}} definition
 	 * @return {string[]}
 	 */
 	SELF._getQueryTemplateFragments = function( definition ) {
-		if ( definition.template.match( /\0/ ) ) {
-			throw new Error( 'query template must not contain null bytes' );
-		}
-		var fragments = [ definition.template ],
+		// TODO inject language and update it in the
+		// languageSelector.setChangeListener() callback from init.js
+		var languageCode = $.i18n && $.i18n().locale || 'en',
+			fallbacksPerLanguage = $.i18n && $.i18n.fallbacks,
+			finalFallback = $.i18n && $.i18n().options.fallbackLocale,
+			text = this._getQueryTemplateText( definition, languageCode, fallbacksPerLanguage, finalFallback ),
+			fragments = [ text ],
 			variable,
 			newFragments;
+
+		if ( text.match( /\0/ ) ) {
+			throw new Error( 'query template must not contain null bytes' );
+		}
 
 		function splitFragment( fragment ) {
 			var textFragments = fragment

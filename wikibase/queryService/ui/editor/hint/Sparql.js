@@ -22,7 +22,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'SERVICE wikibase:around {\n    ?place wdt:P625 ?location.\n    bd:serviceParam wikibase:center ? .\n    bd:serviceParam wikibase:radius ? .\n    bd:serviceParam wikibase:distance ?dist.\n  }',
 			'SERVICE wikibase:box {\n    ?place wdt:P625 ?location.\n    bd:serviceParam wikibase:cornerWest ? .\n    bd:serviceParam wikibase:cornerEast ? .\n  }',
 			'hint:Query hint:optimizer "None".',
-			'#TEMPLATE={ "template": "Textual description of template, referencing ?var", "variables": { "?var": { "query": "SELECT ?id WHERE { ?id wdt:P31 wd:Q146. }" } } }'
+			'#TEMPLATE={ "template": { "en": "Textual description of template, referencing ?var" }, "variables": { "?var": { "query": "SELECT ?id WHERE { ?id wdt:P31 wd:Q146. }" } } }'
 	];
 
 	var SPARQL_PREDICATES = [

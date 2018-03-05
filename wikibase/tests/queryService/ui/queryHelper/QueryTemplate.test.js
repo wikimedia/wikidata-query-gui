@@ -5,6 +5,70 @@
 
 	var QueryTemplate = wb.queryService.ui.queryHelper.QueryTemplate;
 
+	QUnit.test( '_getQueryTemplateText internal function', function( assert ) {
+		assert.expect( 10 );
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: 'single text' }, 'en' ),
+			'single text',
+			"template with single text should work"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { en: 'English text' } }, 'en' ),
+			'English text',
+			"template with single language version should work"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { de: 'deutscher Text' } }, 'de' ),
+			'deutscher Text',
+			"template with single non-English language version should work"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { en: 'English text', de: 'deutscher Text' } }, 'en' ),
+			'English text',
+			"template with alternative language version should work"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { de: 'deutscher Text', en: 'English text' } }, 'en' ),
+			'English text',
+			"template with alternative language version should work regardless of order in JSON"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { de: 'deutscher Text' } }, 'en', {}, 'de' ),
+			'deutscher Text',
+			"undefined language should fall back to final fallback"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { en: 'English text' } }, 'de' ),
+			'English text',
+			"undefined language should fall back to English if final fallback not specified"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { en: 'English text', 'de': 'deutscher Text' } }, 'de-at', { 'de-at': [ 'de' ] } ),
+			'deutscher Text',
+			"language fallbacks between languages should work"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: { 'de': 'deutscher Text' } }, 'en' ),
+			'deutscher Text',
+			"text should ultimately fall back to any available language"
+		);
+
+		assert.strictEqual(
+			QueryTemplate._getQueryTemplateText( { template: {} }, 'en' ),
+			'',
+			"blank template should not provoke errors by returning undefined"
+		);
+	} );
+
 	QUnit.test( '_getQueryTemplateFragments internal function', function( assert ) {
 		assert.expect( 7 );
 
