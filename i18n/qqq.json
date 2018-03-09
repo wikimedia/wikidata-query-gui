@@ -93,6 +93,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "Close button label of keyboard shortcut help dialog\n{{Identical|Close}}",
 	"wdqs-ve-filter": "Label to add a filter in Query Helper\n{{Identical|Filter}}",
 	"wdqs-ve-show": "Label to show some item\n{{Identical|Show}}",
+	"wdqs-ve-limit": "Label to limit the number of query results\n{{Identical|Limit}}",
 	"wdqs-ve-add-label-title": "Title to add variable containing entity label",
 	"wdqs-ve-remove-row-title": "Title to remove row",
 	"wdqs-ve-with": "Label item with property\n{{Identical|With}}",

@@ -245,8 +245,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			$limit = $( '<a data-type="number">' )
 				.attr( 'href', '#' )
 				.attr( 'id', 'query-helper-limit' )
-				.text( 'Limit' )
-				.data( 'value', this._query.getLimit() ),
+				.data( 'value', this._query.getLimit() )
+				.append( '<span data-i18n="wdqs-ve-limit">Limit</span>' ),
 			$value = $( '<span>' )
 				.text( this._query.getLimit() || '' );
 

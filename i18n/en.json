@@ -91,6 +91,7 @@
     "wdqs-dialog-key-shortcut-close-button": "Close",
     "wdqs-ve-filter": "Filter",
     "wdqs-ve-show": "Show",
+    "wdqs-ve-limit": "Limit",
     "wdqs-ve-add-label-title": "Add variable containing entity label",
     "wdqs-ve-remove-row-title": "Remove this row",
     "wdqs-ve-with": "with",
