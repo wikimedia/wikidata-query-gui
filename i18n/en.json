@@ -106,6 +106,7 @@
     "wdqs-action-error-display": "Unable to display result",
     "wdqs-action-timeout": "Query timeout limit reached",
     "wdqs-action-malformed-query": "Query is malformed",
+    "wdqs-action-empty-query": "Input a valid SPARQL query or choose an example query",
     "wdqs-action-server-error": "Server error",
     "wdqs-action-unknow-error": "Unknown error",
     "wdqs-action-preview": "Result preview",

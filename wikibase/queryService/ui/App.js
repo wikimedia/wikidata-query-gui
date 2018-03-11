@@ -565,9 +565,17 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	/**
 	 * @private
 	 */
+	SELF.prototype._isEmptyQuery = function() {
+		if ( this._editor.getValue() === '' ) {
+			return true;
+		}
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._initHandlers = function() {
 		var self = this;
-
 		$( '#query-form' ).submit( $.proxy( this._handleQuerySubmit, this ) );
 		$( '.namespace-shortcuts' ).on( 'change', 'select',
 				$.proxy( this._handleNamespaceSelected, this ) );
@@ -805,7 +813,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._handleQuerySubmit = function( e ) {
 		var self = this;
-
 		this._track( 'buttonClick.execute' );
 		if ( !this._hasRunFirstQuery ) {
 			this._track( 'firstQuery' );
@@ -817,16 +824,25 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		this._updateQueryUrl();
 
 		$( '#execute-button' ).prop( 'disabled', true );
-		this._resultView.draw( this._editor.getValue() ).catch( function ( error ) {
-			try {
-				self._editor.highlightError( error );
-			} catch ( err ) {
-				// ignore
-			}
-		} ).then( function () {
+		if ( this._isEmptyQuery() ) {
+			$( '#query-result' ).hide();
+			$( '#query-error' ).hide();
+			$( '.label-danger' ).hide();
+			$( '#empty-query-error' ).show();
 			$( '#execute-button' ).prop( 'disabled', false );
-		} );
-
+		} else {
+			$( '#empty-query-error' ).hide();
+			this._resultView.draw( this._editor.getValue() ).catch( function ( error ) {
+				try {
+					self._editor.highlightError( error );
+				} catch ( err ) {
+					// ignore
+				}
+			} )
+			.then( function () {
+				$( '#execute-button' ).prop( 'disabled', false );
+			} );
+		}
 		$( '.queryUri' ).attr( 'href', self._sparqlApi.getQueryUri() );
 		$( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + $( '.queryUri' )[0].href );
 	};

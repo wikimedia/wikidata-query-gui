@@ -258,7 +258,16 @@
 			<div id="query-result">Test result</div>
 		</div>
 		<div class="row">
-			<div id="query-error" class="panel-heading">Test error</div>
+			<div id="query-error" class="panel-heading text-center">
+			</div>
+		</div>
+		<div class="row">
+			<div id="empty-query-error" class="text-center">
+				<p data-i18n="wdqs-action-empty-query"></p>
+				<button type="button" class="btn navbar-btn btn-default" id="open-example" data-toggle="modal" data-target="#QueryExamples">
+					<span class="fa fa-folder-open-o"></span> <span data-i18n="wdqs-app-button-examples" id="examples-label"></span>
+				</button>
+			</div>
 		</div>
 		<div class="row">
 			<div id="loading-spinner">
@@ -509,5 +518,6 @@
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
 	<script src="wikibase/init.js"></script>
 	<!-- endbuild -->
+
 </body>
 </html>

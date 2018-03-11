@@ -108,6 +108,7 @@
 	"wdqs-action-error-display": "Label for progressbar when displaying error",
 	"wdqs-action-timeout": "Label for progressbar on timeout",
 	"wdqs-action-malformed-query": "Label for progressbar on syntax error",
+	"wdqs-action-empty-query": "Text for preventing an empty query from running",
 	"wdqs-action-server-error": "Label for progressbar displaying server error",
 	"wdqs-action-unknow-error": "Label for progressbar displaying unknown error",
 	"wdqs-action-preview": "Label for progressbar displaying preview",
