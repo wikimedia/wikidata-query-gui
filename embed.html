@@ -243,8 +243,8 @@ body {
 	<!-- endbuild -->
 
 	<script type="text/javascript">
-		function renderEdit( query, callback ) {
-			var qh = new wikibase.queryService.ui.queryHelper.QueryHelper();
+		function renderEdit( api, sparqlApi, query, callback ) {
+			var qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi );
 			qh.setChangeListener( _.debounce( function( v ) {
 				callback( v.getQuery() );
 			}, 1500 ) );
@@ -274,6 +274,7 @@ body {
 		$( document ).ready( function() {
 			var config = CONFIG,
 				lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
+				api = new wikibase.queryService.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wikibase.queryService.api.Sparql( config.api.sparql.uri, lang ),
 				resultView = new wikibase.queryService.ui.ResultView( sparqlApi ),
 				query = decodeURIComponent( window.location.hash.substr( 1 ) );
@@ -290,7 +291,7 @@ body {
 				resultView.draw( query ).then( function() {
 					$( '.logo' ).hide();
 				} );
-				renderEdit( query, function( q ){
+				renderEdit( api, sparqlApi, query, function( q ){
 					resultView.draw( q );
 					window.location.hash = '#' + encodeURIComponent( q )
 					$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash )
