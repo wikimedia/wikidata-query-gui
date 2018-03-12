@@ -5,7 +5,8 @@
 			"Yfdyh000",
 			"Arthur2e5",
 			"Suesue",
-			"Fanjiayi"
+			"Fanjiayi",
+			"夢蝶葬花"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -91,6 +92,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "关闭",
 	"wdqs-ve-filter": "过滤器",
 	"wdqs-ve-show": "显示",
+	"wdqs-ve-limit": "限制",
 	"wdqs-ve-add-label-title": "添加包含实体标签的变量",
 	"wdqs-ve-remove-row-title": "移除此行",
 	"wdqs-ve-with": "有",

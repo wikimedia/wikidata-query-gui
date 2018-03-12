@@ -95,6 +95,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "Закрыть",
 	"wdqs-ve-filter": "Фильтр",
 	"wdqs-ve-show": "Показать",
+	"wdqs-ve-limit": "Ограничение",
 	"wdqs-ve-add-label-title": "Добавить переменную, содержащую метку сущности",
 	"wdqs-ve-remove-row-title": "Удалить эту строку",
 	"wdqs-ve-with": "с",

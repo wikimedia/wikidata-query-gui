@@ -93,6 +93,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "Fermer",
 	"wdqs-ve-filter": "Filtre",
 	"wdqs-ve-show": "Afficher",
+	"wdqs-ve-limit": "Limite",
 	"wdqs-ve-add-label-title": "Ajouter une variable contenant un libellé d’entité",
 	"wdqs-ve-remove-row-title": "Supprimer cette ligne",
 	"wdqs-ve-with": "avec",

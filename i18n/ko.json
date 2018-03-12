@@ -6,7 +6,8 @@
 			"아라",
 			"Jerrykim306",
 			"SeoJeongHo",
-			"CYAN"
+			"CYAN",
+			"In2acous"
 		]
 	},
 	"wdqs-app-button-examples": "예시",
@@ -83,6 +84,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "닫기",
 	"wdqs-ve-filter": "필터",
 	"wdqs-ve-show": "보기",
+	"wdqs-ve-limit": "제한",
 	"wdqs-ve-add-label-title": "개체 라벨을 포함한 변수 추가",
 	"wdqs-ve-remove-row-title": "이 줄을 제거",
 	"wdqs-ve-with": "사용",
