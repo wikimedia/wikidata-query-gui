@@ -103,6 +103,7 @@
 	"wdqs-action-error-display": "Немагчыма паказаць вынік",
 	"wdqs-action-timeout": "Дасягнуты ліміт часу выкананьня запыту",
 	"wdqs-action-malformed-query": "Запыт няслушны",
+	"wdqs-action-empty-query": "Увядзіце слушны SPARQL-запыт ці абярыце запыт з прыкладаў",
 	"wdqs-action-server-error": "Памылка сэрвэра",
 	"wdqs-action-unknow-error": "Невядомая памылка",
 	"wdqs-action-preview": "Папярэдні прагляд выніку",

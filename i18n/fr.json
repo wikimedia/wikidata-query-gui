@@ -108,6 +108,7 @@
 	"wdqs-action-error-display": "Impossible d’afficher le résultat",
 	"wdqs-action-timeout": "Limite du temps de requête atteinte",
 	"wdqs-action-malformed-query": "La requête est mal formulée",
+	"wdqs-action-empty-query": "Entrez une requête SPARQL valide, ou choisissez une requête parmi les examples",
 	"wdqs-action-server-error": "Erreur du serveur",
 	"wdqs-action-unknow-error": "Erreur inconnue",
 	"wdqs-action-preview": "Aperçu du résultat",

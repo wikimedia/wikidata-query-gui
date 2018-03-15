@@ -102,6 +102,7 @@
 	"wdqs-action-error-display": "Не можам да го прикажам исходот",
 	"wdqs-action-timeout": "Достигнато е временското ограничување на барањето",
 	"wdqs-action-malformed-query": "Барањето е лошо срочено",
+	"wdqs-action-empty-query": "Внесете важечко SPARQL-барање или изберете примерно",
 	"wdqs-action-server-error": "Грешка во опслужувачот",
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Преглед на исходот",

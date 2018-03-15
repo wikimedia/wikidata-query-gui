@@ -108,6 +108,7 @@
 	"wdqs-action-error-display": "Αδυναμία προβολής αποτελέσματος",
 	"wdqs-action-timeout": "Έφτασε το χρονικό όριο του ερωτήματος",
 	"wdqs-action-malformed-query": "Το ερώτημα είναι ακατάλληλο",
+	"wdqs-action-empty-query": "Εισαγάγετε ένα ερώτημα SPARQL ή επιλέξτε ένα ερώτημα παραδείγματος",
 	"wdqs-action-server-error": "Σφάλμα διακομιστή",
 	"wdqs-action-unknow-error": "Άγνωστο σφάλμα",
 	"wdqs-action-preview": "Αποτέλεσμα προεπισκόπησης",

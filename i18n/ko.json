@@ -7,7 +7,8 @@
 			"Jerrykim306",
 			"SeoJeongHo",
 			"CYAN",
-			"In2acous"
+			"In2acous",
+			"Garam"
 		]
 	},
 	"wdqs-app-button-examples": "예시",
@@ -51,7 +52,7 @@
 	"wdqs-app-result-tsv": "TSV 파일",
 	"wdqs-app-result-tsv-verbose": "TSV 파일 (verbose)",
 	"wdqs-app-result-csv": "CSV 파일",
-	"wdqs-app-result-svg": "SVG 이미지",
+	"wdqs-app-result-svg": "SVG 영상",
 	"wdqs-app-shorturl-page-title": "이 페이지에 대한 짧은 URL",
 	"wdqs-app-editor-placeholder": "(SPARQL 쿼리를 입력하거나 쿼리 예제를 선택하십시오)",
 	"wdqs-app-editor-addprefixes": "표준 접두어 추가",
@@ -61,7 +62,7 @@
 	"wdqs-app-resultbrowser-hierarchical-ud": "계층적 레이아웃 위에서 아래로",
 	"wdqs-app-resultbrowser-hierarchical-rl": "계층적 레이아웃 우측에서 좌측으로",
 	"wdqs-app-resultbrowser-table": "표",
-	"wdqs-app-resultbrowser-image-grid": "이미지 그리드",
+	"wdqs-app-resultbrowser-image-grid": "영상 격자무늬",
 	"wdqs-app-resultbrowser-graph-builder": "그래프 빌더",
 	"wdqs-app-resultbrowser-map": "맵",
 	"wdqs-app-resultbrowser-line-chart": "선도표",

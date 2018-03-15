@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Les Meloures"
 		]
 	},
 	"wdqs-app-button-examples": "Beispiller",
@@ -74,7 +75,7 @@
 	"wdqs-ve-filter": "Filter",
 	"wdqs-ve-show": "Weisen",
 	"wdqs-ve-limit": "Limitt",
-	"wdqs-ve-add-label-title": "Variabel dobäisetzen an där d'Etikett vum Objet dran ass",
+	"wdqs-ve-add-label-title": "Variabel derbäisetzen an där d'Etikett vum Objet dran ass",
 	"wdqs-ve-remove-row-title": "Dës Rei ewechhuelen",
 	"wdqs-ve-with": "mat",
 	"wdqs-ve-anything": "eppes",

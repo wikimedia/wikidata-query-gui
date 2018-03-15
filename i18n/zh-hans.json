@@ -107,6 +107,7 @@
 	"wdqs-action-error-display": "无法显示结果",
 	"wdqs-action-timeout": "已达到查询超时限制",
 	"wdqs-action-malformed-query": "查询有缺陷",
+	"wdqs-action-empty-query": "输入有效的SPARQL查询，或选择示例查询",
 	"wdqs-action-server-error": "服务器错误",
 	"wdqs-action-unknow-error": "未知错误",
 	"wdqs-action-preview": "结果预览",

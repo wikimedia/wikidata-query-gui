@@ -6,7 +6,8 @@
 			"Marek Pavlica",
 			"Zbyso23",
 			"Matěj Suchánek",
-			"Walter Klosse"
+			"Walter Klosse",
+			"Ilimanaq29"
 		]
 	},
 	"wdqs-app-button-examples": "Příklady",
@@ -72,6 +73,7 @@
 	"wdqs-action-error-display": "Nelze zobrazit výsledek",
 	"wdqs-action-timeout": "Vypršel časový limit pro dotaz",
 	"wdqs-action-malformed-query": "Dotaz je chybný",
+	"wdqs-action-empty-query": "Vložte platný požadavek SPARQL nebo použijte příkladný požadavek",
 	"wdqs-action-server-error": "Chyba serveru",
 	"wdqs-action-unknow-error": "Neznámá chyba",
 	"wdqs-action-preview": "Náhled výsledků",

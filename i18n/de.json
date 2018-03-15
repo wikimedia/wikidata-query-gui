@@ -103,6 +103,7 @@
 	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
 	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht",
 	"wdqs-action-malformed-query": "Die Abfrage ist beschädigt",
+	"wdqs-action-empty-query": "Gib eine gültige SPARQL-Abfrage ein oder wähle eine Beispielabfrage aus",
 	"wdqs-action-server-error": "Serverfehler",
 	"wdqs-action-unknow-error": "Unbekannter Fehler",
 	"wdqs-action-preview": "Vorschau des Ergebnisses",
