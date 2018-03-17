@@ -293,7 +293,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._createFindButton = function( $table ) {
 		// Show link
 		var $button = $( '<a class="btn">' )
-			.text( this._i18n( 'filter' ) )
+			.append( '<span data-i18n="wdqs-ve-filter">' + this._i18n( 'filter' ) + '</span>' )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
@@ -335,7 +335,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._createShowButton = function( $table ) {
 		// Show link
 		var $button = $( '<a class="btn">' )
-			.text( this._i18n( 'show' ) )
+			.append( '<span data-i18n="wdqs-ve-show">' + this._i18n( 'show' ) + '</span>' )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
