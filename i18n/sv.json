@@ -104,6 +104,7 @@
 	"wdqs-action-error-display": "Det gick inte att visa resultatet",
 	"wdqs-action-timeout": "Förfrågan nådde tidsgränsen",
 	"wdqs-action-malformed-query": "Förfrågan är felformulerad",
+	"wdqs-action-empty-query": "Ange en giltig SPARQL-fråga eller välj en exempelfråga",
 	"wdqs-action-server-error": "Serverfel",
 	"wdqs-action-unknow-error": "Okänt fel",
 	"wdqs-action-preview": "Resultatsförhandsvisning",

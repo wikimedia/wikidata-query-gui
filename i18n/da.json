@@ -103,6 +103,7 @@
 	"wdqs-action-error-display": "Ude af stand til at vise resultatet",
 	"wdqs-action-timeout": "Forespørgslens tidsgrænse er nået",
 	"wdqs-action-malformed-query": "Forespørgslen er fejlagtig",
+	"wdqs-action-empty-query": "Angiv en gyldig SPARQL-forespørgsel eller vælg en eksempelforespørgsel",
 	"wdqs-action-server-error": "Serverfejl",
 	"wdqs-action-unknow-error": "Ukendt fejl",
 	"wdqs-action-preview": "Resultatforhåndsvisning",

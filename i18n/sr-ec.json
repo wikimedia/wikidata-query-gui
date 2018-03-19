@@ -109,6 +109,7 @@
 	"wdqs-action-error-display": "Није могуће приказати резултат",
 	"wdqs-action-timeout": "Достигнуто је временско ограничење упита",
 	"wdqs-action-malformed-query": "Упит је лошег облика",
+	"wdqs-action-empty-query": "Унесите валидан SPARQL упит или одаберите упит из примера",
 	"wdqs-action-server-error": "Грешка сервера",
 	"wdqs-action-unknow-error": "Непозната грешка",
 	"wdqs-action-preview": "Приказ резултата",

@@ -112,6 +112,7 @@
 	"wdqs-action-error-display": "No se puede mostrar el resultado",
 	"wdqs-action-timeout": "Se agotó el tiempo de espera de la consulta",
 	"wdqs-action-malformed-query": "La consulta es incorrecta",
+	"wdqs-action-empty-query": "Proporciona una consulta SPARQL válida o selecciona una de ejemplo",
 	"wdqs-action-server-error": "Error del servidor",
 	"wdqs-action-unknow-error": "Error desconocido",
 	"wdqs-action-preview": "Previsualización del resultado",
