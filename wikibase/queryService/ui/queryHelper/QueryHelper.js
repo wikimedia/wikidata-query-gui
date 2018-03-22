@@ -84,7 +84,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		'with': 'with',
 		any: 'any',
 		or: 'or',
-		subtype: 'subtype'
+		subtype: 'subtype',
+		limit: 'Limit'
 	};
 
 	/**
@@ -211,6 +212,15 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	/**
 	 * @private
 	 */
+	SELF.prototype._i18nSpan = function( key ) {
+		return $( '<span>' )
+			.attr( 'data-i18n', I18N_PREFIX + key )
+			.text( this._i18n( key ) );
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._getHtml = function() {
 		var self = this,
 			$html = $( '<div>' ),
@@ -246,7 +256,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				.attr( 'href', '#' )
 				.attr( 'id', 'query-helper-limit' )
 				.data( 'value', this._query.getLimit() )
-				.append( '<span data-i18n="wdqs-ve-limit">Limit</span>' ),
+				.append( this._i18nSpan( 'limit' ) ),
 			$value = $( '<span>' )
 				.text( this._query.getLimit() || '' );
 
@@ -293,7 +303,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._createFindButton = function( $table ) {
 		// Show link
 		var $button = $( '<a class="btn">' )
-			.append( '<span data-i18n="wdqs-ve-filter">' + this._i18n( 'filter' ) + '</span>' )
+			.append( this._i18nSpan( 'filter' ) )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
@@ -335,7 +345,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._createShowButton = function( $table ) {
 		// Show link
 		var $button = $( '<a class="btn">' )
-			.append( '<span data-i18n="wdqs-ve-show">' + this._i18n( 'show' ) + '</span>' )
+			.append( this._i18nSpan( 'show' ) )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
