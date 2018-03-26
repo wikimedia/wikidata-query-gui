@@ -5,7 +5,8 @@
 			"Woytecr",
 			"Sp5uhe",
 			"Szmyk",
-			"InternerowyGołąb"
+			"InternerowyGołąb",
+			"DeRudySoulStorm"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -36,6 +37,7 @@
 	"wdqs-app-help-copy": "Informacje o licencji",
 	"wdqs-app-help-queryhelper": "Pomocnik zapytania",
 	"wdqs-app-footer-help": "Naciśnij <i>[Ctrl + spacja]</i>, aby włączyć automatyczne uzupełnianie.",
+	"wdqs-app-footer-updated-ago": "Dane zaktualizowano $1 temu",
 	"wdqs-app-result-shorturl": "Skrócony URL do wyniku",
 	"wdqs-app-result-shorturl-title": "Skrócony URL do tego wyniku",
 	"wdqs-app-result-rawgraphs": "Otwórz w RAWGraphs.io",
@@ -59,6 +61,8 @@
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarchiczny układ z góry na dół",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarchiczny układ od prawej do lewej",
 	"wdqs-app-resultbrowser-table": "Tabela",
+	"wdqs-app-resultbrowser-image-grid": "Siatka obrazu",
+	"wdqs-app-resultbrowser-graph-builder": "Generator wykresów",
 	"wdqs-app-resultbrowser-map": "Mapa",
 	"wdqs-app-resultbrowser-line-chart": "Wykres liniowy",
 	"wdqs-app-resultbrowser-bar-chart": "Wykres słupkowy",
@@ -73,6 +77,7 @@
 	"wdqs-dialog-examples-preview-result": "Podgląd wyniku",
 	"wdqs-dialog-key-shortcut-title": "Skróty klawiaturowe",
 	"wdqs-dialog-key-shortcut-run-query": "Uruchom zapytanie.",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Pokaż pomoc dotyczącą skrótów klawiaturowych dla bieżącej strony.",
 	"wdqs-dialog-key-shortcut-jump-to-result": "Przejdź do wyniku zapytania.",
 	"wdqs-dialog-key-shortcut-show-example": "Pokaż przykłady.",
 	"wdqs-dialog-key-shortcut-help-menu": "Przełącz menu Pomocy.",
@@ -95,6 +100,7 @@
 	"wdqs-action-error-display": "Nie można wyświetlić wyniku",
 	"wdqs-action-timeout": "Osiągnięto limit oczekiwania na wykonanie zapytania",
 	"wdqs-action-malformed-query": "Zapytanie jest źle sformułowane",
+	"wdqs-action-empty-query": "Wprowadź poprawne zapytanie SPARQL lub wybierz zapytanie przykładowe",
 	"wdqs-action-server-error": "Błąd serwera",
 	"wdqs-action-unknow-error": "Nieznany błąd",
 	"wdqs-action-preview": "Podgląd wyniku",

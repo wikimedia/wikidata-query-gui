@@ -4,7 +4,8 @@
 			"Sator",
 			"Theklan",
 			"Subi",
-			"Mikel Ibaiba"
+			"Mikel Ibaiba",
+			"EukeneFL"
 		]
 	},
 	"wdqs-app-button-examples": "Adibideak",
@@ -90,6 +91,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "Itxi",
 	"wdqs-ve-filter": "Iragazi",
 	"wdqs-ve-show": "Erakutsi",
+	"wdqs-ve-limit": "Muga",
 	"wdqs-ve-add-label-title": "Gehitu entitateen etiketa duen aldagaia",
 	"wdqs-ve-remove-row-title": "Lerro hau ezabatu",
 	"wdqs-ve-with": "honekin",
@@ -104,6 +106,7 @@
 	"wdqs-action-error-display": "Ezin izan da emaitza erakutsi",
 	"wdqs-action-timeout": "Kontsultaren itxaron denbora agortu da",
 	"wdqs-action-malformed-query": "Querya gaizki egina dago",
+	"wdqs-action-empty-query": "Idatzi baliozko SPARQL kontsulta edo aukeratu kontsulta-adibide bat",
 	"wdqs-action-server-error": "Zerbitzari errorea",
 	"wdqs-action-unknow-error": "Errore ezezaguna",
 	"wdqs-action-preview": "Aurreikusi emaitza",
