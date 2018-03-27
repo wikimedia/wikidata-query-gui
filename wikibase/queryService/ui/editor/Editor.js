@@ -105,9 +105,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 		// before $.i18n populates `placeholder` attribute with internationalized string.
 		// FIXME: We should replace it with call in event handlers for $.i18n init and Editor init when they'll exist.
 		setTimeout( function() {
-			$parent.find( '.CodeMirror-placeholder' ).text(
-				$parent.find( '.queryEditor' ).prop( 'placeholder' )
-			);
+			var placeholder = $parent.find( '.queryEditor' ).prop( 'placeholder' );
+			self._editor.options.placeholder = placeholder;
+			$parent.find( '.CodeMirror-placeholder' ).text( placeholder );
 		}, 1000 );
 
 		this._editor.on( 'change', function( editor, changeObj ) {
