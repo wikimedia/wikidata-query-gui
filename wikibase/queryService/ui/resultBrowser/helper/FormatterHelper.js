@@ -152,6 +152,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
+				$link.attr( 'title', title + ': commons:' + this.getCommonsResourceFileName( value ) );
 				if ( embed ) {
 					$link.click( this.handleCommonResourceItem );
 					$link.append(
@@ -191,7 +192,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			if ( data['xml:lang'] ) {
 				$label.attr( 'title', title + ': ' + value + '@' + data['xml:lang'] );
 			} else {
-				$label.attr( 'title', title );
+				$label.attr( 'title', title + ': ' + value );
 			}
 			$html.append( $label );
 		}
