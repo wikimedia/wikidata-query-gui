@@ -104,6 +104,7 @@
 	"wdqs-action-error-display": "לא ניתן להציג את התוצאה",
 	"wdqs-action-timeout": "הגיע זמן התפוגה של השאילתה",
 	"wdqs-action-malformed-query": "השאילתה פגומה",
+	"wdqs-action-empty-query": "נא לכתוב שאילתת SPARQL תקינה או לבחור שאילתה לדוגמה",
 	"wdqs-action-server-error": "שגיאת שרת",
 	"wdqs-action-unknow-error": "שגיאה בלתי־ידועה",
 	"wdqs-action-preview": "תצוגה מקדימה של תוצאה",

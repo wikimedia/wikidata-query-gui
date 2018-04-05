@@ -32,7 +32,7 @@
 	"wdqs-app-help-prefixes": "Eesliidete loend",
 	"wdqs-app-help-copy": "Litsentsiteave",
 	"wdqs-app-help-queryhelper": "Päringuabiline",
-	"wdqs-app-footer-help": "Vajuta <i>[CTRL-KAARDE]</i> , et aktiveerida automaatne täitmine.",
+	"wdqs-app-footer-help": "Vajuta klahvikombinatsiooni <i>[CTRL-TÜHIK]</i>, et aktiveerida automaatne täitmine.",
 	"wdqs-app-footer-updated-ago": "Andmed uuendatud $1",
 	"wdqs-app-result-shorturl": "Lühi-URL tulemuse juurde",
 	"wdqs-app-result-shorturl-title": "Lühi-URL, mis viitab sellele tulemusele",
