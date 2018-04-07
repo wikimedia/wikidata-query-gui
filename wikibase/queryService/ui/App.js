@@ -754,6 +754,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				mimetype: 'application/json;charset=utf-8',
 				ext: 'json'
 			},
+			'HTML': {
+				handler: $.proxy( api.getResultHTML, api ),
+				mimetype: 'application/html;charset=utf-8',
+				ext: 'html'
+			},
 			'SVG': {
 				handler: function() {
 					var $svg = $( '#query-result svg' );
