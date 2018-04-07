@@ -14,8 +14,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		limit: 50,
 		continue: 0,
 		language: LANGUAGE,
-		uselang: LANGUAGE,
-		useCirrus: 1
+		uselang: LANGUAGE
 	},
 	QUERY_LANGUGES = {
 		action: 'query',
