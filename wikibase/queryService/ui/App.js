@@ -610,7 +610,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			self._editor.restoreValue();
 		} );
 
-		$( '.fullscreen' ).click( function( e ) {
+		$( '.fullscreen-toggle' ).click( function( e ) {
 			self._track( 'buttonClick.fullscreen' );
 			e.preventDefault();
 			self._toggleFullscreen();
