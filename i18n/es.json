@@ -12,7 +12,8 @@
 			"Josecurioso",
 			"Luisangelrg",
 			"Cethos",
-			"La Mantis"
+			"La Mantis",
+			"Micru"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -68,6 +69,7 @@
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disposición jerárquica de derecha a izquierda",
 	"wdqs-app-resultbrowser-table": "Tabla",
 	"wdqs-app-resultbrowser-image-grid": "Cuadrícula de imágenes",
+	"wdqs-app-resultbrowser-graph-builder": "Generador de gráficos",
 	"wdqs-app-resultbrowser-map": "Mapa",
 	"wdqs-app-resultbrowser-line-chart": "Gráfico de líneas",
 	"wdqs-app-resultbrowser-bar-chart": "Gráfico de barras",
