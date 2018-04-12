@@ -169,7 +169,7 @@ iframe.shortUrl {
 }
 
 #query-box .toolbar {
-	border-right: 1px solid #bce8f1;
+	border-right: 3px solid #eaf3ff;
 }
 
 #query-box .toolbar .fa {
@@ -504,18 +504,51 @@ div.jqcloud span.w1 {
 	z-index: 100;
 
 	.panel {
+		-webkit-box-shadow: none;
+		box-shadow: none;
 		border: none;
-		margin: 0 1em 0 1em;
-		&-info {
-			background: rgba( 255, 255, 255, 0.9 );
-		}
 		&-heading {
-			background: rgba( 255, 255, 255, 0.9 );
+			background: #fff;
 			padding: 8px 10px;
+			border-bottom: 2px solid #eaf3ff;
 		}
 		&-body {
-			font-size: 120%;
-			padding: 10px;
+			font-size: 115%;
+			padding: 10px 0;
+			& > span {
+				padding: 10px;
+			}
+			&-sub {
+				.query-helper-data {
+					margin-top: 10px;
+					margin-bottom: 10px;
+					width: auto;
+					tr {
+						padding: 0.8em;
+					}
+					tr:first-child,
+					tr:last-child {
+						border-bottom: none;
+					}
+					td {
+						border: none;
+						vertical-align: middle;
+					}
+				}
+				.query-helper-limit-section {
+					padding: 12px;
+				}
+				.query-helper-section {
+					border-bottom: 2px solid #eaf3ff;
+					padding: 10px 0;
+					width: 100%;
+					height: 3em;
+					& > tr > td:first-child {
+						min-width: 95px;
+						width: 0;
+					}
+				}
+			}
 		}
 		.close {
 			float: inline-end;
@@ -523,9 +556,11 @@ div.jqcloud span.w1 {
 	}
 
 	.toolbar {
+		border-right: none;
 		padding-left: 0.5em;
 		text-align: right;
 		opacity: 0.3;
+		white-space: nowrap;
 		.fa {
 			font-size: 1.2em;
 			display: inline-block;

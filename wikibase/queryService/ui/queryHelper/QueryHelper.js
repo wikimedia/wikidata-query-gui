@@ -233,9 +233,14 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 */
 	SELF.prototype._getHtml = function() {
 		var self = this,
-			$html = $( '<div>' ),
-			$findTable = $( '<table>' ).bootstrapTable( TABLE_OPTIONS ),
-			$showTable = $( '<table>' ).bootstrapTable( TABLE_OPTIONS );
+			$html = $( '<div>' )
+				.attr( 'class', 'panel-body-sub' ),
+			$findTable = $( '<table>' )
+				.attr( 'class', 'query-helper-data' )
+				.bootstrapTable( TABLE_OPTIONS ),
+			$showTable = $( '<table>' )
+				.attr( 'class', 'query-helper-data' )
+				.bootstrapTable( TABLE_OPTIONS );
 
 		$.each( this._triples, function( k, triple ) {
 			if ( self._isNotRelevant( triple.triple ) ) {
@@ -271,7 +276,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 * @private
 	 */
 	SELF.prototype._getLimitSection = function() {
-		var $limitSection = $( '<div>' ),
+		var $limitSection = $( '<div>' )
+				.attr( 'class', 'query-helper-limit-section' ),
 			$limit = $( '<a data-type="number">' )
 				.attr( 'href', '#' )
 				.attr( 'id', 'query-helper-limit' )
@@ -312,7 +318,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 * @private
 	 */
 	SELF.prototype._createSection = function( $td2, $td1 ) {
-		return $( '<table>' ).append( $( '<tr>' ).append(
+		return $( '<table>' ).attr( 'class', 'query-helper-section' )
+			.append( $( '<tr>' ).append(
 				$( '<td>' ).append( $td1 ),
 				$( '<td>' ).append( $td2 )
 			) );
