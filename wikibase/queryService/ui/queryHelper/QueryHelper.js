@@ -62,6 +62,12 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._query = null;
 
 	/**
+	 * @property {jQuery}
+	 * @private
+	 */
+	SELF.prototype._$element = null;
+
+	/**
 	 * @property {Object}
 	 * @private
 	 */
@@ -155,9 +161,13 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			self = this,
 			bindings = this._query.getBindings();
 
+		if ( $element ) {
+			this._$element = $element;
+		}
+
 		if ( template !== null ) {
 			try {
-				return $element.html( template.getHtml(
+				return this._$element.html( template.getHtml(
 					function( variable ) {
 						return self._getLabel( bindings[ variable ].expression );
 					},
@@ -186,7 +196,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 		}
 
 		this._isSimpleMode = this._isSimpleQuery();
-		$element.html( this._getHtml() );
+		this._$element.html( this._getHtml() );
 	};
 
 	/**
@@ -240,11 +250,21 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			$findTable.append( self._getTripleHtml( triple ) );
 		} );
 
+		this._createTagCloud();
+
 		return $html.append(
 				this._createSection( $findTable, this._createFindButton( $findTable ) ),
 				this._createSection( $showTable, this._createShowButton( $showTable ) ),
 				this._getLimitSection()
 			);
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createTagCloud = function () {
+		$( '.query-helper-tag-cloud' ).html(
+				this._createSection( this._createTagCloudShow(), this._createTagCloudFilter() ) );
 	};
 
 	/**
@@ -280,6 +300,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				if ( self._changeListener ) {
 					self._changeListener( self );
 				}
+				self._createTagCloud();
 				return true;//close popover
 			}
 		} );
@@ -290,11 +311,75 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	/**
 	 * @private
 	 */
-	SELF.prototype._createSection = function( $table, $button ) {
+	SELF.prototype._createSection = function( $td2, $td1 ) {
 		return $( '<table>' ).append( $( '<tr>' ).append(
-				$( '<td>' ).append( $button ),
-				$( '<td>' ).append( $table )
+				$( '<td>' ).append( $td1 ),
+				$( '<td>' ).append( $td2 )
 			) );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createTagCloudShow = function() {
+		var self = this,
+		$tagCloud = $( '<div data-entity="property" data-type="tagCloud" class="tagCloud">' );
+
+		// SelectorBox
+		this._selectorBox.add( $tagCloud, null, function( id, name, update ) {
+			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
+
+			var subject = self._query.getBoundVariables().shift() || '?item';
+			var variable2 = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
+
+			var triple = self._query.addTriple( subject, prop, variable2, true );
+			self._query.addVariable( variable2 );
+
+			self._addLabelVariableAfterItemColumn( prop.split( '/' ).pop(), triple );
+
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+
+			self.draw();
+		} );
+
+		return $tagCloud;
+
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._createTagCloudFilter = function() {
+		var self = this,
+			$tagCloud = $( '<div data-entity="item" data-type="tagCloud" class="tagCloud">' );
+
+		// SelectorBox
+		self._selectorBox.add( $tagCloud, null, function( id, name, propertyId, update ) {
+			var entity = 'http://www.wikidata.org/entity/' + id;// FIXME technical debt
+
+			var variable = self._query.getBoundVariables().shift();
+			if ( !variable ) {
+				variable = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );
+			}
+
+			var prop = 'http://www.wikidata.org/prop/direct/' + ( propertyId || 'P31' );// FIXME technical debt
+			var triple = self._query.addTriple( variable, prop, entity, false );
+			if ( !self._query.hasVariable( variable ) ) {
+				self._query.addVariable( variable );
+			}
+
+			self._addLabelVariableAfterItemColumn( prop.split( '/' ).pop(), triple );
+
+			if ( self._changeListener ) {
+				self._changeListener( self );
+			}
+
+			self.draw();
+		} );
+
+		return $tagCloud;
 	};
 
 	/**
@@ -334,6 +419,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			if ( self._changeListener ) {
 				self._changeListener( self );
 			}
+			self._createTagCloud();
 		} );
 
 		return $button;
@@ -371,6 +457,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			if ( self._changeListener ) {
 				self._changeListener( self );
 			}
+			self._createTagCloud();
 		} );
 
 		return $button;
@@ -476,7 +563,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			if ( self._changeListener ) {
 				self._changeListener( self );
 			}
-
+			self._createTagCloud();
 			return false;
 		} ).tooltip( {
 			title: self._i18n( 'remove-row-title' )
@@ -608,6 +695,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				if ( self._changeListener ) {
 					self._changeListener( self );
 				}
+				self._createTagCloud();
+
 			} );
 
 		} ).fail( function() {

@@ -364,6 +364,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		this.resizableQueryHelper();
 		if ( Cookies.get( cookieHide ) !== 'true' ) {
 			$( '.query-helper' ).removeClass( 'query-helper-hidden' );
+			$( '.query-helper-tag-cloud' ).removeClass( 'query-helper-hidden' );
 		}
 
 		if ( this._editor ) {
@@ -384,6 +385,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 		$( '.query-helper .panel-heading .close' ).click( function() {
 			Cookies.set( cookieHide, true );
 			$( '.query-helper' ).addClass( 'query-helper-hidden' );
+			$( '.query-helper-tag-cloud' ).addClass( 'query-helper-hidden' );
 			self._updateQueryEditorSize();
 
 			self._track( 'buttonClick.queryHelperTrigger.close' );
@@ -394,6 +396,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			var visible = $( '.query-helper' ).is( ':visible' );
 
 			$( '.query-helper' ).toggleClass( 'query-helper-hidden', visible );
+			$( '.query-helper-tag-cloud' ).toggleClass( 'query-helper-hidden' );
 			Cookies.set( cookieHide, visible );
 			self._updateQueryEditorSize();
 
