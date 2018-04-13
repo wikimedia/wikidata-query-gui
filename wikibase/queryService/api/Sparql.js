@@ -341,6 +341,39 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	};
 
 	/**
+	 * Get the result of the submitted query as HTML
+	 *
+	 * @return {string}
+	 */
+	SELF.prototype.getResultHTML = function() {
+		var data = this._rawData;
+		var $result = $( '<html>' );
+		var $head = $( '<head>' ).append( $( '<meta>' ).attr( 'charset', 'utf-8' ) );
+		$result.append( $head );
+		var heading = [];
+		var $table = $( '<table>' );
+		var $tr = $( '<tr>' );
+		data.head.vars.forEach( function( head ) {
+				$tr.append( '<th>' + head + '</th>' );
+				heading.push( head );
+		} );
+		$table.append( $tr );
+		data.results.bindings.forEach( function( result ) {
+				$tr = $( '<tr>' );
+				for ( var head in heading ) {
+					var value = result[heading[head]].value.replace( /&/g, '&amp;' )
+										.replace( />/g, '&gt;' )
+										.replace( /</g, '&lt;' );
+					$tr.append( '<td>' + value + '</td>' );
+				}
+				$table.append( $tr );
+		} );
+		var $body = $( '<body>' ).append( $table );
+		$result.append( $body );
+		return $result.prop( 'outerHTML' );
+	};
+
+	/**
 	 * Get the result of the submitted query as JSON
 	 *
 	 * @return {string}
