@@ -361,10 +361,12 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		data.results.bindings.forEach( function( result ) {
 				$tr = $( '<tr>' );
 				for ( var head in heading ) {
-					var value = result[heading[head]].value.replace( /&/g, '&amp;' )
-										.replace( />/g, '&gt;' )
-										.replace( /</g, '&lt;' );
-					$tr.append( '<td>' + value + '</td>' );
+					if ( result[heading[head]] ) {
+						var value = result[heading[head]].value.replace( /&/g, '&amp;' )
+											.replace( />/g, '&gt;' )
+											.replace( /</g, '&lt;' );
+						$tr.append( '<td>' + value + '</td>' );
+					}
 				}
 				$table.append( $tr );
 		} );
