@@ -6,7 +6,8 @@
 			"Sp5uhe",
 			"Szmyk",
 			"InternerowyGołąb",
-			"DeRudySoulStorm"
+			"DeRudySoulStorm",
+			"Railfail536"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -52,6 +53,7 @@
 	"wdqs-app-result-tsv-verbose": "Plik TSV (pełny)",
 	"wdqs-app-result-csv": "Plik CSV",
 	"wdqs-app-result-svg": "Obrazek SVG",
+	"wdqs-app-result-html": "tabela HTML",
 	"wdqs-app-shorturl-page-title": "Krótki adres URL do tej strony",
 	"wdqs-app-editor-placeholder": "(Wprowadź zapytanie SPARQL lub wybierz przykładowe zapytanie)",
 	"wdqs-app-editor-addprefixes": "Dodaj standardowe prefiksy",

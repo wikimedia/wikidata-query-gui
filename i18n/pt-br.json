@@ -55,6 +55,7 @@
 	"wdqs-app-result-tsv-verbose": "Arquivo TSV (detalhado)",
 	"wdqs-app-result-csv": "Arquivo CSV",
 	"wdqs-app-result-svg": "Imagem SVG",
+	"wdqs-app-result-html": "Tabela HTML",
 	"wdqs-app-shorturl-page-title": "URL curta para esta página",
 	"wdqs-app-editor-placeholder": "(escreva uma consulta SPARQL ou escolha uma consulta de exemplo)",
 	"wdqs-app-editor-addprefixes": "Adicione prefixos padrão",

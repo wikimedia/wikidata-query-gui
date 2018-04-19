@@ -47,6 +47,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV-податотека (опширна)",
 	"wdqs-app-result-csv": "CSV-податотека",
 	"wdqs-app-result-svg": "SVG-податотека",
+	"wdqs-app-result-html": "HTML-табела",
 	"wdqs-app-shorturl-page-title": "Кратка URL до страницава",
 	"wdqs-app-editor-placeholder": "(Внесете барање до SPARQL или изберете пример)",
 	"wdqs-app-editor-addprefixes": "Додај стандардни преставки",

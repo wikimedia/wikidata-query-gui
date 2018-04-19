@@ -52,6 +52,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV文件（详细）",
 	"wdqs-app-result-csv": "CSV文件",
 	"wdqs-app-result-svg": "SVG图像",
+	"wdqs-app-result-html": "HTML表格",
 	"wdqs-app-shorturl-page-title": "至此页面的短URL",
 	"wdqs-app-editor-placeholder": "（输入SPARQL查询或选择查询示例）",
 	"wdqs-app-editor-addprefixes": "添加标准前缀",

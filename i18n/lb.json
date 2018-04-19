@@ -48,6 +48,7 @@
 	"wdqs-app-result-tsv-verbose": "Fichier TSV (verbose)",
 	"wdqs-app-result-csv": "CSV Fichier",
 	"wdqs-app-result-svg": "SVG-Bild",
+	"wdqs-app-result-html": "HTML-Tabell",
 	"wdqs-app-shorturl-page-title": "Kuerz-URL op dës Säit",
 	"wdqs-app-editor-placeholder": "(Gitt eng SPARQL Ufro an oder wielt eng aner Beispill-Ufro aus)",
 	"wdqs-app-editor-addprefixes": "Standard-Prefixen derbäisetzen",

@@ -49,6 +49,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV-dosiero (konciza)",
 	"wdqs-app-result-csv": "CSV-dosiero",
 	"wdqs-app-result-svg": "SVG-bildo",
+	"wdqs-app-result-html": "HTML-tabelo",
 	"wdqs-app-shorturl-page-title": "Eta URL de ĉi tiu paĝo",
 	"wdqs-app-editor-placeholder": "(Enmetu SPARQL-informpeton aŭ elektu ekzemplon)",
 	"wdqs-app-editor-addprefixes": "Aldoni normajn prefiksojn",

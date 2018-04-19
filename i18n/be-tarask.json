@@ -48,6 +48,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV-файл (падрабязны)",
 	"wdqs-app-result-csv": "CSV-файл",
 	"wdqs-app-result-svg": "SVG-выява",
+	"wdqs-app-result-html": "HTML-табліца",
 	"wdqs-app-shorturl-page-title": "Кароткі URL да гэтай старонкі",
 	"wdqs-app-editor-placeholder": "(увядзіце запыт SPARQL ці абярыце прыклад запыту)",
 	"wdqs-app-editor-addprefixes": "Дадаць стандартныя прэфіксы",

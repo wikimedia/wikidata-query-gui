@@ -49,6 +49,7 @@
 	"wdqs-app-result-tsv-verbose": "קובץ TSV (עם יותר מידע)",
 	"wdqs-app-result-csv": "קובץ CSV",
 	"wdqs-app-result-svg": "תמונת SVG",
+	"wdqs-app-result-html": "טבלת HTML",
 	"wdqs-app-shorturl-page-title": "כתובת URL מקוצרת אל הדף הזה",
 	"wdqs-app-editor-placeholder": "(נא להזין שאילתת SPARQL או לבחור דוגמת שאילתה)",
 	"wdqs-app-editor-addprefixes": "הוספת תחיליות תקניות",

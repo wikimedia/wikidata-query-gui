@@ -52,6 +52,7 @@
 	"wdqs-app-result-tsv-verbose": "File TSV (dettagliato)",
 	"wdqs-app-result-csv": "File CSV",
 	"wdqs-app-result-svg": "Immagine SVG",
+	"wdqs-app-result-html": "Tabella HTML",
 	"wdqs-app-shorturl-page-title": "URL breve a questa pagina",
 	"wdqs-app-editor-placeholder": "(Inserisci una query SPARQL o scegli una query di esempio)",
 	"wdqs-app-editor-addprefixes": "Aggiungi prefissi standard",
