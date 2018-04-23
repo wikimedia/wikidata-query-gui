@@ -47,6 +47,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV билэ (verbose)",
 	"wdqs-app-result-csv": "CSV-билэ",
 	"wdqs-app-result-svg": "SVG ойуу",
+	"wdqs-app-result-html": "HTML-табылыысса",
 	"wdqs-app-shorturl-page-title": "Бу сирэй кылгас URL-ла",
 	"wdqs-app-editor-placeholder": "(Көрдөбүлү SPARQL көмөтүнэн киллэр эбэтэр холобуртан хайатын эрэ тал)",
 	"wdqs-app-editor-addprefixes": "Стандарт префикстары эбии",
@@ -78,6 +79,8 @@
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Бу сирэйгэ туттуллар бииргэ баттанар клавишалары көрдөр.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Куросру көрдөбүл түннүгэр туруор.",
 	"wdqs-dialog-key-shortcut-jump-to-result": "Көрдөбүл түмүгэр көс.",
+	"wdqs-dialog-key-shortcut-focus-filter": "Ыйытык көмөлөһөөччүтүгэр курсору \"Сиидэ\" тимэххэ туруор.",
+	"wdqs-dialog-key-shortcut-focus-show": "Ыйытык көмөлөһөөччүтүгэр курсору \"Көрдөр\" тимэххэ туруор.",
 	"wdqs-dialog-key-shortcut-show-example": "Холобурдары көрдөр.",
 	"wdqs-dialog-key-shortcut-show-language": "Тыл талбатын көрдөр.",
 	"wdqs-dialog-key-shortcut-close-button": "Сап",
@@ -99,5 +102,8 @@
 	"wdqs-action-server-error": "Сиэрбэр алҕаһа",
 	"wdqs-action-unknow-error": "Биллибэт алҕас",
 	"wdqs-action-preview": "Бигэргэтиэх иннинэ көрүү",
-	"wdqs-result-map-layers-all": "Бары араҥалар"
+	"wdqs-result-map-layers-all": "Бары араҥалар",
+	"wdqs-result-map-progress": "Каарта дааннайын хачайдааһын: $1%",
+	"wdqs-embed-button-edit-query": "Бу ыйытыгы уларыт",
+	"wdqs-embed-button-edit-query-title": "Ыйытыгы SPARQL-эрэдээктэр көмөтүнэн уларыт"
 }

@@ -9,7 +9,8 @@
 			"CYAN",
 			"In2acous",
 			"Garam",
-			"Nuevo Paso"
+			"Nuevo Paso",
+			"Revi"
 		]
 	},
 	"wdqs-app-button-examples": "예시",
@@ -85,6 +86,7 @@
 	"wdqs-dialog-key-shortcut-run-query": "쿼리를 실행합니다.",
 	"wdqs-dialog-key-shortcut-jump-to-result": "쿼리 결과로 이동.",
 	"wdqs-dialog-key-shortcut-show-example": "예제를 표시합니다.",
+	"wdqs-dialog-key-shortcut-help-menu": "도움말 메뉴 보기/숨기기.",
 	"wdqs-dialog-key-shortcut-show-language": "언어 메뉴를 표시합니다.",
 	"wdqs-dialog-key-shortcut-close-button": "닫기",
 	"wdqs-ve-filter": "필터",
@@ -104,6 +106,7 @@
 	"wdqs-action-error-display": "결과를 표시할 수 없음",
 	"wdqs-action-timeout": "쿼리 시간 초과 제한에 도달함",
 	"wdqs-action-malformed-query": "쿼리가 잘못되었습니다",
+	"wdqs-action-empty-query": "올바른 SPARQL 쿼리를 입력하거나 예시 쿼리를 선택하세요.",
 	"wdqs-action-server-error": "서버 오류",
 	"wdqs-action-unknow-error": "알 수 없는 오류",
 	"wdqs-action-preview": "결과 미리 보기",

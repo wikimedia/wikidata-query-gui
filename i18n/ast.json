@@ -47,6 +47,7 @@
 	"wdqs-app-result-tsv-verbose": "Ficheru TSV (detalláu)",
 	"wdqs-app-result-csv": "Ficheru CSV",
 	"wdqs-app-result-svg": "Imaxe SVG",
+	"wdqs-app-result-html": "Tabla HTML",
 	"wdqs-app-shorturl-page-title": "URL curtia a esta páxina",
 	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o escueye un exemplu de consulta)",
 	"wdqs-app-editor-addprefixes": "Amestar prefixos estándar",

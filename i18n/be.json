@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Mechanizatar",
-			"Liashko"
+			"Liashko",
+			"Artsiom91"
 		]
 	},
 	"wdqs-app-button-examples": "Прыклады",
@@ -55,6 +56,7 @@
 	"wdqs-app-toast-leave-fullscreen": "Націсніце [esc], каб выйсці з поўнаэкраннага рэжыму",
 	"wdqs-dialog-examples-preview-query": "Папярэдні прагляд запыту",
 	"wdqs-dialog-examples-preview-result": "Папярэдні прагляд выніку",
+	"wdqs-dialog-key-shortcut-close-button": "Закрыць",
 	"wdqs-ve-filter": "Фільтр",
 	"wdqs-ve-show": "Паказаць",
 	"wdqs-ve-add-label-title": "Дадаць пераменную, якая ўтрымлівае метку элемента",

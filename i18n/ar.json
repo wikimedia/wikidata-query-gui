@@ -12,7 +12,8 @@
 			"ButterflyOfFire",
 			"Mido",
 			"Antime",
-			"Ali1"
+			"Ali1",
+			"Abdeaitali"
 		]
 	},
 	"wdqs-app-button-examples": "أمثلة",
@@ -98,6 +99,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "أغلق",
 	"wdqs-ve-filter": "فلتر",
 	"wdqs-ve-show": "إظهار",
+	"wdqs-ve-limit": "الحد الأقصى",
 	"wdqs-ve-add-label-title": "إضافة متغير يحتوي على تسمية الكيان",
 	"wdqs-ve-remove-row-title": "أزل هذا الصف",
 	"wdqs-ve-with": "مع",

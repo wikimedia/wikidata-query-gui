@@ -4,7 +4,8 @@
 			"Elisardojm",
 			"Banjo",
 			"Toliño",
-			"Athena in Wonderland"
+			"Athena in Wonderland",
+			"Navhy"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -50,6 +51,7 @@
 	"wdqs-app-result-tsv-verbose": "Ficheiro TSV (verboso)",
 	"wdqs-app-result-csv": "Ficheiro CSV",
 	"wdqs-app-result-svg": "Imaxe SVG",
+	"wdqs-app-result-html": "Táboa HTML",
 	"wdqs-app-shorturl-page-title": "Enderezo URL curto a esta páxina",
 	"wdqs-app-editor-placeholder": "(Indique unha pescuda SPARQL ou escolla un exemplo de pescuda)",
 	"wdqs-app-editor-addprefixes": "Engadir prefixos estándar",
