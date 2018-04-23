@@ -235,6 +235,9 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				control._update();
 			} );
 		}
+
+		//user location
+		L.control.locate().addTo( this._map );
 	};
 
 	/**
