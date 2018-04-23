@@ -134,8 +134,15 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @return {jQuery.Promise} query
 	 */
 	SELF.prototype.query = function( query, timeout ) {
-		query = this._replaceAutoLanguage( query );
+		var self = this;
 
+		query = this._replaceAutoLanguage( query );
+		return this._replaceAutoCoordinates( query ).then( function() {
+				return self._query( query, timeout );
+		} );
+	};
+
+	SELF.prototype._query = function( query, timeout ) {
 		var data = 'query=' + encodeURIComponent( query );
 		if ( timeout ) {
 			data += '&maxQueryTimeMillis=' + timeout;
@@ -507,6 +514,33 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 */
 	SELF.prototype._replaceAutoLanguage = function( query ) {
 		return query.replace( /\[AUTO_LANGUAGE\]/g, this._language );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._replaceAutoCoordinates = function( query ) {
+		var $deferred = $.Deferred();
+
+		if ( !navigator || !navigator.geolocation ||
+			!query.match( /\"\[AUTO_COORDINATES\]\"/g ) ) {
+				return $deferred.resolve( query ).promise();
+		}
+
+		navigator.geolocation.getCurrentPosition( function( position ) {
+			var point = '"Point(' + position.coords.longitude + ' ' + position.coords.latitude + ')"^^geo:wktLiteral';
+			query = query.replace( /\"\[AUTO_COORDINATES\]\"/g, point );
+			$deferred.resolve( query );
+		}, function() { //error
+			var point = '"Point(13.381138 52.498243)"^^geo:wktLiteral';
+			query = query.replace( /\"\[AUTO_COORDINATES\]\"/g, point );
+			$deferred.resolve( query );
+		}, {
+			timeout: 10000,
+			maximumAge: 10000
+		} );
+
+		return $deferred.promise();
 	};
 
 	/**
