@@ -238,6 +238,10 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		//user location
 		L.control.locate().addTo( this._map );
+
+		//mini map
+		var options = { zoomLevelOffset: -7, toggleDisplay: true };
+		new L.Control.MiniMap( new L.TileLayer( TILE_LAYER.wikimedia.url, TILE_LAYER.wikimedia.url.options ), options ).addTo( this._map );
 	};
 
 	/**
