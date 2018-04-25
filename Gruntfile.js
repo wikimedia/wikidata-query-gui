@@ -209,6 +209,7 @@ module.exports = function( grunt ) {
 						'newmessage=$(cat <<END\nMerging from $lastrev:\n\n$message\nEND\n)',
 						'cd ' + buildFolder,
 						'curl -Lo .git/hooks/commit-msg https://<%= pkg.repository.deploy.gerrit %>/r/tools/hooks/commit-msg',
+						'chmod u+x .git/hooks/commit-msg',
 						'git add -A', 'git commit -m "$newmessage"',
 						'echo "$newmessage"'
 				].join( '&&' )
