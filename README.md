@@ -4,7 +4,6 @@ This repository contains the GUI for the [Wikidata Query Service](https://query.
 
 Please see more details about the service in the [User Manual](https://www.mediawiki.org/wiki/Wikidata_query_service/User_Manual).
 
-
 ## Download & setup
 
 Clone git repo, go into created folder and then pull all dependencies via npm package manager.
