@@ -51,6 +51,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV fitxategia (hitzontzia)",
 	"wdqs-app-result-csv": "CSV fitxategia",
 	"wdqs-app-result-svg": "SVG Irudia",
+	"wdqs-app-result-html": "HTML taula",
 	"wdqs-app-shorturl-page-title": "Orrialde honetar URL laburra",
 	"wdqs-app-editor-placeholder": "(Sartu SPARQL query bat edo adibide bat aukeratu)",
 	"wdqs-app-editor-addprefixes": "Gehitu Aurrizki Estandarrak",

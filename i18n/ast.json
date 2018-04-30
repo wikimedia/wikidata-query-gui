@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"Enolp"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -13,10 +14,10 @@
 	"wdqs-app-button-clear": "Llimpiar",
 	"wdqs-app-button-clear-title": "Llimpiar consulta",
 	"wdqs-app-button-restore-title": "Restaurar la consulta anterior",
-	"wdqs-app-button-fullscreen-title": "Cambiar al mou del editor en pantalla completa",
+	"wdqs-app-button-fullscreen-title": "Alternar el mou de pantalla completa del editor",
 	"wdqs-app-button-display": "Amosar",
 	"wdqs-app-button-display-title": "Amosar el resultáu como tabla, imaxe, ...",
-	"wdqs-app-button-download": "Descargar",
+	"wdqs-app-button-download": "Baxar",
 	"wdqs-app-button-download-title": "Descargar el resultáu",
 	"wdqs-app-button-link": "Enllaz",
 	"wdqs-app-button-link-title": "Llograr l'enllaz a la consulta",
@@ -49,7 +50,7 @@
 	"wdqs-app-result-svg": "Imaxe SVG",
 	"wdqs-app-result-html": "Tabla HTML",
 	"wdqs-app-shorturl-page-title": "URL curtia a esta páxina",
-	"wdqs-app-editor-placeholder": "(Escribe una consulta SPARQL o escueye un exemplu de consulta)",
+	"wdqs-app-editor-placeholder": "(Introduz una consulta SPARQL o escueyi un exemplu de consulta)",
 	"wdqs-app-editor-addprefixes": "Amestar prefixos estándar",
 	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultáu|resultaos}} en $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Estabilizar rede",
@@ -100,12 +101,12 @@
 	"wdqs-ve-sb-other": "Otros",
 	"wdqs-action-query": "Executando consulta",
 	"wdqs-action-render": "Presentando'l resultáu",
-	"wdqs-action-error-display": "Nun pudo amosase'l resultáu",
+	"wdqs-action-error-display": "Nun pue amosase'l resultáu",
 	"wdqs-action-timeout": "Llegóse a la llende de tiempu de consulta",
 	"wdqs-action-malformed-query": "La consulta ta mal formada",
 	"wdqs-action-empty-query": "Inxerta una consulta SPARQL válida o seleiciona una consulta d'exemplu",
-	"wdqs-action-server-error": "Error del sirvidor",
-	"wdqs-action-unknow-error": "Error desconocíu",
+	"wdqs-action-server-error": "Fallu del sirvidor",
+	"wdqs-action-unknow-error": "Fallu desconocíu",
 	"wdqs-action-preview": "Vista previa del resultáu",
 	"wdqs-result-map-layers-all": "Toles capes",
 	"wdqs-result-map-progress": "Cargando los datos del mapa: $1%",
