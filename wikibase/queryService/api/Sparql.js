@@ -137,7 +137,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		var self = this;
 
 		query = this._replaceAutoLanguage( query );
-		return this._replaceAutoCoordinates( query ).then( function() {
+		return this._replaceAutoCoordinates( query ).then( function( query ) {
 				return self._query( query, timeout );
 		} );
 	};
