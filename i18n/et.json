@@ -88,6 +88,6 @@
 	"wdqs-action-unknow-error": "Tundmatu tõrge",
 	"wdqs-action-preview": "Tulemuse eelvaade",
 	"wdqs-result-map-layers-all": "Kõik kihid",
-	"wdqs-result-map-progress": "Laen kaardi andmeid: $1%",
+	"wdqs-result-map-progress": "Kaardiandmete laadimine: $1%",
 	"wdqs-embed-button-edit-query": "Muuda seda päringut"
 }
