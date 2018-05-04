@@ -152,12 +152,13 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			$html.append( $link );
 
 			if ( this.isCommonsResource( value ) ) {
+				$link.attr( 'href', this.getCommonsResourceFullUrl( value ) );
 				$link.attr( 'title', title + ': commons:' + this.getCommonsResourceFileName( value ) );
 				if ( embed ) {
 					$link.click( this.handleCommonResourceItem );
 					$link.append(
 							$( '<img>' ).attr( 'src',
-									this.getCommonsResourceFileNameThumbnail( value, '120' ) ) )
+									this.getCommonsResourceThumbnailUrl( value, '120' ) ) )
 							.width( '120' );
 				} else {
 					$link.attr( { href: COMMONS_FILE_PATH_MEDIAVIEWER.replace( /{FILENAME}/g,
@@ -297,18 +298,32 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	};
 
 	/**
-	 * Creates a thumbnail URL from given commons resource URL
+	 * Returns the full URL for a commons resource URI.
 	 *
-	 * @param {string} url
+	 * @param {string} uri
+	 * @return {string}
+	 */
+	SELF.prototype.getCommonsResourceFullUrl = function( uri ) {
+		if ( !this.isCommonsResource( uri ) ) {
+			return uri;
+		}
+
+		return uri.replace( /^http:/, 'https:' );
+	};
+
+	/**
+	 * Returns a thumbnail URL for the given commons resource URI.
+	 *
+	 * @param {string} uri
 	 * @param {number} [width]
 	 * @return {string}
 	 */
-	SELF.prototype.getCommonsResourceFileNameThumbnail = function( url, width ) {
-		if ( !this.isCommonsResource( url ) ) {
-			return url;
+	SELF.prototype.getCommonsResourceThumbnailUrl = function( uri, width ) {
+		if ( !this.isCommonsResource( uri ) ) {
+			return uri;
 		}
 
-		return url.replace( /^http(?=:\/\/)/, 'https' ) + '?width=' + ( width || 400 );
+		return uri.replace( /^http:/, 'https:' ) + '?width=' + ( width || 400 );
 	};
 
 	/**
@@ -320,7 +335,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	SELF.prototype.createGalleryButton = function( url, galleryId ) {
 		var fileName = this.getCommonsResourceFileName( url ),
-			thumbnail = this.getCommonsResourceFileNameThumbnail( url, 900 );
+			thumbnail = this.getCommonsResourceThumbnailUrl( url, 900 );
 
 		var $button = $( '<a>' ).attr( {
 			title: 'Show Gallery',

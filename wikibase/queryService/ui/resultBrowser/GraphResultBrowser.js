@@ -162,7 +162,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 				}
 			}
 			if ( format.isCommonsResource( field.value ) ) {
-				node.image = format.getCommonsResourceFileNameThumbnail( field.value, 150 );
+				node.image = format.getCommonsResourceThumbnailUrl( field.value, 150 );
 				node.shape = 'image';
 				node.font = { color: 'black' };
 			}

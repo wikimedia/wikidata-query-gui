@@ -129,7 +129,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 				}
 
 				if ( currentNode && format.isCommonsResource( field.value ) ) {
-					nodes[currentNode].icon = format.getCommonsResourceFileNameThumbnail( field.value, 24 );
+					nodes[currentNode].icon = format.getCommonsResourceThumbnailUrl( field.value, 24 );
 				}
 
 				if ( format.isEntity( field ) ) {
