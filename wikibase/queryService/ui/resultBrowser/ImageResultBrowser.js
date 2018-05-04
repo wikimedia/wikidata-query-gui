@@ -307,7 +307,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	 * @private
 	 */
 	SELF.prototype._getThumbnail = function( url, width ) {
-		return this._getFormatter().getCommonsResourceFileNameThumbnail( url, width );
+		return this._getFormatter().getCommonsResourceThumbnailUrl( url, width );
 	};
 
 	/**
