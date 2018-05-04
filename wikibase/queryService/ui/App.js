@@ -192,6 +192,8 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 
 		// Hide navbar by default after getting sizes and texts
 		$( '.navbar-collapse' ).removeClass( 'in' );
+
+		this.resizableQueryHelper();
 	};
 
 	/**
@@ -335,6 +337,16 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	/**
 	 * @private
 	 */
+	SELF.prototype.resizableQueryHelper = function() {
+		$( '.query-helper' ).resizable( {
+			handleSelector: '.splitter',
+			resizeHeight: false,
+			onDrag: this._updateQueryHelperMinWidth.bind( this ),
+			onDragEnd: this._updateQueryEditorSize.bind( this ),
+			resizeWidthFrom: ( document.dir === 'rtl' ) ? 'left' : 'right' // T189972
+		} );
+	};
+
 	SELF.prototype._initQueryHelper = function() {
 		var self = this,
 			cookieHide = 'query-helper-hide';
@@ -349,14 +361,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 				self._resultView.drawPreview( ve.getQuery() );
 			}, 1000 )();
 		} );
-
-		$( '.query-helper' ).resizable( {
-			handleSelector: '.splitter',
-			resizeHeight: false,
-			onDrag: this._updateQueryHelperMinWidth.bind( this ),
-			onDragEnd: this._updateQueryEditorSize.bind( this )
-		} );
-
+		this.resizableQueryHelper();
 		if ( Cookies.get( cookieHide ) !== 'true' ) {
 			$( '.query-helper' ).removeClass( 'query-helper-hidden' );
 		}
