@@ -78,7 +78,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 			onAdd: function( map ) {
 				var container = L.DomUtil.create( 'button' );
-				$( container ).addClass( 'btn btn-default' );
+				$( container ).addClass( 'btn btn-default wdqs-control-scroll-top' );
 				$( container ).append( $( ' <span class="glyphicon glyphicon-chevron-up"/> ' ) );
 
 				container.onclick = function() {
