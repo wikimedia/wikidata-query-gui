@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nguyên Lê",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Phjtieudoc"
 		]
 	},
 	"wdqs-app-button-examples": "Ví dụ",
@@ -48,6 +49,7 @@
 	"wdqs-app-result-tsv-verbose": "Tập tin TSV (chi tiết)",
 	"wdqs-app-result-csv": "Tập tin CSV",
 	"wdqs-app-result-svg": "Hình SVG",
+	"wdqs-app-result-html": "Bảng HTML",
 	"wdqs-app-shorturl-page-title": "URL ngắn gọn đến trang này",
 	"wdqs-app-editor-placeholder": "(Nhập truy vấn SPARQL hoặc chọn một truy vấn mẫu)",
 	"wdqs-app-editor-addprefixes": "Thêm tiền tố chuyển",
@@ -62,6 +64,9 @@
 	"wdqs-app-resultbrowser-map": "Bản đồ",
 	"wdqs-app-resultbrowser-line-chart": "Biểu đồ đường kẻ",
 	"wdqs-app-resultbrowser-bar-chart": "Biểu đồ thanh",
+	"wdqs-app-resultbrowser-scatter-chart": "Biểu đồ phân tán",
+	"wdqs-app-resultbrowser-area-chart": "Biểu đồ vùng",
+	"wdqs-app-resultbrowser-bubble-chart": "Biểu đồ hình tròn",
 	"wdqs-app-resultbrowser-tree": "Cây",
 	"wdqs-app-resultbrowser-timeline": "Thời biểu",
 	"wdqs-app-resultbrowser-dimensions": "Kích thước",
@@ -80,6 +85,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "Đóng",
 	"wdqs-ve-filter": "Lọc",
 	"wdqs-ve-show": "Hiện",
+	"wdqs-ve-limit": "Giới hạn",
 	"wdqs-ve-add-label-title": "Thêm biến số chứa nhãn khoản mục",
 	"wdqs-ve-remove-row-title": "Xóa hàng này",
 	"wdqs-ve-with": "với",

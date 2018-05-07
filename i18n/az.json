@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Şeyx Şamil",
-			"Neriman2003"
+			"Neriman2003",
+			"AZISS"
 		]
 	},
 	"wdqs-app-button-examples": "Nümunələr",
@@ -48,6 +49,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV faylı (lazımsız sözlərlə dolu)",
 	"wdqs-app-result-csv": "CSV faylı",
 	"wdqs-app-result-svg": "SVG şəkli",
+	"wdqs-app-result-html": "HTML-cədvəl",
 	"wdqs-app-shorturl-page-title": "Bu səhifəyə qısa URL",
 	"wdqs-app-editor-placeholder": "(SPARQL sorğusunu daxil edin və ya bir sorğu nümunəsini seçin)",
 	"wdqs-app-editor-addprefixes": "Standart Prefiks əlavə edin",
@@ -88,6 +90,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "Bağla",
 	"wdqs-ve-filter": "Filtr",
 	"wdqs-ve-show": "Göstər",
+	"wdqs-ve-limit": "Məhdudiyyət",
 	"wdqs-ve-add-label-title": "Varlıq etiketi olan dəyişən əlavə edin",
 	"wdqs-ve-remove-row-title": "Bu sıranı sil",
 	"wdqs-ve-with": "ilə",
@@ -102,6 +105,7 @@
 	"wdqs-action-error-display": "Nəticəni göstərə bilmir",
 	"wdqs-action-timeout": "Sorğunun vaxtı bitdi",
 	"wdqs-action-malformed-query": "Sorğu qüsurlu oldu",
+	"wdqs-action-empty-query": "SPARQL-müraciətinizi daxil edin və ya nümunələrdən birini seçin",
 	"wdqs-action-server-error": "Server xətası",
 	"wdqs-action-unknow-error": "Naməlum xəta",
 	"wdqs-action-preview": "Nəticənin sınaq göstərişi",
