@@ -381,6 +381,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			};
 
 		createTags().then( function() {
+			if ( tags.length === 0 ) {
+				$element.hide();
+				return;
+			}
+			$element.show();
 			$element.jQCloud( tags, {
 				delayedMode: true,
 				autoResize: true
