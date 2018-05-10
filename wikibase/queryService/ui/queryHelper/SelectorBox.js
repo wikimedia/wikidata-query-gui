@@ -44,7 +44,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					}
 
 					var template = '{PREFIXES}\n\
-						SELECT ?id ?label ?description ?property ?count WITH {\n\
+						SELECT ?id ?label ?description ?property (?count as ?rank) WITH {\n\
 							{QUERY}\n\
 						} AS %query WITH {\n\
 							SELECT ({VARIABLE} AS ?item) WHERE {\n\
@@ -131,7 +131,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			genericSuggest: function() { // Find properties that are most often used with the first selected item of the current query
 
 				var genericTemplate = // Find properties that are most often used with all items
-				'SELECT ?id ?label ?description WITH {\
+				'SELECT ?id ?label ?description (?count as ?rank) WITH {\
 					SELECT ?pred (COUNT(?value) AS ?count) WHERE\
 					{\
 					?subj ?pred ?value .\
@@ -152,7 +152,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 				}
 
 				var template = '{PREFIXES}\n\
-					SELECT ?id ?label ?description WITH {\n\
+					SELECT ?id ?label ?description (?count as ?rank) WITH {\n\
 						{QUERY}\n\
 					} AS %query WITH {\n\
 						SELECT ({VARIABLE} AS ?item) WHERE {\n\
@@ -353,11 +353,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						d.forEach( function ( t ) {
 							tags.push( {
 								text: t.text,
-								weight: ( Math.round( Math.random() * 10 ) > 9 ? 5 : Math
+								weight: t.data.rank || ( Math.round( Math.random() * 10 ) > 9 ? 5 : Math
 										.round( Math.random() * 3 ) ),
 								link: '#',
 								html: {
-									title: t.description,
+									title: t.data.description + ( t.data.rank ? ' (' + t.data.rank + ')' : '' ),
 									'data-id': t.id
 								},
 								handlers: {
@@ -710,15 +710,16 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		this._sparqlApi.query( query, SPARQL_TIMEOUT ).done( function( data ) {
 			var r = data.results.bindings.map( function( d ) {
-				var id = d.id.value.split( '/' ).pop();
-				var propertyId = d.property && d.property.value.split( '/' ).pop() || null;
+				var id = d.id.value.split( '/' ).pop(),
+					propertyId = d.property && d.property.value.split( '/' ).pop() || null;
 				return {
 					id: id,
 					text: d.label.value,
 					data: {
 						id: id,
 						propertyId: propertyId,
-						description: d.description && d.description.value || ''
+						description: d.description && d.description.value || '',
+						rank: d.rank && d.rank.value || null
 					}
 				};
 			} );
