@@ -385,19 +385,39 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Handler for explore links
 	 */
 	SELF.prototype.handleExploreItem = function( e ) {
+		var dialog = $( '#explorer-dialog' ).dialog( {
+			uiLibrary: 'bootstrap',
+			autoOpen: false,
+			maxWidth: window.innerWidth,
+			maxHeight: window.innerHeight,
+			resizable: true,
+			width: window.innerWidth / 2,
+			height: window.innerHeight / 3,
+			//Disable scrolling while resizing and draggnig
+			drag: function ( e ) {
+				$( 'body' ).css( 'overflow', 'hidden' );
+			},
+			dragStop: function ( e ) {
+				$( 'body' ).css( 'overflow', 'auto' );
+			},
+			resize: function ( e ) {
+				$( 'body' ).css( 'overflow', 'hidden' );
+				$( '#explorer-body' ).css( 'visibility', 'hidden' );
+			},
+			resizeStop: function ( e ) {
+				$( 'body' ).css( 'overflow', 'auto' );
+				$( '#explorer-body' ).css( 'visibility', 'visible' );
+			}
+		} );
 		var url = $( e.target ).attr( 'href' );
 		e.preventDefault();
-
 		var lang = $.i18n && $.i18n().locale || 'en',
-			query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
-			embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
-
-		$( '.explorer-panel .panel-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
-		$( '.explorer-panel' ).show();
-
+		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
+		embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
+		$( '#explorer-dialog #explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
+		dialog.open();
 		return false;
 	};
-
 	/**
 	 * Handler for commons resource links
 	 */

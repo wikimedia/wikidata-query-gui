@@ -68,8 +68,8 @@ body {
 }
 
 .link {
-	position: fixed;
-	bottom: 0px;
+	position: relative;
+	top: -30px;
 	left: 0px;
 	padding: 0px 2px 0px 2px;
 	background-color: rgba(255, 255, 255, 0.8);
@@ -78,7 +78,7 @@ body {
 
 .edit {
 	position: fixed;
-	bottom: 0.5em;
+	bottom: 2.2em;
 	left: 0;
 	font-size: 2em;
 	z-index: 401; /* one above .leaflet-pane */
@@ -101,11 +101,16 @@ body {
 	z-index: 2001;
 }
 
+#result-browser-menu {
+	height: 50vh;
+	overflow-y: scroll;
+}
+
 .header-toolbar {
 	z-index: 1000;
 	position: fixed;
-	bottom: 0;
 	right: 0;
+	bottom: 50px;
 	opacity: 0.2;
 }
 .header-toolbar:hover {
@@ -164,14 +169,14 @@ body {
 			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 			<span class="sr-only">Loading...</span>
 		</div>
-		<div class="explorer-panel panel panel-default">
-		    <div class="panel-heading clearfix">
-		      <h1 class="panel-title pull-left" style="padding-top: 7.5px;">Explorer</h1>
-		      <div class="btn-group pull-right">
-		        <a href="#" class="btn btn-default btn-sm explorer-close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Close</a>
-		      </div>
-		    </div>
-			<div class="panel-body">
+		<div id="explorer-dialog">
+			<div data-role="header" class="modal-header clearfix" id="explorer-header">
+				<h3 data-role="title" class="modal-title pull-left" id="explorer-title">Explorer</h3>
+				<button data-role="close" type="button" class="btn-group pull-right">
+					<a href="#" class="btn btn-default btn-sm explorer-close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Close</a>
+				</button>
+			</div>
+			<div data-role="body" id="explorer-body">
 			</div>
 		</div>
 	<a class="link edit-link" target="_blank" rel="noopener" data-i18n="[title]wdqs-embed-button-edit-query-title"><small data-i18n="wdqs-embed-button-edit-query"></small></a>
