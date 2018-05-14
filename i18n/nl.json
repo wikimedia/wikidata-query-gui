@@ -6,7 +6,8 @@
 			"MrLeopold",
 			"Wikibelgiaan",
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Ladsgroup"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -69,7 +70,7 @@
 	"wdqs-dialog-examples-preview-query": "Voorbeeld van zoekopdracht",
 	"wdqs-dialog-examples-preview-result": "Voorbeeld van resultaat",
 	"wdqs-dialog-key-shortcut-close-button": "Sluiten",
-	"wdqs-ve-filter": "Fliteren",
+	"wdqs-ve-filter": "Filteren",
 	"wdqs-ve-show": "Weergeven",
 	"wdqs-ve-remove-row-title": "Deze rij verwijderen",
 	"wdqs-ve-with": "met",
