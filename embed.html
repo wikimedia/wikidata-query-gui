@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="node_modules/leaflet-minimap/dist/Control.MiniMap.min.css">
 <link rel="stylesheet" href="node_modules/jstree/dist/themes/default/style.css">
 <link rel="stylesheet" href="node_modules/jqcloud-npm/dist/jqcloud.css">
+<link rel="stylesheet" href="node_modules/gijgo/css/gijgo.min.css" />
 <link rel="stylesheet" href="style.css">
 <!-- endbuild -->
 <!-- build:none -->
@@ -69,8 +70,8 @@ body {
 
 .link {
 	position: fixed;
-	bottom: 0px;
-	left: 0px;
+	bottom: 3em;
+	left: 10px;
 	padding: 0px 2px 0px 2px;
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index: 401; /* one above .leaflet-pane */
@@ -78,8 +79,8 @@ body {
 
 .edit {
 	position: fixed;
-	bottom: 0.5em;
-	left: 0;
+	bottom: 2.2em;
+	left: 10px;
 	font-size: 2em;
 	z-index: 401; /* one above .leaflet-pane */
 	padding: 0.2em;
@@ -101,22 +102,57 @@ body {
 	z-index: 2001;
 }
 
+#result-browser-menu {
+	height: 37vh;
+	overflow-y: scroll;
+	cursor: pointer;
+}
+
 .header-toolbar {
 	z-index: 1000;
 	position: fixed;
-	bottom: 0;
-	right: 0;
+	right: 10px;
+	bottom: 50px;
 	opacity: 0.2;
 }
 .header-toolbar:hover {
 	opacity: 1;
 }
+
+.hide-toolbar {
+	float: right;
+	padding: 5px;
+	color: #777777ab;
+}
+
+.show-toolbar {
+	position: fixed;
+	right: 10px;
+	bottom: 50px;
+}
+
 .img-grid {
 	width: 95vw;
 }
 
 .wdqs-control-scroll-top {
 	display: none;
+}
+
+.bootstrap-table {
+	margin-top: 52px;
+	width: 100%;
+	height: auto;
+}
+
+.jstree {
+	margin-top: 52px;
+	width: 100%;
+	height: auto;
+}
+
+iframe.graph-iframe {
+	margin-top: 52px;
 }
 
 </style>
@@ -145,6 +181,7 @@ body {
 						<span class="fa fa-question-circle"></span></a>
 					</li>
 				</ul>
+				<span class="btn hide-toolbar glyphicon glyphicon-remove"></span>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="navbar-text">
 						<span class="query-total">
@@ -157,21 +194,23 @@ body {
 		<div class="action-bar">
 			<div class="message"></div>
 		</div>
-		<div id="query-result">Test result</div>
+		<div id="query-result" style="margin-top: -52px">Test result</div>
 		<div id="query-error" class="panel-heading">Test error</div>
-
+		
 		<div id="loading-spinner">
 			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 			<span class="sr-only">Loading...</span>
 		</div>
-		<div class="explorer-panel panel panel-default">
-		    <div class="panel-heading clearfix">
-		      <h1 class="panel-title pull-left" style="padding-top: 7.5px;">Explorer</h1>
-		      <div class="btn-group pull-right">
-		        <a href="#" class="btn btn-default btn-sm explorer-close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Close</a>
-		      </div>
-		    </div>
-			<div class="panel-body">
+		<div id="explorer-dialogs">
+			<div class="explorer-dialog">
+				<div data-role="header" class="modal-header clearfix explorer-header">
+					<h3 data-role="title" class="modal-title pull-left explorer-title">Explorer</h3>
+					<button data-role="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div data-role="body" class="explorer-body">
+				</div>
 			</div>
 		</div>
 	<a class="link edit-link" target="_blank" rel="noopener" data-i18n="[title]wdqs-embed-button-edit-query-title"><small data-i18n="wdqs-embed-button-edit-query"></small></a>
@@ -201,6 +240,7 @@ body {
 	<script src="node_modules/moment/min/moment-with-locales.js"></script>
 	<script src="node_modules/wellknown/wellknown.js"></script>
 	<script src="node_modules/jqcloud-npm/dist/jqcloud.js"></script>
+	<script src="node_modules/gijgo/js/gijgo.min.js"></script>
 	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
 	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
 	<script src="node_modules/jstree/dist/jstree.js"></script>
@@ -312,7 +352,17 @@ body {
 
 			$( '#display-button' ).closest( '.navbar' ).addClass( 'dropup' );
 
+			$('.hide-toolbar').click(function() {
+				$( '.header-toolbar' ).hide();
+				$( 'body' ).append( '<a class="btn show-toolbar" data-toggle="tooltip" title="Open toolbar" onclick="showToolbar()"><span aria-hidden="true"><i class="fa fa-bars"></i></span></a>' );
+			});
+			$('ul#result-browser-menu.dropdown-menu li a').removeAttr('href');
 		} );
+
+		function showToolbar() {
+			$( '.show-toolbar' ).hide();
+			$( '.header-toolbar' ).show();
+		}
 	</script>
 </body>
 </html>

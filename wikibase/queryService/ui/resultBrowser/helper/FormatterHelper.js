@@ -384,17 +384,50 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Handler for explore links
 	 */
-	SELF.prototype.handleExploreItem = function( e ) {
-		var url = $( e.target ).attr( 'href' );
+	var offsetCounter = 100;
+	SELF.prototype.handleExploreItem = function( e, url ) {
+		var currentDialog = $( '#explorer-dialogs' ).html();
+		currentDialog = $.parseHTML( currentDialog )[1];
+		var dialog = $( currentDialog ).dialog( {
+			uiLibrary: 'bootstrap',
+			autoOpen: false,
+			maxWidth: window.innerWidth,
+			maxHeight: window.innerHeight,
+			minHeight: 250,
+			minWidth: 250,
+			resizable: true,
+			width: window.innerWidth / 2,
+			height: Math.min( window.innerWidth, window.innerHeight ) / 2,
+			drag: function ( e ) {
+				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
+				$( 'body' ).addClass( 'disable-selection' );
+				$( dialog ).mousemove( function( event ) {
+					if ( event.pageY < 30 ) {
+						$( dialog ).css( 'top', '10px' );
+					}
+				} );
+			},
+			dragStop: function ( e ) {
+				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'visible' );
+				$( 'body' ).removeClass( 'disable-selection' );
+			},
+			resize: function ( e ) {
+				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
+				$( 'body' ).addClass( 'disable-selection' );
+			},
+			resizeStop: function ( e ) {
+				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'visible' );
+				$( 'body' ).removeClass( 'disable-selection' );
+			}
+		} );
 		e.preventDefault();
-
 		var lang = $.i18n && $.i18n().locale || 'en',
-			query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
-			embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
-
-		$( '.explorer-panel .panel-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
-		$( '.explorer-panel' ).show();
-
+		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url.value + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
+		embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
+		$( dialog ).children( 'div.explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
+		$( dialog.css( 'left', offsetCounter ) );
+		dialog.open();
+		offsetCounter = offsetCounter + 10;
 		return false;
 	};
 
