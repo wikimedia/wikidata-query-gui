@@ -47,45 +47,39 @@
 	<script type="text/javascript">
 	/* SPARQL Query */
 
-	function getQuery( latitude, longitude ) {
-		return 'PREFIX geo: <http://www.opengis.net/ont/geosparql#>\n' +
-		 '\n' +
-		 '#defaultView:Map\n' +
-		 'SELECT ?category ?categoryLabel ?place ?placeLabel ?image ?website ?dist ?location (?categoryLabel as ?layer) WHERE {\n' +
-		 '  SERVICE wikibase:around {\n' +
-		 '    ?place wdt:P625 ?location.\n' +
-		 '    bd:serviceParam wikibase:center "Point(' + longitude + ' ' + latitude + ')"^^geo:wktLiteral.\n' +
-		 '    bd:serviceParam wikibase:radius "1".\n' +
-		 '    bd:serviceParam wikibase:distance ?dist.\n' +
-		 '  }\n' +
-		 '  ?place wdt:P31 ?category.\n' +
-		 '  OPTIONAL {\n' +
-		 '    ?place wdt:P18 ?image.\n' +
-		 '  }\n' +
-		 '  OPTIONAL {\n' +
-		 '    ?place wdt:P856 ?website.\n' +
-		 '  }\n' +
-		 '  SERVICE wikibase:label {\n' +
-		 '    bd:serviceParam wikibase:language "en".\n' +
-		 '    ?place rdfs:label ?placeLabel.\n' +
-		 '    ?category rdfs:label ?categoryLabel.\n' +
-		 '  }\n' +
-		 '}' ;
-	}
+	var query =  'PREFIX geo: <http://www.opengis.net/ont/geosparql#>\n' +
+		'\n' +
+		'#defaultView:Map\n' +
+		'SELECT ?category ?categoryLabel ?place ?placeLabel ?image ?website ?dist ?location (?categoryLabel as ?layer) WHERE {\n' +
+		'  SERVICE wikibase:around {\n' +
+		'    ?place wdt:P625 ?location.\n' +
+		'    bd:serviceParam wikibase:center "[AUTO_COORDINATES]"^^geo:wktLiteral.\n' +
+		'    bd:serviceParam wikibase:radius "5".\n' +
+		'    bd:serviceParam wikibase:distance ?dist.\n' +
+		'  }\n' +
+		'  ?place wdt:P31 ?category.\n' +
+		'  OPTIONAL {\n' +
+		'    ?place wdt:P18 ?image.\n' +
+		'  }\n' +
+		'  OPTIONAL {\n' +
+		'    ?place wdt:P856 ?website.\n' +
+		'  }\n' +
+		'  SERVICE wikibase:label {\n' +
+		'    bd:serviceParam wikibase:language "en".\n' +
+		'    ?place rdfs:label ?placeLabel.\n' +
+		'    ?category rdfs:label ?categoryLabel.\n' +
+		'  }\n' +
+		'}' ;
 
 	/* JS Code */
 	$(document).ready(function() {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			query = getQuery( position.coords.latitude, position.coords.longitude )
+		var api = new wikibase.queryService.api.Sparql();
+		api.query( query ).done( function () {
+			var result = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser()
+			result.setResult( api.getResultRawData() );
+			result.draw( $( '#result' ) );
+		} );
 
-			var api = new wikibase.queryService.api.Sparql();
-			api.query( query ).done( function () {
-				var result = new wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser()
-				result.setResult( api.getResultRawData() );
-				result.draw( $( '#result' ) );
-			} );
-
-		});
 	} );
 	</script>
 </body>
