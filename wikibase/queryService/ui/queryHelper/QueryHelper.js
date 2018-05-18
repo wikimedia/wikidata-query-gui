@@ -263,8 +263,10 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 * @private
 	 */
 	SELF.prototype._createTagCloud = function () {
-		$( '.query-helper-tag-cloud' ).html(
-				this._createSection( this._createTagCloudShow(), this._createTagCloudFilter() ) );
+		var $tagCloud = $( '.query-helper-tag-cloud' );
+		if ( $tagCloud.length > 0 ) {
+			$tagCloud.html( this._createSection( this._createTagCloudShow(), this._createTagCloudFilter() ) );
+		}
 	};
 
 	/**
