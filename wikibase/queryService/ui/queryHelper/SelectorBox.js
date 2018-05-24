@@ -70,7 +70,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 							}\n\
 						}\n\
 						ORDER BY DESC(?count)',
-						variable = this._query.getBoundVariables().shift(),
+						variable = this._query.getBoundVariables().shift() || this._query.getTripleVariables().shift(),
 						query = this._query.clone().setLimit( 1000 )
 							.removeService( 'http://wikiba.se/ontology#label' )
 							.addVariable( variable )
@@ -176,7 +176,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						}\n\
 					}\n\
 					ORDER BY DESC(?count)',
-					variable = this._query.getBoundVariables().shift(),
+					variable = this._query.getBoundVariables().shift() || this._query.getTripleVariables().shift(),
 					query = this._query.clone()
 						.setLimit( 500 )
 						.removeService( 'http://wikiba.se/ontology#label' )
