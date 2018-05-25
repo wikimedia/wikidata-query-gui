@@ -48,6 +48,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV-fil (uddbyende)",
 	"wdqs-app-result-csv": "CSV-fil",
 	"wdqs-app-result-svg": "SVG-billede",
+	"wdqs-app-result-html": "HTML-tabel",
 	"wdqs-app-shorturl-page-title": "Kort adresse for denne side",
 	"wdqs-app-editor-placeholder": "(anvend en SPARQL-forespørgsel eller vælg et forespørgselseksempel)",
 	"wdqs-app-editor-addprefixes": "Tilføj standardpræfikser",

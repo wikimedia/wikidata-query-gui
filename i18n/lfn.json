@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cgboeree"
+			"Cgboeree",
+			"Mafcadio"
 		]
 	},
 	"wdqs-app-button-examples": "Esemplos",
@@ -74,8 +75,21 @@
 	"wdqs-dialog-examples-preview-query": "Previde demanda",
 	"wdqs-dialog-examples-preview-result": "Previde resulta",
 	"wdqs-dialog-key-shortcut-title": "Vias corta de teclador",
+	"wdqs-dialog-key-shortcut-run-query": "Esecuta demanda.",
+	"wdqs-dialog-key-shortcut-esc": "Sorti entra/area de testo corente.",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mostra aida de tecla rapida per la paje corente.",
+	"wdqs-dialog-key-shortcut-focus-textarea": "Foca a area de testo de demanda.",
+	"wdqs-dialog-key-shortcut-jump-to-result": "Salta a resulta de demanda.",
+	"wdqs-dialog-key-shortcut-focus-filter": "Foca a boton 'Filtro' en Aidador per demandas",
+	"wdqs-dialog-key-shortcut-focus-show": "Foca a boton 'Mostra' en Aidador per demandas",
+	"wdqs-dialog-key-shortcut-focus-limit": "Clica boton 'Limita' en Aidador per demandas",
+	"wdqs-dialog-key-shortcut-show-example": "Mostra esemplos.",
+	"wdqs-dialog-key-shortcut-help-menu": "Alterna menu de aida.",
+	"wdqs-dialog-key-shortcut-show-language": "Mostra menu de lingua.",
+	"wdqs-dialog-key-shortcut-close-button": "Clui",
 	"wdqs-ve-filter": "Filtri",
 	"wdqs-ve-show": "Mostra",
+	"wdqs-ve-limit": "Limita",
 	"wdqs-ve-add-label-title": "Ajunta variable cual conteni eticeta de esente",
 	"wdqs-ve-remove-row-title": "Sutrae esta linia",
 	"wdqs-ve-with": "con",
@@ -90,6 +104,7 @@
 	"wdqs-action-error-display": "No pote mostra resulta",
 	"wdqs-action-timeout": "Limita de abandona de demanda ia es atenida",
 	"wdqs-action-malformed-query": "Demanda es malformida",
+	"wdqs-action-empty-query": "Entra un demanda valida de SPARQL o eleje un esemplo de demanda",
 	"wdqs-action-server-error": "Era de servador",
 	"wdqs-action-unknow-error": "Era nonconoseda",
 	"wdqs-action-preview": "Previde la resulta",
