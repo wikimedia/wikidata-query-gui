@@ -23,6 +23,12 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 					if ( cm.getOption( 'fullScreen' ) ) {
 						cm.setOption( 'fullScreen', false );
 					}
+				},
+				'Ctrl-/': function ( cm ) {
+					cm.toggleComment( {
+						commentBlankLines: true,
+						fullLines: true
+					} );
 				}
 			},
 			'viewportMargin': Infinity,
