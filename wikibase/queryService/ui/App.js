@@ -607,6 +607,11 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			self._track( 'buttonClick.clear' );
 		} );
 
+		$( '.explorer-close' ).click( function( e ) {
+			e.preventDefault();
+			$( '.explorer-panel' ).hide();
+		} );
+
 		$( '.restore' ).click( function( e ) {
 			self._track( 'buttonClick.restore' );
 			e.preventDefault();

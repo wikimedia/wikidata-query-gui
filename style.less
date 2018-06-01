@@ -343,45 +343,19 @@ iframe.shortUrl {
 	border: 1px solid #ccc;
 }
 
-#explorer-dialog{
-	position: absolute !important;
-	display: none;
-	z-index: 100;
+.explorer-panel {
+	position: fixed;
+	right: 0;
+	bottom: 0;
 	background-color: rgba( 255, 255, 255, 0.8 );
-	resize: both;
-	overflow: none;
-}
-
-#explorer-dialog iframe {
-	height: 100%;
-	width: 100%;
-}
-
-#explorer-body {
-	height: 100%;
-	width: 100%;
-}
-
-#explorer-header {
-	height: 55px;
-	background-image: linear-gradient( to bottom, #f5f5f5 0, #e8e8e8 100% );
-	background-repeat: repeat-x;
-}
-
-#explorer-title {
-	font-size: 1.3em;
-}
-
-/*Disable resizing from all sides except bottom right corner*/
-
-.gj-resizable-e,
-.gj-resizable-n,
-.gj-resizable-w,
-.gj-resizable-s,
-.gj-resizable-nw,
-.gj-resizable-ne,
-.gj-resizable-sw {
+	z-index: 100;
 	display: none;
+	overflow: auto;
+}
+
+.explorer-panel iframe {
+	height: 70vh;
+	width: 50vw;
 }
 
 /**

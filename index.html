@@ -31,7 +31,6 @@
 	<link rel="stylesheet" href="node_modules/jquery.uls/css/jquery.uls.mobile.css">
 	<link rel="stylesheet" href="node_modules/jstree/dist/themes/default/style.css" />
 	<link rel="stylesheet" href="node_modules/jquery-toast-plugin/src/jquery.toast.css" />
-	<link rel="stylesheet" href="node_modules/gijgo/css/gijgo.min.css">
 	<link rel="stylesheet" href="vendor/bootstrap-tags/css/bootstrap-tags.css">
 	<link rel="stylesheet" href="style.css">
  	<!-- endbuild -->
@@ -281,15 +280,15 @@
 				<span class="sr-only">Loading...</span>
 			</div>
 		</div>
-		
-		<div id="explorer-dialog">
-			<div data-role="header" class="modal-header clearfix" id="explorer-header">
-				<h3 data-role="title" class="modal-title pull-left" id="explorer-title">Explorer</h3>
-				<button data-role="close" type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div data-role="body" id="explorer-body">
+
+		<div class="explorer-panel panel panel-default">
+		    <div class="panel-heading clearfix">
+		      <h1 class="panel-title pull-left" style="padding-top: 7.5px;">Explorer</h1>
+		      <div class="btn-group pull-right">
+		        <a href="#" class="btn btn-default btn-sm explorer-close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Close</a>
+		      </div>
+		    </div>
+			<div class="panel-body">
 			</div>
 		</div>
 	</div>
@@ -477,7 +476,6 @@
 	<script src="node_modules/jquery-resizable-dom/dist/jquery-resizable.js"></script>
 	<script src="node_modules/jstree/dist/jstree.js"></script>
 	<script src="node_modules/wellknown/wellknown.js"></script>
-	<script src="node_modules/gijgo/js/gijgo.min.js"></script>
 	<script src="vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>
 	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
 	<script src="vendor/bootstrapx-clickover/bootstrapx-clickover.js"></script>
