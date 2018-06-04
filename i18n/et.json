@@ -46,6 +46,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV-fail (sõnaohter)",
 	"wdqs-app-result-csv": "CSV-fail",
 	"wdqs-app-result-svg": "SVG-pilt",
+	"wdqs-app-result-html": "HTML-tabel",
 	"wdqs-app-shorturl-page-title": "Lühi-URL siia leheküljele",
 	"wdqs-app-editor-placeholder": "(Sisesta SPARQL-päring või vali näidispäring)",
 	"wdqs-app-editor-addprefixes": "Lisa standardeesliited",
