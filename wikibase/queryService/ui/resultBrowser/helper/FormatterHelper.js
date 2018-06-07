@@ -424,8 +424,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		var lang = $.i18n && $.i18n().locale || 'en',
 		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url.value + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
 		embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
+		var top = $( window ).scrollTop() + 200;
 		$( dialog ).children( 'div.explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
 		$( dialog.css( 'left', offsetCounter ) );
+		$( dialog.css( 'top', top ) );
 		dialog.open();
 		offsetCounter = offsetCounter + 10;
 		return false;
