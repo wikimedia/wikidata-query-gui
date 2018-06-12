@@ -119,18 +119,6 @@ body {
 	opacity: 1;
 }
 
-.hide-toolbar {
-	float: right;
-	padding: 5px;
-	color: #777777ab;
-}
-
-.show-toolbar {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-}
-
 .img-grid {
 	width: 95vw;
 }
@@ -175,7 +163,6 @@ body {
 						<span class="fa fa-question-circle"></span></a>
 					</li>
 				</ul>
-				<span class="btn hide-toolbar glyphicon glyphicon-remove"></span>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="navbar-text">
 						<span class="query-total">
@@ -346,17 +333,8 @@ body {
 
 			$( '#display-button' ).closest( '.navbar' ).addClass( 'dropup' );
 
-			$('.hide-toolbar').click(function() {
-				$( '.header-toolbar' ).hide();
-				$( 'body' ).append( '<a class="btn show-toolbar" data-toggle="tooltip" title="Open toolbar" onclick="showToolbar()"><span aria-hidden="true"><i class="fa fa-bars"></i></span></a>' );
-			});
 			$('ul#result-browser-menu.dropdown-menu li a').removeAttr('href');
 		} );
-
-		function showToolbar() {
-			$( '.show-toolbar' ).hide();
-			$( '.header-toolbar' ).show();
-		}
 	</script>
 </body>
 </html>
