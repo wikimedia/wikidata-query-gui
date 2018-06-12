@@ -70,8 +70,8 @@ body {
 
 .link {
 	position: fixed;
-	bottom: 3em;
-	left: 10px;
+	bottom: 0px;
+	left: 0px;
 	padding: 0px 2px 0px 2px;
 	background-color: rgba(255, 255, 255, 0.8);
 	z-index: 401; /* one above .leaflet-pane */
@@ -79,8 +79,8 @@ body {
 
 .edit {
 	position: fixed;
-	bottom: 2.2em;
-	left: 10px;
+	bottom: 0.5em;
+	left: 0;
 	font-size: 2em;
 	z-index: 401; /* one above .leaflet-pane */
 	padding: 0.2em;
@@ -111,8 +111,8 @@ body {
 .header-toolbar {
 	z-index: 1000;
 	position: fixed;
-	right: 10px;
-	bottom: 50px;
+	bottom: 0;
+	right: 0;
 	opacity: 0.2;
 }
 .header-toolbar:hover {
@@ -127,8 +127,8 @@ body {
 
 .show-toolbar {
 	position: fixed;
-	right: 10px;
-	bottom: 50px;
+	bottom: 0;
+	right: 0;
 }
 
 .img-grid {
@@ -140,19 +140,13 @@ body {
 }
 
 .bootstrap-table {
-	margin-top: 52px;
 	width: 100%;
 	height: auto;
 }
 
 .jstree {
-	margin-top: 52px;
 	width: 100%;
 	height: auto;
-}
-
-iframe.graph-iframe {
-	margin-top: 52px;
 }
 
 </style>
@@ -194,7 +188,7 @@ iframe.graph-iframe {
 		<div class="action-bar">
 			<div class="message"></div>
 		</div>
-		<div id="query-result" style="margin-top: -52px">Test result</div>
+		<div id="query-result">Test result</div>
 		<div id="query-error" class="panel-heading">Test error</div>
 		
 		<div id="loading-spinner">
