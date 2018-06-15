@@ -386,9 +386,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 */
 	var offsetCounter = 100;
 	SELF.prototype.handleExploreItem = function( e, url ) {
-		var currentDialog = $( '#explorer-dialogs' ).html();
-		currentDialog = $.parseHTML( currentDialog )[1];
-		var dialog = $( currentDialog ).dialog( {
+		var $currentDialog = $( '#explorer-dialogs .explorer-dialog' ).clone();
+		var $dialog = $currentDialog.dialog( {
 			uiLibrary: 'bootstrap',
 			autoOpen: false,
 			maxWidth: window.innerWidth,
@@ -399,24 +398,24 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			width: window.innerWidth / 2,
 			height: Math.min( window.innerWidth, window.innerHeight ) / 2,
 			drag: function ( e ) {
-				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
+				$dialog.children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
 				$( 'body' ).addClass( 'disable-selection' );
-				$( dialog ).mousemove( function( event ) {
+				$dialog.mousemove( function( event ) {
 					if ( event.pageY < 30 ) {
-						$( dialog ).css( 'top', '10px' );
+						$dialog.css( 'top', '10px' );
 					}
 				} );
 			},
 			dragStop: function ( e ) {
-				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'visible' );
+				$dialog.children( 'div.explorer-body' ).css( 'visibility', 'visible' );
 				$( 'body' ).removeClass( 'disable-selection' );
 			},
 			resize: function ( e ) {
-				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
+				$dialog.children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
 				$( 'body' ).addClass( 'disable-selection' );
 			},
 			resizeStop: function ( e ) {
-				$( dialog ).children( 'div.explorer-body' ).css( 'visibility', 'visible' );
+				$dialog.children( 'div.explorer-body' ).css( 'visibility', 'visible' );
 				$( 'body' ).removeClass( 'disable-selection' );
 			}
 		} );
@@ -425,10 +424,10 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url.value + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
 		embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
 		var top = $( window ).scrollTop() + 200;
-		$( dialog ).children( 'div.explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
-		$( dialog.css( 'left', offsetCounter ) );
-		$( dialog.css( 'top', top ) );
-		dialog.open();
+		$dialog.children( 'div.explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
+		$dialog.css( 'left', offsetCounter );
+		$dialog.css( 'top', top );
+		$dialog.open();
 		offsetCounter = offsetCounter + 10;
 		return false;
 	};
