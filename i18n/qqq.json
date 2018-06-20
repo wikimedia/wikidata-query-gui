@@ -62,6 +62,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Button message in graph browser toolbar",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Button message in graph browser toolbar",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Button message in graph browser toolbar",
+	"wdqs-app-resultbrowser-non-hierarchical": "Non-hierarchical layout",
 	"wdqs-app-resultbrowser-table": "Label for Table result view, which shows query results in tabular form, one result per line",
 	"wdqs-app-resultbrowser-image-grid": "Label of Image grid result view",
 	"wdqs-app-resultbrowser-graph-builder": "Label of Graph builder result view",
@@ -116,5 +117,7 @@
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view",
 	"wdqs-result-map-progress": "Message while loading data for the map view. $1 is a percentage from 0 to 100.",
 	"wdqs-embed-button-edit-query": "Label for button in embed",
-	"wdqs-embed-button-edit-query-title": "Title for button in embed"
+	"wdqs-embed-button-edit-query-title": "Title for button in embed",
+	"wdqs-embed-explorer-button-incoming": "Show incoming links",
+    "wdqs-embed-explorer-button-outgoing": "Show outgoing links"
 }

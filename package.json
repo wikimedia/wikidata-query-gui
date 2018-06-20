@@ -21,6 +21,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-table": "^1.11.2",
+    "bootstrap-toggle": "^2.2.2",
     "codemirror": "^5.35.0",
     "d3": "^3.5.17",
     "dimple-js": "^2.1.4",
@@ -50,7 +51,7 @@
     "wellknown": "^0.5.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.2",
+    "grunt": "^1.0.3",
     "grunt-auto-install": "^0.3.1",
     "grunt-banana-checker": "^0.6.0",
     "grunt-cli": "^1.2.0",

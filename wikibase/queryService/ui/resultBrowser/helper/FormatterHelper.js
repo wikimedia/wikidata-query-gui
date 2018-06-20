@@ -385,15 +385,16 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Handler for explore links
 	 */
 	var offsetCounter = 100;
-	SELF.prototype.handleExploreItem = function( e, url ) {
+	SELF.prototype.handleExploreItem = function( e ) {
 		var $currentDialog = $( '#explorer-dialogs .explorer-dialog' ).clone();
+		var url = $( e.target ).attr( 'href' );
 		var $dialog = $currentDialog.dialog( {
 			uiLibrary: 'bootstrap',
 			autoOpen: false,
 			maxWidth: window.innerWidth,
 			maxHeight: window.innerHeight,
-			minHeight: 250,
-			minWidth: 250,
+			minHeight: 100,
+			minWidth: 100,
 			resizable: true,
 			width: window.innerWidth / 2,
 			height: Math.min( window.innerWidth, window.innerHeight ) / 2,
@@ -421,7 +422,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		} );
 		e.preventDefault();
 		var lang = $.i18n && $.i18n().locale || 'en',
-		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url.value + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
+		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
 		embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
 		var top = $( window ).scrollTop() + 200;
 		$dialog.children( 'div.explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
