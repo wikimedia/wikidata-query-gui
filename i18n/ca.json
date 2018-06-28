@@ -6,7 +6,8 @@
 			"Ssola",
 			"Townie",
 			"Fitoschido",
-			"Micru"
+			"Micru",
+			"Joseplluis"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -52,6 +53,7 @@
 	"wdqs-app-result-tsv-verbose": "Fitxer TSV (detallat)",
 	"wdqs-app-result-csv": "Fitxer CSV",
 	"wdqs-app-result-svg": "Imatge SVG",
+	"wdqs-app-result-html": "Taula d'HTML",
 	"wdqs-app-shorturl-page-title": "URL curta a aquesta pàgina",
 	"wdqs-app-editor-placeholder": "(Introduïu una consulta SPARQL o seleccioneu un exemple de consulta)",
 	"wdqs-app-editor-addprefixes": "Afegeix els prefixos estàndards",
