@@ -57,6 +57,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Герархічная разьметка зьлева направа",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Герархічная разьметка зьверху ўніз",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Герархічная разьметка справа налева",
+	"wdqs-app-resultbrowser-non-hierarchical": "Негерархічная разьметка",
 	"wdqs-app-resultbrowser-table": "Табліца",
 	"wdqs-app-resultbrowser-image-grid": "Сетка выяваў",
 	"wdqs-app-resultbrowser-graph-builder": "Будаўнік графікаў",
@@ -111,5 +112,7 @@
 	"wdqs-result-map-layers-all": "Усе слаі",
 	"wdqs-result-map-progress": "Загрузка зьвестак мапы: $1%",
 	"wdqs-embed-button-edit-query": "Рэдагаваць гэты запыт",
-	"wdqs-embed-button-edit-query-title": "Правіць гэты запыт з дапамогай рэдактара SPARQL"
+	"wdqs-embed-button-edit-query-title": "Правіць гэты запыт з дапамогай рэдактара SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Паказаць уваходныя спасылкі",
+	"wdqs-embed-explorer-button-outgoing": "Паказваць зыходныя спасылкі"
 }

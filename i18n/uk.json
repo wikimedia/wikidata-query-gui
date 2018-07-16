@@ -63,6 +63,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Ієрархічна композиція зліва направо",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Ієрархічна композиція зверху вниз",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Ієрархічна композиція справа наліво",
+	"wdqs-app-resultbrowser-non-hierarchical": "Неієрархічна композиція",
 	"wdqs-app-resultbrowser-table": "Таблиця",
 	"wdqs-app-resultbrowser-image-grid": "Сітка зображень",
 	"wdqs-app-resultbrowser-graph-builder": "Graph builder",
@@ -117,5 +118,7 @@
 	"wdqs-result-map-layers-all": "Всі шари",
 	"wdqs-result-map-progress": "Завантаження даних карти: $1%",
 	"wdqs-embed-button-edit-query": "Редагувати цей запит",
-	"wdqs-embed-button-edit-query-title": "Редагувати цей запит через редактор SPARQL"
+	"wdqs-embed-button-edit-query-title": "Редагувати цей запит через редактор SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Показати вхідні посилання",
+	"wdqs-embed-explorer-button-outgoing": "Показати вихідні посилання"
 }

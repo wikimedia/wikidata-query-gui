@@ -58,6 +58,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarĥia aranĝo maldekstre-dekstren",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarĥia aranĝo supre-malsupren",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarĥia aranĝo dekstre-maldekstren",
+	"wdqs-app-resultbrowser-non-hierarchical": "Nehierarĥia aranĝo",
 	"wdqs-app-resultbrowser-table": "Tabelo",
 	"wdqs-app-resultbrowser-image-grid": "Bilda krado",
 	"wdqs-app-resultbrowser-graph-builder": "Diagram-konstruilo",
@@ -112,5 +113,7 @@
 	"wdqs-result-map-layers-all": "Ĉiuj tavoloj",
 	"wdqs-result-map-progress": "Ŝargado de map-datumoj: $1%",
 	"wdqs-embed-button-edit-query": "Redakti ĉi tiun informpeton",
-	"wdqs-embed-button-edit-query-title": "Redakti ĉi tiun informpeton per SPARQL-redaktilo"
+	"wdqs-embed-button-edit-query-title": "Redakti ĉi tiun informpeton per SPARQL-redaktilo",
+	"wdqs-embed-explorer-button-incoming": "Montri enigajn ligilojn",
+	"wdqs-embed-explorer-button-outgoing": "Montri eligajn ligilojn"
 }

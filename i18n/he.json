@@ -58,6 +58,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "סידור היררכי משמאל לימין",
 	"wdqs-app-resultbrowser-hierarchical-ud": "סידור היררכי מלמעלה למטה",
 	"wdqs-app-resultbrowser-hierarchical-rl": "סידור היררכי מימין לשמאל",
+	"wdqs-app-resultbrowser-non-hierarchical": "תצוגה שאינה היררכית",
 	"wdqs-app-resultbrowser-table": "טבלה",
 	"wdqs-app-resultbrowser-image-grid": "רשת תמונות",
 	"wdqs-app-resultbrowser-graph-builder": "בונה גרפים",
@@ -112,5 +113,7 @@
 	"wdqs-result-map-layers-all": "כל השכבות",
 	"wdqs-result-map-progress": "טעינת נתוני מפה: $1%",
 	"wdqs-embed-button-edit-query": "עריכת השאילתה הזאת",
-	"wdqs-embed-button-edit-query-title": "עריכת השאילתה הזאת עם עורך SPARQL"
+	"wdqs-embed-button-edit-query-title": "עריכת השאילתה הזאת עם עורך SPARQL",
+	"wdqs-embed-explorer-button-incoming": "הצגת קישורים נכנסים",
+	"wdqs-embed-explorer-button-outgoing": "הצגת קישורים יוצאים"
 }

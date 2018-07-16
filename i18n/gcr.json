@@ -27,12 +27,12 @@
 	"wdqs-app-help-portal": "Portay di èd",
 	"wdqs-app-help-manual": "Maniyèl itilizatò",
 	"wdqs-app-help-examples": "Lègzanp di rékèt",
-	"wdqs-app-help-datamodel": "Modèl di doné RDF",
+	"wdqs-app-help-datamodel": "Modèl di data RDF",
 	"wdqs-app-help-prefixes": "Lis di préfiks",
 	"wdqs-app-help-copy": "Enfòrmasyon di lisans",
 	"wdqs-app-help-queryhelper": "Asistan di rékèt",
 	"wdqs-app-footer-help": "Itilizé <i>[CTRL-SPACE]</i> pou aktivé oto-konplésyon-an.",
-	"wdqs-app-footer-updated-ago": "Doné mizajou i té gen $1",
+	"wdqs-app-footer-updated-ago": "Data mizajou i té gen $1",
 	"wdqs-app-result-shorturl": "URL kourt bò'd rézilta-a",
 	"wdqs-app-result-shorturl-title": "URL kourt bò'd sa rézilta",
 	"wdqs-app-result-rawgraphs": "Ouvri andan RAWGraphs.io",
@@ -107,7 +107,7 @@
 	"wdqs-action-unknow-error": "Éròr enkonèt",
 	"wdqs-action-preview": "Apèrsou di rézilta",
 	"wdqs-result-map-layers-all": "Tout kouch-ya",
-	"wdqs-result-map-progress": "Charjman dé doné kartografik: $1 %",
+	"wdqs-result-map-progress": "Charjman dé data kartografik: $1 %",
 	"wdqs-embed-button-edit-query": "Modifyé sa rékèt",
 	"wdqs-embed-button-edit-query-title": "Modifyé sa rékèt ké éditò SPARQL"
 }

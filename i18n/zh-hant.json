@@ -56,6 +56,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "分層佈圖由左至右",
 	"wdqs-app-resultbrowser-hierarchical-ud": "分層佈圖由上至下",
 	"wdqs-app-resultbrowser-hierarchical-rl": "分層佈圖由右至左",
+	"wdqs-app-resultbrowser-non-hierarchical": "無分層佈圖",
 	"wdqs-app-resultbrowser-table": "表格",
 	"wdqs-app-resultbrowser-image-grid": "圖片網格",
 	"wdqs-app-resultbrowser-graph-builder": "圖形建置器",
@@ -110,5 +111,7 @@
 	"wdqs-result-map-layers-all": "所有圖層",
 	"wdqs-result-map-progress": "載入地圖資料：$1%",
 	"wdqs-embed-button-edit-query": "編輯此查詢",
-	"wdqs-embed-button-edit-query-title": "以 SPARQL 編輯器來編輯此查詢"
+	"wdqs-embed-button-edit-query-title": "以 SPARQL 編輯器來編輯此查詢",
+	"wdqs-embed-explorer-button-incoming": "顯示導入連結",
+	"wdqs-embed-explorer-button-outgoing": "顯示導出連結"
 }

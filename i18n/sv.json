@@ -58,6 +58,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkisk layout vänster till höger",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarkisk layout upp till ner",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarkisk layout höger till vänster",
+	"wdqs-app-resultbrowser-non-hierarchical": "Icke-hierarkiskt utseende",
 	"wdqs-app-resultbrowser-table": "Tabell",
 	"wdqs-app-resultbrowser-image-grid": "Bildrutnät",
 	"wdqs-app-resultbrowser-graph-builder": "Grafbyggare",
@@ -112,5 +113,7 @@
 	"wdqs-result-map-layers-all": "Alla lager",
 	"wdqs-result-map-progress": "Läser in kartdata: $1%",
 	"wdqs-embed-button-edit-query": "Redigera denna fråga",
-	"wdqs-embed-button-edit-query-title": "Redigera denna fråga med SPARQL-redigeraren"
+	"wdqs-embed-button-edit-query-title": "Redigera denna fråga med SPARQL-redigeraren",
+	"wdqs-embed-explorer-button-incoming": "Visa inkommande länkar",
+	"wdqs-embed-explorer-button-outgoing": "Visa utgående länkar"
 }

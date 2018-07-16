@@ -56,6 +56,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Чиноследен распоред од лево кон десно",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Чиноследен распоред од горе надолу",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Чиноследен распоред од десно кон лево",
+	"wdqs-app-resultbrowser-non-hierarchical": "Нечиноследен распоред",
 	"wdqs-app-resultbrowser-table": "Табела",
 	"wdqs-app-resultbrowser-image-grid": "Решетка со слики",
 	"wdqs-app-resultbrowser-graph-builder": "Исцртувач на графикон",
@@ -110,5 +111,7 @@
 	"wdqs-result-map-layers-all": "Сите слоеви",
 	"wdqs-result-map-progress": "Ги вчитувам картографските податоци: $1%",
 	"wdqs-embed-button-edit-query": "Уреди го барањево",
-	"wdqs-embed-button-edit-query-title": "Уреди го барањето со SPARQL-уредник"
+	"wdqs-embed-button-edit-query-title": "Уреди го барањето со SPARQL-уредник",
+	"wdqs-embed-explorer-button-incoming": "Прикажи дојдовни врски",
+	"wdqs-embed-explorer-button-outgoing": "Прикажи појдовни врски"
 }

@@ -65,6 +65,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "계층적 레이아웃 좌측에서 우측으로",
 	"wdqs-app-resultbrowser-hierarchical-ud": "계층적 레이아웃 위에서 아래로",
 	"wdqs-app-resultbrowser-hierarchical-rl": "계층적 레이아웃 우측에서 좌측으로",
+	"wdqs-app-resultbrowser-non-hierarchical": "비계층적 레이아웃",
 	"wdqs-app-resultbrowser-table": "표",
 	"wdqs-app-resultbrowser-image-grid": "영상 격자무늬",
 	"wdqs-app-resultbrowser-graph-builder": "그래프 빌더",
@@ -113,5 +114,7 @@
 	"wdqs-result-map-layers-all": "모든 계층",
 	"wdqs-result-map-progress": "맵 데이터를 불러오는 중: $1%",
 	"wdqs-embed-button-edit-query": "이 쿼리 편집",
-	"wdqs-embed-button-edit-query-title": "SPARQL 편집기로 이 쿼리 편집"
+	"wdqs-embed-button-edit-query-title": "SPARQL 편집기로 이 쿼리 편집",
+	"wdqs-embed-explorer-button-incoming": "들어오는 링크 표시",
+	"wdqs-embed-explorer-button-outgoing": "나가는 링크 표시"
 }

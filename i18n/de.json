@@ -57,6 +57,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarchisches Layout links nach rechts",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarchisches Layout oben nach unten",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarchisches Layout rechts nach links",
+	"wdqs-app-resultbrowser-non-hierarchical": "Nicht-hierarchisches Layout",
 	"wdqs-app-resultbrowser-table": "Tabelle",
 	"wdqs-app-resultbrowser-image-grid": "Bildraster",
 	"wdqs-app-resultbrowser-graph-builder": "Diagrammgenerator",
@@ -111,5 +112,7 @@
 	"wdqs-result-map-layers-all": "Alle Ebenen",
 	"wdqs-result-map-progress": "Lade Kartendaten: $1%",
 	"wdqs-embed-button-edit-query": "Diese Abfrage bearbeiten",
-	"wdqs-embed-button-edit-query-title": "Diese Abfrage mit dem SPARQL-Editor bearbeiten"
+	"wdqs-embed-button-edit-query-title": "Diese Abfrage mit dem SPARQL-Editor bearbeiten",
+	"wdqs-embed-explorer-button-incoming": "Eingehende Links anzeigen",
+	"wdqs-embed-explorer-button-outgoing": "Ausgehende Links anzeigen"
 }

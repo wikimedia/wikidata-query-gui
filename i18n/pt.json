@@ -60,6 +60,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Disposição hierárquica da esquerda para a direita",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Disposição hierárquica de cima para baixo",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disposição hierárquica da direita para a esquerda",
+	"wdqs-app-resultbrowser-non-hierarchical": "Disposição não hierárquica",
 	"wdqs-app-resultbrowser-table": "Tabela",
 	"wdqs-app-resultbrowser-image-grid": "Grelha de imagens",
 	"wdqs-app-resultbrowser-graph-builder": "Criador de gráficos",
@@ -114,5 +115,7 @@
 	"wdqs-result-map-layers-all": "Todas as camadas",
 	"wdqs-result-map-progress": "A carregar os dados cartográficos: $1%",
 	"wdqs-embed-button-edit-query": "Editar esta consulta",
-	"wdqs-embed-button-edit-query-title": "Editar esta consulta com o editor SPARQL"
+	"wdqs-embed-button-edit-query-title": "Editar esta consulta com o editor SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Mostrar hiperligações de entrada",
+	"wdqs-embed-explorer-button-outgoing": "Mostrar hiperligações de saída"
 }

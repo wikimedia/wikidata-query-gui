@@ -62,6 +62,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Ιεραρχική διάταξη από αριστερά προς τα δεξιά",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Ιεραρχική διάταξη πάνω προς τα κάτω",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Ιεραρχική διάταξη δεξιά προς τα αριστερά",
+	"wdqs-app-resultbrowser-non-hierarchical": "Μη-ιεραρχική διάταξη",
 	"wdqs-app-resultbrowser-table": "Πίνακας",
 	"wdqs-app-resultbrowser-image-grid": "Πλέγμα εικόνας",
 	"wdqs-app-resultbrowser-graph-builder": "Δημιουργός γραφημάτων",
@@ -116,5 +117,7 @@
 	"wdqs-result-map-layers-all": "Όλα τα στρώματα",
 	"wdqs-result-map-progress": "Φόρτωση δεδομένων χάρτη: $1%",
 	"wdqs-embed-button-edit-query": "Επεξεργασία καταχώρησης",
-	"wdqs-embed-button-edit-query-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL"
+	"wdqs-embed-button-edit-query-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Εμφάνιση ερχόμενων συνδέσμων",
+	"wdqs-embed-explorer-button-outgoing": "Εμφάνιση εξωτερικών συνδέσμων"
 }

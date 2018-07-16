@@ -51,6 +51,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Disposition hierarchic de sinistra a dextra",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Disposition hierarchic de alto in basso",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disposition hierarchic de dextra a sinistra",
+	"wdqs-app-resultbrowser-non-hierarchical": "Disposition non hierarchic",
 	"wdqs-app-resultbrowser-table": "Tabella",
 	"wdqs-app-resultbrowser-map": "Carta",
 	"wdqs-app-resultbrowser-tree-map": "Arbore carta",
@@ -80,5 +81,7 @@
 	"wdqs-action-server-error": "Error del servitor",
 	"wdqs-action-unknow-error": "Error incognite",
 	"wdqs-result-map-layers-all": "Tote le stratos",
-	"wdqs-embed-button-edit-query": "Modificar isto entrata"
+	"wdqs-embed-button-edit-query": "Modificar isto entrata",
+	"wdqs-embed-explorer-button-incoming": "Monstrar ligamines entrante",
+	"wdqs-embed-explorer-button-outgoing": "Monstrar ligamines sortiente"
 }

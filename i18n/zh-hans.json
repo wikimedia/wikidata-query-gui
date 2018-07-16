@@ -61,6 +61,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "分层布局从左到右",
 	"wdqs-app-resultbrowser-hierarchical-ud": "分层布局从上到下",
 	"wdqs-app-resultbrowser-hierarchical-rl": "分层布局从右到左",
+	"wdqs-app-resultbrowser-non-hierarchical": "非分层布局",
 	"wdqs-app-resultbrowser-table": "表格",
 	"wdqs-app-resultbrowser-image-grid": "图片网格",
 	"wdqs-app-resultbrowser-graph-builder": "图表建立器",
@@ -115,5 +116,7 @@
 	"wdqs-result-map-layers-all": "所有图层",
 	"wdqs-result-map-progress": "正在加载地图数据：$1%",
 	"wdqs-embed-button-edit-query": "编辑此查询",
-	"wdqs-embed-button-edit-query-title": "通过SPARQL编辑器编辑此查询"
+	"wdqs-embed-button-edit-query-title": "通过SPARQL编辑器编辑此查询",
+	"wdqs-embed-explorer-button-incoming": "显示传入链接",
+	"wdqs-embed-explorer-button-outgoing": "显示传出链接"
 }

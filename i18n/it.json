@@ -106,5 +106,7 @@
 	"wdqs-result-map-layers-all": "Tutti i livelli",
 	"wdqs-result-map-progress": "Caricamento dati mappa: $1%",
 	"wdqs-embed-button-edit-query": "Modifica questa query",
-	"wdqs-embed-button-edit-query-title": "Modifica questa query con l'editor SPARQL"
+	"wdqs-embed-button-edit-query-title": "Modifica questa query con l'editor SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Mostra collegamenti in entrata",
+	"wdqs-embed-explorer-button-outgoing": "Mostra collegamenti in uscita"
 }

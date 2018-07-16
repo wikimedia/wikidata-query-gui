@@ -64,6 +64,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Иерархическая разметка слева направо",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Иерархическая разметка сверху вниз",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Иерархическая разметка справа налево",
+	"wdqs-app-resultbrowser-non-hierarchical": "Неиерархическая разметка",
 	"wdqs-app-resultbrowser-table": "Таблица",
 	"wdqs-app-resultbrowser-image-grid": "Сетка изображений",
 	"wdqs-app-resultbrowser-graph-builder": "Построитель графиков",
@@ -118,5 +119,7 @@
 	"wdqs-result-map-layers-all": "Все слои",
 	"wdqs-result-map-progress": "Загрузка данных карты: $1%",
 	"wdqs-embed-button-edit-query": "Изменить этот запрос",
-	"wdqs-embed-button-edit-query-title": "Изменить этот запрос с помощью SPARQL-редактора"
+	"wdqs-embed-button-edit-query-title": "Изменить этот запрос с помощью SPARQL-редактора",
+	"wdqs-embed-explorer-button-incoming": "Показать входящие ссылки",
+	"wdqs-embed-explorer-button-outgoing": "Показать исходящие ссылки"
 }
