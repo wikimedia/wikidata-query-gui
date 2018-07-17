@@ -94,7 +94,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	 * @private
 	 */
 	SELF.prototype._createToolbar = function( network ) {
-		var $toolbar = $( '<div id="layout-options" style="margin-top: -35px; text-align: center;">' );
+		var $toolbar = $( '<div id="layout-options">' );
 
 		function setLayout( type ) {
 			if ( type === 'none' ) {

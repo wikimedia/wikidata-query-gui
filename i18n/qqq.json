@@ -116,8 +116,10 @@
 	"wdqs-action-preview": "Label for progressbar displaying preview",
 	"wdqs-result-map-layers-all": "Label for all layers in layer control on map view",
 	"wdqs-result-map-progress": "Message while loading data for the map view. $1 is a percentage from 0 to 100.",
-	"wdqs-embed-button-edit-query": "Label for button in embed",
-	"wdqs-embed-button-edit-query-title": "Title for button in embed",
-	"wdqs-embed-explorer-button-incoming": "Show incoming links",
-	"wdqs-embed-explorer-button-outgoing": "Show outgoing links"
+	"wdqs-embed-button-edit-query": "Label for button to edit a query with the query helper in embed",
+    "wdqs-embed-button-edit-query-title": "Title for the Edit button in embed",
+    "wdqs-embed-button-edit-code": "Label for button to edit the query with the SPARQL editor in embed",
+    "wdqs-embed-button-edit-code-title": "Title for the Edit Code button in embed",
+	"wdqs-embed-explorer-button-incoming": "Title for button to show incoming links",
+	"wdqs-embed-explorer-button-outgoing": "Title for button to show outgoing links"
 }
