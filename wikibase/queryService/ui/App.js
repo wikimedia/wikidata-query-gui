@@ -252,6 +252,7 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 */
 	SELF.prototype._toggleBrandIconOnResize = function( e ) {
 		// Hide site name when the window width is way too small
+		$( '.navbar-brand a span' ).css( 'vertical-align', 'middle' );
 		if ( ( $( '.navbar-brand a span' ).position().top - $( '.navbar-brand a img' ).position().top ) > 30 ) {
 			$( '.navbar-brand a span' ).css( 'opacity', 0 );
 		} else {
