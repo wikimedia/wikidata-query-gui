@@ -120,19 +120,6 @@ body {
 	opacity: 1;
 }
 
-.hide-toolbar {
-	display: none;
-	float: right;
-	padding: 5px;
-	color: #777777ab;
-}
-
-.show-toolbar {
-	position: fixed;
-	bottom: 3em;
-	right: 0;
-}
-
 .img-grid {
 	width: 95vw;
 }
@@ -162,6 +149,13 @@ body {
 	opacity: 1;
 }
 
+@media only screen and (max-width: 500px) {
+    .header-toolbar {
+		display: none;
+	}
+}
+
+
 </style>
 <body>
 	<div class="logo"></div>
@@ -188,7 +182,6 @@ body {
 						<span class="fa fa-question-circle"></span></a>
 					</li>
 				</ul>
-				<span class="btn hide-toolbar glyphicon glyphicon-remove"></span>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="navbar-text">
 						<span class="query-total">
@@ -382,16 +375,8 @@ body {
 				}
 			} )
 
-			$('.hide-toolbar').click(function() {
-				$( '.header-toolbar' ).hide();
-				$( 'body' ).append( '<a class="btn show-toolbar" data-toggle="tooltip" title="Open toolbar" onclick="showToolbar()"><span aria-hidden="true"><i class="fa fa-bars"></i></span></a>' );
-			});
 		} );
 
-		function showToolbar() {
-			$( '.show-toolbar' ).hide();
-			$( '.header-toolbar' ).show();
-		}
 	</script>
 </body>
 </html>

@@ -57,22 +57,15 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	 * @param {jQuery} $element target element
 	 */
 	SELF.prototype.draw = function( $element ) {
-		var $container;
+		var $container = $( '<div>' ).height( '100vh' );
 		//only for embed.html
 		if ( $( '#expand-type-switch' ).length !== 0 ) {
-			if ( $( window ).height() === $( parent.window ).height() ) {
-				$container = $( '<div>' ).height( '100vh' );
-			} else {
-				$container = $( '<div>' ).height( '90vh' );
-				$( '.hide-toolbar' ).show();
-			}
+			$container = $( '<div>' ).height( '100vh' );
 			$( '.expand-type' ).show();
 			$( '#expand-type-switch' ).bootstrapToggle( {
 				on: 'Incoming',
 				off: 'Outgoing'
 			} ) ;
-		} else {
-			$container = $( '<div>' ).height( '100vh' );
 		}
 		var data = this._getData();
 		var network = new vis.Network( $container[0], data, GRAPH_OPTIONS );
