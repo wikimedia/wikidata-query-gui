@@ -58,6 +58,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Bố cục thứ bậc từ trái sang phải",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Bố cục thứ bậc từ trên xuống",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Bố cục thứ bậc từ phải sang trái",
+	"wdqs-app-resultbrowser-non-hierarchical": "Bố trí không cấp bậc",
 	"wdqs-app-resultbrowser-table": "Bảng",
 	"wdqs-app-resultbrowser-image-grid": "Lưới hình",
 	"wdqs-app-resultbrowser-graph-builder": "Trình xây dựng biểu đồ",
@@ -112,5 +113,7 @@
 	"wdqs-result-map-layers-all": "Tất cả các lớp",
 	"wdqs-result-map-progress": "Đang tải dữ liệu bản đồ: $1%",
 	"wdqs-embed-button-edit-query": "Sửa đổi truy vấn này",
-	"wdqs-embed-button-edit-query-title": "Sửa đổi truy vấn này dùng trình soạn thảo SPARQL"
+	"wdqs-embed-button-edit-query-title": "Sửa đổi truy vấn này dùng trình soạn thảo SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Hiện liên kết đến đây",
+	"wdqs-embed-explorer-button-outgoing": "Hiện liên kết từ đây"
 }

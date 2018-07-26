@@ -13,7 +13,8 @@
 			"Luisangelrg",
 			"Cethos",
 			"La Mantis",
-			"Micru"
+			"Micru",
+			"Tiberius1701"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -68,6 +69,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Disposición jerárquica de izquierda a derecha",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Disposición jerárquica de arriba abajo",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disposición jerárquica de derecha a izquierda",
+	"wdqs-app-resultbrowser-non-hierarchical": "Disposición no jerárquica",
 	"wdqs-app-resultbrowser-table": "Tabla",
 	"wdqs-app-resultbrowser-image-grid": "Cuadrícula de imágenes",
 	"wdqs-app-resultbrowser-graph-builder": "Generador de gráficos",
@@ -122,5 +124,7 @@
 	"wdqs-result-map-layers-all": "Todas las capas",
 	"wdqs-result-map-progress": "Cargando datos cartográficos: $1 %",
 	"wdqs-embed-button-edit-query": "Editar esta consulta",
-	"wdqs-embed-button-edit-query-title": "Editar esta consulta con el editor de SPARQL"
+	"wdqs-embed-button-edit-query-title": "Editar esta consulta con el editor de SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Mostrar enlaces entrantes",
+	"wdqs-embed-explorer-button-outgoing": "Mostrar enlaces salientes"
 }

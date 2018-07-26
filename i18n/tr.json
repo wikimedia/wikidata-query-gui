@@ -66,6 +66,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Soldan sağa hiyerarşik düzen",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Aşağıdan yukarı hiyerarşik düzen",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Sağdan sola hiyerarşik düzen",
+	"wdqs-app-resultbrowser-non-hierarchical": "Hiyerarşik olmayan düzen",
 	"wdqs-app-resultbrowser-table": "Tablo",
 	"wdqs-app-resultbrowser-image-grid": "Görüntü ızgarası",
 	"wdqs-app-resultbrowser-graph-builder": "Grafik oluşturucu",
@@ -120,5 +121,7 @@
 	"wdqs-result-map-layers-all": "Tüm katmanlar",
 	"wdqs-result-map-progress": "Harita verileri yükleniyor: %$1",
 	"wdqs-embed-button-edit-query": "Bu sorguyu düzenle",
-	"wdqs-embed-button-edit-query-title": "Bu sorguyu SPARQL editörüyle düzenleyin"
+	"wdqs-embed-button-edit-query-title": "Bu sorguyu SPARQL editörüyle düzenleyin",
+	"wdqs-embed-explorer-button-incoming": "Yeni bağlantıları göster",
+	"wdqs-embed-explorer-button-outgoing": "Giden bağlantıları göster"
 }
