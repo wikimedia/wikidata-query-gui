@@ -10,9 +10,14 @@ wikibase.queryService.ui.i18n.getMessage = ( function( $ ) {
 		var i18nMessage = null;
 
 		if ( $.i18n ) {
-			i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
-			if ( i18nMessage !== key ) {
-				return i18nMessage;
+			try {
+				i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
+				if ( i18nMessage !== key ) {
+					return i18nMessage;
+				}
+			} catch ( e ) {
+				window.console.warn( '$.i18n( "' + key + '" ) threw error, invalid translation?' );
+				window.console.warn( e );
 			}
 		}
 
