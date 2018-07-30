@@ -6,8 +6,7 @@ wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {
 wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	'use strict';
 
-	var I18N_PREFIX = 'wdqs-ve-sb',
-		SPARQL_TIMEOUT = 4 * 1000;
+	var SPARQL_TIMEOUT = 4 * 1000;
 
 /*jshint multistr: true */
 	var SPARQL_QUERY = {
@@ -565,14 +564,14 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 					if ( r1.length > 0 ) {
 						r1 = [ {
-								text: self._i18n( 'suggestions', 'Suggestions' ),
+								text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-suggestions', 'Suggestions' ),
 								children: r1
 						} ];
 					}
 
 					if ( r2.length > 0 &&  r1.length > 0 ) {
 						r2 = [ {
-							text: self._i18n( 'other', 'Other' ),
+							text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-other', 'Other' ),
 							children: r2
 						} ];
 					}
@@ -780,17 +779,6 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			},
 			cache: true
 		} );
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._i18n = function( key, defaultMessage ) {
-		if ( !$.i18n ) {
-			return defaultMessage;
-		}
-
-		return $.i18n( I18N_PREFIX + '-' + key );
 	};
 
 	return SELF;

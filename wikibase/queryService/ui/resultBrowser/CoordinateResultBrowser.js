@@ -150,7 +150,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		function updateProgress() {
 			if ( self._markerGroupsProgress > 0 && self._markerGroupsProgress < 1 ) {
 				var percent = ( 100 * self._markerGroupsProgress ).toFixed( 2 ),
-					message = self._i18n(
+					message = wikibase.queryService.ui.i18n.getMessage(
 						'wdqs-result-map-progress',
 						'Loading map data: $1%',
 						[ percent ] );
@@ -285,7 +285,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 
 		$.each( this._markerGroups, function( name, markers ) {
 			if ( name === LAYER_DEFAULT_GROUP ) {
-				control = self._i18n( 'wdqs-result-map-layers-all', 'All layers' );
+				control = wikibase.queryService.ui.i18n.getMessage( 'wdqs-result-map-layers-all', 'All layers' );
 			} else {
 				var color = self._getMarkerGroupColor( name );
 				control = '<span style="color:' + color + '">&#x2b24;</span> ' + name;

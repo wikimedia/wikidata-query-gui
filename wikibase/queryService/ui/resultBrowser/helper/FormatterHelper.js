@@ -35,11 +35,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 *
 	 * @author Jonas Kress
 	 * @constructor
-	 * @param {Function} _i18n
 	 * @param {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
-	function SELF( _i18n, options ) {
-		this._i18n = _i18n;
+	function SELF( options ) {
 		this._options = options || new wikibase.queryService.ui.resultBrowser.helper.Options( {} );
 	}
 
@@ -177,7 +175,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			break;
 		case DATATYPE_DATETIME:
 			if ( !title ) {
-				title = this._i18n( 'wdqs-app-result-formatter-title-datetime', 'Raw ISO timestamp' );
+				title = wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-result-formatter-title-datetime', 'Raw ISO timestamp' );
 			}
 			var $dateLabel = $( '<span>' ).text( this._formatDate( value ) );
 			$dateLabel.attr( 'title', title + ': ' + value );
@@ -545,11 +543,6 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			return NaN;
 		}
 	};
-
-	/**
-	 * @see AbstractResultBrowser._i18n
-	 */
-	SELF.prototype._i18n = null;
 
 	/**
 	 * @property {wikibase.queryService.ui.resultBrowser.helper.Options}

@@ -220,12 +220,11 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 */
 	SELF.prototype._internationalizeCharts = function() {
-		var that = this;
 		$.each( this._resultBrowsers, function( key, chart ) {
 			var i18nKey = chart.label[0],
 				fallback = chart.label[1];
 
-			chart.label = that._i18n( i18nKey, fallback );
+			chart.label = wikibase.queryService.ui.i18n.getMessage( i18nKey, fallback );
 		} );
 	};
 
@@ -355,7 +354,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		var api = this._sparqlApi;
 
 		$( '#response-summary' ).html(
-			this._i18n(
+			wikibase.queryService.ui.i18n.getMessage(
 				'wdqs-app-resultbrowser-response-summary',
 				'$1 results in $2&nbsp;ms',
 				[ api.getResultLength(), api.getExecutionTime() ]
@@ -678,32 +677,6 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
 		this._trackingApi.track( this.trackingNamespace + metricName, value, valueType );
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._i18n = function( key, message, args ) {
-		var i18nMessage = null;
-
-		if ( $.i18n ) {
-			i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
-			if ( i18nMessage !== key ) {
-				return i18nMessage;
-			}
-		}
-
-		i18nMessage = message;
-		if ( args ) {
-			$.each( args, function( index, arg ) {
-				i18nMessage = i18nMessage.replace(
-					new RegExp( '\\$' + ( index + 1 ), 'g' ),
-					arg
-				);
-			} );
-		}
-
-		return i18nMessage;
 	};
 
 	return SELF;

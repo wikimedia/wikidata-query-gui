@@ -12,7 +12,6 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			'http://www.bigdata.com/queryHints#optimizer': true,
 			'http://www.w3.org/1999/02/22-rdf-syntax-ns#type': true
 		},
-		I18N_PREFIX = 'wdqs-ve-',
 		TABLE_OPTIONS = {
 			formatNoMatches: function () {
 			}
@@ -78,21 +77,6 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 * @private
 	 */
 	SELF.prototype._isSimpleMode = false;
-
-	/**
-	 * @property {Object}
-	 * @private
-	 */
-	SELF.prototype._labels = {
-		filter: 'Filter',
-		show: 'Show',
-		anything: 'anything',
-		'with': 'with',
-		any: 'any',
-		or: 'or',
-		subtype: 'subtype',
-		limit: 'Limit'
-	};
 
 	/**
 	 * Set the SPARQL query string
@@ -211,21 +195,10 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	/**
 	 * @private
 	 */
-	SELF.prototype._i18n = function( key ) {
-		if ( !$.i18n ) {
-			return this._labels[key];
-		}
-
-		return $.i18n( I18N_PREFIX + key );
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._i18nSpan = function( key ) {
+	SELF.prototype._i18nSpan = function( key, message ) {
 		return $( '<span>' )
-			.attr( 'data-i18n', I18N_PREFIX + key )
-			.text( this._i18n( key ) );
+			.attr( 'data-i18n', key )
+			.text( wikibase.queryService.ui.i18n.getMessage( key, message ) );
 	};
 
 	/**
@@ -285,7 +258,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				.attr( 'href', '#' )
 				.attr( 'id', 'query-helper-limit' )
 				.data( 'value', this._query.getLimit() )
-				.append( this._i18nSpan( 'limit' ) ),
+			.append( this._i18nSpan( 'wdqs-ve-limit', 'Limit' ) ),
 			$value = $( '<span>' )
 				.text( this._query.getLimit() || '' );
 
@@ -398,7 +371,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._createFindButton = function( $table ) {
 		// Show link
 		var $button = $( '<a class="btn">' )
-			.append( this._i18nSpan( 'filter' ) )
+			.append( this._i18nSpan( 'wdqs-ve-filter', 'Filter' ) )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
@@ -441,7 +414,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	SELF.prototype._createShowButton = function( $table ) {
 		// Show link
 		var $button = $( '<a class="btn">' )
-			.append( this._i18nSpan( 'show' ) )
+			.append( this._i18nSpan( 'wdqs-ve-show', 'Show' ) )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
 				.tooltip( {
@@ -576,7 +549,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			self._createTagCloud();
 			return false;
 		} ).tooltip( {
-			title: self._i18n( 'remove-row-title' )
+			title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-remove-row-title' )
 		} );
 
 		var $label = $( '<a href="#">' ).addClass( 'fa fa-tag' ).click( function () {
@@ -586,7 +559,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			}
 			return false;
 		} ).tooltip( {
-			title: self._i18n( 'add-label-title' )
+			title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-add-label-title' )
 		} );
 
 		return $( '<td class="toolbar">' ).append( $label, $delete );
@@ -647,10 +620,13 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			}
 
 			if ( k > 0 && path.pathType === '/' ) {
-				$path.append( ' ' + self._i18n( 'or' ) + ' ' + self._i18n( 'subtype' ) + ' ' );
+				var or = wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-or', 'or' ),
+					subtype = wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-subtype', 'subtype' );
+				$path.append( ' ' + or + ' ' + subtype + ' ' );
 			}
 			if ( path.pathType === '*' ) {
-				$path.append( ' ' + self._i18n( 'any' ) + ' ' );
+				var any = wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-any', 'any' );
+				$path.append( ' ' + any + ' ' );
 			}
 
 			// FIXME: Do not fake triple here

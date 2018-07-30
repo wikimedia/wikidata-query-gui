@@ -287,7 +287,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 					placement: 'bottom',
 					trigger: 'hover',
 					container: 'body',
-					title: self._i18n( 'wdqs-dialog-examples-preview-query', 'Preview query' ),
+					title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-dialog-examples-preview-query', 'Preview query' ),
 					content: $( '<pre style="white-space:pre-line; word-break:normal;"/>' ).text( query ),
 					html: true
 				} ),
@@ -298,7 +298,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
                     'esc_close': true,
 					trigger: 'click',
 					container: 'body',
-					title: self._i18n( 'wdqs-dialog-examples-preview-result', 'Preview result' ),
+					title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-dialog-examples-preview-result', 'Preview result' ),
 					content: $( '<iframe width="400" height="350" frameBorder="0" src="' +
 							( self._previewUrl || 'embed.html#' ) +	encodeURIComponent( query ) + '">' ),
 					html: true
@@ -370,32 +370,6 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
 		this._trackingApi.track( TRACKING_NAMESPACE + metricName, value, valueType );
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._i18n = function( key, message, args ) {
-		var i18nMessage = null;
-
-		if ( $.i18n ) {
-			i18nMessage = $.i18n.apply( $, [ key ].concat( args || [] ) );
-			if ( i18nMessage !== key ) {
-				return i18nMessage;
-			}
-		}
-
-		i18nMessage = message;
-		if ( args ) {
-			$.each( args, function( index, arg ) {
-				i18nMessage = i18nMessage.replace(
-					new RegExp( '\\$' + ( index + 1 ), 'g' ),
-					arg
-				);
-			} );
-		}
-
-		return i18nMessage;
 	};
 
 	return SELF;

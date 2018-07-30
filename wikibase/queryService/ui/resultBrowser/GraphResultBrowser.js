@@ -121,35 +121,35 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			network.stabilize( 100 );
 		} ).append(
 			'<span class="glyphicon glyphicon-fullscreen" aria-hidden="true" title="' +
-			this._i18n( 'wdqs-app-resultbrowser-stabilize' ) +
+			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-stabilize' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default layout-button">' ).click( function() {
 			setLayout( 'LR' );
 		} ).append( '<span class="glyphicon glyphicon-indent-left" aria-hidden="true" title="' +
-			this._i18n( 'wdqs-app-resultbrowser-hierarchical-lr' ) +
+			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-hierarchical-lr' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default layout-button">' ).click( function() {
 			setLayout( 'UD' );
 		} ).append( '<span class="glyphicon glyphicon-align-center" aria-hidden="true" title="' +
-			this._i18n( 'wdqs-app-resultbrowser-hierarchical-ud' ) +
+			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-hierarchical-ud' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default layout-button">' ).click( function() {
 			setLayout( 'RL' );
 		} ).append( '<span class="glyphicon glyphicon-indent-right" aria-hidden="true" title="' +
-			this._i18n( 'wdqs-app-resultbrowser-hierarchical-rl' ) +
+			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-hierarchical-rl' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
 		$( '<a class="btn btn-default layout-button">' ).click( function() {
 			setLayout( 'none' );
 		} ).append( '<span class="glyphicon glyphicon-align-justify" aria-hidden="true" title="' +
-			this._i18n( 'wdqs-app-resultbrowser-non-hierarchical' ) +
+			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-non-hierarchical' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
