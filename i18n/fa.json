@@ -53,6 +53,7 @@
 	"wdqs-app-result-tsv-verbose": "پروندهٔ تی‌اس‌وی (دراز)",
 	"wdqs-app-result-csv": "پروندهٔ سی‌اس‌وی",
 	"wdqs-app-result-svg": "تصویر اس‌وی‌جی",
+	"wdqs-app-result-html": "جدول اچ‌تی‌ام‌ال",
 	"wdqs-app-shorturl-page-title": "نشانی کوتاه به این صفحه",
 	"wdqs-app-editor-placeholder": "(یک کوئری SPARQL وارد کنید یا یک نمونه کوئری را انتخاب کنید)",
 	"wdqs-app-editor-addprefixes": "افزودن پیشوندهای استاندارد",
@@ -61,6 +62,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "طرح سلسله مراتبی چپ به راست",
 	"wdqs-app-resultbrowser-hierarchical-ud": "طرح سلسله مراتبی بالا به پائین",
 	"wdqs-app-resultbrowser-hierarchical-rl": "طرح سلسله مراتبی راست به چپ",
+	"wdqs-app-resultbrowser-non-hierarchical": "لایه غیر سلسله‌مراتبی",
 	"wdqs-app-resultbrowser-table": "جدول",
 	"wdqs-app-resultbrowser-image-grid": "شبکه تصویر",
 	"wdqs-app-resultbrowser-graph-builder": "سازنده نمودار",
@@ -115,5 +117,7 @@
 	"wdqs-result-map-layers-all": "تمام لایه‌ها",
 	"wdqs-result-map-progress": "بارگیری اطلاعات نقشه: $1%",
 	"wdqs-embed-button-edit-query": "ویرایش این پرسمان",
-	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL"
+	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL",
+	"wdqs-embed-explorer-button-incoming": "نمایش پیوند به",
+	"wdqs-embed-explorer-button-outgoing": "نمایش پیوند‌ها"
 }
