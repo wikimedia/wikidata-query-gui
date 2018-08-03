@@ -204,6 +204,10 @@ body {
 }
 .toolbar-right-item:focus {
 	outline: none;
+	text-decoration: none;
+}
+.toolbar-right-item:hover {
+	text-decoration: none;
 }
 
 .toolbar-right-icon {
@@ -213,6 +217,17 @@ body {
 
 .toolbar-right-label {
 	position: absolute;
+	left: 15px;
+}
+
+.download-dropdown-menu {
+	left: -47px;
+    top: -11px;
+}
+
+.download-caret {
+	position: relative;
+	left: 60px;
 }
 
 #embed-right-menu {
@@ -236,13 +251,22 @@ body {
 	}
 }
 
-@media only screen and (max-height: 382px) {
+@media only screen and (max-height: 430px) {
 	#embed-right-menu {
 		list-style-type: none;
 		overflow-y: scroll;
 		overflow-x: hidden;
-		height: 60vh;
+		height: 57vh;
 		position: static;
+	}
+}
+
+@media only screen and (max-height: 450px) {
+	.download-dropdown-menu {
+		left: -50px;
+		top: -40px;
+		height: 61vh;
+		overflow-y: scroll;
 	}
 }
 
@@ -320,6 +344,25 @@ body {
 					<a class="toolbar-right-item" href="#" data-toggle="modal" data-target="#CodeExamples" data-i18n="[title]wdqs-app-button-code-title">
 						<span class="fa fa-code toolbar-right-icon"></span> <span class="toolbar-right-label" data-i18n="wdqs-app-button-code"></span>
 					</a>
+				</li>
+				<li class="download-dropdown">
+					<a id="download-button" href="#" class="toolbar-right-item" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-download-title">
+						<span class="glyphicon glyphicon-download-alt toolbar-right-icon" aria-hidden="true"></span> <span data-i18n="wdqs-app-button-download" class="toolbar-right-label"></span>
+						<span class="dropup"><span class="caret download-caret"></span></span>
+					</a>
+					<ul class="dropdown-menu download-dropdown-menu" role="menu">
+							<li><a id="downloadJSON" href="#"><span class="fa fa-file-code-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-json"></span></a></li>
+							<li><a id="downloadFull-JSON" href="#"><span class="fa fa-file-code-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-json-verbose"></span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a id="downloadSimple-TSV" href="#"><span class="fa fa-file-excel-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-tsv"></span></a></li>
+							<li><a id="downloadTSV" href="#"><span class="fa fa-file-excel-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-tsv-verbose"></span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a id="downloadCSV" href="#"><span class="fa fa-file-excel-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-csv"></span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a id="downloadHTML" href="#"><span class="fa fa-file-code-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-html"></span></a></li>
+							<li role="separator" class="divider"></li>
+							<li><a id="downloadSVG" href="#"><span class="fa fa-file-image-o" aria-hidden="true"></span> <span data-i18n="wdqs-app-result-svg"></span></a></li>
+					</ul>
 				</li>
 			</ul>
 		</div>
@@ -431,6 +474,7 @@ body {
 	<script src="node_modules/select2/dist/js/select2.js"></script>
 -	<script src="node_modules/moment/min/moment-with-locales.js"></script>
 	<script src="node_modules/wellknown/wellknown.js"></script>
+	<script src="node_modules/downloadjs/download.js"></script>
 	<script src="node_modules/jqcloud-npm/dist/jqcloud.js"></script>
 	<script src="node_modules/gijgo/js/gijgo.min.js"></script>
 	<script src="vendor/sparqljs/dist/sparqljs-browser-min.js"></script>
@@ -571,12 +615,6 @@ body {
 					$( '.toolbar-label' ).css( 'display', 'none' );
 			});
 
-			$( '.toolbar-right .hovered' ).hover( function() {
-				$( '.toolbar-right-label' ).css( 'display', 'inline-block' );
-				}, function() {
-					$( '.toolbar-right-label' ).css( 'display', 'none' );
-			});
-
 			$( window ).on( 'hashchange', function( e ) {
 				$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash );
 				query = decodeURIComponent( window.location.hash.substr( 1 ) );
@@ -592,6 +630,14 @@ body {
 					'html': true,
 					'content': $editor,
 			});
+
+			$('.download-dropdown').on( 'show.bs.dropdown', function () {
+				$( '.toolbar-right' ).toggleClass( 'hovered' );
+			})
+
+			$('.download-dropdown').on( 'hide.bs.dropdown', function () {
+				$( '.toolbar-right' ).toggleClass( 'hovered' );
+			})
 
 		} );
 

@@ -2,7 +2,7 @@ var wikibase = wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 
-wikibase.queryService.ui.ResultView = ( function( $, window ) {
+wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	'use strict';
 
 	var PREVIEW_TIMEOUT = 1000,
@@ -213,6 +213,7 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 		this._initExamples();
 		this._initCodeExamples();
 		this._initQueryLinkPopover();
+		this._initHandlersDownloads();
 	};
 
 	/**
@@ -528,6 +529,93 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	/**
 	 * @private
 	 */
+	SELF.prototype._initHandlersDownloads = function() {
+		var api = this._sparqlApi;
+		var DOWNLOAD_FORMATS = {
+			'CSV': {
+				handler: $.proxy( api.getResultAsCsv, api ),
+				mimetype: 'text/csv;charset=utf-8'
+			},
+			'JSON': {
+				handler: $.proxy( api.getResultAsJson, api ),
+				mimetype: 'application/json;charset=utf-8'
+			},
+			'TSV': {
+				handler: $.proxy( api.getSparqlTsv, api ),
+				mimetype: 'text/tab-separated-values;charset=utf-8'
+			},
+			'Simple TSV': {
+				handler: $.proxy( api.getSimpleTsv, api ),
+				mimetype: 'text/tab-separated-values;charset=utf-8',
+				ext: 'tsv'
+			},
+			'Full JSON': {
+				handler: $.proxy( api.getResultAsAllJson, api ),
+				mimetype: 'application/json;charset=utf-8',
+				ext: 'json'
+			},
+			'HTML': {
+				handler: $.proxy( api.getResultHTML, api ),
+				mimetype: 'application/html;charset=utf-8',
+				ext: 'html'
+			},
+			'SVG': {
+				handler: function() {
+					var $svg = $( '#query-result svg' );
+
+					if ( !$svg.length ) {
+						return null;
+					}
+
+					$svg.attr( {
+						version: '1.1',
+						'xmlns': 'http://www.w3.org/2000/svg',
+						'xmlns:svg': 'http://www.w3.org/2000/svg',
+						'xmlns:xlink': 'http://www.w3.org/1999/xlink'
+					} );
+
+					try {
+						return '<?xml version="1.0" encoding="utf-8"?>\n'
+							+ $svg[0].outerHTML;
+					} catch ( ex ) {
+						return null;
+					}
+				},
+				mimetype: 'data:image/svg+xml;charset=utf-8',
+				ext: 'svg'
+			}
+		};
+
+		var self = this;
+		var downloadHandler = function( filename, handler, mimetype ) {
+			return function( e ) {
+				e.preventDefault();
+
+				// see: http://danml.com/download.html
+				self._track( 'buttonClick.download.' + filename );
+
+				var data = handler();
+
+				if ( data ) {
+					download( data, filename, mimetype );
+				}
+			};
+		};
+
+		for ( var format in DOWNLOAD_FORMATS ) {
+			var extension = DOWNLOAD_FORMATS[format].ext || format.toLowerCase();
+			var formatName = format.replace( /\s/g, '-' );
+			$( '#download' + formatName ).click( downloadHandler(
+				'query.' + extension,
+				DOWNLOAD_FORMATS[format].handler,
+				DOWNLOAD_FORMATS[format].mimetype
+			) );
+		}
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._handleQueryResultBrowsers = function() {
 		var self = this;
 
@@ -620,4 +708,4 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 	return SELF;
 
-}( jQuery, window ) );
+}( jQuery, download, window ) );
