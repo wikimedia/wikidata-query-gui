@@ -63,18 +63,13 @@
 				editor,
 				new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
 				sparqlApi,
-				querySamplesApi
+				querySamplesApi,
+				codeSamplesApi
 			);
 
 			if ( !config.showBirthdayPresents ) {
 				$( '[data-target="#CodeExamples"]' ).hide(); // TODO: remove after birthday
 			}
-			new wikibase.queryService.ui.dialog.CodeExample(
-				$( '#CodeExamples' ),
-				function () {
-					return codeSamplesApi.getExamples( editor.getValue() );
-				}
-			);
 
 		} );
 

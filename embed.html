@@ -9,6 +9,9 @@
 <!-- build:css css/embed.style.min.css -->
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="node_modules/codemirror/addon/hint/show-hint.css">
+<link rel="stylesheet" href="node_modules/codemirror/addon/display/fullscreen.css">
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
 <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
 <link rel="stylesheet" href="node_modules/vis/dist/vis.css">
@@ -62,6 +65,10 @@ body {
 	display: none;
 }
 
+#query-result {
+	height: 97vh;
+}
+
 .action-bar {
 	height: 30px;
 	width: 100%;
@@ -69,27 +76,8 @@ body {
 	font-size: 18px;
 }
 
-.link {
-	position: fixed;
-	bottom: 3em;
-	left: 0px;
-	padding: 0px 2px 0px 2px;
-	background-color: rgba(255, 255, 255, 0.8);
-	z-index: 401; /* one above .leaflet-pane */
-}
-
-.edit {
-	position: fixed;
-	bottom: 2em;
-	left: 0;
-	font-size: 2em;
-	z-index: 401; /* one above .leaflet-pane */
-	padding: 0.2em;
-	border-radius: 5px;
-	background-color: rgba(255,255,255,0.8);
-}
 .popover {
-	max-width: 80vw;
+	max-width: 100vw;
 	min-width: 300px;
 	white-space: nowrap;
 }
@@ -104,20 +92,42 @@ body {
 }
 
 #result-browser-menu {
-	height: 37vh;
-	overflow-y: scroll;
 	cursor: pointer;
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+.result-browser-item {
+	padding: 0.5em 0 0.5em 0;
+}
+
+.result-browser {
+	color: #333;
+}
+
+.result-browser-inactive {
+	display: none;
 }
 
 .header-toolbar {
 	z-index: 1000;
 	position: fixed;
-	bottom: 3em;
-	right: 0;
+	left: -97px;
+	top: 26vh;
+	padding-top: 0.5em;
 	opacity: 0.2;
+	width: 150px;
 }
 .header-toolbar:hover {
+	transition: 0.4s;
 	opacity: 1;
+	background: #fff;
+	border: #ddd 1px solid;
+	left: 0;
+}
+
+.toolbar-label {
+	display: none;
 }
 
 .img-grid {
@@ -131,11 +141,13 @@ body {
 .bootstrap-table {
 	width: 100%;
 	height: auto;
+	padding: 0 50px;
 }
 
-.jstree {
+#query-result .jstree {
 	width: 100%;
 	height: auto;
+	padding: 0 50px;
 }
 
 .expand-type {
@@ -149,12 +161,112 @@ body {
 	opacity: 1;
 }
 
-@media only screen and (max-width: 500px) {
-    .header-toolbar {
-		display: none;
+#layout-options {
+	margin-top: 0px;
+	position: fixed;
+	z-index: 1001;
+	opacity: 0.2;
+	margin: auto;
+    width: 100%;
+}
+#layout-options:hover {
+	opacity: 1;
+}
+
+.layout-button {
+	border: none;
+	border-radius: 0;
+}
+
+.toolbar-right {
+	position: fixed;
+	right: -97px;
+	top: 26vh;
+	z-index: 1000;
+	padding-top: 0.5em;
+	opacity: 0.2;
+	width: 150px;
+}
+.toolbar-right:hover, .hovered {
+	transition: 0.4s;
+	opacity: 1;
+	background: #fff;
+	border: #ddd 1px solid;
+	right: 0;
+}
+
+.toolbar-right-item {
+	display: block;
+	width: 100%;
+	padding: 0.75em 0 0.75em 0;
+	position: relative;
+}
+.toolbar-right-item:focus {
+	outline: none;
+}
+
+.toolbar-right-icon {
+	position: relative;
+	left: -15px;
+}
+
+.toolbar-right-label {
+	position: absolute;
+}
+
+#embed-right-menu {
+	list-style-type: none;
+	position: static;
+	padding-left: 38px;
+}
+
+@media only screen and (max-height: 285px) {
+	.header-toolbar {
+		z-index: 1000;
+		position: fixed;
+		left: -97px;
+		top: 20vh;
+		padding-top: 0.5em;
+		opacity: 0.2;
+		width: 150px;
+		height: 65vh;
+		overflow-y: scroll;
+		overflow-x: hidden;
 	}
 }
 
+@media only screen and (max-height: 382px) {
+	#embed-right-menu {
+		list-style-type: none;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		height: 60vh;
+		position: static;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.toolbar-right {
+		display: none;
+	}
+
+	.header-toolbar {
+		display: none;
+	}
+
+	.bootstrap-table {
+		width: 100%;
+		height: auto;
+		padding: 0px;
+	}
+
+	.jstree {
+		width: 100%;
+		height: auto;
+		padding: 0px;
+	}
+
+}
 
 </style>
 <body>
@@ -168,35 +280,54 @@ body {
 				</div>
 			</div>
 		</noscript>
+
 		<div class="header-toolbar">
-			<nav class="navbar navbar-default result">
-				<ul class="nav navbar-nav navbar-left">
-					<li><a id="display-button" href="#" data-toggle="dropdown" class="dropdown-toggle" data-placement="top" data-i18n="[title]wdqs-app-button-display-title">
-					<span id="display-button-icon" class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span id="display-button-label"></span>
-					<span class="caret"></span>
+			<ul id="result-browser-menu">
+			</ul>
+		</div>
+
+		<div class="toolbar-right">
+			<ul id="embed-right-menu">
+				<li>
+					<a href="#" target="_blank" rel="noopener" class="edit edit-link toolbar-right-item" data-toggle="popover">
+						<div data-toggle="tooltip" data-i18n="[title]wdqs-embed-button-edit-query-title">
+							<span class="glyphicon glyphicon-pencil toolbar-right-icon" aria-hidden="true"></span><span class="toolbar-right-label" data-i18n="wdqs-embed-button-edit-query"></span>
+						</div>
 					</a>
-						<ul id="result-browser-menu" class="dropdown-menu" role="menu">
-						</ul></li>
-					<li>
-						<a target="_blank" class="help" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views">
-						<span class="fa fa-question-circle"></span></a>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="navbar-text">
-						<span class="query-total">
-							<span class="label label-default" id="response-summary"></span>
-						</span> &nbsp;
-					</li>
-				</ul>
-			</nav>
+				</li>
+				<li>
+					<a class="link edit-link toolbar-right-item" target="_blank" rel="noopener" data-i18n="[title]wdqs-embed-button-edit-code-title">
+						<span class="glyphicon glyphicon-edit toolbar-right-icon" aria-hidden="true"></span> <span class="toolbar-right-label" data-i18n="wdqs-embed-button-edit-code"></span>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help" target="_blank" class="toolbar-right-item">
+						<span class="glyphicon glyphicon-question-sign toolbar-right-icon" aria-hidden="true"></span> <span class="toolbar-right-label" data-i18n="wdqs-app-button-help" id="help-label"></span>
+					</a>
+				</li>
+				<li>
+					<a class="toolbar-right-item" href="#" id="open-example" data-toggle="modal" data-target="#QueryExamples">
+						<span class="fa fa-folder-open-o toolbar-right-icon"></span> <span class="toolbar-right-label" data-i18n="wdqs-app-button-examples" id="examples-label"></span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="shareQuery shortUrlTrigger result toolbar-right-item" target="_blank" data-i18n="[title]wdqs-app-button-link-title" data-toggle="popover">
+						<span class="glyphicon glyphicon-link toolbar-right-icon" aria-hidden="true"> </span> <span class="toolbar-right-label" data-i18n="wdqs-app-button-link"></span>
+					</a>
+				</li>
+				<li>
+					<a class="toolbar-right-item" href="#" data-toggle="modal" data-target="#CodeExamples" data-i18n="[title]wdqs-app-button-code-title">
+						<span class="fa fa-code toolbar-right-icon"></span> <span class="toolbar-right-label" data-i18n="wdqs-app-button-code"></span>
+					</a>
+				</li>
+			</ul>
 		</div>
 		<div class="action-bar">
 			<div class="message"></div>
 		</div>
 		<div id="query-result">Test result</div>
 		<div id="query-error" class="panel-heading">Test error</div>
-		
+
 		<div id="loading-spinner">
 			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
 			<span class="sr-only">Loading...</span>
@@ -213,17 +344,73 @@ body {
 				</div>
 			</div>
 		</div>
-	<a class="link edit-link" target="_blank" rel="noopener" data-i18n="[title]wdqs-embed-button-edit-query-title"><small data-i18n="wdqs-embed-button-edit-query"></small></a>
-	<a href="#" target="_blank" rel="noopener" class="edit edit-link" data-toggle="popover"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+
 	<div class="expand-type" data-toggle="tooltip" data-i18n="[title]wdqs-embed-explorer-button-outgoing">
 		<input id="expand-type-switch" type="checkbox" data-onstyle="primary" data-size="small">
 	</div>
 
-	<!-- JS files -->
+	<!-- Query Example Modal -->
+	<div class="modal fade QueryExamples" id="QueryExamples" tabindex="-1" role="dialog" aria-labelledby="QueryExamplesModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+				<div class="tagCloud"></div>
+						<div class="tagFilter"></div>
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></span>
+						<input type="text" class="tableFilter form-control" placeholder="Type to filter"/>
+						<span class="input-group-addon"><span class="badge count"></span></span>
+					</div>
+					<div class="exampleTable">
+						<table class="table">
+							<tbody class="searchable">
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Code Example Modal -->
+	<div class="modal fade CodeExamples" id="CodeExamples" tabindex="-1" role="dialog" aria-labelledby="CodeExamplesModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div>
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		<!-- JS files -->
 	<!-- build:js js/embed.vendor.min.js -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="node_modules/underscore/underscore.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="node_modules/codemirror/lib/codemirror.js"></script>
+	<script src="node_modules/codemirror/mode/sparql/sparql.js"></script>
+	<script src="node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+	<script src="node_modules/codemirror/mode/xml/xml.js"></script>
+	<script src="node_modules/codemirror/mode/clike/clike.js"></script>
+	<script src="node_modules/codemirror/mode/php/php.js"></script>
+	<script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
+	<script src="node_modules/codemirror/mode/octave/octave.js"></script>
+	<script src="node_modules/codemirror/mode/python/python.js"></script>
+	<script src="node_modules/codemirror/mode/ruby/ruby.js"></script>
+	<script src="node_modules/codemirror/mode/r/r.js"></script>
+	<script src="node_modules/codemirror/addon/display/autorefresh.js"></script>
+	<script src="node_modules/codemirror/addon/hint/show-hint.js"></script>
+	<script src="node_modules/codemirror/addon/display/placeholder.js"></script>
+	<script src="node_modules/codemirror/addon/display/fullscreen.js"></script>
+	<script src="node_modules/codemirror/addon/comment/comment.js"></script>
 	<script src="node_modules/bootstrap-table/dist/bootstrap-table.js"></script>
 	<script src="node_modules/bootstrap-table/dist/extensions/mobile/bootstrap-table-mobile.js"></script>
 	<script src="node_modules/bootstrap-table/dist/extensions/key-events/bootstrap-table-key-events.js"></script>
@@ -241,7 +428,7 @@ body {
 	<script src="node_modules/js-cookie/src/js.cookie.js"></script>
 	<script src="node_modules/vis/dist/vis.js"></script>
 	<script src="node_modules/select2/dist/js/select2.js"></script>
-	<script src="node_modules/moment/min/moment-with-locales.js"></script>
+-	<script src="node_modules/moment/min/moment-with-locales.js"></script>
 	<script src="node_modules/wellknown/wellknown.js"></script>
 	<script src="node_modules/jqcloud-npm/dist/jqcloud.js"></script>
 	<script src="node_modules/gijgo/js/gijgo.min.js"></script>
@@ -260,10 +447,14 @@ body {
 	<script src="node_modules/jquery.i18n/src/jquery.i18n.parser.js"></script>
 	<script src="node_modules/jquery.i18n/src/jquery.i18n.emitter.js"></script>
 	<script src="node_modules/jquery.i18n/src/jquery.i18n.language.js"></script>
+	<script src="vendor/bootstrap-tags/js/bootstrap-tags.min.js"></script>
+
 	<!-- endbuild -->
 
 	<!-- build:js js/embed.wdqs.min.js -->
 	<script src="wikibase/config.js"></script>
+	<script src="wikibase/queryService/ui/dialog/CodeExample.js"></script>
+	<script src="wikibase/queryService/ui/dialog/QueryExampleDialog.js"></script>
 	<script src="wikibase/queryService/ui/ResultView.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/helper/Options.js"></script>
@@ -286,6 +477,8 @@ body {
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowserNodeBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/PolestarResultBrowser.js"></script>
 	<script src="wikibase/queryService/api/Sparql.js"></script>
+	<script src="wikibase/queryService/api/CodeSamples.js"></script>
+	<script src="wikibase/queryService/api/QuerySamples.js"></script>
 	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
@@ -297,28 +490,16 @@ body {
 	<!-- endbuild -->
 
 	<script type="text/javascript">
-		function renderEdit( api, sparqlApi, query, callback ) {
-			var qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi );
+		function renderEdit( qh, query, $editor, callback ) {
 			qh.setChangeListener( _.debounce( function( v ) {
 				callback( v.getQuery() );
 			}, 1500 ) );
-
-			var $editor = $( '<div>' );
 			try {
 				qh.setQuery( query );
 				qh.draw( $editor );
 			} catch ( e ) {
 				return;
 			}
-
-			$('.edit').on('click',function(e){
-			    e.preventDefault();
-			  }).popover( {
-					placement: 'top',
-					'html': true,
-					'content': $editor
-				} );
-
 			if ( /^#TEMPLATE=/m.test( query ) ) {
 				// expand query template popover after allowing some time for labels to load
 				setTimeout( function() { $( '.edit' ).click(); }, 500 );
@@ -330,10 +511,19 @@ body {
 				lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
 				api = new wikibase.queryService.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wikibase.queryService.api.Sparql( config.api.sparql.uri, lang ),
-				resultView = new wikibase.queryService.ui.ResultView( sparqlApi ),
+				codeSamplesApi = new wikibase.queryService.api.CodeSamples(
+					config.api.sparql.uri,
+					config.location.root,
+					config.location.index
+				),
+				resultView = new wikibase.queryService.ui.ResultView( sparqlApi, codeSamplesApi ),
 				query = decodeURIComponent( window.location.hash.substr( 1 ) );
 
+			var qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi );
+
 			resultView.trackingNamespace = 'wikibase.queryService.ui.embed.';
+
+			var $editor = $( '<div>' );
 
 			$.i18n().locale = lang;
 			$.when(
@@ -344,19 +534,17 @@ body {
 
 				resultView.draw( query ).then( function() {
 					$( '.logo' ).hide();
-				} );
-				renderEdit( api, sparqlApi, query, function( q ){
+				} )
+				renderEdit( qh, query, $editor, function( q ) {
 					resultView.draw( q );
-					window.location.hash = '#' + encodeURIComponent( q )
-					$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash )
+					window.location.hash = '#' + encodeURIComponent( q );
+					$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash );
 				} );
-
 				$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash )
+
 			} );
 
 			$( '#display-button' ).closest( '.navbar' ).addClass( 'dropup' );
-
-			$( 'ul#result-browser-menu.dropdown-menu li a' ).removeAttr( 'href' );
 
 			$( '#expand-type-switch' ).change( function() {
 				if( $( this ).prop( 'checked' ) ) {
@@ -367,13 +555,42 @@ body {
 				}
 			})
 
-			$('a.result-browser').click( function( e ) {
-				if ( $(this).text() != 'Graph' ) {
+			$( 'a.result-browser' ).click( function( e ) {
+				if ( $( this ).text() != 'Graph' ) {
 					$( '.expand-type' ).hide();
 				} else {
 					$( '.expand-type' ).show();
 				}
-			} )
+
+			} );
+
+			$( '.header-toolbar' ).hover( function() {
+				$( '.toolbar-label' ).css( 'display', 'block' );
+				}, function() {
+					$( '.toolbar-label' ).css( 'display', 'none' );
+			});
+
+			$( '.toolbar-right .hovered' ).hover( function() {
+				$( '.toolbar-right-label' ).css( 'display', 'inline-block' );
+				}, function() {
+					$( '.toolbar-right-label' ).css( 'display', 'none' );
+			});
+
+			$( window ).on( 'hashchange', function( e ) {
+				$( '.edit-link' ).attr( 'href', config.location.index + window.location.hash );
+				query = decodeURIComponent( window.location.hash.substr( 1 ) );
+				qh.setQuery( query );
+				qh.draw( $editor );
+			});
+
+			$( '.edit' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( '.toolbar-right' ).toggleClass( 'hovered' );
+			}).popover({
+					placement: 'bottom',
+					'html': true,
+					'content': $editor,
+			});
 
 		} );
 

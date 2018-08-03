@@ -114,8 +114,10 @@
     "wdqs-action-preview": "Result preview",
     "wdqs-result-map-layers-all": "All layers",
     "wdqs-result-map-progress": "Loading map data: $1%",
-    "wdqs-embed-button-edit-query": "Edit this query",
-    "wdqs-embed-button-edit-query-title": "Edit this query with the SPARQL editor",
+    "wdqs-embed-button-edit-query": "Edit",
+    "wdqs-embed-button-edit-query-title": "Edit this query with the query helper",
+    "wdqs-embed-button-edit-code": "Edit code",
+    "wdqs-embed-button-edit-code-title": "Edit this query with the SPARQL editor",
     "wdqs-embed-explorer-button-incoming": "Show incoming links",
     "wdqs-embed-explorer-button-outgoing": "Show outgoing links"
 }

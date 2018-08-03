@@ -24,12 +24,13 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 * @param {wikibase.queryService.ui.editor.Editor} editor
 	 * @param {wikibase.queryService.api.Sparql} queryHelper
 	 */
-	function SELF( $element, editor, queryHelper, sparqlApi, querySamplesApi ) {
+	function SELF( $element, editor, queryHelper, sparqlApi, querySamplesApi, codeSamplesApi ) {
 		this._$element = $element;
 		this._editor = editor;
 		this._queryHelper = queryHelper;
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
+		this._codeSamplesApi = codeSamplesApi;
 
 		this._init();
 	}
@@ -57,6 +58,12 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	 * @private
 	 */
 	SELF.prototype._querySamplesApi = null;
+
+	/**
+	 * @property {wikibase.queryService.api.CodeSamples}
+	 * @private
+	 */
+	SELF.prototype._codeSamplesApi = null;
 
 	/**
 	 * @property {wikibase.queryService.ui.editor.Editor}
@@ -104,12 +111,12 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			this._sparqlApi = new wikibase.queryService.api.Sparql();
 		}
 
-		if ( !this._resultView ) {
-			this._resultView = new wikibase.queryService.ui.ResultView( this._sparqlApi );
-		}
-
 		if ( !this._querySamplesApi ) {
 			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
+		}
+
+		if ( !this._codeSamplesApi ) {
+			this._codeSamplesApi = new wikibase.queryService.api.CodeSamples();
 		}
 
 		if ( !this._trackingApi ) {
@@ -120,12 +127,15 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			this._editor = new wikibase.queryService.ui.editor.Editor();
 		}
 
+		if ( !this._resultView ) {
+			this._resultView = new wikibase.queryService.ui.ResultView( this._sparqlApi, this._codeSamplesApi, this._editor );
+		}
+
 		this._track( 'init' );
 
 		this._initApp();
 		this._initEditor();
 		this._initQueryHelper();
-		this._initExamples();
 		this._initDataUpdated();
 		this._initQuery();
 		this._initRdfNamespaces();
@@ -462,25 +472,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 	/**
 	 * @private
 	 */
-	SELF.prototype._initExamples = function() {
-		var self = this;
-		new wikibase.queryService.ui.dialog.QueryExampleDialog( $( '#QueryExamples' ),
-				this._querySamplesApi, function( query, title ) {
-					if ( !query || !query.trim() ) {
-						return;
-					}
-
-					self._editor.setValue( '#' + title + '\n' + query );
-
-					$( '#QueryExamples' ).one( 'hidden.bs.modal', function() {
-						setTimeout( function() { self._editor.focus(); }, 0 );
-					} );
-				} );
-	};
-
-	/**
-	 * @private
-	 */
 	SELF.prototype._initRdfNamespaces = function() {
 		var category,
 			select,
@@ -608,11 +599,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			self._track( 'buttonClick.clear' );
 		} );
 
-		$( '.explorer-close' ).click( function( e ) {
-			e.preventDefault();
-			$( '.explorer-panel' ).hide();
-		} );
-
 		$( '.restore' ).click( function( e ) {
 			self._track( 'buttonClick.restore' );
 			e.preventDefault();
@@ -683,24 +669,6 @@ wikibase.queryService.ui.App = ( function( $, download, window, _, Cookies, mome
 			}
 		} ).click( function() {
 			self._track( 'buttonClick.shortUrlQuery' );
-		} );
-
-		$( '.shortUrlTrigger.result' ).clickover( {
-			placement: 'left',
-			'global_close': true,
-			'html': true,
-			'content': function() {
-				self._updateQueryUrl();
-				var $link = $( '<a>' ).attr( 'href', 'embed.html' + window.location.hash );
-				return '<iframe ' +
-					'class="shortUrl" ' +
-					'src="' + SHORTURL_API + encodeURIComponent( $link[0].href ) + '" ' +
-					'referrerpolicy="origin" ' +
-					'sandbox="" ' +
-					'></iframe>';
-			}
-		} ).click( function() {
-			self._track( 'buttonClick.shortUrlResult' );
 		} );
 
 		$( '.embed.result' ).clickover( {

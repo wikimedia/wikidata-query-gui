@@ -19,8 +19,10 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 *
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 */
-	function SELF( sparqlApi ) {
+	function SELF( sparqlApi, codeSamplesApi, editor ) {
 		this._sparqlApi = sparqlApi;
+		this._codeSamplesApi = codeSamplesApi;
+		this._editor = editor;
 
 		this._init();
 	}
@@ -42,6 +44,12 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 * @private
 	 */
 	SELF.prototype._sparqlApi = null;
+
+	/**
+	 * @property {wikibase.queryService.api.CodeSamples}
+	 * @private
+	 */
+	SELF.prototype._codeSamplesApi = null;
 
 	/**
 	 * @property {string}
@@ -191,6 +199,10 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}
 
+		if ( !this._codeSamplesApi ) {
+			this._codeSamplesApi = new wikibase.queryService.api.CodeSamples();
+		}
+
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
 
 		this._sparqlQuery = this._query = new wikibase.queryService.ui.queryHelper.SparqlQuery();
@@ -198,6 +210,9 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 		this._internationalizeCharts();
 
 		this._initResultBrowserMenu();
+		this._initExamples();
+		this._initCodeExamples();
+		this._initQueryLinkPopover();
 	};
 
 	/**
@@ -218,8 +233,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	 */
 	SELF.prototype._initResultBrowserMenu = function() {
 		$.each( this._resultBrowsers, function( key, b ) {
-			var $element = $( '<li><a class="result-browser" href="#">' +
-					'<span class="' + b.icon.split( '-', 1 )[0] + ' ' + b.icon + '"></span>' + b.label +
+			var $element = $( '<li class="result-browser-item"><a class="result-browser" href="#">' +
+					'<span class="toolbar-label">' + b.label + ' ' + '</span>' + '<span class="toolbar-icon ' + b.icon.split( '-', 1 )[0] + ' ' + b.icon + '"></span>' +
 					'</a></li>' );
 			$element.appendTo( $( '#result-browser-menu' ) );
 			b.$element = $element;
@@ -447,6 +462,72 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 	/**
 	 * @private
 	 */
+	SELF.prototype._initExamples = function() {
+		var self = this;
+		new wikibase.queryService.ui.dialog.QueryExampleDialog( $( '#QueryExamples' ),
+				this._querySamplesApi, function( query, title ) {
+					if ( !query || !query.trim() ) {
+						return;
+					}
+
+					if ( self._editor ) {
+						self._editor.setValue( '#' + title + '\n' + query );
+						$( '#QueryExamples' ).one( 'hidden.bs.modal', function() {
+							setTimeout( function() { self._editor.focus(); }, 0 );
+						} );
+					} else {
+						self.draw( query );
+						window.location.hash = '#' + encodeURIComponent( '#' + title + '\n' + query );
+					}
+				} );
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._initCodeExamples = function() {
+		var self = this;
+		new wikibase.queryService.ui.dialog.CodeExample(
+			$( '#CodeExamples' ),
+			function () {
+				return self._codeSamplesApi.getExamples( self._query );
+			}
+		);
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._initQueryLinkPopover = function() {
+		var self = this;
+		var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
+		$( '.shortUrlTrigger.result' ).clickover( {
+			placement: 'left',
+			'global_close': true,
+			'html': true,
+			'content': function() {
+				var queryUrl;
+				if ( self._editor ) {
+					queryUrl = '#' + encodeURIComponent( self._editor.getValue() );
+				} else {
+					queryUrl = window.location.hash;
+				}
+				var $link = $( '<a>' ).attr( 'href', 'embed.html' + queryUrl );
+				return '<iframe ' +
+					'class="shortUrl" ' +
+					'src="' + SHORTURL_API + encodeURIComponent( $link[0].href ) + '" ' +
+					'referrerpolicy="origin" ' +
+					'sandbox="" ' +
+					'></iframe>';
+			}
+		} ).click( function() {
+			self._track( 'buttonClick.shortUrlResult' );
+		} );
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._handleQueryResultBrowsers = function() {
 		var self = this;
 
@@ -455,6 +536,7 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 			if ( b.object.isDrawable() ) {
 				b.$element.css( 'opacity', 1 ).attr( 'href', '#' );
+
 				b.$element.click( function() {
 					$( this ).closest( '.open' ).removeClass( 'open' );
 
@@ -468,6 +550,7 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 				} );
 			} else {
 				b.$element.css( 'opacity', 0.5 ).removeAttr( 'href' );
+				b.$element.css( 'opacity', 0.5 ).addClass( 'result-browser-inactive' );
 			}
 		} );
 	};
