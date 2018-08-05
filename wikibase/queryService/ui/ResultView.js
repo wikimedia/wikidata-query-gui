@@ -533,10 +533,9 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 
 		$.each( this._resultBrowsers, function( key, b ) {
 			b.$element.off( 'click' );
-
 			if ( b.object.isDrawable() ) {
+				b.$element.removeClass( 'result-browser-inactive' );
 				b.$element.css( 'opacity', 1 ).attr( 'href', '#' );
-
 				b.$element.click( function() {
 					$( this ).closest( '.open' ).removeClass( 'open' );
 
@@ -549,8 +548,8 @@ wikibase.queryService.ui.ResultView = ( function( $, window ) {
 					return false;
 				} );
 			} else {
+				b.$element.addClass( 'result-browser-inactive' );
 				b.$element.css( 'opacity', 0.5 ).removeAttr( 'href' );
-				b.$element.css( 'opacity', 0.5 ).addClass( 'result-browser-inactive' );
 			}
 		} );
 	};
