@@ -142,13 +142,13 @@ body {
 .bootstrap-table {
 	width: 100%;
 	height: auto;
-	padding: 0 50px;
+	padding: 20px 50px;
 }
 
 #query-result .jstree {
 	width: 100%;
 	height: auto;
-	padding: 0 50px;
+	padding: 25px 50px;
 }
 
 .expand-type {
@@ -236,6 +236,20 @@ body {
 	padding-left: 38px;
 }
 
+.brand {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	z-index: 10000;
+	background-color: rgba( 255,255,255, 0.7 );
+	padding: 0.2em;
+	font-size: 0.8em;
+}
+
+.brand img {
+	padding: 0.1em;
+}
+
 @media only screen and (max-height: 285px) {
 	.header-toolbar {
 		z-index: 1000;
@@ -306,6 +320,7 @@ body {
 			</div>
 		</noscript>
 
+		<a class="edit-link brand" target="_blank" rel="noopener" href="./"><img width="24" height="15" src=""><span></span></a>
 		<div class="header-toolbar">
 			<ul id="result-browser-menu">
 			</ul>
@@ -551,6 +566,11 @@ body {
 			}
 		}
 
+		function setBrand( config ) {
+			$( '.brand img' ).attr( 'src', config.brand.logo );
+			$( '.brand > span' ).text( config.brand.title );
+		}
+
 		$( document ).ready( function() {
 			var config = CONFIG,
 				lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
@@ -562,14 +582,13 @@ body {
 					config.location.index
 				),
 				resultView = new wikibase.queryService.ui.ResultView( sparqlApi, codeSamplesApi ),
-				query = decodeURIComponent( window.location.hash.substr( 1 ) );
-
-			var qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi );
+				query = decodeURIComponent( window.location.hash.substr( 1 ) ),
+				qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi ),
+				$editor = $( '<div>' );
 
 			resultView.trackingNamespace = 'wikibase.queryService.ui.embed.';
 
-			var $editor = $( '<div>' );
-
+			setBrand( config );
 			$.i18n().locale = lang;
 			$.when(
 				config.i18nLoad( lang )
