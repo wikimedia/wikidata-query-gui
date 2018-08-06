@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"NayiMuu",
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Dr Lotus Black"
 		]
 	},
 	"wdqs-app-button-examples": "ဥပမာများ",
@@ -16,6 +17,8 @@
 	"wdqs-app-button-link": "လင့်",
 	"wdqs-app-button-code": "ကုဒ်",
 	"wdqs-app-button-code-title": "ကုဒ်ဥပမာများ ကြည့်ရှုရန်။",
+	"wdqs-app-help-feedback": "အကြံပေးရန်",
+	"wdqs-app-help-portal": "အကူအညီ ပေါ်တယ်",
 	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲ",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io တွင် ဖွင့်ပါ။",
@@ -26,16 +29,30 @@
 	"wdqs-app-result-tsv-verbose": "TSV ဖိုင် (ထပ်မံ၍)",
 	"wdqs-app-result-csv": "CSV ဖိုင်",
 	"wdqs-app-result-svg": "SVG ပုံ",
+	"wdqs-app-resultbrowser-map": "မြေပုံ",
+	"wdqs-app-resultbrowser-line-chart": "မျဉ်းဇယား",
+	"wdqs-app-resultbrowser-bar-chart": "ဘားဇယား",
+	"wdqs-app-resultbrowser-area-chart": "ဧရိယာဇယား",
+	"wdqs-app-resultbrowser-timeline": "အချိန်လိုင်း",
+	"wdqs-app-resultbrowser-dimensions": "ဒိုင်မင်းရှင်းများ",
+	"wdqs-app-resultbrowser-graph": "ဂရပ်",
 	"wdqs-dialog-examples-preview-result": "ရလဒ်နမူနာကြည့်ရန်",
+	"wdqs-dialog-key-shortcut-show-example": "ဥပမာများကို ပြရန်",
+	"wdqs-dialog-key-shortcut-close-button": "ပိတ်ရန်",
 	"wdqs-ve-filter": "စိစစ်မှု",
 	"wdqs-ve-show": "ပြသရန်",
+	"wdqs-ve-limit": "ကန့်သတ်ချက်",
 	"wdqs-ve-anything": "မည်သည့်အရာဖြစ်စေ",
 	"wdqs-ve-any": "နှစ်သက်ရာ",
 	"wdqs-ve-or": "သို့မဟုတ်",
+	"wdqs-ve-sb-suggestions": "အကြံပေးမှုများ",
 	"wdqs-ve-sb-other": "အခြား",
 	"wdqs-action-error-display": "ရလဒ်များကို ပြသရန် မဖြစ်နိုင်ပါ။",
 	"wdqs-action-server-error": "ဆာဗာမှားယွင်းမှု",
 	"wdqs-action-unknow-error": "အမည်မသိအမှား",
 	"wdqs-action-preview": "ရလဒ် အစမ်းကြည့်ခြင်း",
-	"wdqs-result-map-progress": "မြေပုံဒေတာများအား တင်နေခြင်း: $1%"
+	"wdqs-result-map-layers-all": "အလွှာအားလုံး",
+	"wdqs-result-map-progress": "မြေပုံဒေတာများအား တင်နေခြင်း: $1%",
+	"wdqs-embed-explorer-button-incoming": "အဝင်လင့်ခ်များကို ပြန်",
+	"wdqs-embed-explorer-button-outgoing": "အထွက်လင့်ခ်များကို ပြန်"
 }

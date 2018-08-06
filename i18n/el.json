@@ -116,8 +116,10 @@
 	"wdqs-action-preview": "Αποτέλεσμα προεπισκόπησης",
 	"wdqs-result-map-layers-all": "Όλα τα στρώματα",
 	"wdqs-result-map-progress": "Φόρτωση δεδομένων χάρτη: $1%",
-	"wdqs-embed-button-edit-query": "Επεξεργασία καταχώρησης",
-	"wdqs-embed-button-edit-query-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL",
+	"wdqs-embed-button-edit-query": "Επεξεργασία",
+	"wdqs-embed-button-edit-query-title": "Επεξεργασία καταχώρησης με τον βοηθό ερωτήματος",
+	"wdqs-embed-button-edit-code": "Επεξεργασία κώδικα",
+	"wdqs-embed-button-edit-code-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Εμφάνιση ερχόμενων συνδέσμων",
 	"wdqs-embed-explorer-button-outgoing": "Εμφάνιση εξωτερικών συνδέσμων"
 }

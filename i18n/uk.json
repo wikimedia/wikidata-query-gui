@@ -8,7 +8,8 @@
 			"AS",
 			"Alex Khimich",
 			"Avatar6",
-			"Movses"
+			"Movses",
+			"Vlad5250"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -117,8 +118,10 @@
 	"wdqs-action-preview": "Попередній перегляд результату",
 	"wdqs-result-map-layers-all": "Всі шари",
 	"wdqs-result-map-progress": "Завантаження даних карти: $1%",
-	"wdqs-embed-button-edit-query": "Редагувати цей запит",
-	"wdqs-embed-button-edit-query-title": "Редагувати цей запит через редактор SPARQL",
+	"wdqs-embed-button-edit-query": "Редагувати",
+	"wdqs-embed-button-edit-query-title": "Змінити цей запит, використовуючи помічник",
+	"wdqs-embed-button-edit-code": "Редагувати код",
+	"wdqs-embed-button-edit-code-title": "Редагувати цей запит через редактор SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Показати вхідні посилання",
 	"wdqs-embed-explorer-button-outgoing": "Показати вихідні посилання"
 }

@@ -57,6 +57,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Diseñu xerárquicu d'izquierda a drecha",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Diseñu xerárquicu d'arriba abaxo",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Diseñu xerárquicu de drecha a izquierda",
+	"wdqs-app-resultbrowser-non-hierarchical": "Disposición non xerárquica",
 	"wdqs-app-resultbrowser-table": "Tabla",
 	"wdqs-app-resultbrowser-image-grid": "Cuadrícula d'imaxes",
 	"wdqs-app-resultbrowser-graph-builder": "Constructor de gráfiques",
@@ -110,6 +111,10 @@
 	"wdqs-action-preview": "Vista previa del resultáu",
 	"wdqs-result-map-layers-all": "Toles capes",
 	"wdqs-result-map-progress": "Cargando los datos del mapa: $1%",
-	"wdqs-embed-button-edit-query": "Editar esta consulta",
-	"wdqs-embed-button-edit-query-title": "Editar esta consulta col editor de SPARQL"
+	"wdqs-embed-button-edit-query": "Editar",
+	"wdqs-embed-button-edit-query-title": "Editar esta consulta col ayudante de consultes",
+	"wdqs-embed-button-edit-code": "Editar códigu",
+	"wdqs-embed-button-edit-code-title": "Editar esta consulta col editor de SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Amosar enllaces entrantes",
+	"wdqs-embed-explorer-button-outgoing": "Amosar enllaces salientes"
 }

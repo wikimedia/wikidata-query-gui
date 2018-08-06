@@ -116,8 +116,10 @@
 	"wdqs-action-preview": "Aperçu du résultat",
 	"wdqs-result-map-layers-all": "Toutes les couches",
 	"wdqs-result-map-progress": "Chargement des données cartographiques: $1 %",
-	"wdqs-embed-button-edit-query": "Modifier cette requête",
-	"wdqs-embed-button-edit-query-title": "Modifier cette requête avec l'éditeur SPARQL",
+	"wdqs-embed-button-edit-query": "Modifier",
+	"wdqs-embed-button-edit-query-title": "Modifier cette requête avec l’assistant de requête",
+	"wdqs-embed-button-edit-code": "Modifier le code",
+	"wdqs-embed-button-edit-code-title": "Modifier cette requête avec l’éditeur SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Afficher les liens entrants",
 	"wdqs-embed-explorer-button-outgoing": "Afficher les liens sortants"
 }

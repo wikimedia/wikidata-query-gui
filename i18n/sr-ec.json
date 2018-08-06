@@ -8,7 +8,8 @@
 			"Милан Јелисавчић",
 			"Milicevic01",
 			"Acamicamacaraca",
-			"Prevodim"
+			"Prevodim",
+			"BadDog"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -116,6 +117,7 @@
 	"wdqs-action-preview": "Приказ резултата",
 	"wdqs-result-map-layers-all": "Сви слојеви",
 	"wdqs-result-map-progress": "Учитавање података мапе: $1%",
-	"wdqs-embed-button-edit-query": "Уреди овај упит",
-	"wdqs-embed-button-edit-query-title": "Уреди овај упит са SPARQL уређивачем"
+	"wdqs-embed-button-edit-query": "Уреди",
+	"wdqs-embed-button-edit-query-title": "Уреди овај упит са SPARQL уређивачем",
+	"wdqs-embed-button-edit-code": "Уреди код"
 }

@@ -110,8 +110,10 @@
 	"wdqs-action-preview": "Преглед на исходот",
 	"wdqs-result-map-layers-all": "Сите слоеви",
 	"wdqs-result-map-progress": "Ги вчитувам картографските податоци: $1%",
-	"wdqs-embed-button-edit-query": "Уреди го барањево",
-	"wdqs-embed-button-edit-query-title": "Уреди го барањето со SPARQL-уредник",
+	"wdqs-embed-button-edit-query": "Уреди",
+	"wdqs-embed-button-edit-query-title": "Уреди го барањево со помошникот за барања",
+	"wdqs-embed-button-edit-code": "Уреди код",
+	"wdqs-embed-button-edit-code-title": "Уреди го барањево со SPARQL-уредникот",
 	"wdqs-embed-explorer-button-incoming": "Прикажи дојдовни врски",
 	"wdqs-embed-explorer-button-outgoing": "Прикажи појдовни врски"
 }

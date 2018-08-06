@@ -62,6 +62,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarchiczny układ od lewej do prawej",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarchiczny układ z góry na dół",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarchiczny układ od prawej do lewej",
+	"wdqs-app-resultbrowser-non-hierarchical": "Układ niehierarchiczny",
 	"wdqs-app-resultbrowser-table": "Tabela",
 	"wdqs-app-resultbrowser-image-grid": "Siatka obrazu",
 	"wdqs-app-resultbrowser-graph-builder": "Generator wykresów",
@@ -115,6 +116,8 @@
 	"wdqs-action-preview": "Podgląd wyniku",
 	"wdqs-result-map-layers-all": "Wszystkie warstwy",
 	"wdqs-result-map-progress": "Ładowanie danych mapy: $1%",
-	"wdqs-embed-button-edit-query": "Edytuj to zapytanie",
-	"wdqs-embed-button-edit-query-title": "Edytuj to zapytanie za pomocą edytora SPARQL"
+	"wdqs-embed-button-edit-query": "Edytuj",
+	"wdqs-embed-button-edit-query-title": "Edytuj to zapytanie za pomocą edytora SPARQL",
+	"wdqs-embed-button-edit-code": "Edytuj kod",
+	"wdqs-embed-button-edit-code-title": "Edytuj to zapytanie za pomocą edytora SPARQL"
 }

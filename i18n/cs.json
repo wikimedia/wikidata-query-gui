@@ -114,6 +114,7 @@
 	"wdqs-action-preview": "Náhled výsledků",
 	"wdqs-result-map-layers-all": "Všechny vrstvy",
 	"wdqs-result-map-progress": "Načítají se mapová data: $1 %",
-	"wdqs-embed-button-edit-query": "Editovat tento dotaz",
-	"wdqs-embed-button-edit-query-title": "Editovat tento dotaz v editoru SPARQL"
+	"wdqs-embed-button-edit-query": "Editovat",
+	"wdqs-embed-button-edit-query-title": "Editovat tento dotaz v dotazovém pomocníku",
+	"wdqs-embed-button-edit-code-title": "Editovat tento dotaz v editoru SPARQL"
 }

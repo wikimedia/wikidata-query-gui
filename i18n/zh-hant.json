@@ -110,8 +110,10 @@
 	"wdqs-action-preview": "結果預覽",
 	"wdqs-result-map-layers-all": "所有圖層",
 	"wdqs-result-map-progress": "載入地圖資料：$1%",
-	"wdqs-embed-button-edit-query": "編輯此查詢",
-	"wdqs-embed-button-edit-query-title": "以 SPARQL 編輯器來編輯此查詢",
+	"wdqs-embed-button-edit-query": "編輯",
+	"wdqs-embed-button-edit-query-title": "以查詢幫手來編輯此查詢",
+	"wdqs-embed-button-edit-code": "編輯代碼",
+	"wdqs-embed-button-edit-code-title": "以 SPARQL 編輯器來編輯此查詢",
 	"wdqs-embed-explorer-button-incoming": "顯示導入連結",
 	"wdqs-embed-explorer-button-outgoing": "顯示導出連結"
 }

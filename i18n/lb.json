@@ -95,6 +95,7 @@
 	"wdqs-action-preview": "Resultat kucken",
 	"wdqs-result-map-layers-all": "All Niveauen",
 	"wdqs-result-map-progress": "Date vun der Kaart gi gelueden: $1%",
-	"wdqs-embed-button-edit-query": "Dës Ufro änneren",
-	"wdqs-embed-button-edit-query-title": "Dës Ufro mam SPARQL-Editeur änneren"
+	"wdqs-embed-button-edit-query": "Änneren",
+	"wdqs-embed-button-edit-query-title": "Dës Ufro mam SPARQL-Editeur änneren",
+	"wdqs-embed-button-edit-code": "Code änneren"
 }
