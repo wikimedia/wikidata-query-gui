@@ -85,5 +85,6 @@
 	"wdqs-result-map-layers-all": "Visi slāņi",
 	"wdqs-result-map-progress": "Ielādē kartes datus: $1%",
 	"wdqs-embed-button-edit-query": "Labot šo vaicājumu",
-	"wdqs-embed-button-edit-query-title": "Labot šo vaicājumu ar SPARQL redaktoru"
+	"wdqs-embed-button-edit-query-title": "Labot šo vaicājumu ar SPARQL redaktoru",
+	"wdqs-embed-button-edit-code": "Labot kodu"
 }

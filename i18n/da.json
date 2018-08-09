@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Tjernobyl",
-			"Joedalton"
+			"Joedalton",
+			"Saederup92"
 		]
 	},
 	"wdqs-app-button-examples": "Eksempler",
@@ -110,6 +111,7 @@
 	"wdqs-action-preview": "Resultatforhåndsvisning",
 	"wdqs-result-map-layers-all": "Alle lag",
 	"wdqs-result-map-progress": "Indlæser kortdata: $1%",
-	"wdqs-embed-button-edit-query": "Rediger denne forespørgsel",
-	"wdqs-embed-button-edit-query-title": "Rediger denne forespørgsel med SPARQL-redigeringsprogrammet"
+	"wdqs-embed-button-edit-query": "Rediger",
+	"wdqs-embed-button-edit-query-title": "Rediger denne forespørgsel med forespørgsels hjælperen",
+	"wdqs-embed-button-edit-code": "Rediger kode"
 }

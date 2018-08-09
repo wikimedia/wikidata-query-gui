@@ -14,6 +14,7 @@
 	"wdqs-app-button-display": "မြင်ကွင်း",
 	"wdqs-app-button-display-title": "ရလဒ်များကို ဇယား၊ ပုံ အစရှိသဖြင့် ပြသထားသည်။",
 	"wdqs-app-button-download": "ဒေါင်းလုပ်ယူရန်",
+	"wdqs-app-button-download-title": "ရလဒ်ကို ဒေါင်းလုဒ်ရန်",
 	"wdqs-app-button-link": "လင့်",
 	"wdqs-app-button-code": "ကုဒ်",
 	"wdqs-app-button-code-title": "ကုဒ်ဥပမာများ ကြည့်ရှုရန်။",
@@ -21,6 +22,7 @@
 	"wdqs-app-help-portal": "အကူအညီ ပေါ်တယ်",
 	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲ",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
+	"wdqs-app-help-copy": "လိုင်စင်သတ်မှတ်ခြင်း အချက်အလက်",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io တွင် ဖွင့်ပါ။",
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.io ကို အသုံးပြု၍ လက်ရှိ ရလဒ်ဒေတာများဖြင့် ဂရပ်ဖန်တီးပါ။",
 	"wdqs-app-result-json": "JSON ဖိုင်",
@@ -53,6 +55,7 @@
 	"wdqs-action-preview": "ရလဒ် အစမ်းကြည့်ခြင်း",
 	"wdqs-result-map-layers-all": "အလွှာအားလုံး",
 	"wdqs-result-map-progress": "မြေပုံဒေတာများအား တင်နေခြင်း: $1%",
+	"wdqs-embed-button-edit-query": "ပြင်ဆင်ရန်",
 	"wdqs-embed-explorer-button-incoming": "အဝင်လင့်ခ်များကို ပြန်",
 	"wdqs-embed-explorer-button-outgoing": "အထွက်လင့်ခ်များကို ပြန်"
 }

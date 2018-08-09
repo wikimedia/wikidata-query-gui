@@ -32,6 +32,7 @@
 	"wdqs-app-help-copy": "'Mbormazziune sus 'a licenze",
 	"wdqs-app-help-queryhelper": "Aijute pe le Inderrogazziune",
 	"wdqs-app-footer-help": "Cazze <i>[CTRL-SPACE]</i> pe ffà funzionà l'autocombletamende.",
+	"wdqs-app-footer-updated-ago": "Date aggiornate $1 fa",
 	"wdqs-app-result-shorturl": "URL corte a 'u resultate",
 	"wdqs-app-result-shorturl-title": "URL corte a stu resultate",
 	"wdqs-app-result-rawgraphs": "Iapre jndr'à RAWGraphs.io",
@@ -46,6 +47,7 @@
 	"wdqs-app-result-tsv-verbose": "File TSV (cu 'u dettaglie)",
 	"wdqs-app-result-csv": "File CSV",
 	"wdqs-app-result-svg": "Immaggine SVG",
+	"wdqs-app-result-html": "Tabbelle HTML",
 	"wdqs-app-shorturl-page-title": "URL corte a sta vôsce",
 	"wdqs-app-editor-placeholder": "(Mitte 'n'inderrogazione SPARQL o scacchie 'n'inderrogazione de esembie)",
 	"wdqs-app-editor-addprefixes": "Aggiunge le prefisse standàrd",
@@ -56,8 +58,10 @@
 	"wdqs-app-toast-leave-fullscreen": "Cazze [esc] pe assè da 'u scherme indere",
 	"wdqs-dialog-examples-preview-query": "Andeprime de l'inderrogazione",
 	"wdqs-dialog-examples-preview-result": "Andeprime d'u resultate",
+	"wdqs-dialog-key-shortcut-close-button": "Achiude",
 	"wdqs-ve-filter": "Filtre",
 	"wdqs-ve-show": "Fà vedè",
+	"wdqs-ve-limit": "Limite",
 	"wdqs-ve-add-label-title": "Aggiunge 'na variabbile ca tène l'etichette de l'entità",
 	"wdqs-ve-remove-row-title": "Live sta righe",
 	"wdqs-ve-with": "cu",
@@ -77,6 +81,7 @@
 	"wdqs-action-preview": "Andeprime de le resultate",
 	"wdqs-result-map-layers-all": "Tutte le levélle",
 	"wdqs-result-map-progress": "Stoche a careche le date d'a mappe: $1%",
-	"wdqs-embed-button-edit-query": "Cange sta 'nderrogazione",
-	"wdqs-embed-button-edit-query-title": "Cange sta 'nderrogazione cu 'u cangiatore SPARQL"
+	"wdqs-embed-button-edit-query": "Cange",
+	"wdqs-embed-button-edit-query-title": "Cange sta 'nderrogazione cu l'aijutande de inderrogazziune",
+	"wdqs-embed-button-edit-code": "Cange 'u codece"
 }

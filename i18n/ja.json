@@ -109,6 +109,6 @@
 	"wdqs-action-preview": "結果プレビュー",
 	"wdqs-result-map-layers-all": "すべてのレイヤー",
 	"wdqs-result-map-progress": "地図データを読み込む:$1%",
-	"wdqs-embed-button-edit-query": "このクエリを編集する",
-	"wdqs-embed-button-edit-query-title": "このクエリをSPARQLエディタで編集する"
+	"wdqs-embed-button-edit-query": "編集",
+	"wdqs-embed-button-edit-query-title": "このクエリをクエリヘルパーで編集"
 }

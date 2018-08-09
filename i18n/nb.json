@@ -112,8 +112,10 @@
 	"wdqs-action-preview": "Resultatforhåndsvisning",
 	"wdqs-result-map-layers-all": "Alle lag",
 	"wdqs-result-map-progress": "Laster kartdata: $1 %",
-	"wdqs-embed-button-edit-query": "Rediger denne spørringen",
-	"wdqs-embed-button-edit-query-title": "Rediger denne spørringen med SPARQL-redigereren",
+	"wdqs-embed-button-edit-query": "Rediger",
+	"wdqs-embed-button-edit-query-title": "Rediger denne spørringen med spørringshjelperen",
+	"wdqs-embed-button-edit-code": "Rediger kode",
+	"wdqs-embed-button-edit-code-title": "Rediger denne spørringen med SPARQL-redigereren",
 	"wdqs-embed-explorer-button-incoming": "Vis lenker inn",
 	"wdqs-embed-explorer-button-outgoing": "Vis lenker ut"
 }
