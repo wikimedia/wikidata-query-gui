@@ -57,6 +57,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkiala ordineso de sinistre ad dextre",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarkiala ordineso, de supre ad infre",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarkiala ordineso, de dextre ad sinistre",
+	"wdqs-app-resultbrowser-non-hierarchical": "Ordineso sen hierarkio",
 	"wdqs-app-resultbrowser-table": "Tabelo",
 	"wdqs-app-resultbrowser-image-grid": "Greto dil imajo",
 	"wdqs-app-resultbrowser-graph-builder": "Konstruktero di grafiki",
@@ -110,6 +111,10 @@
 	"wdqs-action-preview": "Previdar la rezulto",
 	"wdqs-result-map-layers-all": "Omna strati",
 	"wdqs-result-map-progress": "Transfero dil mapo di dati: $1%",
-	"wdqs-embed-button-edit-query": "Redaktar ica demando",
-	"wdqs-embed-button-edit-query-title": "Redaktar ica demando per la redaktilo SPARQL"
+	"wdqs-embed-button-edit-query": "Redaktar",
+	"wdqs-embed-button-edit-query-title": "Redaktar ica demando per la redaktilo di demandi",
+	"wdqs-embed-button-edit-code": "Redaktar kodexo",
+	"wdqs-embed-button-edit-code-title": "Redaktar ica demando per la redaktilo SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Montrar eniranta ligili",
+	"wdqs-embed-explorer-button-outgoing": "Montrar ekiranta ligili"
 }

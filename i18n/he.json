@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Guycn2",
-			"המקיסט"
+			"המקיסט",
+			"ערן"
 		]
 	},
 	"wdqs-app-button-examples": "דוגמאות",
@@ -112,8 +113,10 @@
 	"wdqs-action-preview": "תצוגה מקדימה של תוצאה",
 	"wdqs-result-map-layers-all": "כל השכבות",
 	"wdqs-result-map-progress": "טעינת נתוני מפה: $1%",
-	"wdqs-embed-button-edit-query": "עריכת השאילתה הזאת",
-	"wdqs-embed-button-edit-query-title": "עריכת השאילתה הזאת עם עורך SPARQL",
+	"wdqs-embed-button-edit-query": "עריכת השאילתה",
+	"wdqs-embed-button-edit-query-title": "עריכת השאילתה הזאת עם סייען השאילתות",
+	"wdqs-embed-button-edit-code": "עריכת קוד",
+	"wdqs-embed-button-edit-code-title": "עריכת השאילתה עם עורך SPARQL",
 	"wdqs-embed-explorer-button-incoming": "הצגת קישורים נכנסים",
 	"wdqs-embed-explorer-button-outgoing": "הצגת קישורים יוצאים"
 }

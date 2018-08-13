@@ -115,8 +115,8 @@
 	"wdqs-action-preview": "Tulosesikatselu",
 	"wdqs-result-map-layers-all": "Kaikki tasot",
 	"wdqs-result-map-progress": "Ladataan karttaa: $1%",
-	"wdqs-embed-button-edit-query": "Muokkaa tätä kyselyä",
-	"wdqs-embed-button-edit-query-title": "Muokkaa tätä tiedustelua SPARQL-muokkaimella",
+	"wdqs-embed-button-edit-query": "Muokkaa",
+	"wdqs-embed-button-edit-query-title": "Muokkaa tätä tiedustelua tiedustelumuokkaimella",
 	"wdqs-embed-explorer-button-incoming": "Näytä saapuvat linkit",
 	"wdqs-embed-explorer-button-outgoing": "Näytä lähtevät linkit"
 }

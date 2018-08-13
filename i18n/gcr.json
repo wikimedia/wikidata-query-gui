@@ -5,7 +5,7 @@
 		]
 	},
 	"wdqs-app-button-examples": "Lègzanp",
-	"wdqs-app-button-prefixes": "Préfiks",
+	"wdqs-app-button-prefixes": "Préfigs",
 	"wdqs-app-button-tools": "Zouti",
 	"wdqs-app-button-help": "Lèd",
 	"wdqs-app-button-run": "Lansé",
@@ -56,6 +56,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Prézantasyon yérarchik di gòch bò'd drèt.",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Prézantasyon yérarchik di laro bò'd anba",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Prézantasyon yérarchik di drèt bò'd gòch",
+	"wdqs-app-resultbrowser-non-hierarchical": "Plan ki pa yérarchik",
 	"wdqs-app-resultbrowser-table": "Tablo",
 	"wdqs-app-resultbrowser-image-grid": "Griy di imaj",
 	"wdqs-app-resultbrowser-graph-builder": "Konstriktò di graf",
@@ -64,6 +65,7 @@
 	"wdqs-app-resultbrowser-bar-chart": "Grafik di bar",
 	"wdqs-app-resultbrowser-scatter-chart": "Grafik di dispèrsyon",
 	"wdqs-app-resultbrowser-area-chart": "Grafik di zonn",
+	"wdqs-app-resultbrowser-bubble-chart": "Grafik ké bòbòl",
 	"wdqs-app-resultbrowser-tree-map": "Arborésans",
 	"wdqs-app-resultbrowser-tree": "Pyébwa",
 	"wdqs-app-resultbrowser-timeline": "Kronoloji",
@@ -110,5 +112,8 @@
 	"wdqs-result-map-progress": "Charjman dé data kartografik: $1 %",
 	"wdqs-embed-button-edit-query": "Modifyé",
 	"wdqs-embed-button-edit-query-title": "Modifyé sa rékèt ké asistan-an di rékèt",
-	"wdqs-embed-button-edit-code": "Modifyé kod-a"
+	"wdqs-embed-button-edit-code": "Modifyé kod-a",
+	"wdqs-embed-button-edit-code-title": "Modifyé sa rékèt ké éditò SPARQL-a",
+	"wdqs-embed-explorer-button-incoming": "Afiché lyen-yan ki ka antré",
+	"wdqs-embed-explorer-button-outgoing": "Afiché lyen-yan ki ka soti"
 }

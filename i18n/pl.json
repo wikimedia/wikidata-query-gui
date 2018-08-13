@@ -7,7 +7,8 @@
 			"Szmyk",
 			"InternerowyGołąb",
 			"DeRudySoulStorm",
-			"Railfail536"
+			"Railfail536",
+			"Jareks"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -117,7 +118,9 @@
 	"wdqs-result-map-layers-all": "Wszystkie warstwy",
 	"wdqs-result-map-progress": "Ładowanie danych mapy: $1%",
 	"wdqs-embed-button-edit-query": "Edytuj",
-	"wdqs-embed-button-edit-query-title": "Edytuj to zapytanie za pomocą edytora SPARQL",
+	"wdqs-embed-button-edit-query-title": "Edytuj to zapytanie za pomocą edytora zapytań",
 	"wdqs-embed-button-edit-code": "Edytuj kod",
-	"wdqs-embed-button-edit-code-title": "Edytuj to zapytanie za pomocą edytora SPARQL"
+	"wdqs-embed-button-edit-code-title": "Edytuj to zapytanie za pomocą edytora SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Pokaż linki przychodzące",
+	"wdqs-embed-explorer-button-outgoing": "Pokaż linki wychodzące"
 }
