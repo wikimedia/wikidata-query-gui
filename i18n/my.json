@@ -23,6 +23,7 @@
 	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲ",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
 	"wdqs-app-help-copy": "လိုင်စင်သတ်မှတ်ခြင်း အချက်အလက်",
+	"wdqs-app-footer-updated-ago": "$ ဒေတာ အဆင်မြှင့်တင်ခဲ့သည်",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io တွင် ဖွင့်ပါ။",
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.io ကို အသုံးပြု၍ လက်ရှိ ရလဒ်ဒေတာများဖြင့် ဂရပ်ဖန်တီးပါ။",
 	"wdqs-app-result-json": "JSON ဖိုင်",

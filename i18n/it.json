@@ -6,7 +6,8 @@
 			"Anto",
 			"Selven",
 			"Greis",
-			"Lollo"
+			"Lollo",
+			"Ontsed"
 		]
 	},
 	"wdqs-app-button-examples": "Esempi",
@@ -82,6 +83,7 @@
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mostra aiuto sulle scorciatoie di tastiera per la pagina attuale.",
 	"wdqs-dialog-key-shortcut-jump-to-result": "Passa ai risultati della query.",
 	"wdqs-dialog-key-shortcut-show-example": "Mostra esempi.",
+	"wdqs-dialog-key-shortcut-show-language": "Mostra il menu delle lingue.",
 	"wdqs-dialog-key-shortcut-close-button": "Chiudi",
 	"wdqs-ve-filter": "Filtra",
 	"wdqs-ve-show": "Mostra",
@@ -105,8 +107,10 @@
 	"wdqs-action-preview": "Anteprima risultato",
 	"wdqs-result-map-layers-all": "Tutti i livelli",
 	"wdqs-result-map-progress": "Caricamento dati mappa: $1%",
-	"wdqs-embed-button-edit-query": "Modifica questa query",
-	"wdqs-embed-button-edit-query-title": "Modifica questa query con l'editor SPARQL",
+	"wdqs-embed-button-edit-query": "Modifica",
+	"wdqs-embed-button-edit-query-title": "Modifica questa richiesta con l’assistente alle richieste",
+	"wdqs-embed-button-edit-code": "Modifica il codice",
+	"wdqs-embed-button-edit-code-title": "Modifica questa richiesta con l’editor SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Mostra collegamenti in entrata",
 	"wdqs-embed-explorer-button-outgoing": "Mostra collegamenti in uscita"
 }

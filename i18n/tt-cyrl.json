@@ -46,7 +46,7 @@
 	"wdqs-app-result-tsv": "TSV-файл",
 	"wdqs-app-result-tsv-verbose": "TSV-файл (тулырак)",
 	"wdqs-app-result-csv": "CSV-файл",
-	"wdqs-app-result-svg": "SVG рәсеме",
+	"wdqs-app-result-svg": "SVG рәсем",
 	"wdqs-app-result-html": "HTML-табын",
 	"wdqs-app-shorturl-page-title": "Әлеге бит өчен кыскача URL",
 	"wdqs-app-editor-placeholder": "(Сорауны SPARQL өчендә яисә бирелгән мисаллардан сайлап башкарыгыз)",
@@ -56,6 +56,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Сулдан уңга иерархик билгеләү",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Өстән аска иерархик билгеләү",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Уңнан сулга иерархик билгеләү",
+	"wdqs-app-resultbrowser-non-hierarchical": "Иерархиясыз тамгаланыш",
 	"wdqs-app-resultbrowser-table": "Табын",
 	"wdqs-app-resultbrowser-image-grid": "Рәсем рәшәткәсе",
 	"wdqs-app-resultbrowser-graph-builder": "График тәзүче",
@@ -66,7 +67,7 @@
 	"wdqs-app-resultbrowser-area-chart": "Мәйданлы диаграмма",
 	"wdqs-app-resultbrowser-bubble-chart": "Куыклы диаграмма",
 	"wdqs-app-resultbrowser-tree-map": "Шәҗәрә диаграмма",
-	"wdqs-app-resultbrowser-tree": "Агач",
+	"wdqs-app-resultbrowser-tree": "Шәҗәрә",
 	"wdqs-app-resultbrowser-timeline": "Хронология",
 	"wdqs-app-resultbrowser-dimensions": "Зурлык",
 	"wdqs-app-resultbrowser-graph": "График",
@@ -109,6 +110,10 @@
 	"wdqs-action-preview": "Нәтиҗәне алдан карау",
 	"wdqs-result-map-layers-all": "Барлык катламнар",
 	"wdqs-result-map-progress": "Харита мәгълүматын йөкләү: $1%",
-	"wdqs-embed-button-edit-query": "Сорауны үзгәртү",
-	"wdqs-embed-button-edit-query-title": "SPARQL-мөхәррир ярдәмендә сорауны үзгәртү"
+	"wdqs-embed-button-edit-query": "Үзгәртү",
+	"wdqs-embed-button-edit-query-title": "Ярдәмчеярдәмендә таләпне үзгәртү",
+	"wdqs-embed-button-edit-code": "Кодны үзгәртү",
+	"wdqs-embed-button-edit-code-title": "SPARQL-мөхәррир ярдәмендә таләпне үзгәртү",
+	"wdqs-embed-explorer-button-incoming": "Кермә сылтамаларны күрсәтергә",
+	"wdqs-embed-explorer-button-outgoing": "Чыгучы сылтамаларны күрсәтергә"
 }

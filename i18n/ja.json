@@ -8,7 +8,9 @@
 			"Yusuke1109",
 			"Kkairri",
 			"Afaz",
-			"90-NS-FZ"
+			"90-NS-FZ",
+			"Gulpin",
+			"Suyama"
 		]
 	},
 	"wdqs-app-button-examples": "例",
@@ -63,6 +65,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "左から右への階層レイアウト",
 	"wdqs-app-resultbrowser-hierarchical-ud": "上から下への階層レイアウト",
 	"wdqs-app-resultbrowser-hierarchical-rl": "右から左への階層レイアウト",
+	"wdqs-app-resultbrowser-non-hierarchical": "非階層型レイアウト",
 	"wdqs-app-resultbrowser-table": "表",
 	"wdqs-app-resultbrowser-image-grid": "イメージグリッド",
 	"wdqs-app-resultbrowser-graph-builder": "グラフビルダー",
@@ -86,6 +89,9 @@
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "このページのキーボード・ショートカットを表示する。",
 	"wdqs-dialog-key-shortcut-focus-textarea": "クエリのテキストエリアをフォーカス",
 	"wdqs-dialog-key-shortcut-jump-to-result": "クエリの結果へ移動",
+	"wdqs-dialog-key-shortcut-focus-filter": "クエリ・ヘルパー内のフィルターボタンにフォーカスしてください",
+	"wdqs-dialog-key-shortcut-focus-show": "クエリ・ヘルパー内の表示ボタンにフォーカスしてください",
+	"wdqs-dialog-key-shortcut-focus-limit": "クエリ・ヘルパー内のLimitボタンをクリックしてください",
 	"wdqs-dialog-key-shortcut-show-example": "例を表示",
 	"wdqs-dialog-key-shortcut-help-menu": "ヘルプメニューを切替え",
 	"wdqs-dialog-key-shortcut-show-language": "言語メニューを表示",
@@ -95,7 +101,11 @@
 	"wdqs-ve-limit": "表示数",
 	"wdqs-ve-add-label-title": "エンティティラベルを含む変数を追加する",
 	"wdqs-ve-remove-row-title": "この行を削除",
+	"wdqs-ve-with": "with",
+	"wdqs-ve-anything": "なし",
+	"wdqs-ve-any": "すべて",
 	"wdqs-ve-or": "または",
+	"wdqs-ve-subtype": "サブタイプ",
 	"wdqs-ve-sb-suggestions": "候補",
 	"wdqs-ve-sb-other": "その他",
 	"wdqs-action-query": "\n実行中のクエリ",
@@ -110,5 +120,9 @@
 	"wdqs-result-map-layers-all": "すべてのレイヤー",
 	"wdqs-result-map-progress": "地図データを読み込む:$1%",
 	"wdqs-embed-button-edit-query": "編集",
-	"wdqs-embed-button-edit-query-title": "このクエリをクエリヘルパーで編集"
+	"wdqs-embed-button-edit-query-title": "このクエリをクエリヘルパーで編集",
+	"wdqs-embed-button-edit-code": "コードを編集",
+	"wdqs-embed-button-edit-code-title": "SPARQL エディターを使用してこのクエリーを編集",
+	"wdqs-embed-explorer-button-incoming": "被リンクを表示",
+	"wdqs-embed-explorer-button-outgoing": "リンク先を表示"
 }
