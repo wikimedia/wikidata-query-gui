@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"VASANTH S.N.",
-			"ಶಿವಕುಮಾರ್ ನಾಯಕ್"
+			"ಶಿವಕುಮಾರ್ ನಾಯಕ್",
+			"Gopala Krishna A"
 		]
 	},
 	"wdqs-app-button-examples": "ಉದಾಹರಣೆಗಳು",
@@ -12,12 +13,17 @@
 	"wdqs-app-button-run": "ಹುಡುಕು",
 	"wdqs-app-button-run-title": "ಪ್ರಶ್ನೆಯನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸಿ (<ಕಂಟ್ರೋಲ್> + <ಎಂಟರ್>)",
 	"wdqs-app-button-clear": "ಅಳಿಸು",
+	"wdqs-app-button-clear-title": "ಪ್ರಶ್ನೆಗಳನ್ನು ಸ್ವಚ್ಚಗೊಳಿಸಿ",
 	"wdqs-app-button-display": "ಪ್ರದರ್ಶಿಸು",
 	"wdqs-app-button-download": "ಇಳಿಸು",
 	"wdqs-app-button-link": "ಕೊಂಡಿ",
+	"wdqs-app-button-code": "ಕೋಡು",
+	"wdqs-app-button-code-title": "ಕೋಡುಗಳ ಉದಾಹರಣೆಯನ್ನು ನೋಡಿ",
 	"wdqs-app-help-feedback": "ಪ್ರತಿಕ್ರಿಯೆ ನೀಡಿ!",
+	"wdqs-app-help-request-query": "ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ",
+	"wdqs-app-help-portal": "ಸಹಾಯದ ಬಾಗಿಲು",
 	"wdqs-app-help-manual": "ಬಳಕೆದಾರ ಕೈಪಿಡಿ",
-	"wdqs-app-help-examples": "ಉದಾಹರಣೆ ಪ್ರಶ್ನೆಗಳು",
+	"wdqs-app-help-examples": "ಉದಾಹರಣೆಯ ಪ್ರಶ್ನೆಗಳು",
 	"wdqs-app-help-datamodel": "ಅರ್.ಡಿ.ಎಫ್. ಡೇಟಾ ಮಾದರಿ",
 	"wdqs-app-help-prefixes": "ಮುಂಪದಗಳ ಪಟ್ಟಿ",
 	"wdqs-app-footer-help": "ಸ್ವಯಂಪೂರ್ಣತೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು <i>[ಕಂಟ್ರೋಲ್-ಸ್ಪೇಸ್]</i> ಒತ್ತಿ.",
