@@ -120,8 +120,10 @@
 	"wdqs-action-preview": "Sonuç önizleme",
 	"wdqs-result-map-layers-all": "Tüm katmanlar",
 	"wdqs-result-map-progress": "Harita verileri yükleniyor: %$1",
-	"wdqs-embed-button-edit-query": "Bu sorguyu düzenle",
-	"wdqs-embed-button-edit-query-title": "Bu sorguyu SPARQL editörüyle düzenleyin",
+	"wdqs-embed-button-edit-query": "Düzenle",
+	"wdqs-embed-button-edit-query-title": "Bu sorguyu query yardımcısıyla düzenleyin",
+	"wdqs-embed-button-edit-code": "Kodu düzenle",
+	"wdqs-embed-button-edit-code-title": "Bu sorguyu SPARQL editörüyle düzenleyin",
 	"wdqs-embed-explorer-button-incoming": "Yeni bağlantıları göster",
 	"wdqs-embed-explorer-button-outgoing": "Giden bağlantıları göster"
 }

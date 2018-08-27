@@ -7,7 +7,8 @@
 			"Zbyso23",
 			"Matěj Suchánek",
 			"Walter Klosse",
-			"Ilimanaq29"
+			"Ilimanaq29",
+			"Patriccck"
 		]
 	},
 	"wdqs-app-button-examples": "Příklady",
@@ -62,6 +63,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarchické rozvržení zleva doprava",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarchické rozvržení shora dolů",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarchické rozvržení zprava doleva",
+	"wdqs-app-resultbrowser-non-hierarchical": "Nehierarchické uspořádání",
 	"wdqs-app-resultbrowser-table": "Tabulka",
 	"wdqs-app-resultbrowser-image-grid": "Mřížka obrázků",
 	"wdqs-app-resultbrowser-graph-builder": "Generátor grafů",
@@ -74,6 +76,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Stromová mapa",
 	"wdqs-app-resultbrowser-tree": "Strom",
 	"wdqs-app-resultbrowser-timeline": "Časová osa",
+	"wdqs-app-resultbrowser-dimensions": "Rozměry",
 	"wdqs-app-resultbrowser-graph": "Graf",
 	"wdqs-app-toast-leave-fullscreen": "Celoobrazovkový režim ukončíte stiskem [esc]",
 	"wdqs-dialog-examples-preview-query": "Náhled dotazu",
@@ -116,5 +119,8 @@
 	"wdqs-result-map-progress": "Načítají se mapová data: $1 %",
 	"wdqs-embed-button-edit-query": "Editovat",
 	"wdqs-embed-button-edit-query-title": "Editovat tento dotaz v dotazovém pomocníku",
-	"wdqs-embed-button-edit-code-title": "Editovat tento dotaz v editoru SPARQL"
+	"wdqs-embed-button-edit-code": "Editovat zdrojový kód",
+	"wdqs-embed-button-edit-code-title": "Editovat tento dotaz v editoru SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Zobrazit příchozí odkazy",
+	"wdqs-embed-explorer-button-outgoing": "Zobrazit odchozí odkazy"
 }
