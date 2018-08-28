@@ -107,7 +107,8 @@ module.exports = function( grunt ) {
 							expand: true,
 							flatten: true,
 							src: [
-								'**/leaflet/dist/images/*.png'
+								'**/leaflet/dist/images/*.png',
+								'**/leaflet-minimap/dist/images/*.svg'
 							],
 							dest: buildFolder + '/css/images',
 							filter: 'isFile'
