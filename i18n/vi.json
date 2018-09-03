@@ -116,6 +116,8 @@
 	"wdqs-result-map-progress": "Đang tải dữ liệu bản đồ: $1%",
 	"wdqs-embed-button-edit-query": "Sửa đổi",
 	"wdqs-embed-button-edit-query-title": "Sửa đổi truy vấn này bằng tiện ích truy vấn",
+	"wdqs-embed-button-edit-code": "Sửa đổi mã nguồn",
+	"wdqs-embed-button-edit-code-title": "Sửa đổi truy vấn này trong trình soạn SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Hiện liên kết đến đây",
 	"wdqs-embed-explorer-button-outgoing": "Hiện liên kết từ đây"
 }

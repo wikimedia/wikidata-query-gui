@@ -3,7 +3,8 @@
 		"authors": [
 			"Şeyx Şamil",
 			"Neriman2003",
-			"AZISS"
+			"AZISS",
+			"TmY e12"
 		]
 	},
 	"wdqs-app-button-examples": "Nümunələr",
@@ -26,7 +27,7 @@
 	"wdqs-app-button-code-title": "Kod nümunələrini göstər",
 	"wdqs-app-help-feedback": "Rəy ver!",
 	"wdqs-app-help-request-query": "Sorğu istəyin",
-	"wdqs-app-help-portal": "Yardım portalı",
+	"wdqs-app-help-portal": "Yardım portali",
 	"wdqs-app-help-manual": "İstifadəçi təlimatı",
 	"wdqs-app-help-examples": "Sorğu nümunələri",
 	"wdqs-app-help-datamodel": "RDF Məlumat Modeli",
@@ -58,6 +59,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Soldan sağa hiyerarxik düzülüş",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Yuxarıdan aşağıya hiyerarxik düzülüş",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Sağdan sola hiyerarxik düzülüş",
+	"wdqs-app-resultbrowser-non-hierarchical": "Qeyri-iyerarxik işarətləmə",
 	"wdqs-app-resultbrowser-table": "Cədvəl",
 	"wdqs-app-resultbrowser-image-grid": "Şəkil toru",
 	"wdqs-app-resultbrowser-graph-builder": "Qrafik qurucusu",
@@ -111,6 +113,10 @@
 	"wdqs-action-preview": "Nəticənin sınaq göstərişi",
 	"wdqs-result-map-layers-all": "Bütün qatlar",
 	"wdqs-result-map-progress": "Xəritə məlumatları yüklənir: $1",
-	"wdqs-embed-button-edit-query": "Sorğunu redaktə et",
-	"wdqs-embed-button-edit-query-title": "SPARQL redaktəçisi ilə sorğunu redaktə et"
+	"wdqs-embed-button-edit-query": "Redaktə",
+	"wdqs-embed-button-edit-query-title": "Bu müraciəti kömətçi vasitəsilə dəyiş",
+	"wdqs-embed-button-edit-code": "Kodu dəyiş",
+	"wdqs-embed-button-edit-code-title": "Bu  sorğunu SPARQL redaktəçisi ilə redaktə et",
+	"wdqs-embed-explorer-button-incoming": "Giriş mündəraciyətləri göstər",
+	"wdqs-embed-explorer-button-outgoing": "Çıxan mündəraciyətləri göstər"
 }
