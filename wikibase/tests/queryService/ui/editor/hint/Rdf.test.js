@@ -81,6 +81,13 @@
 			var rdf = new Rdf( api, {getPrefixMap:sinon.stub().returns( prefix ), ENTITY_TYPES: { 'ENTITY_URI': 'item' } } );
 			rdf.getHint( test.content, test.line, test.y, test.x ).done( function( hint ){
 				sinon.assert.calledWith( apiStub , 'TERM', 'item' );
+
+				$.each( hint.list, function( key, hint ) {
+					var hintElement = $( '<span>' )[0];
+					hint.render( hintElement );
+					hint.displayText = hintElement.textContent;
+					delete hint.render;
+				} );
 				assert.deepEqual( hint, test.result , 'Hint must return valid hint');
 			} );
 		} );

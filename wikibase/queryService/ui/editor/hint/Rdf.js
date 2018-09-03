@@ -133,7 +133,16 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 				entityList.push( {
 					className: 'wikibase-rdf-hint',
 					text: value.id,
-					displayText: value.label + ' (' + value.id + ') ' + value.description + '\n'
+					render: function( element, self, data ) {
+						var bdi = document.createElement( 'bdi' );
+						element.appendChild( document.createTextNode( value.label ) );
+						element.appendChild( document.createTextNode( ' (' ) );
+						bdi.textContent = value.id;
+						element.appendChild( bdi );
+						element.appendChild( document.createTextNode( ') ' ) );
+						element.appendChild( document.createTextNode( value.description ) );
+						element.appendChild( document.createTextNode( '\n' ) );
+					}
 				} );
 			} );
 
