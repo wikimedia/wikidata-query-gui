@@ -6,7 +6,8 @@
 			"Arthur2e5",
 			"Suesue",
 			"Fanjiayi",
-			"夢蝶葬花"
+			"夢蝶葬花",
+			"Deathkon"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -115,8 +116,8 @@
 	"wdqs-action-preview": "结果预览",
 	"wdqs-result-map-layers-all": "所有图层",
 	"wdqs-result-map-progress": "正在加载地图数据：$1%",
-	"wdqs-embed-button-edit-query": "编辑此查询",
-	"wdqs-embed-button-edit-query-title": "通过SPARQL编辑器编辑此查询",
+	"wdqs-embed-button-edit-query": "编辑",
+	"wdqs-embed-button-edit-query-title": "通过查询帮助器编辑此查询",
 	"wdqs-embed-explorer-button-incoming": "显示传入链接",
 	"wdqs-embed-explorer-button-outgoing": "显示传出链接"
 }
