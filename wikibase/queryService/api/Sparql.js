@@ -359,12 +359,15 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		$result.append( $head );
 		var heading = [];
 		var $table = $( '<table>' );
+		var $thead = $( '<thead>' );
 		var $tr = $( '<tr>' );
 		data.head.vars.forEach( function( head ) {
 				$tr.append( '<th>' + head + '</th>' );
 				heading.push( head );
 		} );
-		$table.append( $tr );
+		$thead.append( $tr );
+		$table.append( $thead );
+		var $tbody = $( '<tbody>' );
 		data.results.bindings.forEach( function( result ) {
 				$tr = $( '<tr>' );
 				for ( var head in heading ) {
@@ -375,8 +378,9 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 						$tr.append( '<td>' + value + '</td>' );
 					}
 				}
-				$table.append( $tr );
+				$tbody.append( $tr );
 		} );
+		$table.append( $tbody );
 		var $body = $( '<body>' ).append( $table );
 		$result.append( $body );
 		return $result.prop( 'outerHTML' );
