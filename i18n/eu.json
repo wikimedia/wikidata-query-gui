@@ -5,7 +5,8 @@
 			"Theklan",
 			"Subi",
 			"Mikel Ibaiba",
-			"EukeneFL"
+			"EukeneFL",
+			"An13sa"
 		]
 	},
 	"wdqs-app-button-examples": "Adibideak",
@@ -114,8 +115,9 @@
 	"wdqs-action-preview": "Aurreikusi emaitza",
 	"wdqs-result-map-layers-all": "Geruza guztiak",
 	"wdqs-result-map-progress": "Mapa datuak kargatzen: %$1",
-	"wdqs-embed-button-edit-query": "Kontsulta hau aldatu",
+	"wdqs-embed-button-edit-query": "Aldatu",
 	"wdqs-embed-button-edit-query-title": "Kontsulta hau SPARQL editorearekin aldatu",
+	"wdqs-embed-button-edit-code": "Kodea aldatu",
 	"wdqs-embed-explorer-button-incoming": "Sarrerako estekak erakutsi",
 	"wdqs-embed-explorer-button-outgoing": "Irteerako estekak erakutsi"
 }

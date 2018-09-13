@@ -48,6 +48,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV धारिका (verbose)",
 	"wdqs-app-result-csv": "CSV धारिका",
 	"wdqs-app-result-svg": "SVG छायाचित्र",
+	"wdqs-app-result-html": "एचटीएमएल तक्ता",
 	"wdqs-app-shorturl-page-title": "या पानाची लघु यूआरएल",
 	"wdqs-app-editor-placeholder": "(SPARQL पृच्छेचे अंतर्दान(इन्पुट) करा किंवा एखादे पृच्छा उदाहरण निवडा)",
 	"wdqs-app-editor-addprefixes": "मानांकित उपसर्ग जोडा",
@@ -84,6 +85,7 @@
 	"wdqs-dialog-key-shortcut-close-button": "बंद करा",
 	"wdqs-ve-filter": "गाळणी",
 	"wdqs-ve-show": "दाखवा",
+	"wdqs-ve-limit": "मर्यादा",
 	"wdqs-ve-remove-row-title": "ही ओळ काढा",
 	"wdqs-ve-with": "सह",
 	"wdqs-ve-anything": "कोणतीही गोष्ट",
@@ -102,5 +104,8 @@
 	"wdqs-action-preview": "शोधांची झलक",
 	"wdqs-result-map-layers-all": "सर्व स्तर",
 	"wdqs-result-map-progress": "नकाश्याची सांख्यिकी दाखवत आहे:$1",
-	"wdqs-embed-button-edit-query": "ही नोंद संपादा"
+	"wdqs-embed-button-edit-query": "संपादन करा",
+	"wdqs-embed-button-edit-code": "संकेताचे संपादन करा",
+	"wdqs-embed-explorer-button-incoming": "येथे येणारे दुवे दाखवा",
+	"wdqs-embed-explorer-button-outgoing": "येथून जाणारे दुवे दाखवा"
 }

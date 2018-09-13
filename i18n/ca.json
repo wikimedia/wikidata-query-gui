@@ -62,6 +62,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Disseny jeràrquic d'esquerra a dreta",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Disseny jeràrquic de dalt a baix",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Disseny jeràrquic de dreta a esquerra",
+	"wdqs-app-resultbrowser-non-hierarchical": "Disposició no jeràrquica",
 	"wdqs-app-resultbrowser-table": "Taula",
 	"wdqs-app-resultbrowser-image-grid": "Reixat d'imatges",
 	"wdqs-app-resultbrowser-graph-builder": "Creador de gràfics",
@@ -115,6 +116,10 @@
 	"wdqs-action-preview": "Previsualització del resultat",
 	"wdqs-result-map-layers-all": "Totes les capes",
 	"wdqs-result-map-progress": "S’estan carregant les dades del mapa: $1 %",
-	"wdqs-embed-button-edit-query": "Edita aquesta consulta",
-	"wdqs-embed-button-edit-query-title": "Edita aquesta consulta amb l’editor SPARQL"
+	"wdqs-embed-button-edit-query": "Modifica",
+	"wdqs-embed-button-edit-query-title": "Modifica aquesta consulta amb l’editor SPARQL",
+	"wdqs-embed-button-edit-code": "Modifica el codi",
+	"wdqs-embed-button-edit-code-title": "Modifica la consulta amb l'editor SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Mostra els enllaços entrants",
+	"wdqs-embed-explorer-button-outgoing": "Mosta els enllaços sortints"
 }
