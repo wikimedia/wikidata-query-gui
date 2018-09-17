@@ -118,6 +118,6 @@
 	"wdqs-result-map-layers-all": "Сви слојеви",
 	"wdqs-result-map-progress": "Учитавање података мапе: $1%",
 	"wdqs-embed-button-edit-query": "Уреди",
-	"wdqs-embed-button-edit-query-title": "Уреди овај упит са SPARQL уређивачем",
+	"wdqs-embed-button-edit-query-title": "Уреди овај упит са помоћником упита",
 	"wdqs-embed-button-edit-code": "Уреди код"
 }

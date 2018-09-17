@@ -4,7 +4,8 @@
 			"Balajijagadesh",
 			"ElangoRamanujam",
 			"Rakeshonwiki",
-			"தமிழ்க்குரிசில்"
+			"தமிழ்க்குரிசில்",
+			"Mahir78"
 		]
 	},
 	"wdqs-app-button-examples": "எடுத்துக்காட்டுக்கள்",
@@ -56,6 +57,8 @@
 	"wdqs-dialog-key-shortcut-run-query": "வினவலை ஓட்டுக.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "இந்த பக்கத்திற்கான விசைப்பலகை குறுக்குவழிகளைக் காட்டவும்.",
 	"wdqs-dialog-key-shortcut-show-example": "எடுத்துக்காட்டுகளைக் காட்டுக",
+	"wdqs-dialog-key-shortcut-help-menu": "உதவிப் பட்டியலை மாற்றுக",
+	"wdqs-dialog-key-shortcut-show-language": "மொழிப் பட்டியலைக் காட்டுக",
 	"wdqs-dialog-key-shortcut-close-button": "மூடுக",
 	"wdqs-ve-filter": "வடிகட்டி",
 	"wdqs-ve-show": "காண்பிக்கவும்",
