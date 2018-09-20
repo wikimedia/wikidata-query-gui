@@ -50,6 +50,6 @@
 	"wdqs-action-preview": "Նախաներկայացնել հետեւանքը",
 	"wdqs-result-map-layers-all": "Բոլոր շերտերը",
 	"wdqs-result-map-progress": "Ձեր դարմանութիւնը",
-	"wdqs-embed-button-edit-query": "Խմբագրել այս հարցակէտը",
-	"wdqs-embed-button-edit-query-title": "Խմբագրել այս հարցակէտը գործածելով SPARQL խմբագրողը"
+	"wdqs-embed-button-edit-query": "Խմբագրել",
+	"wdqs-embed-button-edit-query-title": "Խմբագրել այս հարցակէտը գործածելով հարցակէտի գործիքը"
 }

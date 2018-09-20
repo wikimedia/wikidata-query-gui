@@ -47,6 +47,7 @@
 	"wdqs-app-editor-addprefixes": "Tambah Ater-Ater Baku",
 	"wdqs-dialog-examples-preview-query": "Pratuduh jejalukan",
 	"wdqs-dialog-examples-preview-result": "Pratuduh kasil",
+	"wdqs-dialog-key-shortcut-run-query": "Lakokaké kuwèri.",
 	"wdqs-ve-show": "Tuduhaké",
 	"wdqs-ve-with": "karo",
 	"wdqs-ve-anything": "apa waé",
@@ -62,5 +63,11 @@
 	"wdqs-action-malformed-query": "Jejalukané salah format",
 	"wdqs-action-server-error": "Cacad paladèn",
 	"wdqs-action-unknow-error": "Cacad ora kaweruhan",
-	"wdqs-result-map-layers-all": "Kabèh lapisan"
+	"wdqs-result-map-layers-all": "Kabèh lapisan",
+	"wdqs-embed-button-edit-query": "Besut",
+	"wdqs-embed-button-edit-query-title": "Besut kuwèri iki sarana pitulung kuwèri",
+	"wdqs-embed-button-edit-code": "Besut kodhe",
+	"wdqs-embed-button-edit-code-title": "Besut kuwèri iki sarana pambesutan SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Tuduhaké pranala mlebu",
+	"wdqs-embed-explorer-button-outgoing": "Tuduhaké pranala metu"
 }
