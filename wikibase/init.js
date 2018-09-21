@@ -39,6 +39,7 @@
 
 			var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
+				sparqlApiHelper = new wb.api.Sparql( config.api.sparql.uri, lang ),
 				querySamplesApi = new wb.api.QuerySamples( lang ),
 				codeSamplesApi = new wb.api.CodeSamples(
 					config.api.sparql.uri,
@@ -50,6 +51,7 @@
 			languageSelector.setChangeListener( function( lang ) {
 				api.setLanguage( lang );
 				sparqlApi.setLanguage( lang );
+				sparqlApiHelper.setLanguage( lang );
 				querySamplesApi.setLanguage( lang );
 				setLanguage( lang, true );
 			} );
@@ -61,7 +63,7 @@
 			app = new wb.ui.App(
 				$( '.wikibase-queryservice ' ),
 				editor,
-				new wb.ui.queryHelper.QueryHelper( api, sparqlApi ),
+				new wb.ui.queryHelper.QueryHelper( api, sparqlApiHelper ),
 				sparqlApi,
 				querySamplesApi,
 				codeSamplesApi
