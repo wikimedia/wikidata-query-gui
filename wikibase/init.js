@@ -68,11 +68,6 @@
 				querySamplesApi,
 				codeSamplesApi
 			);
-
-			if ( !config.showBirthdayPresents ) {
-				$( '[data-target="#CodeExamples"]' ).hide(); // TODO: remove after birthday
-			}
-
 		} );
 
 } )( jQuery, CONFIG, moment );
