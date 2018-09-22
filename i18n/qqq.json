@@ -19,6 +19,7 @@
 	"wdqs-app-button-clear": "Button to clear SPARQL query editor\n{{Identical|Clear}}",
 	"wdqs-app-button-clear-title": "Title for button to clear SPARQL query editor",
 	"wdqs-app-button-restore-title": "Title for button to restore SPARQL query in editor",
+	"wdqs-app-button-format-title": "Title for button to standardize format of the SPARQL query in editor",
 	"wdqs-app-button-fullscreen-title": "Title for button to toggle fullscreen mode of editor",
 	"wdqs-app-button-display": "Button display result as table, image, ...\n{{Identical|Display}}",
 	"wdqs-app-button-display-title": "Title for button display result as table, image, ...",

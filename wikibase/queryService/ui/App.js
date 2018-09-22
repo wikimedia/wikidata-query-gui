@@ -10,6 +10,8 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
 		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
 
+	var COOKIE_HIDE = 'query-helper-hide';
+
 	/**
 	 * A ui application for the Wikibase query service
 	 *
@@ -94,6 +96,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	 * @private
 	 */
 	SELF.prototype._hasRunFirstQuery = false;
+
+	/**
+	 * @property {boolean}
+	 * @private
+	 */
+	SELF.prototype._isQueryUnparsable = false;
 
 	SELF.prototype._navbarLabelTexts = {};
 	SELF.prototype._navbarLabelIDs = [ '#help-label', '#examples-label', '#tools-label', '#language-toggle' ];
@@ -359,8 +367,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	};
 
 	SELF.prototype._initQueryHelper = function() {
-		var self = this,
-			cookieHide = 'query-helper-hide';
+		var self = this;
 
 		if ( !this._queryHelper ) {
 			this._queryHelper = new wikibase.queryService.ui.queryHelper.QueryHelper();
@@ -373,7 +380,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			}, 1000 )();
 		} );
 		this.resizableQueryHelper();
-		if ( Cookies.get( cookieHide ) !== 'true' ) {
+		if ( Cookies.get( COOKIE_HIDE ) !== 'true' ) {
 			$( '.query-helper' ).removeClass( 'query-helper-hidden' );
 			$( '.query-helper-tag-cloud' ).removeClass( 'query-helper-hidden' );
 		}
@@ -394,43 +401,52 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		}, 100 ) );
 
 		$( '.query-helper .panel-heading .close' ).click( function() {
-			Cookies.set( cookieHide, true );
-			$( '.query-helper' ).addClass( 'query-helper-hidden' );
-			$( '.query-helper-tag-cloud' ).addClass( 'query-helper-hidden' );
-			self._updateQueryEditorSize();
-
+			Cookies.set( COOKIE_HIDE, true );
+			self._hideQueryHelper();
 			self._track( 'buttonClick.queryHelperTrigger.close' );
 			return false;
 		} );
 
 		$( '.query-helper-trigger' ).click( function () {
 			var visible = $( '.query-helper' ).is( ':visible' );
-
 			$( '.query-helper' ).toggleClass( 'query-helper-hidden', visible );
 			$( '.query-helper-tag-cloud' ).toggleClass( 'query-helper-hidden' );
-			Cookies.set( cookieHide, visible );
+			Cookies.set( COOKIE_HIDE, visible );
 			self._updateQueryEditorSize();
-
 			self._track( 'buttonClick.queryHelperTrigger.' + ( visible ? 'close' : 'open' ) );
-
 			return false;
 		} );
 
 		window.setTimeout( $.proxy( this._drawQueryHelper, this ), 500 );
 	};
 
-	/**
-	 * @private
-	 */
+	SELF.prototype._hideQueryHelper = function() {
+		$( '.query-helper' ).addClass( 'query-helper-hidden' );
+		$( '.query-helper-tag-cloud' ).addClass( 'query-helper-hidden' );
+		this._updateQueryEditorSize();
+	};
+
+	SELF.prototype._setUnparsable = function( changeTo ) {
+		if ( changeTo ) {
+			this._isQueryUnparsable = true;
+			$( '#format-button' ).addClass( 'disabled' );
+		} else {
+			this._isQueryUnparsable = false;
+			$( '#format-button' ).removeClass( 'disabled' );
+		}
+	};
+
 	SELF.prototype._drawQueryHelper = function() {
 		try {
 			this._queryHelper.setQuery( this._editor.getValue() || DEFAULT_QUERY );
 			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
 			$( '.query-helper' ).css( 'min-width', '' );
+			this._setUnparsable( false );
 		} catch ( e ) {
 			// Temporarily disabled due to T171935
 			// TODO: Re-enable when handling of WITH is fixed
 			// this._editor.highlightError( e.message );
+			this._setUnparsable( true );
 			window.console.error( e );
 		}
 	};
@@ -588,6 +604,14 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 
 			self._editor.prepandValue( prefixes + '\n\n' );
 			self._track( 'buttonClick.addPrefixes' );
+		} );
+
+		$( '#format-button' ).click( function() {
+			self._drawQueryHelper();
+			if ( self._isQueryUnparsable !== true ) {
+				self._editor.setValue( self._queryHelper.getQuery() );
+			}
+			self._track( 'buttonClick.standardizeFormat' );
 		} );
 
 		$( '[data-target="#QueryExamples"]' ).click( function() {

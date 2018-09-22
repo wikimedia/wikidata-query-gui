@@ -17,6 +17,7 @@
     "wdqs-app-button-clear": "Clear",
     "wdqs-app-button-clear-title": "Clear query",
     "wdqs-app-button-restore-title": "Restore previous query",
+    "wdqs-app-button-format-title": "Format query",
     "wdqs-app-button-fullscreen-title": "Toggle fullscreen mode of editor",
     "wdqs-app-button-display": "Display",
     "wdqs-app-button-display-title": "Display result as table, image, ...",

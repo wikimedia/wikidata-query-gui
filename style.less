@@ -206,6 +206,10 @@ a {
 	}
 }
 
+a.disabled {
+	color: @color-base--disabled;
+}
+
 .btn:active {
 	box-shadow: none;
 }
@@ -553,8 +557,9 @@ iframe.shortUrl {
 			flex-grow: 1;
 			opacity: 0.5;
 			padding-top: 0.5em;
-			text-align: left;
+			text-align: center;
 			visibility: hidden;
+			margin-right: 4px;
 			&:hover {
 				opacity: 1;
 			}
