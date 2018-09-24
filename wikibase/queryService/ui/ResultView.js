@@ -644,6 +644,20 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
+	SELF.prototype._drawErrorResult = function( resultBrowser ) {
+		var data = _.find( this._resultBrowsers, function( browser ) {
+			if ( browser.object === resultBrowser ) {
+				return browser;
+			}
+		} );
+
+		this._resultBrowsers.Table.object.draw( $( '#query-result' ) );
+		this._actionBar.show( 'wdqs-action-error-display', data && data.label || null, 'warning' );
+	};
+
+	/**
+	 * @private
+	 */
 	SELF.prototype._drawResult = function( resultBrowser ) {
 		var self = this;
 
@@ -656,7 +670,8 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				resultBrowser.draw( $( '#query-result' ) );
 				self._actionBar.hide();
 			} catch ( e ) {
-				self._actionBar.show( 'wdqs-action-error-display', '', 'warning' );
+				self._drawErrorResult( resultBrowser );
+
 				window.console.error( e );
 			}
 
