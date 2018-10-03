@@ -7,7 +7,8 @@
 			"Suesue",
 			"Fanjiayi",
 			"夢蝶葬花",
-			"Deathkon"
+			"Deathkon",
+			"Phenolla"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -19,6 +20,7 @@
 	"wdqs-app-button-clear": "清除",
 	"wdqs-app-button-clear-title": "清空查询",
 	"wdqs-app-button-restore-title": "恢复上次查询",
+	"wdqs-app-button-format-title": "样式查询",
 	"wdqs-app-button-fullscreen-title": "开启或关闭编辑器全屏模式",
 	"wdqs-app-button-display": "显示",
 	"wdqs-app-button-display-title": "显示结果为表格、图片...",
@@ -118,6 +120,8 @@
 	"wdqs-result-map-progress": "正在加载地图数据：$1%",
 	"wdqs-embed-button-edit-query": "编辑",
 	"wdqs-embed-button-edit-query-title": "通过查询帮助器编辑此查询",
+	"wdqs-embed-button-edit-code": "编辑代码",
+	"wdqs-embed-button-edit-code-title": "使用SPARQL编辑器编辑此查询",
 	"wdqs-embed-explorer-button-incoming": "显示传入链接",
 	"wdqs-embed-explorer-button-outgoing": "显示传出链接"
 }

@@ -43,7 +43,7 @@
 	"wdqs-app-resultbrowser-timeline": "ٹائم لائن",
 	"wdqs-app-resultbrowser-graph": "گراف",
 	"wdqs-dialog-examples-preview-query": "سوال پچھݨ دا پہلوں ݙکھالا",
-	"wdqs-dialog-examples-preview-result": "نتیجے دا پہلا ݙیکھالا",
+	"wdqs-dialog-examples-preview-result": "نتیجے دا پیشگی ݙکھالا",
 	"wdqs-dialog-key-shortcut-show-example": "مثالاں ݙکھاؤ۔",
 	"wdqs-dialog-key-shortcut-close-button": "بند کرو",
 	"wdqs-ve-filter": "چھاݨاں",
@@ -59,7 +59,7 @@
 	"wdqs-ve-sb-other": "ٻئے",
 	"wdqs-action-server-error": "سرور غلطی",
 	"wdqs-action-unknow-error": "نامعلوم غلطی",
-	"wdqs-action-preview": "نتیجے دا ݙکھالا",
+	"wdqs-action-preview": "نتیجے دا پیشگی ݙکھالا",
 	"wdqs-result-map-layers-all": "ساریاں تہیاں",
 	"wdqs-embed-button-edit-query": "ایں سوال کوں بدلو"
 }

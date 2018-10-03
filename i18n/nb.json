@@ -53,7 +53,7 @@
 	"wdqs-app-shorturl-page-title": "Kort URL til denne siden",
 	"wdqs-app-editor-placeholder": "(Sett inn en SPARQL-spørring eller velg et spørringseksempel)",
 	"wdqs-app-editor-addprefixes": "Legg til standardprefikser",
-	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultat|resultater}} på $2&nbsp;ms",
+	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultat|resultater}} i løpet av $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Stabiliser nettverk",
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkisk utforming venstre til høyre",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarkisk utforming topp til bunn",

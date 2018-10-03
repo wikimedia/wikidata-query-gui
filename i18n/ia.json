@@ -13,6 +13,7 @@
 	"wdqs-app-button-run-title": "Executar consulta (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Vacuar",
 	"wdqs-app-button-clear-title": "Rader consulta",
+	"wdqs-app-button-format-title": "Formatar consulta",
 	"wdqs-app-button-display": "Visualisar",
 	"wdqs-app-button-display-title": "Monstrar resultato como tabella, imagine, ...",
 	"wdqs-app-button-download": "Discargar",

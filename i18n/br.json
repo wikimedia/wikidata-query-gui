@@ -51,6 +51,7 @@
 	"wdqs-app-result-tsv-verbose": "Restr TSV (verbek)",
 	"wdqs-app-result-csv": "Restr CSV",
 	"wdqs-app-result-svg": "Skeudenn SVG",
+	"wdqs-app-result-html": "Taolenn HTML",
 	"wdqs-app-shorturl-page-title": "URL berr eus ar bajenn-mañ",
 	"wdqs-app-editor-placeholder": "(Enrollañ ur reked SPARQL pe dibab ur skouer eus ar reked)",
 	"wdqs-app-editor-addprefixes": "Ouzhpennañ ar rakgerioù standart",
@@ -106,11 +107,16 @@
 	"wdqs-action-error-display": "Ne c'haller ket diskwel an disoc'h",
 	"wdqs-action-timeout": "Tizhet eo bet bevenn an termen respont",
 	"wdqs-action-malformed-query": "Geriet fall eo ar reked",
+	"wdqs-action-empty-query": "Ebarhit ur reked SPARQL mat pe dibabit ur reked e-touez ar skouerioù",
 	"wdqs-action-server-error": "Fazi ar servijer",
 	"wdqs-action-unknow-error": "Fazi dianav",
 	"wdqs-action-preview": "Rakwel an disoc'h",
 	"wdqs-result-map-layers-all": "An holl wiskadoù",
 	"wdqs-result-map-progress": "O kargañ roadennoù ar gartenn : $1%",
-	"wdqs-embed-button-edit-query": "Aozañ ar reked-mañ",
-	"wdqs-embed-button-edit-query-title": "Kemmañ ar reked-mañ gant an aozer SPARQL"
+	"wdqs-embed-button-edit-query": "Kemmañ",
+	"wdqs-embed-button-edit-query-title": "Kemmañ ar reked-mañ gant ar skoazeller SPARQL",
+	"wdqs-embed-button-edit-code": "Kemmañ ar c'hod",
+	"wdqs-embed-button-edit-code-title": "Kemmañ ar reked-mañ gant an aozer SPARQL",
+	"wdqs-embed-explorer-button-incoming": "Diskouez al liammoù degas",
+	"wdqs-embed-explorer-button-outgoing": "Diskouez al liammoù kas"
 }

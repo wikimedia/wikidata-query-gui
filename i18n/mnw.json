@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Htawmonzel"
+			"Htawmonzel",
+			"Aue Nai"
 		]
 	},
 	"wdqs-app-button-examples": "ဥပမာဂမၠိုင်",
@@ -32,8 +33,11 @@
 	"wdqs-app-help-queryhelper": "သၟာန် ညးမရီုဗင်",
 	"wdqs-app-footer-help": "ဍဵု <i>[CTRL-SPACE]</i> သွက်ဂွံ ပချဳဓရာင် အရာမပတုဲ ကေတ်တ်၊၊",
 	"wdqs-app-footer-updated-ago": "ကလေင်လဟဵုပခိုဟ်လဝ် ဒါတာ နူ $1",
+	"wdqs-app-result-shorturl-title": "URL မဇမၠေံ ဇရေၚ် လဂွံဏအ်",
 	"wdqs-app-result-rawgraphs": "ပံက် ပ္ဍဲ RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "ခၞံကၠောန် သ္ၚိအင် နကဵု သွဟ်ဒါတာ မသုင်စောဲလဝ် RAWGraphs.io",
+	"wdqs-app-result-embed": "လဂွံမခိုၚ်ဗိုန်",
+	"wdqs-app-result-endpoint": "SPARQL စၟတ်တုဲ",
 	"wdqs-app-result-json": "ဝှာင် JSON",
 	"wdqs-app-result-json-verbose": "ဝှာင် JSON (မထပ်ပၠန်)",
 	"wdqs-app-result-tsv": "ဝှာင် TSV",
@@ -63,6 +67,7 @@
 	"wdqs-dialog-examples-preview-query": "ဂလာန်သၟာန် နမူနာ",
 	"wdqs-dialog-examples-preview-result": "ဗဵုသွဟ် နမူနာ",
 	"wdqs-dialog-key-shortcut-title": "Keyboard Shortcuts",
+	"wdqs-dialog-key-shortcut-jump-to-result": "ဒံၚ် အာဇရေၚ် လဂွံမဂၠာဲသၟာန်.",
 	"wdqs-dialog-key-shortcut-show-example": "ထ္ၜး ဥပမာဂမၠိုင်",
 	"wdqs-dialog-key-shortcut-help-menu": "ဒၞာဲရုဲစှ် မေန်နူ အရီုအဗင်",
 	"wdqs-dialog-key-shortcut-show-language": "ထ္ၜး စရင် အရေဝ်ဘာသာ",
