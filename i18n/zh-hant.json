@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"LNDDYL"
 		]
 	},
 	"wdqs-app-button-examples": "範例",
@@ -72,7 +73,7 @@
 	"wdqs-app-resultbrowser-timeline": "時間軸",
 	"wdqs-app-resultbrowser-dimensions": "尺寸",
 	"wdqs-app-resultbrowser-graph": "圖形",
-	"wdqs-app-toast-leave-fullscreen": "按下 [esc] 退出全螢幕模式",
+	"wdqs-app-toast-leave-fullscreen": "按下 [esc] 離開全螢幕",
 	"wdqs-dialog-examples-preview-query": "預覽查詢",
 	"wdqs-dialog-examples-preview-result": "預覽結果",
 	"wdqs-dialog-key-shortcut-title": "鍵盤快捷鍵",
