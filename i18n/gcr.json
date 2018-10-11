@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"LeGuyanaisPure"
+			"LeGuyanaisPure",
+			"Léon973"
 		]
 	},
 	"wdqs-app-button-examples": "Lègzanp",
@@ -13,6 +14,7 @@
 	"wdqs-app-button-clear": "Éfasé",
 	"wdqs-app-button-clear-title": "Éfasé rékèt-a",
 	"wdqs-app-button-restore-title": "Rétabli rékèt présédant",
+	"wdqs-app-button-format-title": "Rékèt di fòrma",
 	"wdqs-app-button-fullscreen-title": "Baskilé an mòd plen lékran di éditò-a",
 	"wdqs-app-button-display": "Afiché",
 	"wdqs-app-button-display-title": "Afiché rézilta-a anba fòrm di tab, di zimaj, …",
@@ -49,7 +51,7 @@
 	"wdqs-app-result-svg": "Zimaj SVG",
 	"wdqs-app-result-html": "Tablo HTML",
 	"wdqs-app-shorturl-page-title": "URL kourt di sa paj",
-	"wdqs-app-editor-placeholder": "(Antré oun rékèt SPARQL oben chwézi roun lègzanp di rékèt)",
+	"wdqs-app-editor-placeholder": "(Rantré roun rékèt SPARQL oben chwézi roun lègzanp di rékèt)",
 	"wdqs-app-editor-addprefixes": "Ajouté dé préfiks standar",
 	"wdqs-app-resultbrowser-response-summary": "$1 rézilta an $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Stabilizé rézo-a",
@@ -104,7 +106,7 @@
 	"wdqs-action-error-display": "Enposib d’afiché rézilta-a",
 	"wdqs-action-timeout": "Limit di tan di rékèt atent",
 	"wdqs-action-malformed-query": "Rékèt-a sa mal fòrmilé",
-	"wdqs-action-empty-query": "Antré roun rékèt SPARQL valid, oben chwézi roun rékèt parmi lègzanp-ya",
+	"wdqs-action-empty-query": "Rantré roun rékèt SPARQL valid, oben chwézi roun rékèt parmi lègzanp-ya",
 	"wdqs-action-server-error": "Lérò di sèrvò",
 	"wdqs-action-unknow-error": "Lérò enkonnèt",
 	"wdqs-action-preview": "Apèrsou di rézilta",
@@ -114,6 +116,6 @@
 	"wdqs-embed-button-edit-query-title": "Modifyé sa rékèt ké asistan-an di rékèt",
 	"wdqs-embed-button-edit-code": "Modifyé kod-a",
 	"wdqs-embed-button-edit-code-title": "Modifyé sa rékèt ké éditò SPARQL-a",
-	"wdqs-embed-explorer-button-incoming": "Afiché lyannaj-ya ki ka antré",
+	"wdqs-embed-explorer-button-incoming": "Afiché lyannaj-ya ki ka rantré",
 	"wdqs-embed-explorer-button-outgoing": "Afiché lyannaj-ya ki ka soti"
 }
