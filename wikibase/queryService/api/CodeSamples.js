@@ -121,6 +121,12 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 					return code;
 				}
 			},
+			Perl: {
+				escape: function( query ) {
+					var escapedQuery = query.replace( /#.*\n/g, '' );
+					return '<<\'_SPARQL_QUERY_\';\n' + escapedQuery + '\n_SPARQL_QUERY_';
+				}
+			},
 			Python: {
 				escape: function( query ) {
 					var escapedQuery = query
