@@ -376,6 +376,8 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 											.replace( />/g, '&gt;' )
 											.replace( /</g, '&lt;' );
 						$tr.append( '<td>' + value + '</td>' );
+					} else {
+						$tr.append( '<td></td>' );
 					}
 				}
 				$tbody.append( $tr );
