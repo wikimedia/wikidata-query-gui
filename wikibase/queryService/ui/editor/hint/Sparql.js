@@ -66,14 +66,18 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			// skos: things
 			'skos:altLabel',
 			// xsd:
-			'xsd:dateTime', 'xsd:integer', 'xsd:decimal',
+			'xsd:dateTime', 'xsd:integer', 'xsd:double', 'xsd:decimal',
 			// geo:
 			'geo:wktLiteral',
 			// owl:
 			'owl:sameAs',
 			// prov:
-			'prov:wasDerivedFrom'
-
+			'prov:wasDerivedFrom',
+			// Lexemes
+			'ontolex:LexicalEntry', 'ontolex:Form', 'ontolex:Sense',
+			'ontolex:lexicalForm', 'ontolex:sense', 'ontolex:representation',
+			'wikibase:lemma', 'wikibase:lexicalCategory', 'wikibase:grammaticalFeature',
+			'dct:language'
 	];
 
 	/**
