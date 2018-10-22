@@ -12,6 +12,8 @@
 	"wdqs-app-button-run-title": "Jalankan kueri (''query'') (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Kosongkan",
 	"wdqs-app-button-clear-title": "Hapus kueri",
+	"wdqs-app-button-restore-title": "Pulihkan kueri sebelumnya",
+	"wdqs-app-button-format-title": "Format kueri",
 	"wdqs-app-button-display": "Tampilan",
 	"wdqs-app-button-display-title": "Tampilkan hasil dalam bentuk tabel, gambar, ...",
 	"wdqs-app-button-download": "Unduh",
