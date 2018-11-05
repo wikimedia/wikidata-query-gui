@@ -5,7 +5,8 @@
 			"Minh Nguyen",
 			"Phjtieudoc",
 			"Anhdonald",
-			"Leducthn"
+			"Leducthn",
+			"Vinhtantran"
 		]
 	},
 	"wdqs-app-button-examples": "Ví dụ",
@@ -17,6 +18,7 @@
 	"wdqs-app-button-clear": "Tẩy trống",
 	"wdqs-app-button-clear-title": "Xóa sạch truy vấn",
 	"wdqs-app-button-restore-title": "Khôi phục truy vấn trước",
+	"wdqs-app-button-format-title": "Định dạng truy vấn",
 	"wdqs-app-button-fullscreen-title": "Bật/tắt chế độ toàn màn hình của hộp sửa đổi",
 	"wdqs-app-button-display": "Hiển thị",
 	"wdqs-app-button-display-title": "Hiển thị kết quả dưới dạng bảng, hình, …",

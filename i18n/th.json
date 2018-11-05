@@ -111,6 +111,6 @@
 	"wdqs-action-preview": "ดูผลลัพธ์ก่อน",
 	"wdqs-result-map-layers-all": "ชั้นทั้งหมด",
 	"wdqs-result-map-progress": "กำลังโหลดข้อมูลแผนที่: $1%",
-	"wdqs-embed-button-edit-query": "แก้ไขการสืบค้นนี้",
+	"wdqs-embed-button-edit-query": "แก้ไข",
 	"wdqs-embed-button-edit-query-title": "แก้ไขการสืบค้นนี้ด้วยตัวแก้ไข SPARQL"
 }

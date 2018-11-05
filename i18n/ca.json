@@ -7,7 +7,8 @@
 			"Townie",
 			"Fitoschido",
 			"Micru",
-			"Joseplluis"
+			"Joseplluis",
+			"Asierog"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -19,6 +20,7 @@
 	"wdqs-app-button-clear": "Neteja",
 	"wdqs-app-button-clear-title": "Neteja la consulta",
 	"wdqs-app-button-restore-title": "Restaura la consulta anterior",
+	"wdqs-app-button-format-title": "Formata la consulta",
 	"wdqs-app-button-fullscreen-title": "Activa el mode d'edició de pantalla completa",
 	"wdqs-app-button-display": "Mostra",
 	"wdqs-app-button-display-title": "Mostra el resultat com taula, imatge, ...",
@@ -81,7 +83,7 @@
 	"wdqs-dialog-examples-preview-query": "Previsualitza la consulta",
 	"wdqs-dialog-examples-preview-result": "Previsualitza el resultat",
 	"wdqs-dialog-key-shortcut-title": "Dreceres de teclat",
-	"wdqs-dialog-key-shortcut-run-query": "Executa la consulta",
+	"wdqs-dialog-key-shortcut-run-query": "Executa la consulta.",
 	"wdqs-dialog-key-shortcut-esc": "Deixeu l'entrada de text/àrea de text actual.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mostra l'ajuda de les dreceres de teclat per a la pàgina actual.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Centreu-vos a l'àrea de text de la consulta.",

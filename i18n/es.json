@@ -14,7 +14,8 @@
 			"Cethos",
 			"La Mantis",
 			"Micru",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Asierog"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -26,6 +27,7 @@
 	"wdqs-app-button-clear": "Vaciar",
 	"wdqs-app-button-clear-title": "Borrar consulta",
 	"wdqs-app-button-restore-title": "Restaurar la consulta anterior",
+	"wdqs-app-button-format-title": "Formatear consulta",
 	"wdqs-app-button-fullscreen-title": "Alternar el modo de pantalla completa del editor",
 	"wdqs-app-button-display": "Mostrar",
 	"wdqs-app-button-display-title": "Mostrar el resultado en forma de tabla, imagen, ...",
