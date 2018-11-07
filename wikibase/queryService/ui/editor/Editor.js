@@ -102,19 +102,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 * @param {HTMLElement} element
 	 */
 	SELF.prototype.fromTextArea = function( element ) {
-		var self = this,
-			$parent = $( element ).parent();
+		var self = this;
 
 		this._editor = CodeMirror.fromTextArea( element, CODEMIRROR_DEFAULTS );
-
-		// Editor placeholder is set 1 second after initialization of Editor, because it occurs
-		// before $.i18n populates `placeholder` attribute with internationalized string.
-		// FIXME: We should replace it with call in event handlers for $.i18n init and Editor init when they'll exist.
-		setTimeout( function() {
-			var placeholder = $parent.find( '.queryEditor' ).prop( 'placeholder' );
-			self._editor.options.placeholder = placeholder;
-			$parent.find( '.CodeMirror-placeholder' ).text( placeholder );
-		}, 1000 );
 
 		this._editor.on( 'change', function( editor, changeObj ) {
 			if ( self.getValue() !== '' ) {
@@ -126,11 +116,6 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 					closeCharacters: /[\s]/
 				} );
 			}
-
-			// Populate Editor's placeholder. Look at the comment ~20 lines above.
-			$parent.find( '.CodeMirror-placeholder' ).text(
-				$parent.find( '.queryEditor' ).prop( 'placeholder' )
-			);
 		} );
 		this._editor.focus();
 
@@ -334,12 +319,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	};
 
 	SELF.prototype.updatePlaceholder = function( lang ) {
-		setTimeout( function() {
-			var $parent = $( '.queryEditor' ).parent();
-			var placeholder = $parent.find( '.queryEditor' ).prop( 'placeholder' );
-			$parent.find( '.CodeMirror-placeholder' ).text( placeholder );
-			$parent.find( '.queryEditor' ).attr( 'placeholder', placeholder );
-		}, 1000 );
+		var placeholder = this._editor.getTextArea().placeholder;
+		this._editor.options.placeholder = placeholder;
+		$( this._editor.display.wrapper ).find( '.CodeMirror-placeholder' ).text( placeholder );
 	};
 
 	return SELF;
