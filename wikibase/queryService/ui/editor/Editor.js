@@ -333,6 +333,15 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 		this._editor.focus();
 	};
 
+	SELF.prototype.updatePlaceholder = function( lang ) {
+		setTimeout( function() {
+			var $parent = $( '.queryEditor' ).parent();
+			var placeholder = $parent.find( '.queryEditor' ).prop( 'placeholder' );
+			$parent.find( '.CodeMirror-placeholder' ).text( placeholder );
+			$parent.find( '.queryEditor' ).attr( 'placeholder', placeholder );
+		}, 1000 );
+	};
+
 	return SELF;
 
 }( jQuery, wikibase, CodeMirror ) );

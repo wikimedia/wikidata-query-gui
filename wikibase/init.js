@@ -48,17 +48,18 @@
 				),
 				languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
 
+			var rdfHint = new wb.ui.editor.hint.Rdf( api ),
+					rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
+					editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip );
+
 			languageSelector.setChangeListener( function( lang ) {
 				api.setLanguage( lang );
 				sparqlApi.setLanguage( lang );
 				sparqlApiHelper.setLanguage( lang );
 				querySamplesApi.setLanguage( lang );
 				setLanguage( lang, true );
+				editor.updatePlaceholder();
 			} );
-
-			var rdfHint = new wb.ui.editor.hint.Rdf( api ),
-					rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
-					editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip );
 
 			app = new wb.ui.App(
 				$( '.wikibase-queryservice ' ),
