@@ -8,7 +8,8 @@
 			"InternerowyGołąb",
 			"DeRudySoulStorm",
 			"Railfail536",
-			"Jareks"
+			"Jareks",
+			"Warchlak"
 		]
 	},
 	"wdqs-app-button-examples": "Przykłady",
@@ -20,6 +21,7 @@
 	"wdqs-app-button-clear": "Wyczyść",
 	"wdqs-app-button-clear-title": "Wyczyść zapytanie",
 	"wdqs-app-button-restore-title": "Przywróć poprzednie zapytanie",
+	"wdqs-app-button-format-title": "Formatuj zapytanie",
 	"wdqs-app-button-fullscreen-title": "Przełącz na tryb pełnoekranowy edytora",
 	"wdqs-app-button-display": "Wyświetl",
 	"wdqs-app-button-display-title": "Pokaż wynik w formie tabeli, obrazu, ...",

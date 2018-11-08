@@ -7,7 +7,8 @@
 			"Wikibelgiaan",
 			"Mainframe98",
 			"McDutchie",
-			"Ladsgroup"
+			"Ladsgroup",
+			"Robin van der Linde"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -26,6 +27,7 @@
 	"wdqs-app-button-link": "Koppeling",
 	"wdqs-app-button-link-title": "Koppeling naar zoekopdracht",
 	"wdqs-app-button-code": "Code",
+	"wdqs-app-button-code-title": "Bekijk codevoorbeelden",
 	"wdqs-app-help-feedback": "Geef ons feedback!",
 	"wdqs-app-help-request-query": "Zoekopdracht aanvragen",
 	"wdqs-app-help-portal": "Hulpportaal",
@@ -39,6 +41,7 @@
 	"wdqs-app-footer-updated-ago": "Gegevens $1 bijgewerkt",
 	"wdqs-app-result-shorturl": "Korte URL naar resultaat",
 	"wdqs-app-result-shorturl-title": "Korte URL naar dit resultaat",
+	"wdqs-app-result-rawgraphs": "Open in RAWGraphs.io",
 	"wdqs-app-result-embed": "Resultaat invoegen",
 	"wdqs-app-result-endpoint": "SPARQL-endpoint",
 	"wdqs-app-result-endpoint-title": "Koppeling naar het SPARQL-eindpunt die het resultaat oplevert",
@@ -68,9 +71,13 @@
 	"wdqs-app-resultbrowser-bubble-chart": "Bellendiagram",
 	"wdqs-app-resultbrowser-tree": "Boom",
 	"wdqs-app-resultbrowser-timeline": "Tijdlijn",
+	"wdqs-app-resultbrowser-dimensions": "Afmetingen",
 	"wdqs-app-resultbrowser-graph": "Grafiek",
 	"wdqs-dialog-examples-preview-query": "Voorbeeld van zoekopdracht",
 	"wdqs-dialog-examples-preview-result": "Voorbeeld van resultaat",
+	"wdqs-dialog-key-shortcut-run-query": "Zoekopdracht uitvoeren.",
+	"wdqs-dialog-key-shortcut-focus-textarea": "Focus op tekstveld zoekopdracht",
+	"wdqs-dialog-key-shortcut-show-example": "Weergeef voorbeelden.",
 	"wdqs-dialog-key-shortcut-close-button": "Sluiten",
 	"wdqs-ve-filter": "Filteren",
 	"wdqs-ve-show": "Weergeven",
@@ -92,5 +99,6 @@
 	"wdqs-action-unknow-error": "Onbekende fout",
 	"wdqs-result-map-layers-all": "Alle lagen",
 	"wdqs-result-map-progress": "Kaartgegevens laden: $1%",
-	"wdqs-embed-button-edit-query": "Bewerken"
+	"wdqs-embed-button-edit-query": "Bewerken",
+	"wdqs-embed-button-edit-code": "Code bewerken"
 }
