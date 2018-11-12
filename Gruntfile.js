@@ -26,7 +26,17 @@ module.exports = function( grunt ) {
 		qunit: {
 			all: [
 				'wikibase/tests/*.html'
-			]
+			],
+			options: {
+				puppeteer: {
+					headless: true,
+					/*
+					 * no-sandbox mode is needed to make qunit work with docker.
+					 * It would be nice to do this optionally, so local test runs are still sandboxed...
+					 */
+					args: ['--no-sandbox', '--disable-setuid-sandbox']
+				}
+			}
 		},
 		less: {
 			all: {
