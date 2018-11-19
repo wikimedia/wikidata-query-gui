@@ -5,7 +5,8 @@
 			"StanProg",
 			"Vodnokon4e",
 			"ShockD",
-			"Panadora"
+			"Panadora",
+			"Datawiki30"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -51,6 +52,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV файл (подробен)",
 	"wdqs-app-result-csv": "CSV файл",
 	"wdqs-app-result-svg": "SVG изображение",
+	"wdqs-app-result-html": "HTML-табела",
 	"wdqs-app-shorturl-page-title": "Кратък адрес на страницата",
 	"wdqs-app-editor-placeholder": "(Въведете заявка за SPARQL или изберете пример)",
 	"wdqs-app-editor-addprefixes": "Добавяне на стандартните представки",
@@ -105,6 +107,8 @@
 	"wdqs-action-preview": "Предварителен преглед на резултата",
 	"wdqs-result-map-layers-all": "Всички слоеве",
 	"wdqs-result-map-progress": "Зареждане на картографски данни: $1%",
-	"wdqs-embed-button-edit-query": "Редактиране на тази заявка",
-	"wdqs-embed-button-edit-query-title": "Редактиране на тази заявка със SPARQL редактора"
+	"wdqs-embed-button-edit-query": "Редактиране",
+	"wdqs-embed-button-edit-query-title": "Редактиране на тази заявка със SPARQL редактора",
+	"wdqs-embed-button-edit-code": "Редактирай кода",
+	"wdqs-embed-button-edit-code-title": "Редактиране на тази заявка със SPARQL редактора"
 }
