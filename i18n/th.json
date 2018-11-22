@@ -34,7 +34,7 @@
 	"wdqs-app-help-examples": "ตัวอย่างการสืบค้น",
 	"wdqs-app-help-datamodel": "แบบจำลองข้อมูล RDF",
 	"wdqs-app-help-prefixes": "รายการคำนำหน้า",
-	"wdqs-app-help-copy": "สารสนเทศสัญญาอนุญาต",
+	"wdqs-app-help-copy": "ข้อมูลสัญญาอนุญาต",
 	"wdqs-app-help-queryhelper": "ตัวช่วยการสืบค้น",
 	"wdqs-app-footer-help": "กด <i>[CTRL-SPACE]</i> เพื่อเปิดใช้งานเติมข้อความให้สมบูรณ์อัตโนมัติ",
 	"wdqs-app-footer-updated-ago": "ข้อมูลอัปเดตเมื่อ $1",

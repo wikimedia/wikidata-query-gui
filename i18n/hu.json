@@ -8,7 +8,8 @@
 			"R-Joe",
 			"BanKris",
 			"Grin",
-			"Urbalazs"
+			"Urbalazs",
+			"Bencemac"
 		]
 	},
 	"wdqs-app-button-examples": "Példák",
@@ -78,9 +79,11 @@
 	"wdqs-dialog-key-shortcut-title": "Billentyűparancsok",
 	"wdqs-dialog-key-shortcut-run-query": "Lekérdezés futtatása.",
 	"wdqs-dialog-key-shortcut-show-example": "Példák mutatása.",
+	"wdqs-dialog-key-shortcut-show-language": "Nyelvi menü mutatása.",
 	"wdqs-dialog-key-shortcut-close-button": "Bezárás",
 	"wdqs-ve-filter": "Szűrő",
 	"wdqs-ve-show": "Mutat",
+	"wdqs-ve-limit": "Korlát",
 	"wdqs-ve-remove-row-title": "Sor eltávolítása",
 	"wdqs-ve-with": "ezzel:",
 	"wdqs-ve-anything": "bármi",
@@ -98,6 +101,9 @@
 	"wdqs-action-unknow-error": "Ismeretlen hiba",
 	"wdqs-result-map-layers-all": "Minden réteg",
 	"wdqs-result-map-progress": "Térképadatok betöltése: $1%",
-	"wdqs-embed-button-edit-query": "Lekérdezés szerkesztése",
-	"wdqs-embed-button-edit-query-title": "Lekérdezés szerkesztése SPARQL-szerkesztővel"
+	"wdqs-embed-button-edit-query": "Szerkesztés",
+	"wdqs-embed-button-edit-query-title": "Lekérdezés szerkesztése SPARQL-szerkesztővel",
+	"wdqs-embed-button-edit-code": "Kód szerkesztése",
+	"wdqs-embed-explorer-button-incoming": "Bejövő linkek mutatása",
+	"wdqs-embed-explorer-button-outgoing": "Kimenő linkek mutatása"
 }

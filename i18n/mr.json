@@ -40,7 +40,7 @@
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.io वापरून सध्या मिळालेल्या परिणांमावरून आलेख तयार करा.",
 	"wdqs-app-result-embed": "निकाल बंदिस्त करा",
 	"wdqs-app-result-endpoint": "SPARQL शेवट",
-	"wdqs-app-result-endpoint-title": "Link to the SPARQL endpoint returning the result",
+	"wdqs-app-result-endpoint-title": "Link to the SPARQL च्या शेवटाकडील निकाल दाखवणारा दुवा",
 	"wdqs-app-result-formatter-title-datetime": "कच्चा ISO वेळठसा",
 	"wdqs-app-result-json": "JSON धारिका",
 	"wdqs-app-result-json-verbose": "JSON धारिका (verbose)",
