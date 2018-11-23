@@ -104,7 +104,8 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	};
 
 	SELF.prototype._getTermFromWord = function( word ) {
-		return word.split( ':' ).pop();
+		// Do not use split here because the search string may contain ':'
+		return word.substring( word.indexOf( ':' ) + 1 );
 	};
 
 	SELF.prototype._getHintCompletion = function( lineNum, currentWord, prefix, list ) {
