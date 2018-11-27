@@ -22,12 +22,21 @@
 
 	$.each( tests, function( index, test ) {
 		QUnit.test( test.name, function( assert ) {
-			if ( navigator.userAgent.indexOf( 'PhantomJS' ) === -1 ) {
-				// cannot load code examples in browser
-				assert.expect( 0 );
-				return;
-			}
 			var done = assert.async();
+
+			function handleError( part ) {
+				return function() {
+					if ( location.protocol === 'file:' ) {
+						window.console.error( 'Could not run code samples test because CORS is not available on file:// pages.' );
+						window.console.error( 'To run this test, you must serve and access the tests over HTTP.' );
+						assert.expect( 0 );
+					} else {
+						assert.ok( false, 'could not load ' + part );
+					}
+					done();
+				};
+			}
+
 			$.get(
 				'queryService/api/code-examples/' + test.name + '/query.sparql',
 				function( query ) {
@@ -44,23 +53,13 @@
 									'text'
 								) );
 							} );
-							$.when.apply( $, promises ).then(
-								done,
-								function( e ) {
-									assert.ok( false, 'could not load expected code' );
-									done();
-								}
-							);
-						} ).fail( function() {
-							assert.ok( false, 'could not load code samples' );
-							done();
-						} );
+							$.when.apply( $, promises )
+								.then( done )
+								.fail( handleError( 'expected code' ) );
+						} ).fail( handleError( 'code samples' ) );
 				},
 				'text'
-			).fail( function() {
-				assert.ok( false, 'could not load query' );
-				done();
-			} );
+			).fail( handleError( 'query' ) );
 		} );
 	} );
 
