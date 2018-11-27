@@ -1,11 +1,21 @@
-#pip install sparqlwrapper
-#https://rdflib.github.io/sparqlwrapper/
+# pip install sparqlwrapper
+# https://rdflib.github.io/sparqlwrapper/
 
 from SPARQLWrapper import SPARQLWrapper, JSON
-sparql = SPARQLWrapper("{ENDPOINT_URL}")
-sparql.setQuery({SPARQL_QUERY})
-sparql.setReturnFormat(JSON)
-results = sparql.query().convert()
+
+endpoint_url = "{ENDPOINT_URL}"
+
+query = {SPARQL_QUERY}
+
+
+def get_results(endpoint_url, query):
+    sparql = SPARQLWrapper(endpoint_url)
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    return sparql.query().convert()
+
+
+results = get_results(endpoint_url, query)
 
 for result in results["results"]["bindings"]:
     print(result)

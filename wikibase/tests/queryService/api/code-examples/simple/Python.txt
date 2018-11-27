@@ -1,16 +1,26 @@
-#pip install sparqlwrapper
-#https://rdflib.github.io/sparqlwrapper/
+# pip install sparqlwrapper
+# https://rdflib.github.io/sparqlwrapper/
 
 from SPARQLWrapper import SPARQLWrapper, JSON
-sparql = SPARQLWrapper("http://sparql.example/endpoint")
-sparql.setQuery("""# cats
+
+endpoint_url = "http://sparql.example/endpoint"
+
+query = """# cats
 SELECT ?cat ?catLabel WHERE {
   ?cat wdt:P31 wd:Q146.
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 }
-""")
-sparql.setReturnFormat(JSON)
-results = sparql.query().convert()
+"""
+
+
+def get_results(endpoint_url, query):
+    sparql = SPARQLWrapper(endpoint_url)
+    sparql.setQuery(query)
+    sparql.setReturnFormat(JSON)
+    return sparql.query().convert()
+
+
+results = get_results(endpoint_url, query)
 
 for result in results["results"]["bindings"]:
     print(result)
