@@ -279,16 +279,28 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	};
 
 	/**
+	 * Return the value from the local storage, if any
+	 */
+	SELF.prototype.getStoredValue = function() {
+		var value = null;
+		try {
+			if ( localStorage ) {
+				value = localStorage.getItem( LOCAL_STORAGE_KEY );
+			}
+		} catch ( e ) {
+		}
+		return value;
+	};
+
+	/**
 	 * Restores the value from the local storage
 	 */
 	SELF.prototype.restoreValue = function() {
 		try {
-			if ( localStorage ) {
-				var value = localStorage.getItem( LOCAL_STORAGE_KEY );
-				if ( value ) {
-					this.setValue( value );
-					this.refresh();
-				}
+			var value = this.getStoredValue();
+			if ( value ) {
+				this.setValue( value );
+				this.refresh();
 			}
 		} catch ( e ) {
 		}

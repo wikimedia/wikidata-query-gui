@@ -449,6 +449,14 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			this._setUnparsable( true );
 			window.console.error( e );
 		}
+		var storedValue = this._editor.getStoredValue();
+		var currentValue = this._editor.getValue();
+		if ( !storedValue || storedValue.toString() === currentValue.toString() ) {
+			// nothing to restore
+			$( '#restore-button' ).addClass( 'disabled' );
+		} else {
+			$( '#restore-button' ).removeClass( 'disabled' );
+		}
 	};
 
 	/**
@@ -620,6 +628,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 
 		$( '#clear-button' ).click( function() {
 			self._editor.setValue( '' );
+			self._drawQueryHelper();
 			self._track( 'buttonClick.clear' );
 		} );
 
@@ -627,6 +636,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			self._track( 'buttonClick.restore' );
 			e.preventDefault();
 			self._editor.restoreValue();
+			self._drawQueryHelper();
 		} );
 
 		$( '.fullscreen-toggle' ).click( function( e ) {
