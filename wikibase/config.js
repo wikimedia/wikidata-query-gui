@@ -44,8 +44,7 @@ var CONFIG = ( function ( window, $ ) {
 		location: {
 			root: root,
 			index: root
-		},
-		showBirthdayPresents: new Date().getTime() >= Date.UTC( 2017, 10 - 1, 29 )
+		}
 	};
 
 	var hostname = window.location.hostname.toLowerCase();
@@ -72,8 +71,7 @@ var CONFIG = ( function ( window, $ ) {
 			location: {
 				root: './',
 				index: './index.html'
-			},
-			showBirthdayPresents: true
+			}
 		} );
 	}
 

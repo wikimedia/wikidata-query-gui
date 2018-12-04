@@ -544,10 +544,6 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @return {?$.Promise} GeoJSON
 	 */
 	SELF.prototype._extractGeoJsonCommonsMap = function( url ) {
-		if ( !CONFIG.showBirthdayPresents ) {
-			// TODO remove this after the birthday
-			return null;
-		}
 		// rewrite data URL to API because the data URL doesn’t support CORS at all
 		var titleURI = url.match( /^http:\/\/commons.wikimedia.org\/data\/main\/(.*)$/ )[1],
 			title = decodeURIComponent( titleURI );
