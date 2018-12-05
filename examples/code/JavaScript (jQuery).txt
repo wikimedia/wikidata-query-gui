@@ -1,11 +1,16 @@
-var endpointUrl = '{ENDPOINT_URL}',
-    sparqlQuery = {SPARQL_QUERY},
-    settings = {
-        headers: { Accept: 'application/sparql-results+json' },
-        data: { query: sparqlQuery }
-    };
+function makeSPARQLQuery( endpointUrl, sparqlQuery, doneCallback ) {
+	var settings = {
+		headers: { Accept: 'application/sparql-results+json' },
+		data: { query: sparqlQuery }
+	};
+	return $.ajax( endpointUrl, settings ).then( doneCallback );
+}
 
-$.ajax( endpointUrl, settings ).then( function ( data ) {
-    $( 'body' ).append( ( $('<pre>').text( JSON.stringify( data) ) ) );
-    console.log( data );
-} );
+var endpointUrl = '{ENDPOINT_URL}',
+	sparqlQuery = {SPARQL_QUERY};
+
+makeSPARQLQuery( endpointUrl, sparqlQuery, function( data ) {
+		$( 'body' ).append( $( '<pre>' ).text( JSON.stringify( data ) ) );
+		console.log( data );
+	}
+);
