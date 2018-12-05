@@ -7,7 +7,7 @@
 	function setBrand() {
 		$( '.navbar-brand img' ).attr( 'src', config.brand.logo );
 		$( '.navbar-brand a > span' ).text( config.brand.title );
-		$( document ).attr( 'title', config.brand.title );
+		document.title = config.brand.title;
 	}
 
 	function setLanguage( lang, save, callback ) {
