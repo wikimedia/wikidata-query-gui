@@ -1,8 +1,39 @@
 <?php
 
+class SPARQLQueryDispatcher
+{
+    private $endpointUrl;
+
+    public function __construct(string $endpointUrl)
+    {
+        $this->endpointUrl = $endpointUrl;
+    }
+
+    public function query(string $sparqlQuery): array
+    {
+
+        $opts = [
+            'http' => [
+                'method' => 'GET',
+                'header' => [
+                    'Accept: application/sparql-results+json'
+                ],
+            ],
+        ];
+        $context = stream_context_create($opts);
+
+        $url = $this->endpointUrl . '?query=' . urlencode($sparqlQuery);
+        $response = file_get_contents($url, false, $context);
+        return json_decode($response, true);
+    }
+}
+
 $endpointUrl = '';
-$sparqlQuery = <<< 'SPARQL'
+$sparqlQueryString = <<< 'SPARQL'
 
 SPARQL;
 
-echo file_get_contents( $endpointUrl . '?query=' . urlencode( $sparqlQuery )  );
+$queryDispatcher = new SPARQLQueryDispatcher($endpointUrl);
+$queryResult = $queryDispatcher->query($sparqlQueryString);
+
+var_export($queryResult);
