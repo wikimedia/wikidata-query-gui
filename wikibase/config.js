@@ -39,7 +39,7 @@ var CONFIG = ( function ( window, $ ) {
 		},
 		brand: {
 			logo: 'logo.svg',
-			title: 'Wikidata Query'
+			title: 'Wikidata Query Service'
 		},
 		location: {
 			root: root,
