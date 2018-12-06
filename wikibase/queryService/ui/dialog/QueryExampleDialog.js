@@ -21,13 +21,14 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	 * @param {jQuery} $element
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {Function} callback that is called when selecting an example
+	 * @param {string} [previewUrl] URL to preview the result of an example query
 	 */
 	function SELF( $element, querySamplesApi, callback, previewUrl ) {
 
 		this._$element = $element;
 		this._querySamplesApi = querySamplesApi;
 		this._callback = callback;
-		this._previewUrl = previewUrl;
+		this._previewUrl = previewUrl || 'embed.html#';
 
 		this._init();
 	}
@@ -296,7 +297,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 					container: 'body',
 					title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-dialog-examples-preview-result', 'Preview result' ),
 					content: $( '<iframe width="400" height="350" frameBorder="0" src="' +
-							( self._previewUrl || 'embed.html#' ) +	encodeURIComponent( query ) + '">' ),
+							self._previewUrl +	encodeURIComponent( query ) + '">' ),
 					html: true
 				} )
 				.click( function() {
