@@ -42,7 +42,10 @@
 				api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
 				sparqlApiHelper = new wb.api.Sparql( config.api.sparql.uri, lang ),
-				querySamplesApi = new wb.api.QuerySamples( lang ),
+				querySamplesApi = new wb.api.QuerySamples(
+					lang,
+					config.api.examples
+				),
 				codeSamplesApi = new wb.api.CodeSamples(
 					config.api.sparql.uri,
 					config.location.root,

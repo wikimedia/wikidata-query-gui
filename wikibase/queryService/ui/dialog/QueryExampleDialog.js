@@ -74,10 +74,6 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._init = function() {
-		if ( !this._querySamplesApi ) {
-			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
-		}
-
 		if ( !this._trackingApi ) {
 			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}

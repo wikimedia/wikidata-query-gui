@@ -24,6 +24,12 @@ var CONFIG = ( function ( window, $ ) {
 			},
 			wikibase: {
 				uri: 'https://www.wikidata.org/w/api.php'
+			},
+			examples: {
+				server: 'https://www.wikidata.org/',
+				endpoint: 'api/rest_v1/page/html/',
+				pageTitle: 'Wikidata:SPARQL_query_service/queries/examples',
+				pagePathElement: 'wiki/'
 			}
 		},
 		i18nLoad: function( lang ) {

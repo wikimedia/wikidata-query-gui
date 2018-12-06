@@ -15,12 +15,16 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @author Jonas Kress
 	 * @constructor
 	 */
-	function SELF( language ) {
+	function SELF( language, settings ) {
 		this._language = language;
-		this._apiServer = 'https://www.wikidata.org/';
-		this._apiEndpoint = this._apiServer + 'api/rest_v1/page/html/';
-		this._pageTitle = 'Wikidata:SPARQL_query_service/queries/examples';
-		this._pageUrl = this._apiServer + 'wiki/' + this._pageTitle;
+
+		if ( !settings ) {
+			throw new Error( 'Invalid method call: query sample settings are missing!' );
+		}
+		this._apiServer = settings.server;
+		this._apiEndpoint = this._apiServer + settings.endpoint;
+		this._pageTitle = settings.pageTitle;
+		this._pageUrl = this._apiServer + settings.pagePathElement + this._pageTitle;
 	}
 
 	/**

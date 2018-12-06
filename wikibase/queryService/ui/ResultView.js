@@ -19,8 +19,9 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 *
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 */
-	function SELF( sparqlApi, codeSamplesApi, editor ) {
+	function SELF( sparqlApi, querySamplesApi, codeSamplesApi, editor ) {
 		this._sparqlApi = sparqlApi;
+		this._querySamplesApi = querySamplesApi;
 		this._codeSamplesApi = codeSamplesApi;
 		this._editor = editor;
 

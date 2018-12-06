@@ -119,10 +119,6 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			this._sparqlApi = new wikibase.queryService.api.Sparql();
 		}
 
-		if ( !this._querySamplesApi ) {
-			this._querySamplesApi = new wikibase.queryService.api.QuerySamples();
-		}
-
 		if ( !this._codeSamplesApi ) {
 			this._codeSamplesApi = new wikibase.queryService.api.CodeSamples();
 		}
@@ -136,7 +132,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		}
 
 		if ( !this._resultView ) {
-			this._resultView = new wikibase.queryService.ui.ResultView( this._sparqlApi, this._codeSamplesApi, this._editor );
+			this._resultView = new wikibase.queryService.ui.ResultView(
+				this._sparqlApi,
+				this._querySamplesApi,
+				this._codeSamplesApi,
+				this._editor
+			);
 		}
 
 		this._track( 'init' );
