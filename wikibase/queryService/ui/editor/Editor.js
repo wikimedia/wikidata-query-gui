@@ -12,6 +12,8 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 			'mode': 'sparql',
 			'extraKeys': {
 				'Ctrl-Space': 'autocomplete',
+				'Ctrl-Alt-Space': 'autocomplete',
+				'Alt-Enter': 'autocomplete',
 				'Tab': function( cm ) {
 					var spaces = Array( cm.getOption( 'indentUnit' ) + 1 ).join( ' ' );
 					cm.replaceSelection( spaces );
