@@ -1,14 +1,18 @@
-const endpointUrl = '',
-      sparqlQuery = ``,
-      fullUrl = endpointUrl + '?query=' + encodeURIComponent( sparqlQuery ),
-      headers = { 'Accept': 'application/sparql-results+json' };
+class SPARQLQueryDispatcher {
+	constructor( endpoint ) {
+		this.endpoint = endpoint;
+	}
 
-fetch( fullUrl, { headers } ).then( body => body.json() ).then( json => {
-    const { head: { vars }, results } = json;
-    for ( const result of results.bindings ) {
-        for ( const variable of vars ) {
-            console.log( '%s: %o', variable, result[variable] );
-        }
-        console.log( '---' );
-    }
-} );
+	query( sparqlQuery ) {
+		const fullUrl = this.endpoint + '?query=' + encodeURIComponent( sparqlQuery );
+		const headers = { 'Accept': 'application/sparql-results+json' };
+
+		return fetch( fullUrl, { headers } ).then( body => body.json() );
+	}
+}
+
+const endpointUrl = '';
+const sparqlQuery = ``;
+
+const queryDispatcher = new SPARQLQueryDispatcher( endpointUrl );
+queryDispatcher.query( sparqlQuery ).then( console.log );
