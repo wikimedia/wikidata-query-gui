@@ -20,13 +20,13 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
-	 * @param {wikibase.queryService.ui.editor.Editor} editor
+	 * @param {wikibase.queryService.ui.editor.Editor} [editor]
 	 */
 	function SELF( sparqlApi, querySamplesApi, codeSamplesApi, editor ) {
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
 		this._codeSamplesApi = codeSamplesApi;
-		this._editor = editor;
+		this._editor = editor || null;
 
 		this._init();
 	}
@@ -54,6 +54,12 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 */
 	SELF.prototype._codeSamplesApi = null;
+
+	/**
+	 * @property {?wikibase.queryService.ui.editor.Editor}
+	 * @private
+	 */
+	SELF.prototype._editor = null;
 
 	/**
 	 * @property {string}
