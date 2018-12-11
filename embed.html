@@ -600,12 +600,16 @@ body {
 				lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
 				api = new wikibase.queryService.api.Wikibase( config.api.wikibase.uri, lang ),
 				sparqlApi = new wikibase.queryService.api.Sparql( config.api.sparql.uri, lang ),
+				querySamplesApi = new wikibase.queryService.api.QuerySamples(
+					lang,
+					config.api.examples
+				),
 				codeSamplesApi = new wikibase.queryService.api.CodeSamples(
 					config.api.sparql.uri,
 					config.location.root,
 					config.location.index
 				),
-				resultView = new wikibase.queryService.ui.ResultView( sparqlApi, codeSamplesApi ),
+				resultView = new wikibase.queryService.ui.ResultView( sparqlApi, querySamplesApi, codeSamplesApi ),
 				query = decodeURIComponent( window.location.hash.substr( 1 ) ),
 				qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi ),
 				$editor = $( '<div>' );
