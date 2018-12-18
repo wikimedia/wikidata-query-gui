@@ -1,11 +1,38 @@
-# https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Pywikibot
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import pywikibot
-from pywikibot import pagegenerators
+from pywikibot.pagegenerators import WikidataSPARQLPageGenerator
+from pywikibot.bot import SingleSiteBot
 
-site = pywikibot.Site()
-repo = site.data_repository()
-query = {SPARQL_QUERY}
-generator = pagegenerators.WikidataSPARQLPageGenerator(query, site=repo)
 
-for item in generator:
-    print(item)
+class WikidataQueryBot(BaseBot):
+    """
+    Basic bot to show wikidata queries.
+
+    See https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Pywikibot
+    for more information.
+    """
+
+    def __init__(self, generator, **kwargs):
+        """
+        Initializer.
+
+        @param generator: the page generator that determines on which pages
+            to print
+        @type generator: generator
+        """
+        super(WikidataQueryBot, self).__init__(**kwargs)
+        self.generator = generator
+
+    def treat(self, page):
+        print(page)
+
+
+if __name__ == '__main__':
+    query = """{SPARQL_QUERY}"""
+    site = pywikibot.Site()
+    gen = WikidataSPARQLPageGenerator(query, site=site.data_repository(),
+                                      endpoint='{ENDPOINT_URL}')
+    bot = WikidataQueryBot(gen, site=site)
+    bot.run()
