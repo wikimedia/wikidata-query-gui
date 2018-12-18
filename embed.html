@@ -578,6 +578,7 @@ body {
 		function setBrand( config ) {
 			$( '.brand img' ).attr( 'src', config.brand.logo );
 			$( '.brand > span' ).text( config.brand.title );
+			document.title = config.brand.title;
 		}
 
 		function initToolbarVisibilityHandler() {
