@@ -45,7 +45,8 @@ var CONFIG = ( function ( window, $ ) {
 		},
 		brand: {
 			logo: 'logo.svg',
-			title: 'Wikidata Query Service'
+			title: 'Wikidata Query Service',
+			copyrightUrl: 'https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Copyright'
 		},
 		location: {
 			root: root,

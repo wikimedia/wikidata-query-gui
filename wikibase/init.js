@@ -8,6 +8,7 @@
 		$( '.navbar-brand img' ).attr( 'src', config.brand.logo );
 		$( '.navbar-brand a > span' ).text( config.brand.title );
 		document.title = config.brand.title;
+		$( 'a#copyright-link' ).attr( 'href', config.brand.copyrightUrl );
 	}
 
 	function setLanguage( lang, save, callback ) {
