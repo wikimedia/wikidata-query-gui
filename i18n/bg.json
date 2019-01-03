@@ -6,7 +6,8 @@
 			"Vodnokon4e",
 			"ShockD",
 			"Panadora",
-			"Datawiki30"
+			"Datawiki30",
+			"Vlad5250"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -110,5 +111,5 @@
 	"wdqs-embed-button-edit-query": "Редактиране",
 	"wdqs-embed-button-edit-query-title": "Редактиране на тази заявка със SPARQL редактора",
 	"wdqs-embed-button-edit-code": "Редактирай кода",
-	"wdqs-embed-button-edit-code-title": "Редактиране на тази заявка със SPARQL редактора"
+	"wdqs-embed-button-edit-code-title": "Редактиране на тази заявка със SPARQL-редактора"
 }
