@@ -117,6 +117,7 @@
 	"wdqs-result-map-progress": "Ladataan karttaa: $1%",
 	"wdqs-embed-button-edit-query": "Muokkaa",
 	"wdqs-embed-button-edit-query-title": "Muokkaa tätä tiedustelua tiedustelumuokkaimella",
+	"wdqs-embed-button-edit-code": "Muokkaa koodia",
 	"wdqs-embed-explorer-button-incoming": "Näytä saapuvat linkit",
 	"wdqs-embed-explorer-button-outgoing": "Näytä lähtevät linkit"
 }
