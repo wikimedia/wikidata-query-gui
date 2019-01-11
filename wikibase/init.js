@@ -9,6 +9,7 @@
 		$( '.navbar-brand a > span' ).text( config.brand.title );
 		document.title = config.brand.title;
 		$( 'a#copyright-link' ).attr( 'href', config.brand.copyrightUrl );
+		$( '#favicon' ).attr( 'href', config.brand.favicon );
 	}
 
 	function setLanguage( lang, save, callback ) {
