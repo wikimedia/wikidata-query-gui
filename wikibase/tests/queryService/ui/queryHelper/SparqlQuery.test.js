@@ -9,10 +9,10 @@
 		LIMIT: 'SELECT * WHERE {} LIMIT 10',
 		VARIABLES: 'SELECT ?x1 ?x2 ?x3 WHERE {} LIMIT 10',
 		TRIPLE_VARIABLES: 'SELECT ?y1 ?y2 ?y3 WHERE { ?x1 ?x2 ?x3. }\nLIMIT 10',
-		TRIPLES_UNION: 'SELECT ?x1 ?x2 ?x3 WHERE { <S> <P> <O>.  OPTIONAL{ <S1> <P1> <O1> }  <S2> <P2> <O2>. { <SU1> <PU1> <OU1> } UNION { <SU2> <PU2> <OU2> } }',
-		TRIPLES: 'SELECT ?x1 ?x2 ?x3 WHERE { <S> <P> <O>.  OPTIONAL{ <S1> <P1> <O1> }  <S2> <P2> <O2>.}',
+		TRIPLES_UNION: 'PREFIX : <http://a.test/> SELECT ?x1 ?x2 ?x3 WHERE { :S :P :O.  OPTIONAL{ :S1 :P1 :O1 }  :S2 :P2 :O2. { :SU1 :PU1 :OU1 } UNION { :SU2 :PU2 :OU2 } }',
+		TRIPLES: 'PREFIX : <http://a.test/> SELECT ?x1 ?x2 ?x3 WHERE { :S :P :O.  OPTIONAL{ :S1 :P1 :O1 }  :S2 :P2 :O2.}',
 		SUBQUERIES: 'SELECT * WHERE {  {SELECT * WHERE { {SELECT * WHERE {}} }} }',
-		BOUND: 'SELECT * WHERE { ?bound <P> <O>.  OPTIONAL{ <S1> ?x ?bound2 }  <S2> <P2> <O2>.}',
+		BOUND: 'PREFIX : <http://a.test/> SELECT * WHERE { ?bound :P :O.  OPTIONAL{ :S1 ?x ?bound2 }  :S2 :P2 :O2.}',
 		COMMENTS: '#foo:bar\n#6*9=42\nSELECT * WHERE {  }',
 		LABEL_SERVICE: 'PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX bd: <http://www.bigdata.com/rdf#> SELECT * WHERE { SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" } }',
 	};
@@ -121,42 +121,42 @@
 		assert.equal( triples[0].optional, false, 'triple0 must not be optional' );
 		assert.deepEqual( triples[0].query, q, 'query of triple1 must be query' );
 		assert.deepEqual( triples[0].triple, {
-			"subject": "S",
-			"predicate": "P",
-			"object": "O"
+			"subject": "http://a.test/S",
+			"predicate": "http://a.test/P",
+			"object": "http://a.test/O"
 		}, 'tripl1 must be S, P, O' );
 
 		assert.equal( triples[1].optional, true, 'triple1 must be optional' );
 		assert.deepEqual( triples[1].query, q, 'query of triple1 must be query' );
 		assert.deepEqual( triples[1].triple, {
-			"object": "O1",
-			"predicate": "P1",
-			"subject": "S1"
+			"object": "http://a.test/O1",
+			"predicate": "http://a.test/P1",
+			"subject": "http://a.test/S1"
 		}, 'tripl1 must be S1, P1, O1' );
 
 		assert.equal( triples[2].optional, false, 'triple2 must not be optional' );
 		assert.deepEqual( triples[2].query, q, 'query of triple1 must be query' );
 		assert.deepEqual( triples[2].triple, {
-			"object": "O2",
-			"predicate": "P2",
-			"subject": "S2"
+			"object": "http://a.test/O2",
+			"predicate": "http://a.test/P2",
+			"subject": "http://a.test/S2"
 		}, 'tripl2 must be S2, P2, O2' );
 
 
 		assert.equal( triples[3].optional, false, 'triple3 must not be optional' );
 		assert.deepEqual( triples[3].query, q, 'query of triple3 must be query' );
 		assert.deepEqual( triples[3].triple, {
-			"subject": "SU1",
-			"predicate": "PU1",
-			"object": "OU1"
+			"subject": "http://a.test/SU1",
+			"predicate": "http://a.test/PU1",
+			"object": "http://a.test/OU1"
 		}, 'triple3 must be SU1, PU1, OU1' );
 
 		assert.equal( triples[4].optional, false, 'triple3 must not be optional' );
 		assert.deepEqual( triples[4].query, q, 'query of triple3 must be query' );
 		assert.deepEqual( triples[4].triple, {
-			"subject": "SU2",
-			"predicate": "PU2",
-			"object": "OU2"
+			"subject": "http://a.test/SU2",
+			"predicate": "http://a.test/PU2",
+			"object": "http://a.test/OU2"
 		}, 'triple3 must be SU2, PU2, OU2' );
 	} );
 
@@ -175,9 +175,9 @@
 
 		assert.equal( triples.length, 1, 'there should be 1 triple left' );
 		assert.deepEqual( triples[0].triple, {
-			"object": "O1",
-			"predicate": "P1",
-			"subject": "S1"
+			"object": "http://a.test/O1",
+			"predicate": "http://a.test/P1",
+			"subject": "http://a.test/S1"
 		}, 'tripl left must be S1, P1, O1' );
 	} );
 
