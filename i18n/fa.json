@@ -7,7 +7,8 @@
 			"Ebraminio",
 			"Arash.pt",
 			"Alirezaaa",
-			"Alifakoor"
+			"Alifakoor",
+			"Amirsara"
 		]
 	},
 	"wdqs-app-button-examples": "نمونه‌ها",
@@ -116,8 +117,9 @@
 	"wdqs-action-preview": "پیش‌نمایش نتیجه",
 	"wdqs-result-map-layers-all": "تمام لایه‌ها",
 	"wdqs-result-map-progress": "بارگیری اطلاعات نقشه: $1%",
-	"wdqs-embed-button-edit-query": "ویرایش این پرسمان",
+	"wdqs-embed-button-edit-query": "ویرایش",
 	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL",
+	"wdqs-embed-button-edit-code": "ویرایش کد",
 	"wdqs-embed-explorer-button-incoming": "نمایش پیوند به",
 	"wdqs-embed-explorer-button-outgoing": "نمایش پیوند‌ها"
 }

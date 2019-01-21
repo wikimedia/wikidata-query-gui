@@ -45,6 +45,6 @@
 	"wdqs-action-unknow-error": "Neznana napaka",
 	"wdqs-action-preview": "Predogled rezultata",
 	"wdqs-result-map-layers-all": "Vsi sloji",
-	"wdqs-embed-button-edit-query": "Uredi to poizvedbo",
+	"wdqs-embed-button-edit-query": "Uredi",
 	"wdqs-embed-button-edit-query-title": "Uredi to poizvedbo z urejevalnikom SPARQL"
 }
