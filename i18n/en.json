@@ -3,14 +3,15 @@
         "authors": [
             "Jonas Kress",
             "David Sn",
-            "Albert Wolszon"
+            "Albert Wolszon",
+            "Abián"
         ],
         "locale": "en",
         "message-documentation": "qqq"
     },
     "wdqs-app-button-examples": "Examples",
     "wdqs-app-button-prefixes": "Prefixes",
-    "wdqs-app-button-tools": "Tools",
+    "wdqs-app-button-more-tools": "More tools",
     "wdqs-app-button-help": "Help",
     "wdqs-app-button-run": "Run",
     "wdqs-app-button-run-title": "Execute query (<CTRL> + <ENTER>)",
@@ -36,6 +37,13 @@
     "wdqs-app-help-prefixes": "List of prefixes",
     "wdqs-app-help-copy": "Licensing information",
     "wdqs-app-help-queryhelper": "Query Helper",
+    "wdqs-app-tools-edit-items": "Edit Items",
+    "wdqs-app-tools-query-data": "Query data",
+    "wdqs-app-tools-enhance-ui": "Enhance user interface",
+    "wdqs-app-tools-visualize-data": "Visualize data",
+    "wdqs-app-tools-list-properties": "List properties",
+    "wdqs-app-tools-lexicographical-data": "Lexicographical data",
+    "wdqs-app-tools-for-programmers": "For programmers",
     "wdqs-app-footer-help": "Press <i>[CTRL-SPACE]</i> to activate auto completion.",
     "wdqs-app-footer-updated-ago": "Data updated $1",
     "wdqs-app-result-shorturl": "Short URL to result",
