@@ -8,12 +8,13 @@
 			"Fanjiayi",
 			"夢蝶葬花",
 			"Deathkon",
-			"Phenolla"
+			"Phenolla",
+			"A Chinese Wikipedian"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
 	"wdqs-app-button-prefixes": "前缀",
-	"wdqs-app-button-tools": "工具",
+	"wdqs-app-button-more-tools": "更多工具",
 	"wdqs-app-button-help": "帮助",
 	"wdqs-app-button-run": "运行",
 	"wdqs-app-button-run-title": "执行查询（<CTRL> + <ENTER>）",

@@ -6,12 +6,13 @@
 			"Aefgh39622",
 			"Ans",
 			"Horus",
-			"Octahedron80"
+			"Octahedron80",
+			"B20180"
 		]
 	},
 	"wdqs-app-button-examples": "ตัวอย่าง",
 	"wdqs-app-button-prefixes": "คำนำหน้า",
-	"wdqs-app-button-tools": "เครื่องมือ",
+	"wdqs-app-button-more-tools": "เครื่องมือเพิ่มเติม",
 	"wdqs-app-button-help": "คำอธิบาย",
 	"wdqs-app-button-run": "ดำเนินการ",
 	"wdqs-app-button-run-title": "ดำเนินการเควียรี (<CTRL> + <ENTER>)",
@@ -36,6 +37,8 @@
 	"wdqs-app-help-prefixes": "รายการคำนำหน้า",
 	"wdqs-app-help-copy": "สารสนเทศสัญญาอนุญาต",
 	"wdqs-app-help-queryhelper": "ตัวช่วยการสืบค้น",
+	"wdqs-app-tools-edit-items": "แก้ไขรายการ",
+	"wdqs-app-tools-lexicographical-data": "ข้อมูลคำศัพท์",
 	"wdqs-app-footer-help": "กด <i>[CTRL-SPACE]</i> เพื่อเปิดใช้งานเติมข้อความให้สมบูรณ์อัตโนมัติ",
 	"wdqs-app-footer-updated-ago": "ข้อมูลอัปเดตเมื่อ $1",
 	"wdqs-app-result-shorturl": "URL แบบสั้นไปยังผลลัพธ์",

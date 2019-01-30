@@ -5,7 +5,6 @@
 		]
 	},
 	"wdqs-app-button-examples": "ၮဲအ်ုဍံင်",
-	"wdqs-app-button-tools": "ခြီခြာ့လ်ုဖး",
 	"wdqs-app-button-help": "မာၜိုင်မာဆိုင်",
 	"wdqs-app-button-run": "ကျးက္ဍာ",
 	"wdqs-app-button-clear": "မာဆိုင့်လာ",
@@ -24,7 +23,7 @@
 	"wdqs-app-result-svg": "SVG ၯင်",
 	"wdqs-app-resultbrowser-table": "ဆ်ုထိုဝ်ဆ်ုနုံ့",
 	"wdqs-app-resultbrowser-image-grid": "လါၯင် ကၞါင့်ထံင်",
-	"wdqs-app-resultbrowser-map": "ၯံင်းခေါဟ်ၯင်",
+	"wdqs-app-resultbrowser-map": "ၯင်းခေါဟ်ၯင်",
 	"wdqs-app-resultbrowser-tree-map": "ဆ်ုထုင်း ၯင်းခေါဟ်ၯင်",
 	"wdqs-app-resultbrowser-tree": "အ်ုထုင်း",
 	"wdqs-app-resultbrowser-timeline": "အ်ုခါ့ကျံင်း",

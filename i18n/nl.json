@@ -8,12 +8,13 @@
 			"Mainframe98",
 			"McDutchie",
 			"Ladsgroup",
-			"Robin van der Linde"
+			"Robin van der Linde",
+			"Elroy"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
 	"wdqs-app-button-prefixes": "Voorvoegsels",
-	"wdqs-app-button-tools": "Hulpmiddelen",
+	"wdqs-app-button-more-tools": "Meer hulpmiddelen",
 	"wdqs-app-button-help": "Hulp",
 	"wdqs-app-button-run": "Uitvoeren",
 	"wdqs-app-button-run-title": "Zoekopdracht uitvoeren (<CTRL> + <ENTER>)",
@@ -37,6 +38,10 @@
 	"wdqs-app-help-prefixes": "Lijst van voorvoegsels",
 	"wdqs-app-help-copy": "Licentiegegevens",
 	"wdqs-app-help-queryhelper": "Zoekopdracht-assistent",
+	"wdqs-app-tools-edit-items": "Onderdelen bewerken",
+	"wdqs-app-tools-query-data": "Gegevens van vraag",
+	"wdqs-app-tools-list-properties": "Eigenschappen van lijst",
+	"wdqs-app-tools-for-programmers": "Voor programmeurs",
 	"wdqs-app-footer-help": "Druk op <i>[CTRL-SPATIE]</i> om automatisch aanvullen te activeren.",
 	"wdqs-app-footer-updated-ago": "Gegevens $1 bijgewerkt",
 	"wdqs-app-result-shorturl": "Korte URL naar resultaat",
