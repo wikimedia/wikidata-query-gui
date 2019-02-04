@@ -15,11 +15,13 @@
 			"La Mantis",
 			"Micru",
 			"Tiberius1701",
-			"Asierog"
+			"Asierog",
+			"Carlosmg.dg"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
 	"wdqs-app-button-prefixes": "Prefijos",
+	"wdqs-app-button-more-tools": "Más herramientas",
 	"wdqs-app-button-help": "Ayuda",
 	"wdqs-app-button-run": "Ejecutar",
 	"wdqs-app-button-run-title": "Ejecutar consulta (<CTRL> + <ENTER>)",
@@ -45,6 +47,13 @@
 	"wdqs-app-help-prefixes": "Lista de prefijos",
 	"wdqs-app-help-copy": "Información de la licencia",
 	"wdqs-app-help-queryhelper": "Asistente de consultas",
+	"wdqs-app-tools-edit-items": "Edita elementos",
+	"wdqs-app-tools-query-data": "Dato de consulta",
+	"wdqs-app-tools-enhance-ui": "Realza interfaz de usuario",
+	"wdqs-app-tools-visualize-data": "Visualiza dato",
+	"wdqs-app-tools-list-properties": "Lista de propiedades",
+	"wdqs-app-tools-lexicographical-data": "Dato lexicográfico",
+	"wdqs-app-tools-for-programmers": "Para programadores",
 	"wdqs-app-footer-help": "Presiona <i>Ctrl + Espacio</i> para activar la compleción automática.",
 	"wdqs-app-footer-updated-ago": "Datos actualizados $1",
 	"wdqs-app-result-shorturl": "URL corto al resultado",

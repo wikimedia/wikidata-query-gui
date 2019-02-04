@@ -13,6 +13,7 @@
 	"wdqs-app-button-clear": "Tühjenda",
 	"wdqs-app-button-clear-title": "Tühjenda päring",
 	"wdqs-app-button-restore-title": "Taasta eelmine päring",
+	"wdqs-app-button-format-title": "Vorminda päring",
 	"wdqs-app-button-fullscreen-title": "Lülita täisekraani režiim sisse või välja",
 	"wdqs-app-button-display": "Kuva",
 	"wdqs-app-button-display-title": "Kuva tulemused tabelina, pildina, ...",
@@ -89,5 +90,8 @@
 	"wdqs-action-preview": "Tulemuse eelvaade",
 	"wdqs-result-map-layers-all": "Kõik kihid",
 	"wdqs-result-map-progress": "Kaardiandmete laadimine: $1%",
-	"wdqs-embed-button-edit-query": "Muuda seda päringut"
+	"wdqs-embed-button-edit-query": "Muuda",
+	"wdqs-embed-button-edit-query-title": "Muuda seda päringut päringuabilisega",
+	"wdqs-embed-button-edit-code": "Muuda koodi",
+	"wdqs-embed-button-edit-code-title": "Muuda seda päringut SPARQL-toimetiga"
 }
