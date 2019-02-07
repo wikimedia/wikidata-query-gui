@@ -16,7 +16,8 @@
 			"Micru",
 			"Tiberius1701",
 			"Asierog",
-			"Carlosmg.dg"
+			"Carlosmg.dg",
+			"Invadinado"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -47,12 +48,12 @@
 	"wdqs-app-help-prefixes": "Lista de prefijos",
 	"wdqs-app-help-copy": "Información de la licencia",
 	"wdqs-app-help-queryhelper": "Asistente de consultas",
-	"wdqs-app-tools-edit-items": "Edita elementos",
-	"wdqs-app-tools-query-data": "Dato de consulta",
-	"wdqs-app-tools-enhance-ui": "Realza interfaz de usuario",
-	"wdqs-app-tools-visualize-data": "Visualiza dato",
-	"wdqs-app-tools-list-properties": "Lista de propiedades",
-	"wdqs-app-tools-lexicographical-data": "Dato lexicográfico",
+	"wdqs-app-tools-edit-items": "Editar elementos",
+	"wdqs-app-tools-query-data": "Consultar datos",
+	"wdqs-app-tools-enhance-ui": "Mejorar la interfaz de usuario",
+	"wdqs-app-tools-visualize-data": "Visualizar datos",
+	"wdqs-app-tools-list-properties": "Listar propiedades",
+	"wdqs-app-tools-lexicographical-data": "Datos lexicográficos",
 	"wdqs-app-tools-for-programmers": "Para programadores",
 	"wdqs-app-footer-help": "Presiona <i>Ctrl + Espacio</i> para activar la compleción automática.",
 	"wdqs-app-footer-updated-ago": "Datos actualizados $1",

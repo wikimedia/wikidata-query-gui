@@ -10,11 +10,13 @@
 			"Afaz",
 			"90-NS-FZ",
 			"Gulpin",
-			"Suyama"
+			"Suyama",
+			"Omotecho"
 		]
 	},
 	"wdqs-app-button-examples": "例",
 	"wdqs-app-button-prefixes": "接頭辞",
+	"wdqs-app-button-more-tools": "その他のツール",
 	"wdqs-app-button-help": "ヘルプ",
 	"wdqs-app-button-run": "実行",
 	"wdqs-app-button-run-title": "クエリを実行 (<CTRL> + <ENTER>)",
@@ -40,6 +42,13 @@
 	"wdqs-app-help-prefixes": "接頭辞のリスト",
 	"wdqs-app-help-copy": "ライセンス情報",
 	"wdqs-app-help-queryhelper": "クエリ・ヘルパー",
+	"wdqs-app-tools-edit-items": "項目の編集",
+	"wdqs-app-tools-query-data": "クエリデータ",
+	"wdqs-app-tools-enhance-ui": "UIの増強",
+	"wdqs-app-tools-visualize-data": "データの視覚化",
+	"wdqs-app-tools-list-properties": "プロパティを一覧",
+	"wdqs-app-tools-lexicographical-data": "辞書学データ",
+	"wdqs-app-tools-for-programmers": "プログラマ対象",
 	"wdqs-app-footer-help": "[CTRL-SPACE]で補完",
 	"wdqs-app-footer-updated-ago": "最終更新 $1",
 	"wdqs-app-result-shorturl": "実行結果の短縮URL",
