@@ -8,7 +8,8 @@
 			"Greis",
 			"Lollo",
 			"Ontsed",
-			"Albe Albe460"
+			"Albe Albe460",
+			"Albe Albe 460"
 		]
 	},
 	"wdqs-app-button-examples": "Esempi",
@@ -40,6 +41,9 @@
 	"wdqs-app-help-copy": "Informazioni sulla licenza",
 	"wdqs-app-help-queryhelper": "Assistente query",
 	"wdqs-app-tools-edit-items": "Modifica elementi",
+	"wdqs-app-tools-query-data": "Dati della query",
+	"wdqs-app-tools-enhance-ui": "Migliora l'interfaccia utente",
+	"wdqs-app-tools-visualize-data": "Visualizza dati",
 	"wdqs-app-tools-list-properties": "Elenco proprietà",
 	"wdqs-app-tools-lexicographical-data": "Dati lessicografici",
 	"wdqs-app-tools-for-programmers": "Per i programmatori",

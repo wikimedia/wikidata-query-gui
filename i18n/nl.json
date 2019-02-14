@@ -9,7 +9,8 @@
 			"McDutchie",
 			"Ladsgroup",
 			"Robin van der Linde",
-			"Elroy"
+			"Elroy",
+			"Bouman4"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -81,12 +82,21 @@
 	"wdqs-dialog-examples-preview-query": "Voorbeeld van zoekopdracht",
 	"wdqs-dialog-examples-preview-result": "Voorbeeld van resultaat",
 	"wdqs-dialog-key-shortcut-run-query": "Zoekopdracht uitvoeren.",
+	"wdqs-dialog-key-shortcut-esc": "Verlaat het huidige invoerveld / tekstgebied.",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Toon sneltoetshulp voor de huidige pagina.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Focus op tekstveld zoekopdracht",
+	"wdqs-dialog-key-shortcut-jump-to-result": "Ga naar het queryresultaat.",
+	"wdqs-dialog-key-shortcut-focus-filter": "Focus op de knop \"Filter\" in Query Helper.",
+	"wdqs-dialog-key-shortcut-focus-show": "Focus op de knop \"Show\" in Query Helper.",
+	"wdqs-dialog-key-shortcut-focus-limit": "Klik op de knop \"Beperken\" in Query Helper.",
 	"wdqs-dialog-key-shortcut-show-example": "Weergeef voorbeelden.",
+	"wdqs-dialog-key-shortcut-help-menu": "Schakel het Help-menu in.",
+	"wdqs-dialog-key-shortcut-show-language": "Toon taalmenu.",
 	"wdqs-dialog-key-shortcut-close-button": "Sluiten",
 	"wdqs-ve-filter": "Filteren",
 	"wdqs-ve-show": "Weergeven",
 	"wdqs-ve-limit": "Limiteren",
+	"wdqs-ve-add-label-title": "Voeg variabele toe met entiteitslabel",
 	"wdqs-ve-remove-row-title": "Deze rij verwijderen",
 	"wdqs-ve-with": "met",
 	"wdqs-ve-anything": "alles",
@@ -100,10 +110,14 @@
 	"wdqs-action-error-display": "Niet in staat om de resultaten weer te geven",
 	"wdqs-action-timeout": "Time-out voor zoekopdrachtenlimiet is bereikt",
 	"wdqs-action-malformed-query": "Zoekopdracht is ongeldig",
+	"wdqs-action-empty-query": "Voer een geldige SPARQL-query in of kies een voorbeeldquery",
 	"wdqs-action-server-error": "Serverfout",
 	"wdqs-action-unknow-error": "Onbekende fout",
+	"wdqs-action-preview": "Resultaatvoorbeeld",
 	"wdqs-result-map-layers-all": "Alle lagen",
 	"wdqs-result-map-progress": "Kaartgegevens laden: $1%",
 	"wdqs-embed-button-edit-query": "Bewerken",
-	"wdqs-embed-button-edit-code": "Code bewerken"
+	"wdqs-embed-button-edit-query-title": "Bewerk deze query met de query-helper",
+	"wdqs-embed-button-edit-code": "Code bewerken",
+	"wdqs-embed-button-edit-code-title": "Bewerk deze query met de SPARQL-editor"
 }

@@ -5,7 +5,8 @@
 			"Guycn2",
 			"המקיסט",
 			"ערן",
-			"Strayblues"
+			"Strayblues",
+			"YaronSh"
 		]
 	},
 	"wdqs-app-button-examples": "דוגמאות",
@@ -36,6 +37,8 @@
 	"wdqs-app-help-prefixes": "רשימת תחיליות",
 	"wdqs-app-help-copy": "מידע על רישיון",
 	"wdqs-app-help-queryhelper": "סייען שאילתות",
+	"wdqs-app-tools-edit-items": "עריכת פריטים",
+	"wdqs-app-tools-query-data": "נתוני שאילתה",
 	"wdqs-app-footer-help": "יש ללחוץ <i>[קונטרול-רווח]</i> כדי להפעיל השלמה אוטומטית.",
 	"wdqs-app-footer-updated-ago": "הנתונים עודכנו $1",
 	"wdqs-app-result-shorturl": "כתובת URL מקוצרת אל התוצאה",
