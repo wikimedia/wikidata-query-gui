@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jimidar",
-			"Tow"
+			"Tow",
+			"ਗੁਰਪ੍ਰੀਤ ਹੁੰਦਲ"
 		]
 	},
 	"wdqs-app-button-examples": "ਮਿਸਾਲਾਂ",
@@ -17,6 +18,7 @@
 	"wdqs-app-help-feedback": "ਫੀਡਬੈਕ ਦਿਓ!",
 	"wdqs-app-help-portal": "ਮਦਦ ਪੋਰਟਲ",
 	"wdqs-app-help-manual": "ਉਪਯੋਗ ਪੁਸਤਕ",
+	"wdqs-app-tools-list-properties": "ਸੂਚੀ ਜਾਇਦਾਦਾਂ",
 	"wdqs-app-result-json": "JSON ਫਾਈਲ",
 	"wdqs-app-result-json-verbose": "JSON ਫਾਈਲ (ਵਿਸਥਾਰ)",
 	"wdqs-app-result-tsv": "TSV ਫਾਈਲ",

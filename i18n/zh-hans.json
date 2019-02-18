@@ -9,7 +9,8 @@
 			"夢蝶葬花",
 			"Deathkon",
 			"Phenolla",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"VulpesVulpes825"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -40,6 +41,13 @@
 	"wdqs-app-help-prefixes": "前缀列表",
 	"wdqs-app-help-copy": "许可协议信息",
 	"wdqs-app-help-queryhelper": "查询帮助",
+	"wdqs-app-tools-edit-items": "编辑项目",
+	"wdqs-app-tools-query-data": "查询数据",
+	"wdqs-app-tools-enhance-ui": "增强用户界面",
+	"wdqs-app-tools-visualize-data": "可视化数据",
+	"wdqs-app-tools-list-properties": "属性列表",
+	"wdqs-app-tools-lexicographical-data": "词典数据",
+	"wdqs-app-tools-for-programmers": "对于程序员",
 	"wdqs-app-footer-help": "按下<i>[CTRL-SPACE]</i>以激活自动完成。",
 	"wdqs-app-footer-updated-ago": "数据已于$1更新",
 	"wdqs-app-result-shorturl": "至结果的短URL",
