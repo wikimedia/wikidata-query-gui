@@ -3,10 +3,10 @@
 
 import pywikibot
 from pywikibot.pagegenerators import WikidataSPARQLPageGenerator
-from pywikibot.bot import BaseBot
+from pywikibot.bot import SingleSiteBot
 
 
-class WikidataQueryBot(BaseBot):
+class WikidataQueryBot(SingleSiteBot):
     """
     Basic bot to show wikidata queries.
 

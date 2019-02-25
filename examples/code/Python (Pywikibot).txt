@@ -6,7 +6,7 @@ from pywikibot.pagegenerators import WikidataSPARQLPageGenerator
 from pywikibot.bot import SingleSiteBot
 
 
-class WikidataQueryBot(BaseBot):
+class WikidataQueryBot(SingleSiteBot):
     """
     Basic bot to show wikidata queries.
 
@@ -30,7 +30,7 @@ class WikidataQueryBot(BaseBot):
 
 
 if __name__ == '__main__':
-    query = """{SPARQL_QUERY}"""
+    query = {SPARQL_QUERY}
     site = pywikibot.Site()
     gen = WikidataSPARQLPageGenerator(query, site=site.data_repository(),
                                       endpoint='{ENDPOINT_URL}')
