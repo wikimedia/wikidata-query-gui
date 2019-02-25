@@ -434,24 +434,6 @@ body {
 		</div>
 	</div>
 
-	<!-- Code Example Modal -->
-	<div class="modal fade CodeExamples" id="CodeExamples" tabindex="-1" role="dialog" aria-labelledby="CodeExamplesModalLabel">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">
-				<div class="modal-body">
-					<div>
-						<!-- Nav tabs -->
-						<ul class="nav nav-tabs" role="tablist">
-						</ul>
-						<!-- Tab panes -->
-						<div class="tab-content">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 		<!-- JS files -->
 	<!-- build:js js/embed.vendor.min.js -->
 	<script src="node_modules/jquery/dist/jquery.js"></script>
@@ -517,7 +499,6 @@ body {
 	<!-- build:js js/embed.wdqs.min.js -->
 	<script src="wikibase/config.js"></script>
 	<script src="wikibase/queryService/ui/i18n/getMessage.js"></script>
-	<script src="wikibase/queryService/ui/dialog/CodeExample.js"></script>
 	<script src="wikibase/queryService/ui/dialog/QueryExampleDialog.js"></script>
 	<script src="wikibase/queryService/ui/ResultView.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/helper/FormatterHelper.js"></script>
@@ -541,7 +522,6 @@ body {
 	<script src="wikibase/queryService/ui/resultBrowser/GraphResultBrowserNodeBrowser.js"></script>
 	<script src="wikibase/queryService/ui/resultBrowser/PolestarResultBrowser.js"></script>
 	<script src="wikibase/queryService/api/Sparql.js"></script>
-	<script src="wikibase/queryService/api/CodeSamples.js"></script>
 	<script src="wikibase/queryService/api/QuerySamples.js"></script>
 	<script src="wikibase/queryService/api/Wikibase.js"></script>
 	<script src="wikibase/queryService/api/Tracking.js"></script>
@@ -600,11 +580,7 @@ body {
 					lang,
 					config.api.examples
 				),
-				codeSamplesApi = new wikibase.queryService.api.CodeSamples(
-					config.api.sparql.uri,
-					config.location.root,
-					config.location.index
-				),
+				codeSamplesApi = null,
 				resultView = new wikibase.queryService.ui.ResultView( sparqlApi, querySamplesApi, codeSamplesApi ),
 				query = decodeURIComponent( window.location.hash.substr( 1 ) ),
 				qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi ),
