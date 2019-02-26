@@ -683,6 +683,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			placement: 'right',
 			'global_close': true,
 			'html': true,
+			'sanitize': false,
 			'content': function() {
 				self._updateQueryUrl();
 				return '<iframe ' +

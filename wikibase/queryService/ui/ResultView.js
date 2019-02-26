@@ -510,6 +510,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 			placement: 'left',
 			'global_close': true,
 			'html': true,
+			'sanitize': false,
 			'content': function() {
 				var queryUrl;
 				if ( self._editor ) {
