@@ -19,7 +19,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 *
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
-	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
+	 * @param {?wikibase.queryService.api.CodeSamples} codeSamplesApi
 	 * @param {wikibase.queryService.ui.editor.Editor} [editor]
 	 */
 	function SELF( sparqlApi, querySamplesApi, codeSamplesApi, editor ) {
@@ -50,7 +50,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	SELF.prototype._sparqlApi = null;
 
 	/**
-	 * @property {wikibase.queryService.api.CodeSamples}
+	 * @property {?wikibase.queryService.api.CodeSamples}
 	 * @private
 	 */
 	SELF.prototype._codeSamplesApi = null;
@@ -489,6 +489,9 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 */
 	SELF.prototype._initCodeExamples = function() {
 		var self = this;
+		if ( !self._codeSamplesApi ) {
+			return;
+		}
 		new wikibase.queryService.ui.dialog.CodeExample(
 			$( '#CodeExamples' ),
 			function () {
