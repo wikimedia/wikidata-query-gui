@@ -6,7 +6,6 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	'use strict';
 
 	var SHORTURL_API = '//tinyurl.com/api-create.php?url=',
-		RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=',
 		TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
 		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
 
@@ -763,8 +762,6 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 				$( '#execute-button' ).prop( 'disabled', false );
 			} );
 		}
-		$( '.queryUri' ).attr( 'href', self._sparqlApi.getQueryUri() );
-		$( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + $( '.queryUri' )[0].href );
 	};
 
 	/**

@@ -6,6 +6,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	'use strict';
 
 	var PREVIEW_TIMEOUT = 1000,
+        RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=',
 		PREVIEW_LIMIT = 20;
 
 	/**
@@ -365,6 +366,9 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		$( '.result' ).show();
 
 		$( '#execute-button' ).prop( 'disabled', false );
+		var uri = api.getQueryUri();
+        $( '.queryUri' ).attr( 'href', uri );
+        $( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + uri );
 
 		var defaultBrowser = this._createResultBrowsers( api.getResultRawData() );
 		this._drawResult( defaultBrowser );
