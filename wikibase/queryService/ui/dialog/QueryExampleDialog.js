@@ -286,7 +286,8 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 					container: 'body',
 					title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-dialog-examples-preview-query', 'Preview query' ),
 					content: $( '<pre style="white-space:pre-line; word-break:normal;"/>' ).text( query ),
-					html: true
+					html: true,
+					sanitize: false
 				} ),
 			$preview = $( '<a href="#">' ).addClass( 'glyphicon glyphicon-camera' ).clickover(
 				{
@@ -298,7 +299,8 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 					title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-dialog-examples-preview-result', 'Preview result' ),
 					content: $( '<iframe width="400" height="350" frameBorder="0" src="' +
 							self._previewUrl +	encodeURIComponent( query ) + '">' ),
-					html: true
+					html: true,
+					sanitize: false
 				} )
 				.click( function() {
 					self._track( 'preview' );
