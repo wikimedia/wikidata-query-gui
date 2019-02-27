@@ -323,6 +323,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			placement: 'bottom',
 			'global_close': false,
 			'html': true,
+			'sanitize': false,
 			'content': function() {
 				return $content;
 			}
@@ -412,6 +413,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			placement: 'bottom',
 			'global_close': false,
 			'html': true,
+			'sanitize': false,
 			'content': function() {
 				return $content;
 			}
