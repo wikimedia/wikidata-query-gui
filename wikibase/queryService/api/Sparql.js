@@ -179,7 +179,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 
 		this._executionTime = Date.now();
 		$.ajax( this._serviceUri, settings ).done( done ).fail( function( request, options, exception ) {
-			if ( request.getAllResponseHeaders() === '' ) {
+			if (
+				request.getAllResponseHeaders() === '' || // browser did not send the request
+					request.status === 414 || // URI Too Long
+					request.status === 431 // Request Header Fields Too Large
+			) {
 				// query might have been too long for GET, retry with POST
 				settings.method = 'POST';
 				$.ajax( self._serviceUri, settings ).done( done ).fail( fail );
