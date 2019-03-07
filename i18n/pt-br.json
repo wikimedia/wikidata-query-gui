@@ -127,9 +127,9 @@
 	"wdqs-action-preview": "Visualização do resultado",
 	"wdqs-result-map-layers-all": "Todas as camadas",
 	"wdqs-result-map-progress": "Carregando os dados cartográficos: $1%",
-	"wdqs-embed-button-edit-query": "Editar",
+	"wdqs-embed-button-edit-query": "Editar visualmente",
 	"wdqs-embed-button-edit-query-title": "Editar esta consulta com o editor SPARQL",
-	"wdqs-embed-button-edit-code": "Editar o código",
+	"wdqs-embed-button-edit-code": "Editar SPARQL",
 	"wdqs-embed-button-edit-code-title": "Editar esta consulta com o editor SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Mostrar links de entrada",
 	"wdqs-embed-explorer-button-outgoing": "Mostrar links de saída"

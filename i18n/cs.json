@@ -13,6 +13,7 @@
 	},
 	"wdqs-app-button-examples": "Příklady",
 	"wdqs-app-button-prefixes": "Předpony",
+	"wdqs-app-button-more-tools": "Další nástroje",
 	"wdqs-app-button-help": "Nápověda",
 	"wdqs-app-button-run": "Spustit",
 	"wdqs-app-button-run-title": "Spustit dotaz (<CTRL> + <ENTER>)",
@@ -119,7 +120,7 @@
 	"wdqs-result-map-progress": "Načítají se mapová data: $1 %",
 	"wdqs-embed-button-edit-query": "Editovat",
 	"wdqs-embed-button-edit-query-title": "Editovat tento dotaz v dotazovém pomocníku",
-	"wdqs-embed-button-edit-code": "Editovat zdrojový kód",
+	"wdqs-embed-button-edit-code": "Editovat kód SPARQL",
 	"wdqs-embed-button-edit-code-title": "Editovat tento dotaz v editoru SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Zobrazit příchozí odkazy",
 	"wdqs-embed-explorer-button-outgoing": "Zobrazit odchozí odkazy"

@@ -10,7 +10,8 @@
 			"Ladsgroup",
 			"Robin van der Linde",
 			"Elroy",
-			"Bouman4"
+			"Bouman4",
+			"Romaine"
 		]
 	},
 	"wdqs-app-button-examples": "Voorbeelden",
@@ -118,6 +119,6 @@
 	"wdqs-result-map-progress": "Kaartgegevens laden: $1%",
 	"wdqs-embed-button-edit-query": "Bewerken",
 	"wdqs-embed-button-edit-query-title": "Bewerk deze query met de query-helper",
-	"wdqs-embed-button-edit-code": "Code bewerken",
+	"wdqs-embed-button-edit-code": "SPARQL bewerken",
 	"wdqs-embed-button-edit-code-title": "Bewerk deze query met de SPARQL-editor"
 }

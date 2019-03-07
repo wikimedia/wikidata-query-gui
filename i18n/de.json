@@ -119,9 +119,9 @@
 	"wdqs-action-preview": "Vorschau des Ergebnisses",
 	"wdqs-result-map-layers-all": "Alle Ebenen",
 	"wdqs-result-map-progress": "Lade Kartendaten: $1%",
-	"wdqs-embed-button-edit-query": "Bearbeiten",
+	"wdqs-embed-button-edit-query": "Visuell bearbeiten",
 	"wdqs-embed-button-edit-query-title": "Diese Abfrage mit dem Abfragehelfer bearbeiten",
-	"wdqs-embed-button-edit-code": "Code bearbeiten",
+	"wdqs-embed-button-edit-code": "SPARQL bearbeiten",
 	"wdqs-embed-button-edit-code-title": "Diese Abfrage mit dem SPARQL-Editor bearbeiten",
 	"wdqs-embed-explorer-button-incoming": "Eingehende Links anzeigen",
 	"wdqs-embed-explorer-button-outgoing": "Ausgehende Links anzeigen"

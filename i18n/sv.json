@@ -3,7 +3,8 @@
 		"authors": [
 			"WikiPhoenix",
 			"Rockyfelle",
-			"Jopparn"
+			"Jopparn",
+			"Sturban"
 		]
 	},
 	"wdqs-app-button-examples": "Exempel",
@@ -120,9 +121,9 @@
 	"wdqs-action-preview": "Resultatsförhandsvisning",
 	"wdqs-result-map-layers-all": "Alla lager",
 	"wdqs-result-map-progress": "Läser in kartdata: $1%",
-	"wdqs-embed-button-edit-query": "Redigera",
+	"wdqs-embed-button-edit-query": "Redigera visuellt",
 	"wdqs-embed-button-edit-query-title": "Redigera denna fråga med frågehjälparen",
-	"wdqs-embed-button-edit-code": "Redigera kod",
+	"wdqs-embed-button-edit-code": "Redigera SPARQL",
 	"wdqs-embed-button-edit-code-title": "Redigera denna fråga med SPARQL-redigeraren",
 	"wdqs-embed-explorer-button-incoming": "Visa inkommande länkar",
 	"wdqs-embed-explorer-button-outgoing": "Visa utgående länkar"

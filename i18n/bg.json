@@ -51,7 +51,7 @@
 	"wdqs-app-result-rawgraphs": "Отваряне в RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Създаване на графика от текущите резултати, използвайки RAWGraphs.io",
 	"wdqs-app-result-embed": "Вграждане на резултата",
-	"wdqs-app-result-endpoint": "Достъп до SPARQL",
+	"wdqs-app-result-endpoint": "Крайна точка на SPARQL",
 	"wdqs-app-result-endpoint-title": "Връзка до точката за достъп на SPARQL с резултата от заявката",
 	"wdqs-app-result-formatter-title-datetime": "Времеви отпечатък за raw ISO",
 	"wdqs-app-result-json": "JSON файл",

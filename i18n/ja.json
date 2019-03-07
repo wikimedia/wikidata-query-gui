@@ -130,7 +130,7 @@
 	"wdqs-result-map-progress": "地図データを読み込む:$1%",
 	"wdqs-embed-button-edit-query": "編集",
 	"wdqs-embed-button-edit-query-title": "このクエリをクエリヘルパーで編集",
-	"wdqs-embed-button-edit-code": "コードを編集",
+	"wdqs-embed-button-edit-code": "SPARQLを編集",
 	"wdqs-embed-button-edit-code-title": "SPARQL エディターを使用してこのクエリーを編集",
 	"wdqs-embed-explorer-button-incoming": "被リンクを表示",
 	"wdqs-embed-explorer-button-outgoing": "リンク先を表示"

@@ -7,7 +7,8 @@
 			"Rasal Lia",
 			"Bodhisattwa",
 			"আফতাবুজ্জামান",
-			"V.narsikar"
+			"V.narsikar",
+			"Ifsad"
 		]
 	},
 	"wdqs-app-button-examples": "উদাহরণ",
@@ -100,7 +101,7 @@
 	"wdqs-action-preview": "ফলাফল প্রাকদর্শন",
 	"wdqs-result-map-layers-all": "সব স্তর",
 	"wdqs-result-map-progress": "মানচিত্রের উপাত্ত লোড করা হচ্ছে: $1%",
-	"wdqs-embed-button-edit-query": "সম্পাদনা",
+	"wdqs-embed-button-edit-query": "দৃশ্যমান সম্পাদনা",
 	"wdqs-embed-button-edit-query-title": "SPARQL সম্পাদক দিয়ে এই প্রশ্নটি সম্পাদনা করুন",
-	"wdqs-embed-button-edit-code": "কোড সম্পাদনা করুন"
+	"wdqs-embed-button-edit-code": "স্পার্কল (SPARQL) সম্পাদনা করুন"
 }
