@@ -7,7 +7,8 @@
 			"ShockD",
 			"Panadora",
 			"Datawiki30",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"wdqs-app-button-examples": "Примери",
@@ -60,7 +61,7 @@
 	"wdqs-app-result-tsv-verbose": "TSV файл (подробен)",
 	"wdqs-app-result-csv": "CSV файл",
 	"wdqs-app-result-svg": "SVG изображение",
-	"wdqs-app-result-html": "HTML-табела",
+	"wdqs-app-result-html": "HTML таблица",
 	"wdqs-app-shorturl-page-title": "Кратък адрес на страницата",
 	"wdqs-app-editor-placeholder": "(Въведете заявка за SPARQL или изберете пример)",
 	"wdqs-app-editor-addprefixes": "Добавяне на стандартните представки",
