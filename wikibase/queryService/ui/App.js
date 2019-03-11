@@ -9,7 +9,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
 		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
 
-	var COOKIE_HIDE = 'query-helper-hide';
+	var COOKIE_SHOW_QUERY_HELPER = 'query-helper-show';
 
 	/**
 	 * A ui application for the Wikibase query service
@@ -371,7 +371,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			}, 1000 )();
 		} );
 		this.resizableQueryHelper();
-		if ( Cookies.get( COOKIE_HIDE ) !== 'true' ) {
+		if ( Cookies.get( COOKIE_SHOW_QUERY_HELPER ) === 'true' ) {
 			$( '.query-helper' ).removeClass( 'query-helper-hidden' );
 			$( '.query-helper-tag-cloud' ).removeClass( 'query-helper-hidden' );
 		}
@@ -392,7 +392,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		}, 100 ) );
 
 		$( '.query-helper .panel-heading .close' ).click( function() {
-			Cookies.set( COOKIE_HIDE, true );
+			Cookies.set( COOKIE_SHOW_QUERY_HELPER, false );
 			self._hideQueryHelper();
 			self._track( 'buttonClick.queryHelperTrigger.close' );
 			return false;
@@ -402,7 +402,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			var visible = $( '.query-helper' ).is( ':visible' );
 			$( '.query-helper' ).toggleClass( 'query-helper-hidden', visible );
 			$( '.query-helper-tag-cloud' ).toggleClass( 'query-helper-hidden' );
-			Cookies.set( COOKIE_HIDE, visible );
+			Cookies.set( COOKIE_SHOW_QUERY_HELPER, !visible );
 			self._updateQueryEditorSize();
 			self._track( 'buttonClick.queryHelperTrigger.' + ( visible ? 'close' : 'open' ) );
 			return false;
