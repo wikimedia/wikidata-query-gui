@@ -130,9 +130,9 @@
 	"wdqs-action-preview": "معاينة النتيجة",
 	"wdqs-result-map-layers-all": "كل الطبقات",
 	"wdqs-result-map-progress": "جارٍ تحميل بيانات الخريطة: $1%",
-	"wdqs-embed-button-edit-query": "عدل",
+	"wdqs-embed-button-edit-query": "التحرير بصريا",
 	"wdqs-embed-button-edit-query-title": "تعديل هذا الاستعلام بمساعد سباركل",
-	"wdqs-embed-button-edit-code": "تعديل الكود",
+	"wdqs-embed-button-edit-code": "تعديل سباركل",
 	"wdqs-embed-button-edit-code-title": "تعديل هذا الاستعلام بمحرر سباركل",
 	"wdqs-embed-explorer-button-incoming": "عرض الروابط الواردة",
 	"wdqs-embed-explorer-button-outgoing": "إظهار الروابط الصادرة"
