@@ -8,7 +8,9 @@
 			"Arash.pt",
 			"Alirezaaa",
 			"Alifakoor",
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis",
+			"Physicsch"
 		]
 	},
 	"wdqs-app-button-examples": "نمونه‌ها",
@@ -20,6 +22,7 @@
 	"wdqs-app-button-clear": "پاک کردن",
 	"wdqs-app-button-clear-title": "درخواست حذف",
 	"wdqs-app-button-restore-title": "بازگرداندن کوئری پیشین",
+	"wdqs-app-button-format-title": "قالب‌بندی کوئری",
 	"wdqs-app-button-fullscreen-title": "تغییر وضعیت تمام صفحهٔ حالت ویرایش",
 	"wdqs-app-button-display": "نمایش",
 	"wdqs-app-button-display-title": "نمایش نتایج به صورت جدول، تصویر و یا ....",
@@ -39,7 +42,11 @@
 	"wdqs-app-help-copy": "اطلاعات مجوز",
 	"wdqs-app-help-queryhelper": "راهنمای کوئری",
 	"wdqs-app-tools-edit-items": "ویرایش موارد",
+	"wdqs-app-tools-query-data": "کوئری از داده‌ها",
+	"wdqs-app-tools-enhance-ui": "بهبود رابط کاربری",
+	"wdqs-app-tools-visualize-data": "دیداری‌سازی داده‌ها",
 	"wdqs-app-tools-list-properties": "فهرست ویژگی‌ها",
+	"wdqs-app-tools-for-programmers": "برای برنامه‌نویسان",
 	"wdqs-app-footer-help": "برای فعال سازی تکمیل خودکار دکمه <i>[CTRL-SPACE]</i> را همزمان بفشارید.",
 	"wdqs-app-footer-updated-ago": "اطلاعات $1 قبل بروز شد.",
 	"wdqs-app-result-shorturl": "آدرس ایتنرنتی کوتاه برای نتیجه",
@@ -119,9 +126,10 @@
 	"wdqs-action-preview": "پیش‌نمایش نتیجه",
 	"wdqs-result-map-layers-all": "تمام لایه‌ها",
 	"wdqs-result-map-progress": "بارگیری اطلاعات نقشه: $1%",
-	"wdqs-embed-button-edit-query": "ویرایش",
-	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL",
-	"wdqs-embed-button-edit-code": "ویرایش کد",
+	"wdqs-embed-button-edit-query": "ویرایش دیداری",
+	"wdqs-embed-button-edit-query-title": "ویرایش پرسمان به کمک ابزار کمک‌کننده",
+	"wdqs-embed-button-edit-code": "ویرایش SPARQL",
+	"wdqs-embed-button-edit-code-title": "ویرایش پرسمان به کمک ویرایشگر SPARQL",
 	"wdqs-embed-explorer-button-incoming": "نمایش پیوند به",
 	"wdqs-embed-explorer-button-outgoing": "نمایش پیوند‌ها"
 }

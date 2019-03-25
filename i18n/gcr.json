@@ -119,9 +119,9 @@
 	"wdqs-action-preview": "Apèrsou di rézilta",
 	"wdqs-result-map-layers-all": "Tout kouch-ya",
 	"wdqs-result-map-progress": "Charjman dé data kartografik: $1 %",
-	"wdqs-embed-button-edit-query": "Modifyé",
+	"wdqs-embed-button-edit-query": "Chanjé vizwèlman",
 	"wdqs-embed-button-edit-query-title": "Modifyé sa rékèt ké asistan-an di rékèt",
-	"wdqs-embed-button-edit-code": "Modifyé kod-a",
+	"wdqs-embed-button-edit-code": "Modifyé SPARQL",
 	"wdqs-embed-button-edit-code-title": "Modifyé sa rékèt ké éditò SPARQL-a",
 	"wdqs-embed-explorer-button-incoming": "Afiché lyannaj-ya ki ka rantré",
 	"wdqs-embed-explorer-button-outgoing": "Afiché lyannaj-ya ki ka soti"

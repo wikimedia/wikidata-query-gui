@@ -12,7 +12,8 @@
 			"Movses",
 			"Infovarius",
 			"Vlad5250",
-			"Silovan"
+			"Silovan",
+			"Diralik"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -120,7 +121,7 @@
 	"wdqs-ve-sb-other": "Другое",
 	"wdqs-action-query": "Выполнение запроса",
 	"wdqs-action-render": "Обработка результата",
-	"wdqs-action-error-display": "Не удается отобразить результат",
+	"wdqs-action-error-display": "Не удаётся отобразить результат",
 	"wdqs-action-timeout": "Запрос занял слишком много времени",
 	"wdqs-action-malformed-query": "Запрос плохо сформирован",
 	"wdqs-action-empty-query": "Введите SPARQL-запрос или выберите один из примеров",
