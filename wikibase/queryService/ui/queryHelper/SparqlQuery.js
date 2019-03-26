@@ -282,9 +282,22 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 	SELF.prototype.getSubQueries = function() {
 		var queries = [];
 
+		function findSubqueriesInGroup( group ) {
+			$.each( group.patterns, function( k, v ) {
+				switch ( v.type ) {
+				case 'query':
+					queries.push( new SELF( v ) );
+					break;
+				case 'group':
+					findSubqueriesInGroup( v );
+					break;
+				}
+			} );
+		}
+
 		$.each( this._query.where, function( k, v ) {
-			if ( v.queryType ) {
-				queries.push( new SELF( v ) );
+			if ( v.type === 'group' ) {
+				findSubqueriesInGroup( v );
 			}
 		} );
 
