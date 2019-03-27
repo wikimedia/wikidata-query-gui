@@ -256,8 +256,42 @@ module.exports = function( grunt ) {
 		grunt.file.write( buildFolder + '/.gitreview', file );
 	} );
 
+	grunt.registerTask( 'wdio', function () {
+		var done = this.async();
+		var spawn = require( 'child_process' ).spawn;
+
+		// Run server
+		var serverProcess = spawn( 'node_modules/.bin/http-server', [ '-p', '8082' ], {
+			stdio: [ process.stdin, process.stdout, process.stderr ]
+		} );
+		var seleniumProcess = spawn( 'node_modules/.bin/selenium-standalone', [ 'start' ], {
+			stdio: [ process.stdin, process.stdout, process.stderr ]
+		} );
+
+		// Run tests
+		var wdioProcess = spawn( 'node_modules/.bin/wdio', [], {
+			stdio: [ process.stdin, process.stdout, process.stderr ]
+		} );
+
+		wdioProcess.on( 'exit', function ( error ) {
+			serverProcess.kill();
+			seleniumProcess.kill();
+			if ( error ) {
+				done( false );
+			} else {
+				done( true );
+			}
+		} );
+
+		wdioProcess.on( 'error', function ( error ) {
+			serverProcess.kill();
+			seleniumProcess.kill();
+			done( false );
+		} );
+
+	} );
 	grunt.registerTask( 'test', [
-		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
+		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit', 'wdio'
 	] );
 	grunt.registerTask( 'build', [
 		'clean', 'create_build'
