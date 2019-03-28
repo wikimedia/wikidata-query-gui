@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Belkacem77"
+			"Belkacem77",
+			"SlimaneAmiri"
 		]
 	},
 	"wdqs-app-button-examples": "Imedyaten",
 	"wdqs-app-button-prefixes": "Uzwiren",
+	"wdqs-app-button-more-tools": "Ifecka-nniḍen",
 	"wdqs-app-button-help": "Tallelt",
 	"wdqs-app-button-run": "Selkem",
 	"wdqs-app-button-run-title": "Selkem tuttra (<CTRL> + <ENTER>)",
@@ -30,6 +32,8 @@
 	"wdqs-app-help-prefixes": "Tabdart n izwiren",
 	"wdqs-app-help-copy": "Talɣut ɣef turagt",
 	"wdqs-app-help-queryhelper": "Amarag n tuttra",
+	"wdqs-app-tools-edit-items": "Ẓreg iferdisen",
+	"wdqs-app-tools-query-data": "Suter isefka",
 	"wdqs-app-footer-help": "Senned ɣef <i>[CTRL-SPACE]</i> akken ad tremdeḍ akemmel awurman.",
 	"wdqs-app-result-shorturl": "Tansa tawezlant URL i ugmuḍ",
 	"wdqs-app-result-shorturl-title": "Tansa URL tawezlant i ugmuḍ-agi",
