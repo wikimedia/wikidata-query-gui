@@ -260,33 +260,40 @@ module.exports = function( grunt ) {
 		var done = this.async();
 		var spawn = require( 'child_process' ).spawn;
 
-		// Run server
-		var serverProcess = spawn( 'node_modules/.bin/http-server', [ '-p', '8082' ], {
+		// Install selenium-standalone if necessary
+		spawn( 'node_modules/.bin/selenium-standalone', [ 'install' ], {
 			stdio: [ process.stdin, process.stdout, process.stderr ]
-		} );
-		var seleniumProcess = spawn( 'node_modules/.bin/selenium-standalone', [ 'start' ], {
-			stdio: [ process.stdin, process.stdout, process.stderr ]
-		} );
+		} ).on( 'exit', function () {
 
-		// Run tests
-		var wdioProcess = spawn( 'node_modules/.bin/wdio', [], {
-			stdio: [ process.stdin, process.stdout, process.stderr ]
-		} );
+			// Run server
+			var serverProcess = spawn( 'node_modules/.bin/http-server', [ '-p', '8082' ], {
+				stdio: [ process.stdin, process.stdout, process.stderr ]
+			} );
+			var seleniumProcess = spawn( 'node_modules/.bin/selenium-standalone', [ 'start' ], {
+				stdio: [ process.stdin, process.stdout, process.stderr ]
+			} );
 
-		wdioProcess.on( 'exit', function ( error ) {
-			serverProcess.kill();
-			seleniumProcess.kill();
-			if ( error ) {
+			// Run tests
+			var wdioProcess = spawn( 'node_modules/.bin/wdio', [], {
+				stdio: [ process.stdin, process.stdout, process.stderr ]
+			} );
+
+			wdioProcess.on( 'exit', function ( error ) {
+				serverProcess.kill();
+				seleniumProcess.kill();
+				if ( error ) {
+					done( false );
+				} else {
+					done( true );
+				}
+			} );
+
+			wdioProcess.on( 'error', function ( error ) {
+				serverProcess.kill();
+				seleniumProcess.kill();
 				done( false );
-			} else {
-				done( true );
-			}
-		} );
+			} );
 
-		wdioProcess.on( 'error', function ( error ) {
-			serverProcess.kill();
-			seleniumProcess.kill();
-			done( false );
 		} );
 
 	} );
