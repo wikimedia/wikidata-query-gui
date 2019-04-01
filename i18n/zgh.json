@@ -2,13 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Amara-Amaziɣ",
-			"Aslmad mohamed belarhzali"
+			"Aslmad mohamed belarhzali",
+			"ⵕⴰⵊⵉ"
 		]
 	},
 	"wdqs-app-button-examples": "ⵉⵎⴷⵢⴰⵜⵏ",
 	"wdqs-app-button-prefixes": "ⵉⵣⵡⵉⵔⵏ",
+	"wdqs-app-button-more-tools": "ⵓⴳⴳⴰⵔ ⵉⵎⴰⵙⵙⵏ",
 	"wdqs-app-button-help": "ⵜⵉⵡⵉⵙⵉ",
 	"wdqs-app-button-clear": "ⵙⴼⴹ",
+	"wdqs-app-button-display": "ⵙⴽⵏ",
 	"wdqs-app-button-download": "ⴰⴳⵎ",
 	"wdqs-app-button-link": "ⴰⵙⵖⵓⵏ",
 	"wdqs-app-button-code": "ⵜⴰⵏⴳⴰⵍⵜ",
