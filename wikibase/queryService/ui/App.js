@@ -5,8 +5,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	'use strict';
 
-	var SHORTURL_API = '//tinyurl.com/api-create.php?url=',
-		TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
+	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
 		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
 
 	var COOKIE_SHOW_QUERY_HELPER = 'query-helper-show';
@@ -27,14 +26,16 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
+	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
 	 */
-	function SELF( $element, editor, queryHelper, sparqlApi, querySamplesApi, codeSamplesApi ) {
+	function SELF( $element, editor, queryHelper, sparqlApi, querySamplesApi, codeSamplesApi, shortUrlApi ) {
 		this._$element = $element;
 		this._editor = editor;
 		this._queryHelper = queryHelper;
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
 		this._codeSamplesApi = codeSamplesApi;
+		this._shorten = shortUrlApi;
 
 		this._init();
 	}
@@ -94,6 +95,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	SELF.prototype._trackingApi = null;
 
 	/**
+	 * @property {wikibase.queryService.api.UrlShortener}
+	 * @private
+	 */
+	SELF.prototype._shorten = null;
+
+	/**
 	 * @property {boolean}
 	 * @private
 	 */
@@ -126,6 +133,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 				this._sparqlApi,
 				this._querySamplesApi,
 				this._codeSamplesApi,
+				this._shorten,
 				this._editor
 			);
 		}
@@ -679,25 +687,20 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		var self = this;
 
 		$( '.shortUrlTrigger.query' ).clickover( {
-			placement: 'right',
+			'placement': 'right',
 			'global_close': true,
 			'html': true,
 			'sanitize': false,
 			'content': function() {
 				self._updateQueryUrl();
-				return '<iframe ' +
-					'class="shortUrl" ' +
-					'src="' + SHORTURL_API + encodeURIComponent( window.location ) + '" ' +
-					'referrerpolicy="origin" ' +
-					'sandbox="" ' +
-					'></iframe>';
+				return self._shorten.shorten( window.location.href );
 			}
 		} ).click( function() {
 			self._track( 'buttonClick.shortUrlQuery' );
 		} );
 
 		$( '.embed.result' ).clickover( {
-			placement: 'left',
+			'placement': 'left',
 			'global_close': true,
 			'html': true,
 			'content': function() {

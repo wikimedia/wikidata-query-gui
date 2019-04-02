@@ -21,12 +21,14 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {?wikibase.queryService.api.CodeSamples} codeSamplesApi
+	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
 	 * @param {wikibase.queryService.ui.editor.Editor} [editor]
 	 */
-	function SELF( sparqlApi, querySamplesApi, codeSamplesApi, editor ) {
+	function SELF( sparqlApi, querySamplesApi, codeSamplesApi, shortUrlApi, editor ) {
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
 		this._codeSamplesApi = codeSamplesApi;
+		this._shorten = shortUrlApi;
 		this._editor = editor || null;
 
 		this._init();
@@ -61,6 +63,12 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 */
 	SELF.prototype._editor = null;
+
+	/**
+	 * @property {wikibase.queryService.api.UrlShortener}
+	 * @private
+	 */
+	SELF.prototype._shorten = null;
 
 	/**
 	 * @property {string}
@@ -509,7 +517,6 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 */
 	SELF.prototype._initQueryLinkPopover = function() {
 		var self = this;
-		var SHORTURL_API = '//tinyurl.com/api-create.php?url=';
 		$( '.shortUrlTrigger.result' ).clickover( {
 			placement: 'left',
 			'global_close': true,
@@ -523,12 +530,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 					queryUrl = window.location.hash;
 				}
 				var $link = $( '<a>' ).attr( 'href', 'embed.html' + queryUrl );
-				return '<iframe ' +
-					'class="shortUrl" ' +
-					'src="' + SHORTURL_API + encodeURIComponent( $link[0].href ) + '" ' +
-					'referrerpolicy="origin" ' +
-					'sandbox="" ' +
-					'></iframe>';
+				return self._shorten.shorten( $link[0].href );
 			}
 		} ).click( function() {
 			self._track( 'buttonClick.shortUrlResult' );

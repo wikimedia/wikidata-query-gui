@@ -30,7 +30,8 @@ var CONFIG = ( function ( window, $ ) {
 				endpoint: 'api/rest_v1/page/html/',
 				pageTitle: 'Wikidata:SPARQL_query_service/queries/examples',
 				pagePathElement: 'wiki/'
-			}
+			},
+			urlShortener: 'tinyurl'
 		},
 		i18nLoad: function( lang ) {
 			var loadFallbackLang = null;
