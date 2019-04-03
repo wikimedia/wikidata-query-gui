@@ -298,7 +298,7 @@ module.exports = function( grunt ) {
 
 	} );
 	grunt.registerTask( 'test', [
-		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit', 'wdio'
+		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
 	] );
 	grunt.registerTask( 'build', [
 		'clean', 'create_build'
