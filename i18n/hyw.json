@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Armeniki"
+			"Armeniki",
+			"Kareyac"
 		]
 	},
 	"wdqs-app-button-examples": "Օրինակներ",
@@ -25,14 +26,19 @@
 	"wdqs-app-help-prefixes": "Նախամասնիկներու ցանկ",
 	"wdqs-app-help-copy": "Հրամանագիր տեղեկութիւններ",
 	"wdqs-app-help-queryhelper": "Հարցակէտի Օգնող",
+	"wdqs-app-tools-lexicographical-data": "Բառարանագրական տւեալներ",
+	"wdqs-app-tools-for-programmers": "Ծրագրավորողներու համար",
 	"wdqs-app-resultbrowser-table": "Սեղան",
 	"wdqs-app-resultbrowser-map": "Քարտէս",
+	"wdqs-app-resultbrowser-tree": "Ծառ",
 	"wdqs-dialog-examples-preview-query": "Նախաներկայացնել հարցակէտը",
 	"wdqs-dialog-examples-preview-result": "Նախաներկայացնել հետեւանքը",
 	"wdqs-dialog-key-shortcut-run-query": "Կատարէ՛ հարցակէտը",
 	"wdqs-dialog-key-shortcut-close-button": "Գոցել",
 	"wdqs-ve-filter": "Քամոց",
 	"wdqs-ve-show": "Ցուցադրել",
+	"wdqs-ve-limit": "Սահման",
+	"wdqs-ve-remove-row-title": "Հեռացնել այս տողը",
 	"wdqs-ve-with": "հետ",
 	"wdqs-ve-anything": "որեւէ բան",
 	"wdqs-ve-any": "որեւէ",

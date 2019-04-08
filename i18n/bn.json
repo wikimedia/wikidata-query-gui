@@ -38,6 +38,9 @@
 	"wdqs-app-help-prefixes": "উপসর্গের তালিকা",
 	"wdqs-app-help-copy": "লাইসেন্সকরণের তথ্য",
 	"wdqs-app-help-queryhelper": "প্রশ্ন সাহায্যকারী",
+	"wdqs-app-tools-edit-items": "আইটেম সম্পাদনা করুন",
+	"wdqs-app-tools-enhance-ui": "উন্নত ব্যবহারকারী ইন্টারফেস",
+	"wdqs-app-tools-visualize-data": "উপাত্ত দেখুন",
 	"wdqs-app-footer-help": "স্বয়ং সম্পূর্ণকরণ সক্রিয় করতে <i>[CTRL-SPACE]</i> চাপুন।",
 	"wdqs-app-footer-updated-ago": "$1উপাত্ত হালনাগাদ হয়েছে",
 	"wdqs-app-result-shorturl": "ফলাফলে সংক্ষিপ্ত ইউআরএল",
@@ -102,6 +105,7 @@
 	"wdqs-result-map-layers-all": "সব স্তর",
 	"wdqs-result-map-progress": "মানচিত্রের উপাত্ত লোড করা হচ্ছে: $1%",
 	"wdqs-embed-button-edit-query": "দৃশ্যমান সম্পাদনা",
-	"wdqs-embed-button-edit-query-title": "SPARQL সম্পাদক দিয়ে এই প্রশ্নটি সম্পাদনা করুন",
-	"wdqs-embed-button-edit-code": "SPARQL সম্পাদনা"
+	"wdqs-embed-button-edit-query-title": "কোয়েরি সাহায্যকারী দিয়ে এই কোয়েরি সম্পাদনা করুন",
+	"wdqs-embed-button-edit-code": "SPARQL সম্পাদনা",
+	"wdqs-embed-button-edit-code-title": "SPARQL সম্পাদক দিয়ে এই প্রশ্নটি সম্পাদনা করুন"
 }
