@@ -298,13 +298,13 @@ module.exports = function( grunt ) {
 
 	} );
 	grunt.registerTask( 'test', [
-		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
+		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit', 'wdio'
 	] );
 	grunt.registerTask( 'build', [
 		'clean', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
-		'auto_install', 'test', 'only_build'
+		'auto_install', 'only_build'
 	] );
 	grunt.registerTask( 'only_build', [
 		'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
