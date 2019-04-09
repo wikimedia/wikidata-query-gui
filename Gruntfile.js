@@ -300,17 +300,20 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'test', [
 		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
 	] );
+	grunt.registerTask( 'browser_test', [
+    'wdio'
+	] );
 	grunt.registerTask( 'build', [
 		'clean', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
-		'auto_install', 'test', 'only_build'
+		'auto_install', 'only_build'
 	] );
 	grunt.registerTask( 'only_build', [
 		'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
 	] );
 	grunt.registerTask( 'deploy', [
-		'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:review'
+		'test', 'browser_test', 'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };

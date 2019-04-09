@@ -5,6 +5,7 @@
   "scripts": {
     "start": "http-server -o",
     "test": "grunt test",
+    "browser_test": "grunt browser_test",
     "build": "grunt build",
     "deploy": "grunt deploy"
   },
