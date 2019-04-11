@@ -31,7 +31,7 @@ var CONFIG = ( function ( window, $ ) {
 				pageTitle: 'Wikidata:SPARQL_query_service/queries/examples',
 				pagePathElement: 'wiki/'
 			},
-			urlShortener: 'tinyurl'
+			urlShortener: 'wmf'
 		},
 		i18nLoad: function( lang ) {
 			var loadFallbackLang = null;
