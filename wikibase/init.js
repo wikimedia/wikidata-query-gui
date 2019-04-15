@@ -53,6 +53,7 @@
 					config.location.root,
 					config.location.index
 				),
+				shortenApi = new wb.api.UrlShortener( config.api.urlShortener ),
 				languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
 
 			var rdfHint = new wb.ui.editor.hint.Rdf( api ),
@@ -79,7 +80,8 @@
 				new wb.ui.queryHelper.QueryHelper( api, sparqlApiHelper ),
 				sparqlApi,
 				querySamplesApi,
-				codeSamplesApi
+				codeSamplesApi,
+				shortenApi
 			);
 		} );
 
