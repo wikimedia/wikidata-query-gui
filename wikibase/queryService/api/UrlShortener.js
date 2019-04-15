@@ -14,6 +14,10 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
         'tinyurl': function( url ) {
             return this._getTinyUrl( url );
         },
+        // WMF production shortener, lives on Meta wiki
+        'wmf': function( url ) {
+            return this._getWikiShort( url, 'meta.wikimedia.org' );
+        },
         // Do not use this one in production! This is for testing only!
         'wikibeta': function( url ) {
             return this._getWikiShort( url, 'en.wikipedia.beta.wmflabs.org' );
