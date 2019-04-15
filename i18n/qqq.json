@@ -88,7 +88,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Label of Dimensions result view",
 	"wdqs-app-resultbrowser-graph": "Label of Graph result view",
 	"wdqs-app-toast-leave-fullscreen": "Explaination how to exit fullscreen",
-	"wdqs-app-urlshortener-bad-service":  "Error message when URL shortener service is misconfigured",
+	"wdqs-app-urlshortener-bad-service": "Error message when URL shortener service is misconfigured",
 	"wdqs-app-urlshortener-failed": "Error message when URL shortening fails",
 	"wdqs-app-urlshortener-loading": "Loading message for URL shortener",
 	"wdqs-dialog-examples-preview-query": "Label to preview query in example dialog",

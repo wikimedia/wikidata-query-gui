@@ -38,6 +38,7 @@
 	"wdqs-app-help-copy": "Tietoa lisenssistä",
 	"wdqs-app-help-queryhelper": "Kyselyapuri",
 	"wdqs-app-tools-edit-items": "Muokkaa kohteita",
+	"wdqs-app-tools-visualize-data": "Havainnollista tietoja",
 	"wdqs-app-tools-for-programmers": "Ohjelmoijille",
 	"wdqs-app-footer-help": "Paina <i>[CTRL-SPACE]</i> aktivoidaksesi automaattisen päätöksen.",
 	"wdqs-app-footer-updated-ago": "Tiedot päivitetty $1",
@@ -120,7 +121,7 @@
 	"wdqs-result-map-progress": "Ladataan karttaa: $1%",
 	"wdqs-embed-button-edit-query": "Muokkaa visuaalisesti",
 	"wdqs-embed-button-edit-query-title": "Muokkaa tätä tiedustelua tiedustelumuokkaimella",
-	"wdqs-embed-button-edit-code": "Muokkaa koodia",
+	"wdqs-embed-button-edit-code": "Muokkaa SPARQLia",
 	"wdqs-embed-button-edit-code-title": "Muokkaa tätä kyselyä SPARQL-muokkaimella",
 	"wdqs-embed-explorer-button-incoming": "Näytä saapuvat linkit",
 	"wdqs-embed-explorer-button-outgoing": "Näytä lähtevät linkit"
