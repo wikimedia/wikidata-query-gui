@@ -17,7 +17,8 @@
 			"Tiberius1701",
 			"Asierog",
 			"Carlosmg.dg",
-			"Invadinado"
+			"Invadinado",
+			"Bc0ed5a28dfc189b971a689bae2d31b45cb5f3fd"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -96,6 +97,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensiones",
 	"wdqs-app-resultbrowser-graph": "Gráfico",
 	"wdqs-app-toast-leave-fullscreen": "Presiona [Esc] para salir de pantalla completa",
+	"wdqs-app-urlshortener-loading": "Cargando…",
 	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
 	"wdqs-dialog-examples-preview-result": "Vista previa del resultado",
 	"wdqs-dialog-key-shortcut-title": "Atajos de teclado",

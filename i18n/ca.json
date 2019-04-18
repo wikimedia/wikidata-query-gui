@@ -8,7 +8,8 @@
 			"Fitoschido",
 			"Micru",
 			"Joseplluis",
-			"Asierog"
+			"Asierog",
+			"Bc0ed5a28dfc189b971a689bae2d31b45cb5f3fd"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -82,6 +83,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensions",
 	"wdqs-app-resultbrowser-graph": "Gràfic",
 	"wdqs-app-toast-leave-fullscreen": "Premeu [Esc] per a abandonar el mode de pantalla sencera",
+	"wdqs-app-urlshortener-loading": "S’està carregant…",
 	"wdqs-dialog-examples-preview-query": "Previsualitza la consulta",
 	"wdqs-dialog-examples-preview-result": "Previsualitza el resultat",
 	"wdqs-dialog-key-shortcut-title": "Dreceres de teclat",

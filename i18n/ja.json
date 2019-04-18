@@ -11,7 +11,8 @@
 			"90-NS-FZ",
 			"Gulpin",
 			"Suyama",
-			"Omotecho"
+			"Omotecho",
+			"Mogumin"
 		]
 	},
 	"wdqs-app-button-examples": "例",
@@ -90,6 +91,7 @@
 	"wdqs-app-resultbrowser-dimensions": "三次元",
 	"wdqs-app-resultbrowser-graph": "グラフ",
 	"wdqs-app-toast-leave-fullscreen": "フルスクリーンを終了するには[esc]キーを押してください",
+	"wdqs-app-urlshortener-loading": "読み込み中...",
 	"wdqs-dialog-examples-preview-query": "クエリのプレビュー",
 	"wdqs-dialog-examples-preview-result": "結果のプレビュー",
 	"wdqs-dialog-key-shortcut-title": "キーボードショートカット",
