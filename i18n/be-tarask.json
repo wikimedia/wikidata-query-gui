@@ -122,9 +122,9 @@
 	"wdqs-action-preview": "Папярэдні прагляд выніку",
 	"wdqs-result-map-layers-all": "Усе слаі",
 	"wdqs-result-map-progress": "Загрузка зьвестак мапы: $1%",
-	"wdqs-embed-button-edit-query": "Рэдагаваць",
+	"wdqs-embed-button-edit-query": "Рэдагаваць візуальна",
 	"wdqs-embed-button-edit-query-title": "Правіць гэты запыт праз дапаможнік",
-	"wdqs-embed-button-edit-code": "Рэдагаваць код",
+	"wdqs-embed-button-edit-code": "Рэдагаваць SPARQL",
 	"wdqs-embed-button-edit-code-title": "Рэдагаваць гэты запыт з дапамогай SPARQL-рэдактара",
 	"wdqs-embed-explorer-button-incoming": "Паказаць уваходныя спасылкі",
 	"wdqs-embed-explorer-button-outgoing": "Паказваць зыходныя спасылкі"
