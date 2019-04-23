@@ -61,7 +61,7 @@ var CONFIG = ( function ( window, $ ) {
 	if ( hostname === '' || hostname === 'localhost' || hostname === '127.0.0.1' ) {
 
 		// Override for local debugging
-		return $.extend( true, {}, configDeploy, {
+		configDeploy = $.extend( true, {}, configDeploy, {
 			api: {
 				sparql: {
 					uri: 'https://query.wikidata.org/sparql'
@@ -84,6 +84,15 @@ var CONFIG = ( function ( window, $ ) {
 		} );
 	}
 
-	return configDeploy;
+	function getConfig() {
+		var deferred = $.Deferred();
+		deferred.resolve( configDeploy );
+
+		return deferred.promise();
+	}
+
+	return {
+		getConfig: getConfig
+	};
 
 } )( window, jQuery );
