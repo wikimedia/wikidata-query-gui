@@ -1,0 +1,27 @@
+{
+  "api": {
+    "sparql": {
+      "uri": "https://query.wikidata.org/sparql"
+    },
+    "wikibase": {
+      "uri": "https://www.wikidata.org/w/api.php"
+    },
+    "examples": {
+      "server": "https://www.wikidata.org/",
+      "endpoint": "api/rest_v1/page/html/",
+      "pageTitle": "Wikidata:SPARQL_query_service/queries/examples",
+      "pagePathElement": "wiki/"
+    },
+    "urlShortener": "tinyurl"
+  },
+  "brand": {
+    "title": "Localhost",
+    "logo": "logo.svg",
+    "favicon": "favicon.ico",
+    "copyrightUrl": "https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Copyright"
+  },
+  "location": {
+    "root": "./",
+    "index": "./index.html"
+  }
+}

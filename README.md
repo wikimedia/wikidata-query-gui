@@ -20,6 +20,9 @@ Alternatively, use `npm install`.
 npm install wikidata-query-gui
 ```
 
+## Configuration
+Per default the Wikibase Query Service GUI is configured to be used as a local development test instance. It can be customized by creating a `custom-config.json` in the repository's root dir. This file can be used to override any of the default settings obtained from `default-config.json`.
+
 ## Run tests
 
 Run JSHint, JSCS and QUnit tests.
