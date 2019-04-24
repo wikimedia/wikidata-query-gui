@@ -70,7 +70,9 @@ module.exports = function( grunt ) {
 				buildFolder
 			],
 			deploy: [
-					buildFolder + '/*', buildFolder + '!.git/**'
+					buildFolder + '/*',
+					'!' + buildFolder + '/custom-config.json',
+					'!' + buildFolder + '/.git/**'
 			]
 		},
 		useminPrepare: {
@@ -301,7 +303,7 @@ module.exports = function( grunt ) {
 		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit', 'wdio'
 	] );
 	grunt.registerTask( 'browser_test', [
-    'wdio'
+		'wdio'
 	] );
 	grunt.registerTask( 'build', [
 		'clean', 'create_build'
