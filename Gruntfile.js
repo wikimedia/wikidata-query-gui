@@ -300,7 +300,7 @@ module.exports = function( grunt ) {
 
 	} );
 	grunt.registerTask( 'test', [
-		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit', 'wdio'
+		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
 	] );
 	grunt.registerTask( 'browser_test', [
 		'wdio'
