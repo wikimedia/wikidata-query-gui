@@ -14,25 +14,8 @@ var CONFIG = ( function ( window, $ ) {
 		return null;
 	}
 
-	var root = 'https://query.wikidata.org/';
-
-	var configDeploy = {
+	var presets = {
 		language: getUserLanguage() || 'en',
-		api: {
-			sparql: {
-				uri: '/sparql'
-			},
-			wikibase: {
-				uri: 'https://www.wikidata.org/w/api.php'
-			},
-			examples: {
-				server: 'https://www.wikidata.org/',
-				endpoint: 'api/rest_v1/page/html/',
-				pageTitle: 'Wikidata:SPARQL_query_service/queries/examples',
-				pagePathElement: 'wiki/'
-			},
-			urlShortener: 'wmf'
-		},
 		i18nLoad: function( lang ) {
 			var loadFallbackLang = null;
 			if ( lang !== this.language ) {
@@ -40,59 +23,84 @@ var CONFIG = ( function ( window, $ ) {
 				loadFallbackLang = $.i18n().load( 'i18n', this.language );
 			}
 			return $.when(
-					loadFallbackLang,
-					$.i18n().load( 'i18n', lang )
-				);
-		},
-		brand: {
-			logo: 'logo.svg',
-			favicon: 'favicon.ico',
-			title: 'Wikidata Query Service',
-			copyrightUrl: 'https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Copyright'
-		},
-		location: {
-			root: root,
-			index: root
+				loadFallbackLang,
+				$.i18n().load( 'i18n', lang )
+			);
 		}
 	};
 
 	var hostname = window.location.hostname.toLowerCase();
 
 	if ( hostname === '' || hostname === 'localhost' || hostname === '127.0.0.1' ) {
-
 		// Override for local debugging
-		configDeploy = $.extend( true, {}, configDeploy, {
-			api: {
-				sparql: {
-					uri: 'https://query.wikidata.org/sparql'
+		presets.i18nLoad = function( lang ) {
+			return $.when(
+				$.i18n().load( 'i18n', lang ),
+				$.i18n().load( 'node_modules/jquery.uls/i18n', lang )
+			);
+		};
+	}
 
-				}
-			},
-			i18nLoad: function( lang ) {
-				return $.when(
-						$.i18n().load( 'i18n', lang ),
-						$.i18n().load( 'node_modules/jquery.uls/i18n', lang )
-					);
-			},
-			brand: {
-				title: 'Localhost'
-			},
-			location: {
-				root: './',
-				index: './index.html'
-			}
-		} );
+	var deferred = $.Deferred(),
+		defaultConfig, customConfig;
+
+	function getEffectiveConfig() {
+		return $.extend( true, {}, presets, defaultConfig, customConfig );
+	}
+
+	function onDefaultConfigLoad( config ) {
+		defaultConfig = config;
+		if ( typeof defaultConfig !== 'undefined' && typeof customConfig !== 'undefined' ) {
+			deferred.resolve( getEffectiveConfig() );
+		}
+	}
+
+	function onCustomConfigLoad( config ) {
+		customConfig = config;
+		if ( typeof defaultConfig !== 'undefined' && typeof customConfig !== 'undefined' ) {
+			deferred.resolve( getEffectiveConfig() );
+		}
 	}
 
 	function getConfig() {
-		var deferred = $.Deferred();
-		deferred.resolve( configDeploy );
+		if ( deferred.state() === 'resolved' ) {
+			return deferred.promise();
+		}
+
+		$.getJSON( './default-config.json' )
+			.done( onDefaultConfigLoad )
+			.fail( function( jqXHR, textStatus, errorThrown ) {
+				window.console.error( 'Failed loading default-config.json: ' + errorThrown );
+				deferred.reject( 'Failed loading default-config.json: ' + errorThrown );
+			} );
+
+		$.getJSON( './custom-config.json' )
+			.done( onCustomConfigLoad )
+			.fail( function( jqXHR, textStatus, errorThrown ) {
+				if ( jqXHR.status === 404 ) {
+					// It's ok for this to not exist
+					onCustomConfigLoad( {} );
+				} else if ( location.protocol === 'file:' && jqXHR.status === 0 ) {
+					// WDQS UI is accessed via file://, but custom-config.json doesn't exist
+					onCustomConfigLoad( {} );
+				} else {
+					window.console.error( 'Failed loading custom-config.json: ' + errorThrown );
+					deferred.reject( 'Failed loading custom-config.json: ' + errorThrown );
+				}
+			} );
 
 		return deferred.promise();
 	}
 
+	function reset() {
+		deferred = $.Deferred();
+		defaultConfig = undefined;
+		customConfig = undefined;
+	}
+
 	return {
-		getConfig: getConfig
+		getConfig: getConfig,
+		reset: reset
 	};
 
 } )( window, jQuery );
