@@ -154,6 +154,14 @@ module.exports = function( grunt ) {
 							],
 							dest: buildFolder,
 							filter: 'isFile'
+						},
+						{// json config
+							expand: false,
+							src: [
+								'default-config.json'
+							],
+							dest: buildFolder + '/default-config.json',
+							filter: 'isFile'
 						}
 				]
 			}
