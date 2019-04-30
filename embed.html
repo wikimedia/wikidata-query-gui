@@ -541,7 +541,7 @@ body {
 				$.ready,
 				CONFIG.getConfig()
 			)
-			.then( function ( _, config ) {
+			.then( function ( documentReady, config ) {
 				function renderEdit( qh, query, $editor, callback ) {
 					qh.setChangeListener( _.debounce( function( v ) {
 						callback( v.getQuery() );
