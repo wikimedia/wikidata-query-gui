@@ -80,6 +80,8 @@
 	"wdqs-app-resultbrowser-timeline": "Tijdlijn",
 	"wdqs-app-resultbrowser-dimensions": "Afmetingen",
 	"wdqs-app-resultbrowser-graph": "Grafiek",
+	"wdqs-app-urlshortener-bad-service": "Verkeerd verkortingsdienst voor URL's ingesteld",
+	"wdqs-app-urlshortener-loading": "Laden...",
 	"wdqs-dialog-examples-preview-query": "Voorbeeld van zoekopdracht",
 	"wdqs-dialog-examples-preview-result": "Voorbeeld van resultaat",
 	"wdqs-dialog-key-shortcut-run-query": "Zoekopdracht uitvoeren.",
