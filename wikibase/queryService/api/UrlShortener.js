@@ -38,6 +38,23 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
     }
 
     /**
+     * Escape text to be used as HTML content (not safe for attributes).
+     *
+     * @private
+     * @param {string} text
+     * @return {string} HTML
+     */
+    function htmlEscape( text ) {
+        return text.replace( /[<&]/g, function ( char ) {
+            if ( char === '<' ) {
+                return '&lt;';
+            } else if ( char === '&' ) {
+                return '&amp;';
+            }
+        } );
+    }
+
+    /**
      * Service provider chosen by config.
      * @type {function}
      * @private
@@ -65,6 +82,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
         return wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-bad-service' );
     };
 
+    /** @return {string} HTML */
     SELF.prototype._getTinyUrl = function( url ) {
         var TINYURL_API = '//tinyurl.com/api-create.php?url=';
 
@@ -76,6 +94,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
             '></iframe>';
     };
 
+    /** @return {string} HTML */
     SELF.prototype._getWikiShort = function( url, server ) {
         var deferred = $.Deferred();
         $.ajax( {
@@ -89,11 +108,19 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
             'dataType': 'json',
             'method': 'POST'
         } ).done( function( data ) {
+            var text, html, $element;
             if ( data && !data.error && data.shortenurl && data.shortenurl.shorturl ) {
-                deferred.resolve( data.shortenurl.shorturl );
+                text = data.shortenurl.shorturl;
             } else {
-                deferred.resolve( wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-failed' ) );
+                text = wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-failed' );
             }
+            html = '<!DOCTYPE html><meta charset="utf-8"><pre>' + htmlEscape( text ) + '</pre>';
+            $element = $( '<iframe>' ).attr( {
+                'class': 'shortUrl',
+                'src': 'data:text/html;charset=utf-8,' + encodeURI( html ),
+                'sandbox': ''
+            } );
+            deferred.resolve( $element );
         } ).fail( function() {
             deferred.resolve( wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-failed' ) );
         } );
