@@ -81,6 +81,8 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensiones",
 	"wdqs-app-resultbrowser-graph": "Gráfica",
 	"wdqs-app-toast-leave-fullscreen": "Prime [esc] pa salir de pantalla completa",
+	"wdqs-app-urlshortener-bad-service": "Serviciu d'acurtiamientu d'URL enquivocáu na configuración",
+	"wdqs-app-urlshortener-failed": "Falló l'acurtiamientu d'URL",
 	"wdqs-app-urlshortener-loading": "Cargando...",
 	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
 	"wdqs-dialog-examples-preview-result": "Vista previa del resultáu",
