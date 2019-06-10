@@ -7,6 +7,7 @@
 		]
 	},
 	"wdqs-app-button-examples": "ဥပမာများ",
+	"wdqs-app-button-more-tools": "ကိရိယာများ ပို၍",
 	"wdqs-app-button-help": "အကူအညီ",
 	"wdqs-app-button-run": "လည်ပတ်ခြင်း",
 	"wdqs-app-button-clear": "ရှင်းလင်းပါ။",
@@ -22,6 +23,7 @@
 	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲ",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
 	"wdqs-app-help-copy": "လိုင်စင်သတ်မှတ်ခြင်း အချက်အလက်",
+	"wdqs-app-tools-for-programmers": "ပရိုဂရမ်မာများအတွက်",
 	"wdqs-app-footer-help": "အလိုအလျောက် ပြီးပြည့်စုံခြင်းကို သက်ရောက်စေရန် <i>[CTRL-SPACE]</i> ကိုနှိပ်ပါ။",
 	"wdqs-app-footer-updated-ago": "$ ဒေတာ အဆင်မြှင့်တင်ခဲ့သည်",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io တွင် ဖွင့်ပါ။",
@@ -33,6 +35,7 @@
 	"wdqs-app-result-csv": "CSV ဖိုင်",
 	"wdqs-app-result-svg": "SVG ပုံ",
 	"wdqs-app-resultbrowser-response-summary": "$2&nbsp;မီလီစက္ကန့်အတွင်း $1 {{PLURAL:$1|ရလဒ်|ရလဒ်များ}}",
+	"wdqs-app-resultbrowser-stabilize": "ကွန်ရက်ကို တည်ငြိမ်ပေးရန်",
 	"wdqs-app-resultbrowser-map": "မြေပုံ",
 	"wdqs-app-resultbrowser-line-chart": "မျဉ်းဇယား",
 	"wdqs-app-resultbrowser-bar-chart": "ဘားဇယား",
@@ -60,7 +63,7 @@
 	"wdqs-action-preview": "ရလဒ် အစမ်းကြည့်ခြင်း",
 	"wdqs-result-map-layers-all": "အလွှာအားလုံး",
 	"wdqs-result-map-progress": "မြေပုံဒေတာများအား တင်နေခြင်း: $1%",
-	"wdqs-embed-button-edit-query": "ပြင်ဆင်ရန်",
+	"wdqs-embed-button-edit-query": "အမြင်အရ ပြင်ဆင်ရန်",
 	"wdqs-embed-explorer-button-incoming": "အဝင်လင့်ခ်များကို ပြန်",
 	"wdqs-embed-explorer-button-outgoing": "အထွက်လင့်ခ်များကို ပြန်"
 }
