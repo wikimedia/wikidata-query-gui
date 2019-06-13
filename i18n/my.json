@@ -36,6 +36,7 @@
 	"wdqs-app-result-svg": "SVG ပုံ",
 	"wdqs-app-resultbrowser-response-summary": "$2&nbsp;မီလီစက္ကန့်အတွင်း $1 {{PLURAL:$1|ရလဒ်|ရလဒ်များ}}",
 	"wdqs-app-resultbrowser-stabilize": "ကွန်ရက်ကို တည်ငြိမ်ပေးရန်",
+	"wdqs-app-resultbrowser-table": "ဇယား",
 	"wdqs-app-resultbrowser-map": "မြေပုံ",
 	"wdqs-app-resultbrowser-line-chart": "မျဉ်းဇယား",
 	"wdqs-app-resultbrowser-bar-chart": "ဘားဇယား",
