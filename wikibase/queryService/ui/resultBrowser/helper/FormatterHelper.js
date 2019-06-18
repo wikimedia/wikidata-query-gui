@@ -11,6 +11,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		COMMONS_FILE_PATH_MEDIAVIEWER = 'https://commons.wikimedia.org/wiki/File:{FILENAME}',
 		DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime',
 		TYPE_URI = 'uri',
+		DATATYPE_STRING = 'http://www.w3.org/2001/XMLSchema#string',
 		DATATYPE_MATHML = 'http://www.w3.org/1998/Math/MathML';
 
 	var NUMBER_TYPES = [
@@ -455,7 +456,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		}
 
 		return 'xml:lang' in cell
-			|| ( cell.type === 'literal' && !cell.datatype );
+			|| ( cell.type === 'literal' && ( !cell.datatype || cell.datatype === DATATYPE_STRING )  );
 	};
 
 	/**
