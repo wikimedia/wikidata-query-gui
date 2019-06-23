@@ -30,7 +30,7 @@
 	};
 
 	var expected = {
-		TableResultBrowser: '<div class="bootstrap-table">',
+		TableResultBrowser: '<div class="bootstrap-table',
 		ImageResultBrowser: '<div class="img-grid">',
 		CoordinateResultBrowser: '<div id="map" .*class="leaflet-container',
 		BubbleChartResultBrowser: '<svg',
@@ -91,7 +91,7 @@
 			b.draw( $result );
 			assert.ok( true, 'Drawing must not throw an error' );
 
-			assert.ok( $result.html().match( expected[ browser ]  ), 'Result must be expected result');
+			assert.ok( $result.html().match( expected[ browser ]  ), 'Result must be expected result' + $result.html());
 			$result.remove();
 		} );
 
