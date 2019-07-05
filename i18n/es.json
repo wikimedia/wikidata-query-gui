@@ -19,7 +19,8 @@
 			"Carlosmg.dg",
 			"Invadinado",
 			"Bc0ed5a28dfc189b971a689bae2d31b45cb5f3fd",
-			"Ryo567"
+			"Ryo567",
+			"Ktranz"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -98,6 +99,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensiones",
 	"wdqs-app-resultbrowser-graph": "Gráfico",
 	"wdqs-app-toast-leave-fullscreen": "Presiona [Esc] para salir de pantalla completa",
+	"wdqs-app-urlshortener-bad-service": "Mala configuración del servicio de acortador de URLs",
 	"wdqs-app-urlshortener-failed": "Error al acortar la URL",
 	"wdqs-app-urlshortener-loading": "Cargando…",
 	"wdqs-dialog-examples-preview-query": "Vista previa de la consulta",
