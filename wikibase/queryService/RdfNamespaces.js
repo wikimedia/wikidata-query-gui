@@ -10,6 +10,7 @@ wikibase.queryService.RdfNamespaces = {};
 			wikibase: 'http://wikiba.se/ontology#',
 			wd: 'http://www.wikidata.org/entity/',
 			wdt: 'http://www.wikidata.org/prop/direct/',
+			wdtn: 'http://www.wikidata.org/prop/direct-normalized/',
 			wds: 'http://www.wikidata.org/entity/statement/',
 			p: 'http://www.wikidata.org/prop/',
 			wdref: 'http://www.wikidata.org/reference/',
@@ -49,6 +50,7 @@ wikibase.queryService.RdfNamespaces = {};
 
 	RdfNamespaces.ENTITY_TYPES = {
 		'http://www.wikidata.org/prop/direct/': 'property',
+		'http://www.wikidata.org/prop/direct-normalized/': 'property',
 		'http://www.wikidata.org/prop/': 'property',
 		'http://www.wikidata.org/prop/novalue/': 'property',
 		'http://www.wikidata.org/prop/statement/': 'property',
