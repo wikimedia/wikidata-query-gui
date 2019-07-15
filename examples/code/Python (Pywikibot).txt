@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Pywikibot will automatically set the user-agent to include your username.
+# To customise the user-agent see
+# https://www.mediawiki.org/wiki/Manual:Pywikibot/User-agent
+
 import pywikibot
 from pywikibot.pagegenerators import WikidataSPARQLPageGenerator
 from pywikibot.bot import SingleSiteBot
