@@ -62,7 +62,7 @@
 	"wdqs-app-result-svg": "תמונת SVG",
 	"wdqs-app-result-html": "טבלת HTML",
 	"wdqs-app-shorturl-page-title": "כתובת URL מקוצרת אל הדף הזה",
-	"wdqs-app-editor-placeholder": "(נא להזין שאילתת SPARQL או לבחור דוגמת שאילתה)",
+	"wdqs-app-editor-placeholder": "‫(נא להזין שאילתת SPARQL או לבחור דוגמת שאילתה)",
 	"wdqs-app-editor-addprefixes": "הוספת תחיליות תקניות",
 	"wdqs-app-resultbrowser-response-summary": "{{PLURAL:$1|תוצאה אחת|$1 תוצאות}} ב־$2 מ\"ש",
 	"wdqs-app-resultbrowser-stabilize": "לייצב את הרשת",
