@@ -65,7 +65,7 @@
 	"wdqs-app-result-svg": "Link message in the footer download dropdown",
 	"wdqs-app-result-html": "Link message in the footer download dropdown",
 	"wdqs-app-shorturl-page-title": "Title of link message on the left side of the editor",
-	"wdqs-app-editor-placeholder": "Placeholder message in editor box",
+	"wdqs-app-editor-placeholder": "Placeholder message in editor box.\n\nThis message has to be displayed left to right. If you are translating into a right-to-left language, you shouldn't write the name \"SPARQL\" in Latin letters.",
 	"wdqs-app-editor-addprefixes": "Button message in the prefix menu",
 	"wdqs-app-resultbrowser-response-summary": "Text summarizing query result count and time. Parameters:\n* $1 - result count\n* $2 - query time in milliseconds",
 	"wdqs-app-resultbrowser-stabilize": "Button message in graph browser toolbar",
