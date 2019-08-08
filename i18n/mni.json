@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Awangba Mangang"
+			"Awangba Mangang",
+			"Abijeet Patro"
 		]
 	},
 	"wdqs-app-button-examples": "ꯈꯨꯗꯝꯁꯤꯡ",
@@ -9,7 +10,7 @@
 	"wdqs-app-button-more-tools": "ꯑꯍꯦꯟꯕ ꯈꯨꯠꯂꯥꯏꯁꯤꯡ",
 	"wdqs-app-button-help": "ꯃꯥꯇꯦꯡ",
 	"wdqs-app-button-run": "ꯆꯦꯟꯂꯨ",
-	"wdqs-app-button-run-title": "ꯑꯦꯛꯖꯤꯀꯨꯠ ꯀꯨꯦꯔꯤ {<ꯆꯇꯔꯂ>+<ꯆꯡꯉꯨ>}",
+	"wdqs-app-button-run-title": "ꯑꯦꯛꯖꯤꯀꯨꯠ ꯀꯨꯦꯔꯤ (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "ꯃꯥꯡꯍꯟꯕꯥ",
 	"wdqs-app-button-clear-title": "ꯊꯤꯒꯠꯂꯨ ꯃꯥꯡꯍꯟꯕꯒꯤ",
 	"wdqs-app-button-restore-title": "Restore previous query",
