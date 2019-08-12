@@ -3,7 +3,8 @@
 		"authors": [
 			"Beeyan",
 			"Rachmat04",
-			"Pebaryan"
+			"Pebaryan",
+			"ArlandGa"
 		]
 	},
 	"wdqs-app-button-examples": "Contoh",
@@ -82,6 +83,9 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensi",
 	"wdqs-app-resultbrowser-graph": "Graf",
 	"wdqs-app-toast-leave-fullscreen": "Tekan [esc] untuk keluar dari layar penuh",
+	"wdqs-app-urlshortener-bad-service": "Layanan penyingkat URL yang buruk dalam konfigurasi",
+	"wdqs-app-urlshortener-failed": "Penyingkatan URL gagal",
+	"wdqs-app-urlshortener-loading": "Memuat...",
 	"wdqs-dialog-examples-preview-query": "Pratayang kueri (''query'')",
 	"wdqs-dialog-examples-preview-result": "Pratayang hasil",
 	"wdqs-dialog-key-shortcut-title": "Pintasan Papan ketik",
