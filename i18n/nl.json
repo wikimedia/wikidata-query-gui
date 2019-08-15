@@ -131,7 +131,7 @@
 	"wdqs-action-preview": "Resultaatvoorbeeld",
 	"wdqs-result-map-layers-all": "Alle lagen",
 	"wdqs-result-map-progress": "Kaartgegevens laden: $1%",
-	"wdqs-embed-button-edit-query": "Bewerken",
+	"wdqs-embed-button-edit-query": "Visueel bewerken",
 	"wdqs-embed-button-edit-query-title": "Bewerk deze query met de query-helper",
 	"wdqs-embed-button-edit-code": "SPARQL bewerken",
 	"wdqs-embed-button-edit-code-title": "Bewerk deze query met de SPARQL-editor",
