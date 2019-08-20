@@ -23,5 +23,6 @@
   "location": {
     "root": "./",
     "index": "./index.html"
-  }
+  },
+  "prefixes": {}
 }

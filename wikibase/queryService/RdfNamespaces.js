@@ -83,6 +83,10 @@ wikibase.queryService.RdfNamespaces = {};
 		bd: 'PREFIX bd: <http://www.bigdata.com/rdf#>'
 	};
 
+	RdfNamespaces.addPrefixes = function( prefixes ) {
+		$.extend( RdfNamespaces.ALL_PREFIXES, prefixes );
+	};
+
 	RdfNamespaces.getPrefixMap = function ( entityTypes ) {
 		var prefixes = {};
 		$.each( RdfNamespaces.ALL_PREFIXES, function ( prefix, url ) {

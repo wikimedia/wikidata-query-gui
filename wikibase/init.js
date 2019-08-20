@@ -80,6 +80,10 @@
 				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
 				editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow } );
 
+		if ( config.prefixes ) {
+			wb.RdfNamespaces.addPrefixes( config.prefixes );
+		}
+
 		function afterLanguageChange() {
 			editor.updatePlaceholder();
 		}

@@ -367,19 +367,16 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {string}
 	 */
 	SELF.prototype.abbreviateUri = function( uri ) {
-		var NAMESPACE_SHORTCUTS = wikibase.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS,
-			nsGroup,
+		var prefixes = wikibase.queryService.RdfNamespaces.ALL_PREFIXES,
 			ns,
 			length = 0,
 			longestNs;
 
-		for ( nsGroup in NAMESPACE_SHORTCUTS ) {
-			for ( ns in NAMESPACE_SHORTCUTS[nsGroup] ) {
-				if ( uri.indexOf( NAMESPACE_SHORTCUTS[nsGroup][ns] ) === 0 ) {
-					if ( NAMESPACE_SHORTCUTS[nsGroup][ns].length > length ) {
-						length = NAMESPACE_SHORTCUTS[nsGroup][ns].length;
-						longestNs = ns;
-					}
+		for ( ns in prefixes ) {
+			if ( uri.indexOf( prefixes[ns] ) === 0 ) {
+				if ( prefixes[ns].length > length ) {
+					length = prefixes[ns].length;
+					longestNs = ns;
 				}
 			}
 		}
