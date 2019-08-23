@@ -1,25 +1,42 @@
 {
 	"@metadata": {
 		"authors": [
-			"George Animal"
+			"George Animal",
+			"Cûndûllah el-Kurdî",
+			"Ghybu"
 		]
 	},
 	"wdqs-app-button-examples": "Mînak",
-	"wdqs-app-button-prefixes": "Pêşbendik",
-	"wdqs-app-button-tools": "Amûr",
+	"wdqs-app-button-prefixes": "Pêşgir",
+	"wdqs-app-button-more-tools": "Zêdetir amûr",
 	"wdqs-app-button-help": "Alîkarî",
 	"wdqs-app-button-run": "Bişixulîne",
+	"wdqs-app-button-run-title": "Jêpirsînê pêk bîne (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Paqij bike",
+	"wdqs-app-button-clear-title": "Jêpirsînê jê bibe",
 	"wdqs-app-button-display": "Nîşan bide",
+	"wdqs-app-button-display-title": "Encamê wek tablo, wêne, ... nîşan bide",
 	"wdqs-app-button-download": "Daxe",
+	"wdqs-app-button-download-title": "Encamê daxe",
 	"wdqs-app-button-link": "Girêdan",
+	"wdqs-app-button-code": "Kod",
+	"wdqs-app-button-code-title": "Mînakên ji bo kodan bibîne",
 	"wdqs-app-help-portal": "Portala alîkariyê",
-	"wdqs-ve-find": "Bibîne",
+	"wdqs-app-help-prefixes": "Lîsteya pêşgiran",
+	"wdqs-app-help-queryhelper": "Alîkarê jêpirsinê",
+	"wdqs-app-resultbrowser-table": "Tablo",
+	"wdqs-app-urlshortener-loading": "Tê barkirin...",
+	"wdqs-dialog-key-shortcut-show-example": "Mînakan nîşan bide.",
+	"wdqs-dialog-key-shortcut-close-button": "Bigre",
+	"wdqs-ve-filter": "Parzûn bike",
 	"wdqs-ve-show": "Nîşan bide",
 	"wdqs-ve-with": "bi",
-	"wdqs-ve-and": "û",
 	"wdqs-ve-anything": "her tişt",
 	"wdqs-ve-any": "kîjan be",
 	"wdqs-ve-or": "an",
-	"wdqs-ve-subtype": "bincure"
+	"wdqs-ve-subtype": "bincure",
+	"wdqs-ve-sb-other": "Yê din",
+	"wdqs-action-unknow-error": "Çewtiya nenas",
+	"wdqs-embed-button-edit-query-title": "Vê jêpirsînê bi rêya alîkara jêpirsînê biguherîne",
+	"wdqs-embed-button-edit-code": "SPARQLê biguherîne"
 }
