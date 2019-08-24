@@ -38,7 +38,7 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <arguments>install</arguments>
+                            <arguments>install --production --no-package-lock</arguments>
                         </configuration>
                     </execution>
                     <execution>
@@ -46,7 +46,7 @@
                         <goals>
                             <goal>npm</goal>
                         </goals>
-                        <phase>test</phase>
+                        <phase>none</phase>
                         <configuration>
                             <arguments>test</arguments>
                         </configuration>
