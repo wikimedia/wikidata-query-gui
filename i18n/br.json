@@ -84,6 +84,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Mentoù",
 	"wdqs-app-resultbrowser-graph": "Grafik",
 	"wdqs-app-toast-leave-fullscreen": "Gwaskit [esc] evit kuitaat skramm leun",
+	"wdqs-app-urlshortener-loading": "O kargañ...",
 	"wdqs-dialog-examples-preview-query": "Alberz ar reked",
 	"wdqs-dialog-examples-preview-result": "Alberz eus an disoc'h",
 	"wdqs-dialog-key-shortcut-title": "Berradennoù klavier",
@@ -124,7 +125,7 @@
 	"wdqs-result-map-progress": "O kargañ roadennoù ar gartenn : $1%",
 	"wdqs-embed-button-edit-query": "Kemmañ",
 	"wdqs-embed-button-edit-query-title": "Kemmañ ar reked-mañ gant ar skoazeller SPARQL",
-	"wdqs-embed-button-edit-code": "Kemmañ ar c'hod",
+	"wdqs-embed-button-edit-code": "Kemmañ SPARQL",
 	"wdqs-embed-button-edit-code-title": "Kemmañ ar reked-mañ gant an aozer SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Diskouez al liammoù degas",
 	"wdqs-embed-explorer-button-outgoing": "Diskouez al liammoù kas"
