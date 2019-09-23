@@ -42,6 +42,7 @@
 	"wdqs-app-help-copy": "Informacje o licencji",
 	"wdqs-app-help-queryhelper": "Pomocnik zapytania",
 	"wdqs-app-tools-edit-items": "Edytuj elementy",
+	"wdqs-app-tools-query-data": "Dane do zapytań",
 	"wdqs-app-tools-visualize-data": "Wizualizuj dane",
 	"wdqs-app-tools-lexicographical-data": "Dane leksykograficzne",
 	"wdqs-app-tools-for-programmers": "Dla programistów",
@@ -128,7 +129,7 @@
 	"wdqs-result-map-progress": "Ładowanie danych mapy: $1%",
 	"wdqs-embed-button-edit-query": "Edytuj wizualnie",
 	"wdqs-embed-button-edit-query-title": "Edytuj to zapytanie za pomocą edytora zapytań",
-	"wdqs-embed-button-edit-code": "Edytuj kod",
+	"wdqs-embed-button-edit-code": "Edytuj SPARQL",
 	"wdqs-embed-button-edit-code-title": "Edytuj to zapytanie za pomocą edytora SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Pokaż linki przychodzące",
 	"wdqs-embed-explorer-button-outgoing": "Pokaż linki wychodzące"
