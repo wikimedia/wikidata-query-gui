@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.wikidata.query.rdf</groupId>
         <artifactId>parent</artifactId>
-        <version>0.3.3-SNAPSHOT</version>
+        <version>0.3.4-SNAPSHOT</version>
     </parent>
     <artifactId>gui</artifactId>
     <packaging>jar</packaging>
@@ -19,7 +19,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <configuration>
                     <nodeVersion>v8.1.2</nodeVersion>
-                    <npmVersion>5.6.0</npmVersion>
+                    <npmVersion>6.9.0</npmVersion>
                     <installDirectory>target</installDirectory>
                     <workingDirectory>.</workingDirectory>
                 </configuration>
