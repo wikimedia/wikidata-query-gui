@@ -679,7 +679,9 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		window.setTimeout( function() {
 			try {
 				$( '#query-result' ).show();
+				MathJax.startup.output.clearCache();
 				resultBrowser.draw( $( '#query-result' ) );
+				$( '#MJX-CHTML-styles' ).replaceWith( MathJax.chtmlStylesheet() );
 				self._actionBar.hide();
 			} catch ( e ) {
 				self._drawErrorResult( resultBrowser );

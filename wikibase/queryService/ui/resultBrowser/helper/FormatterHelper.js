@@ -184,8 +184,18 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			break;
 
 		case DATATYPE_MATHML:
-			$html.append( $( data.value ) );
-			break;
+			try {
+				$html.append(
+					MathJax.mathml2chtml(
+						value
+							.replace( /caligraphic/g, 'calligraphic' ) // work around https://github.com/mathjax/MathJax/issues/2214
+					)
+				);
+				break;
+			} catch ( e ) {
+				window.console.error( 'Invalid MathML', e );
+				// fall through to default case, escaping and displaying the raw value
+			} // jshint ignore:line
 
 		default:
 			var $label = $( '<span>' ).text( value );

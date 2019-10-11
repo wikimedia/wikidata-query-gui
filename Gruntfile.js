@@ -149,6 +149,13 @@ module.exports = function( grunt ) {
 							dest: buildFolder
 						},{
 							expand: true,
+							cwd: './node_modules/mathjax/es5/',
+							src: [
+								'output/chtml/fonts/woff-v2/*.woff'
+							],
+							dest: buildFolder + '/js'
+						},{
+							expand: true,
 							src: [
 								'examples/code/*.txt'
 							],
