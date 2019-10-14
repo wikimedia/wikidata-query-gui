@@ -119,8 +119,8 @@
 	"wdqs-action-preview": "Предварителен преглед на резултата",
 	"wdqs-result-map-layers-all": "Всички слоеве",
 	"wdqs-result-map-progress": "Зареждане на картографски данни: $1%",
-	"wdqs-embed-button-edit-query": "Редактиране",
+	"wdqs-embed-button-edit-query": "Редактиране визуално",
 	"wdqs-embed-button-edit-query-title": "Редактиране на тази заявка с помощника за заявки",
-	"wdqs-embed-button-edit-code": "Редактирай кода",
+	"wdqs-embed-button-edit-code": "Редактиране на SPARQL кода",
 	"wdqs-embed-button-edit-code-title": "Редактиране на тази заявка със SPARQL-редактора"
 }

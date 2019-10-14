@@ -12,7 +12,8 @@
 			"Bulgu",
 			"Incelemeelemani",
 			"Hedda",
-			"TmY e12"
+			"TmY e12",
+			"Grkn gll"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -41,7 +42,7 @@
 	"wdqs-app-help-examples": "Örnek Sorgular",
 	"wdqs-app-help-datamodel": "RDF Veri Modeli",
 	"wdqs-app-help-prefixes": "Önek listeleri",
-	"wdqs-app-help-copy": "Lisans bilgisi",
+	"wdqs-app-help-copy": "Lisans bilgileri",
 	"wdqs-app-help-queryhelper": "Sorgu Yardımcısı",
 	"wdqs-app-tools-edit-items": "Ögeleri Düzenle",
 	"wdqs-app-tools-query-data": "Sorgu verisi",
@@ -133,9 +134,9 @@
 	"wdqs-result-map-layers-all": "Tüm katmanlar",
 	"wdqs-result-map-progress": "Harita verileri yükleniyor: %$1",
 	"wdqs-embed-button-edit-query": "Görsel olarak düzenle",
-	"wdqs-embed-button-edit-query-title": "Bu sorguyu, sorgu yardımcı ile düzenleyin",
+	"wdqs-embed-button-edit-query-title": "Bu sorguyu, sorgu yardımcısı ile düzenleyin",
 	"wdqs-embed-button-edit-code": "SPARQL'ı düzenle",
 	"wdqs-embed-button-edit-code-title": "Bu sorguyu SPARQL editörüyle düzenleyin",
-	"wdqs-embed-explorer-button-incoming": "Yeni bağlantıları göster",
+	"wdqs-embed-explorer-button-incoming": "Gelen bağlantıları göster",
 	"wdqs-embed-explorer-button-outgoing": "Giden bağlantıları göster"
 }

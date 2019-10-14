@@ -70,6 +70,7 @@
 	"wdqs-app-resultbrowser-timeline": "காலவரிசை",
 	"wdqs-app-resultbrowser-dimensions": "பரிமானங்கள்",
 	"wdqs-app-resultbrowser-graph": "வரைபு",
+	"wdqs-app-urlshortener-loading": "ஏற்றப்படுகிறது...",
 	"wdqs-dialog-examples-preview-query": "வினாவை முன்பார்க்க",
 	"wdqs-dialog-examples-preview-result": "விடையை முன்பார்க்க",
 	"wdqs-dialog-key-shortcut-title": "விசைப்பலகை குறுக்குவழிகள்",
@@ -100,5 +101,7 @@
 	"wdqs-result-map-layers-all": "அனைத்து அடுக்குகள்",
 	"wdqs-result-map-progress": "வரைப்பட தரவு ஏற்றப்படுகிறது: $1%",
 	"wdqs-embed-button-edit-query": "தொகு",
-	"wdqs-embed-button-edit-code": "நிரலைத் தொகு"
+	"wdqs-embed-button-edit-code": "நிரலைத் தொகு",
+	"wdqs-embed-explorer-button-incoming": "உள்வரும் இணைப்புகளைக் காட்டவும்",
+	"wdqs-embed-explorer-button-outgoing": "வெளிசெல்லும் இணைப்புகளைக் காட்டவும்"
 }
