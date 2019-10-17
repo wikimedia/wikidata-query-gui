@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Armeniki",
-			"Kareyac"
+			"Kareyac",
+			"Դավիթ Սարոյան"
 		]
 	},
 	"wdqs-app-button-examples": "Օրինակներ",
@@ -28,7 +29,7 @@
 	"wdqs-app-help-queryhelper": "Հարցակէտի Օգնող",
 	"wdqs-app-tools-lexicographical-data": "Բառարանագրական տւեալներ",
 	"wdqs-app-tools-for-programmers": "Ծրագրավորողներու համար",
-	"wdqs-app-resultbrowser-table": "Սեղան",
+	"wdqs-app-resultbrowser-table": "Աղիւսակ",
 	"wdqs-app-resultbrowser-map": "Քարտէս",
 	"wdqs-app-resultbrowser-tree": "Ծառ",
 	"wdqs-dialog-examples-preview-query": "Նախաներկայացնել հարցակէտը",
