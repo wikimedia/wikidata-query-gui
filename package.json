@@ -54,6 +54,11 @@
     "wellknown": "^0.5.0"
   },
   "devDependencies": {
+    "@wdio/cli": "^5.15.0",
+    "@wdio/dot-reporter": "^5.14.5",
+    "@wdio/local-runner": "^5.15.0",
+    "@wdio/mocha-framework": "^5.15.0",
+    "@wdio/spec-reporter": "^5.14.5",
     "grunt": "^1.0.4",
     "grunt-auto-install": "^0.3.1",
     "grunt-banana-checker": "^0.6.0",
@@ -81,8 +86,6 @@
     "sinon": "^4.4.2",
     "stylelint": "7.8.0",
     "stylelint-config-wikimedia": "0.4.1",
-    "wdio-mocha-framework": "0.6.1",
-    "wdio-spec-reporter": "0.1.4",
-    "webdriverio": "4.13.1"
+    "webdriverio": "^5.15.0"
   }
 }

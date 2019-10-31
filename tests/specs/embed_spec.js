@@ -11,8 +11,13 @@ describe( 'embed.html', function() {
 			+ '     (wd:Q80 "Tim Berners-Lee"@de <http://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Tim%20Berners-Lee%20%28cropped%29.jpg>)'
 			+ ' } }';
 
-		browser.url( browser.options.baseUrl + '/embed.html#' + encodeURI( query ) );
-
-		assert( $( '#query-result' ).isExisting() );
+		return browser.url( browser.options.baseUrl + '/embed.html#' + encodeURI( query ) )
+			.then( function() {
+				return $( '#query-result' );
+			} ).then( function( element ) {
+				return element.isExisting();
+			} ).then( function( isExisting ) {
+				assert( isExisting );
+			} );
 	} );
 } );
