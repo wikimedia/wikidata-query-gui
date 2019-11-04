@@ -8,7 +8,7 @@
     },
     "examples": {
       "server": "https://www.wikidata.org/",
-      "endpoint": "api/rest_v1/page/html/",
+      "apiPath": "w/api.php",
       "pageTitle": "Wikidata:SPARQL_query_service/queries/examples",
       "pagePathElement": "wiki/"
     },
