@@ -121,7 +121,7 @@
 	"wdqs-action-unknow-error": "Билгесез хата",
 	"wdqs-action-preview": "Нәтиҗә алдан каравы",
 	"wdqs-result-map-layers-all": "Барлык катламнар",
-	"wdqs-result-map-progress": "Харита мәгълүматларын төяве бара: $1%",
+	"wdqs-result-map-progress": "Харита мәгълүматлары төялә: $1%",
 	"wdqs-embed-button-edit-query": "Күрсәтмәле буларак үзгәртү",
 	"wdqs-embed-button-edit-query-title": "Бу сорауны Сорау ярдәмчесе белән үзгәртергә",
 	"wdqs-embed-button-edit-code": "SPARQL кодын үзгәртү",
