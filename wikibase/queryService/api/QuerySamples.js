@@ -22,7 +22,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			throw new Error( 'Invalid method call: query sample settings are missing!' );
 		}
 		this._apiServer = settings.server;
-		this._apiEndpoint = this._apiServer + settings.endpoint;
+		this._apiUrl = this._apiServer + settings.apiPath;
 		this._pageTitle = settings.pageTitle;
 		this._pageUrl = this._apiServer + settings.pagePathElement + this._pageTitle;
 	}
@@ -39,17 +39,39 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	SELF.prototype.getExamples = function () {
 		var self = this;
 
-		return $.ajax( {
-			url: self._apiEndpoint + encodeURIComponent( self._pageTitle + '/' + self._language ) + '?redirect=false',
-			dataType: 'html'
-		} ).catch( function() {
+		return self._apiGet( {
+			action: 'parse',
+			page: self._pageTitle + '/' + self._language,
+			prop: 'text'
+		} ).catch( function () {
 			// retry without language
-			return $.ajax( {
-				url: self._apiEndpoint + encodeURIComponent( self._pageTitle ) + '?redirect=false',
-				dataType: 'html'
+			return self._apiGet( {
+				action: 'parse',
+				page: self._pageTitle,
+				prop: 'text'
 			} );
-		} ).then( function ( data ) {
-			return self._parseHTML( data );
+		} ).then( function ( response ) {
+			return self._parseHTML( response.parse.text );
+		} );
+	};
+
+	/**
+	 * Make an anonymous GET request to the API,
+	 * using version 2 of the JSON response format.
+	 *
+	 * @param {Object} params request parameters
+	 * @return {jQuery.Promise}
+	 */
+	SELF.prototype._apiGet = function ( params ) {
+		return $.getJSON( this._apiUrl, $.extend( {}, params, {
+			format: 'json',
+			formatversion: 2,
+			origin: '*'
+		} ) ).then( function ( response ) {
+			if ( 'error' in response ) {
+				throw response.error;
+			}
+			return response;
 		} );
 	};
 
@@ -85,8 +107,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		if ( prev.length > 0 ) {
 			return prev;
 		}
-		prev = element.parent().prev().filter( selector );
-		return prev;
+
+		prev = element.parent();
+		if ( prev.length === 0 ) {
+			return prev;
+		}
+		return this._findPrev( prev, selector );
 	};
 
 	SELF.prototype._extractTagsFromSPARQL = function ( sparql ) {
@@ -104,30 +130,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			self = this;
 		div.innerHTML = html;
 		// Find all SPARQL Templates
-		var examples = $( div ).find( '[data-mw]' ).map( function() {
-			var $this = $( this ),
-				dataMW = $this.attr( 'data-mw' );
-			if ( !dataMW ) {
-				return;
-			}
+		var examples = $( div ).find( '.mw-highlight' ).map( function() {
+			var $this = $( this );
 
-			var data = JSON.parse( dataMW ),
-				templateHref,
-				query;
+			$this.find( '.lineno' ).remove();
 
-			if ( data.parts && data.parts[0].template ) {
-				templateHref = data.parts[0].template.target.href;
-				if ( templateHref === './Template:SPARQL' || templateHref === './Template:SPARQL2' ) {
-					// SPARQL/SPARQL2 template
-					query = data.parts[0].template.params.query.wt;
-				} else {
-					return null;
-				}
-			} else {
-				return null;
-			}
-			// Fix {{!}} hack
-			query = query.replace( /\{\{!}}/g, '|' );
+			var query = $this.text().trim();
 
 			// Find preceding title element
 			var titleEl = self._findPrev( $this, 'h2,h3,h4,h5,h6,h7' );
