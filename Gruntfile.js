@@ -251,6 +251,9 @@ module.exports = function( grunt ) {
 						'echo "$newmessage"'
 				].join( '&&' )
 			},
+			formatPatchDeploy: {// generate patch file for deploy commit(s)
+				command: 'git -C ' + buildFolder + ' format-patch --output-directory .. @{u}'
+			},
 			review: {
 				command: [
 						'cd ' + buildFolder,
@@ -334,6 +337,9 @@ module.exports = function( grunt ) {
 	] );
 	grunt.registerTask( 'deploy', [
 		'test', 'browser_test', 'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:review'
+	] );
+	grunt.registerTask( 'security', [
+		'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:formatPatchDeploy'
 	] );
 	grunt.registerTask( 'default', 'test' );
 };
