@@ -364,12 +364,12 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	SELF.prototype._handleQueryResult = function() {
 		var api = this._sparqlApi;
 
-		$( '#response-summary' ).html(
+		$( '#response-summary' ).text(
 			wikibase.queryService.ui.i18n.getMessage(
 				'wdqs-app-resultbrowser-response-summary',
 				'$1 results in $2&nbsp;ms',
 				[ api.getResultLength(), api.getExecutionTime() ]
-			)
+			).replace( /&nbsp;/g, '\xA0' )
 		);
 		$( '.result' ).show();
 
