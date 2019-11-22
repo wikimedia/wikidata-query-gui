@@ -5,6 +5,7 @@ library(ggplot2)
 
 endpoint <- ""
 query <- ''
+useragent <- paste("WDQS-Example", R.version.string) # TODO adjust this; see https://w.wiki/CX6
 
-qd <- SPARQL(endpoint,query)
+qd <- SPARQL(endpoint,query,curl_args=list(useragent=useragent))
 df <- qd$results

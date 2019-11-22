@@ -26,6 +26,7 @@ public class Main {
 
     public static HashMap<String, HashMap> retrieveData(String endpointUrl, String query) throws EndpointException {
         Endpoint sp = new Endpoint(endpointUrl, false);
+        sp.setUserAgentRequestHeader("WDQS-Example Java"); // TODO adjust this; see https://w.wiki/CX6
         HashMap<String, HashMap> rs = sp.query(query);
         return rs;
     }
