@@ -185,6 +185,16 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	SELF.prototype.getLanguage = function() {
 		return this._language;
 	};
+
+	/**
+	 * Get the URL of the page where query examples are defined.
+	 *
+	 * @return {string} URL
+	 */
+	SELF.prototype.getExamplesPageUrl = function() {
+		return this._pageUrl;
+	};
+
 	return SELF;
 
 }( jQuery ) );
