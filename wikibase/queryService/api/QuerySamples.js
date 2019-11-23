@@ -59,6 +59,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		return this._apiGet( {
 			action: 'parse',
 			page: title,
+			redirects: '1',
 			prop: 'text',
 			wrapoutputclass: '',
 			disablelimitreport: '1',
