@@ -62,9 +62,10 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 	 * @private
 	 */
 	SELF.prototype._track = function( query ) {
+		// This may cause a warning due to lack of CORS header.
+		// We do not need to read the result, so that is ok.
 		return $.ajax( {
-			url: this._endpoint + '?' + query,
-			dataType: 'jsonp'
+			url: this._endpoint + '?' + query
 		} );
 	};
 
