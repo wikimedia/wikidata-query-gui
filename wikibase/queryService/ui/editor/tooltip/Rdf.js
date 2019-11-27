@@ -98,8 +98,8 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		$( '.wikibaseRDFtoolTip' ).remove();
 	};
 
-	SELF.prototype._showToolTip = function( text, pos ) {
-		if ( !text || !pos ) {
+	SELF.prototype._showToolTip = function( $content, pos ) {
+		if ( !$content || !pos ) {
 			return;
 		}
 
@@ -108,7 +108,7 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 					top: pos.y + 2,
 					left: pos.x + 2
 				} ).addClass( 'wikibaseRDFtoolTip' ).append(
-						$( '<div class="panel-body">' ).html( text ).css( 'padding', '10px' ) )
+						$( '<div class="panel-body">' ).append( $content ).css( 'padding', '10px' ) )
 				.appendTo( 'body' ).fadeIn( 'slow' );
 	};
 
@@ -137,8 +137,12 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		this._api.searchEntities( term, type ).done(
 				function( data ) {
 					$.each( data.search, function( key, value ) {
-						entityList.push( value.label + ' (' + value.id + ')<br/><small>' +
-							( value.description || '' ) + '</small>' );
+						entityList.push(
+							$()
+								.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
+								.add( $( '<br>' ) )
+								.add( $( '<small>' ).text( value.description || '' ) )
+						);
 					} );
 
 					deferred.resolve( entityList );
