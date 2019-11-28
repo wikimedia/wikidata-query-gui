@@ -39,19 +39,31 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	SELF.prototype.getExamples = function () {
 		var self = this;
 
-		return self._apiGet( {
-			action: 'parse',
-			page: self._pageTitle + '/' + self._language,
-			prop: 'text'
-		} ).catch( function () {
+		return self._parsePage(
+			self._pageTitle + '/' + self._language
+		).catch( function () {
 			// retry without language
-			return self._apiGet( {
-				action: 'parse',
-				page: self._pageTitle,
-				prop: 'text'
-			} );
+			return self._parsePage( self._pageTitle );
 		} ).then( function ( response ) {
 			return self._parseHTML( response.parse.text );
+		} );
+	};
+
+	/**
+	 * Parse the contents of a page using the API.
+	 *
+	 * @param {string} title page title
+	 * @return {jQuery.Promise}
+	 */
+	SELF.prototype._parsePage = function ( title ) {
+		return this._apiGet( {
+			action: 'parse',
+			page: title,
+			prop: 'text',
+			wrapoutputclass: '',
+			disablelimitreport: '1',
+			disableeditsection: '1',
+			disabletoc: '1'
 		} );
 	};
 
