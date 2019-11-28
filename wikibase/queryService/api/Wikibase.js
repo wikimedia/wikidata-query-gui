@@ -155,8 +155,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 */
 	SELF.prototype._query = function( query ) {
 		return $.ajax( {
-			url: this._endpoint + '?' + jQuery.param( query ),
-			dataType: 'jsonp'
+			url: this._endpoint + '?origin=*&' + jQuery.param( query )
 		} );
 	};
 
