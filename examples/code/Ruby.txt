@@ -6,7 +6,10 @@ require 'sparql/client'
 endpoint = "{ENDPOINT_URL}"
 sparql = {SPARQL_QUERY}
 
-client = SPARQL::Client.new(endpoint, :method => :get)
+client = SPARQL::Client.new(endpoint,
+                            :method => :get,
+                            # TODO adjust user agent; see https://w.wiki/CX6
+                            headers: {'User-Agent' => 'WDQS-example Ruby'})
 rows = client.query(sparql)
 
 puts "Number of rows: #{rows.size}"

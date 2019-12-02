@@ -16,7 +16,7 @@ sub wdSparqlQuery(@args) {
   return $str;
 }
 
-$agent = "MyApp/0.1 ";
+$agent = "WDQS-example "; # TODO adjust this; see https://w.wiki/CX6
 $query = <<'_SPARQL_QUERY_';
 
 _SPARQL_QUERY_

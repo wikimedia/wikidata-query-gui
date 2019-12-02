@@ -16,7 +16,8 @@ class SPARQLQueryDispatcher
             'http' => [
                 'method' => 'GET',
                 'header' => [
-                    'Accept: application/sparql-results+json'
+                    'Accept: application/sparql-results+json',
+                    'User-Agent: WDQS-example PHP/' . PHP_VERSION, // TODO adjust this; see https://w.wiki/CX6
                 ],
             ],
         ];
