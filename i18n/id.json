@@ -4,7 +4,8 @@
 			"Beeyan",
 			"Rachmat04",
 			"Pebaryan",
-			"ArlandGa"
+			"ArlandGa",
+			"Sonic Speedy"
 		]
 	},
 	"wdqs-app-button-examples": "Contoh",
@@ -98,6 +99,7 @@
 	"wdqs-dialog-key-shortcut-focus-show": "Fokus pada tombol \"Tampilkan\" di Pembantu Kueri.",
 	"wdqs-dialog-key-shortcut-focus-limit": "Klik tombol ''Batasi'' di Pembantu Kueri.",
 	"wdqs-dialog-key-shortcut-show-example": "Tampilkan contoh.",
+	"wdqs-dialog-key-shortcut-help-menu": "Alihkan menu Bantuan.",
 	"wdqs-dialog-key-shortcut-show-language": "Tampilkan menu bahasa.",
 	"wdqs-dialog-key-shortcut-close-button": "Tutup",
 	"wdqs-ve-filter": "Saring",
