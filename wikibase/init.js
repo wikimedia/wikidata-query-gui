@@ -9,6 +9,10 @@
 		var wb = wikibase.queryService,
 			app;
 
+		function setExamplesHelpLink( url ) {
+			$( 'a#examples-link' ).attr( 'href', url );
+		}
+
 		function setBrand() {
 			$( '.navbar-brand img' ).attr( 'src', config.brand.logo );
 			$( '.navbar-brand a > span' ).text( config.brand.title );
@@ -58,6 +62,8 @@
 			),
 			shortenApi = new wb.api.UrlShortener( config.api.urlShortener ),
 			languageSelector = new wb.ui.i18n.LanguageSelector( $( '.uls-trigger' ), api, lang );
+
+		setExamplesHelpLink( querySamplesApi.getExamplesPageUrl() );
 
 		var rdfHint = new wb.ui.editor.hint.Rdf( api ),
 				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
