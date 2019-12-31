@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"Tofeiku"
 		]
 	},
 	"wdqs-app-button-examples": "Contoh",
@@ -30,6 +31,8 @@
 	"wdqs-app-help-prefixes": "Senarai awalan",
 	"wdqs-app-help-copy": "Maklumat perlesenan",
 	"wdqs-app-help-queryhelper": "Pembantu Kueri",
+	"wdqs-app-tools-edit-items": "Sunting Butir",
+	"wdqs-app-tools-lexicographical-data": "Data perkamusan",
 	"wdqs-app-footer-help": "Tekan butang <i>[CTRL-SPACE]</i> untuk mengaktifkan penyiapan automatik.",
 	"wdqs-app-footer-updated-ago": "Data dikemaskinikan $1",
 	"wdqs-app-result-shorturl": "URL singkat kepada hasil",
