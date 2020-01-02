@@ -65,7 +65,7 @@
 	"wdqs-app-editor-addprefixes": "Lägg till standardprefix",
 	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultat}} i $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Stabilisera nätverk",
-	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkisk layout vänster till höger",
+	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarkisk framläggning från vänster till höger",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarkisk utformning från topp till botten",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarkisk utformning höger till vänster",
 	"wdqs-app-resultbrowser-non-hierarchical": "Icke-hierarkiskt utseende",
