@@ -3,7 +3,8 @@
 		"authors": [
 			"Mechanizatar",
 			"Liashko",
-			"Artsiom91"
+			"Artsiom91",
+			"Maksim L."
 		]
 	},
 	"wdqs-app-button-examples": "Прыклады",
@@ -71,7 +72,7 @@
 	"wdqs-action-render": "Візуалізацыя выніку",
 	"wdqs-action-error-display": "Немагчыма паказаць вынік",
 	"wdqs-action-timeout": "Дасягнуты ліміт часу выканання запыту",
-	"wdqs-action-malformed-query": "Запыт мае некарэктны фармат",
+	"wdqs-action-malformed-query": "Запыт няслушна сфарміраваны",
 	"wdqs-action-server-error": "Памылка сервера",
 	"wdqs-action-unknow-error": "Невядомая памылка",
 	"wdqs-action-preview": "Папярэдні прагляд выніку",
