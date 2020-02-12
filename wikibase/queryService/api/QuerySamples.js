@@ -64,6 +64,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			wrapoutputclass: '',
 			disablelimitreport: '1',
 			disableeditsection: '1',
+			smaxage: '600',
+			maxage: '600',
 			disabletoc: '1'
 		} );
 	};
