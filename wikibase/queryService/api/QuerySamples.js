@@ -62,9 +62,11 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			redirects: '1',
 			prop: 'text',
 			wrapoutputclass: '',
-			disablelimitreport: '1',
 			disableeditsection: '1',
 			disabletoc: '1'
+			// DO NOT SET any of the following, as they unshare parser cache
+			// (compare ApiParse::makeParserOptions): disablelimitreport/disablepp,
+			// (section)preview, disabletidy, and wrapoutputclass != ''.
 		} );
 	};
 
