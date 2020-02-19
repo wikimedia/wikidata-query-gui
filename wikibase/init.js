@@ -65,9 +65,11 @@
 
 		setExamplesHelpLink( querySamplesApi.getExamplesPageUrl() );
 
+		var isTopWindow = window.top === window;
+
 		var rdfHint = new wb.ui.editor.hint.Rdf( api ),
 				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
-				editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip );
+				editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow } );
 
 		function afterLanguageChange() {
 			editor.updatePlaceholder();

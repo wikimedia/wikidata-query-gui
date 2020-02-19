@@ -56,11 +56,15 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 * @param {wikibase.queryService.ui.editor.hint.Rdf} rdfHint
 	 * @param {wikibase.queryService.ui.editor.hint.Sparql} sparqlHint
 	 * @param {wikibase.queryService.ui.editor.tooltip.Rdf} rdfTooltip
+	 * @param {Object} [options]
+	 * @param {boolean} [options.focus=true] Whether to automatically focus
+	 * the editor when it is created (fromTextArea).
 	 */
-	function SELF( rdfHint, sparqlHint, rdfTooltip ) {
+	function SELF( rdfHint, sparqlHint, rdfTooltip, options ) {
 		this._rdfHint = rdfHint;
 		this._sparqlHint = sparqlHint;
 		this._rdfTooltip = rdfTooltip;
+		this._focus = ( options || {} ).focus;
 
 		if ( !this._sparqlHint ) {
 			this._sparqlHint = new wikibase.queryService.ui.editor.hint.Sparql();
@@ -70,6 +74,9 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 		}
 		if ( !this._rdfTooltip ) {
 			this._rdfTooltip = new wikibase.queryService.ui.editor.tooltip.Rdf();
+		}
+		if ( this._focus === undefined ) {
+			this._focus = true;
 		}
 	}
 
@@ -99,6 +106,12 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	SELF.prototype._rdfTooltip = null;
 
 	/**
+	 * @property {boolean}
+	 * @private
+	 */
+	SELF.prototype._focus = null;
+
+	/**
 	 * Construct an this._editor on the given textarea DOM element
 	 *
 	 * @param {HTMLElement} element
@@ -119,7 +132,10 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 				} );
 			}
 		} );
-		this._editor.focus();
+
+		if ( this._focus ) {
+			this._editor.focus();
+		}
 
 		this._rdfTooltip.setEditor( this._editor );
 
