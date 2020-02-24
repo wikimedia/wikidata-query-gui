@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nirajan pant",
-			"सरोज कुमार ढकाल"
+			"सरोज कुमार ढकाल",
+			"हिमाल सुबेदी"
 		]
 	},
 	"wdqs-app-button-examples": "उदाहरणहरू",
@@ -70,7 +71,7 @@
 	"wdqs-dialog-examples-preview-result": "नतिजा हेर्नुहोस्",
 	"wdqs-dialog-key-shortcut-show-example": "उदाहरणहरू देखाउनुहोस्।",
 	"wdqs-dialog-key-shortcut-close-button": "बन्द गर्नुहोस्",
-	"wdqs-ve-filter": "फिल्टर",
+	"wdqs-ve-filter": "छनाेट",
 	"wdqs-ve-show": "देखाउनुहोस्",
 	"wdqs-ve-add-label-title": "इन्टिटी लेवल भएको भेरिएबल थप्नुहोस्",
 	"wdqs-ve-remove-row-title": "यस पङ्क्ति हटाउनुहोस्",
