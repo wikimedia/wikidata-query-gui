@@ -6,7 +6,7 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( function( $, vis, window, _ ) {
 	'use strict';
 
-	var SPARQL_PROPERTIES = 'SELECT ?p (SAMPLE(?pl) AS ?pl) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol)  WHERE {'
+	var SPARQL_PROPERTIES = 'SELECT ?p (SAMPLE(?pl) AS ?pl_) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol_)  WHERE {'
 			+ '<{entityUri}> ?p ?o .'
 			+ '   ?o <http://www.w3.org/2000/01/rdf-schema#label> ?ol .'
 			+ '    FILTER ( LANG(?ol) = "[AUTO_LANGUAGE]" )'
@@ -18,7 +18,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 			+ '?o <http://www.w3.org/2000/01/rdf-schema#label> ?ol .'
 			+ 'FILTER ( LANG(?ol) = "[AUTO_LANGUAGE]" )' + '} LIMIT 50';
 
-	var SPARQL_PROPERTIES_INCOMING = 'SELECT ?p (SAMPLE(?pl) AS ?pl) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol)  WHERE {'
+	var SPARQL_PROPERTIES_INCOMING = 'SELECT ?p (SAMPLE(?pl) AS ?pl_) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol_)  WHERE {'
 			+ '?o ?p <{entityUri}> .'
 			+ '   ?o <http://www.w3.org/2000/01/rdf-schema#label> ?ol .'
 			+ '    FILTER ( LANG(?ol) = "[AUTO_LANGUAGE]" )'
@@ -164,9 +164,9 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 					$.each( data.results.bindings, function( i, row ) {
 						result.push( {
 							id: row.p.value,
-							label: row.pl.value,
+							label: row.pl_.value,
 							count: row.count.value,
-							items: row.ol.value
+							items: row.ol_.value
 						} );
 					} );
 
@@ -191,9 +191,9 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 					$.each( data.results.bindings, function( i, row ) {
 						result.push( {
 							id: row.p.value,
-							label: row.pl.value,
+							label: row.pl_.value,
 							count: row.count.value,
-							items: row.ol.value
+							items: row.ol_.value
 						} );
 					} );
 
