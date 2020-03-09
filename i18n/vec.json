@@ -80,5 +80,17 @@
 	"wdqs-app-resultbrowser-graph": "Grafico",
 	"wdqs-app-toast-leave-fullscreen": "Struca [esc] par nar fora da el schermo intiero",
 	"wdqs-app-urlshortener-bad-service": "Servisio no coreto de abreviasion URL in configurasion",
-	"wdqs-app-urlshortener-failed": "Abreviasion URL falìa"
+	"wdqs-app-urlshortener-failed": "Abreviasion URL falìa",
+	"wdqs-app-urlshortener-loading": "Son drio cargare...",
+	"wdqs-dialog-examples-preview-query": "Anteprima query",
+	"wdqs-dialog-examples-preview-result": "Anteprima risultado",
+	"wdqs-dialog-key-shortcut-title": "Scorciatoie da tastiera",
+	"wdqs-dialog-key-shortcut-run-query": "Exegui query.",
+	"wdqs-dialog-key-shortcut-esc": "Lasa el canpo de testo atuaƚe / area de testo.",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mostra el ajuto so ƚe scorciatoie de tastiera par ƚa pagina atuaƚe.",
+	"wdqs-dialog-key-shortcut-focus-textarea": "Concentrarse so ƚa query textarea.",
+	"wdqs-dialog-key-shortcut-jump-to-result": "Pasa a i risultadi de ƚa query.",
+	"wdqs-dialog-key-shortcut-focus-filter": "Consentrate so'l boton \"Filtro\" in Query Helper",
+	"wdqs-dialog-key-shortcut-focus-show": "Consentrate so'l boton \"Mostra\" en Query Helper.",
+	"wdqs-dialog-key-shortcut-focus-limit": "Fa clic so'l boton \"Limita\" en Query Helper"
 }
