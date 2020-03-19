@@ -5,11 +5,13 @@
 			"Neriman2003",
 			"AZISS",
 			"TmY e12",
-			"ToprakM"
+			"ToprakM",
+			"Patriot Kur"
 		]
 	},
 	"wdqs-app-button-examples": "Nümunələr",
 	"wdqs-app-button-prefixes": "Prefikslər",
+	"wdqs-app-button-more-tools": "Digər alətlər",
 	"wdqs-app-button-help": "Kömək",
 	"wdqs-app-button-run": "İşlət",
 	"wdqs-app-button-run-title": "Sorğunu yerinə yetir",
@@ -34,6 +36,7 @@
 	"wdqs-app-help-prefixes": "Prefikslərin siyahısı",
 	"wdqs-app-help-copy": "Lisenziyalaşdırılmış məlumat",
 	"wdqs-app-help-queryhelper": "Sorğu köməkçisi",
+	"wdqs-app-tools-for-programmers": "Proqramçılar üçün",
 	"wdqs-app-footer-help": "Avtomatik tamamlamanı aktivləşdirmək üçün <i>[CTRL-SPACE]</i>-ə bas",
 	"wdqs-app-footer-updated-ago": "$1 məlumatı yenilədi",
 	"wdqs-app-result-shorturl": "Nəticəyə qısa URL",
@@ -75,6 +78,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Ölçülər",
 	"wdqs-app-resultbrowser-graph": "Qrafik",
 	"wdqs-app-toast-leave-fullscreen": "Tam ekrandan çıxmaq üçün [esc] düyməsini basın",
+	"wdqs-app-urlshortener-loading": "Yüklənir…",
 	"wdqs-dialog-examples-preview-query": "Sorğuya əvvəlcədən bax",
 	"wdqs-dialog-examples-preview-result": "Nəticəyə əvvəlcədən bax",
 	"wdqs-dialog-key-shortcut-title": "Klaviatura Qısadüymələri",
