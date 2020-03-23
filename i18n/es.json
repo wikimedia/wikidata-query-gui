@@ -67,7 +67,7 @@
 	"wdqs-app-result-embed": "Incrustar resultado",
 	"wdqs-app-result-endpoint": "Parámetro de SPARQL",
 	"wdqs-app-result-endpoint-title": "Enlace al punto de acceso de SPARQL que devuelve el resultado",
-	"wdqs-app-result-formatter-title-datetime": "Marca de tiempo ISO en bruto",
+	"wdqs-app-result-formatter-title-datetime": "Cronomarcador ISO sin procesar",
 	"wdqs-app-result-json": "Archivo JSON",
 	"wdqs-app-result-json-verbose": "Archivo JSON (detallado)",
 	"wdqs-app-result-tsv": "Archivo TSV",
