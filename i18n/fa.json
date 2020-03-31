@@ -10,7 +10,8 @@
 			"Alifakoor",
 			"Amirsara",
 			"FarsiNevis",
-			"Physicsch"
+			"Physicsch",
+			"Goodarz Irani"
 		]
 	},
 	"wdqs-app-button-examples": "نمونه‌ها",
@@ -89,6 +90,7 @@
 	"wdqs-app-resultbrowser-dimensions": "ابعاد",
 	"wdqs-app-resultbrowser-graph": "نمودار",
 	"wdqs-app-toast-leave-fullscreen": "دکمهٔ [esc] را برای خارج‌شدن از حالت تمام‌صفحه بفشارید",
+	"wdqs-app-urlshortener-loading": "در حال بارگیری...",
 	"wdqs-dialog-examples-preview-query": "پیش‌نمایش کوئری",
 	"wdqs-dialog-examples-preview-result": "پیش‌نمایش نتیجه",
 	"wdqs-dialog-key-shortcut-title": "میانبرهای صفحه‌کلید",

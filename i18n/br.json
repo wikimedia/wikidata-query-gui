@@ -84,6 +84,8 @@
 	"wdqs-app-resultbrowser-dimensions": "Mentoù",
 	"wdqs-app-resultbrowser-graph": "Grafik",
 	"wdqs-app-toast-leave-fullscreen": "Gwaskit [esc] evit kuitaat skramm leun",
+	"wdqs-app-urlshortener-bad-service": "Fall eo servij krennañ an URL er c'hefluniadur",
+	"wdqs-app-urlshortener-failed": "Fazi krennañ an URL",
 	"wdqs-app-urlshortener-loading": "O kargañ...",
 	"wdqs-dialog-examples-preview-query": "Alberz ar reked",
 	"wdqs-dialog-examples-preview-result": "Alberz eus an disoc'h",
