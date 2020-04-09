@@ -3,14 +3,14 @@
 		"locale": "de",
 		"message-documentation": "qqq",
 		"authors": [
-			"Jonas Kress",
-			"Liuxinyu970226",
+			"Abián",
 			"Amire80",
 			"David Sn",
-			"Robby",
-			"Abián",
+			"Jonas Kress",
+			"Liuxinyu970226",
+			"Lucas Werkmeister (WMDE)",
 			"Matěj Suchánek",
-			"Lucas Werkmeister (WMDE)"
+			"Robby"
 		]
 	},
 	"wdqs-app-button-examples": "Button to show examples dialog\n{{Identical|Example}}",
