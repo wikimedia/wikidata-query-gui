@@ -63,6 +63,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			prop: 'text',
 			wrapoutputclass: '',
 			disableeditsection: '1',
+			smaxage: '600',
+			maxage: '600',
 			disabletoc: '1'
 			// DO NOT SET any of the following, as they unshare parser cache
 			// (compare ApiParse::makeParserOptions): disablelimitreport/disablepp,
