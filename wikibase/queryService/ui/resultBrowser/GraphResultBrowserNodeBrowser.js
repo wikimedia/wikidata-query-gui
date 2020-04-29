@@ -101,12 +101,11 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 * @private
 	 */
 	SELF.prototype._getEntites = function( entityUri, propertyUri ) {
-		var self = this,
-			deferred = $.Deferred();
+		var self = this;
 
-		this._sparql.query(
+		return this._sparql.query(
 				SPARQL_ENTITES.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
-						propertyUri ) ).done( function() {
+						propertyUri ) ).then( function() {
 			var data = self._sparql.getResultRawData();
 			var result = [];
 
@@ -117,22 +116,19 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 				} );
 			} );
 
-			deferred.resolve( result );
+			return result;
 		} );
-
-		return deferred;
 	};
 
 	/**
 	 * @private
 	 */
 	SELF.prototype._getIncomingEntites = function( entityUri, propertyUri ) {
-		var self = this,
-			deferred = $.Deferred();
+		var self = this;
 
-		this._sparql.query(
+		return this._sparql.query(
 				SPARQL_ENTITES_INCOMING.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
-						propertyUri ) ).done( function() {
+						propertyUri ) ).then( function() {
             var data = self._sparql.getResultRawData();
 			var result = [];
 
@@ -143,20 +139,17 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 				} );
 			} );
 
-			deferred.resolve( result );
+			return result;
 		} );
-
-		return deferred;
 	};
 
 	/**
 	 * @private
 	 */
 	SELF.prototype._getProperties = function( entityUri ) {
-		var self = this,
-			deferred = $.Deferred();
+		var self = this;
 
-		this._sparql.query( SPARQL_PROPERTIES.replace( '{entityUri}', entityUri ) ).done(
+		return this._sparql.query( SPARQL_PROPERTIES.replace( '{entityUri}', entityUri ) ).then(
 				function() {
 					var data = self._sparql.getResultRawData();
 					var result = [];
@@ -170,20 +163,17 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 						} );
 					} );
 
-					deferred.resolve( result );
+					return result;
 				} );
-
-		return deferred;
 	};
 
 	/**
 	 * @private
 	 */
 	SELF.prototype._getIncomingProperties = function( entityUri ) {
-		var self = this,
-			deferred = $.Deferred();
+		var self = this;
 
-		this._sparql.query( SPARQL_PROPERTIES_INCOMING.replace( '{entityUri}', entityUri ) ).done(
+		return this._sparql.query( SPARQL_PROPERTIES_INCOMING.replace( '{entityUri}', entityUri ) ).then(
 				function() {
 					var data = self._sparql.getResultRawData();
 					var result = [];
@@ -197,10 +187,8 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 						} );
 					} );
 
-					deferred.resolve( result );
+					return result;
 				} );
-
-		return deferred;
 	};
 
 	/**
