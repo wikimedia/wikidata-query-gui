@@ -233,7 +233,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 			node = this._temporaryNodes[nodeId];
 		var expandedNode = self._nodes.get( nodeId );
 
-		this._getEntites( node.entityId, node.id ).done( function( entites ) {
+		this._getEntites( node.entityId, node.id ).then( function( entites ) {
 
 			$.each( entites, function( i, e ) {
 				if ( self._nodes.get( e.id ) === null ) {
@@ -256,7 +256,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 			if ( expandedNode.label > 50 ) {
 				self._getRemainingOutgoingNodes( node, expandedNode );
 			}
-		} );
+		}, window.console.error );
 	};
 
 	/**
@@ -288,7 +288,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 			node = this._incomingTemporaryNodes[nodeId];
 		var expandedNode = self._incomingNodes.get( nodeId );
 
-		this._getIncomingEntites( node.entityId, node.id ).done( function( entites ) {
+		this._getIncomingEntites( node.entityId, node.id ).then( function( entites ) {
 			$.each( entites, function( i, e ) {
 				if ( self._incomingNodes.get( e.id ) === null ) {
 					self._incomingNodes.add( {
@@ -310,7 +310,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 			if ( expandedNode.label > 50 ) {
 				self._getRemainingIncomingNodes( node, expandedNode );
 			}
-		} );
+		}, window.console.error );
 	};
 
 	/**
@@ -340,7 +340,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	SELF.prototype._expandEntityNode = function( nodeId ) {
 		var self = this;
 
-		this._getProperties( nodeId ).done( function( properties ) {
+		this._getProperties( nodeId ).then( function( properties ) {
 			$.each( properties, function( i, p ) {
 				//if already expanded skip
 				if ( self._edges.get( {
@@ -374,7 +374,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 				self._temporaryEdges[edge.id] = edge;
 				self._edges.add( edge );
 			} );
-		} );
+		}, window.console.error );
 	};
 
 	/**
@@ -383,7 +383,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	SELF.prototype._expandIncomingEntityNode = function( nodeId ) {
 		var self = this;
 
-		this._getIncomingProperties( nodeId ).done( function( properties ) {
+		this._getIncomingProperties( nodeId ).then( function( properties ) {
 			$.each( properties, function( i, p ) {
 				// if already expanded skip
 				if ( self._incomingEdges.get( {
@@ -417,7 +417,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 				self._incomingTemporaryEdges[edge.id] = edge;
 				self._incomingEdges.add( edge );
 			} );
-		} );
+		}, window.console.error );
 	};
 
 	/**
