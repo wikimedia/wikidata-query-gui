@@ -135,9 +135,11 @@ pre {
 
 a {
 	color: @color-primary;
+
 	&:hover {
 		color: @color-primary--hover;
 	}
+
 	&:active {
 		color: @color-primary--active;
 	}
@@ -164,6 +166,7 @@ a {
 
 .navbar {
 	margin-bottom: 0;
+
 	.dropdown-menu {
 		background: @background-color-framed;
 		z-index: 1001; /* above the Leaflet control containers */
@@ -171,36 +174,45 @@ a {
 			border-radius: 2px;
 			padding: 5px 20px;
 		}
+
 		& > li > a:hover {
 			background: @background-color-framed--hover;
 		}
 	}
+
 	.help {
 		padding-left: 0;
 	}
+
 	&-brand {
 		line-height: 35px;
 		padding: 5px 15px;
 		vertical-align: middle;
+
 		a {
 			text-decoration: none;
 		}
+
 		img {
 			margin-left: 2px;
 			margin-right: 10px;
 		}
 	}
+
 	&-btn {
 		margin-left: 15px;
 	}
+
 	&-default {
 		background: @background-color-heading;
 		border-bottom: 1px solid @border-color-heading;
 		border-radius: 2px;
 	}
+
 	&-right {
 		margin-right: 0;
 	}
+
 	&-toggle {
 		z-index: 100;
 	}
@@ -221,9 +233,11 @@ a.disabled {
 	border: 1px solid @border-color-heading;
 	box-shadow: none;
 	text-shadow: none;
+
 	&:active {
 		background: @background-color-framed--active;
 	}
+
 	&:hover {
 		background: @background-color-framed--hover;
 	}
@@ -242,11 +256,13 @@ a.disabled {
 		font-size: 30px;
 		height: 30px;
 	}
+
 	.progress-bar {
 		font-size: 16px;
 		font-weight: bold;
 		line-height: 30px;
 	}
+
 	.label {
 		display: block;
 		font-size: 16px;
@@ -307,10 +323,12 @@ a.disabled {
 	padding-bottom: 7px;
 	padding-top: 7px;
 	width: 46px;
+
 	&:hover {
 		background: @color-primary--hover;
 		border-color: @color-primary--hover;
 	}
+
 	&:active {
 		background: @color-primary--active;
 		border-color: @color-primary--active;
@@ -319,6 +337,7 @@ a.disabled {
 
 #query-result {
 	width: 100%;
+
 	pre {
 		background-color: inherit;
 		border: none;
@@ -346,6 +365,7 @@ a.disabled {
 			stroke-width: 1px;
 			stroke: #000;
 		}
+
 		.title {
 			font-size: 8px;
 			font-weight: bold;
@@ -362,18 +382,21 @@ a.disabled {
 	/* Tree */
 	.jstree {
 		padding: 1em;
+
 		&-default .jstree-wholerow {
 			&-hovered {
 				background: @color-primary--hover;
 				border-radius: 2px;
 				color: @color-base--inverted;
 			}
+
 			&-clicked {
 				background: @color-primary;
 				border-radius: 2px;
 				color: @color-base--inverted;
 			}
 		}
+
 		a.jstree-anchor.jstree-clicked {
 			color: @color-base--inverted;
 		}
@@ -421,36 +444,47 @@ a.disabled {
 	border-left: 1px solid @border-color-heading;
 	border: none;
 	height: 100%;
+
 	.cm-atom {
 		color: @codemirror-color-atom;
 	}
+
 	.cm-bracket {
 		color: inherit;
 	}
+
 	.cm-builtin {
 		color: @codemirror-color-builtin;
 	}
+
 	.cm-comment {
 		color: @codemirror-color-comment;
 	}
+
 	.cm-keyword {
 		color: @codemirror-color-keyword;
 	}
+
 	.cm-operator {
 		color: inherit;
 	}
+
 	.cm-string {
 		color: @codemirror-color-string;
 	}
+
 	.cm-variable-2 {
 		color: @codemirror-color-variable-2;
 	}
+
 	&-scroll {
 		min-height: 320px;
 	}
+
 	&-hints {
 		direction: ltr;
 	}
+
 	&-hint {
 		max-width: 19em;
 	}
@@ -495,10 +529,12 @@ div.shortUrl {
 	display: flex;
 	flex-direction: row;
 	max-width: 100%;
+
 	& > .toolbar {
 		display: flex;
 		flex-direction: column;
 		flex: 0 0 55px;
+
 		.dropdown-menu {
 			padding-left: 0.8em;
 			padding-right: 0.8em;
@@ -514,49 +550,60 @@ div.shortUrl {
 
 #query-box {
 	position: relative;
+
 	.status {
 		color: @color-base--subtle;
 		font-size: 12px;
 		margin-bottom: 5px;
 		min-height: 25px;
 		padding: 3px;
+
 		.badge {
 			border-radius: 2px;
 			border: 1px solid @border-color-soft;
 		}
+
 		.list-group-item-danger {
 			background-color: @update-background-color-danger;
 			color: @update-foreground-color-danger;
 			text-decoration-color: @update-foreground-color-danger;
 		}
+
 		.list-group-item-success {
 			background-color: @update-background-color-success;
 			color: @update-foreground-color-success;
 			text-decoration-color: @update-foreground-color-success;
 		}
+
 		.list-group-item-warning {
 			background-color: @update-background-color-warning;
 			color: @update-foreground-color-warning;
 			text-decoration-color: @update-foreground-color-warning;
 		}
 	}
+
 	.nav {
 		margin-left: 0;
 	}
+
 	.toolbar {
 		border-right: 1px solid @border-color-heading;
+
 		.fa {
 			font-size: 1.5em;
 		}
+
 		&-bottom {
 			flex-grow: 0;
 			padding-bottom: 0.2em;
 			padding-top: 1em;
 			text-align: center;
+
 			.fa {
 				font-size: 1.8em;
 			}
 		}
+
 		&-top {
 			flex-grow: 1;
 			opacity: 0.5;
@@ -564,6 +611,7 @@ div.shortUrl {
 			text-align: center;
 			visibility: hidden;
 			margin-right: 4px;
+
 			&:hover {
 				opacity: 1;
 			}
@@ -633,9 +681,11 @@ div.shortUrl {
 			float: left !important;
 			margin: 0;
 		}
+
 		&-right {
 			float: right !important;
 		}
+
 		&-nav .open .dropdown-menu {
 			-webkit-box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.175 );
 			background-color: @background-color-base;
@@ -644,10 +694,12 @@ div.shortUrl {
 			position: absolute;
 			width: auto;
 		}
+
 		&-collapse.in {
 			overflow-y: visible;
 		}
 	}
+
 	.panel-body .table td {
 		display: inline-block;
 	}
@@ -677,38 +729,47 @@ div.shortUrl {
 	.modal-content {
 		border-radius: 2px;
 		padding: 20px 15px;
+
 		.tag {
 			background-color: @color-primary;
 			background-image: none;
 			padding: 0.4em 0.6em;
 			text-shadow: none;
+
 			&:hover,
 			&:active {
 				background: @color-primary;
 			}
 		}
+
 		.tagCloud {
 			height: 200px;
 			width: 100%;
 		}
+
 		input.tags-input {
 			visibility: hidden;
 		}
+
 		.tagFilter {
 			padding-bottom: 5px !important;
 		}
+
 		.exampleTable {
 			border: 1px solid @border-color-base;
 			max-height: 500px;
 			overflow-x: hidden;
 			overflow-y: auto;
+
 			td {
 				padding: 8px 10px;
 			}
+
 			.glyphicon-pencil {
 				margin-left: 0.3em;
 			}
 		}
+
 		.input-group-addon {
 			border-radius: 2px;
 			border: 1px solid @border-color-base;
@@ -750,7 +811,7 @@ div.shortUrl {
 	font-size: 1.3em;
 }
 
-/*Disable resizing from all sides except bottom right corner*/
+/* Disable resizing from all sides except bottom right corner */
 .gj-resizable-e,
 .gj-resizable-n,
 .gj-resizable-w,
@@ -781,43 +842,56 @@ div.shortUrl {
 /* Tag cloud, words are more transparent when less important */
 div.jqcloud {
 	color: @color-primary;
+
 	a {
 		color: inherit;
 	}
+
 	a:hover {
 		color: @color-primary--hover;
 	}
+
 	span.w10 {
 		color: @color-primary;
 	}
+
 	span.w9 {
 		color: @color-primary-90;
 	}
+
 	span.w8 {
 		color: @color-primary-80;
 	}
+
 	span.w7 {
 		color: @color-primary-75;
 	}
+
 	span.w6 {
 		color: @color-primary-70;
 	}
+
 	span.w5 {
 		color: @color-primary-65;
 	}
+
 	span.w4 {
 		color: @color-primary-60;
 	}
+
 	span.w3 {
 		color: @color-primary-55;
 	}
+
 	span.w2 {
 		color: @color-primary-50;
 	}
+
 	span.w1 {
 		color: @color-primary-45;
 	}
 }
+
 .item {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -828,28 +902,36 @@ div.jqcloud {
 	margin: 0 0.75em 1.5em;
 	padding: 1em;
 }
+
 .item.hidden {
 	visibility: hidden;
 }
+
 .item-row {
 	width: 100%;
 }
+
 .hidden-row {
 	height: 50px;
 	visibility: hidden;
+
 	& > .item {
 		display: none;
 	}
 }
+
 .item-img {
 	width: 100%;
 }
+
 .summary {
 	.glyphicon {
 		display: inline;
 	}
+
 	& > div {
 		height: 1.5em;
+
 		& > span {
 			display: block;
 			overflow: hidden;
@@ -862,6 +944,7 @@ div.jqcloud {
 /* loading spinner */
 #loading-spinner {
 	color: @color-base--subtle;
+
 	& > .fa-spinner {
 		display: block;
 		margin: 0 auto 20px;
@@ -877,57 +960,71 @@ div.jqcloud {
 	min-width: 300px;
 	width: 30vw;
 	z-index: 100;
+
 	.panel {
 		-webkit-box-shadow: none;
 		border: none;
 		box-shadow: none;
+
 		&-heading {
 			background: @background-color-base;
 			border-bottom: 1px solid @border-color-soft;
 			padding: 8px 10px;
 		}
+
 		&-body {
 			font-size: 11pt;
 			padding: 10px 0;
+
 			& > span {
 				padding: 10px;
 			}
+
 			&-sub {
 				.query-helper-data {
 					margin-bottom: 10px;
 					margin-top: 10px;
 					width: auto;
+
 					tbody > tr > td {
 						padding: 6px;
 					}
+
 					tr {
 						padding: 0.8em;
 					}
+
 					tr:first-child,
 					tr:last-child {
 						border-bottom: none;
 					}
+
 					tr:hover {
 						background: inherit;
 					}
+
 					td {
 						border: none;
 						vertical-align: middle;
 					}
+
 					.fa {
 						font-size: 1.25em;
 						margin: 0 6px 0 0;
 						text-decoration: none;
 					}
 				}
+
 				.query-helper-limit-section {
 					padding: 12px;
 				}
+
 				.query-helper-section {
 					border-bottom: 1px solid @border-color-soft;
 					height: 3em;
 					padding: 10px 0;
 					width: 100%;
+
 					& > tr > td:first-child {
 						min-width: 95px;
 						width: 0;
@@ -935,17 +1032,21 @@ div.jqcloud {
 				}
 			}
 		}
+
 		.close {
 			float: inline-end;
 		}
 	}
+
 	tr:hover > .toolbar {
 		opacity: 1;
 	}
+
 	.popover {
 		min-width: 250px;
 		white-space: nowrap;
 	}
+
 	&-hidden,
 	&-hidden + .splitter {
 		display: none;
@@ -955,19 +1056,24 @@ div.jqcloud {
 .select2-container {
 	min-width: 150px;
 	margin: 2px;
+
 	.select2-dropdown {
 		border-radius: 0 0 2px 2px;
 		background: @background-color-framed;
 	}
-	.select2-results__option[aria-selected='true'] {
+
+	.select2-results__option[ aria-selected='true' ] {
 		background: inherit;
 	}
-	.select2-results__option--highlighted[aria-selected] {
+
+	.select2-results__option--highlighted[ aria-selected ] {
 		background: @background-color-framed--hover;
 		color: @color-base;
 	}
+
 	.select2-selection--single {
 		border-radius: 2px;
+
 		.select2-selection__rendered {
 			color: @color-base;
 		}
@@ -1036,6 +1142,7 @@ div.jqcloud {
 		max-width: none;
 		min-width: 0;
 		width: 100%;
+
 		.panel {
 			margin: 0;
 		}
@@ -1043,6 +1150,7 @@ div.jqcloud {
 
 	.query-helper-and-editor {
 		flex-direction: column;
+
 		& > .splitter {
 			display: none;
 		}
@@ -1064,7 +1172,7 @@ div.jqcloud {
 	bottom: 1px;
 }
 
-@media ( prefers-reduced-motion: reduce ) { // stylelint-disable-line media-feature-name-no-unknown
+@media ( prefers-reduced-motion: reduce ) {
 	#query-builder-discovery-feedback {
 		display: none !important; // !important to override style= attribute
 	}
