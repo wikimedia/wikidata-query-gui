@@ -2,7 +2,7 @@
 	'use strict';
 
 	var DISMISS_BANNER_COOKIE = 'dismiss-query-builder-discovery-feedback-banner',
-		feedbackEndDate = new Date( '2020-05-10' );
+		feedbackEndDate = new Date( '2020-05-11' );
 
 	if ( !Cookies.get( DISMISS_BANNER_COOKIE ) &&
 		( new Date() ).getTime() < feedbackEndDate.getTime() &&
