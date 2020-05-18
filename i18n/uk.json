@@ -22,6 +22,7 @@
 	"wdqs-app-button-clear-title": "Очистити запит",
 	"wdqs-app-button-restore-title": "Відновити попередній запит",
 	"wdqs-app-button-format-title": "Форматування запиту",
+	"wdqs-app-button-query-helper": "Показати пояснення запита",
 	"wdqs-app-button-fullscreen-title": "Запустити повноекранний режим редактора",
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-display-title": "Показати результат як таблицю, зображення, ...",

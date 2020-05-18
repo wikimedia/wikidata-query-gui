@@ -26,6 +26,7 @@
 	"wdqs-app-button-clear-title": "Очистить запрос",
 	"wdqs-app-button-restore-title": "Восстановить предыдущий запрос",
 	"wdqs-app-button-format-title": "Форматировать запрос",
+	"wdqs-app-button-query-helper": "Показать объяснение запроса",
 	"wdqs-app-button-fullscreen-title": "Переключить полноэкранный режим редактора",
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-display-title": "Отобразить результат как таблицу, изображение, …",

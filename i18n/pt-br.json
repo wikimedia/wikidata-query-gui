@@ -23,6 +23,7 @@
 	"wdqs-app-button-clear-title": "Limpar consulta",
 	"wdqs-app-button-restore-title": "Restaurar consulta anterior",
 	"wdqs-app-button-format-title": "Consulta de formato",
+	"wdqs-app-button-query-helper": "Mostrar explicação da consulta",
 	"wdqs-app-button-fullscreen-title": "Alternar modo de editor em tela cheia",
 	"wdqs-app-button-display": "Exibir",
 	"wdqs-app-button-display-title": "Exibir resultado como tabela, imagem, ...",

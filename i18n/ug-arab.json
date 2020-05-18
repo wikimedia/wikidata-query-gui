@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AlimOmar",
 			"Uzdil"
 		]
 	},
@@ -12,6 +13,7 @@
 	"wdqs-app-button-clear": "تازىلاش",
 	"wdqs-app-button-clear-title": "تەكشۈرۈشنى تازىلاش",
 	"wdqs-app-button-restore-title": "ئالدىنقى قېتىملىق تەكشۈرۈشنى ئەسلىگە قايتۇرۇش",
+	"wdqs-app-button-query-helper": "سوئال چۈشەندۈرۈشىنى كۆرسىتىڭ",
 	"wdqs-app-button-fullscreen-title": "تەھرىرلىگۈچنىڭ پۈتۈن ئېكرانلىق ھالىتىنى ئېچىش ياكى تاقاش",
 	"wdqs-app-button-display": "كۆرسىتىش",
 	"wdqs-app-button-download": "چۈشۈرۈش",

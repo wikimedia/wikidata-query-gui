@@ -10,6 +10,7 @@
 			"Ebraminio",
 			"FarsiNevis",
 			"Goodarz Irani",
+			"Huji",
 			"Physicsch",
 			"Reza1615"
 		]
@@ -24,6 +25,7 @@
 	"wdqs-app-button-clear-title": "درخواست حذف",
 	"wdqs-app-button-restore-title": "بازگرداندن کوئری پیشین",
 	"wdqs-app-button-format-title": "قالب‌بندی کوئری",
+	"wdqs-app-button-query-helper": "نمایش شرح کوئری",
 	"wdqs-app-button-fullscreen-title": "تغییر وضعیت تمام صفحهٔ حالت ویرایش",
 	"wdqs-app-button-display": "نمایش",
 	"wdqs-app-button-display-title": "نمایش نتایج به صورت جدول، تصویر و یا ....",
@@ -90,6 +92,8 @@
 	"wdqs-app-resultbrowser-dimensions": "ابعاد",
 	"wdqs-app-resultbrowser-graph": "نمودار",
 	"wdqs-app-toast-leave-fullscreen": "دکمهٔ [esc] را برای خارج‌شدن از حالت تمام‌صفحه بفشارید",
+	"wdqs-app-urlshortener-bad-service": "خدمات بد کوتاه‌کننده نشانی اینترنتی در تنظیمات",
+	"wdqs-app-urlshortener-failed": "کوتاه‌کننده نشانی با خطا مواجه شد",
 	"wdqs-app-urlshortener-loading": "در حال بارگیری...",
 	"wdqs-dialog-examples-preview-query": "پیش‌نمایش کوئری",
 	"wdqs-dialog-examples-preview-result": "پیش‌نمایش نتیجه",
@@ -109,7 +113,7 @@
 	"wdqs-ve-filter": "پالایه",
 	"wdqs-ve-show": "نمایش",
 	"wdqs-ve-limit": "تعداد",
-	"wdqs-ve-add-label-title": "افزودن متغییر حاوی برچسب جوهره",
+	"wdqs-ve-add-label-title": "افزودن متغیر حاوی برچسب جوهره",
 	"wdqs-ve-remove-row-title": "حذف این سطر",
 	"wdqs-ve-with": "با",
 	"wdqs-ve-anything": "همه‌چیز",
