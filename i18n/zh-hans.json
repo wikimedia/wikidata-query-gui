@@ -13,7 +13,8 @@
 			"Yfdyh000",
 			"予弦",
 			"夢蝶葬花",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"阿pp"
 		]
 	},
 	"wdqs-app-button-examples": "示例",
@@ -26,6 +27,7 @@
 	"wdqs-app-button-clear-title": "清空查询",
 	"wdqs-app-button-restore-title": "恢复上次查询",
 	"wdqs-app-button-format-title": "样式查询",
+	"wdqs-app-button-query-helper": "显示查询说明",
 	"wdqs-app-button-fullscreen-title": "开启或关闭编辑器全屏模式",
 	"wdqs-app-button-display": "显示",
 	"wdqs-app-button-display-title": "显示结果为表格、图片...",

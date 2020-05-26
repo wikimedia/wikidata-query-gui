@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diki Ananta",
 			"NoiX180"
 		]
 	},
@@ -23,7 +24,7 @@
 	"wdqs-app-help-feedback": "Wènèhi Pamrayoga!",
 	"wdqs-app-help-request-query": "Nyuwun jejalukan",
 	"wdqs-app-help-portal": "Gapura Pitulungan",
-	"wdqs-app-help-manual": "Panuntun Panganggo",
+	"wdqs-app-help-manual": "Panuntun Naraguna",
 	"wdqs-app-help-examples": "Jejalukan Conto",
 	"wdqs-app-help-datamodel": "Modhèl Data RDF",
 	"wdqs-app-help-prefixes": "Pratélan ater-ater",
