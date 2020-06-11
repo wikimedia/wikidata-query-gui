@@ -21,6 +21,7 @@
 	"wdqs-app-button-clear-title": "Vymazat dotaz",
 	"wdqs-app-button-restore-title": "Obnovit předchozí dotaz",
 	"wdqs-app-button-format-title": "Formátovat dotaz",
+	"wdqs-app-button-query-helper": "Zobrazit vysvětlení dotazu",
 	"wdqs-app-button-fullscreen-title": "Přepnout celoobrazovkový režim editoru",
 	"wdqs-app-button-display": "Zobrazení",
 	"wdqs-app-button-display-title": "Zobrazit výsledek jako tabulku, obrázek, …",
