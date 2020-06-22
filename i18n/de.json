@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Druesenfieber",
 			"Metalhead64",
 			"TMg"
 		]
@@ -15,6 +16,7 @@
 	"wdqs-app-button-clear-title": "Abfrage löschen",
 	"wdqs-app-button-restore-title": "Vorherige Abfrage wiederherstellen",
 	"wdqs-app-button-format-title": "Abfrage formatieren",
+	"wdqs-app-button-query-helper": "Erklärung der Abfrage anzeigen",
 	"wdqs-app-button-fullscreen-title": "Vollbildmodus des Editors wechseln",
 	"wdqs-app-button-display": "Anzeigen",
 	"wdqs-app-button-display-title": "Ergebnis als Tabelle, Bild, … anzeigen",
@@ -115,7 +117,7 @@
 	"wdqs-action-render": "Verarbeite Ergebnis",
 	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
 	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht",
-	"wdqs-action-malformed-query": "Die Abfrage ist beschädigt",
+	"wdqs-action-malformed-query": "Die Abfrage ist fehlerhaft",
 	"wdqs-action-empty-query": "Gib eine gültige SPARQL-Abfrage ein oder wähle eine Beispielabfrage aus",
 	"wdqs-action-server-error": "Serverfehler",
 	"wdqs-action-unknow-error": "Unbekannter Fehler",
