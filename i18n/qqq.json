@@ -5,6 +5,7 @@
 		"authors": [
 			"Abián",
 			"Amire80",
+			"BaRaN6161 TURK",
 			"David Sn",
 			"Jonas Kress",
 			"Liuxinyu970226",
@@ -114,7 +115,7 @@
 	"wdqs-ve-add-label-title": "Title to add variable containing entity label",
 	"wdqs-ve-remove-row-title": "Title to remove row",
 	"wdqs-ve-with": "Label item with property\n{{Identical|With}}",
-	"wdqs-ve-anything": "Label to find anything\n{{Identical|Anything}}",
+	"wdqs-ve-anything": "Label to find anything.",
 	"wdqs-ve-any": "Label to any property\n{{Identical|Any}}",
 	"wdqs-ve-or": "Label for logical or\n{{Identical|Or}}",
 	"wdqs-ve-subtype": "Label for subtype in ontology\n{{Identical|Subtype}}",
