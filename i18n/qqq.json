@@ -43,6 +43,7 @@
 	"wdqs-app-help-prefixes": "Button message in help dropdown",
 	"wdqs-app-help-copy": "Link to page with licensing information",
 	"wdqs-app-help-queryhelper": "Heading of the Query Helper widget",
+	"wdqs-app-logout": "Link to log out",
 	"wdqs-app-tools-edit-items": "Button message in tools dropdown linking https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:Tools/Edit_items",
 	"wdqs-app-tools-query-data": "Button message in tools dropdown linking https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:Tools/Query_data",
 	"wdqs-app-tools-enhance-ui": "Button message in tools dropdown linking https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:Tools/Enhance_user_interface",

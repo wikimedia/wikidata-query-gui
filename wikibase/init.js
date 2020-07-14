@@ -21,6 +21,14 @@
 			$( '#favicon' ).attr( 'href', config.brand.favicon );
 		}
 
+		function setLogoutLink() {
+			if ( config.logout ) {
+				var $link = $( '<a id="logout" data-i18n="wdqs-app-logout">' ).attr( 'href', config.logout.url );
+				var $entry = $( '<li>' ).append( $link );
+				$( 'ul#right-navbar' ).append( $entry );
+			}
+		}
+
 		function setLanguage( lang, save, callback ) {
 			if ( save ) {
 				Cookies.set( 'lang', lang );
@@ -44,6 +52,7 @@
 		}
 
 		setBrand();
+		setLogoutLink();
 		wb.ui.resultBrowser.helper.FormatterHelper.initMoment();
 
 		$( '#query-form' ).attr( 'action', config.api.sparql.uri );
