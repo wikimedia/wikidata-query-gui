@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bouman4",
+			"Dutchy45",
 			"Elroy",
 			"Ladsgroup",
 			"Mainframe98",
@@ -24,6 +25,7 @@
 	"wdqs-app-button-clear-title": "Zoekopdracht wissen",
 	"wdqs-app-button-restore-title": "Vorige zoekopdracht terugzetten",
 	"wdqs-app-button-format-title": "Formaat query",
+	"wdqs-app-button-query-helper": "Uitleg over de vraagstelling",
 	"wdqs-app-button-fullscreen-title": "Schakel de volledig scherm-modus van de editor in",
 	"wdqs-app-button-display": "Weergaven",
 	"wdqs-app-button-display-title": "Toon resultaat als tabel, afbeelding, ...",
