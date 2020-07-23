@@ -242,9 +242,9 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	SELF.prototype._preloadItem = function( itemData ) {
 		var self = this,
 			itemLoaded = $.Deferred(),
-			url = this._getThumbnail( itemData.url, 1000 ),
+			url = this._getThumbnail( itemData.url, 1024 ),
 			fileName = this._getFormatter().getCommonsResourceFileName( url ),
-			item = this._getItem( this._getThumbnail( url ), this._getThumbnail( url, 1000 ), fileName, itemData ),
+			item = this._getItem( this._getThumbnail( url ), this._getThumbnail( url, 1024 ), fileName, itemData ),
 			fixedHeight = this._lineHeight * item.find( '.summary' )[ 0 ].childElementCount,
 			img = item.find( '.item-img' );
 
