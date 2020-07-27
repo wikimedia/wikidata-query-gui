@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Anamdas",
 			"Aniruddhajnu",
 			"Bhatakati aatma",
@@ -41,6 +42,7 @@
 	"wdqs-app-help-prefixes": "उपसर्गों की सूची",
 	"wdqs-app-help-copy": "लाइसेंसिंग जानकारी",
 	"wdqs-app-help-queryhelper": "प्रश्न सहायक",
+	"wdqs-app-logout": "लॉगआउट  करें",
 	"wdqs-app-tools-edit-items": "सामग्री",
 	"wdqs-app-tools-query-data": "प्रश्न डेटा",
 	"wdqs-app-tools-enhance-ui": "प्रयोक्ता अंतरापृष्ठ संवर्धित करें",

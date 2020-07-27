@@ -3,7 +3,8 @@
 		"authors": [
 			"Cûndûllah el-Kurdî",
 			"George Animal",
-			"Ghybu"
+			"Ghybu",
+			"Guherto"
 		]
 	},
 	"wdqs-app-button-examples": "Mînak",
@@ -24,6 +25,7 @@
 	"wdqs-app-help-portal": "Portala alîkariyê",
 	"wdqs-app-help-prefixes": "Lîsteya pêşgiran",
 	"wdqs-app-help-queryhelper": "Alîkarê jêpirsinê",
+	"wdqs-app-logout": "Derkeve",
 	"wdqs-app-resultbrowser-table": "Tablo",
 	"wdqs-app-urlshortener-loading": "Tê barkirin...",
 	"wdqs-dialog-key-shortcut-show-example": "Mînakan nîşan bide.",

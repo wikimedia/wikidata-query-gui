@@ -3,6 +3,7 @@
 		"authors": [
 			"Athena in Wonderland",
 			"CaiusSPQR",
+			"GoEThe",
 			"Hamilton Abreu",
 			"MokaAkashiyaPT",
 			"Tark",
@@ -38,6 +39,7 @@
 	"wdqs-app-help-prefixes": "Lista de prefixos",
 	"wdqs-app-help-copy": "Informação de licença",
 	"wdqs-app-help-queryhelper": "Assistente de consulta",
+	"wdqs-app-logout": "Sair",
 	"wdqs-app-tools-edit-items": "Editar elementos",
 	"wdqs-app-tools-query-data": "Consultar dados",
 	"wdqs-app-tools-enhance-ui": "Melhorar a interface do utilizador",

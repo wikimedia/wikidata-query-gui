@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bugoslav",
 			"Ex13",
 			"Ivi104",
 			"MaGa"
@@ -22,6 +23,7 @@
 	"wdqs-app-help-examples": "Primjeri upita",
 	"wdqs-app-help-datamodel": "RDF model podataka",
 	"wdqs-app-help-prefixes": "Popis prefiksa",
+	"wdqs-app-logout": "Odjavi se",
 	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za uporabu auto-dopuna.",
 	"wdqs-app-result-shorturl": "Kratki link na rezultate",
 	"wdqs-app-result-shorturl-title": "Kratki link na ovaj rezultat",

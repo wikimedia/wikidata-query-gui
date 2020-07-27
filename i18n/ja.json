@@ -10,6 +10,7 @@
 			"Omotecho",
 			"Otokoume",
 			"Suyama",
+			"Tmv",
 			"Wicklo",
 			"Yusuke1109",
 			"組曲師"
@@ -43,6 +44,7 @@
 	"wdqs-app-help-prefixes": "接頭辞のリスト",
 	"wdqs-app-help-copy": "ライセンス情報",
 	"wdqs-app-help-queryhelper": "クエリ・ヘルパー",
+	"wdqs-app-logout": "ログアウト",
 	"wdqs-app-tools-edit-items": "項目の編集",
 	"wdqs-app-tools-query-data": "データ抽出",
 	"wdqs-app-tools-enhance-ui": "UIの拡張",
