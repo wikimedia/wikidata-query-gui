@@ -4,7 +4,8 @@
 			"BrennodAloisi",
 			"Cedric31",
 			"McDutchie",
-			"Nicolas Eynaud"
+			"Nicolas Eynaud",
+			"Quentí"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -31,6 +32,7 @@
 	"wdqs-app-help-datamodel": "Modèl de donadas RDF",
 	"wdqs-app-help-prefixes": "Lista de prefixes",
 	"wdqs-app-help-copy": "Informacions de licéncia",
+	"wdqs-app-logout": "Desconnexion",
 	"wdqs-app-footer-help": "Quichar <i>[CTRL-SPACE]</i> per activar la sasida automatica.",
 	"wdqs-app-result-shorturl": "URL corta cap al resultat",
 	"wdqs-app-result-shorturl-title": "URL corta cap a aqueste resultat",
