@@ -8,6 +8,7 @@
 			"Glavkos",
 			"KATRINE1992",
 			"Nikosgranturismogt",
+			"Norhorn",
 			"Stam.nikos"
 		]
 	},
@@ -39,6 +40,7 @@
 	"wdqs-app-help-prefixes": "Κατάλογος προθεμάτων",
 	"wdqs-app-help-copy": "Πληροφορίες αδειοδότησης",
 	"wdqs-app-help-queryhelper": "Βοηθός Ερώτησης",
+	"wdqs-app-logout": "Έξοδος",
 	"wdqs-app-tools-edit-items": "Επεξεργαστείτε τα αντικείμενα",
 	"wdqs-app-tools-query-data": "\nΣτοιχεία ερωτήματος",
 	"wdqs-app-tools-enhance-ui": "\nΒελτίωση της διεπαφής χρήστη",

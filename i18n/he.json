@@ -6,6 +6,7 @@
 			"Strayblues",
 			"YaronSh",
 			"המקיסט",
+			"עמד",
 			"ערן"
 		]
 	},
@@ -38,6 +39,7 @@
 	"wdqs-app-help-prefixes": "רשימת תחיליות",
 	"wdqs-app-help-copy": "מידע על רישיון",
 	"wdqs-app-help-queryhelper": "סייען שאילתות",
+	"wdqs-app-logout": "יציאה מהחשבון",
 	"wdqs-app-tools-edit-items": "עריכת פריטים",
 	"wdqs-app-tools-query-data": "נתוני שאילתה",
 	"wdqs-app-tools-enhance-ui": "שיפור מנשק המשתמש",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Druesenfieber",
 			"Metalhead64",
-			"TMg"
+			"TMg",
+			"Umherirrender"
 		]
 	},
 	"wdqs-app-button-examples": "Beispiele",
@@ -35,6 +36,7 @@
 	"wdqs-app-help-prefixes": "Liste der Präfixe",
 	"wdqs-app-help-copy": "Lizenzinformationen",
 	"wdqs-app-help-queryhelper": "Abfragehelfer",
+	"wdqs-app-logout": "Abmelden",
 	"wdqs-app-tools-edit-items": "Objekte bearbeiten",
 	"wdqs-app-tools-query-data": "Daten abfragen",
 	"wdqs-app-tools-enhance-ui": "Benutzeroberfläche erweitern",
