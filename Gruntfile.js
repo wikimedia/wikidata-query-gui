@@ -15,8 +15,18 @@ module.exports = function( grunt ) {
 					'**/*.js', '!dist/**', '!' + buildFolder + '/**', '!target/**'
 			]
 		},
-		jscs: {
-			src: '<%= jshint.all %>'
+		eslint: {
+			src: [
+				'**/*.js',
+				'!dist/**',
+				'!' + buildFolder + '/**',
+				'!target/**',
+				'!node_modules/**',
+				'!vendor/**',
+				'!wikibase/tests/**',
+				'!polestar/**',
+				'!wikibase/codemirror/addon/**'
+			]
 		},
 		jsonlint: {
 			all: [
@@ -321,7 +331,7 @@ module.exports = function( grunt ) {
 
 	} );
 	grunt.registerTask( 'test', [
-		'jshint', 'jscs', 'jsonlint', 'banana', 'stylelint', 'qunit'
+		'eslint', 'jshint', 'jsonlint', 'banana', 'stylelint', 'qunit'
 	] );
 	grunt.registerTask( 'browser_test', [
 		'wdio'
