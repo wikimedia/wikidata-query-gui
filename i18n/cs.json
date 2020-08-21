@@ -3,6 +3,7 @@
 		"authors": [
 			"Clon",
 			"Ilimanaq29",
+			"Luklos",
 			"Marek Pavlica",
 			"Matěj Suchánek",
 			"Mormegil",
@@ -40,6 +41,7 @@
 	"wdqs-app-help-prefixes": "Seznam prefixů",
 	"wdqs-app-help-copy": "Informace o licenci",
 	"wdqs-app-help-queryhelper": "Dotazový pomocník",
+	"wdqs-app-logout": "Odhlásit se",
 	"wdqs-app-tools-edit-items": "Editace položek",
 	"wdqs-app-tools-query-data": "Dotazování dat",
 	"wdqs-app-tools-enhance-ui": "Vylepšení uživatelského rozhraní",
