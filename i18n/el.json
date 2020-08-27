@@ -22,6 +22,7 @@
 	"wdqs-app-button-clear-title": "Εκκαθάριση ερωτήματος",
 	"wdqs-app-button-restore-title": "Αποκατάσταση προηγούμενης καταχώρησης",
 	"wdqs-app-button-format-title": "Μορφοποίηση ερωτήματος",
+	"wdqs-app-button-query-helper": "Εμφάνιση επεξήγησης ερωτήματος",
 	"wdqs-app-button-fullscreen-title": "Εναλλαγή στη λειτουργία πλήρους οθόνης του προγράμματος επεξεργασίας",
 	"wdqs-app-button-display": "Εμφάνιση",
 	"wdqs-app-button-display-title": "Εμφάνιση αποτελέσματος ως πίνακα, εικόνα, ...",
@@ -132,7 +133,7 @@
 	"wdqs-result-map-progress": "Φόρτωση δεδομένων χάρτη: $1%",
 	"wdqs-embed-button-edit-query": "Οπτική επεξεργασία",
 	"wdqs-embed-button-edit-query-title": "Επεξεργασία καταχώρησης με τον βοηθό ερωτήματος",
-	"wdqs-embed-button-edit-code": "Επεξεργασία κώδικα",
+	"wdqs-embed-button-edit-code": "Επεξεργασία SPARQL",
 	"wdqs-embed-button-edit-code-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Εμφάνιση ερχόμενων συνδέσμων",
 	"wdqs-embed-explorer-button-outgoing": "Εμφάνιση εξωτερικών συνδέσμων"
