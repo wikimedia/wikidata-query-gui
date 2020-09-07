@@ -3,6 +3,7 @@
 		"authors": [
 			"ArlandGa",
 			"Beeyan",
+			"Daud I.F. Argana",
 			"Pebaryan",
 			"Rachmat04",
 			"Sonic Speedy"
@@ -18,6 +19,7 @@
 	"wdqs-app-button-clear-title": "Hapus kueri",
 	"wdqs-app-button-restore-title": "Pulihkan kueri sebelumnya",
 	"wdqs-app-button-format-title": "Format kueri",
+	"wdqs-app-button-query-helper": "Tampilkan penjelasan kueri",
 	"wdqs-app-button-fullscreen-title": "Pindah moda layar penuh editor",
 	"wdqs-app-button-display": "Tampilan",
 	"wdqs-app-button-display-title": "Tampilkan hasil dalam bentuk tabel, gambar, ...",
