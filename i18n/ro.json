@@ -3,6 +3,7 @@
 		"authors": [
 			"ANDROBETA",
 			"MSClaudiu",
+			"NGC 54",
 			"Strainu"
 		]
 	},
@@ -34,6 +35,7 @@
 	"wdqs-app-help-prefixes": "Lista prefixelor",
 	"wdqs-app-help-copy": "Informații despre licențiere",
 	"wdqs-app-help-queryhelper": "Solicitator de interogări",
+	"wdqs-app-logout": "Închide sesiunea",
 	"wdqs-app-tools-edit-items": "Editați elementele",
 	"wdqs-app-tools-query-data": "Datele de interogare",
 	"wdqs-app-tools-enhance-ui": "Îmbunătățiți interfața cu utilizatorul",
@@ -82,6 +84,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensiuni",
 	"wdqs-app-resultbrowser-graph": "Grafic",
 	"wdqs-app-toast-leave-fullscreen": "Apăsați [esc] pentru a ieși din ecranul complet",
+	"wdqs-app-urlshortener-loading": "Se încarcă...",
 	"wdqs-dialog-examples-preview-query": "Examinați interogarea",
 	"wdqs-dialog-examples-preview-result": "Previzualizare rezultate",
 	"wdqs-dialog-key-shortcut-title": "Comenzi rapide de la tastatură",
@@ -120,9 +123,9 @@
 	"wdqs-action-preview": "Previzualizarea rezultatelor",
 	"wdqs-result-map-layers-all": "Toate straturile",
 	"wdqs-result-map-progress": "Încărcarea datelor hărților: $1%",
-	"wdqs-embed-button-edit-query": "Modificare",
+	"wdqs-embed-button-edit-query": "Modificare vizuală",
 	"wdqs-embed-button-edit-query-title": "Editați această interogare cu ajutorul ajutorului de interogare",
-	"wdqs-embed-button-edit-code": "Editați codul",
+	"wdqs-embed-button-edit-code": "Modificare SPARQL",
 	"wdqs-embed-button-edit-code-title": "Editați această interogare cu editorul SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Afișați linkurile primite",
 	"wdqs-embed-explorer-button-outgoing": "Afișați linkurile de ieșire"
