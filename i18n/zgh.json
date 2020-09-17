@@ -14,7 +14,7 @@
 	"wdqs-app-button-clear": "ⵙⴼⴹ",
 	"wdqs-app-button-display": "ⵙⴽⵏ",
 	"wdqs-app-button-download": "ⴰⴳⵎ",
-	"wdqs-app-button-link": "ⴰⵙⵖⵓⵏ",
+	"wdqs-app-button-link": "ⴰⵙⵖⵏ",
 	"wdqs-app-button-code": "ⵜⴰⵏⴳⴰⵍⵜ",
 	"wdqs-app-button-code-title": "ⵙⴽⵏ ⵉⵎⴷⵢⴰⵜⵏ ⵏ ⵜⵏⴳⴰⵍⵜ",
 	"wdqs-app-help-feedback": "ⴼⴽ ⵜⴰⵏⵏⴰⵢⵜ ⵏⵏⴽ!",
@@ -28,7 +28,7 @@
 	"wdqs-app-result-svg": "ⵜⴰⵡⵍⴰⴼⵜ SVG",
 	"wdqs-app-result-html": "ⵜⴰⴼⵍⵡⵉⵜ HTML",
 	"wdqs-app-resultbrowser-table": "ⵜⴰⴼⵍⵡⵉⵜ",
-	"wdqs-app-resultbrowser-map": "ⵜⴰⴽⴰⵔⴹⴰ",
+	"wdqs-app-resultbrowser-map": "ⵜⴰⴽⴰⵕⴹⴰ",
 	"wdqs-app-resultbrowser-line-chart": "ⴰⵡⴰⵔⵔⴰ ⵏ ⵉⵣⵔⵉⵔⵉⴳⵏ",
 	"wdqs-app-resultbrowser-bar-chart": "ⴰⵡⴰⵔⵔⴰ ⵏ ⵜⴰⵙⵙⴼⵉⴼⵉⵏ",
 	"wdqs-app-resultbrowser-scatter-chart": "ⴰⵡⴰⵔⵔⴰ ⵏ ⵓⵍⵍⵓⵣⵣⵓ",
@@ -48,5 +48,5 @@
 	"wdqs-ve-sb-suggestions": "ⵉⵙⵓⵎⴰⵔ",
 	"wdqs-ve-sb-other": "ⵢⴰⴹⵏ",
 	"wdqs-embed-button-edit-query": "ⵙⵏⴼⵍ",
-	"wdqs-embed-button-edit-code": "ⵙⵏⴼⵍ ⵜⴰⵏⴳⴰⵍⵜ"
+	"wdqs-embed-button-edit-code": "ⵙⵏⴼⵍ SPARQL"
 }
