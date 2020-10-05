@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"01miki10",
+			"Nike",
 			"Pyscowicz",
 			"SMAUG",
 			"Silvonen",
@@ -19,6 +20,7 @@
 	"wdqs-app-button-clear-title": "Tyhjennä kysely",
 	"wdqs-app-button-restore-title": "Palauta edellinen kysely",
 	"wdqs-app-button-format-title": "Muodosta kysely",
+	"wdqs-app-button-query-helper": "Näytä kyselyavustaja",
 	"wdqs-app-button-fullscreen-title": "Muokkaimen kokoruututila käyttöön tai pois käytöstä",
 	"wdqs-app-button-display": "Näytä",
 	"wdqs-app-button-display-title": "Näytä tulos taulukona, kuvana, ...",
@@ -39,7 +41,9 @@
 	"wdqs-app-help-queryhelper": "Kyselyapuri",
 	"wdqs-app-logout": "Kirjaudu ulos",
 	"wdqs-app-tools-edit-items": "Muokkaa kohteita",
+	"wdqs-app-tools-enhance-ui": "Paranna käyttöliittymää",
 	"wdqs-app-tools-visualize-data": "Havainnollista tietoja",
+	"wdqs-app-tools-list-properties": "Luettelo ominaisuuksista",
 	"wdqs-app-tools-for-programmers": "Ohjelmoijille",
 	"wdqs-app-footer-help": "Paina <i>[CTRL-SPACE]</i> aktivoidaksesi automaattisen päätöksen.",
 	"wdqs-app-footer-updated-ago": "Tiedot päivitetty $1",
