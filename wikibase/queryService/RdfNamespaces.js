@@ -33,12 +33,14 @@ wikibase.queryService.RdfNamespaces = {};
 			owl: 'http://www.w3.org/2002/07/owl#',
 			skos: 'http://www.w3.org/2004/02/skos/core#',
 			xsd: 'http://www.w3.org/2001/XMLSchema#',
-			prov: 'http://www.w3.org/ns/prov#'
+			prov: 'http://www.w3.org/ns/prov#',
+			ontolex: 'http://www.w3.org/ns/lemon/ontolex#'
 		},
 		'Social/Other': {
 			schema: 'http://schema.org/',
 			geo: 'http://www.opengis.net/ont/geosparql#',
-			geof: 'http://www.opengis.net/def/geosparql/function/'
+			geof: 'http://www.opengis.net/def/geosparql/function/',
+			dct: 'http://purl.org/dc/terms/'
 		},
 		Blazegraph: {
 			bd: 'http://www.bigdata.com/rdf#',
