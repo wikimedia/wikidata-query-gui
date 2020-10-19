@@ -7,6 +7,7 @@
 			"Beta16",
 			"Greis",
 			"Lollo",
+			"Luca.favorido",
 			"Matteocng",
 			"Ontsed",
 			"Selven"
@@ -22,6 +23,7 @@
 	"wdqs-app-button-clear-title": "Pulisci query",
 	"wdqs-app-button-restore-title": "Ripristina query precedente",
 	"wdqs-app-button-format-title": "Formatta la query",
+	"wdqs-app-button-query-helper": "Mostra spiegazione della query",
 	"wdqs-app-button-fullscreen-title": "Cambia la modalità di visualizzazione a schermo intero dell'editor",
 	"wdqs-app-button-display": "Aspetto",
 	"wdqs-app-button-display-title": "Mostra risultato come tabella, immagine, ...",
