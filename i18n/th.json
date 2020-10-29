@@ -124,11 +124,16 @@
 	"wdqs-action-error-display": "ไม่สามารถแสดงผลลัพธ์ได้",
 	"wdqs-action-timeout": "ถึงจำกัดหมดเวลารอของเควียรีแล้ว",
 	"wdqs-action-malformed-query": "การสืบค้นผิดรูปแบบ",
+	"wdqs-action-empty-query": "ป้อนคิวรี SPARQL ที่ถูกต้องหรือเลือกคิวรีตัวอย่าง",
 	"wdqs-action-server-error": "เซิร์ฟเวอร์มีข้อผิดพลาด",
 	"wdqs-action-unknow-error": "เกิดข้อผิดพลาดไม่ทราบสาเหตุ",
 	"wdqs-action-preview": "ดูผลลัพธ์ก่อน",
 	"wdqs-result-map-layers-all": "ชั้นทั้งหมด",
 	"wdqs-result-map-progress": "กำลังโหลดข้อมูลแผนที่: $1%",
-	"wdqs-embed-button-edit-query": "แก้ไข",
-	"wdqs-embed-button-edit-query-title": "แก้ไขการสืบค้นนี้ด้วยตัวแก้ไข SPARQL"
+	"wdqs-embed-button-edit-query": "แก้ไขแบบเห็นภาพ",
+	"wdqs-embed-button-edit-query-title": "แก้ไขคิวรีนี้ด้วยตัวช่วยคิวรี",
+	"wdqs-embed-button-edit-code": "แก้ไข SPARQL",
+	"wdqs-embed-button-edit-code-title": "แก้ไขคิวรีนี้ด้วยตัวแก้ไข SPARQL",
+	"wdqs-embed-explorer-button-incoming": "แสดงลิงก์ขาเข้า",
+	"wdqs-embed-explorer-button-outgoing": "แสดงลิงก์ขาออก"
 }
