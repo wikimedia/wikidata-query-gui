@@ -56,6 +56,8 @@
 	"wdqs-ve-or": "ⵏⵉⵖ",
 	"wdqs-ve-sb-suggestions": "ⵉⵙⵓⵎⴰⵔ",
 	"wdqs-ve-sb-other": "ⵢⴰⴹⵏ",
+	"wdqs-action-server-error": "ⴰⵣⴳⴰⵍ ⵏ ⵓⵎⴰⴽⴽⴰⵢ",
+	"wdqs-action-unknow-error": "ⴰⵣⴳⴰⵍ ⴰⵔⵓⵙⵙⵉⵏ",
 	"wdqs-embed-button-edit-query": "ⵙⵏⴼⵍ ⵙ ⵜⵎⵓⵖⵍⵉ",
 	"wdqs-embed-button-edit-code": "ⵙⵏⴼⵍ SPARQL"
 }

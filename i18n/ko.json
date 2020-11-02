@@ -49,6 +49,7 @@
 	"wdqs-app-tools-enhance-ui": "사용자 인터페이스 강화",
 	"wdqs-app-tools-visualize-data": "데이터 시각화",
 	"wdqs-app-tools-list-properties": "속성 목록",
+	"wdqs-app-tools-lexicographical-data": "사전 데이터",
 	"wdqs-app-tools-for-programmers": "프로그래머용",
 	"wdqs-app-footer-help": "자동 완성을 활성화하려면 <i>[CTRL-SPACE]</i>를 누르십시오.",
 	"wdqs-app-footer-updated-ago": "$1 전에 데이터 업데이트됨",
