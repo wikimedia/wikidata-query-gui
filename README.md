@@ -2,7 +2,7 @@
 
 This repository contains the GUI for the [Wikidata Query Service](https://query.wikidata.org/).
 
-Please see more details about the service in the [User Manual](https://www.mediawiki.org/wiki/Wikidata_Query_Service/User_Manual).
+Please see more details about the service in the [User Manual](https://www.mediawiki.org/wiki/Special:MyLanguage/Wikidata_Query_Service/User_Manual).
 
 ## Download & setup
 
@@ -91,7 +91,7 @@ See `examples/sparql.html`.
 
 
 ### Result Views
-Views that allow rendering SPARQL results ([see documentation](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views)).
+Views that allow rendering SPARQL results ([see documentation](https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/Wikidata_Query_Help/Result_Views)).
 
 ```
 var api = new wikibase.queryService.api.Sparql();

@@ -339,7 +339,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 
 		this._editor.registerCallback( 'change', function( editor, changeObj ) {
 			if ( changeObj.text[0] === ':' ) {
-				var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Code_Completion">' )
+				var $help = $( '<a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/Wikidata_Query_Help/SPARQL_Editor#Code_Completion">' )
 					.append( $.i18n( 'wdqs-app-footer-help' ) );
 				self._toast( $help, 'wdqs-app-footer-help' );
 			}
