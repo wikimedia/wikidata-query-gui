@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Athena in Wonderland",
 			"Banjo",
 			"Elisardojm",
@@ -19,6 +20,7 @@
 	"wdqs-app-button-clear-title": "Limpar a consulta",
 	"wdqs-app-button-restore-title": "Restaurar a consulta anterior",
 	"wdqs-app-button-format-title": "Formatar a consulta",
+	"wdqs-app-button-query-helper": "Mostrar explicación da consulta",
 	"wdqs-app-button-fullscreen-title": "Cambiar o modo de pantalla completa do editor",
 	"wdqs-app-button-display": "Amosar",
 	"wdqs-app-button-display-title": "Amosar resultado en forma de táboa, imaxe, ...",
@@ -37,6 +39,7 @@
 	"wdqs-app-help-prefixes": "Lista de prefixos",
 	"wdqs-app-help-copy": "Información de licenza",
 	"wdqs-app-help-queryhelper": "Asistente de consulta",
+	"wdqs-app-logout": "Saír",
 	"wdqs-app-tools-edit-items": "Editar elementos",
 	"wdqs-app-tools-query-data": "Consultar datos",
 	"wdqs-app-tools-enhance-ui": "Mellorar a interface de usuario",
@@ -85,6 +88,8 @@
 	"wdqs-app-resultbrowser-dimensions": "Dimensións",
 	"wdqs-app-resultbrowser-graph": "Gráfico",
 	"wdqs-app-toast-leave-fullscreen": "Prema [Esc] para saír do modo de pantalla completa",
+	"wdqs-app-urlshortener-bad-service": "Mala configuración do servizo acurtador de URLs",
+	"wdqs-app-urlshortener-failed": "O acurtamento da URL fallou",
 	"wdqs-app-urlshortener-loading": "Cargando...",
 	"wdqs-dialog-examples-preview-query": "Vista previa da consulta",
 	"wdqs-dialog-examples-preview-result": "Vista previa do resultado",

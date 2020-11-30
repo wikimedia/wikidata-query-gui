@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"2axterix2",
+			"ArenaL5",
 			"Asierog",
 			"Bc0ed5a28dfc189b971a689bae2d31b45cb5f3fd",
 			"Carlosmg.dg",
@@ -33,6 +34,7 @@
 	"wdqs-app-button-clear-title": "Borrar consulta",
 	"wdqs-app-button-restore-title": "Restaurar la consulta anterior",
 	"wdqs-app-button-format-title": "Formatear consulta",
+	"wdqs-app-button-query-helper": "Mostrar explicación de la consulta",
 	"wdqs-app-button-fullscreen-title": "Alternar el modo de pantalla completa del editor",
 	"wdqs-app-button-display": "Mostrar",
 	"wdqs-app-button-display-title": "Mostrar el resultado en forma de tabla, imagen, ...",
