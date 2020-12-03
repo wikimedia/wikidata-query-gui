@@ -27,8 +27,18 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
 	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
+	 * @param {string} queryBuilderUrl
 	 */
-	function SELF( $element, editor, queryHelper, sparqlApi, querySamplesApi, codeSamplesApi, shortUrlApi ) {
+	function SELF(
+		$element,
+		editor,
+		queryHelper,
+		sparqlApi,
+		querySamplesApi,
+		codeSamplesApi,
+		shortUrlApi,
+		queryBuilderUrl
+	) {
 		this._$element = $element;
 		this._editor = editor;
 		this._queryHelper = queryHelper;
@@ -36,6 +46,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		this._querySamplesApi = querySamplesApi;
 		this._codeSamplesApi = codeSamplesApi;
 		this._shorten = shortUrlApi;
+		this._queryBuilderUrl = queryBuilderUrl;
 
 		this._init();
 	}
@@ -101,6 +112,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	SELF.prototype._shorten = null;
 
 	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._queryBuilderUrl = null;
+
+	/**
 	 * @property {boolean}
 	 * @private
 	 */
@@ -134,7 +151,8 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 				this._querySamplesApi,
 				this._codeSamplesApi,
 				this._shorten,
-				this._editor
+				this._editor,
+				this._queryBuilderUrl
 			);
 		}
 

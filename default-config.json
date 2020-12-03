@@ -12,7 +12,10 @@
       "pageTitle": "Wikidata:SPARQL_query_service/queries/examples",
       "pagePathElement": "wiki/"
     },
-    "urlShortener": "tinyurl"
+    "urlShortener": "tinyurl",
+    "query-builder": {
+      "server": "https://query-builder-test.toolforge.org/"
+    }
   },
   "brand": {
     "title": "Localhost",
