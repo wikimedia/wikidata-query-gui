@@ -40,8 +40,11 @@
 	"wdqs-ve-limit": "ߞߐߘߊ߲",
 	"wdqs-ve-remove-row-title": "ߕߍߟߍ߲ ߣߌ߲߬ ߛߋ߲߬ߓߐ߫",
 	"wdqs-ve-anything": "ߝߏߛߌ߬",
+	"wdqs-ve-or": "ߥߟߊ߫",
+	"wdqs-ve-sb-other": "ߘߏ߫ ߜߘߍ߫",
 	"wdqs-action-server-error": "ߡߊ߬ߛߐ߬ߟߊ ߝߎ߬ߕߎ߲߬ߕߌ",
 	"wdqs-action-unknow-error": "ߝߎ߬ߕߎ߲߬ߕߌ߬ ߡߊߟߐ߲ߓߊߟߌ",
+	"wdqs-result-map-progress": "ߡߊߔ ߘߕߊ ߟߊߢߎ߲ ߦߴߌ ߘߐ߫: $1٪",
 	"wdqs-embed-explorer-button-incoming": "ߛߘߌ߬ߜߋ߲ ߢߍߕߊ ߟߎ߬ ߦߌ߬ߘߊ߬",
 	"wdqs-embed-explorer-button-outgoing": "ߛߘߌ߬ߜߋ߲ ߕߊ߬ߡߌ߲߬ߣߍ߲ ߦߌ߬ߘߊ߬"
 }
