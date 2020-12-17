@@ -64,7 +64,7 @@
 	"wdqs-app-result-svg": "SVG-bild",
 	"wdqs-app-result-html": "HTML-tabell",
 	"wdqs-app-shorturl-page-title": "Kort webbadress till denna sida",
-	"wdqs-app-editor-placeholder": "(Skriv en SPARQL-förfrågan eller välj ett exempel)",
+	"wdqs-app-editor-placeholder": "(Skriv en SPARQL-fråga eller välj ett exempel)",
 	"wdqs-app-editor-addprefixes": "Lägg till standardprefix",
 	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultat}} i $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Stabilisera nätverk",
