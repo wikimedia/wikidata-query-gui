@@ -23,13 +23,22 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @param {?wikibase.queryService.api.CodeSamples} codeSamplesApi
 	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
 	 * @param {wikibase.queryService.ui.editor.Editor} [editor]
+	 * @param {string} queryBuilderUrl
 	 */
-	function SELF( sparqlApi, querySamplesApi, codeSamplesApi, shortUrlApi, editor ) {
+	function SELF(
+		sparqlApi,
+		querySamplesApi,
+		codeSamplesApi,
+		shortUrlApi,
+		editor,
+		queryBuilderUrl
+	) {
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
 		this._codeSamplesApi = codeSamplesApi;
 		this._shorten = shortUrlApi;
 		this._editor = editor || null;
+		this._queryBuilderUrl = queryBuilderUrl;
 
 		this._init();
 	}
@@ -93,6 +102,12 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 */
 	SELF.prototype._hasRunFirstQuery = false;
+
+	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._queryBuilderUrl = null;
 
 	/**
 	 * @property {Object}
@@ -202,7 +217,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @property {string}
 	 */
-	SELF.prototype.trackingNamespace = 'wikibase.queryService.ui.app.';
+	SELF.prototype.trackingNamespace = 'wikibase.queryService.ui.';
 
 	/**
 	 * Initialize private members and call delegate to specific init methods
@@ -705,7 +720,25 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 */
 	SELF.prototype._track = function( metricName, value, valueType ) {
-		this._trackingApi.track( this.trackingNamespace + metricName, value, valueType );
+		var referrerType = this._getReferrerType();
+		this._trackingApi.track( this.trackingNamespace + 'app.' + metricName, value, valueType );
+		this._trackingApi.track(
+			this.trackingNamespace + 'referrer.' + referrerType + '.app.' + metricName,
+			value,
+			valueType
+		);
+	};
+
+	SELF.prototype._getReferrerType = function () {
+		if ( !document.referrer ) {
+			return 'no-referrer';
+		}
+
+		if ( document.referrer.startsWith( this._queryBuilderUrl ) ) {
+			return 'query-builder';
+		}
+
+		return 'other-referrer';
 	};
 
 	return SELF;

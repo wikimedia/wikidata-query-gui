@@ -51,7 +51,13 @@
 			),
 			codeSamplesApi = null,
 			shortenApi = new wikibase.queryService.api.UrlShortener( config.api.urlShortener ),
-			resultView = new wikibase.queryService.ui.ResultView( sparqlApi, querySamplesApi, codeSamplesApi, shortenApi ),
+			resultView = new wikibase.queryService.ui.ResultView(
+				sparqlApi,
+				querySamplesApi,
+				codeSamplesApi,
+				shortenApi,
+				config.api['query-builder'].server
+			),
 			query = decodeURIComponent( window.location.hash.substr( 1 ) ),
 			qh = new wikibase.queryService.ui.queryHelper.QueryHelper( api, sparqlApi ),
 			$editor = $( '<div>' );
