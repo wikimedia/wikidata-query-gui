@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"01miki10",
+			"Maantietäjä",
 			"Nike",
 			"Pyscowicz",
 			"SMAUG",
@@ -41,9 +42,11 @@
 	"wdqs-app-help-queryhelper": "Kyselyapuri",
 	"wdqs-app-logout": "Kirjaudu ulos",
 	"wdqs-app-tools-edit-items": "Muokkaa kohteita",
+	"wdqs-app-tools-query-data": "Kyselytiedot",
 	"wdqs-app-tools-enhance-ui": "Paranna käyttöliittymää",
 	"wdqs-app-tools-visualize-data": "Havainnollista tietoja",
 	"wdqs-app-tools-list-properties": "Luettelo ominaisuuksista",
+	"wdqs-app-tools-lexicographical-data": "Leksikografiset tiedot",
 	"wdqs-app-tools-for-programmers": "Ohjelmoijille",
 	"wdqs-app-footer-help": "Paina <i>[CTRL-SPACE]</i> aktivoidaksesi automaattisen päätöksen.",
 	"wdqs-app-footer-updated-ago": "Tiedot päivitetty $1",
@@ -86,6 +89,8 @@
 	"wdqs-app-resultbrowser-dimensions": "Mitat",
 	"wdqs-app-resultbrowser-graph": "Kaavio",
 	"wdqs-app-toast-leave-fullscreen": "Paina [esc] poistuaksesi kokoruututilasta",
+	"wdqs-app-urlshortener-bad-service": "Virheellinen URL-lyhennepalvelu määrityksissä",
+	"wdqs-app-urlshortener-failed": "URL-osoitteen lyhentäminen epäonnistui",
 	"wdqs-app-urlshortener-loading": "Ladataan...",
 	"wdqs-dialog-examples-preview-query": "Kyselyn esikatselu",
 	"wdqs-dialog-examples-preview-result": "Esikatsele tulos",
