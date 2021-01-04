@@ -5,6 +5,7 @@
 		]
 	},
 	"wdqs-app-button-examples": "ߟߊߒߡߊ߫ ߘߐ߫",
+	"wdqs-app-button-prefixes": "ߢߍߣߙߊ",
 	"wdqs-app-button-more-tools": "ߖߐ߯ߙߊ߲߫ ߜߘߍ ߟߎ߬",
 	"wdqs-app-button-help": "ߘߍ߬ߡߍ߲߬ߠߌ߲",
 	"wdqs-app-button-run": "ߓߏ߬ߙߌ߬ߟߌ",
@@ -45,6 +46,7 @@
 	"wdqs-action-server-error": "ߡߊ߬ߛߐ߬ߟߊ ߝߎ߬ߕߎ߲߬ߕߌ",
 	"wdqs-action-unknow-error": "ߝߎ߬ߕߎ߲߬ߕߌ߬ ߡߊߟߐ߲ߓߊߟߌ",
 	"wdqs-result-map-progress": "ߡߊߔ ߘߕߊ ߟߊߢߎ߲ ߦߴߌ ߘߐ߫: $1٪",
+	"wdqs-embed-button-edit-query": "ߡߊ߬ߦߟߍ߬ߡߊ߲߬ߠߌ߲ ߦߋߢߊ ߘߐ߫",
 	"wdqs-embed-explorer-button-incoming": "ߛߘߌ߬ߜߋ߲ ߢߍߕߊ ߟߎ߬ ߦߌ߬ߘߊ߬",
 	"wdqs-embed-explorer-button-outgoing": "ߛߘߌ߬ߜߋ߲ ߕߊ߬ߡߌ߲߬ߣߍ߲ ߦߌ߬ߘߊ߬"
 }
