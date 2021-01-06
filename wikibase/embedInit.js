@@ -56,6 +56,7 @@
 				querySamplesApi,
 				codeSamplesApi,
 				shortenApi,
+				null,
 				config.api['query-builder'].server
 			),
 			query = decodeURIComponent( window.location.hash.substr( 1 ) ),
