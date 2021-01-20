@@ -734,10 +734,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 			return 'no-referrer';
 		}
 
-		if (
-			document.URL.startsWith( this._queryBuilderUrl ) ||
-			document.referrer.startsWith( this._queryBuilderUrl )
-		) {
+		if ( document.referrer.startsWith( this._queryBuilderUrl ) ) {
 			return 'query-builder';
 		}
 
