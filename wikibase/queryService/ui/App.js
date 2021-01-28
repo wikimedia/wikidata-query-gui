@@ -25,6 +25,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	 * @param {wikibase.queryService.ui.queryHelper.QueryHelper} queryHelper
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
+	 * @param {wikibase.queryService.api.Wikibase} wikibaseApi
 	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
 	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
 	 * @param {string} queryBuilderUrl
@@ -35,6 +36,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		queryHelper,
 		sparqlApi,
 		querySamplesApi,
+		wikibaseApi,
 		codeSamplesApi,
 		shortUrlApi,
 		queryBuilderUrl
@@ -44,6 +46,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		this._queryHelper = queryHelper;
 		this._sparqlApi = sparqlApi;
 		this._querySamplesApi = querySamplesApi;
+		this._wikibaseApi = wikibaseApi;
 		this._codeSamplesApi = codeSamplesApi;
 		this._shorten = shortUrlApi;
 		this._queryBuilderUrl = queryBuilderUrl;
@@ -74,6 +77,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	 * @private
 	 */
 	SELF.prototype._querySamplesApi = null;
+
+	/**
+	 * @property {wikibase.queryService.api.Wikibase}
+	 * @private
+	 */
+	SELF.prototype._wikibaseApi = null;
 
 	/**
 	 * @property {wikibase.queryService.api.CodeSamples}
@@ -149,6 +158,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			this._resultView = new wikibase.queryService.ui.ResultView(
 				this._sparqlApi,
 				this._querySamplesApi,
+				this._wikibaseApi,
 				this._codeSamplesApi,
 				this._shorten,
 				this._editor,

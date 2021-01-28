@@ -54,6 +54,7 @@
 			resultView = new wikibase.queryService.ui.ResultView(
 				sparqlApi,
 				querySamplesApi,
+				api,
 				codeSamplesApi,
 				shortenApi,
 				null,

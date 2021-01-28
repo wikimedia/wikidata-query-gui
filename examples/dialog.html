@@ -56,10 +56,19 @@
 	$( document ).ready( function() {
 		new wikibase.queryService.ui.dialog.QueryExampleDialog(
 				$( '#QueryExamples' ),
-				null,
+				new wikibase.queryService.api.QuerySamples(
+					'en',
+					{
+						"server": "https://www.wikidata.org/",
+						"apiPath": "w/api.php",
+						"pageTitle": "Wikidata:SPARQL_query_service/queries/examples",
+						"pagePathElement": "wiki/"
+					}
+				),
 				function( query, title ) {
 					alert( title + '\n\n'  + query );
 				},
+				null,
 				'https://query.wikidata.org/embed.html');
 	} );
 	</script>

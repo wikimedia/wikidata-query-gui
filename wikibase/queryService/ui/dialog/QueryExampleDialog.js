@@ -21,13 +21,15 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	 * @param {jQuery} $element
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {Function} callback that is called when selecting an example
+	 * @param {wikibase.queryService.api.Wikibase} [wikibaseApi]
 	 * @param {string} [previewUrl] URL to preview the result of an example query
 	 */
-	function SELF( $element, querySamplesApi, callback, previewUrl ) {
+	function SELF( $element, querySamplesApi, callback, wikibaseApi, previewUrl ) {
 
 		this._$element = $element;
 		this._querySamplesApi = querySamplesApi;
 		this._callback = callback;
+		this._wikibaseApi = wikibaseApi;
 		this._previewUrl = previewUrl || 'embed.html#';
 
 		this._init();
@@ -79,8 +81,10 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}
 
-		this._wikibaseApi = new wikibase.queryService.api.Wikibase();
-		this._wikibaseApi.setLanguage( this._querySamplesApi.getLanguage() );
+		if ( !this._wikibaseApi ) {
+			this._wikibaseApi = new wikibase.queryService.api.Wikibase();
+			this._wikibaseApi.setLanguage( this._querySamplesApi.getLanguage() );
+		}
 
 		this._initFilter();
 		this._initExamples();
