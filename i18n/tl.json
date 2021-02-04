@@ -2,13 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Emem.calist",
-			"Leeheonjin",
-			"Ianlopez1115"
+			"Ianlopez1115",
+			"Leeheonjin"
 		]
 	},
 	"wdqs-app-button-examples": "Mga halimbawa",
 	"wdqs-app-button-prefixes": "Mga prepiho",
-	"wdqs-app-button-tools": "Mga kagamitan",
 	"wdqs-app-button-help": "Tulong",
 	"wdqs-app-button-run": "Paandarin",
 	"wdqs-app-button-clear": "Hawiin (clear)",

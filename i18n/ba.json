@@ -1,15 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"Lizalizaufa",
+			"Sagan",
 			"Ләйсән",
-			"Sagan"
+			"Рустам Нурыев"
 		]
 	},
 	"wdqs-app-button-examples": "Миҫалдар",
 	"wdqs-app-button-prefixes": "Префикстар",
-	"wdqs-app-button-tools": "Ҡоралдар",
 	"wdqs-app-button-help": "Ярҙам",
 	"wdqs-app-button-run": "Ҡабыҙырға",
+	"wdqs-app-button-run-title": "Һорауҙы башҡарыу (<CTRL> + <ENTER>)",
 	"wdqs-app-button-clear": "Таҙартыу",
 	"wdqs-app-button-display": "Формат",
 	"wdqs-app-button-download": "Күсереп алырға",
@@ -20,12 +22,11 @@
 	"wdqs-app-help-datamodel": "RDF Data моделе",
 	"wdqs-app-help-prefixes": "Префикстар исемлеге",
 	"wdqs-app-footer-help": "Автоматик тамамлау өсөн <i>[CTRL-SPACE]</i> төймәһенә баҫығыҙ.",
-	"wdqs-app-footer-updated": "Мәғлүмәт $1 элек яңыртылды",
-	"wdqs-app-footer-updated-seconds": "Мәғлүмәт $1 секунд элек яңыртылды",
 	"wdqs-ve-show": "Күрһәтергә",
 	"wdqs-ve-with": "менән",
 	"wdqs-ve-anything": "бер нимә",
 	"wdqs-ve-any": "берәйһе",
 	"wdqs-ve-or": "йәки",
-	"wdqs-ve-subtype": "өҫтәмә төр"
+	"wdqs-ve-subtype": "өҫтәмә төр",
+	"wdqs-action-preview": "Һөҙөмтәне ҡарап алыу"
 }

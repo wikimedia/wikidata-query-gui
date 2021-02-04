@@ -2,13 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
-			"Baloch Khan",
-			"Amjad Khan"
+			"Amjad Khan",
+			"Baloch Khan"
 		]
 	},
 	"wdqs-app-button-examples": "بېلگې",
 	"wdqs-app-button-prefixes": "مختاړي",
-	"wdqs-app-button-tools": "اوزارونه",
 	"wdqs-app-button-help": "لارښود",
 	"wdqs-app-button-run": "چلول",
 	"wdqs-app-button-clear": "سپينول",

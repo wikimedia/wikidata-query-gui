@@ -1,18 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hromoslav",
 			"Kusavica",
-			"Hromoslav"
+			"Luky001"
 		]
 	},
-	"wdqs-app-button-tools": "Nástroje",
+	"wdqs-app-button-examples": "Príklady",
+	"wdqs-app-button-prefixes": "Predpony",
+	"wdqs-app-button-more-tools": "Ďalšie nástroje",
 	"wdqs-app-button-help": "Pomoc",
+	"wdqs-app-button-run": "Spustiť",
+	"wdqs-app-button-clear": "Vymazať",
 	"wdqs-app-button-display": "Zobraziť",
 	"wdqs-app-button-download": "Prevziať",
+	"wdqs-app-button-download-title": "Stiahnuť výsledok",
 	"wdqs-app-button-link": "Odkaz",
-	"wdqs-ve-find": "Hľadať",
+	"wdqs-app-button-code": "Kód",
+	"wdqs-app-button-code-title": "Zobraziť príklady kódu",
+	"wdqs-app-help-feedback": "Dať spätnú väzbu!",
+	"wdqs-app-tools-visualize-data": "Vizualizácia dát",
 	"wdqs-ve-show": "Zobraziť",
 	"wdqs-ve-with": "with",
-	"wdqs-ve-and": "and",
 	"wdqs-ve-or": "alebo"
 }

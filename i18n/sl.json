@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eleassar",
 			"HairyFotr",
 			"Pickle12",
 			"P̲̳l̳eo",
@@ -8,7 +9,7 @@
 			"Yerpo"
 		]
 	},
-	"wdqs-app-button-examples": "Vzorci",
+	"wdqs-app-button-examples": "Zgledi",
 	"wdqs-app-button-prefixes": "Predpone",
 	"wdqs-app-button-more-tools": "Več orodij",
 	"wdqs-app-button-help": "Pomoč",
@@ -17,8 +18,9 @@
 	"wdqs-app-button-clear": "Počisti",
 	"wdqs-app-button-clear-title": "Počisti poizvedbo",
 	"wdqs-app-button-restore-title": "Obnovi prejšnjo poizvedbo",
-	"wdqs-app-button-format-title": "Format poizvedbe",
-	"wdqs-app-button-fullscreen-title": "Vklopite celozaslonski način urejevalnika",
+	"wdqs-app-button-format-title": "Oblika poizvedbe",
+	"wdqs-app-button-query-helper": "Prikaži razlago poizvedbe",
+	"wdqs-app-button-fullscreen-title": "Vklopi celozaslonski način urejevalnika",
 	"wdqs-app-button-display": "Prikaz",
 	"wdqs-app-button-display-title": "Prikaži rezultat kot preglednica, slika, ...",
 	"wdqs-app-button-download": "Prenos",

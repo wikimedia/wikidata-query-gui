@@ -1,30 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teòtlalili",
+			"Akapochtli",
 			"Ricardo gs",
-			"Akapochtli"
+			"Teòtlalili"
 		]
 	},
 	"wdqs-app-button-examples": "Neixcuitilli",
 	"wdqs-app-button-prefixes": "Tlapanitlaliliztli",
-	"wdqs-app-button-tools": "Tlachichihualoni",
 	"wdqs-app-button-help": "Tepalehuiliztli",
 	"wdqs-app-button-run": "Ma mochihua",
 	"wdqs-app-button-clear": "Ma mixpopohua",
 	"wdqs-app-button-display": "Ma monexti",
 	"wdqs-app-button-download": "Tictemoz in tlahcuilolli",
 	"wdqs-app-button-link": "tlamecayotlaliztli",
-	"wdqs-ve-find": "Motech xicahxitia",
-	"wdqs-ve-show": "Motech monextiz",
+	"wdqs-ve-show": "Monextiz",
 	"wdqs-ve-with": "itloc",
-	"wdqs-ve-and": "ihuan",
 	"wdqs-ve-anything": "ahtle",
-	"wdqs-ve-any": "zaintlen",
+	"wdqs-ve-any": "cequi",
 	"wdqs-ve-or": "nozo",
 	"wdqs-ve-subtype": "tlanitlamantli",
-	"wdqs-action-query": "Yehyecoltīliztli īchīhualtilīz",
-	"wdqs-action-render": "Mochīhualiztli īīxiptlayo",
-	"wdqs-action-error-display": "Ahmohuelitittītia in mochīhualiztli",
-	"wdqs-action-timeout": "Ōtlan in yehyecoltīliztli ītlachiyalizcāhuitl"
+	"wdqs-action-query": "Yehyecoltiliztli ichihualtiliz",
+	"wdqs-action-render": "Mochihualiztli ixiptlayo",
+	"wdqs-action-error-display": "Ahmohuelitittitia in mochihualiztli",
+	"wdqs-action-timeout": "Otlan in yehyecoltiliztli itlachiyalizcauh"
 }
