@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eafoð",
 			"Salvemm el lombard"
 		]
 	},
@@ -85,5 +86,36 @@
 	"wdqs-app-urlshortener-bad-service": "Servizzi minga sguiust de abreviazzion URL in impostazzion",
 	"wdqs-app-urlshortener-failed": "Abreviazion URL fallada",
 	"wdqs-app-urlshortener-loading": "Adree a caregà...",
-	"wdqs-dialog-examples-preview-query": "Veduda antezipada de l'interogazzion"
+	"wdqs-dialog-examples-preview-query": "Veduda antezipada de l'interogazzion",
+	"wdqs-dialog-examples-preview-result": "Veduda antezipada del risultad",
+	"wdqs-dialog-key-shortcut-title": "Scorciatoie de tastera",
+	"wdqs-dialog-key-shortcut-run-query": "Eseguiss l'interogazzion",
+	"wdqs-dialog-key-shortcut-esc": "Lassa el camp de testo atual / area de test.",
+	"wdqs-dialog-key-shortcut-show-shortcut-help": "Fa vedè l'ajut sora i scurciatoi de tastera per la pagina corenta.",
+	"wdqs-dialog-key-shortcut-focus-textarea": "Concentress sora la taxtarea de l'interogazzion.",
+	"wdqs-dialog-key-shortcut-jump-to-result": "Salta ai risultad de l'interogazzion.",
+	"wdqs-dialog-key-shortcut-focus-filter": "Concentress in sul pulsant \"Filter\" in l'ajut sora i interogazzion",
+	"wdqs-dialog-key-shortcut-focus-show": "Concentress sora el pulsant \"Mostra\" in l'ajut sora i interogazzion.",
+	"wdqs-dialog-key-shortcut-focus-limit": "Schiscia el boton \"Limita\" in l'ajut sora i interogazzion.",
+	"wdqs-dialog-key-shortcut-show-example": "Fà vedé di esempi.",
+	"wdqs-dialog-key-shortcut-help-menu": "Ativa o desativa el menù de ajut.",
+	"wdqs-dialog-key-shortcut-show-language": "Fà vedé el menù di lengov",
+	"wdqs-dialog-key-shortcut-close-button": "Sarra",
+	"wdqs-ve-filter": "Filter",
+	"wdqs-ve-show": "Fà vedé",
+	"wdqs-ve-limit": "Limit",
+	"wdqs-ve-add-label-title": "Sgionta una variabel che la gh'ha dent l'eticheta de l'entità",
+	"wdqs-ve-remove-row-title": "Toeu via quella riga chì",
+	"wdqs-ve-with": "con",
+	"wdqs-ve-anything": "qualsessia roba",
+	"wdqs-ve-any": "qualsessia",
+	"wdqs-ve-or": "opur",
+	"wdqs-ve-subtype": "sot-tipo",
+	"wdqs-ve-sb-suggestions": "Sugeriment",
+	"wdqs-ve-sb-other": "Alter",
+	"wdqs-action-query": "Interogazzion in fonzion",
+	"wdqs-action-render": "Rapresentazzion di risultad",
+	"wdqs-action-error-display": "Impossibil visualizà el risultad",
+	"wdqs-action-timeout": "Rivad al limet de temp per l'interogazzion",
+	"wdqs-action-malformed-query": "Interogazzion formada mal"
 }
