@@ -4,7 +4,7 @@
   "version": "0.1.4",
   "scripts": {
     "start": "http-server -o",
-    "test": "grunt test",
+    "test": "grunt test && npm run browser_test -- $@",
     "browser_test": "grunt browser_test",
     "build": "grunt build",
     "deploy": "grunt deploy"
@@ -33,7 +33,7 @@
     "es6-shim": "^0.35.6",
     "font-awesome": "^4.7.0",
     "gijgo": "1.9.6",
-    "grunt-merge-i18n": "git+https://github.com/wikimedia/grunt-merge-i18n.git",
+    "grunt-merge-i18n": "https://github.com/wikimedia/grunt-merge-i18n.git",
     "jqcloud2": "^2.0.3",
     "jquery": "^3.4.1",
     "jquery-resizable-dom": "^0.20.0",
@@ -86,7 +86,6 @@
     "karma-qunit": "^1.2.1",
     "load-grunt-tasks": "^3.5.2",
     "qunit": "^2.14.0",
-    "selenium-standalone": "^6.23.0",
     "sinon": "^4.4.2",
     "stylelint": "^13.10.0",
     "stylelint-config-wikimedia": "^0.10.3",
