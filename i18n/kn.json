@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AVSmalnad77",
 			"Gopala Krishna A",
 			"VASANTH S.N.",
 			"ಶಿವಕುಮಾರ್ ನಾಯಕ್"
@@ -25,6 +26,7 @@
 	"wdqs-app-help-examples": "ಉದಾಹರಣೆಯ ಪ್ರಶ್ನೆಗಳು",
 	"wdqs-app-help-datamodel": "ಅರ್.ಡಿ.ಎಫ್. ಡೇಟಾ ಮಾದರಿ",
 	"wdqs-app-help-prefixes": "ಮುಂಪದಗಳ ಪಟ್ಟಿ",
+	"wdqs-app-logout": "ಲಾಗ್ ಔಟ್",
 	"wdqs-app-footer-help": "ಸ್ವಯಂಪೂರ್ಣತೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು <i>[ಕಂಟ್ರೋಲ್-ಸ್ಪೇಸ್]</i> ಒತ್ತಿ.",
 	"wdqs-app-result-shorturl": "ಚಿಕ್ಕ ಯು.ಅರ್.ಎಲ್.ನಿಂದ ಫಲಿತಾಂಶಕ್ಕೆ",
 	"wdqs-app-result-shorturl-title": "ಚಿಕ್ಕ ಯು.ಅರ್.ಎಲ್.ನಿಂದ ಈ ಫಲಿತಾಂಶಕ್ಕೆ",
