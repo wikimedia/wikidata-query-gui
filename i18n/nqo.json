@@ -75,10 +75,15 @@
 	"wdqs-ve-any": "ߛߌ߫",
 	"wdqs-ve-or": "ߥߟߊ߫",
 	"wdqs-ve-sb-other": "ߘߏ߫ ߜߘߍ߫",
+	"wdqs-action-query": "ߢߌ߬ߣߌ߲߬ߞߊ߬ߟߌ ߓߟߏߦߊߟߌ ߦߴߌ ߘߐ߫",
+	"wdqs-action-render": "ߟߊ߬ߘߏ߲߬ߠߌ߲ ߞߐߝߟߌ",
 	"wdqs-action-server-error": "ߡߊ߬ߛߐ߬ߟߊ ߝߎ߬ߕߎ߲߬ߕߌ",
 	"wdqs-action-unknow-error": "ߝߎ߬ߕߎ߲߬ߕߌ߬ ߡߊߟߐ߲ߓߊߟߌ",
+	"wdqs-result-map-layers-all": "ߛߊ߯ߘߊ ߓߍ߯ ߟߊߘߍ߬ߣߍ߲",
 	"wdqs-result-map-progress": "ߡߊߔ ߘߕߊ ߟߊߢߎ߲ ߦߴߌ ߘߐ߫: $1٪",
 	"wdqs-embed-button-edit-query": "ߡߊ߬ߦߟߍ߬ߡߊ߲߬ߠߌ߲ ߦߋߢߊ ߘߐ߫",
+	"wdqs-embed-button-edit-query-title": "ߢߌ߬ߣߌ߲߬ߞߊ߬ߟߌ ߘߍ߬ߡߍ߲߬ߟߊ߲ ߠߊߓߊ߯ߙߊ߫ ߸ ߞߊ߬ ߢߌ߬ߣߌ߲߬ߞߊ߬ߟߌ ߣߌ߲߬ ߡߊߦߟߍ߬ߡߊ߲߬",
+	"wdqs-embed-button-edit-code": "SPARQL ߡߊߦߟߍ߬ߡߊ߲߬",
 	"wdqs-embed-explorer-button-incoming": "ߛߘߌ߬ߜߋ߲ ߢߍߕߊ ߟߎ߬ ߦߌ߬ߘߊ߬",
 	"wdqs-embed-explorer-button-outgoing": "ߛߘߌ߬ߜߋ߲ ߕߊ߬ߡߌ߲߬ߣߍ߲ ߦߌ߬ߘߊ߬"
 }
