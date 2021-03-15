@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bikarhêner",
 			"Biyolojiyabikurdi",
 			"Cûndûllah el-Kurdî",
 			"George Animal",
@@ -24,7 +25,7 @@
 	"wdqs-app-button-download": "Daxe",
 	"wdqs-app-button-download-title": "Encamê daxe",
 	"wdqs-app-button-link": "Girêdan",
-	"wdqs-app-button-link-title": "jêpirsînê re girêdan peyda bike",
+	"wdqs-app-button-link-title": "Ji bo jêpirsînê girêdan peyda bike",
 	"wdqs-app-button-code": "Kod",
 	"wdqs-app-button-code-title": "Mînakên ji bo kodan bibîne",
 	"wdqs-app-help-feedback": "Paşragihandin bide",
