@@ -331,8 +331,11 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'only_build', [
 		'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
 	] );
+	grunt.registerTask( 'build_for_deploy', [
+		'test', 'browser_test', 'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build'
+	] );
 	grunt.registerTask( 'deploy', [
-		'test', 'browser_test', 'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:review'
+		'build-for-deploy', 'shell:commitDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'security', [
 		'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:formatPatchDeploy'
