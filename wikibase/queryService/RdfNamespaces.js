@@ -1,4 +1,4 @@
-var wikibase = wikibase || {};
+var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.RdfNamespaces = {};
 

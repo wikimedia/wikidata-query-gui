@@ -1,4 +1,4 @@
-var wikibase = wikibase || {};
+var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.i18n = wikibase.queryService.ui.i18n || {};

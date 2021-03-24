@@ -1,4 +1,4 @@
-var tracking = tracking || {};
+var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
