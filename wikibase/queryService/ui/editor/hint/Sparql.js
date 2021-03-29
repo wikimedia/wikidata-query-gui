@@ -75,7 +75,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			// prov:
 			'prov:wasDerivedFrom',
 			// Lexemes
-			'ontolex:LexicalEntry', 'ontolex:Form', 'ontolex:Sense',
+			'ontolex:LexicalEntry', 'ontolex:Form', 'ontolex:LexicalSense',
 			'ontolex:lexicalForm', 'ontolex:sense', 'ontolex:representation',
 			'wikibase:lemma', 'wikibase:lexicalCategory', 'wikibase:grammaticalFeature',
 			'dct:language'
