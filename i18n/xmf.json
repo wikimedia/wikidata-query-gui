@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Narazeni",
 			"Silovan"
 		]
 	},
@@ -22,6 +23,7 @@
 	"wdqs-app-button-link": "რსხილი",
 	"wdqs-app-button-link-title": "შეკითხირშა რცხიშ მეღება",
 	"wdqs-app-button-code": "კოდი",
+	"wdqs-app-button-code-title": "კოდიშ სამანგეფიშ ძირაფა",
 	"wdqs-app-help-feedback": "გჷმოხონარაფაშ დოტებაǃ",
 	"wdqs-app-help-request-query": "შეკითხირიშ მოთხირი",
 	"wdqs-app-help-portal": "მოხვარაშ პორტალი",
@@ -31,6 +33,7 @@
 	"wdqs-app-help-prefixes": "პრეფიქსეფიშ ერკებული",
 	"wdqs-app-help-copy": "ლიცენზირაფაშ ინფორმაცია",
 	"wdqs-app-help-queryhelper": "მოთხირეფიშ მახვარე",
+	"wdqs-app-logout": "გიშულა",
 	"wdqs-app-tools-edit-items": "ობიექტეფიშ რედაქტირაფა",
 	"wdqs-app-tools-query-data": "მოთხირიშ მუნაჩემეფი",
 	"wdqs-app-tools-enhance-ui": "ომახვარებე ინტერფეისიშ გოუჯგუშაფა",
@@ -79,13 +82,19 @@
 	"wdqs-app-resultbrowser-dimensions": "ზჷმეფი",
 	"wdqs-app-resultbrowser-graph": "გრაფიკი",
 	"wdqs-app-toast-leave-fullscreen": "რსულეკრანიანი რეჟიმშე გიშაულარო ქეგუნჭირით [Esc]-ს",
+	"wdqs-app-urlshortener-loading": "იხარგუ...",
 	"wdqs-dialog-examples-preview-query": "მოთხირიშ გჷნოჯინა",
 	"wdqs-dialog-examples-preview-result": "შედეგეფიშ გჷნოჯინა",
 	"wdqs-dialog-key-shortcut-title": "კლავიატურაშ მალჭანეფეფი",
 	"wdqs-dialog-key-shortcut-run-query": "მოთხირიშ გოტება.",
 	"wdqs-dialog-key-shortcut-esc": "მიმალი მიშაჸონაფალი ვეშ დოტება.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "მიმალი ხასჷლაშ მოხუჯე კონჭეფიშ მალჭანაფეფიშ ძირაფა.",
+	"wdqs-dialog-key-shortcut-show-example": "სამანგეფიშ ძირაფა.",
+	"wdqs-dialog-key-shortcut-show-language": "ნინაშ მენიუშ ძირაფა.",
+	"wdqs-dialog-key-shortcut-close-button": "კილუა",
+	"wdqs-ve-filter": "ტკიბირი",
 	"wdqs-ve-show": "ძირაფა",
+	"wdqs-ve-remove-row-title": "თე რანწკიშ ლასუა",
 	"wdqs-ve-with": "წკჷმა",
 	"wdqs-ve-anything": "მუდგაინი",
 	"wdqs-ve-any": "ირნერი",
@@ -98,5 +107,6 @@
 	"wdqs-action-timeout": "მოთხირქ ძალამ დიდ ბორჯი მიდეღჷ",
 	"wdqs-action-malformed-query": "მოთხირი გლახათ რე ფორმირაფილი",
 	"wdqs-action-server-error": "სერვერიშ ჩილათა",
-	"wdqs-action-unknow-error": "უჩინებუ ჩილათა"
+	"wdqs-action-unknow-error": "უჩინებუ ჩილათა",
+	"wdqs-action-preview": "შედეგიშ გიწოთოლორაფა"
 }
