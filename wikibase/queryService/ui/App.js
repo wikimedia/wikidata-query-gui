@@ -29,6 +29,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
 	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
 	 * @param {string} queryBuilderUrl
+	 * @param {boolean} showBanner
 	 */
 	function SELF(
 		$element,
@@ -39,7 +40,8 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		wikibaseApi,
 		codeSamplesApi,
 		shortUrlApi,
-		queryBuilderUrl
+		queryBuilderUrl,
+		showBanner
 	) {
 		this._$element = $element;
 		this._editor = editor;
@@ -50,6 +52,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		this._codeSamplesApi = codeSamplesApi;
 		this._shorten = shortUrlApi;
 		this._queryBuilderUrl = queryBuilderUrl;
+		this._showBanner = showBanner;
 
 		this._init();
 	}
@@ -212,6 +215,20 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		$( '#display-button' ).tooltip();
 		$( '#download-button' ).tooltip();
 		$( '#link-button' ).tooltip();
+
+		function onBannerDismiss() {
+			$( '.navbar' ).css( 'border-top-width', '' );
+		}
+
+		function renderBanner( banner ) {
+			$( 'body' ).prepend( banner );
+			$( '.navbar' ).css( 'border-top-width', '0' );
+		}
+
+		// render the banner
+		if ( this._showBanner ) {
+			new wikibase.queryService.ui.Banner( 'survey2021Banner', renderBanner, onBannerDismiss, true );
+		}
 
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );
 

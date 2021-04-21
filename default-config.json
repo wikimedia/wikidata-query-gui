@@ -27,5 +27,6 @@
     "root": "./",
     "index": "./index.html"
   },
+  "showBanner": false,
   "prefixes": {}
 }

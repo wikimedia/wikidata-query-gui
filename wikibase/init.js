@@ -107,7 +107,8 @@
 			api,
 			codeSamplesApi,
 			shortenApi,
-			config.api['query-builder'].server
+			config.api['query-builder'].server,
+			config.showBanner
 		);
 	} );
 
