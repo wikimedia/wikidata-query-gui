@@ -108,9 +108,13 @@
 	"wdqs-ve-sb-other": "შხვა",
 	"wdqs-action-query": "მოთხირიშ რსულება",
 	"wdqs-action-render": "შედეგიშ დამუშება",
+	"wdqs-action-error-display": "შედეგიშ გჷმოღალაქ ვემიხუჯინჷ",
 	"wdqs-action-timeout": "მოთხირქ ძალამ დიდ ბორჯი მიდეღჷ",
 	"wdqs-action-malformed-query": "მოთხირი გლახათ რე ფორმირაფილი",
 	"wdqs-action-server-error": "სერვერიშ ჩილათა",
 	"wdqs-action-unknow-error": "უჩინებუ ჩილათა",
-	"wdqs-action-preview": "შედეგიშ გიწოთოლორაფა"
+	"wdqs-action-preview": "შედეგიშ გიწოთოლორაფა",
+	"wdqs-result-map-layers-all": "არძა ფენა",
+	"wdqs-result-map-progress": "იხარგუ რუკაშ მუნაჩემეფი: $1%",
+	"wdqs-embed-button-edit-query": "ვიზუალური რედაქტირაფა"
 }
