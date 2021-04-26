@@ -72,7 +72,7 @@
 	"wdqs-app-result-svg": "SVG画像",
 	"wdqs-app-result-html": "HTMLテーブル",
 	"wdqs-app-shorturl-page-title": "このページの短縮URL",
-	"wdqs-app-editor-placeholder": "(SPARQLクエリを入力するか、クエリの例を選択する)",
+	"wdqs-app-editor-placeholder": "(SPARQLクエリを入力するか、クエリの例を選択してください)",
 	"wdqs-app-editor-addprefixes": "標準接頭辞を追加する",
 	"wdqs-app-resultbrowser-response-summary": "{{PLURAL:$1|結果}} $1件 $2ミリ秒",
 	"wdqs-app-resultbrowser-stabilize": "ネットワークの安定化",
