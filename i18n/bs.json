@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Acamicamacaraca",
+			"Semso98",
 			"Srdjan m",
 			"Srđan"
 		]
@@ -31,6 +32,8 @@
 	"wdqs-app-help-prefixes": "Spisak prefiksa",
 	"wdqs-app-help-copy": "Informacije o licenciranju",
 	"wdqs-app-help-queryhelper": "Pomoć za upit",
+	"wdqs-app-logout": "Odjavi me",
+	"wdqs-app-tools-edit-items": "Uredi stavke",
 	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> da uključite automatsko dovršavanje.",
 	"wdqs-app-result-shorturl": "Kratki URL na rezultate",
 	"wdqs-app-result-shorturl-title": "Kratki URL na ovaj rezultat",
@@ -53,7 +56,11 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "Hijerarhijski raspored slijeva nadesno",
 	"wdqs-app-resultbrowser-hierarchical-ud": "Hijerarhijski raspored odozgo nadolje",
 	"wdqs-app-resultbrowser-hierarchical-rl": "Hijerarhijski raspored zdesna nalijevo",
+	"wdqs-app-resultbrowser-table": "Tabela",
+	"wdqs-app-resultbrowser-map": "Karta",
+	"wdqs-app-resultbrowser-dimensions": "Dimenzije",
 	"wdqs-app-toast-leave-fullscreen": "Pritisnite [esc] da napustite prikaz preko cijelog ekrana",
+	"wdqs-app-urlshortener-loading": "Učitavam...",
 	"wdqs-dialog-examples-preview-query": "Pregledaj upit",
 	"wdqs-dialog-examples-preview-result": "Pregledaj rezultat",
 	"wdqs-ve-filter": "Filter",
@@ -75,6 +82,6 @@
 	"wdqs-action-unknow-error": "Nepoznata greška",
 	"wdqs-action-preview": "Pregled rezultata",
 	"wdqs-result-map-layers-all": "Svi slojevi",
-	"wdqs-embed-button-edit-query": "Uredi ovaj upit",
+	"wdqs-embed-button-edit-query": "Uredi vizualno",
 	"wdqs-embed-button-edit-query-title": "Uredi ovaj upit pomoću uređivača SPARQL"
 }
