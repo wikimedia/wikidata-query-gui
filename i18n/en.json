@@ -14,7 +14,7 @@
     "wdqs-app-button-more-tools": "More tools",
     "wdqs-app-button-help": "Help",
     "wdqs-app-button-run": "Run",
-    "wdqs-app-button-run-title": "Execute query (<CTRL> + <ENTER>)",
+    "wdqs-app-button-run-title": "Execute query (CTRL + ENTER)",
     "wdqs-app-button-clear": "Clear",
     "wdqs-app-button-clear-title": "Clear query",
     "wdqs-app-button-restore-title": "Restore previous query",
