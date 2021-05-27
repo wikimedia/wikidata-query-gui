@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Acamicamacaraca",
+			"Palapa",
 			"Semso98",
 			"Srdjan m",
 			"Srđan"
@@ -83,5 +84,5 @@
 	"wdqs-action-preview": "Pregled rezultata",
 	"wdqs-result-map-layers-all": "Svi slojevi",
 	"wdqs-embed-button-edit-query": "Uredi vizualno",
-	"wdqs-embed-button-edit-query-title": "Uredi ovaj upit pomoću uređivača SPARQL"
+	"wdqs-embed-button-edit-query-title": "Uredi ovaj upit pomoću pomoćnika za upite"
 }
