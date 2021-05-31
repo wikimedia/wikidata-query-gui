@@ -12,6 +12,7 @@
 			"FarsiNevis",
 			"Goodarz Irani",
 			"Huji",
+			"Jeeputer",
 			"Physicsch",
 			"Reza1615",
 			"Sunfyre"
@@ -22,7 +23,7 @@
 	"wdqs-app-button-more-tools": "ابزارهای بیشتر",
 	"wdqs-app-button-help": "راهنما",
 	"wdqs-app-button-run": "اجرا",
-	"wdqs-app-button-run-title": "ارسال کوئری (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "اجرای پرسمان (CTRL + ENTER)",
 	"wdqs-app-button-clear": "پاک کردن",
 	"wdqs-app-button-clear-title": "درخواست حذف",
 	"wdqs-app-button-restore-title": "بازگرداندن کوئری پیشین",
