@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"ANDROBETA",
+			"KlaudiuMihaila",
 			"MSClaudiu",
 			"NGC 54",
 			"Strainu"
@@ -12,7 +13,7 @@
 	"wdqs-app-button-more-tools": "Mai multe unelte",
 	"wdqs-app-button-help": "Ajutor",
 	"wdqs-app-button-run": "Pornire",
-	"wdqs-app-button-run-title": "Execută interogare (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Execută interogare (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Curăță",
 	"wdqs-app-button-clear-title": "Șterge interogarea",
 	"wdqs-app-button-restore-title": "Restaurați interogarea anterioară",
