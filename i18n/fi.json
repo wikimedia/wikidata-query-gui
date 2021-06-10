@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"01miki10",
+			"MITO",
 			"Maantietäjä",
 			"Nike",
 			"Pyscowicz",
@@ -16,7 +17,7 @@
 	"wdqs-app-button-more-tools": "Lisää työkaluja",
 	"wdqs-app-button-help": "Ohje",
 	"wdqs-app-button-run": "Suorita",
-	"wdqs-app-button-run-title": "Suorita kysely (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Suorita kysely (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Tyhjennä",
 	"wdqs-app-button-clear-title": "Tyhjennä kysely",
 	"wdqs-app-button-restore-title": "Palauta edellinen kysely",
