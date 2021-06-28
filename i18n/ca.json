@@ -11,7 +11,8 @@
 			"Paucabot",
 			"Ssola",
 			"Toniher",
-			"Townie"
+			"Townie",
+			"Vfc"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -50,8 +51,8 @@
 	"wdqs-app-tools-visualize-data": "Mostra les dades",
 	"wdqs-app-tools-list-properties": "Llista les propietats",
 	"wdqs-app-tools-lexicographical-data": "Dades lexicogràfiques",
-	"wdqs-app-tools-for-programmers": "Per a programadors",
-	"wdqs-app-footer-help": "Prem <i>[CTRL-SPACE]</i> per activar l'autocompleció.",
+	"wdqs-app-tools-for-programmers": "Per a gent que programa",
+	"wdqs-app-footer-help": "Prem <i>[CTRL-ESPAI]</i> per activar l'autocompleció.",
 	"wdqs-app-footer-updated-ago": "Darrera actualització: $1",
 	"wdqs-app-result-shorturl": "URL curta del resultat",
 	"wdqs-app-result-shorturl-title": "URL curta a aquest resultat",
