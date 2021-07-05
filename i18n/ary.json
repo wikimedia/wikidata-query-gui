@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ayoubbouamri"
+			"Ayoubbouamri",
+			"Ideophagous"
 		]
 	},
 	"wdqs-app-button-examples": "شانتيو",
@@ -30,7 +31,7 @@
 	"wdqs-app-help-manual": "لڭيد",
 	"wdqs-app-help-examples": "شانتيو ديال لونكيط",
 	"wdqs-app-help-datamodel": "شانتيو ديال بيانات RDF",
-	"wdqs-app-help-prefixes": "ليسطا ديال لبدايات",
+	"wdqs-app-help-prefixes": "ليستة ديال لبدايات",
 	"wdqs-app-help-copy": "معلومات على لّيصونص",
 	"wdqs-app-help-queryhelper": "مساعد لونكيط",
 	"wdqs-app-logout": "خرج",
@@ -38,7 +39,7 @@
 	"wdqs-app-tools-query-data": "اونكيط على لبيانات",
 	"wdqs-app-tools-enhance-ui": "دفع لانطيرفاص لما حسن",
 	"wdqs-app-tools-visualize-data": "تصور لبيانات",
-	"wdqs-app-tools-list-properties": "ليسطا د لمميزات",
+	"wdqs-app-tools-list-properties": "ليستة د لمميزات",
 	"wdqs-app-tools-lexicographical-data": "بيانات قاموسية",
 	"wdqs-app-tools-for-programmers": "ديال لموبرمجين(ات)",
 	"wdqs-app-footer-help": "برك <i>[CTRL-SPACE]</i> باش تأكتيڤي لأوطو مسالية",
@@ -97,8 +98,8 @@
 	"wdqs-dialog-key-shortcut-focus-show": "ركّز على لبوطونة ديال \"ورّي\" فمساعد لونكيط",
 	"wdqs-dialog-key-shortcut-focus-limit": "برك على لبوطونة ديال \"لحد\" فمساعد لونكيط",
 	"wdqs-dialog-key-shortcut-show-example": "ورّي شانتيوات",
-	"wdqs-dialog-key-shortcut-help-menu": "بدّل ليسطا ديال لمعاونة",
-	"wdqs-dialog-key-shortcut-show-language": "ورّي ليسطا ديال لوغات",
+	"wdqs-dialog-key-shortcut-help-menu": "بدّل ليستة ديال لمعاونة",
+	"wdqs-dialog-key-shortcut-show-language": "ورّي ليستة ديال لوغات",
 	"wdqs-dialog-key-shortcut-close-button": "سدّ",
 	"wdqs-ve-filter": "فيلتر",
 	"wdqs-ve-show": "ورّي",
