@@ -335,7 +335,7 @@ module.exports = function( grunt ) {
 		'test', 'browser_test', 'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build'
 	] );
 	grunt.registerTask( 'deploy', [
-		'build-for-deploy', 'shell:commitDeploy', 'shell:review'
+		'build_for_deploy', 'shell:commitDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'security', [
 		'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:formatPatchDeploy'
