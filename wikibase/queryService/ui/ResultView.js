@@ -238,8 +238,9 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 
 	/**
 	 * @property {string}
+	 * It gets overridden by embedInit.js
 	 */
-	SELF.prototype.trackingNamespace = 'wikibase.queryService.ui.';
+	SELF.prototype.trackingNamespace = 'wikibase.queryService.ui.index.';
 
 	/**
 	 * Initialize private members and call delegate to specific init methods
