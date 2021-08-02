@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Enolp",
+			"Tokvo",
 			"Xuacu"
 		]
 	},
@@ -10,7 +11,7 @@
 	"wdqs-app-button-more-tools": "Más ferramientes",
 	"wdqs-app-button-help": "Ayuda",
 	"wdqs-app-button-run": "Executar",
-	"wdqs-app-button-run-title": "Executar consulta (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Executar consulta (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Llimpiar",
 	"wdqs-app-button-clear-title": "Llimpiar consulta",
 	"wdqs-app-button-restore-title": "Restaurar la consulta anterior",
