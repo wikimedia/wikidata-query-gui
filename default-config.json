@@ -14,7 +14,7 @@
     },
     "urlShortener": "tinyurl",
     "query-builder": {
-      "server": "https://query-builder-test.toolforge.org/"
+      "server": "https://query.wikidata.org/querybuilder/"
     }
   },
   "brand": {
