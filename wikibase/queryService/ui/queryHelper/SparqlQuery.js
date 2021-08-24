@@ -43,7 +43,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			queryComments = [];
 		this._query = parser.parse( query );
 		$.each( query.split( '\n' ), function( index, line ) {
-			if ( line.indexOf( '#' ) === 0 ) {
+			if ( line.trim().indexOf( '#' ) === 0 ) {
 				queryComments.push( line );
 			}
 		} );
