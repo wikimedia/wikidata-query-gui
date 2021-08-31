@@ -19,6 +19,7 @@
 			document.title = config.brand.title;
 			$( 'a#copyright-link' ).attr( 'href', config.brand.copyrightUrl );
 			$( '#favicon' ).attr( 'href', config.brand.favicon );
+			$( '.query-builder-toggle' ).attr( 'href', config.api['query-builder'].server );
 		}
 
 		function setLogoutLink() {
