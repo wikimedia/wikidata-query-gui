@@ -18,11 +18,13 @@ wikibase.queryService.ui.Banner = ( function ( $, download, window ) {
 	 * @param {Function} renderBanner A function that takes the banner element to render
 	 * @param {Function} onDismiss Callback function when banner is dismissed
 	 * @param {Boolean} withHelpMessage Show the help message with the hint
+	 * @param {string} content Content of the banner (HTML)
 	 */
-	function SELF( key, renderBanner, onDismiss, withHelpMessage ) {
+	function SELF( key, renderBanner, onDismiss, withHelpMessage, content ) {
 		this._storageKey = this.trackingNamespace + key;
 		this._renderBanner = renderBanner;
 		this._onDismiss = onDismiss;
+		this._content = content;
 		this._init( withHelpMessage );
 	}
 
@@ -71,14 +73,7 @@ wikibase.queryService.ui.Banner = ( function ( $, download, window ) {
 			} ).bind( this ) );
 
 		var bannerContent = $( '<div>' ).attr( 'class', 'banner__text' );
-		var message = $( '<span>' ).html(
-			'Please tell us how you use the Wikidata Query Service ' +
-			'(see <a href="https://foundation.wikimedia.org/wiki/WDQS_User_Survey_2021_Privacy_Statement" ' +
-			'target="_blank" rel="noreferrer">privacy statement</a>)! ' +
-			'Whether you are an occasional user or create tools, your feedback is needed to decide our ' +
-			'future development. <a href="https://forms.gle/WzBDGWPUsi43YAhBA" target="_blank" ' +
-			'rel="noreferrer">Please fill out our survey today!</a>'
-		);
+		var message = $( '<span>' ).html( this._content );
 		bannerContent.prepend( message );
 
 		bannerContent.prepend( '<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>' );

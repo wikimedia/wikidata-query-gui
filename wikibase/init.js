@@ -47,6 +47,11 @@
 			).done( function() {
 				$( '.wikibase-queryservice' ).i18n();
 				$( '#keyboardShortcutHelpModal' ).i18n();
+				$( '.wdqs-app-query-builder-banner-content' ).i18n();
+				$( '.wdqs-app-query-builder-banner-content a' ).attr(
+					'href',
+					$( '.query-builder-toggle' ).attr( 'href' )
+				);
 				$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
 				app.resizeNavbar();
 				if ( callback ) {
