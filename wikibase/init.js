@@ -7,19 +7,22 @@
 	)
 	.then( function ( _, config ) {
 		var wb = wikibase.queryService,
+			lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
 			app;
 
 		function setExamplesHelpLink( url ) {
 			$( 'a#examples-link' ).attr( 'href', url );
 		}
 
-		function setBrand() {
+		function setBrand( lang ) {
 			$( '.navbar-brand img' ).attr( 'src', config.brand.logo );
 			$( '.navbar-brand a > span' ).text( config.brand.title );
 			document.title = config.brand.title;
 			$( 'a#copyright-link' ).attr( 'href', config.brand.copyrightUrl );
 			$( '#favicon' ).attr( 'href', config.brand.favicon );
-			$( '.query-builder-toggle' ).attr( 'href', config.api['query-builder'].server );
+			// Contacting using "?" means root query builder URL can't have any argument.
+			// This should be changed once we support ES6 only and then we can simply use URL()
+			$( '.query-builder-toggle' ).attr( 'href', config.api['query-builder'].server + '?' + $.param( { uselang: lang || 'en' } ) );
 		}
 
 		function setLogoutLink() {
@@ -52,13 +55,12 @@
 			} );
 		}
 
-		setBrand();
+		setBrand( lang );
 		setLogoutLink();
 		wb.ui.resultBrowser.helper.FormatterHelper.initMoment();
 
 		$( '#query-form' ).attr( 'action', config.api.sparql.uri );
-		var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
-			api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
+		var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
 			sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
 			sparqlApiHelper = new wb.api.Sparql( config.api.sparql.uri, lang ),
 			querySamplesApi = new wb.api.QuerySamples(
