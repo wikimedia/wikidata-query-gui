@@ -227,7 +227,18 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 
 		// render the banner
 		if ( this._showBanner ) {
-			new wikibase.queryService.ui.Banner( 'survey2021Banner', renderBanner, onBannerDismiss, true );
+			var bannerContent = $( '<span>' )
+				.attr( 'data-i18n', '[html]wdqs-app-query-builder-banner-content' )
+				.addClass( 'wdqs-app-query-builder-banner-content' )
+				.html( 'Do you need help creating a query? You can build queries without ' +
+					'having to write SPARQL in the new <a>Query Builder</a>.' );
+			new wikibase.queryService.ui.Banner(
+				'survey2021Banner',
+				renderBanner,
+				onBannerDismiss,
+				true,
+				bannerContent
+			);
 		}
 
 		this._actionBar = new wikibase.queryService.ui.toolbar.Actionbar( $( '.action-bar' ) );

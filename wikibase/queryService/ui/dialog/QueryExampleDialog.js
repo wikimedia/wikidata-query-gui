@@ -22,14 +22,16 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	 * @param {wikibase.queryService.api.QuerySamples} querySamplesApi
 	 * @param {Function} callback that is called when selecting an example
 	 * @param {wikibase.queryService.api.Wikibase} [wikibaseApi]
+	 * @param {string} [queryBuilderUrl] URL to query builder
 	 * @param {string} [previewUrl] URL to preview the result of an example query
 	 */
-	function SELF( $element, querySamplesApi, callback, wikibaseApi, previewUrl ) {
+	function SELF( $element, querySamplesApi, callback, wikibaseApi, queryBuilderUrl, previewUrl ) {
 
 		this._$element = $element;
 		this._querySamplesApi = querySamplesApi;
 		this._callback = callback;
 		this._wikibaseApi = wikibaseApi;
+		this._queryBuilderUrl = queryBuilderUrl;
 		this._previewUrl = previewUrl || 'embed.html#';
 
 		this._init();
@@ -88,6 +90,27 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 
 		this._initFilter();
 		this._initExamples();
+
+		function onBannerDismiss() {
+			$( '.navbar' ).css( 'border-top-width', '' );
+		}
+
+		function renderBanner( banner ) {
+			banner.css( 'margin-top', '15px' );
+			$( banner ).insertAfter( '.exampleTable' );
+		}
+
+		var bannerContent = $( '<span>' )
+			.attr( 'data-i18n', '[html]wdqs-app-query-builder-example-banner-content' )
+			.addClass( 'wdqs-app-query-builder-banner-content' )
+			.html( 'You can create queries without having to write SPARQL in the <a>Query Builder</a>' );
+		new wikibase.queryService.ui.Banner(
+			'queryBuilderExampleDialog',
+			renderBanner,
+			onBannerDismiss,
+			true,
+			bannerContent
+		);
 
 		var self = this;
 		this._$element.focus( function() {
