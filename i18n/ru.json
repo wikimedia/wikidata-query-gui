@@ -41,6 +41,7 @@
 	"wdqs-app-help-portal": "Портал помощи",
 	"wdqs-app-help-manual": "Руководство пользователя",
 	"wdqs-app-help-examples": "Примеры запросов",
+	"wdqs-app-query-builder-name": "Конструктор запросов",
 	"wdqs-app-help-datamodel": "Модель данных RDF",
 	"wdqs-app-help-prefixes": "Список префиксов",
 	"wdqs-app-help-copy": "Информация о лицензировании",

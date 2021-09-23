@@ -29,7 +29,7 @@
 	"wdqs-app-button-more-tools": "Más herramientas",
 	"wdqs-app-button-help": "Ayuda",
 	"wdqs-app-button-run": "Ejecutar",
-	"wdqs-app-button-run-title": "Ejecutar consulta (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Ejecutar consulta (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Vaciar",
 	"wdqs-app-button-clear-title": "Borrar consulta",
 	"wdqs-app-button-restore-title": "Restaurar la consulta anterior",

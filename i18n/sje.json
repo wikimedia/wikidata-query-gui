@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Olve Utne"
+		]
+	},
+	"wdqs-app-button-examples": "Åvvdåmierka",
+	"wdqs-app-button-prefixes": "Prefiksa",
+	"wdqs-app-button-more-tools": "Ienap riejdo",
+	"wdqs-app-button-help": "Vähkke",
+	"wdqs-app-button-clear": "Dubbmi",
+	"wdqs-app-button-clear-title": "Dubbmi gatjalvasav",
+	"wdqs-app-button-display": "Vuosedibme",
+	"wdqs-app-button-download": "Lässti vuolláj",
+	"wdqs-app-button-link": "Liŋŋka",
+	"wdqs-app-button-link-title": "Ådtjå liŋkav gatjalvasaj",
+	"wdqs-app-help-prefixes": "Prefikksalissto",
+	"wdqs-app-help-copy": "Diedo lisiensa birra",
+	"wdqs-app-logout": "Luggi ulgus",
+	"wdqs-app-tools-lexicographical-data": "Leksikografijalatj dáhtá",
+	"wdqs-app-result-json": "JSON-fijjla",
+	"wdqs-app-result-tsv": "TSV-fijjla",
+	"wdqs-app-result-csv": "CSV-fijjla",
+	"wdqs-app-result-svg": "SVG-gåvvå",
+	"wdqs-app-result-html": "HTML-tabälla",
+	"wdqs-app-shorturl-page-title": "Ånes URL dáj bielláj",
+	"wdqs-app-resultbrowser-table": "Tabälla",
+	"wdqs-app-resultbrowser-map": "Kárrta",
+	"wdqs-app-resultbrowser-line-chart": "Linnjadiagrámma",
+	"wdqs-app-resultbrowser-tree-map": "Muorradiagrámma",
+	"wdqs-app-resultbrowser-tree": "Muorra",
+	"wdqs-app-resultbrowser-timeline": "Ájjgelinnja",
+	"wdqs-app-urlshortener-loading": "Lässti...",
+	"wdqs-dialog-key-shortcut-show-example": "Vuoseda åvvdåmierkajt",
+	"wdqs-ve-filter": "Filltir",
+	"wdqs-ve-show": "Vuoseda",
+	"wdqs-ve-or": "jala",
+	"wdqs-ve-sb-other": "Ietjá",
+	"wdqs-action-server-error": "Dievnárvihke"
+}
