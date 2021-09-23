@@ -86,7 +86,7 @@
     "http-server": "^0.12.0",
     "karma-qunit": "^1.2.1",
     "load-grunt-tasks": "^3.5.2",
-    "qunit": "^2.14.0",
+    "qunit": "^2.17.2",
     "sinon": "^4.4.2",
     "stylelint": "^13.10.0",
     "stylelint-config-wikimedia": "^0.10.3",
