@@ -72,7 +72,8 @@ module.exports = function( grunt ) {
 		banana: {
 			all: 'i18n/',
 					options: {
-						disallowBlankTranslations: false
+						disallowBlankTranslations: false,
+						requireKeyPrefix: 'wdqs-'
 					}
 				},
 		clean: {
