@@ -84,7 +84,7 @@
     "grunt-stylelint": "^0.16.0",
     "grunt-usemin": "^3.1.1",
     "http-server": "^13.0.2",
-    "karma-qunit": "^1.2.1",
+    "karma-qunit": "^3.0.0",
     "load-grunt-tasks": "^3.5.2",
     "qunit": "^2.17.2",
     "sinon": "^11.1.2",
