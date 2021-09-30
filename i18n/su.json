@@ -1,17 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kandar",
 			"Uchup19"
 		]
 	},
 	"wdqs-app-button-examples": "Conto",
 	"wdqs-app-button-prefixes": "Awalan",
+	"wdqs-app-button-more-tools": "Parabot lianna",
 	"wdqs-app-button-help": "Pitulung",
 	"wdqs-app-button-run": "Jalankeun",
-	"wdqs-app-button-run-title": "Jalankan kuéri (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Jalankeun kuéri (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Bersihkeun",
 	"wdqs-app-button-clear-title": "Bersihkeun kuéri",
 	"wdqs-app-button-restore-title": "Balikeun kuéri saméméhna",
+	"wdqs-app-button-format-title": "Pormat kueri",
 	"wdqs-app-button-fullscreen-title": "Saklar éditor modeu layar pinuh",
 	"wdqs-app-button-display": "Pidangan",
 	"wdqs-app-button-display-title": "Pidangkeun hasil minangka tabél, gambar, ...",
