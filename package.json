@@ -29,7 +29,7 @@
     "codemirror": "^5.63.1",
     "d3": "^3.5.17",
     "dimple-js": "^2.1.4",
-    "downloadjs": "1.4.4",
+    "downloadjs": "1.4.7",
     "ekko-lightbox": "^5.3.0",
     "es6-shim": "^0.35.6",
     "font-awesome": "^4.7.0",
