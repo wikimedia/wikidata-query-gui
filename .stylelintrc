@@ -3,7 +3,7 @@
 	"rules": {
 		"color-named": null,
 		"declaration-no-important": null,
-		"declaration-property-value-blacklist": null,
+		"declaration-property-unit-disallowed-list": null,
 		"no-descending-specificity": null,
 		"selector-max-id": null
 	}
