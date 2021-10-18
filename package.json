@@ -47,7 +47,7 @@
     "leaflet-minimap": "^3.6.1",
     "leaflet-zoombox": "^0.5.2",
     "leaflet.locatecontrol": "^0.74.0",
-    "leaflet.markercluster": "^1.5.1",
+    "leaflet.markercluster": "^1.5.3",
     "mathjax": "^3.2.0",
     "moment": "^2.29.1",
     "select2": "^4.0.8",
