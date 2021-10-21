@@ -53,7 +53,7 @@
 	"wdqs-app-footer-updated-ago": "Tiedot päivitetty $1",
 	"wdqs-app-result-shorturl": "Lyhyt URL-osoite tulokselle",
 	"wdqs-app-result-shorturl-title": "Lyhytosoite tälle tulokselle",
-	"wdqs-app-result-rawgraphs": "Avaa RAWgraphs.iossa",
+	"wdqs-app-result-rawgraphs": "Avaa RAWGraphs.iossa",
 	"wdqs-app-result-rawgraphs-title": "Luo kaavio tällä tulosdatalla RAWGraphs.io-palvelua käyttäen",
 	"wdqs-app-result-embed": "Upota tulos",
 	"wdqs-app-result-endpoint": "SPARQL-päätepiste",
