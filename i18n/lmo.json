@@ -77,8 +77,8 @@
 	"wdqs-app-resultbrowser-scatter-chart": "Grafich a dispersion",
 	"wdqs-app-resultbrowser-area-chart": "Areograma",
 	"wdqs-app-resultbrowser-bubble-chart": "Grafiche bolle",
-	"wdqs-app-resultbrowser-tree-map": "Mappa a arbor",
-	"wdqs-app-resultbrowser-tree": "Arbor",
+	"wdqs-app-resultbrowser-tree-map": "Mapa a albor",
+	"wdqs-app-resultbrowser-tree": "Albor",
 	"wdqs-app-resultbrowser-timeline": "Linea temporal",
 	"wdqs-app-resultbrowser-dimensions": "Dimension",
 	"wdqs-app-resultbrowser-graph": "Grafich",
@@ -117,5 +117,7 @@
 	"wdqs-action-render": "Rapresentazzion di risultad",
 	"wdqs-action-error-display": "Impossibil visualizà el risultad",
 	"wdqs-action-timeout": "Rivad al limet de temp per l'interogazzion",
-	"wdqs-action-malformed-query": "Interogazzion formada mal"
+	"wdqs-action-malformed-query": "Interogazzion formada mal",
+	"wdqs-action-server-error": "Error del server",
+	"wdqs-action-unknow-error": "Errore sconosciuto"
 }
