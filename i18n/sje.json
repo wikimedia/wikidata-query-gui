@@ -8,12 +8,16 @@
 	"wdqs-app-button-prefixes": "Prefiksa",
 	"wdqs-app-button-more-tools": "Ienap riejdo",
 	"wdqs-app-button-help": "Vähkke",
+	"wdqs-app-button-run": "Mana",
 	"wdqs-app-button-clear": "Dubbmi",
 	"wdqs-app-button-clear-title": "Dubbmi gatjalvasav",
 	"wdqs-app-button-display": "Vuosedibme",
-	"wdqs-app-button-download": "Lässti vuolláj",
+	"wdqs-app-button-download": "Lässti vulus",
 	"wdqs-app-button-link": "Liŋŋka",
 	"wdqs-app-button-link-title": "Ådtjå liŋkav gatjalvasaj",
+	"wdqs-app-button-code": "Kuvvda",
+	"wdqs-app-button-code-title": "Vuoseda kuvvdaåvvdåmerkijt",
+	"wdqs-app-help-manual": "Adnobágádus",
 	"wdqs-app-help-prefixes": "Prefikksalissto",
 	"wdqs-app-help-copy": "Diedo lisiensa birra",
 	"wdqs-app-logout": "Luggi ulgus",
@@ -36,5 +40,6 @@
 	"wdqs-ve-show": "Vuoseda",
 	"wdqs-ve-or": "jala",
 	"wdqs-ve-sb-other": "Ietjá",
-	"wdqs-action-server-error": "Dievnárvihke"
+	"wdqs-action-server-error": "Dievnárvihke",
+	"wdqs-action-unknow-error": "Amas fäjjla"
 }
