@@ -1,4 +1,4 @@
-( function( $, QUnit, sinon, download ) {
+( function( $, QUnit, sinon, download, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.ui.App' );
@@ -28,4 +28,33 @@
 		download( data, filename, mimetype );
 	} );
 
-}( jQuery, QUnit, sinon, download ) );
+	QUnit.test( '_updateTitle', function( assert ) {
+		var originalTitle = document.title;
+		try {
+			document.title = '_updateTitle test';
+			var app = Object.create( wb.queryService.ui.App.prototype );
+			var query = '';
+			app._editor = {
+				getValue: function() {
+					return query;
+				},
+			};
+			app._originalDocumentTitle = document.title;
+
+			query = '#title:custom title\nASK{}';
+			app._updateTitle();
+			assert.strictEqual( document.title, 'custom title - _updateTitle test' );
+
+			query = '#defaultView:Map\n#title:other title\nASK{}';
+			app._updateTitle();
+			assert.strictEqual( document.title, 'other title - _updateTitle test' );
+
+			query = 'ASK{}';
+			app._updateTitle();
+			assert.strictEqual( document.title, '_updateTitle test' );
+		} finally {
+			document.title = originalTitle;
+		}
+	} );
+
+}( jQuery, QUnit, sinon, download, wikibase ) );

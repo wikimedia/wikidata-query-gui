@@ -42,7 +42,6 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		this._shorten = shortUrlApi;
 		this._editor = editor || null;
 		this._queryBuilderUrl = queryBuilderUrl;
-		this._originalDocumentTitle = document.title;
 
 		this._init();
 	}
@@ -124,12 +123,6 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 */
 	SELF.prototype._queryBuilderUrl = null;
-
-	/**
-	 * @property {string}
-	 * @private
-	 */
-	SELF.prototype._originalDocumentTitle = null;
 
 	/**
 	 * @property {Object}
@@ -726,9 +719,6 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 
 				if ( title && title[ 1 ] ) {
 					self._actionBar.show( title[ 1 ] , '' );
-					document.title = title[ 1 ] + ' - ' + self._originalDocumentTitle;
-				} else {
-					document.title = self._originalDocumentTitle;
 				}
 			} catch ( e ) {
 				self._drawErrorResult( resultBrowser );

@@ -130,6 +130,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	SELF.prototype._queryBuilderUrl = null;
 
 	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._originalDocumentTitle = null;
+
+	/**
 	 * @property {boolean}
 	 * @private
 	 */
@@ -170,6 +176,8 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		}
 
 		this._track( 'init' );
+
+		this._originalDocumentTitle = document.title;
 
 		this._initApp();
 		this._initEditor();
@@ -587,6 +595,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			this._editor.setValue( decodeURIComponent( window.location.hash.substr( 1 ) ) );
 			this._editor.refresh();
 			this._isHistoryDisabled = false;
+			this._updateTitle();
 		}
 	};
 
@@ -801,6 +810,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 		e.preventDefault();
 		this._editor.save();
 		this._updateQueryUrl();
+		this._updateTitle();
 
 		$( '#execute-button' ).prop( 'disabled', true );
 		if ( this._isEmptyQuery() ) {
@@ -860,6 +870,19 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 			} else {
 				window.location.hash = hash;
 			}
+		}
+	};
+
+	/**
+	 * @private
+	 */
+	SELF.prototype._updateTitle = function() {
+		var title = this._editor.getValue().match( /#title:(.*)/ );
+
+		if ( title && title[ 1 ] ) {
+			document.title = title[ 1 ] + ' - ' + this._originalDocumentTitle;
+		} else {
+			document.title = this._originalDocumentTitle;
 		}
 	};
 
