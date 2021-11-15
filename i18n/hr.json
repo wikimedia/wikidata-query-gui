@@ -4,7 +4,8 @@
 			"Bugoslav",
 			"Ex13",
 			"Ivi104",
-			"MaGa"
+			"MaGa",
+			"Ponor"
 		]
 	},
 	"wdqs-app-button-examples": "Primjeri",
@@ -46,7 +47,7 @@
 	"wdqs-action-error-display": "Nije moguće prikazati rezultat",
 	"wdqs-action-timeout": "Dosegnuto je vremensko ograničenje za upit",
 	"wdqs-action-malformed-query": "Upit je unesen u pogrešnom formatu",
-	"wdqs-action-server-error": "Pogrješka servera",
-	"wdqs-action-unknow-error": "Nepoznata pogrješka",
+	"wdqs-action-server-error": "Pogreška servera",
+	"wdqs-action-unknow-error": "Nepoznata pogreška",
 	"wdqs-result-map-layers-all": "Svi slojevi"
 }

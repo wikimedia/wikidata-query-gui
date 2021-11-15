@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Akmaie Ajam",
 			"ArlandGa",
 			"Beeyan",
 			"Daud I.F. Argana",
@@ -36,6 +37,9 @@
 	"wdqs-app-help-portal": "Portal Bantuan",
 	"wdqs-app-help-manual": "Panduan Pengguna",
 	"wdqs-app-help-examples": "Contoh Kueri",
+	"wdqs-app-query-builder-name": "Pembangun Kueri",
+	"wdqs-app-query-builder-dd-title": "Bangun kueri tanpa SPARQL",
+	"wdqs-app-query-builder-dd-copy": "Buat kueri secara visual dengan beberapa klik. Tidak perlu mengetahui SPARQL.",
 	"wdqs-app-help-datamodel": "Jenis Data RDF",
 	"wdqs-app-help-prefixes": "Daftar awalan",
 	"wdqs-app-help-copy": "Informasi lisensi",
