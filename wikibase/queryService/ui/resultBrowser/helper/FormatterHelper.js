@@ -147,6 +147,12 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 
 		switch ( data.datatype || data.type ) {
 		case TYPE_URI:
+			if ( /^javascript:/.test( value ) ) {
+				// don’t treat JavaScript URIs as URIs
+				data = $.extend( {}, data, { datatype: DATATYPE_STRING } );
+				return this.formatValue( data, title, embed );
+			}
+
 			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank', class: 'item-link', rel: 'noopener' } );
 			$html.append( $link );
 
