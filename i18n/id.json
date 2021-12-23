@@ -58,7 +58,7 @@
 	"wdqs-app-result-shorturl-title": "URL ringkas menuju hasil ini",
 	"wdqs-app-result-rawgraphs": "Buka di RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Buat grafik dengan data hasil pencarian terkini dengan menggunakan RAWGraphs.io",
-	"wdqs-app-result-embed": "Lekatkan hasil",
+	"wdqs-app-result-embed": "Sematkan hasil",
 	"wdqs-app-result-endpoint": "Titik akhir SPARQL",
 	"wdqs-app-result-endpoint-title": "Tautan ke endpoint SPARQL yang mengembalikan hasilnya",
 	"wdqs-app-result-formatter-title-datetime": "cap waktu ISO mentah",
