@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bello Na'im",
 			"Gwanki",
 			"Lamma64"
 		]
@@ -42,8 +43,8 @@
 	"wdqs-app-result-json": "file din JSON",
 	"wdqs-app-result-tsv": "file din TSV",
 	"wdqs-app-result-csv": "File din CSV",
-	"wdqs-app-result-svg": "Photon SVG",
-	"wdqs-app-result-html": "Table din HTML",
+	"wdqs-app-result-svg": "hoton SVG",
+	"wdqs-app-result-html": "Teburin HTML",
 	"wdqs-app-editor-addprefixes": "saka ingantaccen dafa waje",
 	"wdqs-app-resultbrowser-stabilize": "Ingantaccen netwok",
 	"wdqs-app-resultbrowser-table": "Taburi",
