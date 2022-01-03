@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fraxinus.cs",
 			"Pupsik-ipa",
 			"Андрей"
 		]
@@ -25,7 +26,7 @@
 	"wdqs-app-result-csv": "CSV-афаил",
 	"wdqs-dialog-examples-preview-result": "Иахәаԥштәуп алҵшәа",
 	"wdqs-dialog-key-shortcut-close-button": "Иарктәуп",
-	"wdqs-ve-filter": "Афильтр",
+	"wdqs-ve-filter": "Араӡага",
 	"wdqs-ve-show": "Иаарԥштәуп",
 	"wdqs-ve-or": "ма",
 	"wdqs-ve-sb-other": "Даҽакы",
