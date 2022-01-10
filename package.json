@@ -90,6 +90,6 @@
     "sinon": "^12.0.1",
     "stylelint": "^13.13.1",
     "stylelint-config-wikimedia": "^0.11.1",
-    "webdriverio": "^7.16.11"
+    "webdriverio": "^7.16.13"
   }
 }
