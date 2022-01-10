@@ -766,8 +766,16 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					return item.text;
 				}
 
-				return $( '<span><b>' + item.text + ' (' + item.data.id + ')' + '</b></span><br/><small>' +
-						item.data.description + '</small>' );
+				return $( '<span>' )
+					.append(
+						$( '<b>' )
+							.text( item.text + ' (' + item.data.id + ')' ) // TODO parentheses should be i18n-ed
+					)
+					.add( $( '<br>' ) )
+					.add(
+						$( '<small>' )
+							.text( item.data.description )
+					);
 
 			},
 			transport = this._createLookupService( $element, triple );
