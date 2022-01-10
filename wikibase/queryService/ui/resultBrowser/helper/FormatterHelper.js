@@ -282,8 +282,14 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {jQuery}
 	 */
 	SELF.prototype.createExploreButton = function( url ) {
-		var $button = $( '<a href="' + url +
-				'" title="Explore item" class="explore glyphicon glyphicon-search" tabindex="-1" aria-hidden="true">' );
+		var $button = $( '<a>' )
+			.attr( {
+				href: url,
+				title: 'Explore item', // TODO i18n
+				class: 'explore glyphicon glyphicon-search',
+				tabindex: '-1',
+				'aria-hidden': 'true',
+			} );
 		$button.click( $.proxy( this.handleExploreItem, this ) );
 
 		return $button;
