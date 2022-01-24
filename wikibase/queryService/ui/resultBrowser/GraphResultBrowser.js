@@ -3,6 +3,8 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
+// Ce script est responsable de montrer les resultats d'une query en forme de graph. Le menu contextuel devrait etre ajoute dans cette classe
+
 wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, window, _ ) {
 	'use strict';
 
