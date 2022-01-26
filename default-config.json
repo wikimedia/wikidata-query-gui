@@ -1,7 +1,7 @@
 {
   "api": {
     "sparql": {
-      "uri": "https://query.wikidata.org/sparql"
+      "uri": "http://dbtune.org/bbc/peel/sparql"
     },
     "wikibase": {
       "uri": "https://www.wikidata.org/w/api.php"

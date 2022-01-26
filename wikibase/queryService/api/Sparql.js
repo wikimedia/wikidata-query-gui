@@ -5,7 +5,7 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.Sparql = ( function( $ ) {
 	'use strict';
 
-	var SPARQL_SERVICE_URI = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql',
+  var SPARQL_SERVICE_URI = 'http://dbtune.org/bbc/peel/sparql',
 		ERROR_CODES = {
 			TIMEOUT: 10,
 			MALFORMED: 20,
