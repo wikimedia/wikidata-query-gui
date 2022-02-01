@@ -62,7 +62,7 @@
     "@wdio/mocha-framework": "^7.16.14",
     "@wdio/spec-reporter": "^7.16.14",
     "eslint-config-wikimedia": "^0.16.2",
-    "eslint-plugin-compat": "^4.0.1",
+    "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-promise": "^6.0.0",
     "grunt": "^1.4.1",
     "grunt-auto-install": "^0.3.1",
