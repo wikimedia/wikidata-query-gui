@@ -99,7 +99,7 @@
 	"wdqs-app-toast-leave-fullscreen": "Appuyez sur [Échap] pour quitter le mode plein écran",
 	"wdqs-app-urlshortener-bad-service": "Mauvais service de raccourcissement d’URL dans la configuration",
 	"wdqs-app-urlshortener-failed": "Échec du raccourcissement d’URL",
-	"wdqs-app-urlshortener-loading": "Chargement...",
+	"wdqs-app-urlshortener-loading": "Chargement en cours...",
 	"wdqs-dialog-examples-preview-query": "Aperçu de la requête",
 	"wdqs-dialog-examples-preview-result": "Aperçu du résultat",
 	"wdqs-dialog-key-shortcut-title": "Raccourcis clavier",

@@ -4,6 +4,7 @@
 			"Kastanoto",
 			"Rafaneta",
 			"Robin van der Vliet",
+			"Spenĉjo",
 			"YvesNevelsteen"
 		]
 	},
@@ -12,7 +13,7 @@
 	"wdqs-app-button-more-tools": "Pliaj iloj",
 	"wdqs-app-button-help": "Helpo",
 	"wdqs-app-button-run": "Plenumi",
-	"wdqs-app-button-run-title": "Plenumi informpeton (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Plenumi informpeton (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Forviŝi",
 	"wdqs-app-button-clear-title": "Forviŝi informpeton",
 	"wdqs-app-button-restore-title": "Restarigi antaŭan informpeton",
