@@ -76,6 +76,19 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			}
 		} );
 
+    // contextual menu on right click
+    network.on('oncontext', function (properties) {
+      properties.event.preventDefault(); // prevent default browser contextual menu to pop up
+      var nodeId = network.getNodeAt(properties.pointer.DOM) || null; // retrieve node
+
+      if (nodeId === null){
+        console.log("Not a node.");
+      } else {
+        console.log("Node ID: ", nodeId)
+      }
+
+    });
+
 		var nodeBrowser = new wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser( data.nodes, data.edges, this.getSparqlApi() );
 		network.on( 'click', function( properties ) {
 			var nodeId = properties.nodes[0] || null;

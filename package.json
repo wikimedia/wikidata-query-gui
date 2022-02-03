@@ -8,7 +8,8 @@
     "test": "grunt test && npm run browser_test -- $@",
     "browser_test": "grunt browser_test",
     "build": "grunt build",
-    "deploy": "grunt deploy"
+    "deploy": "grunt deploy",
+    "reload": "rm -rf node_modules && npm install && npm start"
   },
   "repository": {
     "type": "git",
