@@ -76,17 +76,37 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			}
 		} );
 
-    // contextual menu on right click
+    // La fonction build de contextMenu contient seulement une reference a la premiere fois que le callback de l'event clique droit est lance.
+    // Il faut donc lier ses variables au scope global pour qu'elles soient actualisee
+
+    // define click coordinates and node id as objects in global scope
+    var coordHolder = {x: 0, y: 0};
+    var nodeHolder = {id: undefined};
+
     network.on('oncontext', function (properties) {
-      properties.event.preventDefault(); // prevent default browser contextual menu to pop up
-      var nodeId = network.getNodeAt(properties.pointer.DOM) || null; // retrieve node
+      // retrieve values from gloval scope
+      var thisNodeHolder = nodeHolder;
+      var thisCoordHolder = coordHolder;
 
-      if (nodeId === null){
-        console.log("Not a node.");
-      } else {
-        console.log("Node ID: ", nodeId)
-      }
+      // set local variables
+      coordHolder.x = properties.pointer.DOM.x;
+      coordHolder.y = properties.pointer.DOM.y;
 
+      // contextual menu
+      $.contextMenu({
+        selector: 'canvas',
+        build: function ($trigger, e) {
+          // retrieve node from network
+          thisNodeHolder.id = network.getNodeAt({ x: thisCoordHolder.x, y: thisCoordHolder.y}); // retrieve node
+          return {
+            callback: function (key, options) {
+            },
+            items: {
+              "node": { name: thisNodeHolder.id ?? 'not a node', icon: "edit" }
+            }
+          };
+        }
+      });
     });
 
 		var nodeBrowser = new wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser( data.nodes, data.edges, this.getSparqlApi() );
