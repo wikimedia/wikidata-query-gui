@@ -76,12 +76,40 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			}
 		} );
 
+    // $.ajax({
+    //   type: 'GET',
+    //   url: 'http://primhillcomputers.com/mock_server/top_level_scripts.json',
+    //   headers: {
+    //     'Access-control-Allow-Origin': 'http://localhost:3000',
+    //   },
+    //   success: function(data){
+    //     console.log(data);
+    //   }
+
+    // });
+    // fetch('http://primhillcomputers.com/mock_server/top_level_scripts.json', {
+    //   credentials: 'include'
+    // })
+    //   .then(response => response.json())
+    //   .then(data => console.log(data));
+
+    // var outsideItems = {
+    //   "a": { name: "Disk partitions"},
+    //   "b": { name: "Process tree"},
+    //   "c": { name: "List of Linux cgroups"},
+    //   "d": { name: "DBus buses"},
+
+    // }
+
+
     // La fonction build de contextMenu contient seulement une reference a la premiere fois que le callback de l'event clique droit est lance.
     // Il faut donc lier ses variables au scope global pour qu'elles soient actualisee
 
     // define click coordinates and node id as objects in global scope
     var coordHolder = {x: 0, y: 0};
     var nodeHolder = {id: undefined};
+
+    // console.log(JSON.parse('http://primhillcomputers.com/mock_server/top_level_scripts.json'))
 
     network.on('oncontext', function (properties) {
       // retrieve values from gloval scope
@@ -92,6 +120,18 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
       coordHolder.x = properties.pointer.DOM.x;
       coordHolder.y = properties.pointer.DOM.y;
 
+      // parse hard coded menus
+      var outsideItems = {};
+      var nodeItems = {};
+
+      d3.json("./top_level_scripts.json", function(data){
+        outsideItems = data;
+      });
+
+      d3.json("./entity_dirmenu_only_handle_1234.json", function(data){
+        nodeItems = data;
+      });
+
       // contextual menu
       $.contextMenu({
         selector: 'canvas',
@@ -101,9 +141,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
           return {
             callback: function (key, options) {
             },
-            items: {
-              "node": { name: thisNodeHolder.id ?? 'not a node', icon: "edit" }
-            }
+            items: thisNodeHolder.id ? nodeItems : outsideItems
           };
         }
       });
