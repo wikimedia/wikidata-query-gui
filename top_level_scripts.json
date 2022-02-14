@@ -1,0 +1,194 @@
+{
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_CIM_LogicalDisk.py?xid=.PLAINTEXTONLY": {
+    "name": "Disk partitions", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_CIM_LogicalDisk.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_CIM_Process.py?xid=.PLAINTEXTONLY": {
+    "name": "Processes tree", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_CIM_Process.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_cgroup.py?xid=.PLAINTEXTONLY": {
+    "name": "List of Linux cgroups", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_cgroup.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_dbus_bus.py?xid=.PLAINTEXTONLY": {
+    "name": "DBus buses", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_dbus_bus.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_memmap.py?xid=.PLAINTEXTONLY": {
+    "name": "Memory-mapped files.", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_memmap.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_python_package.py?xid=.PLAINTEXTONLY": {
+    "name": "Installed Python packages", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_python_package.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_socket.py?xid=.PLAINTEXTONLY": {
+    "name": "System-wide sockets", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_socket.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_user.py?xid=.PLAINTEXTONLY": {
+    "name": "Users", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/enumerate_user.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/event_get_all.py?xid=.PLAINTEXTONLY": {
+    "name": "Get all dynamic events", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/event_get_all.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_one_tick_per_second.py?xid=.PLAINTEXTONLY": {
+    "name": "Sends one event per second. Test purpose...", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_one_tick_per_second.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_psutil_processes_perf.py?xid=.PLAINTEXTONLY": {
+    "name": "Continuous information about running pro...", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_psutil_processes_perf.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_psutil_system_counters.py?xid=.PLAINTEXTONLY": {
+    "name": "Continuous information about the operati...", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_psutil_system_counters.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_sockets_promiscuous_mode.py?xid=.PLAINTEXTONLY": {
+    "name": "Sockets in promiscuous mode", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_sockets_promiscuous_mode.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_tcpdump.py?xid=.PLAINTEXTONLY": {
+    "name": "tcpdump and windump", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/events_feeder_tcpdump.py?xid=.PLAINTEXTONLY"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/open_files.py?xid=.PLAINTEXTONLY": {
+    "name": "System-wide open files", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/open_files.py?xid=.PLAINTEXTONLY"
+  }, 
+  "All Linux top-level scripts": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/cgi_arp_linux.py?xid=.PLAINTEXTONLY": {
+        "name": "ARP command for Linux", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/cgi_arp_linux.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/enumerate_user.py?xid=.PLAINTEXTONLY": {
+        "name": "Linux users (psutil)", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/enumerate_user.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/etc_group.py?xid=.PLAINTEXTONLY": {
+        "name": "Groups on a Linux platform", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/etc_group.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/etc_mtab.py?xid=.PLAINTEXTONLY": {
+        "name": "Mounted disks on Linux machines", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/etc_mtab.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/etc_passwd.py?xid=.PLAINTEXTONLY": {
+        "name": "/etc/passwd users", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/etc_passwd.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/events_feeder_vmstat.py?xid=.PLAINTEXTONLY": {
+        "name": "vmstat command", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/events_feeder_vmstat.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/modules_dependencies.py?xid=.PLAINTEXTONLY": {
+        "name": "Linux modules dependencies", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/modules_dependencies.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/proc_cgroup.py?xid=.PLAINTEXTONLY": {
+        "name": "CGroups on a Linux platform", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/proc_cgroup.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/tcp_sockets.py?xid=.PLAINTEXTONLY": {
+        "name": "TCP Linux sockets with netstat", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/tcp_sockets.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/udp_sockets.py?xid=.PLAINTEXTONLY": {
+        "name": "UDP sockets", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/udp_sockets.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/unix_domain_sockets.py?xid=.PLAINTEXTONLY": {
+        "name": "Unix domain sockets", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Linux/unix_domain_sockets.py?xid=.PLAINTEXTONLY"
+      }
+    }, 
+    "name": "All Linux top-level scripts", 
+    "url": "All Linux top-level scripts"
+  }, 
+  "Browse neighborhood services and agents": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/neighborhood/cgi_arp_async.py?xid=.PLAINTEXTONLY": {
+        "name": "ARP address resolution protocol", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/neighborhood/cgi_arp_async.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/neighborhood/survol_neighborhood.py?xid=.PLAINTEXTONLY": {
+        "name": "Neighboring Survol agents.", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/neighborhood/survol_neighborhood.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/neighborhood/wbem_neighborhood.py?xid=.PLAINTEXTONLY": {
+        "name": "Neighboring WBEM agents.", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/neighborhood/wbem_neighborhood.py?xid=.PLAINTEXTONLY"
+      }
+    }, 
+    "name": "Browse neighborhood services and agents", 
+    "url": "Browse neighborhood services and agents"
+  }, 
+  "Java world": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/java/java_processes.py?xid=.PLAINTEXTONLY": {
+        "name": "Java processes", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/java/java_processes.py?xid=.PLAINTEXTONLY"
+      }
+    }, 
+    "name": "Java world", 
+    "url": "Java world"
+  }, 
+  "RabbitMQ concepts": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/rabbitmq/list_configurations.py?xid=.PLAINTEXTONLY": {
+        "name": "List available RabbitMQ configurations", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/rabbitmq/list_configurations.py?xid=.PLAINTEXTONLY"
+      }
+    }, 
+    "name": "RabbitMQ concepts", 
+    "url": "RabbitMQ concepts"
+  }, 
+  "Scripts using nmap": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_broadcast_ms_sql_discover.py?xid=.PLAINTEXTONLY": {
+        "name": "Nmap MS-SQL discovery", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_broadcast_ms_sql_discover.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_broadcast_netbios_master_browser.py?xid=.PLAINTEXTONLY": {
+        "name": "Nmap master browsers discovery", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_broadcast_netbios_master_browser.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_broadcast_upnp_info.py?xid=.PLAINTEXTONLY": {
+        "name": "Nmap broadcast UPNP information", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_broadcast_upnp_info.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_ping_scan.py?xid=.PLAINTEXTONLY": {
+        "name": "Nmap ping scan", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_ping_scan.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_run.py?xid=.PLAINTEXTONLY": {
+        "name": "Nmap network exploration results", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/nmap/nmap_run.py?xid=.PLAINTEXTONLY"
+      }
+    }, 
+    "name": "Scripts using nmap", 
+    "url": "Scripts using nmap"
+  }, 
+  "Top-level scripts for databases detectio...": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Databases/mysql_instances.py?xid=.PLAINTEXTONLY": {
+        "name": "mysql instances", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Databases/mysql_instances.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Databases/mysql_processlist.py?xid=.PLAINTEXTONLY": {
+        "name": "mysql sessions", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Databases/mysql_processlist.py?xid=.PLAINTEXTONLY"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/Databases/oracle_tnsnames.py?xid=.PLAINTEXTONLY": {
+        "name": "TNSNAMES file", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/Databases/oracle_tnsnames.py?xid=.PLAINTEXTONLY"
+      }
+    }, 
+    "name": "Top-level scripts for databases detectio...", 
+    "url": "Top-level scripts for databases detectio..."
+  }
+}

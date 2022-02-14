@@ -1,0 +1,98 @@
+{
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/environment_variables.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Environment variables", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/environment_variables.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/events_feeder_system_calls.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Monitor system calls with dockit.", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/events_feeder_system_calls.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/oracle_process_dbs.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Oracle databases accessed", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/oracle_process_dbs.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_command_line.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Command line", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_command_line.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_connections.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Process open sockets", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_connections.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_cwd.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Current working directory", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_cwd.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_gdbstack.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Process callstack with gdb", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_gdbstack.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_memmaps.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Shared memory segments", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_memmaps.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_open_files.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Files opened by process", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/process_open_files.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/single_pidstree.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "Parent and sub-processes", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/single_pidstree.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/wbem_process_info.py?xid=CIM_Process.Handle%3D14303": {
+    "name": "WBEM CIM_Process information.", 
+    "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/wbem_process_info.py?xid=CIM_Process.Handle%3D14303"
+  }, 
+  "Languages": {
+    "items": {
+      "Java processes": {
+        "items": {
+          "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/languages/java/java_mbeans.py?xid=CIM_Process.Handle%3D14303": {
+            "name": "Process MBeans", 
+            "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/languages/java/java_mbeans.py?xid=CIM_Process.Handle%3D14303"
+          }, 
+          "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/languages/java/java_system_properties.py?xid=CIM_Process.Handle%3D14303": {
+            "name": "System Properties", 
+            "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/languages/java/java_system_properties.py?xid=CIM_Process.Handle%3D14303"
+          }, 
+          "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/languages/java/jdk_jstack.py?xid=CIM_Process.Handle%3D14303": {
+            "name": "Full thread dump Java HotSpot (TM)", 
+            "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/languages/java/jdk_jstack.py?xid=CIM_Process.Handle%3D14303"
+          }
+        }, 
+        "name": "Java processes", 
+        "url": "Java processes"
+      }
+    }, 
+    "name": "Languages", 
+    "url": "Languages"
+  }, 
+  "Regex matching in heap": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/memory_regex_search/scan_sql_queries.py?xid=CIM_Process.Handle%3D14303": {
+        "name": "Extract SQL queries from process heap me...", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/memory_regex_search/scan_sql_queries.py?xid=CIM_Process.Handle%3D14303"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/memory_regex_search/search_filenames.py?xid=CIM_Process.Handle%3D14303": {
+        "name": "File names in process memory.", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/memory_regex_search/search_filenames.py?xid=CIM_Process.Handle%3D14303"
+      }, 
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/memory_regex_search/search_urls.py?xid=CIM_Process.Handle%3D14303": {
+        "name": "Scan process for HTTP urls.", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/memory_regex_search/search_urls.py?xid=CIM_Process.Handle%3D14303"
+      }
+    }, 
+    "name": "Regex matching in heap", 
+    "url": "Regex matching in heap"
+  }, 
+  "Scripts specific to Linux processes": {
+    "items": {
+      "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/Linux/process_cgroups.py?xid=CIM_Process.Handle%3D14303": {
+        "name": "Process cgroups", 
+        "url": "http://vps516494.ovh.net:80/Survol/survol/sources_types/CIM_Process/Linux/process_cgroups.py?xid=CIM_Process.Handle%3D14303"
+      }
+    }, 
+    "name": "Scripts specific to Linux processes", 
+    "url": "Scripts specific to Linux processes"
+  }
+}
