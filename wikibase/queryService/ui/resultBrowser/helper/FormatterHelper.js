@@ -212,6 +212,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
             img.attr('src', depictUrl);
             img.attr('width', "200");
             img.attr('height', "150");
+            img.attr('onerror', "this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/b/b1/Missing-image-232x150.png?width=232';");
 
             var link = $('<a>');
             link.attr('target','_blank');
