@@ -1,5 +1,4 @@
 {
-	"customSyntax": "postcss-less",
 	"extends": "stylelint-config-wikimedia",
 	"rules": {
 		"color-named": null,
