@@ -11,6 +11,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		COMMONS_FILE_PATH_MEDIAVIEWER = 'https://commons.wikimedia.org/wiki/File:{FILENAME}',
 		DATATYPE_DATETIME = 'http://www.w3.org/2001/XMLSchema#dateTime',
 		TYPE_URI = 'uri',
+        TYPE_SMILES = 'smiles',
 		DATATYPE_STRING = 'http://www.w3.org/2001/XMLSchema#string',
 		DATATYPE_MATHML = 'http://www.w3.org/1998/Math/MathML';
 
@@ -202,6 +203,25 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 				window.console.error( 'Invalid MathML', e );
 				// fall through to default case, escaping and displaying the raw value
 			} // jshint ignore:line
+
+        case TYPE_SMILES:
+
+            var depictUrl = "https://www.simolecule.com/cdkdepict/depict/bow/svg?smi="+value+"&zoom=2.0&annotate=none&bgcolor=transparent";
+
+            var img = $('<img>');
+            img.attr('src', depictUrl);
+            img.attr('width', "200");
+            img.attr('height', "150");
+
+            var link = $('<a>');
+            link.attr('target','_blank');
+            link.attr('href', depictUrl);
+
+            img.appendTo(link);
+
+            $html.append(link);
+
+            break;
 
 		default:
 			var $label = $( '<span>' ).text( value );

@@ -139,10 +139,16 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			showPagination = ( this.rows.length > TABLE_PAGE_SIZE );
 
 		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data, row, index ) {
+
 			if ( !data ) {
 				return '';
 			}
 			self.processVisitors( data, this.field );
+
+            if(this.field == "smilesDepict"){
+                data.type = "smiles";
+            }
+
 			return self._getFormatter().formatValue( data ).html();
 		};
 
