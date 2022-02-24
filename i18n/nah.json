@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Akapochtli",
+			"Languaeditor",
 			"Ricardo gs",
 			"Teòtlalili"
 		]
@@ -12,7 +13,7 @@
 	"wdqs-app-button-run": "Ma mochihua",
 	"wdqs-app-button-clear": "Ma mixpopohua",
 	"wdqs-app-button-display": "Ma monexti",
-	"wdqs-app-button-download": "Tictemoz in tlahcuilolli",
+	"wdqs-app-button-download": "Xikemowi",
 	"wdqs-app-button-link": "tlamecayotlaliztli",
 	"wdqs-ve-show": "Monextiz",
 	"wdqs-ve-with": "itloc",
