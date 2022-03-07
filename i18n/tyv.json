@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agilight",
 			"Riverman"
 		]
 	},
@@ -16,7 +17,7 @@
 	"wdqs-app-button-format-title": "Дилегни форматтаар",
 	"wdqs-app-button-query-helper": "Дилег тайылбырын көргүзер",
 	"wdqs-app-button-display": "Көргүзер",
-	"wdqs-app-button-display-title": "Түңнелдерни таблица, чурук, ...кылдыр көргүзер",
+	"wdqs-app-button-display-title": "Түңнелдерни таблица, чурук, ... кылдыр көргүзер",
 	"wdqs-app-button-download": "Кииртир",
 	"wdqs-app-button-download-title": "Түңнелди кииртир",
 	"wdqs-app-button-link": "Айтыг",
