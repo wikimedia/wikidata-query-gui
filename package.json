@@ -88,7 +88,7 @@
     "load-grunt-tasks": "^5.1.0",
     "qunit": "^2.18.0",
     "sinon": "^13.0.1",
-    "stylelint": "^14.5.3",
+    "stylelint": "^14.6.0",
     "stylelint-config-wikimedia": "^0.12.2",
     "webdriverio": "^7.17.4"
   }
