@@ -81,6 +81,12 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'dct:language'
 	];
 
+	var SPARQL_CUSTOM_FUNCTIONS = [
+		// wikibase:
+		'wikibase:isSomeValue',
+		'wikibase:decodeUri'
+	];
+
 	// This regex matches VARNAME from SPARQL 1.1 spec (minus \u10000-\uEFFFF because Blazegraph currently doesn’t support astral planes)
 	// VARNAME = FIRST_LETTER NEXT_LETTERS*
 	// FIRST_LETTER = PN_CHARS_BASE | '_' | [0-9]
@@ -143,6 +149,12 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		} );
 
 		$.each( SPARQL_PREDICATES, function( key, keyword ) {
+			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
+				list.push( keyword );
+			}
+		} );
+
+		$.each( SPARQL_CUSTOM_FUNCTIONS, function( key, keyword ) {
 			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
 				list.push( keyword );
 			}
