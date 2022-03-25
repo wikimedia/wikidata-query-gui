@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@wdio/cli": "^7.19.1",
-    "@wdio/dot-reporter": "^7.18.0",
+    "@wdio/dot-reporter": "^7.19.1",
     "@wdio/local-runner": "^7.18.1",
     "@wdio/mocha-framework": "^7.18.0",
     "@wdio/spec-reporter": "^7.18.0",
