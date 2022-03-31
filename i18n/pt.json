@@ -38,6 +38,8 @@
 	"wdqs-app-query-builder-name": "Assistente de consultas",
 	"wdqs-app-query-builder-dd-title": "Construir consultas sem SPARQL",
 	"wdqs-app-query-builder-dd-copy": "Criar consultas visualmente em alguns cliques. Não é necessário conhecimento de SPARQL.",
+	"wdqs-app-query-builder-banner-content": "Precisa de ajuda para criar uma consulta? Pode criar consultas sem ter de escrever SPARQL no novo <a>Assistente de Consultas</a>.",
+	"wdqs-app-query-builder-example-banner-content": "Pode criar consultas sem ter de escrever SPARQL no <a>Assistente de Consultas</a>.",
 	"wdqs-app-help-datamodel": "Modelo de dados RDF",
 	"wdqs-app-help-prefixes": "Lista de prefixos",
 	"wdqs-app-help-copy": "Informação de licença",
