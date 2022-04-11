@@ -56,7 +56,7 @@
 	"wdqs-app-tools-list-properties": "Lister les propriétés",
 	"wdqs-app-tools-lexicographical-data": "Données lexicographiques",
 	"wdqs-app-tools-for-programmers": "Pour les programmeurs",
-	"wdqs-app-footer-help": "Utilisez <i><Ctrl>+<Espace></i> pour activer l’auto-complétion.",
+	"wdqs-app-footer-help": "Presser <i>Ctrl + Espace</i> pour activer l’auto-complétion.",
 	"wdqs-app-footer-updated-ago": "Données mises à jour il y a $1",
 	"wdqs-app-result-shorturl": "URL courte vers le résultat",
 	"wdqs-app-result-shorturl-title": "URL courte vers ce résultat",
