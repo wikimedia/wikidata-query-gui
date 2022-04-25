@@ -51,7 +51,7 @@
     "mathjax": "^3.2.0",
     "moment": "^2.29.3",
     "select2": "^4.0.8",
-    "underscore": "^1.13.2",
+    "underscore": "^1.13.3",
     "vis": "^4.21.0",
     "wellknown": "^0.5.0"
   },
