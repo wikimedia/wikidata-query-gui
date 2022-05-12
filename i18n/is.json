@@ -30,6 +30,7 @@
 	"wdqs-app-help-datamodel": "RDF-gagnalíkan",
 	"wdqs-app-help-prefixes": "Listi yfir forskeyti",
 	"wdqs-app-help-copy": "Upplýsingar um notkunarleyfi",
+	"wdqs-app-logout": "Skrá út",
 	"wdqs-app-tools-edit-items": "Breyta atriðum",
 	"wdqs-app-tools-enhance-ui": "Bæta notendaviðmót",
 	"wdqs-app-tools-visualize-data": "Myndgera gögn",
@@ -61,6 +62,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Stærðir",
 	"wdqs-app-resultbrowser-graph": "Graf",
 	"wdqs-app-toast-leave-fullscreen": "Ýttu á [esc] til að hætta í skjáfylli",
+	"wdqs-app-urlshortener-loading": "Hleð inn...",
 	"wdqs-dialog-examples-preview-query": "Forskoða fyrirspurn",
 	"wdqs-dialog-examples-preview-result": "Forskoða niðurstöður",
 	"wdqs-dialog-key-shortcut-title": "Flýtileiðir á lyklaborði",
@@ -84,6 +86,7 @@
 	"wdqs-action-preview": "Forskoðun niðurstaðna",
 	"wdqs-result-map-layers-all": "Öll lög",
 	"wdqs-result-map-progress": "Hleð inn kortagögnum: $1%",
-	"wdqs-embed-button-edit-query": "Breyta",
-	"wdqs-embed-button-edit-code": "Breyta kóða"
+	"wdqs-embed-button-edit-query": "Breyta sjónrænt",
+	"wdqs-embed-button-edit-code": "Breyta SPARQL",
+	"wdqs-embed-button-edit-code-title": "Breyta þessari fyrirspurn með SPARQL-ritlinum"
 }
