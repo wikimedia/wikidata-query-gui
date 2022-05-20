@@ -48,7 +48,7 @@
     "leaflet-zoombox": "^0.5.2",
     "leaflet.locatecontrol": "^0.74.1",
     "leaflet.markercluster": "^1.5.3",
-    "mathjax": "^3.2.0",
+    "mathjax": "^3.2.1",
     "moment": "^2.29.3",
     "select2": "^4.0.8",
     "underscore": "^1.13.3",
