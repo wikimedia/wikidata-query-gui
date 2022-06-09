@@ -4,6 +4,7 @@
 			"Dishual",
 			"Fulup",
 			"Gwenn-Ael",
+			"Kadwallan",
 			"VIGNERON",
 			"Y-M D"
 		]
@@ -33,6 +34,7 @@
 	"wdqs-app-help-portal": "Porched skoazellañ",
 	"wdqs-app-help-manual": "Levr implijer",
 	"wdqs-app-help-examples": "Rekedoù skouerioù",
+	"wdqs-app-query-builder-name": "Saver reketoù",
 	"wdqs-app-help-datamodel": "Skouer roadennoù RDF",
 	"wdqs-app-help-prefixes": "Roll rakgerioù",
 	"wdqs-app-help-copy": "Titouroù war an aotre-implijout",
