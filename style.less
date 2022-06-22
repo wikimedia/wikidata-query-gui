@@ -119,6 +119,9 @@
 
 html {
 	background-color: @background-color-base;
+	// override Bootstrap's html font-size (10px), which is way too small
+	// (this is relevant for rem elsewhere, especially in Leaflet: T311139)
+	font-size: 1em;
 }
 
 body {
