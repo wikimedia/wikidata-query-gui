@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Sveinki",
 			"Sveinn í Felli"
 		]
 	},
@@ -9,7 +10,7 @@
 	"wdqs-app-button-more-tools": "Fleiri verkfæri",
 	"wdqs-app-button-help": "Hjálp",
 	"wdqs-app-button-run": "Keyra",
-	"wdqs-app-button-run-title": "Framkvæma fyrirspurn (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Framkvæma fyrirspurn (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Hreinsa",
 	"wdqs-app-button-clear-title": "Hreinsa fyrirspurn",
 	"wdqs-app-button-restore-title": "Endurheimta fyrri fyrirspurn",
@@ -77,6 +78,7 @@
 	"wdqs-ve-anything": "hvað sem er",
 	"wdqs-ve-any": "eitthvað",
 	"wdqs-ve-or": "eða",
+	"wdqs-ve-subtype": "undirtegund",
 	"wdqs-ve-sb-suggestions": "Uppástungur",
 	"wdqs-ve-sb-other": "Annað",
 	"wdqs-action-query": "Keyri fyrirspurn",
