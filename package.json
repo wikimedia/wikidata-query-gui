@@ -49,7 +49,7 @@
     "leaflet.locatecontrol": "^0.74.1",
     "leaflet.markercluster": "^1.5.3",
     "mathjax": "^3.2.2",
-    "moment": "^2.29.3",
+    "moment": "^2.29.4",
     "select2": "^4.0.8",
     "underscore": "^1.13.4",
     "vis": "^4.21.0",
