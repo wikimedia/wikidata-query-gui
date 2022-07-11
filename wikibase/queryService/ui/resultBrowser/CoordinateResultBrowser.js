@@ -337,6 +337,12 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 							var info = self._getItemDescription( row );
 							popup.setContent( info[0] );
 						} );
+						// Prevent close button from clearing query - T311892
+						layer.once( 'click', function() {
+							popup.getElement().querySelector( '.leaflet-popup-close-button' ).addEventListener( 'click' , function() {
+								event.preventDefault();
+							} );
+						} );
 					}
 				} );
 				markers[ layer ].push( marker );
