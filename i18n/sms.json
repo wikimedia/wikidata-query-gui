@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"wdqs-app-button-examples": "Ouddmiârk",
+	"wdqs-app-button-more-tools": "Lââʹzz tuejjneävv",
+	"wdqs-app-button-help": "Vuäʹpstõõzz",
+	"wdqs-app-button-clear": "Kuârad",
+	"wdqs-app-button-clear-title": "Kuârad kõjldõõzz",
+	"wdqs-app-button-display": "Čuäʹjet",
+	"wdqs-app-button-download": "Laadd",
+	"wdqs-app-button-download-title": "Laadd puåđõõzz",
+	"wdqs-app-button-link": "Liŋkk",
+	"wdqs-app-button-code": "Koodd",
+	"wdqs-app-button-code-title": "Čuäʹjet kooddouddmiârkid",
+	"wdqs-app-help-feedback": "Uuʹd maacctõõzz:",
+	"wdqs-app-help-manual": "Ââʹnnemvuäʹpstõõzz",
+	"wdqs-app-help-copy": "Teâđ liseeʹnsest",
+	"wdqs-app-logout": "Ǩeeʹrjtõõđ åålǥas",
+	"wdqs-app-tools-query-data": "Kõjldõsteâđ",
+	"wdqs-app-tools-lexicographical-data": "Leksikograaflaž teâđ",
+	"wdqs-app-footer-updated-ago": "Teâđ peiʹvvuum $1",
+	"wdqs-app-result-json": "JSON-teâttõs",
+	"wdqs-app-result-json-verbose": "JSON-teâttõs (täʹrǩǩ)",
+	"wdqs-app-result-tsv": "TSV-teâttõs",
+	"wdqs-app-result-tsv-verbose": "TSV-teâttõs (täʹrǩǩ)",
+	"wdqs-app-result-csv": "CSV-teâttõs",
+	"wdqs-app-result-svg": "SVG-kartt",
+	"wdqs-app-result-html": "HTML-taullõk",
+	"wdqs-app-resultbrowser-table": "Taullõk",
+	"wdqs-app-resultbrowser-map": "Kartt",
+	"wdqs-dialog-key-shortcut-show-example": "Čuäʹjet ouddmiârkid.",
+	"wdqs-dialog-key-shortcut-show-language": "Čuäʹjet ǩiõllvaʹlljõõǥǥ.",
+	"wdqs-ve-filter": "Siʹllʼjeei",
+	"wdqs-ve-show": "Čuäʹjet",
+	"wdqs-ve-or": "leʹbe",
+	"wdqs-ve-sb-suggestions": "Eʹtǩǩõõzz"
+}
