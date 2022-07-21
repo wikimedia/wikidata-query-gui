@@ -3,6 +3,7 @@
 		"authors": [
 			"!Silent",
 			"Athena in Wonderland",
+			"Duke of Wikipädia",
 			"Eduardo Addad de Oliveira",
 			"Eduardoaddad",
 			"EnaldoSS",
@@ -20,7 +21,7 @@
 	"wdqs-app-button-more-tools": "Mais ferramentas",
 	"wdqs-app-button-help": "Ajuda",
 	"wdqs-app-button-run": "Executar",
-	"wdqs-app-button-run-title": "Executar a consulta (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Executar a consulta (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Limpar",
 	"wdqs-app-button-clear-title": "Limpar consulta",
 	"wdqs-app-button-restore-title": "Restaurar consulta anterior",
