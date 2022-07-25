@@ -46,7 +46,7 @@
 	"wdqs-app-query-builder-example-banner-content": "Vous pouvez créer des requêtes sans avoir à écrire de SPARQL dans le <a>Constructeur de requêtes</a>.",
 	"wdqs-app-help-datamodel": "Modèle de données RDF",
 	"wdqs-app-help-prefixes": "Liste de préfixes",
-	"wdqs-app-help-copy": "Informations de licence",
+	"wdqs-app-help-copy": "Informations sur les conditions de licence",
 	"wdqs-app-help-queryhelper": "Assistant de requête",
 	"wdqs-app-logout": "Déconnexion",
 	"wdqs-app-tools-edit-items": "Modifier les éléments",

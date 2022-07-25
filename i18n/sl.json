@@ -34,6 +34,8 @@
 	"wdqs-app-help-portal": "Portal pomoči",
 	"wdqs-app-help-manual": "Navodila za uporabo",
 	"wdqs-app-help-examples": "Zgledi poizvedb",
+	"wdqs-app-query-builder-banner-content": "Potrebujete pomoč pri pripravi poizvedbe? Poizvedbe lahko ustvarjate, ne da bi morali pisati SPARQL, v novem <a>Graditelju poizvedb</a>",
+	"wdqs-app-query-builder-example-banner-content": "Poizvedbe lahko ustvarjate, ne da bi vam bilo treba pisati SPARQL, v <a>Graditelju poizvedb</a>",
 	"wdqs-app-help-datamodel": "Podatkovni model RDF",
 	"wdqs-app-help-prefixes": "Seznam predpon",
 	"wdqs-app-help-copy": "Informacija o licenci",
