@@ -126,7 +126,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			return;
 		}
 
-		var variables = this.getQueryString().match( /(\?\w+)/g );
+		var variables = this.getQueryString().match( new RegExp( '(' + wikibase.queryService.VariableNames.VariablePattern + ')', 'g' ) );
 		this._query.variables = $.unique( variables ) || '*';
 	};
 
