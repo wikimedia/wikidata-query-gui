@@ -76,6 +76,7 @@
 	"wdqs-app-resultbrowser-hierarchical-lr": "পদানুক্রমিত বিন্যাস বাম থেকে ডানে",
 	"wdqs-app-resultbrowser-hierarchical-ud": "পদানুক্রমিত বিন্যাস উপর থেকে নিচে",
 	"wdqs-app-resultbrowser-hierarchical-rl": "পদানুক্রমিত বিন্যাস ডান থেকে বামে",
+	"wdqs-app-resultbrowser-non-hierarchical": "অননুক্রমিক বিন্যাস",
 	"wdqs-app-resultbrowser-table": "ছক",
 	"wdqs-app-resultbrowser-image-grid": "চিত্র গ্রিড",
 	"wdqs-app-resultbrowser-graph-builder": "লেখচিত্র তৈরিকারক",
