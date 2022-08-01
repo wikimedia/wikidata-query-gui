@@ -111,7 +111,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 	 * @private
 	 */
 	SELF.prototype._cleanQueryPrefixes = function( query ) {
-		var prefixRegex = /PREFIX ([a-z]+): <(.*)>/gi,
+		var prefixRegex = new RegExp( 'PREFIX (' + wikibase.queryService.VariableNames.PrefixPattern + '): <(.*)>', 'gi' ),
 			m,
 			prefixes = {},
 			cleanQuery = query.replace( prefixRegex, '' ).replace( /\n+/g, '\n' );
@@ -313,7 +313,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
 
 			var subject = self._query.getBoundVariables().shift() || '?item';
-			var variable2 = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
+			var variable2 = wikibase.queryService.VariableNames.makeVariableName( name );
 
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );
@@ -344,7 +344,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 
 			var variable = self._query.getBoundVariables().shift();
 			if ( !variable ) {
-				variable = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );
+				variable = wikibase.queryService.VariableNames.makeVariableName( name );
 			}
 
 			var prop = 'http://www.wikidata.org/prop/direct/' + ( propertyId || 'P31' );// FIXME technical debt
@@ -386,7 +386,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 
 			var variable = self._query.getBoundVariables().shift();
 			if ( !variable ) {
-				variable = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );
+				variable = wikibase.queryService.VariableNames.makeVariableName( name );
 			}
 
 			var prop = 'http://www.wikidata.org/prop/direct/' + ( propertyId || 'P31' );// FIXME technical debt
@@ -428,7 +428,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 			var prop = 'http://www.wikidata.org/prop/direct/' + id;// FIXME technical debt
 
 			var subject = self._query.getBoundVariables().shift() || '?item';
-			var variable2 = '?' + name.replace( /( |[^a-z0-9])/gi, '_' );// FIXME technical debt
+			var variable2 = wikibase.queryService.VariableNames.makeVariableName( name );
 
 			var triple = self._query.addTriple( subject, prop, variable2, true );
 			self._query.addVariable( variable2 );

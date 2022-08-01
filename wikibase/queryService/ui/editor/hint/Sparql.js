@@ -87,21 +87,18 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		'wikibase:decodeUri'
 	];
 
-	// This regex matches VARNAME from SPARQL 1.1 spec (minus \u10000-\uEFFFF because Blazegraph currently doesn’t support astral planes)
-	// VARNAME = FIRST_LETTER NEXT_LETTERS*
-	// FIRST_LETTER = PN_CHARS_BASE | '_' | [0-9]
-	// NEXT_LETTERS = PN_CHARS_BASE | '_' | [0-9] | #x00B7 | [#x0300-#x036F] | #x203F | #x2040
-	// PN_CHARS_BASE = [A-Z] | [a-z] | [#x00C0-#x00D6] | [#x00D8-#x00F6] | [#x00F8-#x02FF] | [#x0370-#x037D] |
-	//                 [#x037F-#x1FFF] | #x200C | #x200D | [#x2070-#x218F] | [#x2C00-#x2FEF] | [#x3001-#xD7FF] |
-	//                 [#xF900-#xFDCF] | [#xFDF0-#xFFFD] (officially also [#x10000-#xEFFFF] but removed here)
-	// Also, in NEXT_LETTERS, the three ranges [#x00F8-#x02FF] | [#x0300-#x036F] | [#x0370-#x037D] are simplified as [#x00F8-#x037D]
-	var VARNAME = /\?[A-Za-z0-9_\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][A-Za-z0-9_\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C\u200D\u203F\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]*/g;
+	// This regex matches all variables, including the ? at the start.
+	var VARNAME = new RegExp( wikibase.queryService.VariableNames.VariablePattern, 'g' );
 
-	// This regex is used to move back to the beginning of a word. It matches NEXT_LETTERS, plus ?, #, and :, because those are also relevant for autocompletion.
-	var WORD_BEGIN = /[A-Za-z0-9_\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C\u200D\u203F\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD?#:]/;
+	// This regex is used to move back to the beginning of a word.
+	// It matches all characters which are valid in a variable name
+	// plus ?, #, and :, because those are also relevant for autocompletion.
+	var WORD_BEGIN = new RegExp( '[' + wikibase.queryService.VariableNames.ValidCharacters + '?#:]' );
 
-	// This regex is used to move forward to the end of a word. It matches NEXT_LETTERS plus : because that is also relevant for autocompletion.
-	var WORD_END = /[A-Za-z0-9_\u00B7\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u037D\u037F-\u1FFF\u200C\u200D\u203F\u2040\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD:]/;
+	// This regex is used to move forward to the end of a word.
+	// It matches all characters which are valid in a variable name
+	// plus : because that is also relevant for autocompletion.
+	var WORD_END = new RegExp( '[' + wikibase.queryService.VariableNames.ValidCharacters + ':]' );
 
 	/**
 	 * Code completion for Wikibase entities RDF prefixes in SPARQL completes SPARQL keywords and ?variables

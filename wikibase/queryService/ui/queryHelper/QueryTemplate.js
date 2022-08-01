@@ -144,9 +144,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 		}
 
 		for ( variable in definition.variables ) {
-			if ( !variable.match( /\?[a-z][a-z0-9]*/i ) ) {
-				// TODO this is more restrictive than SPARQL;
-				// see https://www.w3.org/TR/sparql11-query/#rVARNAME
+			if ( !variable.match( new RegExp( wikibase.queryService.VariableNames.VariablePattern ) ) ) {
 				throw new Error( 'invalid variable name in query template' );
 			}
 			newFragments = [];
