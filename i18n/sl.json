@@ -89,7 +89,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Mere",
 	"wdqs-app-resultbrowser-graph": "Grafikon",
 	"wdqs-app-toast-leave-fullscreen": "Za izhod iz celozaslonskega načina pritisnite [esc]",
-	"wdqs-app-urlshortener-bad-service": "Neveljavna storitev skrajševanja URL v konfiguraciji",
+	"wdqs-app-urlshortener-bad-service": "Slabo konfiguriran skrajševalnik URL-jev",
 	"wdqs-app-urlshortener-failed": "Skrajševanje URL ni uspelo",
 	"wdqs-app-urlshortener-loading": "Nalaganje ...",
 	"wdqs-dialog-examples-preview-query": "Predogled poizvedbe",
