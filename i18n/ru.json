@@ -12,6 +12,7 @@
 			"Movses",
 			"Nitch",
 			"Okras",
+			"Pacha Tchernof",
 			"Redredsonia",
 			"Silovan",
 			"Vlad5250"
@@ -102,7 +103,7 @@
 	"wdqs-app-toast-leave-fullscreen": "Нажмите [Esc], чтобы выйти из полноэкранного режима",
 	"wdqs-app-urlshortener-bad-service": "В конфигурации прописан проблемный сервис замены ссылок на короткие URL",
 	"wdqs-app-urlshortener-failed": "Не удалось создать краткий URL",
-	"wdqs-app-urlshortener-loading": "Загрузка…",
+	"wdqs-app-urlshortener-loading": "Загружается…",
 	"wdqs-dialog-examples-preview-query": "Посмотреть запрос",
 	"wdqs-dialog-examples-preview-result": "Посмотреть результат",
 	"wdqs-dialog-key-shortcut-title": "Сочетания клавиш",
