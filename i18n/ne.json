@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"Nirajan pant",
 			"सरोज कुमार ढकाल",
 			"हिमाल सुबेदी"
@@ -8,6 +9,7 @@
 	},
 	"wdqs-app-button-examples": "उदाहरणहरू",
 	"wdqs-app-button-prefixes": "प्रिफिक्सहरू",
+	"wdqs-app-button-more-tools": "थप उपकरणहरू",
 	"wdqs-app-button-help": "सहायता",
 	"wdqs-app-button-run": "चलाउनुहोस्",
 	"wdqs-app-button-run-title": "क्वेरी चलाउनुहोस् (<CTRL> + <ENTER>)",
@@ -32,6 +34,8 @@
 	"wdqs-app-help-prefixes": "प्रेफिक्सहरूको सूची",
 	"wdqs-app-help-copy": "इजाजतपत्रबारे जानकारी",
 	"wdqs-app-help-queryhelper": "क्वेरी सहायक",
+	"wdqs-app-logout": "निर्गमन",
+	"wdqs-app-tools-edit-items": "वस्तुहरू सम्पादन गर्नुहोस्",
 	"wdqs-app-footer-help": "<i>[CTRL-SPACE]</i> थिचेर स्वत सुझाव सक्रिय पार्नुहोस।",
 	"wdqs-app-result-shorturl": "नतिजाको छोटो युआरएल",
 	"wdqs-app-result-shorturl-title": "यो नतिजाको लागि छोटो युआरएल",
@@ -67,12 +71,14 @@
 	"wdqs-app-resultbrowser-dimensions": "आयामहरू",
 	"wdqs-app-resultbrowser-graph": "रेखाचित्र",
 	"wdqs-app-toast-leave-fullscreen": " [esc] थिचेर पूर्ण स्क्रिनबाट बाहिरिनुहोस्",
+	"wdqs-app-urlshortener-loading": "खुल्दै छ…",
 	"wdqs-dialog-examples-preview-query": "क्वेरीको पूर्वावलोकन हेर्नुहोस्",
 	"wdqs-dialog-examples-preview-result": "नतिजा हेर्नुहोस्",
 	"wdqs-dialog-key-shortcut-show-example": "उदाहरणहरू देखाउनुहोस्।",
 	"wdqs-dialog-key-shortcut-close-button": "बन्द गर्नुहोस्",
 	"wdqs-ve-filter": "छनाेट",
 	"wdqs-ve-show": "देखाउनुहोस्",
+	"wdqs-ve-limit": "सीमा",
 	"wdqs-ve-add-label-title": "इन्टिटी लेवल भएको भेरिएबल थप्नुहोस्",
 	"wdqs-ve-remove-row-title": "यस पङ्क्ति हटाउनुहोस्",
 	"wdqs-ve-with": "सहित",

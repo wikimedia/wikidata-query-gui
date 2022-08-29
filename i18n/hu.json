@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adam78",
 			"BanKris",
 			"Bencemac",
 			"Dj",
@@ -39,6 +40,7 @@
 	"wdqs-app-help-portal": "Segítségportál",
 	"wdqs-app-help-manual": "Felhasználói kézikönyv",
 	"wdqs-app-help-examples": "Példalekérdezések",
+	"wdqs-app-query-builder-name": "Lekérdezéskészítő",
 	"wdqs-app-help-datamodel": "RDF-adatmodell",
 	"wdqs-app-help-prefixes": "Előtagok listája",
 	"wdqs-app-help-copy": "Licencinformációk",
