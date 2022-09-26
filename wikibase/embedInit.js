@@ -27,15 +27,15 @@
 			document.title = config.brand.title;
 		}
 
+		var toolbarVisibilityTimer;
+
 		function initToolbarVisibilityHandler() {
 			$( 'body' ).mousemove( function( event ) {
-				var timer;
-
-				clearTimeout( timer );
+				clearTimeout( toolbarVisibilityTimer );
 				$( '.toolbar-right' ).addClass( 'toolbar-visible' );
 				$( '.header-toolbar' ).addClass( 'toolbar-visible' );
 
-				timer = window.setTimeout( function() {
+				toolbarVisibilityTimer = window.setTimeout( function() {
 					$( '.toolbar-right' ).removeClass( 'toolbar-visible' );
 					$( '.header-toolbar' ).removeClass( 'toolbar-visible' );
 				}, 1000 );
