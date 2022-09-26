@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nirajan pant"
+			"Nirajan pant",
+			"बडा काजी"
 		]
 	},
 	"wdqs-app-button-examples": "उदाहरणअन",
@@ -15,7 +16,7 @@
 	"wdqs-app-button-display-title": "नतिजा धेकाऽ जस्याँकि टेबल, तस्वीर, ...",
 	"wdqs-app-button-download": "डाउनलोड",
 	"wdqs-app-button-download-title": "नतिजा डाउनलोड अरऽ",
-	"wdqs-app-button-link": "लिङ्क",
+	"wdqs-app-button-link": "कडी",
 	"wdqs-app-button-link-title": "क्वेरीको लिङ्क प्राप्त अरऽ",
 	"wdqs-app-help-feedback": "प्रतिक्रिया दिय!",
 	"wdqs-app-help-request-query": "क्वेरी अनुरोध अरऽ",
