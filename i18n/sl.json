@@ -123,7 +123,7 @@
 	"wdqs-ve-sb-suggestions": "Predlogi",
 	"wdqs-ve-sb-other": "Drugo",
 	"wdqs-action-query": "Izvaja se poizvedba",
-	"wdqs-action-render": "Priprava rezultata",
+	"wdqs-action-render": "Rezultat upodabljanja",
 	"wdqs-action-error-display": "Rezultata ni mogoče prikazati",
 	"wdqs-action-timeout": "Dosežena je časovna omejitev za poizvedbo",
 	"wdqs-action-malformed-query": "Poizvedba je napačno oblikovana",
