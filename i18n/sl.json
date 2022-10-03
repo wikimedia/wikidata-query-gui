@@ -51,7 +51,7 @@
 	"wdqs-app-tools-list-properties": "Seznam lastnosti",
 	"wdqs-app-tools-lexicographical-data": "Leksikografski podatki",
 	"wdqs-app-tools-for-programmers": "Za programerje",
-	"wdqs-app-footer-help": "Pritisnite <i>[CTRL-SPACE]</i> za vklop samodejnega dopolnjevanja",
+	"wdqs-app-footer-help": "Pritisnite <i>[CTRL + SPACE]</i> za vklop samodejnega dopolnjevanja.",
 	"wdqs-app-footer-updated-ago": "Podatki posodobljeni $1",
 	"wdqs-app-result-shorturl": "Kratek URL do zadetka",
 	"wdqs-app-result-shorturl-title": "Kratek URL za ta zadetek",

@@ -20,7 +20,8 @@
 			"Sayginer",
 			"Sezgin İbiş",
 			"Stonecy",
-			"TmY e12"
+			"TmY e12",
+			"ToprakM"
 		]
 	},
 	"wdqs-app-button-examples": "Örnekler",
@@ -45,7 +46,7 @@
 	"wdqs-app-button-code-title": "Kod örneklerini görüntüle",
 	"wdqs-app-help-feedback": "Geri bildirimde bulun!",
 	"wdqs-app-help-request-query": "Sorgu isteğinde bulun",
-	"wdqs-app-help-portal": "Yardım Portalı",
+	"wdqs-app-help-portal": "Yardım Portali",
 	"wdqs-app-help-manual": "Kullanım Kılavuzu",
 	"wdqs-app-help-examples": "Örnek Sorgular",
 	"wdqs-app-query-builder-name": "Sorgu Oluşturucu",
