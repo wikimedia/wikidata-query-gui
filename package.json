@@ -63,7 +63,7 @@
     "@wdio/spec-reporter": "^7.25.0",
     "eslint-config-wikimedia": "^0.16.2",
     "eslint-plugin-compat": "^4.0.2",
-    "eslint-plugin-promise": "^6.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "grunt": "^1.5.3",
     "grunt-auto-install": "^0.3.1",
     "grunt-banana-checker": "^0.10.0",
