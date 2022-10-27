@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aram1985",
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"wdqs-app-button-examples": "Օրինակներ",
@@ -32,6 +33,7 @@
 	"wdqs-app-resultbrowser-dimensions": "Չափեր",
 	"wdqs-app-resultbrowser-graph": "Գրաֆիկ",
 	"wdqs-app-toast-leave-fullscreen": "Սեղմեք [esc] լիաէկրան ռեժիմիցց դուրս գալու համար",
+	"wdqs-app-urlshortener-loading": "Բեռնվում է...",
 	"wdqs-dialog-examples-preview-query": "Դիտել հարցումը",
 	"wdqs-dialog-examples-preview-result": "Դիտել արդյունքը",
 	"wdqs-dialog-key-shortcut-close-button": "Փակել",
