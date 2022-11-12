@@ -189,6 +189,9 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 						.replace( /}}/g, '} }' ); // TODO try to exactly preserve query
 					return escapedQuery;
 				}
+			},
+			mapframe: {
+				escape: JSON.stringify
 			}
 		};
 	}
