@@ -17,9 +17,11 @@
 	"wdqs-app-button-code-title": "Čuäʹjet kooddouddmiârkid",
 	"wdqs-app-help-feedback": "Uuʹd maacctõõzz",
 	"wdqs-app-help-manual": "Ââʹnnemvuäʹpstõõzz",
+	"wdqs-app-query-builder-dd-copy": "Raaj kõjldõõzzid visuaalʼlânji hieʹlǩeld siltteeǩâni SPARQL.",
 	"wdqs-app-help-copy": "Teâđ liseeʹnsest",
 	"wdqs-app-logout": "Ǩeeʹrjtõõđ åålǥas",
 	"wdqs-app-tools-query-data": "Kõjldõsteâđ",
+	"wdqs-app-tools-enhance-ui": "Pueʹred ââʹnnemõhttõõzz",
 	"wdqs-app-tools-lexicographical-data": "Leksikograaflaž teâđ",
 	"wdqs-app-footer-updated-ago": "Teâđ peiʹvvuum $1",
 	"wdqs-app-result-json": "JSON-teâttõs",
@@ -38,5 +40,7 @@
 	"wdqs-ve-or": "leʹbe",
 	"wdqs-ve-sb-suggestions": "Eʹtǩǩõõzz",
 	"wdqs-action-server-error": "Servervââʹǩǩ",
-	"wdqs-result-map-layers-all": "Puk tääʹzz"
+	"wdqs-result-map-layers-all": "Puk tääʹzz",
+	"wdqs-embed-button-edit-query": "Muuʹtt visuaalʼlânji",
+	"wdqs-embed-button-edit-code": "Muuʹtt SPARQL"
 }

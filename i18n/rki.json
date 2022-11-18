@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cakkaparla",
 			"Tejoebāsa",
 			"YaThaWinTha"
 		]
@@ -15,8 +16,8 @@
 	"wdqs-app-button-clear-title": "မီးမြန်းမှုကို ရှင်းလင်းပါ။",
 	"wdqs-app-button-restore-title": "အယင်ကမီးခွန်းကို ပြန်ယူပါ။",
 	"wdqs-app-button-format-title": "မီးမြန်းမှုပုံစံ",
-	"wdqs-app-button-query-helper": "မီးခွန်းဧ့ ရှင်းလင်းချက်ကို ပြပါ။",
-	"wdqs-app-button-fullscreen-title": "တီးဖြတ်သူဧ့ မျက်နှာပြင်အပြည့်မုဒ်ကို ပြောင်းပါ။",
+	"wdqs-app-button-query-helper": "မီးခွန်း၏ ရှင်းလင်းချက်ကို ပြပါ။",
+	"wdqs-app-button-fullscreen-title": "တီးဖြတ်သူ၏ မျက်နှာပြင်အပြည့်မုဒ်ကို ပြောင်းပါ။",
 	"wdqs-app-button-display": "ပြသမှု",
 	"wdqs-app-button-display-title": "ရလဒ်တိကို ဇယား၊ ပုံ အစဟိန့်စာနန့် ပြသထားရေ..",
 	"wdqs-app-button-download": "ဒေါင်းလုဒ်လုပ်ပါ",
@@ -34,7 +35,7 @@
 	"wdqs-app-query-builder-dd-title": "SPARQL မပါဘဲ မီးခွန်းတိကို တည်ဆောက်ပါ။",
 	"wdqs-app-query-builder-dd-copy": "ကလစ်စကေချေနန့် အမြင်အာရုံနန့် မီးမြန်းမှုတိကို ဖန်တီးပါ။  SPARQL ဗဟုသုတ မလိုအပ်ပါ။",
 	"wdqs-app-query-builder-banner-content": "မီးခွန်းတစ်ခုဖန်တီးရာတွင် အကူအညီလိုအပ်ပါ‌ရေလား။  <a>Query Builder</a> အသစ်တွင် SPARQL ကိုရေးစရာမလိုဘဲ မီးခွန်းတိတည်ဆောက်နိုင်ပါသည်။",
-	"wdqs-app-query-builder-example-banner-content": "<a>Query Builder</a> မှာ SPARQL ရေးဖို့မလိုပဲ မီးခွန်းတိဖန်တီးနိုင်သည်",
+	"wdqs-app-query-builder-example-banner-content": "<a>Query Builder</a> မှာ SPARQL ရေးဖို့မလိုပဲ မီးခွန်းတိဖန်တီးနိုင်ရေ။",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
 	"wdqs-app-help-prefixes": "ရှေ့ဆက်တိစရင်း",
 	"wdqs-app-help-copy": "လိုင်စင်အချက်အလက်",
