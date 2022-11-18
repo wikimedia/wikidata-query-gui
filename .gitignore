@@ -10,3 +10,4 @@ style.css
 target
 *.log
 custom-config.json
+.vscode
