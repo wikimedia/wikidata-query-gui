@@ -46,7 +46,7 @@
     "leaflet-fullscreen": "^1.0.2",
     "leaflet-minimap": "^3.6.1",
     "leaflet-zoombox": "^0.5.2",
-    "leaflet.locatecontrol": "^0.74.1",
+    "leaflet.locatecontrol": "^0.78.0",
     "leaflet.markercluster": "^1.5.3",
     "mathjax": "^3.2.2",
     "moment": "^2.29.4",
@@ -56,11 +56,11 @@
     "wellknown": "^0.5.0"
   },
   "devDependencies": {
-    "@wdio/cli": "^7.25.0",
-    "@wdio/dot-reporter": "^7.25.0",
-    "@wdio/local-runner": "^7.25.0",
-    "@wdio/mocha-framework": "^7.25.0",
-    "@wdio/spec-reporter": "^7.25.0",
+    "@wdio/cli": "^7.26.0",
+    "@wdio/dot-reporter": "^7.26.0",
+    "@wdio/local-runner": "^7.26.0",
+    "@wdio/mocha-framework": "^7.26.0",
+    "@wdio/spec-reporter": "^7.26.0",
     "eslint-config-wikimedia": "^0.16.2",
     "eslint-plugin-compat": "^4.0.2",
     "eslint-plugin-promise": "^6.1.1",
@@ -86,10 +86,10 @@
     "http-server": "^14.1.1",
     "karma-qunit": "^4.1.2",
     "load-grunt-tasks": "^5.1.0",
-    "qunit": "^2.19.2",
-    "sinon": "^14.0.1",
-    "stylelint": "^14.14.0",
+    "qunit": "^2.19.3",
+    "sinon": "^14.0.2",
+    "stylelint": "^14.15.0",
     "stylelint-config-wikimedia": "^0.13.1",
-    "webdriverio": "^7.25.0"
+    "webdriverio": "^7.26.0"
   }
 }
