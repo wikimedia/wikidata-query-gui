@@ -331,7 +331,7 @@ module.exports = function( grunt ) {
 		'clean', 'create_build'
 	] );
 	grunt.registerTask( 'create_build', [
-		'only_build'
+		'auto_install', 'only_build'
 	] );
 	grunt.registerTask( 'only_build', [
 		'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
