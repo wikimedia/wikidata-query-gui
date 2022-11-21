@@ -33,11 +33,22 @@ module.exports = function( grunt ) {
 					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!' + buildFolder + '/**', '!polestar/**', '!target/**'
 			]
 		},
+		connect: {
+			server: {
+				options: {
+					port: 8001,
+					base: '.'
+				}
+			}
+		},
 		qunit: {
-			all: [
-				'wikibase/tests/*.html'
-			],
+			all: [ /* see options.urls */ ],
 			options: {
+				urls: [
+					// port 8001 served by 'connect' task above
+					'http://localhost:8001/wikibase/tests/index.html',
+					'http://localhost:8001/wikibase/tests/QueryHelper.html'
+				],
 				puppeteer: {
 					headless: true,
 					/*
@@ -321,8 +332,11 @@ module.exports = function( grunt ) {
 		} );
 
 	} );
+	grunt.registerTask( 'unit_test', [
+		'connect', 'qunit'
+	] );
 	grunt.registerTask( 'test', [
-		'eslint', 'jshint', 'jsonlint', 'banana', 'stylelint', 'qunit'
+		'eslint', 'jshint', 'jsonlint', 'banana', 'stylelint', 'unit_test'
 	] );
 	grunt.registerTask( 'browser_test', [
 		'wdio'

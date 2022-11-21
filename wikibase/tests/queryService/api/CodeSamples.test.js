@@ -26,13 +26,7 @@
 
 			function handleError( part ) {
 				return function() {
-					if ( location.protocol === 'file:' ) {
-						window.console.error( 'Could not run code samples test because CORS is not available on file:// pages.' );
-						window.console.error( 'To run this test, you must serve and access the tests over HTTP.' );
-						assert.expect( 0 );
-					} else {
-						assert.ok( false, 'could not load ' + part );
-					}
+					assert.ok( false, 'could not load ' + part );
 					done();
 				};
 			}
