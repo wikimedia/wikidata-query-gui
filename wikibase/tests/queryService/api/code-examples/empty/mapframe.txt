@@ -1,0 +1,8 @@
+<!-- Kartographer needs the items to be called ?id and the coordinates ?geo -->
+<mapframe width="400" height="400" text="Caption text">
+{
+  "type": "ExternalData",
+  "service": "geopoint",
+  "query": ""
+}
+</mapframe>
