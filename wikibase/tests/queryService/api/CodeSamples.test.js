@@ -48,7 +48,7 @@
 								promises.push( $.get(
 									'queryService/api/code-examples/' + test.name + '/' + lang + '.txt',
 									function( expected ) {
-										assert.strictEqual( data.code, expected );
+										assert.strictEqual( data.code, expected, lang );
 									},
 									'text'
 								) );
