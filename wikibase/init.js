@@ -92,6 +92,27 @@
 			wb.RdfNamespaces.addPrefixes( config.prefixes );
 		}
 
+		//setting the RdfNamespaces constants
+		if (config.rdfNamespacesNamespaceShortcuts) {
+			wb.RdfNamespaces.NAMESPACE_SHORTCUTS = config.rdfNamespacesNamespaceShortcuts;
+		}
+		if (config.rdfNamespacesEntityTypes) {
+			wb.RdfNamespaces.ENTITY_TYPES = config.rdfNamespacesEntityTypes;
+		}
+		if (config.rdfNamespacesStandardPrefixes) {
+			wb.RdfNamespaces.STANDARD_PREFIXES = config.rdfNamespacesStandardPrefixes;
+		}
+		if(config.sparqlKeywords) {
+			wb.ui.editor.hint.Sparql.prototype.setKeywords(config.sparqlKeywords);
+		}
+		if(config.sparqlPredicates) {
+			wb.ui.editor.hint.Sparql.prototype.setPredicates(config.sparqlPredicates);
+		}
+		if(config.sparqlCustomFunctions) {
+			wb.ui.editor.hint.Sparql.prototype.setCustomFunctions(config.sparqlCustomFunctions);
+		}
+
+
 		function afterLanguageChange() {
 			editor.updatePlaceholder();
 		}
