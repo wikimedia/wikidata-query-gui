@@ -1,0 +1,71 @@
+{
+	"entities": {
+		"edm:provider": {
+			"type": "property", 
+			"datatype": "europeana-property", 
+			"id": "edm:provider", 
+			"labels": {
+				"en": {
+					"language":"en",
+					"value":"edm:provider"
+				}
+			}
+		},
+		"edm:rights": {
+			"type": "property", 
+			"datatype": "europeana-property", 
+			"id": "edm:rights", 
+			"labels": {
+				"en": {
+					"language":"en",
+					"value":"edm:rights"
+				}
+			}
+		},
+		"edm:isShownBy": {
+			"type": "property", 
+			"datatype": "europeana-property", 
+			"id": "edm:isShownBy", 
+			"labels": {
+				"en": {
+					"language":"en",
+					"value":"edm:isShownBy"
+				}
+			}
+		},
+		"rdf:type": {
+			"type": "property", 
+			"datatype": "europeana-property", 
+			"id": "rdf:type", 
+			"labels": {
+				"en": {
+					"language":"en",
+					"value":"rdf:type"
+				}
+			}
+		},
+		"edm:Agent": {
+			"type": "class", 
+			"datatype": "europeana-class", 
+			"id": "edm:Agent", 
+			"labels": {
+				"en": {
+					"language":"en",
+					"value":"edm:Agent"
+				}
+			}
+		},
+		"edm:Place": {
+			"type": "class", 
+			"datatype": "europeana-class", 
+			"id": "edm:Place", 
+			"labels": {
+				"en": {
+					"language":"en",
+					"value":"edm:Place"
+				}
+			}
+		}
+	},
+	"success": 1
+}

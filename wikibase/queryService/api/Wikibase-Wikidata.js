@@ -5,12 +5,29 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 wikibase.queryService.api.Wikibase = ( function( $ ) {
 	'use strict';
 
-	var QUERY_SAMPLES_TAGS_LABELS_JSON = 'europeana/query-samples-tags-labels.json';
-	var QUERY_LANGUGES = {
+	var API_ENDPOINT = 'https://www.wikidata.org/w/api.php';
+	var LANGUAGE = 'en';
+
+	var SEARCH_ENTITES = {
+		action: 'wbsearchentities',
+		format: 'json',
+		limit: 50,
+		continue: 0,
+		language: LANGUAGE,
+		uselang: LANGUAGE
+	},
+	QUERY_LANGUGES = {
 		action: 'query',
 		meta: 'siteinfo',
 		format: 'json',
 		siprop: 'languages'
+	},
+	QUERY_LABELS = {
+		action: 'wbgetentities',
+		props: 'labels',
+		format: 'json',
+		languages: LANGUAGE,
+		languagefallback: '1'
 	},
 	QUERY_DATATYPE = {
 		action: 'wbgetentities',
@@ -18,18 +35,23 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		format: 'json'
 	};
 
-
 	/**
-	 * API for the Wikibase Europeana API
+	 * API for the Wikibase API
 	 *
 	 * @class wikibase.queryService.api.Wikibase
 	 * @license GNU GPL v2+
 	 *
-	 * @author Srdjan Stevanetic
+	 * @author Jonas Kress
 	 * @constructor
-	 * @param {string} endpoint default: ''
+	 * @param {string} endpoint default: 'https://www.wikidata.org/w/api.php'
 	 */
 	function SELF( endpoint, defaultLanguage ) {
+		this._endpoint = API_ENDPOINT;
+
+		if ( endpoint ) {
+			this._endpoint = endpoint;
+		}
+
 		if ( defaultLanguage ) {
 			this._language = defaultLanguage;
 		}
@@ -39,10 +61,16 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @property {string}
 	 * @private
 	 */
+	SELF.prototype._endpoint = null;
+
+	/**
+	 * @property {string}
+	 * @private
+	 */
 	SELF.prototype._language = null;
 
 	/**
-	 * Search an entity
+	 * Search an entity with using wbsearchentities
 	 *
 	 * @param {string} term search string
 	 * @param {string} type entity type to search for
@@ -51,7 +79,21 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.searchEntities = function( term, type, language ) {
-		return null;
+		var query = SEARCH_ENTITES;
+		query.search = term;
+
+		if ( type ) {
+			query.type = type;
+		}
+		if ( this._language || language ) {
+			query.language = language || this._language;
+			query.uselang = language || this._language;
+		} else {
+			query.language = LANGUAGE;
+			query.uselang = LANGUAGE;
+		}
+
+		return this._query( query );
 	};
 
 	/**
@@ -70,11 +112,19 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.getLabels = function( ids ) {
-		return $.getJSON( QUERY_SAMPLES_TAGS_LABELS_JSON )
-			.fail( function( jqXHR, textStatus, errorThrown ) {
-				console.error( 'Failed loading the query samples tags labels json: ' + textStatus + ", " + errorThrown );
-				throw errorThrown;
-			} );
+
+		if ( typeof ids === 'string' ) {
+			ids = [ ids ];
+		}
+
+		var query = QUERY_LABELS;
+		query.ids = ids.join( '|' );
+
+		if ( this._language  ) {
+			query.languages = this._language;
+		}
+
+		return this._query( query );
 	};
 
 	/**
