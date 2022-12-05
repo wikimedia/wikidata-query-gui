@@ -548,11 +548,13 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 */
 	SELF.prototype._initQueryLinkPopover = function() {
 		var self = this;
-		$( '.shortUrlTrigger.result' ).clickover( {
+		var queryLinkPopoverOptions = {
 			placement: 'left',
 			'global_close': true,
 			'html': true,
-			'sanitize': false,
+			'sanitize': false
+		};
+		$( '.shortUrlTrigger.result' ).clickover( $.extend( {
 			'content': function() {
 				var queryUrl;
 				if ( self._editor ) {
@@ -563,8 +565,18 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				var $link = $( '<a>' ).attr( 'href', 'embed.html' + queryUrl );
 				return self._shorten.shorten( $link[0].href );
 			}
-		} ).click( function() {
+		}, queryLinkPopoverOptions  ) ).click( function() {
 			self._track( 'buttonClick.shortUrlResult' );
+		} );
+
+		$( '#shortUrlTrigger-result-query' ).clickover( $.extend( {
+			'content': function() {
+				var queryUrl = '#' + encodeURIComponent( self._query );
+				var $link = $( '<a>' ).attr( 'href', 'index.html' + queryUrl );
+				return self._shorten.shorten( $link[0].href );
+			}
+		}, queryLinkPopoverOptions ) ).click( function() {
+			self._track( 'buttonClick.shortUrlResultQuery' );
 		} );
 	};
 

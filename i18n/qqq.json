@@ -63,6 +63,8 @@
 	"wdqs-app-footer-updated-ago": "Message displaying how long ago data was updated. $1 contains the time period, including a suffix indicating that the period is in the past, e.&nbsp;g. “a few seconds ago” or “two minutes ago”.",
 	"wdqs-app-result-shorturl": "Link message in the footer link dropdown",
 	"wdqs-app-result-shorturl-title": "Title of link message in the footer link dropdown",
+	"wdqs-app-result-shorturl-query": "Message for link that points to the query that was used to create these results",
+	"wdqs-app-result-shorturl-query-title": "Title for {{msg-mw|wdqs-app-result-shorturl-query}}, explaining that it is pointing to the query that was used to retrieve the currently visible results, not necessarily the query that is currently visible in the editor.",
 	"wdqs-app-result-rawgraphs": "{{doc-important|This message is currently unused because wikidata.rawgraphs.io is down, though it may be used again in the future. Don’t translate it for now.}}\n\nLink message in the footer link dropdown",
 	"wdqs-app-result-rawgraphs-title": "{{doc-important|This message is currently unused because wikidata.rawgraphs.io is down, though it may be used again in the future. Don’t translate it for now.}}\n\nTitle of link message in the footer link dropdown",
 	"wdqs-app-result-embed": "Link message in the footer link dropdown",

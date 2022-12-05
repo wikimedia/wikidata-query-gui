@@ -55,6 +55,8 @@
     "wdqs-app-footer-updated-ago": "Data updated $1",
     "wdqs-app-result-shorturl": "Short URL to result",
     "wdqs-app-result-shorturl-title": "Short URL to this result",
+    "wdqs-app-result-shorturl-query": "Short URL to query",
+    "wdqs-app-result-shorturl-query-title": "Short URL to the query that was used to retrieve this result",
     "wdqs-app-result-rawgraphs": "Open in RAWGraphs.io",
     "wdqs-app-result-rawgraphs-title": "Create a graph with the current result data using RAWGraphs.io",
     "wdqs-app-result-embed": "Embed result",
