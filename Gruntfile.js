@@ -191,10 +191,6 @@ module.exports = function( grunt ) {
 							],
 							dest: buildFolder + '/default-config.json',
 							filter: 'isFile'
-						},
-						{// query builder dropdown image
-							src: 'wikibase/queryService/ui/304px_querybuilder_final.gif',
-							dest: buildFolder + '/',
 						}
 				]
 			}
