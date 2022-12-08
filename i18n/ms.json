@@ -49,6 +49,7 @@
 	"wdqs-app-footer-updated-ago": "Data dikemaskinikan $1",
 	"wdqs-app-result-shorturl": "URL singkat kepada hasil",
 	"wdqs-app-result-shorturl-title": "URL singkat kepada hasil ini",
+	"wdqs-app-result-shorturl-query": "URL pendek untuk pertanyaan",
 	"wdqs-app-result-rawgraphs": "Buka di RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Buat graf dengan data hasil semasa menggunakan RAWGraphs.io",
 	"wdqs-app-result-embed": "Terapkan hasil",

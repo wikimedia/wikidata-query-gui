@@ -50,6 +50,8 @@
 	"wdqs-app-footer-updated-ago": "Билгиле $1 джангыртылды",
 	"wdqs-app-result-shorturl": "Эсеб ючюн къысха URL",
 	"wdqs-app-result-shorturl-title": "Бу эсеб ючюн къысха URL",
+	"wdqs-app-result-shorturl-query": "Излем ючюн къысха URL",
+	"wdqs-app-result-shorturl-query-title": "Бу эсебни алыр ючюн хайырланнган излемни къысха URL-адреси.",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io-да ач",
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.io хайырланыб, баргъан эсебле бла график эт",
 	"wdqs-app-result-embed": "Эсеблени джерлешдир",

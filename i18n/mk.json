@@ -50,6 +50,8 @@
 	"wdqs-app-footer-updated-ago": "Податоците се подновени $1",
 	"wdqs-app-result-shorturl": "Кратка URL до исходот",
 	"wdqs-app-result-shorturl-title": "Кратка URL до овој исход",
+	"wdqs-app-result-shorturl-query": "Кратка URL за барањето",
+	"wdqs-app-result-shorturl-query-title": "Кратка URL за барањето која ќе се користи за добивање на исходот",
 	"wdqs-app-result-rawgraphs": "Отвори во RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Создавање на графикон со тековните исходни податоци користејќи го RAWGraphs.io",
 	"wdqs-app-result-embed": "Вметни го исходот",

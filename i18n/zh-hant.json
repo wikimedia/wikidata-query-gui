@@ -52,6 +52,8 @@
 	"wdqs-app-footer-updated-ago": "資料已更新在$1",
 	"wdqs-app-result-shorturl": "連至結果的短網址",
 	"wdqs-app-result-shorturl-title": "連至此結果的短網址",
+	"wdqs-app-result-shorturl-query": "要查詢的短網址",
+	"wdqs-app-result-shorturl-query-title": "用於檢索此結果所要查詢的短網址",
 	"wdqs-app-result-rawgraphs": "在 RAWGraphs.io 開啟",
 	"wdqs-app-result-rawgraphs-title": "以目前的資料結果來使用 RAWGraphs.io 創建成圖形",
 	"wdqs-app-result-embed": "嵌入結果",
