@@ -47,7 +47,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
 			'wikibase:Url', 'wikibase:ExternalId', 'wikibase:WikibaseProperty', 'wikibase:Math',
 			// pageprops
-			'wikibase:statements', 'wikibase:sitelinks',
+			'wikibase:statements', 'wikibase:sitelinks', 'wikibase:identifiers',
 			// time
 			'wikibase:timeValue', 'wikibase:timePrecision', 'wikibase:timeTimezone', 'wikibase:timeCalendarModel',
 			// quantity
