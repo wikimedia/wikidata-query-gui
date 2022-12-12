@@ -655,7 +655,6 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 			return function( e ) {
 				e.preventDefault();
 
-				// see: http://danml.com/download.html
 				self._track( 'buttonClick.download.' + filename );
 
 				var data = handler();
