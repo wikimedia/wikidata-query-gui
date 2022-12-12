@@ -16,6 +16,7 @@
 			"UsagiNeko",
 			"Wicklo",
 			"Yusuke1109",
+			"バレロン",
 			"組曲師",
 			"雪津風明石"
 		]
@@ -66,6 +67,7 @@
 	"wdqs-app-footer-updated-ago": "最終更新 $1",
 	"wdqs-app-result-shorturl": "実行結果の短縮URL",
 	"wdqs-app-result-shorturl-title": "実行結果の短縮URL",
+	"wdqs-app-result-shorturl-query": "短縮URLを照会",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.ioで開く",
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.ioを使って現在の結果データからグラフを作成する",
 	"wdqs-app-result-embed": "実行結果を埋め込む",

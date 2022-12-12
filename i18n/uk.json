@@ -12,7 +12,8 @@
 			"Piramidion",
 			"Vlad5250",
 			"Ата",
-			"Олександр"
+			"Олександр",
+			"Пан Хаунд"
 		]
 	},
 	"wdqs-app-button-examples": "Приклади",
@@ -61,6 +62,8 @@
 	"wdqs-app-footer-updated-ago": "Дані оновлено $1",
 	"wdqs-app-result-shorturl": "Коротка URL-адреса для результату",
 	"wdqs-app-result-shorturl-title": "Коротка URL-адреса для цього результату",
+	"wdqs-app-result-shorturl-query": "Коротка URL-адреса для запиту",
+	"wdqs-app-result-shorturl-query-title": "Коротка URL-адреса запиту, що використовувався для отримання цього результату",
 	"wdqs-app-result-rawgraphs": "Відкрити в RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Створити граф з поточними результатами даних за допомогою RAWGraphs.io",
 	"wdqs-app-result-embed": "Вбудувати результат",

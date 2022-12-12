@@ -56,6 +56,8 @@
 	"wdqs-app-footer-updated-ago": "הנתונים עודכנו $1",
 	"wdqs-app-result-shorturl": "כתובת URL מקוצרת אל התוצאה",
 	"wdqs-app-result-shorturl-title": "כתובת URL מקוצרת אל התוצאה הזאת",
+	"wdqs-app-result-shorturl-query": "כתובת URL קצרה לשאילתה",
+	"wdqs-app-result-shorturl-query-title": "כתובת URL קצרה לשאילתה ששימשה לאחזור התוצאה הזאת",
 	"wdqs-app-result-rawgraphs": "פתיחה ב־RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "יצירת תרשים עם נתוני התוצאות הנוכחיים באמצעות RAWGraphs.io",
 	"wdqs-app-result-embed": "הטמעת תוצאה",
