@@ -10,3 +10,12 @@ Find the files with the name "*-Wikidata.*" and rename their partner files (file
 the "-Europeana" part (similarly to the name of the files with the "-Wikidata" part) in its name. Then remove the "-Wikidata" part from the files
 that have that. In case there are no files with the "-Wikidata" part in its name, then start with the files with the "-Europeana" part in its name
 and do the oposite changing.
+
+### Deploy a new code (new branch or similar)
+- pull the latest changes: git pull origin <branch_name>
+- copy the new custom-config.json file to the root folder (this file is not in git)
+- install the dependancies: npm install
+- build the app: npm run build
+- install again: npm install
+- start the app in a background mode: nohup ./startSparqlUi.sh > sparqlUiOutput.txt 2>&1 (the .sh file may need the exec permission, so add it with: chmod +x startSparqlUi.sh)
+- clear cache for the app page to see the new changes (here some help https://www.youtube.com/watch?v=vcCpHNp2SkA) 
