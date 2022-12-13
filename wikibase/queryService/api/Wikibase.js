@@ -6,6 +6,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	'use strict';
 
 	var QUERY_SAMPLES_TAGS_LABELS_JSON = 'europeana/query-samples-tags-labels.json';
+	var TOOLTIPS_EDM_JSON = 'europeana/tooltips-edm.json';
 	var QUERY_LANGUGES = {
 		action: 'query',
 		meta: 'siteinfo',
@@ -51,7 +52,11 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.searchEntities = function( term, type, language ) {
-		return null;
+		return $.getJSON( TOOLTIPS_EDM_JSON )
+			.fail( function( jqXHR, textStatus, errorThrown ) {
+				console.error( 'Failed loading the tooltipc edm json: ' + textStatus + ", " + errorThrown );
+				throw errorThrown;
+			} );		
 	};
 
 	/**
