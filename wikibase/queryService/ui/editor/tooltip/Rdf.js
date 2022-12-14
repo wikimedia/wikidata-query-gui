@@ -73,20 +73,12 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 				top: posY
 			} ) ).string;
 
-		if ( !token.match( /.+\:(Q|P)[0-9]*/ ) ) {
-			return;
-		}
-
-		var prefixes = this._extractPrefixes( this._editor.doc.getValue() );
-		var prefix = token.split( ':', 1 )[0];
-		var entityId = token.split( ':' ).pop();
-
-		if ( !prefixes[prefix] ) {
+		if ( !token.match( /.+\:.+/ ) ) {
 			return;
 		}
 
 		var self = this;
-		this._searchEntities( entityId, prefixes[prefix] ).done( function( list ) {
+		this._searchEntities( token ).done( function( list ) {
 			self._showToolTip( list.shift(), {
 				x: posX,
 				y: posY
@@ -137,9 +129,16 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		this._api.searchEntities( term, type ).done(
 				function( data ) {
 					$.each( data.search, function( key, value ) {
+						var aTag = document.createElement('a');
+					    aTag.target = '_blank';
+					    if(value.reference) {
+							aTag.href = value.reference;
+						}
+					    aTag.innerText = value.label ? value.label + ' (' + value.id + ')' : value.id;
+						
 						entityList.push(
 							$()
-								.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
+								.add( aTag )
 								.add( $( '<br>' ) )
 								.add( $( '<small>' ).text( value.description || '' ) )
 						);

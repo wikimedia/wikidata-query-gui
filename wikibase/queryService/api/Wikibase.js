@@ -52,11 +52,26 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.searchEntities = function( term, type, language ) {
-		return $.getJSON( TOOLTIPS_EDM_JSON )
+		var deferred = $.Deferred();
+
+		$.getJSON( TOOLTIPS_EDM_JSON )
 			.fail( function( jqXHR, textStatus, errorThrown ) {
 				console.error( 'Failed loading the tooltipc edm json: ' + textStatus + ", " + errorThrown );
-				throw errorThrown;
-			} );		
+				deferred.reject();
+			} ).then(function( allTooltips ) {
+				var tooltip=[];
+				$.each(allTooltips , function(index, item) { 
+					if(item.id.localeCompare(term)==0) {
+						tooltip.push(item);
+						return false;	
+					}
+				});		
+				
+				return deferred.resolve({"search":tooltip});			
+		});
+		
+		return deferred.promise();
+			
 	};
 
 	/**

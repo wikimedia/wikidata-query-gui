@@ -139,11 +139,6 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 					$.each( data.search, function( key, value ) {
 						entityList.push(
 							$()
-								.add( (document.createElement('a')).prop({
-                					target: '_blank',
-                					href: 'https://www.techiedelight.com/',
-                					innerText: 'Techie Delight'
-            					}))								
 								.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
 								.add( $( '<br>' ) )
 								.add( $( '<small>' ).text( value.description || '' ) )

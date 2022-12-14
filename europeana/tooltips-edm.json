@@ -1,5 +1,4 @@
-{
-"search": [
+[
 	{
 		"id": "edm:Agent"
 		, "label": "Agent"
@@ -11,172 +10,172 @@
 		"id": "edm:EuropeanaObject"
 		, "label": "Europeana Object"
 		, "reference": "http://pro.europeana.eu/edm-documentation"
-		, "definition": "Any object that is the result of Europeana’s activities"
+		, "description": "Any object that is the result of Europeana’s activities"
 	}
 , 	{
 		"id": "edm:Event"
 		, "label": "Event"
-		, "definition": "An event is a change \"of states in cultural, social or physical systems,\n regardless of scale, brought about by a series or group of coherent physical,\ncultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)\n"
+		, "description": "An event is a change \"of states in cultural, social or physical systems,\n regardless of scale, brought about by a series or group of coherent physical,\ncultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)\n"
 	}
 , 	{
 		"id": "edm:InformationResource"
 		, "label": "Information Resource"
-		, "definition": "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."
+		, "description": "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource."
 	}
 , 	{
 		"id": "edm:NonInformationResource"
 		, "label": "Non-Information Resource"
-		, "definition": "All resources that are not information resources."
+		, "description": "All resources that are not information resources."
 	}
 , 	{
 		"id": "edm:PhysicalThing"
 		, "label": "Physical Thing"
-		, "definition": "A persistent physical item such as a painting, a building, a book or a stone.\nPersons are not items. This class represents Cultural Heritage Objects known to Europeana to be physical things (such as Mona Lisa) as well as all physical things Europeana refers to in the descriptions of Cultural Heritage Objects (such as the Rosetta Stone)."
+		, "description": "A persistent physical item such as a painting, a building, a book or a stone.\nPersons are not items. This class represents Cultural Heritage Objects known to Europeana to be physical things (such as Mona Lisa) as well as all physical things Europeana refers to in the descriptions of Cultural Heritage Objects (such as the Rosetta Stone)."
 	}
 , 	{
 		"id": "edm:Place"
 		, "label": "Place"
-		, "definition": "An \"extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter\" (CIDOC CRM)"
+		, "description": "An \"extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter\" (CIDOC CRM)"
 	}
 , 	{
 		"id": "edm:ProvidedCHO"
 		, "label": "Provided CHO"
-		, "definition": "This class comprises the Cultural Heritage objects that Europeana collects descriptions about."
+		, "description": "This class comprises the Cultural Heritage objects that Europeana collects descriptions about."
 	}
 , 	{
 		"id": "edm:TimeSpan"
 		, "label": "Time Span"
-		, "definition": "The class of \"abstract temporal extents, in the sense of Galilean physics,\n having a beginning, an end and a duration\" (CIDOC CRM)"
+		, "description": "The class of \"abstract temporal extents, in the sense of Galilean physics,\n having a beginning, an end and a duration\" (CIDOC CRM)"
 	}
 , 	{
 		"id": "edm:WebResource"
 		, "label": "Web Resource"
-		, "definition": "Information Resources that have at least one Web Representation and at least\na URI."
+		, "description": "Information Resources that have at least one Web Representation and at least\na URI."
 	}
 , 	{
 		"id": "edm:aggregatedCHO"
 		, "label": "Aggregated Cultural Heritage Object"
-		, "definition": "This property associates an ORE aggregation with the cultural heritage object(s) (CHO for short) it is about."
+		, "description": "This property associates an ORE aggregation with the cultural heritage object(s) (CHO for short) it is about."
 	}
 , 	{
 		"id": "edm:begin"
 		, "label": "Begin"
-		, "definition": "This property denotes the start date of a period of time."
+		, "description": "This property denotes the start date of a period of time."
 	}
 , 	{
 		"id": "edm:datasetName"
 		, "label": "Dataset Name"
-		, "definition": "This property holds the identifier given to the dataset in Europeana."
+		, "description": "This property holds the identifier given to the dataset in Europeana."
 	}
 , 	{
 		"id": "edm:currentLocation"
 		, "label": "Current Location"
-		, "definition": "The geographic location and/or name of the repository, building, site, or other entity whose boundaries presently include the resource."
+		, "description": "The geographic location and/or name of the repository, building, site, or other entity whose boundaries presently include the resource."
 	}
 , 	{
 		"id": "edm:end"
 		, "label": "End"
-		, "definition": "This property denotes the end date of a period of time."
+		, "description": "This property denotes the end date of a period of time."
 	}
 , 	{
 		"id": "edm:europeanaProxy"
 		, "label": "Europeana Proxy"
-		, "definition": "This property serves only as a flag to indicate that a proxy is a Europeana proxy (as opposed to a provider proxy).  It is for internal use only."
+		, "description": "This property serves only as a flag to indicate that a proxy is a Europeana proxy (as opposed to a provider proxy).  It is for internal use only."
 	}
 , 	{
 		"id": "edm:happenedAt"
 		, "label": "Happened At"
-		, "definition": "This property associates an event with the place at which the event\nhappened."
+		, "description": "This property associates an event with the place at which the event\nhappened."
 	}
 , 	{
 		"id": "edm:hasType"
 		, "label": "Has Type"
-		, "definition": "This property relates a resource with the concepts it belongs to in a suitable\ntype system such as MIME or any thesaurus that captures categories of objects in a given field (e.g., the “Objects” facet in Getty’s Art and Architecture Thesaurus). It does not capture aboutness."
+		, "description": "This property relates a resource with the concepts it belongs to in a suitable\ntype system such as MIME or any thesaurus that captures categories of objects in a given field (e.g., the “Objects” facet in Getty’s Art and Architecture Thesaurus). It does not capture aboutness."
 	}
 , 	{
 		"id": "edm:hasView"
 		, "label": "Has View"
-		, "definition": "This property relates a ORE aggregation about a CHO with a web resource\nproviding a view of that CHO. Examples of view are: a thumbnail, a textual\nabstract and a table of contents. The ORE aggregation may be a Europeana\nAggregation, in which case the view is an object owned by Europeana (i.e., an instance of edm:EuropeanaObject) or an aggregation contributed by a content provider. In order to capture both these cases, the domain of edm:hasView is ore:Aggregation and its range is edm:WebResource"
+		, "description": "This property relates a ORE aggregation about a CHO with a web resource\nproviding a view of that CHO. Examples of view are: a thumbnail, a textual\nabstract and a table of contents. The ORE aggregation may be a Europeana\nAggregation, in which case the view is an object owned by Europeana (i.e., an instance of edm:EuropeanaObject) or an aggregation contributed by a content provider. In order to capture both these cases, the domain of edm:hasView is ore:Aggregation and its range is edm:WebResource"
 	}
 , 	{
 		"id": "edm:incorporates"
 		, "label": "Incorporates"
-		, "definition": "This property captures the use of some resource to add value to another\nresource. Such resources may be nested, such as performing a theater play text, and then recording the performance, or creating an artful edition of a collection of poems or just aggregating various poems in an anthology. There may be no single part that contains ultimately the incorporated object, which may be dispersed in the presentation. Therefore, incorporated resources do in general not form proper parts. Incorporated resources are not part of the same resource, but are taken from other resources, and have an independent history. Therefore edm:incorporates is not a sub-property of dcterm:hasPart."
+		, "description": "This property captures the use of some resource to add value to another\nresource. Such resources may be nested, such as performing a theater play text, and then recording the performance, or creating an artful edition of a collection of poems or just aggregating various poems in an anthology. There may be no single part that contains ultimately the incorporated object, which may be dispersed in the presentation. Therefore, incorporated resources do in general not form proper parts. Incorporated resources are not part of the same resource, but are taken from other resources, and have an independent history. Therefore edm:incorporates is not a sub-property of dcterm:hasPart."
 	}
 , 	{
 		"id": "edm:isAnnotationOf"
 		, "label": "Is Annotation Of"
-		, "definition": "This property relates an annotation (a Europeana object) with the resource\nthat it annotates."
+		, "description": "This property relates an annotation (a Europeana object) with the resource\nthat it annotates."
 	}
 , 	{
 		"id": "edm:isNextInSequence"
 		, "label": "Is Next In Sequence Of"
-		, "definition": "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."
+		, "description": "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."
 	}
 , 	{
 		"id": "edm:isRepresentationOf"
 		, "label": "Is Representation Of"
-		, "definition": "This property associates an information resource to the resource (if any) that it represents"
+		, "description": "This property associates an information resource to the resource (if any) that it represents"
 	}
 , 	{
 		"id": "edm:isSuccessorOf"
 		, "label": "Is Successor Of"
-		, "definition": "This property captures the relation between the continuation of a resource and that resource. This applies to a story, a serial, a journal etc. No content of the successor resource is identical or has a similar form with that of the precursor. The similarity is only in the context, subjects and figures of a plot. Successors typically form part of a common whole – such as a trilogy, a journal, etc."
+		, "description": "This property captures the relation between the continuation of a resource and that resource. This applies to a story, a serial, a journal etc. No content of the successor resource is identical or has a similar form with that of the precursor. The similarity is only in the context, subjects and figures of a plot. Successors typically form part of a common whole – such as a trilogy, a journal, etc."
 	}
 , 	{
 		"id": "edm:landingPage"
 		, "label": "Landing Page"
-		, "definition": "This property captures the relation between a Europeana aggregation representing a cultural heritage object and a (reference) Web resource giving access to that object. Europeana provides the value for this property."
+		, "description": "This property captures the relation between a Europeana aggregation representing a cultural heritage object and a (reference) Web resource giving access to that object. Europeana provides the value for this property."
 	}
 , 	{
 		"id": "edm:occurredAt"
 		, "label": "Occured At"
-		, "definition": "This property associates an event to the smallest known time span that\noverlaps with the occurrence of that event"
+		, "description": "This property associates an event to the smallest known time span that\noverlaps with the occurrence of that event"
 	}
 , 	{
 		"id": "edm:preview"
 		, "label": "Preview"
-		, "definition": "The URL of a thumbnail representing the digital object, generated by Europeana."
+		, "description": "The URL of a thumbnail representing the digital object, generated by Europeana."
 	}
 , 	{
 		"id": "edm:realizes"
 		, "label": "Realizes"
-		, "definition": "This property describes a relation between a physical thing and the information resource that is contained in it, visible at it or otherwise carried by it, if applicable."
+		, "description": "This property describes a relation between a physical thing and the information resource that is contained in it, visible at it or otherwise carried by it, if applicable."
 	}
 , 	{
 		"id": "edm:wasPresentAt"
 		, "label": "Was Present At"
-		, "definition": "This property associates the people, things or information resources with an event at which they were present"
+		, "description": "This property associates the people, things or information resources with an event at which they were present"
 	}
 , 	{
 		"id": "edm:isShownAt"
 		, "label": "Is Shown At"
-		, "definition": "An unambiguous URL reference to the digital object on the provider’s web site in its full information context."
+		, "description": "An unambiguous URL reference to the digital object on the provider’s web site in its full information context."
 	}
 , 	{
 		"id": "edm:isShownBy"
 		, "label": "Is Shown By"
-		, "definition": "An unambiguous URL reference to the digital object on the provider’s web site in the best available resolution/quality."
+		, "description": "An unambiguous URL reference to the digital object on the provider’s web site in the best available resolution/quality."
 	}
 , 	{
 		"id": "edm:object"
 		, "label": "Object"
-		, "definition": "The URL of a thumbnail representing the digital object or, if there is no such\nthumbnail, the URL of the digital object in the best resolution available on the\nweb site of the data provider from which a thumbnail could be generated. This will often be the same URL as given in edm:isShownBy."
+		, "description": "The URL of a thumbnail representing the digital object or, if there is no such\nthumbnail, the URL of the digital object in the best resolution available on the\nweb site of the data provider from which a thumbnail could be generated. This will often be the same URL as given in edm:isShownBy."
 	}
 , 	{
 		"id": "edm:rights"
 		, "label": "Standardized Rights Statement"
-		, "definition": "Information about copyright, usage and access rights of the digital objects in Europeana that represent the source cultural heritage object described in the data."
+		, "description": "Information about copyright, usage and access rights of the digital objects in Europeana that represent the source cultural heritage object described in the data."
 	}
 , 	{
 		"id": "edm:type"
 		, "label": "Europeana Type"
-		, "definition": "The Europeana material type of the resource"
+		, "description": "The Europeana material type of the resource"
 	}
 , 	{
 		"id": "edm:ugc"
 		, "label": "UGC"
-		, "definition": "This element is used to identify user generated content (also called user created content).  It should be applied to all digitised or born digital content contributed by the general public and collected by Europeana through a crowdsourcing initiative or project."
+		, "description": "This element is used to identify user generated content (also called user created content).  It should be applied to all digitised or born digital content contributed by the general public and collected by Europeana through a crowdsourcing initiative or project."
 	}
 , 	{
 		"id": "skos:Concept"
@@ -200,4 +199,3 @@
 		"id": "svcs:Service"
 	}
 ]
-}
