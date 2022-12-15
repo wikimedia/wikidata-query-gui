@@ -3,6 +3,7 @@
 		"authors": [
 			"Kly",
 			"LNDDYL",
+			"捍粵者",
 			"蘭斯特"
 		]
 	},
@@ -11,7 +12,7 @@
 	"wdqs-app-button-more-tools": "更多工具",
 	"wdqs-app-button-help": "說明",
 	"wdqs-app-button-run": "執行",
-	"wdqs-app-button-run-title": "執行查詢 (按下 CTRL + ENTER 鍵)",
+	"wdqs-app-button-run-title": "開始查詢（按CTRL和ENTER鍵）",
 	"wdqs-app-button-clear": "清除",
 	"wdqs-app-button-clear-title": "清除查詢",
 	"wdqs-app-button-restore-title": "回復前一次查詢",
@@ -121,7 +122,7 @@
 	"wdqs-ve-subtype": "子類型",
 	"wdqs-ve-sb-suggestions": "建議",
 	"wdqs-ve-sb-other": "其它",
-	"wdqs-action-query": "正在進行查詢",
+	"wdqs-action-query": "正在查詢",
 	"wdqs-action-render": "正在翻譯結果",
 	"wdqs-action-error-display": "無法顯示結果",
 	"wdqs-action-timeout": "已達查詢逾時限制",
