@@ -129,16 +129,20 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		this._api.searchEntities( term, type ).done(
 				function( data ) {
 					$.each( data.search, function( key, value ) {
-						var aTag = document.createElement('a');
-					    aTag.target = '_blank';
+						var aTagOrText = null;					    
 					    if(value.reference) {
-							aTag.href = value.reference;
+							aTagOrText = document.createElement('a');
+							aTagOrText.target = '_blank';
+							aTagOrText.href = value.reference;
+							aTagOrText.innerText = value.label ? value.label + ' (' + value.id + ')' : value.id;
 						}
-					    aTag.innerText = value.label ? value.label + ' (' + value.id + ')' : value.id;
-						
+						else {
+							aTagOrText = document.createTextNode(value.label ? value.label + ' (' + value.id + ')' : value.id);
+						}
+
 						entityList.push(
 							$()
-								.add( aTag )
+								.add( aTagOrText )
 								.add( $( '<br>' ) )
 								.add( $( '<small>' ).text( value.description || '' ) )
 						);
