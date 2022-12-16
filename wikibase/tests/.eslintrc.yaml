@@ -1,5 +1,20 @@
 {
   env: {
     es2018: true,
+  },
+  parserOptions: {
+    ecmaVersion: 2018
+  },
+  rules: {
+    max-statements-per-line: off,
+    es-x/no-array-from: off,
+    es-x/no-arrow-functions: off,
+    es-x/no-async-functions: off,
+    es-x/no-block-scoped-variables: off,
+    es-x/no-for-of-loops: off,
+    es-x/no-generators: off,
+    es-x/no-promise: off,
+    es-x/no-template-literals: off,
+    promise/no-native: off,
   }
 }

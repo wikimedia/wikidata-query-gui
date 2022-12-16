@@ -22,6 +22,13 @@ wikibase.queryService.api.Wikibase = ( function ( $ ) {
 			format: 'json',
 			siprop: 'languages'
 		},
+		QUERY_ENTITIES_DATA = {
+			action: 'wbgetentities',
+			props: 'labels|descriptions',
+			format: 'json',
+			languages: LANGUAGE,
+			languagefallback: '1'
+		},
 		QUERY_LABELS = {
 			action: 'wbgetentities',
 			props: 'labels',
@@ -55,7 +62,15 @@ wikibase.queryService.api.Wikibase = ( function ( $ ) {
 		if ( defaultLanguage ) {
 			this._language = defaultLanguage;
 		}
+
+		this._entitiesDataCache = wikibase.queryService.api.EntityInLanguageCache();
 	}
+
+	/**
+	 * @property {wikibase.queryService.api.EntityInLanguageCache}
+	 * @private
+	 */
+	SELF.prototype._entitiesDataCache = null;
 
 	/**
 	 * @property {string}
@@ -94,6 +109,45 @@ wikibase.queryService.api.Wikibase = ( function ( $ ) {
 		}
 
 		return this._query( query );
+	};
+
+	/**
+	 * Get some data of entities with using wbgetentities
+	 *
+	 * @param {string[]} ids ids to search for
+	 * @param {string} language of search string default:en
+	 *
+	 * @return {jQuery.Promise<Map>} Map with id as key and the api response as value
+	 */
+	SELF.prototype.getEntitiesData = function ( ids, language ) {
+		var self = this;
+		var lang = language || this._language;
+		var uncachedIds = ids.filter( function ( id ) {
+			return !self._entitiesDataCache.hasKeyInLanguage( id, lang );
+		} );
+		var deferred = $.Deferred();
+
+		if ( uncachedIds.length !== 0 ) {
+			var query = QUERY_ENTITIES_DATA;
+			query.ids = uncachedIds.join( '|' );
+			query.languages = lang;
+
+			this._query( query ).then(
+				function ( data ) {
+					if ( data.entities ) {
+						Object.keys( data.entities ).forEach( function ( id ) {
+							self._entitiesDataCache.setKeyInLanguage( id, lang, data.entities[id] );
+						} );
+						deferred.resolve( self._entitiesDataCache.getDataForKeysInLanguage( ids, lang ) );
+					} else {
+						deferred.reject();
+					}
+				}
+			).catch( deferred.reject );
+			return deferred.promise();
+		}
+
+		return deferred.resolve( this._entitiesDataCache.getDataForKeysInLanguage( ids, lang ) );
 	};
 
 	/**

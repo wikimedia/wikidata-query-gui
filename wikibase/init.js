@@ -80,8 +80,9 @@
 
 		var isTopWindow = window.top === window;
 
+		var tooltipRepository = wb.ui.editor.tooltip.TooltipRepository( api, lang, $ );
 		var rdfHint = new wb.ui.editor.hint.Rdf( api ),
-			rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
+			rdfTooltip = new wb.ui.editor.tooltip.Rdf( tooltipRepository ),
 			editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow } );
 
 		if ( config.prefixes ) {
@@ -99,6 +100,7 @@
 			sparqlApi.setLanguage( lang );
 			sparqlApiHelper.setLanguage( lang );
 			querySamplesApi.setLanguage( lang );
+			tooltipRepository.setLanguage( lang );
 			setLanguage( lang, true, afterLanguageChange );
 		} );
 

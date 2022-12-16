@@ -15,10 +15,10 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 	 *
 	 * @author Jonas Kress
 	 * @constructor
-	 * @param {wikibase.queryService.api.Wikibase} api
+	 * @param {wikibase.queryService.ui.editor.tooltip.TooltipRepository} tooltipRepository
 	 */
-	function SELF( api, rdfNamespaces ) {
-		this._api = api;
+	function SELF( tooltipRepository, rdfNamespaces ) {
+		this._tooltipRepository = tooltipRepository;
 		this._rdfNamespaces = rdfNamespaces;
 
 		if ( !this._api ) {
@@ -86,8 +86,8 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 		}
 
 		var self = this;
-		this._searchEntities( entityId, prefixes[prefix] ).done( function ( list ) {
-			self._showToolTip( list.shift(), {
+		this._tooltipRepository.getTooltipContentForId( entityId ).then( function ( content ) {
+			self._showToolTip( content, {
 				x: posX,
 				y: posY
 			} );
@@ -128,27 +128,6 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 		} );
 
 		return prefixes;
-	};
-
-	SELF.prototype._searchEntities = function ( term, type ) {
-		var entityList = [],
-			deferred = $.Deferred();
-
-		this._api.searchEntities( term, type ).done(
-			function ( data ) {
-				$.each( data.search, function ( key, value ) {
-					entityList.push(
-						$()
-							.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
-							.add( $( '<br>' ) )
-							.add( $( '<small>' ).text( value.description || '' ) )
-					);
-				} );
-
-				deferred.resolve( entityList );
-			} );
-
-		return deferred.promise();
 	};
 
 	return SELF;
