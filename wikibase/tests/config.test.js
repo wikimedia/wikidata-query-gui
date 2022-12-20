@@ -95,7 +95,13 @@
 	} );
 
 	QUnit.test( 'Failed loading default-config.json', function( assert ) {
-		var done = assert.async();
+		var done = assert.async(),
+			originalConsole = window.console;
+		window.console = {
+			error: function() {
+				// do nothing
+			}
+		};
 
 		$.getJSON = function( url ) {
 			var deferred = $.Deferred();
@@ -122,6 +128,8 @@
 			assert.equal( errorMessage, 'Failed loading default-config.json: $.getJSON_ERROR' );
 
 			done();
+		} ).always( function() {
+			window.console = originalConsole;
 		} );
 	} );
 
