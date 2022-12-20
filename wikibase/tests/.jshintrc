@@ -1,5 +1,7 @@
 {
-	// When you change this file, then also change the file in wikibase/tests/.jshintrc
+	// This file is basically a copy of the root-level one, plus the `"esversion": 9,` directive.
+	// You will want to keep them in sync.
+	"esversion": 9,
 	"camelcase": true,
 	"curly": true,
 	"eqeqeq": true,
