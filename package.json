@@ -90,7 +90,6 @@
     "qunit": "^2.19.3",
     "sinon": "^15.0.1",
     "stylelint": "^14.16.0",
-    "stylelint-config-wikimedia": "^0.13.1",
-    "webdriverio": "^7.26.0"
+    "stylelint-config-wikimedia": "^0.13.1"
   }
 }
