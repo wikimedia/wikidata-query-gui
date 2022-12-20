@@ -73,7 +73,7 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 				top: posY
 			} ) ).string;
 
-		if ( !token.match( /.+\:(Q|P)[0-9]*/ ) ) {
+		if ( !token.match( /.+\:(Q|P|L)[0-9]+$/ ) ) {
 			return;
 		}
 

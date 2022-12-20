@@ -34,10 +34,55 @@ wikibase.queryService.ui.editor.tooltip.TooltipRepository = function ( api, init
 		} );
 	}
 
+	function createLexemeTooltip( lemmas, languageLabel, lexCatLabel, lexemeId ) {
+		var $lemmasAsSpans = Object.keys( lemmas ).map( function ( lemmaLang ) {
+			var lemmaValue = lemmas[lemmaLang].value;
+			return $( '<span>' ).attr( 'lang', lemmaLang ).text( lemmaValue );
+		} );
+		var $title = $lemmasAsSpans.reduce( function ( $acc, $lemma, index ) {
+			if ( index > 0 ) {
+				$acc.append( '/' );
+			}
+			return $acc.append( $lemma );
+		}, $( '<span>' ) );
+		var $idNode = $( '<span>' ).text( '(' + lexemeId + ')' );
+		var $heading = $( '<span>' ).append( $title, ' ', $idNode );
+
+		var $language = $( '<span>' ).attr( 'lang', languageLabel.language ).text( languageLabel.value );
+		var $lexicalCategory = $( '<span>' ).attr( 'lang', lexCatLabel.language ).text( lexCatLabel.value );
+		var $description = $( '<small>' ).append( $language, ', ', $lexicalCategory );
+
+		return $( '<div>' ).append( $heading, '<br>', $description );
+	}
+
+	function getTooltipForLexeme( lexemeId ) {
+		return api.getEntitiesData( [ lexemeId ], lang ).then( function ( entitiesData ) {
+			var lexemeData = entitiesData.get( lexemeId );
+			if ( lexemeData.missing !== undefined ) {
+				return null;
+			}
+			var languageId = lexemeData.language;
+			var lexicalCategoryId = lexemeData.lexicalCategory;
+
+			return api.getEntitiesData( [ languageId, lexicalCategoryId ], lang ).then( function ( entitiesData ) {
+				var languageData = entitiesData.get( languageId );
+				var lexicalCategoryData = entitiesData.get( lexicalCategoryId );
+				var languageLabel = languageData.labels && languageData.labels[lang] || { value: languageId, language: lang };
+				var lexicalCategoryLabel = lexicalCategoryData.labels && lexicalCategoryData.labels[lang] || { value: lexicalCategoryId, language: lang };
+
+				return createLexemeTooltip( lexemeData.lemmas, languageLabel, lexicalCategoryLabel, lexemeId );
+			} );
+		} );
+	}
+
 	return {
 		getTooltipContentForId: function ( id ) {
 			if ( id.match( /^[Q|P]\d+$/ ) ) {
 				return getTooltipForLabelDescriptionEntity( id );
+			}
+
+			if ( id.match( /^L\d+$/ ) ) {
+				return getTooltipForLexeme( id );
 			}
 
 			throw new Error( 'Unknown entity type for id: ' + id );

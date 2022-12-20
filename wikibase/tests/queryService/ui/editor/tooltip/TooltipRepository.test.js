@@ -6,6 +6,13 @@
 	const tooltipRepositoryModule = wb.queryService.ui.editor.tooltip.TooltipRepository;
 
 	const getApiStub = ( id, fakeWikidataResponse ) => {
+		if ( Array.isArray( fakeWikidataResponse ) ) {
+			const stub = sinon.stub();
+			fakeWikidataResponse.forEach( function ( response, index ) {
+				stub.onCall( index ).resolves( new Map( response ) );
+			} );
+			return stub;
+		}
 		const fakeApiResponse = new Map( [ [ id, fakeWikidataResponse ] ] );
 		return sinon.stub().returns( Promise.resolve( fakeApiResponse ) );
 	};
@@ -35,6 +42,31 @@
 					'for-language': 'de-formal'
 				}
 			}
+		};
+	};
+
+	const getLexemeResponse = ( lexemeId, languageId, lexicalCategoryId ) => {
+		return {
+			type: 'lexeme',
+			id: lexemeId,
+			lemmas: {
+				'en-gb': {
+					language: 'en-gb',
+					value: 'colour<script></script>'
+				},
+				en: {
+					language: 'en',
+					value: 'color'
+				},
+				'en-ca': {
+					language: 'en-ca',
+					value: 'colour'
+				}
+			},
+			lexicalCategory: lexicalCategoryId,
+			language: languageId,
+			forms: [],
+			senses: []
 		};
 	};
 
@@ -146,6 +178,81 @@
 				'description <script>alert("description is not escaped properly")</script>'
 			),
 			'<div><span><span lang="de">label &lt;script&gt;alert("label is not escaped properly")&lt;/script&gt;</span> <span>(Q42)</span></span><br><small lang="de">description &lt;script&gt;alert("description is not escaped properly")&lt;/script&gt;</small></div>'
+		],
+		[
+			'Lexemes: returns null for missing Lexeme',
+			'L99999999999999999',
+			getMissingEntityResponse( 'L99999999999999999' ),
+			null
+		],
+		[
+			'Lexemes: language Item has been deleted',
+			'L1347',
+			[
+				[
+					[
+						'L1347',
+						getLexemeResponse( 'L1347', 'Q1084', 'Q1860' )
+					]
+				],
+				[
+					[
+						'Q1084',
+						getItemResponse( 'Q1084', 'language' )
+					],
+					[
+						'Q1860',
+						getMissingEntityResponse( 'Q1860' )
+					]
+				]
+			],
+			'<div><span><span><span lang="en-gb">colour&lt;script&gt;&lt;/script&gt;</span>/<span lang="en">color</span>/<span lang="en-ca">colour</span></span> <span>(L1347)</span></span><br><small><span lang="de">language</span>, <span lang="de-formal">Q1860</span></small></div>'
+		],
+		[
+			'Lexemes: language Item does not have a label',
+			'L1347',
+			[
+				[
+					[
+						'L1347',
+						getLexemeResponse( 'L1347', 'Q1084', 'Q1860' )
+					]
+				],
+				[
+					[
+						'Q1084',
+						getItemResponse( 'Q1084', 'language' )
+					],
+					[
+						'Q1860',
+						getItemResponse( 'Q1860', null )
+					]
+				]
+			],
+			'<div><span><span><span lang="en-gb">colour&lt;script&gt;&lt;/script&gt;</span>/<span lang="en">color</span>/<span lang="en-ca">colour</span></span> <span>(L1347)</span></span><br><small><span lang="de">language</span>, <span lang="de-formal">Q1860</span></small></div>'
+		],
+		[
+			'Lexemes: Lexeme has complete lemmas and labels',
+			'L1347',
+			[
+				[
+					[
+						'L1347',
+						getLexemeResponse( 'L1347', 'Q1084', 'Q1860' )
+					]
+				],
+				[
+					[
+						'Q1860',
+						getItemResponse( 'Q1860', 'language' )
+					],
+					[
+						'Q1084',
+						getItemResponse( 'Q1084', 'lexical category' )
+					]
+				]
+			],
+			'<div><span><span><span lang="en-gb">colour&lt;script&gt;&lt;/script&gt;</span>/<span lang="en">color</span>/<span lang="en-ca">colour</span></span> <span>(L1347)</span></span><br><small><span lang="de">lexical category</span>, <span lang="de">language</span></small></div>'
 		]
 	];
 
