@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};

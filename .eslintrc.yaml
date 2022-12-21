@@ -1,3 +1,4 @@
+# eslint-disable
 {
   root: true,
   extends: [
@@ -31,21 +32,31 @@
     wrap-iife: off,
 
 #    rules deactivated because they conflict with the current code
+    block-scoped-var: off,
     computed-property-spacing: off,
-    es/no-math-trunc: off,
     mediawiki/class-doc: off,
     no-empty-character-class: off,
     no-implicit-globals: off,
     no-multi-str: off,
     no-new: off,
-    no-restricted-syntax: off,
-    no-restricted-properties: off,
+    no-redeclare: off,
+    no-shadow: off,
     no-tabs: off,
     no-undef: off,
+    no-unreachable-loop: off,
     no-useless-concat: off,
     no-useless-escape: off,
     no-unused-vars: off,
     quote-props: off,
+    compat/compat: off,
+    es-x/no-array-prototype-includes: off,
+    es-x/no-array-prototype-keys: off,
+    es-x/no-array-prototype-values: off,
+    es-x/no-math-trunc: off,
+    es-x/no-string-prototype-endswith: off,
+    es-x/no-string-prototype-includes: off,
+    es-x/no-string-prototype-startswith: off,
+    es-x/no-symbol-prototype-description: off,
     jsdoc/require-param: off,
     jsdoc/require-returns: off,
     jsdoc/check-types: off,
@@ -66,5 +77,15 @@
     no-jquery/no-fade: off,
     no-jquery/no-map-util: off,
     no-jquery/no-class-state: off,
-  }
+    unicorn/prefer-date-now: off,
+    unicorn/prefer-string-slice: off,
+  },
+  overrides: [
+    {
+      files: "*.json",
+      rules: {
+        indent: off
+      }
+    }
+  ]
 }
