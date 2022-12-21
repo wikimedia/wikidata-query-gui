@@ -1,4 +1,5 @@
 /* jshint strict: false */
+// eslint-disable-next-line no-redeclare -- jshint needs to be told about require and browser
 /* globals require, describe, it, browser, $ */
 var assert = require( 'assert' );
 
