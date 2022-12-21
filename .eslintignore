@@ -1,0 +1,8 @@
+/dist/
+/build/
+/target/
+/node_modules/
+/vendor/
+/wikibase/tests/
+/polestar/
+/wikibase/codemirror/addon/

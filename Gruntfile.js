@@ -16,17 +16,7 @@ module.exports = function( grunt ) {
 			]
 		},
 		eslint: {
-			src: [
-				'**/*.js',
-				'!dist/**',
-				'!' + buildFolder + '/**',
-				'!target/**',
-				'!node_modules/**',
-				'!vendor/**',
-				'!wikibase/tests/**',
-				'!polestar/**',
-				'!wikibase/codemirror/addon/**'
-			]
+			src: '.'
 		},
 		jsonlint: {
 			all: [
