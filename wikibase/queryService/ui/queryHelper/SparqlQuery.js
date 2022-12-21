@@ -201,7 +201,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			return false;
 		} );
 
-		toRemove.map( function ( v ) {
+		toRemove.forEach( function ( v ) {
 			self.removeVariable( v );
 		} );
 	};
