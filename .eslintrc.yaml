@@ -54,7 +54,6 @@
     no-misleading-character-class: off,
     no-multi-str: off,
     no-new: off,
-    no-prototype-builtins: off,
     no-redeclare: off,
     no-restricted-syntax: off,
     no-restricted-properties: off,

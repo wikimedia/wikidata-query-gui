@@ -492,7 +492,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 
 		while ( ( match = regex.exec( this._query ) ) !== null ) {
 			var name = match[2];
-			if ( !this._resultBrowsers.hasOwnProperty( name ) ) {
+			if ( !Object.prototype.hasOwnProperty.call( this._resultBrowsers, name ) ) {
 				continue;
 			}
 			if ( match[1] === 'defaultView' ) {
