@@ -58,7 +58,6 @@
     no-restricted-properties: off,
     no-tabs: off,
     no-undef: off,
-    no-use-before-define: off,
     no-useless-call: off,
     no-useless-concat: off,
     no-useless-escape: off,
