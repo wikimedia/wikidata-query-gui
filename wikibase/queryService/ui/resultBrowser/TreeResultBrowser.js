@@ -19,7 +19,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 '       }  '  +
 	 '     }  '  +
 	 '     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  '  +
-	 '  }  ' ;
+	 '  }  ';
 	// jscs:enable
 
 	/**

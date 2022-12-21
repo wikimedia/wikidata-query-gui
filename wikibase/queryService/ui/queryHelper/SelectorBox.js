@@ -493,7 +493,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			if ( listener ) {
 				var id = $select.val(),
 					data = $element.data( 'items' ),
-					propertyId = data && data[id] && data[id].propertyId || null ;
+					propertyId = data && data[id] && data[id].propertyId || null;
 
 				listener( id, $select.find( 'option:selected' ).text(), propertyId );
 			}

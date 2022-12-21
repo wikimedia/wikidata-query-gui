@@ -65,7 +65,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			$( '#expand-type-switch' ).bootstrapToggle( {
 				on: 'Incoming',
 				off: 'Outgoing'
-			} ) ;
+			} );
 		}
 		var data = this._getData();
 		var network = new vis.Network( $container[0], data, GRAPH_OPTIONS );
