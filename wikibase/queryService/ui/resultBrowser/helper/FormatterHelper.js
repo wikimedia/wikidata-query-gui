@@ -289,7 +289,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, 
 				title: 'Explore item', // TODO i18n
 				class: 'explore glyphicon glyphicon-search',
 				tabindex: '-1',
-				'aria-hidden': 'true',
+				'aria-hidden': 'true'
 			} );
 		$button.click( $.proxy( this.handleExploreItem, this ) );
 
