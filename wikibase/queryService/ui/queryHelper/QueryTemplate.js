@@ -54,7 +54,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 			return null;
 		}
 
-		template = new SELF;
+		template = new SELF();
 		template._definition = templateJson;
 		template._fragments = SELF._getQueryTemplateFragments( templateJson );
 
