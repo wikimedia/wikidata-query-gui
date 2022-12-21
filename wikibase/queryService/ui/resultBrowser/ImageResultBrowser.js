@@ -122,7 +122,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 		if ( this._queue.length ) {
 			if ( this._getPosFromTop() < 3 * window.innerHeight ) {
 				this._loading.show();
-				this._loadNextChunk().done( function() { self._lazyLoad.call( self ); } );
+				this._loadNextChunk().done( function() { self._lazyLoad(); } );
 			} else {
 				$( window ).on( 'scroll.resultBrowser', $.proxy( _.debounce( self._lazyLoad, 100 ), self ) );
 				this._loading.hide();
