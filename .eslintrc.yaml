@@ -44,7 +44,6 @@
     computed-property-spacing: off,
     es/no-math-trunc: off,
     indent: off,
-    max-statements-per-line: off,
     mediawiki/class-doc: off,
     no-empty-character-class: off,
     no-implicit-globals: off,

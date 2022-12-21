@@ -17,7 +17,9 @@
 			}
 			if ( /^#TEMPLATE=/m.test( query ) ) {
 				// expand query template popover after allowing some time for labels to load
-				setTimeout( function() { $( '.edit' ).click(); }, 500 );
+				setTimeout( function() {
+					$( '.edit' ).click();
+				}, 500 );
 			}
 		}
 

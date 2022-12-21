@@ -122,7 +122,9 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 		if ( this._queue.length ) {
 			if ( this._getPosFromTop() < 3 * window.innerHeight ) {
 				this._loading.show();
-				this._loadNextChunk().done( function() { self._lazyLoad(); } );
+				this._loadNextChunk().done( function() {
+					self._lazyLoad();
+				} );
 			} else {
 				$( window ).on( 'scroll.resultBrowser', $.proxy( _.debounce( self._lazyLoad, 100 ), self ) );
 				this._loading.hide();
@@ -167,7 +169,9 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 					currentItem = $.when( self._preloadItem( item ), previousItem );
 
 				itemsLoaded.push( currentItem );
-				currentItem.done( function( item ) { self._appendItem( item ); } );
+				currentItem.done( function( item ) {
+					self._appendItem( item );
+				} );
 			} );
 
 		return itemsLoaded[ items.length ];
@@ -218,7 +222,9 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 		this._gridWidth = this._grid.width();
 		$( '.item' ).unwrap();
 		this._grid.append( $( '<div class="item-row hidden-row">' ) );
-		$items.each( $.proxy( function( int, elem ) { this._appendItem( elem, true ); }, self ) );
+		$items.each( $.proxy( function( int, elem ) {
+			this._appendItem( elem, true );
+		}, self ) );
 		if ( this._queue.length ) {
 			$( '.hidden-row' ).not( '.hidden-row:last' ).removeClass( 'hidden-row' );
 		} else {
@@ -248,7 +254,9 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 			fixedHeight = this._lineHeight * item.find( '.summary' )[ 0 ].childElementCount,
 			img = item.find( '.item-img' );
 
-			img[ 0 ].onerror = function() { img.attr( 'src', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg' ); };
+			img[ 0 ].onerror = function() {
+				img.attr( 'src', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg' );
+			};
 			img[ 0 ].onload = function() {
 				var aspectRatio = ( this.naturalWidth / this.naturalHeight );
 				itemLoaded.resolveWith( self, item.data( 'aspectRatio', aspectRatio ) );
@@ -277,7 +285,9 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	SELF.prototype._setDimensions = function( $currentRow, calculatedDimensions, hidden ) {
 		var $items = $currentRow.find( '.item' );
 
-		$items.width( function( index ) { return calculatedDimensions.widths[ index ]; } );
+		$items.width( function( index ) {
+			return calculatedDimensions.widths[ index ];
+		} );
 		if ( !hidden ) {
 			$currentRow.removeClass( 'hidden-row' );
 		}

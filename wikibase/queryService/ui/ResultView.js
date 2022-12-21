@@ -528,7 +528,9 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 					if ( self._editor ) {
 						self._editor.setValue( '#' + title + '\n' + query );
 						$( '#QueryExamples' ).one( 'hidden.bs.modal', function() {
-							setTimeout( function() { self._editor.focus(); }, 0 );
+							setTimeout( function() {
+								self._editor.focus();
+							}, 0 );
 						} );
 					} else {
 						self.draw( query );
