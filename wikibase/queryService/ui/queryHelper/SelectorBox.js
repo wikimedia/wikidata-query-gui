@@ -654,7 +654,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					return query.genericSuggest;
 				}
 
-				if ( triple.object. indexOf( '?' ) === 0 ) {
+				if ( triple.object.indexOf( '?' ) === 0 ) {
 					return query.seeAlso;
 				}
 			} else {

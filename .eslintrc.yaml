@@ -72,7 +72,6 @@
     no-useless-escape: off,
     no-unreachable: off,
     no-unused-vars: off,
-    no-whitespace-before-property: off,
     quotes: off,
     quote-props: off,
     space-before-blocks: off,
