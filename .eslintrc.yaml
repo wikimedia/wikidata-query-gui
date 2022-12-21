@@ -41,7 +41,6 @@
 
 #    rules deactivated because they conflict with the current code
     array-callback-return: off,
-    block-spacing: off,
     comma-dangle: off,
     comma-spacing: off,
     computed-property-spacing: off,

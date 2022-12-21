@@ -78,7 +78,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 
 		this._iterateResult( function( field, key, row, rowIndex ) {
 			if ( self._getFormatter().isDateTime( field ) ) {
-				if ( !items[rowIndex] ) {// create new
+				if ( !items[rowIndex] ) { // create new
 					items[rowIndex] = {
 						id: rowIndex,
 						content: self._getHtml( row ).html(),
