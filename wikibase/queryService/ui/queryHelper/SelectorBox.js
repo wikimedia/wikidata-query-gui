@@ -11,7 +11,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 /*jshint multistr: true */
 	var SPARQL_QUERY = {
 			item: {
-				suggest:// Find items that are used with a specifc property
+				suggest: // Find items that are used with a specifc property
 					'SELECT ?id ?label ?description WHERE {\
 					hint:Query hint:optimizer "None".\
 							{\
@@ -95,7 +95,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 //						FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
 //					}\
 //					LIMIT 20',
-				instanceOf:// Find items that are used with property 'instance of'
+				instanceOf: // Find items that are used with property 'instance of'
 					'SELECT ?id ?label ?description WHERE {\
 					hint:Query hint:optimizer "None".\
 						{\
@@ -110,7 +110,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 					LIMIT 100'
 		},
 		property: {
-			suggest:// Find properties that are used with a specific item
+			suggest: // Find properties that are used with a specific item
 				'SELECT ?id ?label ?description WHERE {\
 				hint:Query hint:optimizer "None".\
 					{\
@@ -207,7 +207,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 //				}\
 //				ORDER BY DESC(?count)\
 //				LIMIT 20',
-			seeAlso:// Read see also property from a specific property
+			seeAlso: // Read see also property from a specific property
 				'SELECT ?id ?label ?description WHERE {\
 					BIND( <{PROPERTY_URI}> as ?prop).\
 					?props ?x  ?prop.\

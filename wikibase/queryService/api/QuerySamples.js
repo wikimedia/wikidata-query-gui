@@ -163,10 +163,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			var title = titleEl.text().trim();
 
 			return {
-				title:    title,
-				query:    query,
-				href:     self._pageUrl + '#' + encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
-				tags:     self._extractTagsFromSPARQL( query ),
+				title: title,
+				query: query,
+				href: self._pageUrl + '#' + encodeURIComponent( title.replace( / /g, '_' ) ).replace( /%/g, '.' ),
+				tags: self._extractTagsFromSPARQL( query ),
 				category: self._findPrevHeader( titleEl ).text().trim()
 			};
 		} ).get();

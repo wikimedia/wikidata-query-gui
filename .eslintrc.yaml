@@ -46,7 +46,6 @@
     es/no-math-trunc: off,
     eqeqeq: off,
     indent: off,
-    key-spacing: off,
     keyword-spacing: off,
     max-statements-per-line: off,
     mediawiki/class-doc: off,
