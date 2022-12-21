@@ -24,7 +24,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		this._apiServer = settings.server;
 		this._apiUrl = this._apiServer + settings.apiPath;
 		this._pageTitle = settings.pageTitle;
-		this._pageUrl = this._apiServer + settings.pagePathElement + "Special:MyLanguage/" + this._pageTitle;
+		this._pageUrl = this._apiServer + settings.pagePathElement + 'Special:MyLanguage/' + this._pageTitle;
 	}
 
 	/**

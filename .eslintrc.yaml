@@ -62,7 +62,6 @@
     no-useless-escape: off,
     no-unreachable: off,
     no-unused-vars: off,
-    quotes: off,
     quote-props: off,
     semi: off,
     space-before-function-paren: off,
