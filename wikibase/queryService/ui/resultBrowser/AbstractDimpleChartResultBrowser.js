@@ -130,6 +130,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 
 	SELF.prototype._createChart = function() {
 
+		// eslint-disable-next-line new-cap -- not our code...
 		this._chart = new dimple.chart( this._svg, this._data );
 		this._chart.setBounds( 0, 0, '100%', '100%' );
 		this._chart.setMargins( '5%', '5%', '2%', '25%' );
