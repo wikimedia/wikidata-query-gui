@@ -252,7 +252,6 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 		childrenCells.exit().remove();
 
 		d3.select( 'select' ).on( 'change', function() {
-			console.log( 'select zoom(node)' );
 			treemap.value( value == 'size' ? size : count ).nodes( root );
 			zoom( node );
 		} );

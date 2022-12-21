@@ -48,7 +48,6 @@
     indent: off,
     max-statements-per-line: off,
     mediawiki/class-doc: off,
-    no-console: off,
     no-control-regex: off,
     no-empty-character-class: off,
     no-fallthrough: off,
