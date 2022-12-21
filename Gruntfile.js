@@ -45,7 +45,7 @@ module.exports = function( grunt ) {
 					 * no-sandbox mode is needed to make qunit work with docker.
 					 * It would be nice to do this optionally, so local test runs are still sandboxed...
 					 */
-					args: ['--no-sandbox', '--disable-setuid-sandbox'],
+					args: [ '--no-sandbox', '--disable-setuid-sandbox' ],
 					/*
 					 * In case PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true is set, we
 					 * need a way to set the Chrome path using an environment

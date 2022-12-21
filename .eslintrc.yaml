@@ -40,7 +40,6 @@
     wrap-iife: off,
 
 #    rules deactivated because they conflict with the current code
-    array-bracket-spacing: off,
     array-callback-return: off,
     block-spacing: off,
     comma-dangle: off,

@@ -353,7 +353,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 		function createMarkers() {
 			if ( Object.keys( markers ).length === 0 ) {
 				var marker = L.marker( [ 0, 0 ] ).bindPopup( 'Nothing found!' ).openPopup();
-				return { null: L.featureGroup( [marker] ) };
+				return { null: L.featureGroup( [ marker ] ) };
 			}
 
 			self._markerGroups = {};

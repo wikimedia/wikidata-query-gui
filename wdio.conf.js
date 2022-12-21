@@ -27,12 +27,12 @@ exports.config = {
 
     maxInstances: 10,
 
-    capabilities: [{
+    capabilities: [ {
 
         maxInstances: 5,
         browserName: 'chrome'
 
-    }],
+    } ],
 
     logLevel: 'error',
 
@@ -50,7 +50,7 @@ exports.config = {
 
     framework: 'mocha',
 
-    reporters: ['dot','spec'],
+    reporters: [ 'dot','spec' ],
 
     mochaOpts: {
         ui: 'bdd',
