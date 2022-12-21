@@ -506,19 +506,19 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function( $, wikibase, _ ) 
 				entity = bindings[entity].expression;
 			}
 
-			if (  self._isVariable( entity ) ) {
+			if ( self._isVariable( entity ) ) {
 				if ( self._isSimpleMode ) {
 					return;
 				}
 				entity = entity.replace( '?', '' ).replace( /_/g, '_<wbr>' );
-				$triple.append(  $( '<td>' ).append( entity ) );
+				$triple.append( $( '<td>' ).append( entity ) );
 				return;
 			}
 
 			if ( entity.type && entity.type === 'path' ) {
 				$triple.append( $( '<td>' ).append( self._getTripleEntityPathHtml( entity, triple, k ) ), ' ' );
 			} else {
-				$triple.append(  $( '<td>' ).append( self._getTripleEntityHtml( entity, triple, k ) ), ' ' );
+				$triple.append( $( '<td>' ).append( self._getTripleEntityHtml( entity, triple, k ) ), ' ' );
 			}
 		} );
 

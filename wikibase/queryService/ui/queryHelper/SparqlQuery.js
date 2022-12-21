@@ -351,7 +351,7 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function( $, wikibase, spar
 			if ( typeof t.triple.subject === 'string' && t.triple.subject.startsWith( '?' ) ) {
 				variables[t.triple.subject] = true;
 			}
-			if ( typeof t.triple.predicate === 'string'  && t.triple.predicate.startsWith( '?' ) ) {
+			if ( typeof t.triple.predicate === 'string' && t.triple.predicate.startsWith( '?' ) ) {
 				variables[t.triple.predicate] = true;
 			}
 			if ( typeof t.triple.object === 'string' && t.triple.object.startsWith( '?' ) ) {

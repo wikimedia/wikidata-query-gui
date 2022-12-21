@@ -34,7 +34,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
      * @constructor
      */
     function SELF( serviceType ) {
-        this._service =  SERVICE_PROVIDERS[serviceType] || this._badService;
+        this._service = SERVICE_PROVIDERS[serviceType] || this._badService;
     }
 
     /**
@@ -70,7 +70,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
     SELF.prototype.shorten = function( url ) {
         // FIXME: due to the way popover works, this gets called twice
         // we may want to consider short-term caching maybe, or some kind of debouncing?
-        var urlDiv =  'url-shortener-id-' + $.now();
+        var urlDiv = 'url-shortener-id-' + $.now();
         $.when( this._service.call( this, url ) ).then( function( resolved ) {
                 $( '#' + urlDiv ).html( resolved );
         } );

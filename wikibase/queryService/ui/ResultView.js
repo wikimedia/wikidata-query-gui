@@ -575,7 +575,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				var $link = $( '<a>' ).attr( 'href', 'embed.html' + queryUrl );
 				return self._shorten.shorten( $link[0].href );
 			}
-		}, queryLinkPopoverOptions  ) ).click( function() {
+		}, queryLinkPopoverOptions ) ).click( function() {
 			self._track( 'buttonClick.shortUrlResult' );
 		} );
 
@@ -731,7 +731,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 
 		$( window ).off( 'scroll.resultBrowser' );
 		$( window ).off( 'resize.resultBrowser' );
-		this._actionBar.show( 'wdqs-action-render', '',  'success', 100 );
+		this._actionBar.show( 'wdqs-action-render', '', 'success', 100 );
 		window.setTimeout( function() {
 			try {
 				$( '#query-result' ).show();

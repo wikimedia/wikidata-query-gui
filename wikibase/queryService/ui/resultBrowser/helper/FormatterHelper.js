@@ -475,7 +475,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 		}
 
 		return 'xml:lang' in cell
-			|| ( cell.type === 'literal' && ( !cell.datatype || cell.datatype === DATATYPE_STRING )  );
+			|| ( cell.type === 'literal' && ( !cell.datatype || cell.datatype === DATATYPE_STRING ) );
 	};
 
 	/**

@@ -120,7 +120,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 		var query = QUERY_LABELS;
 		query.ids = ids.join( '|' );
 
-		if ( this._language  ) {
+		if ( this._language ) {
 			query.languages = this._language;
 		}
 

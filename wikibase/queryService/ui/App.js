@@ -612,7 +612,7 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 				if ( difference <= 60 * 2 ) {
 					labelClass = 'list-group-item-success';
 				} else if ( difference <= 60 * 15 ) {
-					labelClass =  'list-group-item-warning';
+					labelClass = 'list-group-item-warning';
 				}
 
 				$label.html( $( '<a>' ).addClass( 'fa fa-refresh badge ' + labelClass ).html( ' ' ) );

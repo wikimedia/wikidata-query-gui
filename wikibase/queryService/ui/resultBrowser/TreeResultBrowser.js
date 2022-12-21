@@ -6,18 +6,18 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, window ) {
 	'use strict';
 
-	var SPARQL_ITEM_PROPERTIES =  'SELECT ?property ?propertyLabel ?value ?valueItemLabel ?valueImage WHERE {  '  +
-		'     {  '  +
-		'       SELECT ?property ?value ?valueImage ?valueItem WHERE {  '  +
-		'         BIND(<{ENTITY_URI}> AS ?item)  '  +
-		'         ?item ?prop ?value.  '  +
-		'         ?property wikibase:directClaim ?prop.  '  +
-		'         ?property rdf:type wikibase:Property.  '  +
-		'         OPTIONAL { ?value wdt:P18 ?valueImage. }  '  +
-		'         OPTIONAL { BIND(?value AS ?valueItem).  FILTER(STRSTARTS(STR(?value), STR(wd:))) }  '  +
-		'       }  '  +
-		'     }  '  +
-		'     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  '  +
+	var SPARQL_ITEM_PROPERTIES = 'SELECT ?property ?propertyLabel ?value ?valueItemLabel ?valueImage WHERE {  ' +
+		'     {  ' +
+		'       SELECT ?property ?value ?valueImage ?valueItem WHERE {  ' +
+		'         BIND(<{ENTITY_URI}> AS ?item)  ' +
+		'         ?item ?prop ?value.  ' +
+		'         ?property wikibase:directClaim ?prop.  ' +
+		'         ?property rdf:type wikibase:Property.  ' +
+		'         OPTIONAL { ?value wdt:P18 ?valueImage. }  ' +
+		'         OPTIONAL { BIND(?value AS ?valueItem).  FILTER(STRSTARTS(STR(?value), STR(wd:))) }  ' +
+		'       }  ' +
+		'     }  ' +
+		'     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  ' +
 		'  }  ';
 
 	/**
@@ -62,7 +62,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	SELF.prototype.draw = function( $element ) {
 
 		var self = this;
-		this._nodes = this._extractNodes( $.proxy( this._iterateResult, this )  );
+		this._nodes = this._extractNodes( $.proxy( this._iterateResult, this ) );
 
 		var $container = $( '<div>' ).jstree( {
 			core: {
@@ -132,7 +132,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 
 				if ( format.isEntity( field ) ) {
 					node = {};
-					node.parent = currentNode ||  parentNode || '#';
+					node.parent = currentNode || parentNode || '#';
 					node.id = node.parent + field.value;
 					node.url = field.value;
 					node.state = { opened: false };

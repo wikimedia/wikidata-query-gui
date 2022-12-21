@@ -349,7 +349,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 			createTags = function () {
 				tags = [];
 
-				return self._searchEntitiesSparql( null, entity, triple, sparql  ).then(  function ( d ) {
+				return self._searchEntitiesSparql( null, entity, triple, sparql ).then( function ( d ) {
 						d.forEach( function ( t ) {
 							tags.push( {
 								text: t.text,
@@ -571,7 +571,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 						} ];
 					}
 
-					if ( r2.length > 0 &&  r1.length > 0 ) {
+					if ( r2.length > 0 && r1.length > 0 ) {
 						r2 = [ {
 							text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-other', 'Other' ),
 							children: r2
@@ -618,7 +618,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 	 */
 	SELF.prototype._getSparqlTemplate = function( term, type, triple, sparql ) {
 		var definition = this._getSparqlTemplateDefinition( term, type, triple, sparql ),
-			template =  typeof definition === 'function' ? definition.apply( this ) : definition;
+			template = typeof definition === 'function' ? definition.apply( this ) : definition;
 
 		if ( sparql ) {
 			template = template.replace( '{SPARQL}', sparql );
@@ -650,11 +650,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 		} else {
 			if ( type === 'property' ) {
-				if ( !triple  ) {
+				if ( !triple ) {
 					return query.genericSuggest;
 				}
 
-				if ( triple.object. indexOf( '?' ) === 0  ) {
+				if ( triple.object. indexOf( '?' ) === 0 ) {
 					return query.seeAlso;
 				}
 			} else {
