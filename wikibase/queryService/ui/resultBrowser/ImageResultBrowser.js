@@ -77,7 +77,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	 */
 	SELF.prototype.draw = function( $element ) {
 		var self = this;
-		//Queue which must be cleared
+		// Queue which must be cleared
 		this._queue.splice( 0, this._queue.length );
 		this._grid = ( $( '<div class="img-grid">' ).html( '<div class="item-row hidden-row">' ) );
 

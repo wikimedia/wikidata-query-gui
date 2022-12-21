@@ -210,7 +210,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			error.message = exception.message;
 		}
 
-		try { //extract error from server response
+		try { // extract error from server response
 			var errorToMatch = error.debug.substring(
 				error.debug.indexOf( 'java.util.concurrent.ExecutionException:' )
 			);
@@ -541,7 +541,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 			var point = '"Point(' + position.coords.longitude + ' ' + position.coords.latitude + ')"^^geo:wktLiteral';
 			query = query.replace( /\"\[AUTO_COORDINATES\]\"/g, point );
 			$deferred.resolve( query );
-		}, function() { //error
+		}, function() { // error
 			var point = '"Point(13.381138 52.498243)"^^geo:wktLiteral';
 			query = query.replace( /\"\[AUTO_COORDINATES\]\"/g, point );
 			$deferred.resolve( query );

@@ -267,7 +267,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			return 1;
 		}
 
-		//and another one
+		// and another one
 		function textHeight( d ) {
 			var ky = chartHeight / d.dy;
 			yscale.domain( [ d.y, d.y + d.dy ] );

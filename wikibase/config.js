@@ -19,7 +19,7 @@ var CONFIG = ( function ( window, $ ) {
 		i18nLoad: function( lang ) {
 			var loadFallbackLang = null;
 			if ( lang !== this.language ) {
-				//load default language as fallback language
+				// load default language as fallback language
 				loadFallbackLang = $.i18n().load( 'i18n', this.language );
 			}
 			return $.when(

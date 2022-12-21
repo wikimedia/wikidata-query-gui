@@ -8,7 +8,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function( $, wikibase ) {
 
 	var SPARQL_TIMEOUT = 4 * 1000;
 
-/*jshint multistr: true */
+/* jshint multistr: true */
 	var SPARQL_QUERY = {
 			item: {
 				suggest: // Find items that are used with a specifc property

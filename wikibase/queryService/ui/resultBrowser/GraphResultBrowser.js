@@ -58,7 +58,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	 */
 	SELF.prototype.draw = function( $element ) {
 		var $container = $( '<div>' ).height( '100vh' );
-		//only for embed.html
+		// only for embed.html
 		if ( $( '#expand-type-switch' ).length !== 0 ) {
 			$container = $( '<div>' ).height( '100vh' );
 			$( '.expand-type' ).show();

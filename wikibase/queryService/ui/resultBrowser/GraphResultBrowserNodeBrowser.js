@@ -342,7 +342,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 
 		this._getProperties( nodeId ).then( function( properties ) {
 			$.each( properties, function( i, p ) {
-				//if already expanded skip
+				// if already expanded skip
 				if ( self._edges.get( {
 					filter: function( e ) {
 						return e.linkType === p.id && e.from === nodeId && e.type === EXPAND_TYPE_OUTGOING;

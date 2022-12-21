@@ -57,7 +57,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 			'wikibase:geoLatitude', 'wikibase:geoLongitude', 'wikibase:geoPrecision', 'wikibase:geoGlobe',
 			// other
 			'wikibase:wikiGroup',
-			//constraints
+			// constraints
 			'wikibase:hasViolationForConstraint',
 			// schema: things
 			'schema:about', 'schema:name', 'schema:description', 'schema:dateModified',

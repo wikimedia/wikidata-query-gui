@@ -75,7 +75,6 @@
     quotes: off,
     quote-props: off,
     space-before-blocks: off,
-    spaced-comment: off,
     switch-colon-spacing: off,
     semi: off,
     space-infix-ops: off,

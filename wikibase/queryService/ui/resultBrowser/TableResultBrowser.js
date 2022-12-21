@@ -223,10 +223,10 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			this._$selectedCell = $cell;
 			return;
 		}
-		if ( $cell.length ) { //if cell actually exists
+		if ( $cell.length ) { // if cell actually exists
 			$( '.table-cell-selected' ).removeClass( 'table-cell-selected' );
 			this._$selectedCell = $cell;
-			if ( !this._$selectedCell.parent().hasClass( 'no-records-found' ) ) { //make sure that the cell chosen isn't a 'No Matching Records Found' cell
+			if ( !this._$selectedCell.parent().hasClass( 'no-records-found' ) ) { // make sure that the cell chosen isn't a 'No Matching Records Found' cell
 				this._$selectedCell.addClass( 'table-cell-selected' );
 			}
 		}
@@ -259,7 +259,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 		if ( this._$selectedCell.length === 0 ) {
 			return;
 		}
-		if ( this._selectedCellHighlighted !== true ) { //activate highlighting for the selected cell only when one of the arrow keys is pressed
+		if ( this._selectedCellHighlighted !== true ) { // activate highlighting for the selected cell only when one of the arrow keys is pressed
 			if ( e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'ArrowRight' || e.key === 'ArrowDown' ) {
 				this._selectedCellHighlighted = true;
 				this.selectCell( this._$selectedCell );
@@ -268,7 +268,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			e.stopImmediatePropagation();
 			return;
 		}
-		if ( ( e.ctrlKey || e.metaKey ) && ( e.key === 'c' || e.key === 'C' ) ) { //if Ctrl + C is pressed
+		if ( ( e.ctrlKey || e.metaKey ) && ( e.key === 'c' || e.key === 'C' ) ) { // if Ctrl + C is pressed
 			if ( window.getSelection().toString() !== '' ) {
 				// let normal copy operation happen
 				return;
@@ -284,7 +284,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 		}
 
 		switch ( e.key ) {
-			case 'Enter': //When the enter key is pressed, click on the first link with non-empty text. Links with empty text open the item explorer and do not link to another site
+			case 'Enter': // When the enter key is pressed, click on the first link with non-empty text. Links with empty text open the item explorer and do not link to another site
 				this._$selectedCell.find( 'a' ).each( function() {
 					if ( $( this ).text().trim().length ) {
 						window.open( $( this ).prop( 'href' ) );
@@ -295,7 +295,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 				break;
 			case 'ArrowLeft':
 				var $leftCell = this._$selectedCell.prev();
-				if ( $leftCell.length === 0 ) { //if leftmost cell, go to the previous page
+				if ( $leftCell.length === 0 ) { // if leftmost cell, go to the previous page
 					if ( this._pageLoading === false ) {
 						this._pageLoading = true;
 						$( '.page-pre a' ).click();

@@ -208,14 +208,14 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	SELF.prototype._createControls = function() {
 		var self = this;
 
-		//zoom control
+		// zoom control
 		this._map.addControl( L.control.zoomBox( {
 			modal: false,
 			className: 'glyphicon glyphicon-zoom-in'
 		} ) );
 		this._map.addControl( new ScrollToTopButton() );
 
-		//layers control
+		// layers control
 		var numberOfLayers = Object.keys( this._markerGroups ).length;
 		if ( numberOfLayers > 1 ) {
 			var control = this._getLayerControl( this._markerGroups ).addTo( this._map );
@@ -236,10 +236,10 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			} );
 		}
 
-		//user location
+		// user location
 		L.control.locate().addTo( this._map );
 
-		//mini map
+		// mini map
 		var options = { zoomLevelOffset: -7, toggleDisplay: true };
 		new L.Control.MiniMap( new L.TileLayer( TILE_LAYER.wikimedia.url, TILE_LAYER.wikimedia.url.options ), options ).addTo( this._map );
 	};
