@@ -100,7 +100,7 @@ module.exports = function( grunt ) {
 		copy: {
 			release: {
 				files: [
-						{// bootstrap icons
+						{ // bootstrap icons
 							expand: true,
 							flatten: true,
 							src: [
@@ -109,7 +109,7 @@ module.exports = function( grunt ) {
 							dest: buildFolder + '/fonts/',
 							filter: 'isFile'
 						},
-						{// uls images
+						{ // uls images
 							expand: true,
 							flatten: true,
 							src: [
@@ -118,7 +118,7 @@ module.exports = function( grunt ) {
 							dest: buildFolder + '/images/',
 							filter: 'isFile'
 						},
-						{// jstree
+						{ // jstree
 							expand: true,
 							flatten: true,
 							src: [
@@ -127,7 +127,7 @@ module.exports = function( grunt ) {
 							dest: buildFolder + '/css/',
 							filter: 'isFile'
 						},
-						{// leaflet fullscreen images
+						{ // leaflet fullscreen images
 							expand: true,
 							flatten: true,
 							src: [
@@ -136,7 +136,7 @@ module.exports = function( grunt ) {
 							dest: buildFolder + '/css/',
 							filter: 'isFile'
 						},
-						{// leaflet images
+						{ // leaflet images
 							expand: true,
 							flatten: true,
 							src: [
@@ -174,7 +174,7 @@ module.exports = function( grunt ) {
 							dest: buildFolder,
 							filter: 'isFile'
 						},
-						{// json config
+						{ // json config
 							expand: false,
 							src: [
 								'default-config.json'
@@ -243,15 +243,15 @@ module.exports = function( grunt ) {
 					shell: '/bin/sh'
 				}
 			},
-			updateRepo: {// updates the gui repo
+			updateRepo: { // updates the gui repo
 				command: 'git remote update && git pull'
 			},
-			cloneDeploy: {// clone gui deploy to build folder
+			cloneDeploy: { // clone gui deploy to build folder
 				command: 'git clone --branch <%= pkg.repository.deploy.branch %>' +
 						' --single-branch https://<%= pkg.repository.deploy.gerrit %>/r/<%= pkg.repository.deploy.repo %> ' +
 						buildFolder
 			},
-			commitDeploy: {// get gui commit message and use it for deploy commit
+			commitDeploy: { // get gui commit message and use it for deploy commit
 				command: [
 						'lastrev=$(git rev-parse HEAD)',
 						'message=$(git log -1 --pretty=%B | grep -v Change-Id)',
@@ -263,7 +263,7 @@ module.exports = function( grunt ) {
 						'echo "$newmessage"'
 				].join( '&&' )
 			},
-			formatPatchDeploy: {// generate patch file for deploy commit(s)
+			formatPatchDeploy: { // generate patch file for deploy commit(s)
 				command: 'git -C ' + buildFolder + ' format-patch --output-directory .. @{u}'
 			},
 			review: {

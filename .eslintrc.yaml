@@ -75,7 +75,6 @@
     no-unreachable: off,
     no-unused-vars: off,
     no-whitespace-before-property: off,
-    object-curly-spacing: off,
     quotes: off,
     quote-props: off,
     space-before-blocks: off,
