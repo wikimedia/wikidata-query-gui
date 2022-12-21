@@ -85,7 +85,6 @@ wikibase.queryService.ui.Banner = ( function ( $, download, window ) {
 		this._renderBanner( this._$element );
 	};
 
-
 	/**
 	 * Dismiss the banner
 	 */

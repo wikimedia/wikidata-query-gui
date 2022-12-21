@@ -27,7 +27,6 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 		this._pageUrl = this._apiServer + settings.pagePathElement + "Special:MyLanguage/" + this._pageTitle;
 	}
 
-
 	/**
 	 * @type {string}
 	 * @private

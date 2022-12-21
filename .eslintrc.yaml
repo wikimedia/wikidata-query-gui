@@ -53,7 +53,6 @@
     no-implicit-globals: off,
     no-misleading-character-class: off,
     no-multi-str: off,
-    no-multiple-empty-lines: off,
     no-new: off,
     no-prototype-builtins: off,
     no-redeclare: off,

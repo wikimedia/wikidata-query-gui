@@ -140,4 +140,3 @@
 
 	} );
 }( jQuery, CONFIG ) );
-
