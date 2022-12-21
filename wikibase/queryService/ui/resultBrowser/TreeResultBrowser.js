@@ -6,21 +6,19 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, window ) {
 	'use strict';
 
-	// jscs:disable
 	var SPARQL_ITEM_PROPERTIES =  'SELECT ?property ?propertyLabel ?value ?valueItemLabel ?valueImage WHERE {  '  +
-	 '     {  '  +
-	 '       SELECT ?property ?value ?valueImage ?valueItem WHERE {  '  +
-	 '         BIND(<{ENTITY_URI}> AS ?item)  '  +
-	 '         ?item ?prop ?value.  '  +
-	 '         ?property wikibase:directClaim ?prop.  '  +
-	 '         ?property rdf:type wikibase:Property.  '  +
-	 '         OPTIONAL { ?value wdt:P18 ?valueImage. }  '  +
-	 '         OPTIONAL { BIND(?value AS ?valueItem).  FILTER(STRSTARTS(STR(?value), STR(wd:))) }  '  +
-	 '       }  '  +
-	 '     }  '  +
-	 '     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  '  +
-	 '  }  ';
-	// jscs:enable
+		'     {  '  +
+		'       SELECT ?property ?value ?valueImage ?valueItem WHERE {  '  +
+		'         BIND(<{ENTITY_URI}> AS ?item)  '  +
+		'         ?item ?prop ?value.  '  +
+		'         ?property wikibase:directClaim ?prop.  '  +
+		'         ?property rdf:type wikibase:Property.  '  +
+		'         OPTIONAL { ?value wdt:P18 ?valueImage. }  '  +
+		'         OPTIONAL { BIND(?value AS ?valueItem).  FILTER(STRSTARTS(STR(?value), STR(wd:))) }  '  +
+		'       }  '  +
+		'     }  '  +
+		'     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  '  +
+		'  }  ';
 
 	/**
 	 * A tree result browser
