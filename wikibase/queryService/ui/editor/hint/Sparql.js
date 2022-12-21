@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {};
 
-( function( $, wb ) {
+( function ( $, wb ) {
 	'use strict';
 
 	var MODULE = wb.queryService.ui.editor.hint;
@@ -116,7 +116,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 *
 	 * @return {jQuery.Promise} Returns the completion as promise ({list:[], from:, to:})
 	 */
-	SELF.prototype.getHint = function( editorContent, lineContent, lineNum, cursorPos ) {
+	SELF.prototype.getHint = function ( editorContent, lineContent, lineNum, cursorPos ) {
 		var currentWord = this._getCurrentWord( lineContent, cursorPos ),
 			hintList = [],
 			deferred = new $.Deferred();
@@ -136,22 +136,22 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return deferred.reject().promise();
 	};
 
-	SELF.prototype._getSPARQLHints = function( term ) {
+	SELF.prototype._getSPARQLHints = function ( term ) {
 		var list = [];
 
-		$.each( SPARQL_KEYWORDS, function( key, keyword ) {
+		$.each( SPARQL_KEYWORDS, function ( key, keyword ) {
 			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) >= 0 ) {
 				list.push( keyword );
 			}
 		} );
 
-		$.each( SPARQL_PREDICATES, function( key, keyword ) {
+		$.each( SPARQL_PREDICATES, function ( key, keyword ) {
 			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
 				list.push( keyword );
 			}
 		} );
 
-		$.each( SPARQL_CUSTOM_FUNCTIONS, function( key, keyword ) {
+		$.each( SPARQL_CUSTOM_FUNCTIONS, function ( key, keyword ) {
 			if ( keyword.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
 				list.push( keyword );
 			}
@@ -160,24 +160,24 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return list;
 	};
 
-	SELF.prototype._getDefinedVariables = function( text ) {
+	SELF.prototype._getDefinedVariables = function ( text ) {
 		var variables = {};
 
-		$.each( text.match( VARNAME ), function( key, word ) {
+		$.each( text.match( VARNAME ), function ( key, word ) {
 			variables[ word ] = true;
 		} );
 
 		return Object.keys( variables );
 	};
 
-	SELF.prototype._getVariableHints = function( term, variables ) {
+	SELF.prototype._getVariableHints = function ( term, variables ) {
 		var list = [];
 
 		if ( !term || term === '?' ) {
 			return variables;
 		}
 
-		$.each( variables, function( key, variable ) {
+		$.each( variables, function ( key, variable ) {
 			if ( variable.toLowerCase().indexOf( term.toLowerCase() ) === 0 ) {
 				list.push( variable );
 			}
@@ -186,7 +186,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return list;
 	};
 
-	SELF.prototype._getHintCompletion = function( currentWord, list, lineNumber ) {
+	SELF.prototype._getHintCompletion = function ( currentWord, list, lineNumber ) {
 		var completion = {
 			list: []
 		};
@@ -203,7 +203,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return completion;
 	};
 
-	SELF.prototype._getCurrentWord = function( line, position ) {
+	SELF.prototype._getCurrentWord = function ( line, position ) {
 		var pos = position - 1;
 
 		if ( pos < 0 ) {

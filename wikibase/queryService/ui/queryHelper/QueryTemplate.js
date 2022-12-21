@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.queryHelper = wikibase.queryService.ui.queryHelper || {};
 
-wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
+wikibase.queryService.ui.queryHelper.QueryTemplate = ( function ( $, wikibase ) {
 	'use strict';
 
 	/**
@@ -40,7 +40,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	 * @param {SparqlQuery} query
 	 * @return {?QueryTemplate}
 	 */
-	SELF.parse = function( query ) {
+	SELF.parse = function ( query ) {
 		var templateComment = query.getCommentContent( 'TEMPLATE=' ),
 			templateJson,
 			template;
@@ -70,7 +70,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	 * @param {?string} finalFallback final fallback language code for all languages
 	 * @return {string}
 	 */
-	SELF._getQueryTemplateText = function( definition, languageCode, fallbacksPerLanguage, finalFallback ) {
+	SELF._getQueryTemplateText = function ( definition, languageCode, fallbacksPerLanguage, finalFallback ) {
 		var texts, fallbacks, index, fallback;
 
 		if ( [ 'string', 'object' ].indexOf( typeof definition.template ) === -1 ) {
@@ -117,7 +117,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	 * @param {{template: (string|Object), variables: string[]}} definition
 	 * @return {string[]}
 	 */
-	SELF._getQueryTemplateFragments = function( definition ) {
+	SELF._getQueryTemplateFragments = function ( definition ) {
 		// TODO inject language and update it in the
 		// languageSelector.setChangeListener() callback from init.js
 		var languageCode = $.i18n && $.i18n().locale || 'en',
@@ -162,7 +162,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	 * @param {Object.<string, jQuery>} variables The individual variables are stored in this object, indexed by variable name.
 	 * @return {jQuery}
 	 */
-	SELF._buildTemplate = function( fragments, variables ) {
+	SELF._buildTemplate = function ( fragments, variables ) {
 		var template = $( '<span>' );
 
 		template.append( document.createTextNode( fragments[ 0 ] ) );
@@ -186,7 +186,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 	 * @param {Function} changeListener Called with {string} variable name, {string} old value, {string} new value.
 	 * @return {jQuery}
 	 */
-	SELF.prototype.getHtml = function( getLabel, selectorBox, changeListener ) {
+	SELF.prototype.getHtml = function ( getLabel, selectorBox, changeListener ) {
 		if ( this._template !== null ) {
 			return this._template;
 		}
@@ -195,9 +195,9 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 
 		var self = this;
 
-		$.each( this._definition.variables, function( variable, variableDefinition ) {
-			getLabel( variable ).done( function( label, id, description, type ) {
-				$.each( self._variables[ variable ], function( index, $variable ) {
+		$.each( this._definition.variables, function ( variable, variableDefinition ) {
+			getLabel( variable ).done( function ( label, id, description, type ) {
+				$.each( self._variables[ variable ], function ( index, $variable ) {
 					$variable.text( '' );
 					var $link = $( '<a>' ).text( label ).attr( {
 						'data-id': id,
@@ -209,7 +209,7 @@ wikibase.queryService.ui.queryHelper.QueryTemplate = ( function( $, wikibase ) {
 						$link.attr( 'data-sparql', variableDefinition.query );
 					}
 
-					selectorBox.add( $link, null, function( selectedId, name ) {
+					selectorBox.add( $link, null, function ( selectedId, name ) {
 						for ( var j in self._variables[ variable ] ) {
 							var $variable = self._variables[ variable ][ j ];
 							$variable.find( 'a[data-id="' + id + '"]' )

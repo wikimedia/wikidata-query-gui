@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
+wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function ( $, _ ) {
 	'use strict';
 
 	/**
@@ -75,7 +75,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var self = this;
 		// Queue which must be cleared
 		this._queue.splice( 0, this._queue.length );
@@ -83,7 +83,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 
 		$element.html( this._grid );
 		this._lineHeight = 1.5 * parseFloat( this._grid.css( 'font-size' ) );
-		this._iterateResult( function( field, key, row ) {
+		this._iterateResult( function ( field, key, row ) {
 			if ( field && self._isCommonsResource( field.value ) ) {
 				row.url = field.value;
 				self._queue.push( row );
@@ -97,13 +97,13 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * calculate the width of an elment without content
 	 */
-	SELF.prototype._calculateBaseWidth = function() {
+	SELF.prototype._calculateBaseWidth = function () {
 		var baseWidth = 0,
 			components = [ 'margin-left', 'margin-right', 'padding-left', 'padding-right' ],
 			$element = $( '<div class="item hidden">' );
 
 		this._grid.append( $element );
-		components.forEach( function( component ) {
+		components.forEach( function ( component ) {
 			baseWidth += parseFloat( $element.css( component ) );
 		} );
 		$element.remove();
@@ -114,7 +114,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * initiate lazy loading
 	 */
-	SELF.prototype._lazyLoad = function() {
+	SELF.prototype._lazyLoad = function () {
 		var self = this;
 
 		$( window ).off( 'scroll.resultBrowser' );
@@ -122,7 +122,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 		if ( this._queue.length ) {
 			if ( this._getPosFromTop() < 3 * window.innerHeight ) {
 				this._loading.show();
-				this._loadNextChunk().done( function() {
+				this._loadNextChunk().done( function () {
 					self._lazyLoad();
 				} );
 			} else {
@@ -139,14 +139,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * show the last row even if it's not full
 	 */
-	SELF.prototype._showFinalRow = function( hidden ) {
+	SELF.prototype._showFinalRow = function ( hidden ) {
 		var $row = $( '.item-row' ).last(),
 			$items = $row.find( '.item' ),
 			calculatedDimensions = { height: 0, widths: [] };
 
 		if ( $row.children().length ) {
 			calculatedDimensions.height = this._heightThreshold;
-			calculatedDimensions.widths = $items.map( function() {
+			calculatedDimensions.widths = $items.map( function () {
 				return $( this ).data( 'aspectRatio' ) * ( calculatedDimensions.height - $( this ).data( 'fixedHeight' ) );
 			} ).toArray();
 			this._setDimensions( $row, calculatedDimensions, hidden );
@@ -158,18 +158,18 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * load the next block of 8 images to allow for parallel loading
 	 */
-	SELF.prototype._loadNextChunk = function() {
+	SELF.prototype._loadNextChunk = function () {
 		var self = this,
 			preloadNum = 8,
 			items = this._queue.splice( 0, preloadNum ),
 			itemsLoaded = [ $.when() ];
 
-			items.forEach( function( item, i ) {
+			items.forEach( function ( item, i ) {
 				var previousItem = itemsLoaded[i],
 					currentItem = $.when( self._preloadItem( item ), previousItem );
 
 				itemsLoaded.push( currentItem );
-				currentItem.done( function( item ) {
+				currentItem.done( function ( item ) {
 					self._appendItem( item );
 				} );
 			} );
@@ -180,7 +180,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * return the distance from the final row of loaded imaged to the bottom of the window
 	 */
-	SELF.prototype._getPosFromTop = function() {
+	SELF.prototype._getPosFromTop = function () {
 		var lastRow = $( '.item-row' ).last();
 		return lastRow.offset().top - $( window ).scrollTop();
 	};
@@ -188,7 +188,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * calculate the dimensions of items wthin a row
 	 */
-	SELF.prototype._calculateDimensions = function( $row ) {
+	SELF.prototype._calculateDimensions = function ( $row ) {
 		var $items = $row.find( '.item' ),
 			fixedWidth = this._fixedItemWidth * $items.length,
 			totalWidth = this._gridWidth - fixedWidth,
@@ -196,7 +196,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 			productSum = 0,
 			calculatedDimensions = { height: 0, widths: [] };
 
-		$items.each( function() {
+		$items.each( function () {
 			var aspectRatio = $( this ).data( 'aspectRatio' ),
 				fixedHeight = $( this ).data( 'fixedHeight' );
 
@@ -205,7 +205,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 		} );
 
 		calculatedDimensions.height = ( totalWidth + productSum ) / aspectRatioSum;
-		calculatedDimensions.widths = $items.map( function() {
+		calculatedDimensions.widths = $items.map( function () {
 			var width = $( this ).data( 'aspectRatio' ) * ( calculatedDimensions.height - $( this ).data( 'fixedHeight' ) );
 			return Math.trunc( width * 100 ) / 100;
 		} ).toArray();
@@ -215,14 +215,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * lay out the page again
 	 */
-	SELF.prototype._layoutPage = function() {
+	SELF.prototype._layoutPage = function () {
 		var self = this,
 			$items = $( '.item' );
 
 		this._gridWidth = this._grid.width();
 		$( '.item' ).unwrap();
 		this._grid.append( $( '<div class="item-row hidden-row">' ) );
-		$items.each( $.proxy( function( int, elem ) {
+		$items.each( $.proxy( function ( int, elem ) {
 			this._appendItem( elem, true );
 		}, self ) );
 		if ( this._queue.length ) {
@@ -236,7 +236,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * append an item to the final row and calls a function to recalculate the dimensions of that row
 	 */
-	SELF.prototype._appendItem = function( $item, hidden ) {
+	SELF.prototype._appendItem = function ( $item, hidden ) {
 		var $currentRow = $( '.item-row' ).last();
 		$currentRow.append( $item );
 		this._layOutRow( $currentRow, hidden );
@@ -245,7 +245,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * return a promise which resolves with the item when the image is loaded
 	 */
-	SELF.prototype._preloadItem = function( itemData ) {
+	SELF.prototype._preloadItem = function ( itemData ) {
 		var self = this,
 			itemLoaded = $.Deferred(),
 			url = this._getThumbnail( itemData.url, 1024 ),
@@ -254,10 +254,10 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 			fixedHeight = this._lineHeight * item.find( '.summary' )[ 0 ].childElementCount,
 			img = item.find( '.item-img' );
 
-			img[ 0 ].onerror = function() {
+			img[ 0 ].onerror = function () {
 				img.attr( 'src', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg' );
 			};
-			img[ 0 ].onload = function() {
+			img[ 0 ].onload = function () {
 				var aspectRatio = ( this.naturalWidth / this.naturalHeight );
 				itemLoaded.resolveWith( self, item.data( 'aspectRatio', aspectRatio ) );
 			};
@@ -270,7 +270,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * lay out the passed row
 	 */
-	SELF.prototype._layOutRow = function( $currentRow, hidden ) {
+	SELF.prototype._layOutRow = function ( $currentRow, hidden ) {
 		var calculatedDimensions = this._calculateDimensions( $currentRow );
 
 		if ( calculatedDimensions.height < this._heightThreshold || Math.min( calculatedDimensions.widths ) < this._widthThreshold ) {
@@ -282,10 +282,10 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * set the dimensions of items within a row
 	 */
-	SELF.prototype._setDimensions = function( $currentRow, calculatedDimensions, hidden ) {
+	SELF.prototype._setDimensions = function ( $currentRow, calculatedDimensions, hidden ) {
 		var $items = $currentRow.find( '.item' );
 
-		$items.width( function( index ) {
+		$items.width( function ( index ) {
 			return calculatedDimensions.widths[ index ];
 		} );
 		if ( !hidden ) {
@@ -296,7 +296,7 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getItem = function( thumbnailUrl, url, title, row ) {
+	SELF.prototype._getItem = function ( thumbnailUrl, url, title, row ) {
 		var $image = $( '<a>' )
 				.click( this._getFormatter().handleCommonResourceItem )
 				.attr( { href: url, 'data-gallery': 'g', 'data-title': title } )
@@ -309,14 +309,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._isCommonsResource = function( url ) {
+	SELF.prototype._isCommonsResource = function ( url ) {
 		return this._getFormatter().isCommonsResource( url );
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getThumbnail = function( url, width ) {
+	SELF.prototype._getThumbnail = function ( url, width ) {
 		return this._getFormatter().getCommonsResourceThumbnailUrl( url, width );
 	};
 
@@ -326,14 +326,14 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function( $, _ ) {
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		return this._checkImage( data );
 	};
 
 	/**
 	 * Check if this value contains an image.
 	 */
-	SELF.prototype._checkImage = function( data ) {
+	SELF.prototype._checkImage = function ( data ) {
 		if ( data && data.value && this._isCommonsResource( data.value ) ) {
 			this._drawable = true;
 			return false;

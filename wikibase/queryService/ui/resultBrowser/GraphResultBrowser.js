@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, window, _ ) {
+wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function ( $, vis, window, _ ) {
 	'use strict';
 
 	var GRAPH_OPTIONS = {
@@ -56,7 +56,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	 *
 	 * @param {jQuery} $element target element
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var $container = $( '<div>' ).height( '100vh' );
 		// only for embed.html
 		if ( $( '#expand-type-switch' ).length !== 0 ) {
@@ -70,14 +70,14 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 		var data = this._getData();
 		var network = new vis.Network( $container[0], data, GRAPH_OPTIONS );
 
-		network.on( 'doubleClick', function( properties ) {
+		network.on( 'doubleClick', function ( properties ) {
 			if ( properties.nodes.length === 1 ) {
 				window.open( properties.nodes[0], '_blank' );
 			}
 		} );
 
 		var nodeBrowser = new wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser( data.nodes, data.edges, this.getSparqlApi() );
-		network.on( 'click', function( properties ) {
+		network.on( 'click', function ( properties ) {
 			var nodeId = properties.nodes[0] || null;
 			if ( $( '#expand-type-switch' ).is( ':checked' ) ) {
 				nodeBrowser.browse( nodeId, EXPAND_TYPE_INCOMING );
@@ -93,7 +93,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._createToolbar = function( network ) {
+	SELF.prototype._createToolbar = function ( network ) {
 		var $toolbar = $( '<div id="layout-options">' );
 
 		function setLayout( type ) {
@@ -117,7 +117,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			}
 		}
 
-		$( '<a class="btn btn-default layout-button">' ).click( function() {
+		$( '<a class="btn btn-default layout-button">' ).click( function () {
 			network.stabilize( 100 );
 		} ).append(
 			'<span class="glyphicon glyphicon-fullscreen" aria-hidden="true" title="' +
@@ -125,28 +125,28 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			'"></span>'
 		).appendTo( $toolbar );
 
-		$( '<a class="btn btn-default layout-button">' ).click( function() {
+		$( '<a class="btn btn-default layout-button">' ).click( function () {
 			setLayout( 'LR' );
 		} ).append( '<span class="glyphicon glyphicon-indent-left" aria-hidden="true" title="' +
 			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-hierarchical-lr' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
-		$( '<a class="btn btn-default layout-button">' ).click( function() {
+		$( '<a class="btn btn-default layout-button">' ).click( function () {
 			setLayout( 'UD' );
 		} ).append( '<span class="glyphicon glyphicon-align-center" aria-hidden="true" title="' +
 			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-hierarchical-ud' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
-		$( '<a class="btn btn-default layout-button">' ).click( function() {
+		$( '<a class="btn btn-default layout-button">' ).click( function () {
 			setLayout( 'RL' );
 		} ).append( '<span class="glyphicon glyphicon-indent-right" aria-hidden="true" title="' +
 			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-hierarchical-rl' ) +
 			'"></span>'
 		).appendTo( $toolbar );
 
-		$( '<a class="btn btn-default layout-button">' ).click( function() {
+		$( '<a class="btn btn-default layout-button">' ).click( function () {
 			setLayout( 'none' );
 		} ).append( '<span class="glyphicon glyphicon-align-justify" aria-hidden="true" title="' +
 			wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-resultbrowser-non-hierarchical' ) +
@@ -159,7 +159,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getData = function() {
+	SELF.prototype._getData = function () {
 		var nodes = {},
 			edges = {},
 			rows = [],
@@ -167,7 +167,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 			node = {},
 			edge = {};
 
-		this._iterateResult( function( field, key, row, rowIndex ) {
+		this._iterateResult( function ( field, key, row, rowIndex ) {
 			if ( !field || !field.value ) {
 				return;
 			}
@@ -232,7 +232,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function( $, vis, 
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		if ( this._getFormatter().isEntity( data ) ) {
 			this._drawable = true;
 			return false;

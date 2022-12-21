@@ -11,15 +11,15 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
      * which should resolve to the shortened URL.
      */
     var SERVICE_PROVIDERS = {
-        'tinyurl': function( url ) {
+        'tinyurl': function ( url ) {
             return this._getTinyUrl( url );
         },
         // WMF production shortener, lives on Meta wiki
-        'wmf': function( url ) {
+        'wmf': function ( url ) {
             return this._getWikiShort( url, 'meta.wikimedia.org' );
         },
         // Do not use this one in production! This is for testing only!
-        'wikibeta': function( url ) {
+        'wikibeta': function ( url ) {
             return this._getWikiShort( url, 'en.wikipedia.beta.wmflabs.org' );
         }
     };
@@ -67,23 +67,23 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
      * @param {string} url URL to be shortened
      * @return {string} HTML to display.
      */
-    SELF.prototype.shorten = function( url ) {
+    SELF.prototype.shorten = function ( url ) {
         // FIXME: due to the way popover works, this gets called twice
         // we may want to consider short-term caching maybe, or some kind of debouncing?
         var urlDiv = 'url-shortener-id-' + $.now();
-        $.when( this._service( url ) ).then( function( resolved ) {
+        $.when( this._service( url ) ).then( function ( resolved ) {
                 $( '#' + urlDiv ).html( resolved );
         } );
         return '<div class="shortUrl" id="' + urlDiv + '">' +
             wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-loading' ) + '</div>';
     };
 
-    SELF.prototype._badService = function( url ) {
+    SELF.prototype._badService = function ( url ) {
         return wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-bad-service' );
     };
 
     /** @return {string} HTML */
-    SELF.prototype._getTinyUrl = function( url ) {
+    SELF.prototype._getTinyUrl = function ( url ) {
         var TINYURL_API = '//tinyurl.com/api-create.php?url=';
 
         return '<iframe ' +
@@ -95,7 +95,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
     };
 
     /** @return {string} HTML */
-    SELF.prototype._getWikiShort = function( url, server ) {
+    SELF.prototype._getWikiShort = function ( url, server ) {
         var deferred = $.Deferred();
         $.ajax( {
             'url': 'https://' + server + '/w/api.php',
@@ -107,7 +107,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
             },
             'dataType': 'json',
             'method': 'POST'
-        } ).done( function( data ) {
+        } ).done( function ( data ) {
             var text, html, $element;
             if ( data && !data.error && data.shortenurl && data.shortenurl.shorturl ) {
                 text = data.shortenurl.shorturl;
@@ -121,7 +121,7 @@ wikibase.queryService.api.UrlShortener = ( function ( $ ) {
                 'sandbox': ''
             } );
             deferred.resolve( $element );
-        } ).fail( function() {
+        } ).fail( function () {
             deferred.resolve( wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-urlshortener-failed' ) );
         } );
         return deferred;

@@ -2,7 +2,7 @@ var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
-wikibase.queryService.api.Wikibase = ( function( $ ) {
+wikibase.queryService.api.Wikibase = ( function ( $ ) {
 	'use strict';
 
 	var API_ENDPOINT = 'https://www.wikidata.org/w/api.php';
@@ -78,7 +78,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 *
 	 * @return {jQuery.Promise}
 	 */
-	SELF.prototype.searchEntities = function( term, type, language ) {
+	SELF.prototype.searchEntities = function ( term, type, language ) {
 		var query = SEARCH_ENTITES;
 		query.search = term;
 
@@ -101,7 +101,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 *
 	 * @return {jQuery.Promise}
 	 */
-	SELF.prototype.getLanguages = function() {
+	SELF.prototype.getLanguages = function () {
 		return this._query( QUERY_LANGUGES );
 	};
 
@@ -111,7 +111,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @param {string|string[]} ids entity IDs
 	 * @return {jQuery.Promise}
 	 */
-	SELF.prototype.getLabels = function( ids ) {
+	SELF.prototype.getLabels = function ( ids ) {
 
 		if ( typeof ids === 'string' ) {
 			ids = [ ids ];
@@ -133,13 +133,13 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @param {string} id property ID
 	 * @return {jQuery.Promise}
 	 */
-	SELF.prototype.getDataType = function( id ) {
+	SELF.prototype.getDataType = function ( id ) {
 		var query = QUERY_DATATYPE,
 			deferred = $.Deferred();
 
 		query.ids = id;
 
-		this._query( query ).done( function( data ) {
+		this._query( query ).done( function ( data ) {
 			if ( data.entities && data.entities[id] && data.entities[id].datatype ) {
 				deferred.resolve( data.entities[id].datatype );
 			}
@@ -153,7 +153,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._query = function( query ) {
+	SELF.prototype._query = function ( query ) {
 		return $.ajax( {
 			url: this._endpoint + '?origin=*&' + jQuery.param( query )
 		} );
@@ -164,7 +164,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 *
 	 * @param {string} language of search string default:en
 	 */
-	SELF.prototype.setLanguage = function( language ) {
+	SELF.prototype.setLanguage = function ( language ) {
 		this._language = language;
 	};
 

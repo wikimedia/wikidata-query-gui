@@ -1,5 +1,5 @@
 /* jshint node:true */
-module.exports = function( grunt ) {
+module.exports = function ( grunt ) {
 	'use strict';
 	require( 'load-grunt-tasks' )( grunt );
 	var pkg = grunt.file.readJSON( 'package.json' );
@@ -281,7 +281,7 @@ module.exports = function( grunt ) {
 		}
 	} );
 
-	grunt.registerTask( 'configDeploy', 'Creates .git-review in build folder', function() {
+	grunt.registerTask( 'configDeploy', 'Creates .git-review in build folder', function () {
 		var file = '[gerrit]\nhost=' + pkg.repository.deploy.gerrit + '\n' +
 			'port=29418\n' +
 			'project=' + pkg.repository.deploy.repo + '.git\n' +

@@ -35,7 +35,7 @@ wikibase.queryService.ui.resultBrowser.helper.Options = ( function ( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._requireTwoArguments = function( args ) {
+	SELF.prototype._requireTwoArguments = function ( args ) {
 		if ( args.length !== 2 ) {
 			throw new Error( 'must be called with exactly two arguments' );
 		}
@@ -52,7 +52,7 @@ wikibase.queryService.ui.resultBrowser.helper.Options = ( function ( $ ) {
 	 * explicitly pass undefined as the default value.
 	 * @return {*}
 	 */
-	SELF.prototype.get = function( name, defaultValue ) {
+	SELF.prototype.get = function ( name, defaultValue ) {
 		this._requireTwoArguments( arguments );
 
 		if ( name in this._options ) {
@@ -71,7 +71,7 @@ wikibase.queryService.ui.resultBrowser.helper.Options = ( function ( $ ) {
 	 * @param {*} defaultValue
 	 * @return {Array}
 	 */
-	SELF.prototype.getArray = function( name, defaultValue ) {
+	SELF.prototype.getArray = function ( name, defaultValue ) {
 		this._requireTwoArguments( arguments );
 
 		var option = this.get( name, defaultValue );
@@ -92,11 +92,11 @@ wikibase.queryService.ui.resultBrowser.helper.Options = ( function ( $ ) {
 	 * @param {*} defaultValue
 	 * @return {Array}
 	 */
-	SELF.prototype.getColumnNames = function( name, defaultValue ) {
+	SELF.prototype.getColumnNames = function ( name, defaultValue ) {
 		this._requireTwoArguments( arguments );
 
 		return this.getArray( name, defaultValue )
-			.filter( function( variableName ) {
+			.filter( function ( variableName ) {
 				if ( typeof variableName !== 'string' ||
 					!variableName.startsWith( '?' ) ) {
 					window.console.warn(
@@ -106,7 +106,7 @@ wikibase.queryService.ui.resultBrowser.helper.Options = ( function ( $ ) {
 				}
 				return true;
 			} )
-			.map( function( variableName ) {
+			.map( function ( variableName ) {
 				return variableName.substring( 1 );
 			} );
 	};

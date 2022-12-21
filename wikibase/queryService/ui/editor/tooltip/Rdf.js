@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 wikibase.queryService.ui.editor.tooltip = wikibase.queryService.ui.editor.tooltip || {};
 
-wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
+wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 	'use strict';
 
 	/**
@@ -47,25 +47,25 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	 *
 	 * @param {CodeMirror} editor
 	 */
-	SELF.prototype.setEditor = function( editor ) {
+	SELF.prototype.setEditor = function ( editor ) {
 		this._editor = editor;
 		this._registerHandler();
 	};
 
-	SELF.prototype._registerHandler = function() {
+	SELF.prototype._registerHandler = function () {
 		var self = this;
 
-		CodeMirror.on( this._editor.getWrapperElement(), 'mouseover', _.debounce( function( e ) {
+		CodeMirror.on( this._editor.getWrapperElement(), 'mouseover', _.debounce( function ( e ) {
 			self._triggerTooltip( e );
 		}, 300 ) );
 	};// TODO: Remove CodeMirror dependency
 
-	SELF.prototype._triggerTooltip = function( e ) {
+	SELF.prototype._triggerTooltip = function ( e ) {
 		this._removeToolTip();
 		this._createTooltip( e );
 	};
 
-	SELF.prototype._createTooltip = function( e ) {
+	SELF.prototype._createTooltip = function ( e ) {
 		var posX = e.clientX,
 			posY = e.clientY + $( window ).scrollTop(),
 			token = this._editor.getTokenAt( this._editor.coordsChar( {
@@ -86,7 +86,7 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		}
 
 		var self = this;
-		this._searchEntities( entityId, prefixes[prefix] ).done( function( list ) {
+		this._searchEntities( entityId, prefixes[prefix] ).done( function ( list ) {
 			self._showToolTip( list.shift(), {
 				x: posX,
 				y: posY
@@ -94,11 +94,11 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		} );
 	};
 
-	SELF.prototype._removeToolTip = function() {
+	SELF.prototype._removeToolTip = function () {
 		$( '.wikibaseRDFtoolTip' ).remove();
 	};
 
-	SELF.prototype._showToolTip = function( $content, pos ) {
+	SELF.prototype._showToolTip = function ( $content, pos ) {
 		if ( !$content || !pos ) {
 			return;
 		}
@@ -112,13 +112,13 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 				.appendTo( 'body' ).fadeIn( 'slow' );
 	};
 
-	SELF.prototype._extractPrefixes = function( text ) {
+	SELF.prototype._extractPrefixes = function ( text ) {
 		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES ),
 			lines = text.split( '\n' ),
 			matches;
 
 		var self = this;
-		$.each( lines, function( index, line ) {
+		$.each( lines, function ( index, line ) {
 			// PREFIX wd: <http://www.wikidata.org/entity/>
 			if ( ( matches = line.match( /(PREFIX) (\S+): <([^>]+)>/ ) ) ) {
 				if ( self._rdfNamespaces.ENTITY_TYPES[matches[3]] ) {
@@ -130,13 +130,13 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		return prefixes;
 	};
 
-	SELF.prototype._searchEntities = function( term, type ) {
+	SELF.prototype._searchEntities = function ( term, type ) {
 		var entityList = [],
 			deferred = $.Deferred();
 
 		this._api.searchEntities( term, type ).done(
-				function( data ) {
-					$.each( data.search, function( key, value ) {
+				function ( data ) {
+					$.each( data.search, function ( key, value ) {
 						entityList.push(
 							$()
 								.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )

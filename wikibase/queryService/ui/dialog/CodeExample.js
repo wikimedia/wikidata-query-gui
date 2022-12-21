@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.dialog = wikibase.queryService.ui.dialog || {};
 
-wikibase.queryService.ui.dialog.CodeExample = ( function( $, CodeMirror ) {
+wikibase.queryService.ui.dialog.CodeExample = ( function ( $, CodeMirror ) {
 	'use strict';
 
 	var CODEMIRROR_DEFAULTS = { readOnly: true, autofocus: true, autoRefresh: true, lineNumbers: true, lineWrapping: true };
@@ -43,7 +43,7 @@ wikibase.queryService.ui.dialog.CodeExample = ( function( $, CodeMirror ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._init = function() {
+	SELF.prototype._init = function () {
 		var self = this;
 
 		this._$element.on( 'show.bs.modal', function () {
@@ -56,14 +56,14 @@ wikibase.queryService.ui.dialog.CodeExample = ( function( $, CodeMirror ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._update = function( examples ) {
+	SELF.prototype._update = function ( examples ) {
 		var $tabs = this._$element.find( '.nav-tabs' ).empty(),
 			$panes = this._$element.find( '.tab-content' ).empty(),
 			$tab = $( '<li role="presentation"></li>' ),
 			$pane = $( '<div role="tabpanel" class="tab-pane">' ),
 			$button = $( '<a role="tab" data-toggle="tab">' );
 
-		$.each( examples, function( lang, data ) {
+		$.each( examples, function ( lang, data ) {
 			var code = data.code,
 				mode = data.mimetype;
 			var $text = $( '<textarea>' ).text( code );

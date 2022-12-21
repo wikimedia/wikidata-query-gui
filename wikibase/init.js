@@ -1,4 +1,4 @@
-( function( $, CONFIG, moment ) {
+( function ( $, CONFIG, moment ) {
 	'use strict';
 
 	$.when(
@@ -44,7 +44,7 @@
 
 			$.when(
 				config.i18nLoad( lang )
-			).done( function() {
+			).done( function () {
 				$( '.wikibase-queryservice' ).i18n();
 				$( '#keyboardShortcutHelpModal' ).i18n();
 				$( '.wdqs-app-query-builder-banner-content' ).i18n();
@@ -98,7 +98,7 @@
 
 		setLanguage( lang, false, afterLanguageChange );
 
-		languageSelector.setChangeListener( function( lang ) {
+		languageSelector.setChangeListener( function ( lang ) {
 			api.setLanguage( lang );
 			sparqlApi.setLanguage( lang );
 			sparqlApiHelper.setLanguage( lang );

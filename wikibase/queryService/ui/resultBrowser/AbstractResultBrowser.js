@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wikibase ) {
+wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function ( $, wikibase ) {
 	'use strict';
 
 	/**
@@ -62,7 +62,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @param {Object} result set
 	 */
-	SELF.prototype.setResult = function( result ) {
+	SELF.prototype.setResult = function ( result ) {
 		this._result = result;
 	};
 
@@ -71,7 +71,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @param {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
-	SELF.prototype.setOptions = function( options ) {
+	SELF.prototype.setOptions = function ( options ) {
 		this._options = options;
 		this._getFormatter().setOptions( options );
 	};
@@ -81,7 +81,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @return {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
-	SELF.prototype.getOptions = function() {
+	SELF.prototype.getOptions = function () {
 		return this._options || new wikibase.queryService.ui.resultBrowser.helper.Options( {} );
 	};
 
@@ -90,7 +90,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @param {wikibase.queryService.api.Sparql} sparqlApi
 	 */
-	SELF.prototype.setSparqlApi = function( sparqlApi ) {
+	SELF.prototype.setSparqlApi = function ( sparqlApi ) {
 		this._sparqlApi = sparqlApi;
 	};
 
@@ -99,7 +99,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @return {wikibase.queryService.api.Sparql}
 	 */
-	SELF.prototype.getSparqlApi = function() {
+	SELF.prototype.getSparqlApi = function () {
 		return this._sparqlApi;
 	};
 
@@ -109,11 +109,11 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @protected
 	 * @param {AbstractResultBrowser~resultCallback} cb - called for every column of the resultset
 	 */
-	SELF.prototype._iterateResult = function( cb ) {
+	SELF.prototype._iterateResult = function ( cb ) {
 		var self = this;
 
-		$.each( this._result.results.bindings, function( rowNum, row ) {
-			$.each( self._result.head.vars, function( rowNum1, key ) {
+		$.each( this._result.results.bindings, function ( rowNum, row ) {
+			$.each( self._result.head.vars, function ( rowNum1, key ) {
 				var field = row[key] || null;
 				self.processVisitors( field, key );
 				cb( field, key, row, rowNum );
@@ -133,7 +133,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function() {
+	SELF.prototype.isDrawable = function () {
 		return this._drawable;
 	};
 
@@ -142,7 +142,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		jQuery.error( 'Method draw() needs to be implemented!' );
 	};
 
@@ -151,14 +151,14 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @param {Function} callback
 	 */
-	SELF.prototype.addVisitor = function( callback ) {
+	SELF.prototype.addVisitor = function ( callback ) {
 		this._visitors.push( callback );
 	};
 
 	/**
 	 * Reset visitors array.
 	 */
-	SELF.prototype.resetVisitors = function() {
+	SELF.prototype.resetVisitors = function () {
 		this._visitors = [];
 	};
 
@@ -169,7 +169,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @param {Object} data
 	 * @param {string} columnKey
 	 */
-	SELF.prototype.processVisitors = function( data, columnKey ) {
+	SELF.prototype.processVisitors = function ( data, columnKey ) {
 		var self = this,
 			removeVisitors = {};
 
@@ -177,7 +177,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 			return;
 		}
 
-		$.each( this._visitors, function( key, v ) {
+		$.each( this._visitors, function ( key, v ) {
 			if ( v.visit && typeof v.visit === 'function' ) {
 				if ( v.visit( data, columnKey ) === false ) {
 					removeVisitors[key] = true;
@@ -186,7 +186,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 		} );
 
 		// need to use filter since removal changes keys
-		self._visitors = self._visitors.filter( function( value, visitorIndex ) {
+		self._visitors = self._visitors.filter( function ( value, visitorIndex ) {
 			return !removeVisitors[visitorIndex];
 		} );
 	};
@@ -197,7 +197,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		return false;
 	};
 
@@ -206,7 +206,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 *
 	 * @param {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper} formatter
 	 */
-	SELF.prototype.setFormatter = function( formatter ) {
+	SELF.prototype.setFormatter = function ( formatter ) {
 		this._formatter = formatter;
 	};
 
@@ -216,7 +216,7 @@ wikibase.queryService.ui.resultBrowser.AbstractResultBrowser = ( function( $, wi
 	 * @protected
 	 * @return {wikibase.queryService.ui.resultBrowser.helper.FormatterHelper}
 	 */
-	SELF.prototype._getFormatter = function() {
+	SELF.prototype._getFormatter = function () {
 		if ( this._formatter === null ) {
 			this._formatter = new wikibase.queryService.ui.resultBrowser.helper.FormatterHelper();
 		}

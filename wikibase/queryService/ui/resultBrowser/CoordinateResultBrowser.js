@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, L, d3, _, wellknown, window ) {
+wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function ( $, L, d3, _, wellknown, window ) {
 	'use strict';
 
 	/**
@@ -64,7 +64,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	function SELF() {
 		this._markerGroupColors = {};
 		var _getDefaultMarkerGroupColor = d3.scale.category10();
-		this._getMarkerGroupColor = function( group ) {
+		this._getMarkerGroupColor = function ( group ) {
 			if ( group in this._markerGroupColors ) {
 				return this._markerGroupColors[ group ];
 			}
@@ -76,12 +76,12 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				position: 'topright'
 			},
 
-			onAdd: function( map ) {
+			onAdd: function ( map ) {
 				var container = L.DomUtil.create( 'button' );
 				$( container ).addClass( 'btn btn-default wdqs-control-scroll-top' );
 				$( container ).append( $( ' <span class="glyphicon glyphicon-chevron-up"/> ' ) );
 
-				container.onclick = function() {
+				container.onclick = function () {
 					if ( map.isFullscreen() ) {
 						map.toggleFullscreen();
 					}
@@ -136,7 +136,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 *
 	 * @param {jQuery} $element target element
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var self = this,
 			container = $( '<div>' ).attr( 'id', 'map' ).height( '100vh' ),
 			interval;
@@ -205,7 +205,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 *
 	 * @private
 	 */
-	SELF.prototype._createControls = function() {
+	SELF.prototype._createControls = function () {
 		var self = this;
 
 		// zoom control
@@ -225,7 +225,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				if ( event.layer !== self._markerGroups[ LAYER_DEFAULT_GROUP ] ) {
 					return;
 				}
-				$.each( self._markerGroups, function( i, layer ) {
+				$.each( self._markerGroups, function ( i, layer ) {
 					if ( event.type === 'overlayadd' ) {
 						self._map.addLayer( layer );
 					} else {
@@ -247,14 +247,14 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._createMarkerZoomResize = function() {
+	SELF.prototype._createMarkerZoomResize = function () {
 		var self = this;
 
 		if ( this._markerGroups[LAYER_DEFAULT_GROUP].getLayers().length > 1000 ) {
 			return; // disable when to many markers (bad performance)
 		}
 
-		var resize = function() {
+		var resize = function () {
 			self._markerGroups[LAYER_DEFAULT_GROUP].setStyle( {
 				radius: self._getMarkerRadius()
 			} );
@@ -266,7 +266,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getMarkerRadius = function() {
+	SELF.prototype._getMarkerRadius = function () {
 		if ( !this._map ) {
 			return 3;
 		}
@@ -278,12 +278,12 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getLayerControl = function() {
+	SELF.prototype._getLayerControl = function () {
 		var self = this,
 			layerControls = {},
 			control = '';
 
-		$.each( this._markerGroups, function( name, markers ) {
+		$.each( this._markerGroups, function ( name, markers ) {
 			if ( name === LAYER_DEFAULT_GROUP ) {
 				control = wikibase.queryService.ui.i18n.getMessage( 'wdqs-result-map-layers-all', 'All layers' );
 			} else {
@@ -301,22 +301,22 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 * @return {$.Promise}
 	 */
-	SELF.prototype._createMarkerGroups = function() {
+	SELF.prototype._createMarkerGroups = function () {
 		var self = this,
 			promises = [],
 			donePromises = 0,
 			markers = {};
 		markers[ LAYER_DEFAULT_GROUP ] = [];
 
-		this._iterateResult( function( field, key, row ) {
+		this._iterateResult( function ( field, key, row ) {
 			var geoJson = self._extractGeoJson( field );
 			if ( geoJson !== null ) {
 				promises.push( $.when( geoJson, row ) );
 			}
 		} );
 
-		$.each( promises, function( index, promise ) {
-			promise.done( function( geoJson, row ) {
+		$.each( promises, function ( index, promise ) {
+			promise.done( function ( geoJson, row ) {
 				donePromises++;
 				self._markerGroupsProgress = donePromises / promises.length;
 				// TODO can the above perhaps be done via deferred.notify / deferred.progress?
@@ -327,19 +327,19 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				}
 				var marker = L.geoJson( geoJson, {
 					style: self._getMarkerStyle( layer, row ),
-					pointToLayer: function( geoJsonPoint, latLon ) {
+					pointToLayer: function ( geoJsonPoint, latLon ) {
 						return L.circleMarker( latLon, self._getMarkerStyle( layer, row ) );
 					},
-					onEachFeature: function( feature, layer ) {
+					onEachFeature: function ( feature, layer ) {
 						var popup = L.popup();
 						layer.bindPopup( popup );
-						layer.on( 'click', function() {
+						layer.on( 'click', function () {
 							var info = self._getItemDescription( row );
 							popup.setContent( info[0] );
 						} );
 						// Prevent close button from clearing query - T311892
-						layer.once( 'click', function() {
-							popup.getElement().querySelector( '.leaflet-popup-close-button' ).addEventListener( 'click', function() {
+						layer.once( 'click', function () {
+							popup.getElement().querySelector( '.leaflet-popup-close-button' ).addEventListener( 'click', function () {
 								event.preventDefault();
 							} );
 						} );
@@ -357,7 +357,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 			}
 
 			self._markerGroups = {};
-			$.each( markers, function( key ) {
+			$.each( markers, function ( key ) {
 				self._markerGroups[ key ] = L.featureGroup( markers[ key ] );
 			} );
 		}
@@ -368,10 +368,10 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getMarkerGroupsLayer = function( row ) {
+	SELF.prototype._getMarkerGroupsLayer = function ( row ) {
 		var options = this.getOptions(),
 			columns = options.getColumnNames( 'layer', DEFAULT_LAYER_VARIABLES ),
-			column = columns.find( function( column ) {
+			column = columns.find( function ( column ) {
 				return row[column];
 			} );
 
@@ -383,7 +383,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {string} group
 	 * @param {Object} row
 	 */
-	SELF.prototype._getMarkerStyle = function( group, row ) {
+	SELF.prototype._getMarkerStyle = function ( group, row ) {
 		var color,
 			formatter = this._getFormatter();
 
@@ -411,7 +411,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 * @param {L.markerClusterGroup} cluster
 	 */
-	SELF.prototype._getMarkerIcon = function( cluster ) {
+	SELF.prototype._getMarkerIcon = function ( cluster ) {
 		var options = cluster.getAllChildMarkers()[0].options;
 		var diameter = 2 * ( 1 + options.radius );
 		var html = '<div style="' +
@@ -431,7 +431,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @private
 	 * @param {number} numLayers
 	 */
-	SELF.prototype._getMarkerClusterOptions = function( numLayers ) {
+	SELF.prototype._getMarkerClusterOptions = function ( numLayers ) {
 		var markerClusterOptions = this.getOptions().get( 'markercluster', numLayers === 1 );
 		if ( !markerClusterOptions ) {
 			return false;
@@ -468,7 +468,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {string} literal
 	 * @return {?{ crs: string, wkt: string }}
 	 */
-	SELF.prototype._splitWktLiteral = function( literal ) {
+	SELF.prototype._splitWktLiteral = function ( literal ) {
 		var match = literal.match( /(<([^>]*)> +)?(.*)/ ); // only U+0020 spaces as separator, not other whitespace, according to GeoSPARQL, Req 10
 
 		if ( match ) {
@@ -485,7 +485,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {Object} value
 	 * @return {boolean}
 	 */
-	SELF.prototype._isWktLiteral = function( value ) {
+	SELF.prototype._isWktLiteral = function ( value ) {
 		return value &&
 			value.type === 'literal' &&
 			MAP_DATATYPES.indexOf( value.datatype ) !== -1;
@@ -498,7 +498,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {Object} value
 	 * @return {boolean}
 	 */
-	SELF.prototype._isCommonsMap = function( value ) {
+	SELF.prototype._isCommonsMap = function ( value ) {
 		return value &&
 			value.type === 'uri' &&
 			value.value.startsWith( PREFIX_COMMONS_DATA ) &&
@@ -512,7 +512,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {?Object} value
 	 * @return {?$.Promise} GeoJSON
 	 */
-	SELF.prototype._extractGeoJson = function( value ) {
+	SELF.prototype._extractGeoJson = function ( value ) {
 		if ( this._isWktLiteral( value ) ) {
 			return this._extractGeoJsonWktLiteral( value.value );
 		}
@@ -529,7 +529,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {string} literal
 	 * @return {?$.Promise} GeoJSON
 	 */
-	SELF.prototype._extractGeoJsonWktLiteral = function( literal ) {
+	SELF.prototype._extractGeoJsonWktLiteral = function ( literal ) {
 		var split = this._splitWktLiteral( literal );
 		if ( !split ) {
 			return null;
@@ -549,7 +549,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {string} url
 	 * @return {?$.Promise} GeoJSON
 	 */
-	SELF.prototype._extractGeoJsonCommonsMap = function( url ) {
+	SELF.prototype._extractGeoJsonCommonsMap = function ( url ) {
 		// rewrite data URL to API because the data URL doesn’t support CORS at all
 		var titleURI = url.match( /^http:\/\/commons.wikimedia.org\/data\/main\/(.*)$/ )[1],
 			title = decodeURIComponent( titleURI );
@@ -565,7 +565,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 				origin: '*',
 				maxage: 3600 // cache for one hour
 			}
-		).then( function( response ) {
+		).then( function ( response ) {
 			var pageId, content;
 			for ( pageId in response.query.pages ) {
 				content = response.query.pages[ pageId ].revisions[ 0 ][ '*' ];
@@ -577,7 +577,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._getItemDescription = function( row ) {
+	SELF.prototype._getItemDescription = function ( row ) {
 		var $result = $( '<div/>' ).append( this._getFormatter().formatRow( row, true ) );
 
 		return $result;
@@ -586,7 +586,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	/**
 	 * @private
 	 */
-	SELF.prototype._setTileLayer = function() {
+	SELF.prototype._setTileLayer = function () {
 		var layer = TILE_LAYER.osm;
 
 		if ( window.location.host === 'query.wikidata.org' ||
@@ -604,14 +604,14 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		return this._checkCoordinate( data );
 	};
 
 	/**
 	 * Check if this value contains an coordinate value.
 	 */
-	SELF.prototype._checkCoordinate = function( value ) {
+	SELF.prototype._checkCoordinate = function ( value ) {
 		if ( this._isWktLiteral( value ) || this._isCommonsMap( value ) ) {
 			this._drawable = true;
 			return false;

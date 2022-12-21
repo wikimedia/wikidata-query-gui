@@ -2,7 +2,7 @@ var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 
-wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
+wikibase.queryService.ui.ResultView = ( function ( $, download, window ) {
 	'use strict';
 
 	var PREVIEW_TIMEOUT = 1000,
@@ -246,7 +246,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 *
 	 * @private
 	 */
-	SELF.prototype._init = function() {
+	SELF.prototype._init = function () {
 		if ( !this._trackingApi ) {
 			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}
@@ -267,8 +267,8 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._internationalizeCharts = function() {
-		$.each( this._resultBrowsers, function( key, chart ) {
+	SELF.prototype._internationalizeCharts = function () {
+		$.each( this._resultBrowsers, function ( key, chart ) {
 			var i18nKey = chart.label[0],
 				fallback = chart.label[1];
 
@@ -279,8 +279,8 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initResultBrowserMenu = function() {
-		$.each( this._resultBrowsers, function( key, b ) {
+	SELF.prototype._initResultBrowserMenu = function () {
+		$.each( this._resultBrowsers, function ( key, b ) {
 			var $element = $( '<li class="result-browser-item"><a class="result-browser" href="#">' +
 					'<span class="toolbar-label">' + b.label + ' ' + '</span>' + '<span class="toolbar-icon ' + b.icon.split( '-', 1 )[0] + ' ' + b.icon + '"></span>' +
 					'</a></li>' );
@@ -295,7 +295,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @param {String} query
 	 * @return {JQuery.Promise}
 	 */
-	SELF.prototype.draw = function( query ) {
+	SELF.prototype.draw = function ( query ) {
 		var self = this,
 			deferred = $.Deferred();
 
@@ -312,7 +312,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				self._handleQueryResult();
 				deferred.resolve();
 			} )
-			.fail( function() {
+			.fail( function () {
 				var error = self._handleQueryError();
 				deferred.reject( error );
 			} );
@@ -326,7 +326,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @param {String} query
 	 * @return {JQuery.Promise}
 	 */
-	SELF.prototype.drawPreview = function( query ) {
+	SELF.prototype.drawPreview = function ( query ) {
 		var self = this,
 			deferred = $.Deferred(),
 			prefixes = wikibase.queryService.RdfNamespaces.ALL_PREFIXES,
@@ -349,11 +349,11 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 			.done( function () {
 				self._handleQueryResult();
 				deferred.resolve();
-				window.setTimeout( function() {
+				window.setTimeout( function () {
 					self._actionBar.show( 'wdqs-action-preview', '', 'default' );
 				}, 200 );
 			} )
-			.fail( function() {
+			.fail( function () {
 				deferred.reject();
 			} );
 
@@ -363,7 +363,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._handleQueryError = function() {
+	SELF.prototype._handleQueryError = function () {
 		$( '#execute-button' ).prop( 'disabled', false );
 
 		var error = this._sparqlApi.getError(),
@@ -398,7 +398,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._handleQueryResult = function() {
+	SELF.prototype._handleQueryResult = function () {
 		var api = this._sparqlApi;
 
 		$( '#response-summary' ).text(
@@ -430,7 +430,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 * @return {Object} default result browser
 	 */
-	SELF.prototype._createResultBrowsers = function( resultData ) {
+	SELF.prototype._createResultBrowsers = function ( resultData ) {
 		var self = this;
 
 		var browserOptions = this._getBrowserOptions();
@@ -443,7 +443,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		}
 
 		// instantiate
-		$.each( this._resultBrowsers, function( key, b ) {
+		$.each( this._resultBrowsers, function ( key, b ) {
 			var instance = new wikibase.queryService.ui.resultBrowser[b.class]();
 			instance.setSparqlApi( self._sparqlApi );
 
@@ -472,7 +472,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		defaultBrowser.resetVisitors();
 
 		// wire up
-		$.each( this._resultBrowsers, function( key, b ) {
+		$.each( this._resultBrowsers, function ( key, b ) {
 			defaultBrowser.addVisitor( b.object );
 			b.object.setResult( resultData );
 		} );
@@ -484,7 +484,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	 * @private
 	 * @return {{defaultName: string?, optionsMap: Map.<string, Object>}}
 	 */
-	SELF.prototype._getBrowserOptions = function() {
+	SELF.prototype._getBrowserOptions = function () {
 		var defaultName = null,
 			optionsMap = new Map(),
 			regex = /#(defaultView|view):(\w+)(\{.*\})?/g,
@@ -517,18 +517,18 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initExamples = function() {
+	SELF.prototype._initExamples = function () {
 		var self = this;
 		new wikibase.queryService.ui.dialog.QueryExampleDialog( $( '#QueryExamples' ),
-				this._querySamplesApi, function( query, title ) {
+				this._querySamplesApi, function ( query, title ) {
 					if ( !query || !query.trim() ) {
 						return;
 					}
 
 					if ( self._editor ) {
 						self._editor.setValue( '#' + title + '\n' + query );
-						$( '#QueryExamples' ).one( 'hidden.bs.modal', function() {
-							setTimeout( function() {
+						$( '#QueryExamples' ).one( 'hidden.bs.modal', function () {
+							setTimeout( function () {
 								self._editor.focus();
 							}, 0 );
 						} );
@@ -542,7 +542,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initCodeExamples = function() {
+	SELF.prototype._initCodeExamples = function () {
 		var self = this;
 		if ( !self._codeSamplesApi ) {
 			return;
@@ -558,7 +558,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initQueryLinkPopover = function() {
+	SELF.prototype._initQueryLinkPopover = function () {
 		var self = this;
 		var queryLinkPopoverOptions = {
 			placement: 'left',
@@ -567,7 +567,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 			'sanitize': false
 		};
 		$( '.shortUrlTrigger.result' ).clickover( $.extend( {
-			'content': function() {
+			'content': function () {
 				var queryUrl;
 				if ( self._editor ) {
 					queryUrl = '#' + encodeURIComponent( self._editor.getValue() );
@@ -577,17 +577,17 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				var $link = $( '<a>' ).attr( 'href', 'embed.html' + queryUrl );
 				return self._shorten.shorten( $link[0].href );
 			}
-		}, queryLinkPopoverOptions ) ).click( function() {
+		}, queryLinkPopoverOptions ) ).click( function () {
 			self._track( 'buttonClick.shortUrlResult' );
 		} );
 
 		$( '#shortUrlTrigger-result-query' ).clickover( $.extend( {
-			'content': function() {
+			'content': function () {
 				var queryUrl = '#' + encodeURIComponent( self._query );
 				var $link = $( '<a>' ).attr( 'href', 'index.html' + queryUrl );
 				return self._shorten.shorten( $link[0].href );
 			}
-		}, queryLinkPopoverOptions ) ).click( function() {
+		}, queryLinkPopoverOptions ) ).click( function () {
 			self._track( 'buttonClick.shortUrlResultQuery' );
 		} );
 	};
@@ -595,7 +595,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initHandlersDownloads = function() {
+	SELF.prototype._initHandlersDownloads = function () {
 		var api = this._sparqlApi;
 		var DOWNLOAD_FORMATS = {
 			'CSV': {
@@ -626,7 +626,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				ext: 'html'
 			},
 			'SVG': {
-				handler: function() {
+				handler: function () {
 					var $svg = $( '#query-result svg' );
 
 					if ( !$svg.length ) {
@@ -653,8 +653,8 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 		};
 
 		var self = this;
-		var downloadHandler = function( filename, handler, mimetype ) {
-			return function( e ) {
+		var downloadHandler = function ( filename, handler, mimetype ) {
+			return function ( e ) {
 				e.preventDefault();
 
 				self._track( 'buttonClick.download.' + filename );
@@ -684,15 +684,15 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._handleQueryResultBrowsers = function() {
+	SELF.prototype._handleQueryResultBrowsers = function () {
 		var self = this;
 
-		$.each( this._resultBrowsers, function( key, b ) {
+		$.each( this._resultBrowsers, function ( key, b ) {
 			b.$element.off( 'click' );
 			if ( b.object.isDrawable() ) {
 				b.$element.removeClass( 'result-browser-inactive' );
 				b.$element.css( 'opacity', 1 ).attr( 'href', '#' );
-				b.$element.click( function() {
+				b.$element.click( function () {
 					$( this ).closest( '.open' ).removeClass( 'open' );
 
 					self._setSelectedDisplayType( b );
@@ -714,8 +714,8 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._drawErrorResult = function( resultBrowser ) {
-		var data = _.find( this._resultBrowsers, function( browser ) {
+	SELF.prototype._drawErrorResult = function ( resultBrowser ) {
+		var data = _.find( this._resultBrowsers, function ( browser ) {
 			if ( browser.object === resultBrowser ) {
 				return browser;
 			}
@@ -728,13 +728,13 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._drawResult = function( resultBrowser ) {
+	SELF.prototype._drawResult = function ( resultBrowser ) {
 		var self = this;
 
 		$( window ).off( 'scroll.resultBrowser' );
 		$( window ).off( 'resize.resultBrowser' );
 		this._actionBar.show( 'wdqs-action-render', '', 'success', 100 );
-		window.setTimeout( function() {
+		window.setTimeout( function () {
 			try {
 				$( '#query-result' ).show();
 				MathJax.startup.output.clearCache();
@@ -777,7 +777,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._track = function( metricName, value, valueType ) {
+	SELF.prototype._track = function ( metricName, value, valueType ) {
 		var referrerType = this._getReferrerType();
 		this._trackingApi.track( this.trackingNamespace + 'app.' + metricName, value, valueType );
 		this._trackingApi.track(

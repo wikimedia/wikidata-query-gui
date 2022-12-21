@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, window ) {
+wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, window ) {
 	'use strict';
 
 	/**
@@ -66,11 +66,11 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @private
 	 */
 	SELF.prototype._sorter = {
-		string: function( val1, val2 ) {
+		string: function ( val1, val2 ) {
 			return val1.localeCompare( val2 );
 		},
 
-		number: function( val1, val2 ) {
+		number: function ( val1, val2 ) {
 			if ( val1 >= val2 ) {
 				return -1;
 			}
@@ -78,7 +78,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			return 1;
 		},
 
-		generic: function( data1, data2 ) {
+		generic: function ( data1, data2 ) {
 			if ( !data2 ) {
 				return 1;
 			}
@@ -106,7 +106,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var data = this._result;
 
 		if ( typeof data.boolean !== 'undefined' ) {
@@ -134,11 +134,11 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.drawBootstrapTable = function( $element ) {
+	SELF.prototype.drawBootstrapTable = function ( $element ) {
 		var self = this,
 			showPagination = ( this.rows.length > TABLE_PAGE_SIZE );
 
-		jQuery.fn.bootstrapTable.columnDefaults.formatter = function( data, row, index ) {
+		jQuery.fn.bootstrapTable.columnDefaults.formatter = function ( data, row, index ) {
 			if ( !data ) {
 				return '';
 			}
@@ -152,7 +152,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 		};
 
 		$element.bootstrapTable( {
-			columns: this.columns.map( function( column ) {
+			columns: this.columns.map( function ( column ) {
 				return {
 					title: column,
 					field: column,
@@ -173,7 +173,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 			cookieIdTable: '1',
 			cookieExpire: '1y',
 			cookiesEnabled: [ 'bs.table.pageList' ],
-			onResetView: function( name, args ) {
+			onResetView: function ( name, args ) {
 				if ( typeof window._currentTableNumber === 'undefined' ) {
 					window._currentTableNumber = 0;
 				}
@@ -184,16 +184,16 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 				self.selectFirstCell( $element );
 				$( 'button:focus' ).blur();
 			},
-			onClickCell: function( field, value, row, $cell ) {
+			onClickCell: function ( field, value, row, $cell ) {
 				self._selectedCellHighlighted = true;
 				self.selectCell( $cell );
 			}
 
 		} );
-		$( document ).keydown( function( e ) {
+		$( document ).keydown( function ( e ) {
 			self.keyPressed( e );
 		} );
-		$( '#result-browser-menu a' ).on( 'click', function() {
+		$( '#result-browser-menu a' ).on( 'click', function () {
 			if ( typeof window._currentTableNumber === 'undefined' ) {
 				window._currentTableNumber = 0;
 			}
@@ -207,7 +207,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @private
 	 * @param {jQuery} $table in which to select the first cell
 	 */
-	SELF.prototype.selectFirstCell = function( $table ) {
+	SELF.prototype.selectFirstCell = function ( $table ) {
 		var $cell = $table.find( 'td' ).first();
 		this.selectCell( $cell );
 	};
@@ -218,7 +218,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @private
 	 * @param {jQuery} $cell to be highlighted
 	 */
-	SELF.prototype.selectCell = function( $cell ) {
+	SELF.prototype.selectCell = function ( $cell ) {
 		if ( this._selectedCellHighlighted !== true ) {
 			this._$selectedCell = $cell;
 			return;
@@ -238,7 +238,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @private
 	 * @param {jQuery} $cell to scroll to
 	 */
-	SELF.prototype.scrollToCell = function( $cell ) {
+	SELF.prototype.scrollToCell = function ( $cell ) {
 		var offset = $cell.offset().top;
 		$( 'html, body' ).scrollTop( offset - window.innerHeight / 3 );
 	};
@@ -249,7 +249,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @private
 	 * @param {KeyboardEvent} e event element
 	 */
-	SELF.prototype.keyPressed = function( e ) {
+	SELF.prototype.keyPressed = function ( e ) {
 		if ( window._currentTableNumber !== this._tableNumber ) {
 			return;
 		}
@@ -285,7 +285,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 
 		switch ( e.key ) {
 			case 'Enter': // When the enter key is pressed, click on the first link with non-empty text. Links with empty text open the item explorer and do not link to another site
-				this._$selectedCell.find( 'a' ).each( function() {
+				this._$selectedCell.find( 'a' ).each( function () {
 					if ( $( this ).text().trim().length ) {
 						window.open( $( this ).prop( 'href' ) );
 						return false;
@@ -337,7 +337,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
  	 * @private
  	 * @param {jQuery} $element whose text to copy
  	 */
-	SELF.prototype.copyToClipboard = function( $element ) {
+	SELF.prototype.copyToClipboard = function ( $element ) {
 		var $temp = $( '<input>' );
 		$( 'body' ).append( $temp );
 		$temp.val( $element.text().trim() ).select();
@@ -350,7 +350,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function() {
+	SELF.prototype.isDrawable = function () {
 		return true;
 	};
 
@@ -360,7 +360,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function( $, windo
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		return false;
 	};
 

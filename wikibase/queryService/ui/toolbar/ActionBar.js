@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.toolbar = wikibase.queryService.toolbar || {};
 
-wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
+wikibase.queryService.ui.toolbar.Actionbar = ( function ( $ ) {
 	'use strict';
 
 	/**
@@ -35,7 +35,7 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	 * @param {string} type of message: primary, success, info, warning, danger
 	 * @param {number|boolean} [progress] false if no progress, or actual progress 0-100
 	 */
-	SELF.prototype.show = function( messageKey, extraText, type, progress ) {
+	SELF.prototype.show = function ( messageKey, extraText, type, progress ) {
 		var text = messageKey;
 
 		if ( $.i18n ) {
@@ -66,7 +66,7 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	 * @param {number} progress in percent (0 to 100)
 	 * @private
 	 */
-	SELF.prototype._getProgressbar = function( text, type, progress ) {
+	SELF.prototype._getProgressbar = function ( text, type, progress ) {
 		return $( '<div class="progress"><div class="progress-bar progress-bar-' + type +
 				' progress-bar-striped active" role="progressbar" style="width: ' + progress +
 				'%">' + text + '</div></div>' );
@@ -77,14 +77,14 @@ wikibase.queryService.ui.toolbar.Actionbar = ( function( $ ) {
 	 * @param {string} type
 	 * @private
 	 */
-	SELF.prototype._getBar = function( text, type ) {
+	SELF.prototype._getBar = function ( text, type ) {
 		return $( '<div class="label label-' + type + '"/>' ).text( text );
 	};
 
 	/**
 	 * Hide the action bar
 	 */
-	SELF.prototype.hide = function() {
+	SELF.prototype.hide = function () {
 		this._$element.hide();
 	};
 

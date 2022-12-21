@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.dialog = wikibase.queryService.ui.dialog || {};
 
-wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
+wikibase.queryService.ui.dialog.QueryExampleDialog = ( function ( $ ) {
 	'use strict';
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.examples.';
@@ -78,7 +78,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	 *
 	 * @private
 	 */
-	SELF.prototype._init = function() {
+	SELF.prototype._init = function () {
 		if ( !this._trackingApi ) {
 			this._trackingApi = new wikibase.queryService.api.Tracking();
 		}
@@ -113,7 +113,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 		);
 
 		var self = this;
-		this._$element.focus( function() {
+		this._$element.focus( function () {
 			self._$element.find( '.tableFilter' ).focus();
 		} );
 	};
@@ -121,7 +121,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initFilter = function() {
+	SELF.prototype._initFilter = function () {
 		var self = this;
 
 		this._$element.find( '.tableFilter' ).keyup( $.proxy( this._filterTable, this ) );
@@ -129,7 +129,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 		// tags
 		this._$element.find( '.tagFilter' ).tags( {
 			afterAddingTag: $.proxy( this._filterTable, this ),
-			afterDeletingTag: function() {
+			afterDeletingTag: function () {
 				self._filterTable();
 				self._drawTagCloud( true );
 			}
@@ -139,16 +139,16 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initExamples = function() {
+	SELF.prototype._initExamples = function () {
 		var self = this,
 			category = null;
 
-		this._querySamplesApi.getExamples().then( function( examples ) {
+		this._querySamplesApi.getExamples().then( function ( examples ) {
 			self._examples = examples;
 			self._initTagCloud();
 			self._updateExamplesCount( examples.length );
 
-			$.each( examples, function( key, example ) {
+			$.each( examples, function ( key, example ) {
 				if ( example.category !== category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
@@ -162,10 +162,10 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._initTagCloud = function() {
+	SELF.prototype._initTagCloud = function () {
 		var self = this;
 
-		var interval = window.setInterval( function() {
+		var interval = window.setInterval( function () {
 			if ( self._$element.is( ':visible' ) ) {
 				self._drawTagCloud();
 				clearInterval( interval );
@@ -176,7 +176,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._drawTagCloud = function( redraw ) {
+	SELF.prototype._drawTagCloud = function ( redraw ) {
 		var self = this,
 			jQCloudTags = [];
 
@@ -219,7 +219,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getCloudTags = function() {
+	SELF.prototype._getCloudTags = function () {
 		var self = this,
 			filterTags = self._$element.find( '.tagFilter' ).tags().getTags();
 
@@ -241,12 +241,12 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 		};
 
 		var tagCloud = {};
-		$.each( self._examples, function( key, example ) {
+		$.each( self._examples, function ( key, example ) {
 			if ( !tagsFilter( example.tags ) ) {
 				return;
 			}
 
-			$.each( example.tags, function( key, tag ) {
+			$.each( example.tags, function ( key, tag ) {
 				if ( tagFilter( tag ) ) {
 					return;
 				}
@@ -276,7 +276,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._addExample = function( title, query, editHref, tags, category ) {
+	SELF.prototype._addExample = function ( title, query, editHref, tags, category ) {
 		var self = this,
 			queryHref = '#' + encodeURIComponent( query ),
 
@@ -302,7 +302,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 			$edit = $( '<a>' )
 				.attr( { title: 'Edit', href: editHref, target: '_blank' } )
 				.append( '<span>' ).addClass( 'glyphicon glyphicon-pencil' )
-				.click( function() {
+				.click( function () {
 					self._track( 'edit' );
 				} ),
 
@@ -329,11 +329,11 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 					html: true,
 					sanitize: false
 				} )
-				.click( function() {
+				.click( function () {
 					self._track( 'preview' );
 				} );
 
-		$( '.exampleTable' ).scroll( function() {
+		$( '.exampleTable' ).scroll( function () {
 			if ( $preview.clickover ) {
 				$preview.clickover( 'hide' ).removeAttr( 'data-clickover-open' );
 			}
@@ -352,18 +352,18 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._filterTable = function() {
+	SELF.prototype._filterTable = function () {
 		var filter = this._$element.find( '.tableFilter' ),
 			// FIXME: This crashs when the user enters an invalid regex. e.g. ".**".
 			filterRegex = new RegExp( filter.val(), 'i' );
 
 		var tags = this._$element.find( '.tagFilter' ).tags().getTags();
 
-		var tagFilter = function( text ) {
+		var tagFilter = function ( text ) {
 			var matches = true;
 			text = text.toLowerCase();
 
-			$.each( tags, function( key, tag ) {
+			$.each( tags, function ( key, tag ) {
 				if ( text.indexOf( tag.toLowerCase().match( /\((.*)\)/ )[1] ) === -1 ) {
 					matches = false;
 				}
@@ -373,12 +373,12 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 		};
 
 		this._$element.find( '.searchable tr' ).hide();
-		var $matchingElements = this._$element.find( '.searchable tr' ).filter( function() {
+		var $matchingElements = this._$element.find( '.searchable tr' ).filter( function () {
 			return filterRegex.test( $( this ).text() ) && tagFilter( $( this ).text() );
 		} );
 
 		$matchingElements.show();
-		$matchingElements.each( function( i, el ) {
+		$matchingElements.each( function ( i, el ) {
 			$( el ).prevAll( 'tr.active' ).first().show();
 		} );
 		this._updateExamplesCount( $matchingElements.length );
@@ -387,14 +387,14 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._updateExamplesCount = function( count ) {
+	SELF.prototype._updateExamplesCount = function ( count ) {
 		this._$element.find( '.count' ).text( count );
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._track = function( metricName, value, valueType ) {
+	SELF.prototype._track = function ( metricName, value, valueType ) {
 		this._trackingApi.track( TRACKING_NAMESPACE + metricName, value, valueType );
 	};
 

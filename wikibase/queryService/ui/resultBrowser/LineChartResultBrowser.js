@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.LineChartResultBrowser = ( function( dimple ) {
+wikibase.queryService.ui.resultBrowser.LineChartResultBrowser = ( function ( dimple ) {
 	'use strict';
 
 	var PARENT = wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser;
@@ -25,7 +25,7 @@ wikibase.queryService.ui.resultBrowser.LineChartResultBrowser = ( function( dimp
 
 	SELF.prototype = new PARENT();
 
-	SELF.prototype._getPlotType = function() {
+	SELF.prototype._getPlotType = function () {
 		return dimple.plot.line;
 	};
 

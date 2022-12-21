@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( function( $, vis, window, _ ) {
+wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( function ( $, vis, window, _ ) {
 	'use strict';
 
 	var SPARQL_PROPERTIES = 'SELECT ?p (SAMPLE(?pl) AS ?pl_) (COUNT(?o) AS ?count ) (group_concat(?ol;separator=", ") AS ?ol_)  WHERE {'
@@ -100,16 +100,16 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._getEntites = function( entityUri, propertyUri ) {
+	SELF.prototype._getEntites = function ( entityUri, propertyUri ) {
 		var self = this;
 
 		return this._sparql.query(
 				SPARQL_ENTITES.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
-						propertyUri ) ).then( function() {
+						propertyUri ) ).then( function () {
 			var data = self._sparql.getResultRawData();
 			var result = [];
 
-			$.each( data.results.bindings, function( i, row ) {
+			$.each( data.results.bindings, function ( i, row ) {
 				result.push( {
 					id: row.o.value,
 					label: row.ol.value
@@ -123,16 +123,16 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._getIncomingEntites = function( entityUri, propertyUri ) {
+	SELF.prototype._getIncomingEntites = function ( entityUri, propertyUri ) {
 		var self = this;
 
 		return this._sparql.query(
 				SPARQL_ENTITES_INCOMING.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
-						propertyUri ) ).then( function() {
+						propertyUri ) ).then( function () {
             var data = self._sparql.getResultRawData();
 			var result = [];
 
-			$.each( data.results.bindings, function( i, row ) {
+			$.each( data.results.bindings, function ( i, row ) {
 				result.push( {
 					id: row.o.value,
 					label: row.ol.value
@@ -146,15 +146,15 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._getProperties = function( entityUri ) {
+	SELF.prototype._getProperties = function ( entityUri ) {
 		var self = this;
 
 		return this._sparql.query( SPARQL_PROPERTIES.replace( '{entityUri}', entityUri ) ).then(
-				function() {
+				function () {
 					var data = self._sparql.getResultRawData();
 					var result = [];
 
-					$.each( data.results.bindings, function( i, row ) {
+					$.each( data.results.bindings, function ( i, row ) {
 						result.push( {
 							id: row.p.value,
 							label: row.pl_.value,
@@ -170,15 +170,15 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._getIncomingProperties = function( entityUri ) {
+	SELF.prototype._getIncomingProperties = function ( entityUri ) {
 		var self = this;
 
 		return this._sparql.query( SPARQL_PROPERTIES_INCOMING.replace( '{entityUri}', entityUri ) ).then(
-				function() {
+				function () {
 					var data = self._sparql.getResultRawData();
 					var result = [];
 
-					$.each( data.results.bindings, function( i, row ) {
+					$.each( data.results.bindings, function ( i, row ) {
 						result.push( {
 							id: row.p.value,
 							label: row.pl_.value,
@@ -194,13 +194,13 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._removeTemporaryNodes = function( entityUri ) {
+	SELF.prototype._removeTemporaryNodes = function ( entityUri ) {
 		var self = this;
 
-		$.each( this._temporaryNodes, function( i, n ) {
+		$.each( this._temporaryNodes, function ( i, n ) {
 			self._nodes.remove( n.id );
 		} );
-		$.each( this._temporaryEdges, function( i, e ) {
+		$.each( this._temporaryEdges, function ( i, e ) {
 			self._edges.remove( e.id );
 		} );
 
@@ -211,13 +211,13 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._removeIncomingTemporaryNodes = function( entityUri ) {
+	SELF.prototype._removeIncomingTemporaryNodes = function ( entityUri ) {
 		var self = this;
 
-		$.each( this._incomingTemporaryNodes, function( i, n ) {
+		$.each( this._incomingTemporaryNodes, function ( i, n ) {
 			self._incomingNodes.remove( n.id );
 		} );
-		$.each( this._incomingTemporaryEdges, function( i, e ) {
+		$.each( this._incomingTemporaryEdges, function ( i, e ) {
 			self._incomingEdges.remove( e.id );
 		} );
 
@@ -228,14 +228,14 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._expandPropertyNode = function( nodeId ) {
+	SELF.prototype._expandPropertyNode = function ( nodeId ) {
 		var self = this,
 			node = this._temporaryNodes[nodeId];
 		var expandedNode = self._nodes.get( nodeId );
 
-		this._getEntites( node.entityId, node.id ).then( function( entites ) {
+		this._getEntites( node.entityId, node.id ).then( function ( entites ) {
 
-			$.each( entites, function( i, e ) {
+			$.each( entites, function ( i, e ) {
 				if ( self._nodes.get( e.id ) === null ) {
 					self._nodes.add( {
 						id: e.id,
@@ -262,7 +262,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._getRemainingOutgoingNodes = function( node, expandedNode ) {
+	SELF.prototype._getRemainingOutgoingNodes = function ( node, expandedNode ) {
 		var self = this;
 		var remainingResults = expandedNode.label - 50;
 		self._incomingNodes.add( {
@@ -283,13 +283,13 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._expandIncomingPropertyNode = function( nodeId ) {
+	SELF.prototype._expandIncomingPropertyNode = function ( nodeId ) {
 		var self = this,
 			node = this._incomingTemporaryNodes[nodeId];
 		var expandedNode = self._incomingNodes.get( nodeId );
 
-		this._getIncomingEntites( node.entityId, node.id ).then( function( entites ) {
-			$.each( entites, function( i, e ) {
+		this._getIncomingEntites( node.entityId, node.id ).then( function ( entites ) {
+			$.each( entites, function ( i, e ) {
 				if ( self._incomingNodes.get( e.id ) === null ) {
 					self._incomingNodes.add( {
 						id: e.id,
@@ -316,7 +316,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._getRemainingIncomingNodes = function( node, expandedNode ) {
+	SELF.prototype._getRemainingIncomingNodes = function ( node, expandedNode ) {
 		var self = this;
 		var remainingResults = expandedNode.label - 50;
 		self._incomingNodes.add( {
@@ -337,14 +337,14 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._expandEntityNode = function( nodeId ) {
+	SELF.prototype._expandEntityNode = function ( nodeId ) {
 		var self = this;
 
-		this._getProperties( nodeId ).then( function( properties ) {
-			$.each( properties, function( i, p ) {
+		this._getProperties( nodeId ).then( function ( properties ) {
+			$.each( properties, function ( i, p ) {
 				// if already expanded skip
 				if ( self._edges.get( {
-					filter: function( e ) {
+					filter: function ( e ) {
 						return e.linkType === p.id && e.from === nodeId && e.type === EXPAND_TYPE_OUTGOING;
 					}
 				} ).length > 0 ) {
@@ -380,14 +380,14 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype._expandIncomingEntityNode = function( nodeId ) {
+	SELF.prototype._expandIncomingEntityNode = function ( nodeId ) {
 		var self = this;
 
-		this._getIncomingProperties( nodeId ).then( function( properties ) {
-			$.each( properties, function( i, p ) {
+		this._getIncomingProperties( nodeId ).then( function ( properties ) {
+			$.each( properties, function ( i, p ) {
 				// if already expanded skip
 				if ( self._incomingEdges.get( {
-					filter: function( e ) {
+					filter: function ( e ) {
 						return e.linkType === p.id && e.to === nodeId && e.type === EXPAND_TYPE_INCOMING;
 					}
 				} ).length > 0 ) {
@@ -425,7 +425,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 *
 	 * @param {string} nodeId
 	 */
-	SELF.prototype.browse = function( nodeId, expandType ) {
+	SELF.prototype.browse = function ( nodeId, expandType ) {
         if ( expandType === EXPAND_TYPE_OUTGOING ) {
             this.handleOutgoingNodes( nodeId );
         } else {
@@ -436,7 +436,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype.handleOutgoingNodes = function( nodeId ) {
+	SELF.prototype.handleOutgoingNodes = function ( nodeId ) {
 		this._removeIncomingTemporaryNodes();
 			if ( nodeId === null ) {
 					this._removeTemporaryNodes();
@@ -459,7 +459,7 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	/**
 	 * @private
 	 */
-	SELF.prototype.handleIncomingNodes = function( nodeId ) {
+	SELF.prototype.handleIncomingNodes = function ( nodeId ) {
 		this._removeTemporaryNodes();
 			if ( nodeId === null ) {
 				this._removeIncomingTemporaryNodes();

@@ -16,7 +16,7 @@ var CONFIG = ( function ( window, $ ) {
 
 	var presets = {
 		language: getUserLanguage() || 'en',
-		i18nLoad: function( lang ) {
+		i18nLoad: function ( lang ) {
 			var loadFallbackLang = null;
 			if ( lang !== this.language ) {
 				// load default language as fallback language
@@ -33,7 +33,7 @@ var CONFIG = ( function ( window, $ ) {
 
 	if ( hostname === '' || hostname === 'localhost' || hostname === '127.0.0.1' ) {
 		// Override for local debugging
-		presets.i18nLoad = function( lang ) {
+		presets.i18nLoad = function ( lang ) {
 			return $.when(
 				$.i18n().load( 'i18n', lang ),
 				$.i18n().load( 'node_modules/jquery.uls/i18n', lang )
@@ -69,14 +69,14 @@ var CONFIG = ( function ( window, $ ) {
 
 		$.getJSON( './default-config.json' )
 			.done( onDefaultConfigLoad )
-			.fail( function( jqXHR, textStatus, errorThrown ) {
+			.fail( function ( jqXHR, textStatus, errorThrown ) {
 				window.console.error( 'Failed loading default-config.json: ' + errorThrown );
 				deferred.reject( 'Failed loading default-config.json: ' + errorThrown );
 			} );
 
 		$.getJSON( './custom-config.json' )
 			.done( onCustomConfigLoad )
-			.fail( function( jqXHR, textStatus, errorThrown ) {
+			.fail( function ( jqXHR, textStatus, errorThrown ) {
 				if ( jqXHR.status === 404 ) {
 					// It's ok for this to not exist
 					onCustomConfigLoad( {} );

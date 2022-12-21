@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vis, window, _ ) {
+wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function ( $, vis, window, _ ) {
 	'use strict';
 
 	var TIMELINE_OPTIONS = {
@@ -36,18 +36,18 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	 *
 	 * @param {jQuery} $element target element
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var $container = $( '<div>' );
 
 		var timeline = new vis.Timeline( $container[0], this._getItems(), TIMELINE_OPTIONS );
 		// copy width to min-width for T163984 hack
 		timeline.on(
 			'changed',
-			function() {
+			function () {
 				$( timeline.dom.root )
 					.find( '.vis-item.vis-range' )
 					.each(
-						function() {
+						function () {
 							var $this = $( this );
 							/*
 							 * First unset the min-width, so that $this.css( 'width' ) below returns the original width calculated by the timeline.
@@ -72,11 +72,11 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	/**
 	 * @private
 	 */
-	SELF.prototype._getItems = function() {
+	SELF.prototype._getItems = function () {
 		var self = this,
 			items = [];
 
-		this._iterateResult( function( field, key, row, rowIndex ) {
+		this._iterateResult( function ( field, key, row, rowIndex ) {
 			if ( self._getFormatter().isDateTime( field ) ) {
 				if ( !items[rowIndex] ) { // create new
 					items[rowIndex] = {
@@ -94,10 +94,10 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 						dates.push( items[rowIndex].end );
 					}
 
-					items[rowIndex].start = dates.reduce( function( a, b ) {
+					items[rowIndex].start = dates.reduce( function ( a, b ) {
 						return a < b ? a : b;
 					} );
-					items[rowIndex].end = dates.reduce( function( a, b ) {
+					items[rowIndex].end = dates.reduce( function ( a, b ) {
 						return a > b ? a : b;
 					} );
 				}
@@ -110,7 +110,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	/**
 	 * @private
 	 */
-	SELF.prototype._getHtml = function( row ) {
+	SELF.prototype._getHtml = function ( row ) {
 		var $result = $( '<div/>' ).append( this._getFormatter().formatRow( row, true ) );
 
 		return $result;
@@ -119,7 +119,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	/**
 	 * @private
 	 */
-	SELF.prototype._createToolbar = function( timeline ) {
+	SELF.prototype._createToolbar = function ( timeline ) {
 		var $toolbar = $( '<div style="margin-top: -35px; text-align: center;">' );
 
 		$( '<a class="btn btn-default">' ).click( $.proxy( timeline.redraw, timeline ) ).append(
@@ -139,12 +139,12 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 			} );
 		}
 
-		$( '<a class="btn btn-default">' ).click( function() {
+		$( '<a class="btn btn-default">' ).click( function () {
 			zoom( 0.2 );
 		} ).append( '<span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>' )
 				.appendTo( $toolbar );
 
-		$( '<a class="btn btn-default">' ).click( function() {
+		$( '<a class="btn btn-default">' ).click( function () {
 			zoom( -0.2 );
 		} ).append( '<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>' )
 				.appendTo( $toolbar );
@@ -158,7 +158,7 @@ wikibase.queryService.ui.resultBrowser.TimelineResultBrowser = ( function( $, vi
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		if ( this._getFormatter().isDateTime( data ) ) {
 			this._drawable = true;
 			return false;

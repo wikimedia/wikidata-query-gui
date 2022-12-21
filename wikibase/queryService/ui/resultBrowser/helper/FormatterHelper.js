@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 wikibase.queryService.ui.resultBrowser.helper = wikibase.queryService.ui.resultBrowser.helper || {};
 
-wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, moment ) {
+wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, moment ) {
 	'use strict';
 
 	var COMMONS_FILE_PATH = 'http://commons.wikimedia.org/wiki/special:filepath/',
@@ -45,7 +45,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * @static
 	 */
-	SELF.initMoment = function() {
+	SELF.initMoment = function () {
 		// override default formats of en locale to match Wikibase
 		moment.updateLocale( 'en', {
 			longDateFormat: {
@@ -59,14 +59,14 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * @return {wikibase.queryService.ui.resultBrowser.helper.Options}
 	 */
-	SELF.prototype.getOptions = function() {
+	SELF.prototype.getOptions = function () {
 		return this._options;
 	};
 
 	/**
 	 * @param {wikibase.queryService.ui.resultBrowser.helper.Options} options
 	 */
-	SELF.prototype.setOptions = function( options ) {
+	SELF.prototype.setOptions = function ( options ) {
 		this._options = options;
 	};
 
@@ -77,11 +77,11 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {boolean} embed media files
 	 * @return {jQuery} element
 	 */
-	SELF.prototype.formatRow = function( row, embed ) {
+	SELF.prototype.formatRow = function ( row, embed ) {
 		var self = this,
 			$result = $( '<div/>' );
 
-		$.each( row, function( key, value ) {
+		$.each( row, function ( key, value ) {
 			if ( self._isLabelField( key, row ) || self._isHiddenField( key ) ) {
 				return;
 			}
@@ -101,7 +101,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 * @private
 	 */
-	SELF.prototype._isLabelField = function( key, row ) {
+	SELF.prototype._isLabelField = function ( key, row ) {
 		return key.endsWith( 'Label' ) && typeof row[key.slice( 0, -5 )] !== 'undefined';
 	};
 
@@ -110,7 +110,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {boolean}
 	 * @private
 	 */
-	SELF.prototype._isHiddenField = function( key ) {
+	SELF.prototype._isHiddenField = function ( key ) {
 		return this.getOptions().getColumnNames( 'hide', [] ).indexOf( key ) !== -1;
 	};
 
@@ -120,7 +120,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {string|null}
 	 * @private
 	 */
-	SELF.prototype._getLabel = function( row, key ) {
+	SELF.prototype._getLabel = function ( row, key ) {
 		var field = row[key + 'Label'];
 		return field && field.value || null;
 	};
@@ -133,7 +133,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {boolean} [embed] media files
 	 * @return {jQuery} element
 	 */
-	SELF.prototype.formatValue = function( data, title, embed ) {
+	SELF.prototype.formatValue = function ( data, title, embed ) {
 		var value = data.value,
 			$html = $( '<span>' );
 
@@ -222,9 +222,9 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @return {string}
 	 * @private
 	 */
-	SELF.prototype._formatDate = function( dateTime ) {
+	SELF.prototype._formatDate = function ( dateTime ) {
 		var isBce = false,
-			positiveDate = dateTime.replace( /^(?:-\d+|\+?0+\b)/, function( year ) {
+			positiveDate = dateTime.replace( /^(?:-\d+|\+?0+\b)/, function ( year ) {
 				isBce = true;
 				return Math.abs( year ) + 1;
 			} ),
@@ -253,11 +253,11 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} dateTime
 	 * @return {Object}
 	 */
-	SELF.prototype.parseDate = function( dateTime ) {
+	SELF.prototype.parseDate = function ( dateTime ) {
 		// Add leading plus sign if it's missing
 		dateTime = dateTime.replace( /^(?![+-])/, '+' );
 		// Pad years to 6 digits
-		dateTime = dateTime.replace( /^([+-]?)(\d{1,5}\b)/, function( $0, $1, $2 ) {
+		dateTime = dateTime.replace( /^([+-]?)(\d{1,5}\b)/, function ( $0, $1, $2 ) {
 			return $1 + ( '00000' + $2 ).slice( -6 );
 		} );
 		// Remove timezone
@@ -272,7 +272,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} uri
 	 * @return {boolean}
 	 */
-	SELF.prototype.isEntityUri = function( uri ) {
+	SELF.prototype.isEntityUri = function ( uri ) {
 		return typeof uri === 'string'
 			&& /\/entity\/(Q|P|L|M)[0-9]+$/.test( uri );
 	};
@@ -282,7 +282,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 *
 	 * @return {jQuery}
 	 */
-	SELF.prototype.createExploreButton = function( url ) {
+	SELF.prototype.createExploreButton = function ( url ) {
 		var $button = $( '<a>' )
 			.attr( {
 				href: url,
@@ -302,7 +302,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} url
 	 * @return {boolean}
 	 */
-	SELF.prototype.isCommonsResource = function( url ) {
+	SELF.prototype.isCommonsResource = function ( url ) {
 		return url.toLowerCase().startsWith( COMMONS_FILE_PATH.toLowerCase() );
 	};
 
@@ -312,7 +312,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} url
 	 * @return {string}
 	 */
-	SELF.prototype.getCommonsResourceFileName = function( url ) {
+	SELF.prototype.getCommonsResourceFileName = function ( url ) {
 		// FIXME: Dots in the constant must be escaped before using it as a regex!
 		var regExp = new RegExp( COMMONS_FILE_PATH, 'ig' );
 
@@ -325,7 +325,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} uri
 	 * @return {string}
 	 */
-	SELF.prototype.getCommonsResourceFullUrl = function( uri ) {
+	SELF.prototype.getCommonsResourceFullUrl = function ( uri ) {
 		if ( !this.isCommonsResource( uri ) ) {
 			return uri;
 		}
@@ -340,7 +340,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {number} [width]
 	 * @return {string}
 	 */
-	SELF.prototype.getCommonsResourceThumbnailUrl = function( uri, width ) {
+	SELF.prototype.getCommonsResourceThumbnailUrl = function ( uri, width ) {
 		if ( !this.isCommonsResource( uri ) ) {
 			return uri;
 		}
@@ -355,7 +355,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} galleryId
 	 * @return {jQuery}
 	 */
-	SELF.prototype.createGalleryButton = function( url, galleryId ) {
+	SELF.prototype.createGalleryButton = function ( url, galleryId ) {
 		var fileName = this.getCommonsResourceFileName( url ),
 			thumbnail = this.getCommonsResourceThumbnailUrl( url, 900 );
 
@@ -379,7 +379,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} uri
 	 * @return {string}
 	 */
-	SELF.prototype.abbreviateUri = function( uri ) {
+	SELF.prototype.abbreviateUri = function ( uri ) {
 		var prefixes = wikibase.queryService.RdfNamespaces.ALL_PREFIXES,
 			ns,
 			length = 0,
@@ -404,7 +404,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * Handler for explore links
 	 */
 	var offsetCounter = 100;
-	SELF.prototype.handleExploreItem = function( e ) {
+	SELF.prototype.handleExploreItem = function ( e ) {
 		var $currentDialog = $( '#explorer-dialogs .explorer-dialog' ).clone();
 		var url = $( e.target ).attr( 'href' );
 		var $dialog = $currentDialog.dialog( {
@@ -420,7 +420,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 			drag: function ( e ) {
 				$dialog.children( 'div.explorer-body' ).css( 'visibility', 'hidden' );
 				$( 'body' ).addClass( 'disable-selection' );
-				$dialog.mousemove( function( event ) {
+				$dialog.mousemove( function ( event ) {
 					if ( event.pageY < 30 ) {
 						$dialog.css( 'top', '10px' );
 					}
@@ -455,7 +455,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	/**
 	 * Handler for commons resource links
 	 */
-	SELF.prototype.handleCommonResourceItem = function( e ) {
+	SELF.prototype.handleCommonResourceItem = function ( e ) {
 		e.preventDefault();
 
 		$( this ).ekkoLightbox( {
@@ -470,7 +470,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
-	SELF.prototype.isLabel = function( cell ) {
+	SELF.prototype.isLabel = function ( cell ) {
 		if ( !cell ) {
 			return false;
 		}
@@ -485,7 +485,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
-	SELF.prototype.isNumber = function( cell ) {
+	SELF.prototype.isNumber = function ( cell ) {
 		return cell
 			&& cell.datatype
 			&& NUMBER_TYPES.indexOf( cell.datatype ) !== -1;
@@ -497,7 +497,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDateTime = function( cell ) {
+	SELF.prototype.isDateTime = function ( cell ) {
 		return cell
 			&& cell.datatype === DATATYPE_DATETIME;
 	};
@@ -508,7 +508,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {Object} cell
 	 * @return {boolean}
 	 */
-	SELF.prototype.isEntity = function( cell ) {
+	SELF.prototype.isEntity = function ( cell ) {
 		return cell
 			&& cell.value
 			&& this.isEntityUri( cell.value );
@@ -547,7 +547,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 	 * @param {string} color as six hex digits (no #)
 	 * @return {Number} luminance of the color, or NaN if the color string is invalid
 	 */
-	SELF.prototype.calculateLuminance = function( color ) {
+	SELF.prototype.calculateLuminance = function ( color ) {
 		var r = parseInt( color.substr( 1, 2 ), 16 ) / 255,
 			g = parseInt( color.substr( 3, 2 ), 16 ) / 255,
 			b = parseInt( color.substr( 5, 2 ), 16 ) / 255;

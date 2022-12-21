@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.i18n = wikibase.queryService.ui.i18n || {};
 
-wikibase.queryService.ui.i18n.getMessage = ( function( $ ) {
+wikibase.queryService.ui.i18n.getMessage = ( function ( $ ) {
 	'use strict';
 
 	function getMessage( key, message, args ) {
@@ -23,7 +23,7 @@ wikibase.queryService.ui.i18n.getMessage = ( function( $ ) {
 
 		i18nMessage = message;
 		if ( args ) {
-			$.each( args, function( index, arg ) {
+			$.each( args, function ( index, arg ) {
 				i18nMessage = i18nMessage.replace(
 					new RegExp( '\\$' + ( index + 1 ), 'g' ),
 					arg

@@ -2,7 +2,7 @@ var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
-wikibase.queryService.api.Sparql = ( function( $ ) {
+wikibase.queryService.api.Sparql = ( function ( $ ) {
 	'use strict';
 
 	var SPARQL_SERVICE_URI = 'https://query.wikidata.org/bigdata/namespace/wdq/sparql',
@@ -89,7 +89,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {jQuery.Promise}
 	 */
-	SELF.prototype.queryDataUpdatedTime = function() {
+	SELF.prototype.queryDataUpdatedTime = function () {
 		// Cache the update time only for a minute
 		var deferred = $.Deferred(),
 			query = encodeURI( 'prefix schema: <http://schema.org/> '
@@ -102,7 +102,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 				}
 			};
 
-		$.ajax( url, settings ).done( function( data, textStatus, jqXHR ) {
+		$.ajax( url, settings ).done( function ( data, textStatus, jqXHR ) {
 			if ( !data.results.bindings[0] ) {
 				deferred.reject();
 				return;
@@ -119,7 +119,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 				differenceInSeconds = Math.round( ( new Date() - updateDate ) / 1000 );
 
 			deferred.resolve( dateText, differenceInSeconds );
-		} ).fail( function() {
+		} ).fail( function () {
 			deferred.reject();
 		} );
 
@@ -133,16 +133,16 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @param {number} [timeout] in millis
 	 * @return {jQuery.Promise} query
 	 */
-	SELF.prototype.query = function( query, timeout ) {
+	SELF.prototype.query = function ( query, timeout ) {
 		var self = this;
 
 		query = this._replaceAutoLanguage( query );
-		return this._replaceAutoCoordinates( query ).then( function( query ) {
+		return this._replaceAutoCoordinates( query ).then( function ( query ) {
 				return self._query( query, timeout );
 		} );
 	};
 
-	SELF.prototype._query = function( query, timeout ) {
+	SELF.prototype._query = function ( query, timeout ) {
 		var data = 'query=' + encodeURIComponent( query );
 		if ( timeout ) {
 			data += '&maxQueryTimeMillis=' + timeout;
@@ -178,7 +178,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		this._queryUri = this._serviceUri + '?' + settings.data;
 
 		this._executionTime = Date.now();
-		$.ajax( this._serviceUri, settings ).done( done ).fail( function( request, options, exception ) {
+		$.ajax( this._serviceUri, settings ).done( done ).fail( function ( request, options, exception ) {
 			if (
 				request.getAllResponseHeaders() === '' || // browser did not send the request
 					request.status === 414 || // URI Too Long
@@ -198,7 +198,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	/**
 	 * Get execution time in ms of the submitted query
 	 */
-	SELF.prototype._generateErrorMessage = function( request, options, exception ) {
+	SELF.prototype._generateErrorMessage = function ( request, options, exception ) {
 		var error = {
 			code: ERROR_CODES.UNKNOWN,
 			message: null,
@@ -239,7 +239,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {number}
 	 */
-	SELF.prototype.getExecutionTime = function() {
+	SELF.prototype.getExecutionTime = function () {
 		return this._executionTime;
 	};
 
@@ -248,7 +248,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {object}
 	 */
-	SELF.prototype.getError = function() {
+	SELF.prototype.getError = function () {
 		return this._error;
 	};
 
@@ -257,7 +257,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {number}
 	 */
-	SELF.prototype.getResultLength = function() {
+	SELF.prototype.getResultLength = function () {
 		return this._resultLength;
 	};
 
@@ -266,7 +266,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string}
 	 */
-	SELF.prototype.getQueryUri = function() {
+	SELF.prototype.getQueryUri = function () {
 		return this._queryUri;
 	};
 
@@ -279,7 +279,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @private
 	 * @return {*} The provided context, modified by the rowHandler.
 	 */
-	SELF.prototype._processData = function( data, rowHandler, context ) {
+	SELF.prototype._processData = function ( data, rowHandler, context ) {
 		var results = data.results.bindings.length;
 		for ( var i = 0; i < results; i++ ) {
 			var rowBindings = {};
@@ -301,7 +301,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @param {string} string
 	 * @return {string}
 	 */
-	SELF.prototype._encodeCsv = function( string ) {
+	SELF.prototype._encodeCsv = function ( string ) {
 		var result = string.replace( /"/g, '""' );
 		if ( /[",\n]/.test( result ) ) {
 			result = '"' + result + '"';
@@ -314,7 +314,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {Object} result
 	 */
-	SELF.prototype.getResultRawData = function() {
+	SELF.prototype.getResultRawData = function () {
 		return this._rawData;
 	};
 
@@ -323,12 +323,12 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string} csv
 	 */
-	SELF.prototype.getResultAsCsv = function() {
+	SELF.prototype.getResultAsCsv = function () {
 		var self = this,
 			data = self._rawData,
 			output = data.head.vars.map( this._encodeCsv ).join( ',' ) + '\n';
 
-		output = this._processData( data, function( row, out ) {
+		output = this._processData( data, function ( row, out ) {
 			var rowOut = '';
 			var first = true;
 			var rowCSV;
@@ -356,7 +356,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string}
 	 */
-	SELF.prototype.getResultHTML = function() {
+	SELF.prototype.getResultHTML = function () {
 		var data = this._rawData;
 		var $result = $( '<html>' );
 		var $head = $( '<head>' ).append( $( '<meta>' ).attr( 'charset', 'utf-8' ) );
@@ -365,14 +365,14 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		var $table = $( '<table>' );
 		var $thead = $( '<thead>' );
 		var $tr = $( '<tr>' );
-		data.head.vars.forEach( function( head ) {
+		data.head.vars.forEach( function ( head ) {
 				$tr.append( '<th>' + head + '</th>' );
 				heading.push( head );
 		} );
 		$thead.append( $tr );
 		$table.append( $thead );
 		var $tbody = $( '<tbody>' );
-		data.results.bindings.forEach( function( result ) {
+		data.results.bindings.forEach( function ( result ) {
 				$tr = $( '<tr>' );
 				for ( var head in heading ) {
 					if ( result[heading[head]] ) {
@@ -397,11 +397,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string}
 	 */
-	SELF.prototype.getResultAsJson = function() {
+	SELF.prototype.getResultAsJson = function () {
 		var output = [],
 			data = this._rawData;
 
-		output = this._processData( data, function( row, out ) {
+		output = this._processData( data, function ( row, out ) {
 			var extractRow = {};
 			for ( var rowVar in row ) {
 				extractRow[rowVar] = ( row[rowVar] || {} ).value;
@@ -417,7 +417,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string}
 	 */
-	SELF.prototype.getResultAsAllJson = function() {
+	SELF.prototype.getResultAsAllJson = function () {
 		return JSON.stringify( this._rawData );
 	};
 
@@ -427,7 +427,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 * @param {Object} binding
 	 * @return {string}
 	 */
-	SELF.prototype._renderValueTSV = function( binding ) {
+	SELF.prototype._renderValueTSV = function ( binding ) {
 		var value = binding.value.replace( /\t/g, '' );
 		switch ( binding.type ) {
 		case 'uri':
@@ -457,14 +457,14 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string}
 	 */
-	SELF.prototype.getSparqlTsv = function() {
+	SELF.prototype.getSparqlTsv = function () {
 		var self = this,
 			data = this._rawData,
-			output = data.head.vars.map( function( vname ) {
+			output = data.head.vars.map( function ( vname ) {
 			return '?' + vname;
 		} ).join( '\t' ) + '\n';
 
-		output = this._processData( data, function( row, out ) {
+		output = this._processData( data, function ( row, out ) {
 			var rowOut = '';
 			var first = true;
 			var rowTSV;
@@ -492,11 +492,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @return {string}
 	 */
-	SELF.prototype.getSimpleTsv = function() {
+	SELF.prototype.getSimpleTsv = function () {
 		var data = this._rawData,
 			output = data.head.vars.join( '\t' ) + '\n';
 
-		output = this._processData( data, function( row, out ) {
+		output = this._processData( data, function ( row, out ) {
 			var rowOut = '';
 			var first = true;
 			var rowTSV;
@@ -522,14 +522,14 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._replaceAutoLanguage = function( query ) {
+	SELF.prototype._replaceAutoLanguage = function ( query ) {
 		return query.replace( /\[AUTO_LANGUAGE\]/g, this._language );
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._replaceAutoCoordinates = function( query ) {
+	SELF.prototype._replaceAutoCoordinates = function ( query ) {
 		var $deferred = $.Deferred();
 
 		if ( !navigator || !navigator.geolocation ||
@@ -537,11 +537,11 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 				return $deferred.resolve( query ).promise();
 		}
 
-		navigator.geolocation.getCurrentPosition( function( position ) {
+		navigator.geolocation.getCurrentPosition( function ( position ) {
 			var point = '"Point(' + position.coords.longitude + ' ' + position.coords.latitude + ')"^^geo:wktLiteral';
 			query = query.replace( /\"\[AUTO_COORDINATES\]\"/g, point );
 			$deferred.resolve( query );
-		}, function() { // error
+		}, function () { // error
 			var point = '"Point(13.381138 52.498243)"^^geo:wktLiteral';
 			query = query.replace( /\"\[AUTO_COORDINATES\]\"/g, point );
 			$deferred.resolve( query );
@@ -558,7 +558,7 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 	 *
 	 * @param {string} language of search string default:en
 	 */
-	SELF.prototype.setLanguage = function( language ) {
+	SELF.prototype.setLanguage = function ( language ) {
 		this._language = language;
 	};
 

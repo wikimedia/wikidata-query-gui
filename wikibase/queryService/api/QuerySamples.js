@@ -147,7 +147,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			self = this;
 		div.innerHTML = html;
 		// Find all SPARQL Templates
-		var examples = $( div ).find( '.mw-highlight' ).map( function() {
+		var examples = $( div ).find( '.mw-highlight' ).map( function () {
 			var $this = $( this );
 
 			$this.find( '.lineno' ).remove();
@@ -178,7 +178,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 *
 	 * @param {string} language
 	 */
-	SELF.prototype.setLanguage = function( language ) {
+	SELF.prototype.setLanguage = function ( language ) {
 		this._language = language;
 	};
 
@@ -187,7 +187,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 *
 	 * @return {string} language
 	 */
-	SELF.prototype.getLanguage = function() {
+	SELF.prototype.getLanguage = function () {
 		return this._language;
 	};
 
@@ -196,7 +196,7 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 *
 	 * @return {string} URL
 	 */
-	SELF.prototype.getExamplesPageUrl = function() {
+	SELF.prototype.getExamplesPageUrl = function () {
 		return this._pageUrl;
 	};
 

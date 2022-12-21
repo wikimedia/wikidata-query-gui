@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 
-wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
+wikibase.queryService.ui.editor.Editor = ( function ( $, wikibase, CodeMirror ) {
 	'use strict';
 
 	var CODEMIRROR_DEFAULTS = {
@@ -14,14 +14,14 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 				'Ctrl-Space': 'autocomplete',
 				'Ctrl-Alt-Space': 'autocomplete',
 				'Alt-Enter': 'autocomplete',
-				'Tab': function( cm ) {
+				'Tab': function ( cm ) {
 					var spaces = Array( cm.getOption( 'indentUnit' ) + 1 ).join( ' ' );
 					cm.replaceSelection( spaces );
 				},
-				'F11': function( cm ) {
+				'F11': function ( cm ) {
 					cm.setOption( 'fullScreen', !cm.getOption( 'fullScreen' ) );
 				},
-				'Esc': function( cm ) {
+				'Esc': function ( cm ) {
 					if ( cm.getOption( 'fullScreen' ) ) {
 						cm.setOption( 'fullScreen', false );
 					}
@@ -116,12 +116,12 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 *
 	 * @param {HTMLElement} element
 	 */
-	SELF.prototype.fromTextArea = function( element ) {
+	SELF.prototype.fromTextArea = function ( element ) {
 		var self = this;
 
 		this._editor = CodeMirror.fromTextArea( element, CODEMIRROR_DEFAULTS );
 
-		this._editor.on( 'change', function( editor, changeObj ) {
+		this._editor.on( 'change', function ( editor, changeObj ) {
 			if ( self.getValue() !== '' ) {
 				self.storeValue( self.getValue() );
 			}
@@ -142,14 +142,14 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 		this._registerHints();
 	};
 
-	SELF.prototype._registerHints = function() {
+	SELF.prototype._registerHints = function () {
 		var self = this;
 
 		CodeMirror
 				.registerHelper(
 						'hint',
 						'sparql',
-						function( editor, callback, options ) {
+						function ( editor, callback, options ) {
 							if ( editor !== self._editor ) {
 								return;
 							}
@@ -159,7 +159,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 								lineNum = editor.getCursor().line;
 
 							self._getHints( editorContent, lineContent, lineNum, cursorPos ).done(
-									function( hint ) {
+									function ( hint ) {
 										callback( hint );
 									} );
 						} );
@@ -167,15 +167,15 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 		CodeMirror.hint.sparql.async = true;
 	};
 
-	SELF.prototype._getHints = function( editorContent, lineContent, lineNum, cursorPos ) {
+	SELF.prototype._getHints = function ( editorContent, lineContent, lineNum, cursorPos ) {
 		var self = this;
 
 		return this._rdfHint.getHint(
 			editorContent, lineContent, lineNum, cursorPos
-		).catch( function() {
+		).catch( function () {
 			// if rdf hint is rejected try sparql hint
 			return self._sparqlHint.getHint( editorContent, lineContent, lineNum, cursorPos );
-		} ).then( function( hint ) {
+		} ).then( function ( hint ) {
 			hint.from = CodeMirror.Pos( hint.from.line, hint.from.char );
 			hint.to = CodeMirror.Pos( hint.to.line, hint.to.char );
 			return hint;
@@ -188,7 +188,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 * @param {string} keyMap
 	 * @throws {Function} callback
 	 */
-	SELF.prototype.addKeyMap = function( keyMap, callback ) {
+	SELF.prototype.addKeyMap = function ( keyMap, callback ) {
 		this._editor.addKeyMap( {
 			keyMap: callback
 		} );
@@ -197,29 +197,29 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	/**
 	 * @param {string} value
 	 */
-	SELF.prototype.setValue = function( value ) {
+	SELF.prototype.setValue = function ( value ) {
 		this._editor.setValue( value );
 	};
 
 	/**
 	 * @return {string}
 	 */
-	SELF.prototype.getValue = function() {
+	SELF.prototype.getValue = function () {
 		return this._editor.getValue();
 	};
 
-	SELF.prototype.save = function() {
+	SELF.prototype.save = function () {
 		this._editor.save();
 	};
 
 	/**
 	 * @param {string} value
 	 */
-	SELF.prototype.prepandValue = function( value ) {
+	SELF.prototype.prepandValue = function ( value ) {
 		this._editor.setValue( value + this._editor.getValue() );
 	};
 
-	SELF.prototype.refresh = function() {
+	SELF.prototype.refresh = function () {
 		this._editor.refresh();
 	};
 
@@ -228,7 +228,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 *
 	 * @param {string} description
 	 */
-	SELF.prototype.highlightError = function( description ) {
+	SELF.prototype.highlightError = function ( description ) {
 		var line,
 			character,
 			match = null;
@@ -273,7 +273,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	/**
 	 * Clear SPARQL error in editor window.
 	 */
-	SELF.prototype.clearError = function() {
+	SELF.prototype.clearError = function () {
 		if ( ERROR_LINE_MARKER ) {
 			ERROR_LINE_MARKER.clear();
 		}
@@ -287,7 +287,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 *
 	 * @param {string} value
 	 */
-	SELF.prototype.storeValue = function( value ) {
+	SELF.prototype.storeValue = function ( value ) {
 		try {
 			if ( localStorage ) {
 				localStorage.setItem( LOCAL_STORAGE_KEY, value );
@@ -299,7 +299,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	/**
 	 * Return the value from the local storage, if any
 	 */
-	SELF.prototype.getStoredValue = function() {
+	SELF.prototype.getStoredValue = function () {
 		var value = null;
 		try {
 			if ( localStorage ) {
@@ -313,7 +313,7 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	/**
 	 * Restores the value from the local storage
 	 */
-	SELF.prototype.restoreValue = function() {
+	SELF.prototype.restoreValue = function () {
 		try {
 			var value = this.getStoredValue();
 			if ( value ) {
@@ -330,25 +330,25 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 * @param {string} type
 	 * @param {Function} callback
 	 */
-	SELF.prototype.registerCallback = function( type, callback ) {
+	SELF.prototype.registerCallback = function ( type, callback ) {
 		this._editor.on( type, callback );
 	};
 
 	/**
 	 * Toggle editor fullscreen
 	 */
-	SELF.prototype.toggleFullscreen = function( fullscreen ) {
+	SELF.prototype.toggleFullscreen = function ( fullscreen ) {
 		this._editor.setOption( 'fullScreen', !this._editor.getOption( 'fullScreen' ) );
 	};
 
 	/**
 	 * Set focus on the editor
 	 */
-	SELF.prototype.focus = function() {
+	SELF.prototype.focus = function () {
 		this._editor.focus();
 	};
 
-	SELF.prototype.updatePlaceholder = function( lang ) {
+	SELF.prototype.updatePlaceholder = function ( lang ) {
 		var placeholder = this._editor.getTextArea().placeholder;
 		this._editor.options.placeholder = placeholder;
 		$( this._editor.display.wrapper ).find( '.CodeMirror-placeholder' ).text( placeholder );

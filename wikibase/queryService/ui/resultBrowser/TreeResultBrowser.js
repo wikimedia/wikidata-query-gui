@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, window ) {
+wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function ( $, _, window ) {
 	'use strict';
 
 	var SPARQL_ITEM_PROPERTIES = 'SELECT ?property ?propertyLabel ?value ?valueItemLabel ?valueImage WHERE {  ' +
@@ -59,7 +59,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 
 		var self = this;
 		this._nodes = this._extractNodes( $.proxy( this._iterateResult, this ) );
@@ -78,19 +78,19 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 				}
 			},
 			contextmenu: {
-				items: function( $node ) {
+				items: function ( $node ) {
 					return {
 						Open: {
 							label: self._nodes[$node.id].url,
 							icon: 'glyphicon glyphicon-link',
-							action: function() {
+							action: function () {
 								window.open( self._nodes[ $node.id ].url, '_blank' );
 							}
 						},
 						explore: {
 							label: self._nodes[$node.id].url,
 							icon: 'glyphicon glyphicon-download-alt',
-							action: function() {
+							action: function () {
 								self._expandTree( self._nodes[ $node.id ] );
 							}
 						}
@@ -107,7 +107,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	/**
 	 * @private
 	 */
-	SELF.prototype._extractNodes = function( iterator, parentNode ) {
+	SELF.prototype._extractNodes = function ( iterator, parentNode ) {
 		var prevRow = null,
 			node = {},
 			currentNode = null,
@@ -147,15 +147,15 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 		return nodes;
 	};
 
-	SELF.prototype._expandTree = function( node ) {
+	SELF.prototype._expandTree = function ( node ) {
 		var self = this;
 
 		this.getSparqlApi().query( SPARQL_ITEM_PROPERTIES.replace( '{ENTITY_URI}', node.url ) ).done(
-			function() {
+			function () {
 				var data = self.getSparqlApi().getResultRawData(),
-					iterator = function( cb ) {
-						$.each( data.results.bindings, function( rowNum, row ) {
-							$.each( data.head.vars, function( rowNum1, key ) {
+					iterator = function ( cb ) {
+						$.each( data.results.bindings, function ( rowNum, row ) {
+							$.each( data.head.vars, function ( rowNum1, key ) {
 								var field = row[key] || null;
 								cb( field, key, row, rowNum );
 							} );
@@ -178,7 +178,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function() {
+	SELF.prototype.isDrawable = function () {
 		return this._isDrawable;
 	};
 
@@ -188,7 +188,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function( $, _, win
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		if ( this._getFormatter().isEntity( data ) ) {
 			this._isDrawable = true;
 			return false;

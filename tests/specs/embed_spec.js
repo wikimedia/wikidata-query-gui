@@ -3,8 +3,8 @@
 /* globals require, describe, it, browser, $ */
 var assert = require( 'assert' );
 
-describe( 'embed.html', function() {
-	it( 'loads results for query', function() {
+describe( 'embed.html', function () {
+	it( 'loads results for query', function () {
 		var query =
 			'SELECT ?item ?itemLabel ?other WHERE { '
 			+ ' VALUES (?item ?itemLabel ?other) { '
@@ -15,15 +15,15 @@ describe( 'embed.html', function() {
 		var url = browser.options.baseUrl + '/embed.html#' + encodeURI( query );
 		browser.url( url );
 
-		return $( '#query-result' ).then( function( element ) {
+		return $( '#query-result' ).then( function ( element ) {
 			element.waitForDisplayed();
 
 			return $( '#query-result tr' );
-		} ).then( function( resultRows ) {
+		} ).then( function ( resultRows ) {
 			resultRows.waitForDisplayed();
 
 			return resultRows.getText();
-		} ).then( function( resultHeaders ) {
+		} ).then( function ( resultHeaders ) {
 			assert( resultHeaders.includes( 'item' ) );
 			assert( resultHeaders.includes( 'other' ) );
 			assert( resultHeaders.includes( 'itemLabel' ) );

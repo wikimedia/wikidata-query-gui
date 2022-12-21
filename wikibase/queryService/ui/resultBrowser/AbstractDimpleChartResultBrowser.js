@@ -5,7 +5,7 @@ wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser 
 window.mediaWiki = window.mediaWiki || {};
 
 wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
-	( function( $, _, d3, window, dimple ) {
+	( function ( $, _, d3, window, dimple ) {
 	'use strict';
 
 	/**
@@ -82,7 +82,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var self = this;
 
 		this._$element = $( '<div>' ).css( { width: '100%', height: '98vh' } );
@@ -94,17 +94,17 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		this._drawChart();
 		this._createLegendFilter();
 
-		window.onresize = function() {
+		window.onresize = function () {
 			self._drawChart( 250, true );
 		};
 	};
 
-	SELF.prototype._createData = function() {
+	SELF.prototype._createData = function () {
 		var data = [],
 			rowData = {},
 			prevRow = null;
 
-		this._iterateResult( function( field, key, row ) {
+		this._iterateResult( function ( field, key, row ) {
 			if ( prevRow === null ) {
 				prevRow = row;
 			}
@@ -124,11 +124,11 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		this._data = data;
 	};
 
-	SELF.prototype._drawSvg = function() {
+	SELF.prototype._drawSvg = function () {
 		this._svg = dimple.newSvg( this._$element[0], '100%', '100%' );
 	};
 
-	SELF.prototype._createChart = function() {
+	SELF.prototype._createChart = function () {
 
 		// eslint-disable-next-line new-cap -- not our code...
 		this._chart = new dimple.chart( this._svg, this._data );
@@ -148,11 +148,11 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		this._chartLegend = this._chart.addLegend( '1%', '85%', '100%', '15%' );
 	};
 
-	SELF.prototype._getPlotType = function() {
+	SELF.prototype._getPlotType = function () {
 		jQuery.error( 'Method _getPlotType() needs to be implemented!' );
 	};
 
-	SELF.prototype._createChartAxis = function() {
+	SELF.prototype._createChartAxis = function () {
 		var self = this,
 			row = this._getRows()[0],
 			formatter = this._getFormatter(),
@@ -160,7 +160,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 			axis = [ 'y', 'x' ],
 			hasSeriesAxis = false;
 
-		$.each( this._getColumns(), function( i, key ) {
+		$.each( this._getColumns(), function ( i, key ) {
 			if ( axis.length === 0 ) {
 				if ( formatter.isLabel( row[key] ) ) {
 
@@ -193,12 +193,12 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		}
 	};
 
-	SELF.prototype._createChartStory = function() {
+	SELF.prototype._createChartStory = function () {
 		var self = this,
 			story = this._chart.setStoryboard( this._chartStoryKey );
 
 		story.frameDuration = 5 * 1000;
-		this._$element.click( function() {
+		this._$element.click( function () {
 			if ( self._isStoryPaused ) {
 				story.startAnimation();
 				self._isStoryPaused = false;
@@ -210,16 +210,16 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		} );
 	};
 
-	SELF.prototype._createLegendFilter = function() {
+	SELF.prototype._createLegendFilter = function () {
 		var self = this,
 			filterValues = dimple.getUniqueValues( this._data, this._chartSeriesKey );
 		this._chart.legends = [];
 
-		this._chartLegend.shapes.selectAll( 'rect' ).on( 'click', function( e ) {
+		this._chartLegend.shapes.selectAll( 'rect' ).on( 'click', function ( e ) {
 			var hide = false,
 				newFilters = [];
 
-			filterValues.forEach( function( field ) {
+			filterValues.forEach( function ( field ) {
 				if ( field === e.aggField.slice( -1 )[0] ) {
 					hide = true;
 				} else {
@@ -238,12 +238,12 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 		} );
 	};
 
-	SELF.prototype._drawChart = function( duration, noDataChange ) {
+	SELF.prototype._drawChart = function ( duration, noDataChange ) {
 		var self = this;
 
 		this._chart.draw( duration, noDataChange );
 
-		_.delay( function() {
+		_.delay( function () {
 			self._svg.selectAll( '.dimple-marker,.dimple-marker-back' ).attr( 'r', 2 );
 		}, duration * 1.2 );
 	};
@@ -253,7 +253,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function() {
+	SELF.prototype.isDrawable = function () {
 		return ( Object.keys( this._dataColumns ).length >= 2 );
 	};
 
@@ -264,7 +264,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 * @param {string} key
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( value, key ) {
+	SELF.prototype.visit = function ( value, key ) {
 		return this._checkColumn( value, key );
 	};
 
@@ -276,7 +276,7 @@ wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
 	 * @return {boolean}
 	 * @private
 	 */
-	SELF.prototype._checkColumn = function( value, key ) {
+	SELF.prototype._checkColumn = function ( value, key ) {
 		if ( this._getFormatter().isLabel( value ) ) {
 			this._dataColumns[key] = true;
 		}

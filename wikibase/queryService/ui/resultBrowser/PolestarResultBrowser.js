@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, window, _ ) {
+wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function ( $, window, _ ) {
 	'use strict';
 
 	var POLESTAR = 'polestar/embed.html';
@@ -28,7 +28,7 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 	 *
 	 * @param {jQuery} $element target element
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var polestarData = {
 			url: GRAPH_QUERY_PREFIX + location.hash.substr( 1 ),
 			name: 'Imported from Wikidata Query Service',
@@ -40,7 +40,7 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 		} ).height( '98vh' );
 
 		$element.append( $container );
-		window.setTimeout( function() {
+		window.setTimeout( function () {
 			$container.scrollIntoView();
 		}, 50 );
 	};
@@ -51,7 +51,7 @@ wikibase.queryService.ui.resultBrowser.PolestarResultBrowser = ( function( $, wi
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		this._drawable = true;
 		return false;
 	};

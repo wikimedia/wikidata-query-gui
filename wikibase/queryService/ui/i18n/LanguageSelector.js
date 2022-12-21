@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.i18n = wikibase.queryService.ui.i18n || {};
 
-wikibase.queryService.ui.i18n.LanguageSelector = ( function( $, wikibase ) {
+wikibase.queryService.ui.i18n.LanguageSelector = ( function ( $, wikibase ) {
 	'use strict';
 
 	/**
@@ -61,20 +61,20 @@ wikibase.queryService.ui.i18n.LanguageSelector = ( function( $, wikibase ) {
 	 *
 	 * @param {Function} listener a function called when value selected
 	 */
-	SELF.prototype.setChangeListener = function( listener ) {
+	SELF.prototype.setChangeListener = function ( listener ) {
 		this._changeListener = listener;
 	};
 
 	/**
 	 * @private
 	 */
-	SELF.prototype._create = function( listener ) {
+	SELF.prototype._create = function ( listener ) {
 		var self = this;
 
 		this._$element.text( $.uls.data.getAutonym( this._defaultLanguage ) );
-		this._getLanguages().done( function( langs ) {
+		this._getLanguages().done( function ( langs ) {
 			self._$element.uls( {
-				onSelect: function( lang ) {
+				onSelect: function ( lang ) {
 					self._$element.text( $.uls.data.getAutonym( lang ) );
 
 					if ( self._changeListener ) {
@@ -83,7 +83,7 @@ wikibase.queryService.ui.i18n.LanguageSelector = ( function( $, wikibase ) {
 				},
 				languages: langs
 			// quickList: langs
-			} ).click( function() {
+			} ).click( function () {
 				$( '.uls-menu' ).addClass( 'uls-mobile' ).css( 'left', '' ).css( 'right', '2.5%' );
 			} ).css( 'display', 'block' );
 		} );
@@ -92,13 +92,13 @@ wikibase.queryService.ui.i18n.LanguageSelector = ( function( $, wikibase ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._getLanguages = function() {
+	SELF.prototype._getLanguages = function () {
 		var deferred = $.Deferred();
 
-		this._api.getLanguages().done( function( data ) {
+		this._api.getLanguages().done( function ( data ) {
 
 			var langs = {};
-			$.each( data.query.languages, function( k, v ) {
+			$.each( data.query.languages, function ( k, v ) {
 				langs[v.code] = v['*'];
 			} );
 

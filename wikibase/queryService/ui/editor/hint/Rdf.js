@@ -4,7 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.editor = wikibase.queryService.ui.editor || {};
 wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {};
 
-( function( $, wikibase ) {
+( function ( $, wikibase ) {
 	'use strict';
 
 	var MODULE = wikibase.queryService.ui.editor.hint;
@@ -19,7 +19,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 * @param {wikibase.queryService.RdfNamespaces} rdfNamespaces
 	 * @constructor
 	 */
-	var SELF = MODULE.Rdf = function( api, rdfNamespaces ) {
+	var SELF = MODULE.Rdf = function ( api, rdfNamespaces ) {
 		this._api = api;
 		this._rdfNamespaces = rdfNamespaces;
 
@@ -49,7 +49,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	 *
 	 * @return {jQuery.Promise} Returns the completion as promise ({list:[], from:, to:})
 	 */
-	SELF.prototype.getHint = function( editorContent, lineContent, lineNum, cursorPos ) {
+	SELF.prototype.getHint = function ( editorContent, lineContent, lineNum, cursorPos ) {
 		var deferred = new $.Deferred(),
 			currentWord = this._getCurrentWord( lineContent, cursorPos ),
 			list,
@@ -90,7 +90,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 		if ( entityPrefixes[prefix] ) { // search entity
 			this._searchEntities( term, entityPrefixes[prefix] ).done(
-					function( list ) {
+					function ( list ) {
 						return deferred.resolve( self._getHintCompletion( lineNum, currentWord,
 								prefix, list ) );
 					} );
@@ -99,16 +99,16 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return deferred.promise();
 	};
 
-	SELF.prototype._getPrefixFromWord = function( word ) {
+	SELF.prototype._getPrefixFromWord = function ( word ) {
 		return word.split( ':', 1 )[0];
 	};
 
-	SELF.prototype._getTermFromWord = function( word ) {
+	SELF.prototype._getTermFromWord = function ( word ) {
 		// Do not use split here because the search string may contain ':'
 		return word.substring( word.indexOf( ':' ) + 1 );
 	};
 
-	SELF.prototype._getHintCompletion = function( lineNum, currentWord, prefix, list ) {
+	SELF.prototype._getHintCompletion = function ( lineNum, currentWord, prefix, list ) {
 		var completion = {
 			list: []
 		};
@@ -125,16 +125,16 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return completion;
 	};
 
-	SELF.prototype._searchEntities = function( term, type ) {
+	SELF.prototype._searchEntities = function ( term, type ) {
 		var entityList = [],
 			deferred = $.Deferred();
 
-		this._api.searchEntities( term, type ).done( function( data ) {
-			$.each( data.search, function( key, value ) {
+		this._api.searchEntities( term, type ).done( function ( data ) {
+			$.each( data.search, function ( key, value ) {
 				entityList.push( {
 					className: 'wikibase-rdf-hint',
 					text: value.id,
-					render: function( element, self, data ) {
+					render: function ( element, self, data ) {
 						var bdi = document.createElement( 'bdi' );
 						element.appendChild( document.createTextNode( value.label ) );
 						element.appendChild( document.createTextNode( ' (' ) );
@@ -153,7 +153,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		return deferred.promise();
 	};
 
-	SELF.prototype._getCurrentWord = function( line, position ) {
+	SELF.prototype._getCurrentWord = function ( line, position ) {
 		var pos = position - 1,
 			colon = false,
 			wordSeparator = [ '/', '*', '+', ' ', ';', '.', '\n', '\t', '(', ')', '{', '}', '[', ']' ];
@@ -193,13 +193,13 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 		};
 	};
 
-	SELF.prototype._extractPrefixes = function( text ) {
+	SELF.prototype._extractPrefixes = function ( text ) {
 		var prefixes = this._rdfNamespaces.getPrefixMap( this._rdfNamespaces.ENTITY_TYPES ),
 			types = this._rdfNamespaces.ENTITY_TYPES,
 			lines = text.split( '\n' ),
 			matches;
 
-		$.each( lines, function( index, line ) {
+		$.each( lines, function ( index, line ) {
 			// PREFIX wd: <http://www.wikidata.org/entity/>
 			if ( ( matches = line.match( /(PREFIX) (\S+): <([^>]+)>/ ) ) ) {
 				if ( types[matches[3]] ) {

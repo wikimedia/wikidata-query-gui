@@ -3,7 +3,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function( $, d3, window ) {
+wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function ( $, d3, window ) {
 	'use strict';
 
 	var TIME_DATATYPE = 'http://www.w3.org/2001/XMLSchema#dateTime';
@@ -27,12 +27,12 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var dimensions = {},
 			data = [],
 			f = this._getFormatter();
 
-		this._iterateResult( function( field, key, row, rowNum ) {
+		this._iterateResult( function ( field, key, row, rowNum ) {
 			if ( !data[rowNum] ) {
 				data[rowNum] = {};
 			}
@@ -65,7 +65,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		} );
 	};
 
-	SELF.prototype._draw = function( $graph, data, dimensions ) {
+	SELF.prototype._draw = function ( $graph, data, dimensions ) {
 		// source: http://bl.ocks.org/syntagmatic/94be812f8b410ae29ee2
 
 		var margin = {
@@ -80,11 +80,11 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		var types = {
 			'NUMBER': {
 				key: 'Number',
-				coerce: function( d ) {
+				coerce: function ( d ) {
 					return +d;
 				},
 				extent: d3.extent,
-				within: function( d, extent ) {
+				within: function ( d, extent ) {
 					return extent[0] <= d && d <= extent[1];
 				},
 				defaultScale: d3.scale.linear().range( [ height, 0 ] )
@@ -92,36 +92,36 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 			'STRING': {
 				key: 'String',
 				coerce: String,
-				extent: function( data ) {
+				extent: function ( data ) {
 					return data.sort();
 				},
-				within: function( d, extent, dim ) {
+				within: function ( d, extent, dim ) {
 					return extent[0] <= dim.scale( d ) && dim.scale( d ) <= extent[1];
 				},
 				defaultScale: d3.scale.ordinal().rangePoints( [ 0, height ] )
 			},
 			'DATE': {
 				key: 'Date',
-				coerce: function( d ) {
+				coerce: function ( d ) {
 					return new Date( d );
 				},
 				extent: d3.extent,
-				within: function( d, extent ) {
+				within: function ( d, extent ) {
 					return extent[0] <= d && d <= extent[1];
 				},
 				defaultScale: d3.time.scale().range( [ 0, height ] )
 			}
 		};
 
-		$.each( dimensions, function() {
+		$.each( dimensions, function () {
 			this.type = types[this.type];
 		} );
 
-		var x = d3.scale.ordinal().domain( dimensions.map( function( dim ) {
+		var x = d3.scale.ordinal().domain( dimensions.map( function ( dim ) {
 			return dim.key;
 		} ) ).rangePoints( [ 0, width ] );
 
-		var line = d3.svg.line().defined( function( d ) {
+		var line = d3.svg.line().defined( function ( d ) {
 			return !isNaN( d[1] );
 		} );
 
@@ -137,18 +137,18 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		var foreground = svg.append( 'g' ).attr( 'class', 'foreground' );
 
 		var axes = svg.selectAll( '.axis' ).data( dimensions ).enter().append( 'g' ).attr( 'class',
-				'axis' ).attr( 'transform', function( d ) {
+				'axis' ).attr( 'transform', function ( d ) {
 			return 'translate(' + x( d.key ) + ')';
 		} );
 
-		data.forEach( function( d ) {
-			dimensions.forEach( function( p ) {
+		data.forEach( function ( d ) {
+			dimensions.forEach( function ( p ) {
 				d[p.key] = p.type.coerce( d[p.key] );
 			} );
 		} );
 
 		function draw( d ) {
-			return line( dimensions.map( function( dim ) {
+			return line( dimensions.map( function ( dim ) {
 				return [
 						x( dim.key ), dim.scale( d[dim.key] )
 				];
@@ -161,15 +161,15 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 
 		// Handles a brush event, toggling the display of foreground lines.
 		function brush() {
-			var actives = dimensions.filter( function( p ) {
+			var actives = dimensions.filter( function ( p ) {
 					return !p.brush.empty();
 				} ),
-				extents = actives.map( function( p ) {
+				extents = actives.map( function ( p ) {
 					return p.brush.extent();
 				} );
 
-			d3.selectAll( '.foreground path' ).style( 'display', function( d ) {
-				if ( actives.every( function( dim, i ) {
+			d3.selectAll( '.foreground path' ).style( 'display', function ( d ) {
+				if ( actives.every( function ( dim, i ) {
 					// test if point is within extents for each active brush
 					return dim.type.within( d[dim.key], extents[i], dim );
 				} ) ) {
@@ -180,16 +180,16 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		}
 
 		// type/dimension default setting happens here
-		dimensions.forEach( function( dim ) {
+		dimensions.forEach( function ( dim ) {
 			if ( !( 'domain' in dim ) ) {
 				// detect domain using dimension type's extent function
-				dim.domain = d3.functor( dim.type.extent )( data.map( function( d ) {
+				dim.domain = d3.functor( dim.type.extent )( data.map( function ( d ) {
 					return d[dim.key];
 				} ) );
 
 				// TODO - this line only works because the data encodes data with integers
 				// Sorting/comparing should be defined at the type/dimension level
-				dim.domain.sort( function( a, b ) {
+				dim.domain.sort( function ( a, b ) {
 					return a - b;
 				} );
 			}
@@ -201,22 +201,22 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 		} );
 
 		foreground.selectAll( 'path' ).data( data ).enter().append( 'path' ).attr( 'd', draw )
-				.style( 'stroke', function( d ) {
+				.style( 'stroke', function ( d ) {
 					return '#6ac';
 				} );
 
-		axes.append( 'g' ).attr( 'class', 'axis' ).each( function( d ) {
+		axes.append( 'g' ).attr( 'class', 'axis' ).each( function ( d ) {
 			var renderAxis = ( d.axis && d.axis.scale( d.scale ) ) // custom axis
 				|| yAxis.scale( d.scale ); // default axis
 			d3.select( this ).call( renderAxis );
 		} ).append( 'text' ).attr( 'class', 'title' ).attr( 'text-anchor', 'start' ).text(
-				function( d ) {
+				function ( d ) {
 					return d.description || d.key;
 				} );
 
 		// Add and store a brush for each axis.
 		axes.append( 'g' ).attr( 'class', 'brush' ).each(
-				function( d ) {
+				function ( d ) {
 					d3.select( this ).call(
 							d.brush = d3.svg.brush().y( d.scale ).on( 'brushstart', brushstart )
 									.on( 'brush', brush ) );
@@ -228,7 +228,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function() {
+	SELF.prototype.isDrawable = function () {
 		return this._drawable;
 	};
 
@@ -238,7 +238,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function(
 	 * @param {Object} data
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data ) {
+	SELF.prototype.visit = function ( data ) {
 		this._drawable = true;
 		return false;
 	};

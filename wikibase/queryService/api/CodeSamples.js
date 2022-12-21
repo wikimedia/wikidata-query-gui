@@ -29,12 +29,12 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 		this._endpoint = endpoint;
 		this._languages = {
 			URL: {
-				code: function( query ) {
+				code: function ( query ) {
 					return endpoint + '?query=' + encodeURIComponent( query );
 				}
 			},
 			HTML: {
-				code: function( query ) {
+				code: function ( query ) {
 					return '<iframe style="width: 80vw; height: 50vh; border: none;" ' +
 						'src="' + root + 'embed.html#' +
 						encodeURIComponent( query ) + '" ' +
@@ -44,12 +44,12 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				mimetype: 'text/html'
 			},
 			Wikilink: {
-				code: function( query ) {
+				code: function ( query ) {
 					return '[' + index + '#' + encodeURIComponent( query ) + ' Query]';
 				}
 			},
 			PHP: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					// try nowdoc first
 					var identifiers = [ 'SPARQL', 'QUERY', 'EOF' ];
 					for ( var index in identifiers ) {
@@ -71,7 +71,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				}
 			},
 			'JavaScript (jQuery)': {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var code = '';
 					var lines = query.split( '\n' );
 					for ( var index in lines ) {
@@ -92,7 +92,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				mimetype: 'application/javascript'
 			},
 			'JavaScript (modern)': {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /`/g, '\\`' )
@@ -102,7 +102,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				mimetype: 'application/javascript'
 			},
 			Java: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var code = '';
 					var lines = query.split( '\n' );
 					for ( var index in lines ) {
@@ -122,13 +122,13 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				}
 			},
 			Perl: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var escapedQuery = query.replace( /#.*\n/g, '' );
 					return '<<\'_SPARQL_QUERY_\';\n' + escapedQuery + '\n_SPARQL_QUERY_';
 				}
 			},
 			Python: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /"""/g, '""\\"' );
@@ -136,12 +136,12 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				}
 			},
 			'Python (Pywikibot)': {
-				escape: function( query ) {
+				escape: function ( query ) {
 					return self._languages.Python.escape( query );
 				}
 			},
 			Ruby: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					// try heredoc first
 					var identifiers = [ 'SPARQL', 'QUERY', 'EOF' ];
 					for ( var index in identifiers ) {
@@ -163,7 +163,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				}
 			},
 			R: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /'/g, '\\\'' )
@@ -173,7 +173,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				mimetype: 'text/x-rsrc'
 			},
 			Matlab: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var escapedQuery = query
 						.replace( /\\/g, '\\\\' )
 						.replace( /'/g, '\'\'' )
@@ -183,7 +183,7 @@ wikibase.queryService.api.CodeSamples = ( function ( $ ) {
 				mimetype: 'text/x-octave'
 			},
 			listeria: {
-				escape: function( query ) {
+				escape: function ( query ) {
 					var escapedQuery = query
 						.replace( /\|/g, '{{!}}' )
 						.replace( /}}/g, '} }' ); // TODO try to exactly preserve query

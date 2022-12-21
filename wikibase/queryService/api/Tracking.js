@@ -2,7 +2,7 @@ var wikibase = window.wikibase || {};
 wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.api = wikibase.queryService.api || {};
 
-wikibase.queryService.api.Tracking = ( function( $ ) {
+wikibase.queryService.api.Tracking = ( function ( $ ) {
 	'use strict';
 
 	var API_ENDPOINT = 'https://www.wikidata.org/beacon/statsv';
@@ -38,7 +38,7 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 	 *
 	 * @return {jQuery.Promise}
 	 */
-	SELF.prototype.track = function( metricName, value, valueType ) {
+	SELF.prototype.track = function ( metricName, value, valueType ) {
 		if ( !value ) {
 			value = 1;
 		}
@@ -61,7 +61,7 @@ wikibase.queryService.api.Tracking = ( function( $ ) {
 	/**
 	 * @private
 	 */
-	SELF.prototype._track = function( query ) {
+	SELF.prototype._track = function ( query ) {
 		// This may cause a warning due to lack of CORS header.
 		// We do not need to read the result, so that is ok.
 		return $.ajax( {

@@ -4,7 +4,7 @@ wikibase.queryService = wikibase.queryService || {};
 wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 
-wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3, window ) {
+wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3, window ) {
 	'use strict';
 
 	/**
@@ -34,7 +34,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 *
 	 * @param {jQuery} $element to draw at
 	 */
-	SELF.prototype.draw = function( $element ) {
+	SELF.prototype.draw = function ( $element ) {
 		var self = this,
 			data = {},
 			layer = data,
@@ -42,7 +42,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			url = null,
 			prevRow = null;
 
-		this._iterateResult( function( field, key, row ) {
+		this._iterateResult( function ( field, key, row ) {
 			if ( row !== prevRow ) {
 				if ( prevRow !== null ) {
 					layer.data = {
@@ -85,7 +85,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 		this._draw( $element, treeData );
 	};
 
-	SELF.prototype._createTreeData = function( data ) {
+	SELF.prototype._createTreeData = function ( data ) {
 		var self = this,
 			nodes = [],
 			node;
@@ -94,7 +94,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			return nodes;
 		}
 
-		$.each( data, function( key, value ) {
+		$.each( data, function ( key, value ) {
 			var children = self._createTreeData( value );
 
 			if ( children.length !== 0 ) {
@@ -128,7 +128,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	};
 
 	/* jshint ignore:start */
-	SELF.prototype._draw = function( $element, data ) {
+	SELF.prototype._draw = function ( $element, data ) {
 		// copied from http://www.billdwhite.com/wordpress/wp-content/js/treemap_headers_03.html
 		// with little modification
 
@@ -145,7 +145,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			node;
 
 		var treemap = d3.layout.treemap().round( false ).size( [ chartWidth, chartHeight ] )
-				.sticky( true ).value( function( d ) {
+				.sticky( true ).value( function ( d ) {
 					return d.size;
 				} );
 
@@ -155,67 +155,67 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 		node = root = data;
 		var nodes = treemap.nodes( root );
 
-		var children = nodes.filter( function( d ) {
+		var children = nodes.filter( function ( d ) {
 			return !d.children;
 		} );
-		var parents = nodes.filter( function( d ) {
+		var parents = nodes.filter( function ( d ) {
 			return d.children;
 		} );
 
 		// create parent cells
-		var parentCells = chart.selectAll( 'g.cell.parent' ).data( parents, function( d ) {
+		var parentCells = chart.selectAll( 'g.cell.parent' ).data( parents, function ( d ) {
 			return 'p-' + d.id;
 		} );
 		var parentEnterTransition = parentCells.enter().append( 'g' ).attr( 'class', 'cell parent' )
-				.on( 'click', function( d ) {
+				.on( 'click', function ( d ) {
 					zoom( d );
 				} );
-		parentEnterTransition.append( 'rect' ).attr( 'width', function( d ) {
+		parentEnterTransition.append( 'rect' ).attr( 'width', function ( d ) {
 			return Math.max( 0.01, d.dx );
 		} ).attr( 'height', headerHeight ).style( 'fill', headerColor );
 		parentEnterTransition.append( 'foreignObject' ).attr( 'class', 'foreignObject' ).append(
 				'xhtml:body' ).attr( 'class', 'labelbody' ).append( 'div' ).attr( 'class', 'label' );
 		// update transition
 		var parentUpdateTransition = parentCells.transition().duration( transitionDuration );
-		parentUpdateTransition.select( '.cell' ).attr( 'transform', function( d ) {
+		parentUpdateTransition.select( '.cell' ).attr( 'transform', function ( d ) {
 			return 'translate(' + d.dx + ',' + d.y + ')';
 		} );
-		parentUpdateTransition.select( 'rect' ).attr( 'width', function( d ) {
+		parentUpdateTransition.select( 'rect' ).attr( 'width', function ( d ) {
 			return Math.max( 0.01, d.dx );
 		} ).attr( 'height', headerHeight ).style( 'fill', headerColor );
-		parentUpdateTransition.select( '.foreignObject' ).attr( 'width', function( d ) {
+		parentUpdateTransition.select( '.foreignObject' ).attr( 'width', function ( d ) {
 			return Math.max( 0.01, d.dx );
-		} ).attr( 'height', headerHeight ).select( '.labelbody .label' ).text( function( d ) {
+		} ).attr( 'height', headerHeight ).select( '.labelbody .label' ).text( function ( d ) {
 			return d.name;
 		} );
 		// remove transition
 		parentCells.exit().remove();
 
 		// create children cells
-		var childrenCells = chart.selectAll( 'g.cell.child' ).data( children, function( d ) {
+		var childrenCells = chart.selectAll( 'g.cell.child' ).data( children, function ( d ) {
 			return 'c-' + d.id;
 		} );
 		// enter transition
 		var childEnterTransition = childrenCells.enter().append( 'g' ).attr( 'class', 'cell child' )
-				.on( 'click', function( d ) {
+				.on( 'click', function ( d ) {
 					zoom( node === d.parent ? root : d.parent );
 				} );
 		childEnterTransition.append( 'rect' ).classed( 'background', true ).style( 'fill',
-				function( d ) {
+				function ( d ) {
 					return color( d.parent.name );
 				} );
 		childEnterTransition.append( 'foreignObject' ).attr( {
 			'class': 'foreignObject',
-			width: function( d ) {
+			width: function ( d ) {
 				return Math.max( 0.01, d.dx );
 			},
-			height: function( d ) {
+			height: function ( d ) {
 				return Math.max( 0.01, d.dy );
 			}
 		} ).append( 'xhtml:body' ).attr( 'class', 'labelbody' ).append( 'div' ).attr( 'class',
-				'label' ).text( function( d ) {
+				'label' ).text( function ( d ) {
 			return d.name;
-		} ).on( 'click', function( d ) {
+		} ).on( 'click', function ( d ) {
 			if ( d.url ) {
 				window.open( d.url, '_blank' );
 				d3.event.stopPropagation();
@@ -232,27 +232,27 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 
 		// update transition
 		var childUpdateTransition = childrenCells.transition().duration( transitionDuration );
-		childUpdateTransition.select( '.cell' ).attr( 'transform', function( d ) {
+		childUpdateTransition.select( '.cell' ).attr( 'transform', function ( d ) {
 			return 'translate(' + d.x + ',' + d.y + ')';
 		} );
-		childUpdateTransition.select( 'rect' ).attr( 'width', function( d ) {
+		childUpdateTransition.select( 'rect' ).attr( 'width', function ( d ) {
 			return Math.max( 0.01, d.dx );
-		} ).attr( 'height', function( d ) {
+		} ).attr( 'height', function ( d ) {
 			return d.dy;
-		} ).style( 'fill', function( d ) {
+		} ).style( 'fill', function ( d ) {
 			return color( d.parent.name );
 		} );
-		childUpdateTransition.select( '.foreignObject' ).attr( 'width', function( d ) {
+		childUpdateTransition.select( '.foreignObject' ).attr( 'width', function ( d ) {
 			return Math.max( 0.01, d.dx );
-		} ).attr( 'height', function( d ) {
+		} ).attr( 'height', function ( d ) {
 			return Math.max( 0.01, d.dy );
-		} ).select( '.labelbody .label' ).text( function( d ) {
+		} ).select( '.labelbody .label' ).text( function ( d ) {
 			return d.name;
 		} );
 		// exit transition
 		childrenCells.exit().remove();
 
-		d3.select( 'select' ).on( 'change', function() {
+		d3.select( 'select' ).on( 'change', function () {
 			treemap.value( value === 'size' ? size : count ).nodes( root );
 			zoom( node );
 		} );
@@ -318,42 +318,42 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 			//		        }
 
 			var zoomTransition = chart.selectAll( 'g.cell' ).transition().duration(
-					transitionDuration ).attr( 'transform', function( d ) {
+					transitionDuration ).attr( 'transform', function ( d ) {
 				return 'translate(' + xscale( d.x ) + ',' + yscale( d.y ) + ')';
-			} ).each( 'end', function( d, i ) {
+			} ).each( 'end', function ( d, i ) {
 				if ( !i && ( level !== self.root ) ) {
-					chart.selectAll( '.cell.child' ).filter( function( d ) {
+					chart.selectAll( '.cell.child' ).filter( function ( d ) {
 						return d.parent === self.node; // only get the children for selected group
-					} ).select( '.foreignObject .labelbody .label' ).style( 'color', function( d ) {
+					} ).select( '.foreignObject .labelbody .label' ).style( 'color', function ( d ) {
 						return idealTextColor( color( d.parent.name ) );
 					} );
 
 					if ( supportsForeignObject ) {
-						chart.selectAll( '.cell.child' ).filter( function( d ) {
+						chart.selectAll( '.cell.child' ).filter( function ( d ) {
 							return d.parent === self.node; // only get the children for selected group
 						} ).select( '.foreignObject' ).style( 'display', '' );
 					} else {
-						chart.selectAll( '.cell.child' ).filter( function( d ) {
+						chart.selectAll( '.cell.child' ).filter( function ( d ) {
 							return d.parent === self.node; // only get the children for selected group
 						} ).select( '.foreignObject .labelbody .label' ).style( 'display', '' );
 					}
 				}
 			} );
 
-			zoomTransition.select( '.foreignObject' ).attr( 'width', function( d ) {
+			zoomTransition.select( '.foreignObject' ).attr( 'width', function ( d ) {
 				return Math.max( 0.01, kx * d.dx );
-			} ).attr( 'height', function( d ) {
+			} ).attr( 'height', function ( d ) {
 				return d.children ? headerHeight : Math.max( 0.01, ky * d.dy );
-			} ).select( '.labelbody .label' ).text( function( d ) {
+			} ).select( '.labelbody .label' ).text( function ( d ) {
 				return d.name;
 			} );
 
 			// update the width/height of the rects
-			zoomTransition.select( 'rect' ).attr( 'width', function( d ) {
+			zoomTransition.select( 'rect' ).attr( 'width', function ( d ) {
 				return Math.max( 0.01, kx * d.dx );
-			} ).attr( 'height', function( d ) {
+			} ).attr( 'height', function ( d ) {
 				return d.children ? headerHeight : Math.max( 0.01, ky * d.dy );
-			} ).style( 'fill', function( d ) {
+			} ).style( 'fill', function ( d ) {
 				return d.children ? headerColor : color( d.parent.name );
 			} );
 
@@ -371,7 +371,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 *
 	 * @return {boolean}
 	 */
-	SELF.prototype.isDrawable = function() {
+	SELF.prototype.isDrawable = function () {
 		return Object.keys( this._labelColumns ).length > 1;
 	};
 
@@ -382,7 +382,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 * @param {string} key
 	 * @return {boolean} false if there is no revisit needed
 	 */
-	SELF.prototype.visit = function( data, key ) {
+	SELF.prototype.visit = function ( data, key ) {
 		return this._checkColumn( data, key );
 	};
 
@@ -392,7 +392,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function( $, d3,
 	 * @return {boolean}
 	 * @private
 	 */
-	SELF.prototype._checkColumn = function( value, key ) {
+	SELF.prototype._checkColumn = function ( value, key ) {
 		if ( this._getFormatter().isLabel( value, key ) ) {
 			this._labelColumns[key] = true;
 			return !this.isDrawable();
