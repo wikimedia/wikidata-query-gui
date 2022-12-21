@@ -145,7 +145,7 @@ module.exports = function( grunt ) {
 							],
 							dest: buildFolder + '/css/images',
 							filter: 'isFile'
-						},{
+						}, {
 							expand: true,
 							cwd: './',
 							src: [
@@ -153,20 +153,20 @@ module.exports = function( grunt ) {
 									'logo.svg', 'logo-embed.svg', 'robots.txt', 'favicon.*'
 							],
 							dest: buildFolder
-						},{
+						}, {
 							expand: true,
 							src: [
 								'**/polestar/**'
 							],
 							dest: buildFolder
-						},{
+						}, {
 							expand: true,
 							cwd: './node_modules/mathjax/es5/',
 							src: [
 								'output/chtml/fonts/woff-v2/*.woff'
 							],
 							dest: buildFolder + '/js'
-						},{
+						}, {
 							expand: true,
 							src: [
 								'examples/code/*.txt'

@@ -743,7 +743,7 @@ wikibase.queryService.ui.ResultView = ( function( $, download, window ) {
 				var title = self._query.match( /#title:(.*)/ );
 
 				if ( title && title[ 1 ] ) {
-					self._actionBar.show( title[ 1 ] , '' );
+					self._actionBar.show( title[ 1 ], '' );
 				}
 			} catch ( e ) {
 				self._drawErrorResult( resultBrowser );

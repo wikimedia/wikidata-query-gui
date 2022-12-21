@@ -339,7 +339,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function( $, 
 						} );
 						// Prevent close button from clearing query - T311892
 						layer.once( 'click', function() {
-							popup.getElement().querySelector( '.leaflet-popup-close-button' ).addEventListener( 'click' , function() {
+							popup.getElement().querySelector( '.leaflet-popup-close-button' ).addEventListener( 'click', function() {
 								event.preventDefault();
 							} );
 						} );
