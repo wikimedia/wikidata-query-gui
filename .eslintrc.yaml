@@ -43,7 +43,6 @@
     comma-dangle: off,
     computed-property-spacing: off,
     es/no-math-trunc: off,
-    eqeqeq: off,
     indent: off,
     max-statements-per-line: off,
     mediawiki/class-doc: off,
