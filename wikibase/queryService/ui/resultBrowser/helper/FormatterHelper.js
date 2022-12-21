@@ -203,6 +203,7 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function( $, m
 				// fall through to default case, escaping and displaying the raw value
 			} // jshint ignore:line
 
+			// eslint-ignore-line no-fallthrough
 		default:
 			var $label = $( '<span>' ).text( value );
 			if ( data['xml:lang'] ) {
