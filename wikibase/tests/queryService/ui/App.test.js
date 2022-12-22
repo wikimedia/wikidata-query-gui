@@ -5,24 +5,32 @@
 
 	QUnit.test( 'DownloadJS works with utf-8 ', function( assert ) {
 
-		var stub = sinon.stub( window.document.body, 'appendChild' ),
+		var stubAppendChild = sinon.stub( window.document.body, 'appendChild' ),
+			stubSetTimeout = sinon.stub( window, 'setTimeout' ),
 			data = '{ "foo": "testöäüРоссийская中华人民共和国😀🤩𝄞😈" }',
 			filename = 'file.json',
 			mimetype =  'application/json;charset=utf-8',
 			done = assert.async();
 
-		stub.callsFake( function ( a ) {
-			var url = $( a ).attr( 'href' ),
-				xhr = new XMLHttpRequest();
+		// download.js uses body.appendChild(), so stub that for our test
+		stubAppendChild.callsFake( function ( a ) {
+			var url = $( a ).attr( 'href' );
 
-		    xhr.open( 'GET', url, false );
-		    xhr.send();
-		    URL.revokeObjectURL( url );
+			$.ajax( { url: url, dataType: 'text' } ).then( function ( response ) {
+				assert.strictEqual( data, response, 'original data and blob data should be the same' );
 
-			assert.strictEqual( data, xhr.responseText, 'original data and blob data should be the same' );
-			stub.restore();
-			window.document.body.appendChild( a );
-			done();
+				URL.revokeObjectURL( url );
+				stubAppendChild.restore();
+				window.document.body.appendChild( a );
+				done();
+			} );
+		} );
+
+		// download.js also calls setTimeout(), with a delay that is sometimes too short
+		// (before our $.ajax() is complete); just increase the delay a bit
+		stubSetTimeout.callsFake( function ( callback, delay ) {
+			stubSetTimeout.restore();
+			setTimeout( callback, delay + 1000 );
 		} );
 
 		download( data, filename, mimetype );
