@@ -87,5 +87,5 @@ wikibase.queryService.ui.dialog.CodeExample = ( function ( $, CodeMirror ) {
 		} );
 	};
 
-  return SELF;
+	return SELF;
 }( jQuery, CodeMirror ) );

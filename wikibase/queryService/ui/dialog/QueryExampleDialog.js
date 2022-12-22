@@ -152,7 +152,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function ( $ ) {
 				if ( example.category !== category ) {
 					category = example.category;
 					self._$element.find( '.searchable' ).append( $( '<tr>' ).addClass( 'active' )
-							.append( $( '<td colspan="4">' ).text( category ) ) );
+						.append( $( '<td colspan="4">' ).text( category ) ) );
 				}
 				self._addExample( example.title, example.query, example.href, example.tags, category );
 			} );
@@ -233,9 +233,9 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function ( $ ) {
 		// filter selected tags from tag cloud
 		var tagFilter = function ( tag ) {
 			var selectedTags = filterTags.map(
-					function ( v ) {
-						return v.match( /\((.*)\)/ )[1];
-					} );
+				function ( v ) {
+					return v.match( /\((.*)\)/ )[1];
+				} );
 
 			return selectedTags.indexOf( tag ) !== -1;
 		};
@@ -320,7 +320,7 @@ wikibase.queryService.ui.dialog.QueryExampleDialog = ( function ( $ ) {
 				{
 					placement: 'left',
 					'global_close': true,
-                    'esc_close': true,
+					'esc_close': true,
 					trigger: 'click',
 					container: 'body',
 					title: wikibase.queryService.ui.i18n.getMessage( 'wdqs-dialog-examples-preview-result', 'Preview result' ),
