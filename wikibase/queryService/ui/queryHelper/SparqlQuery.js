@@ -285,12 +285,12 @@ wikibase.queryService.ui.queryHelper.SparqlQuery = ( function ( $, wikibase, spa
 		function findSubqueriesInGroup( group ) {
 			$.each( group.patterns, function ( k, v ) {
 				switch ( v.type ) {
-				case 'query':
-					queries.push( new SELF( v ) );
-					break;
-				case 'group':
-					findSubqueriesInGroup( v );
-					break;
+					case 'query':
+						queries.push( new SELF( v ) );
+						break;
+					case 'group':
+						findSubqueriesInGroup( v );
+						break;
 				}
 			} );
 		}

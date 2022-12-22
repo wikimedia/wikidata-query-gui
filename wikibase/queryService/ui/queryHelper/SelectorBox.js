@@ -8,10 +8,10 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 
 	var SPARQL_TIMEOUT = 4 * 1000;
 
-/* jshint multistr: true */
+	/* jshint multistr: true */
 	var SPARQL_QUERY = {
-			item: {
-				suggest: // Find items that are used with a specifc property
+		item: {
+			suggest: // Find items that are used with a specifc property
 					'SELECT ?id ?label ?description WHERE {\
 					hint:Query hint:optimizer "None".\
 							{\
@@ -24,8 +24,8 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 						FILTER((LANG(?description)) = "{LANGUAGE}")\
 					}\
 					LIMIT 100',
-				genericSuggest: function () { // Find items that are most often used with the first selected item of the current query
-					var popularItemsTemplate =// Find items that have topic's main template
+			genericSuggest: function () { // Find items that are most often used with the first selected item of the current query
+				var popularItemsTemplate =// Find items that have topic's main template
 						'SELECT ?id ?label ?description WHERE {\
 						hint:Query hint:optimizer "None".\
 							{\
@@ -38,11 +38,11 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 							FILTER((LANG(?description)) = "{LANGUAGE}")\
 						}\
 						LIMIT 100';
-					if ( this._query.getTriples().length === 0 ) {
-						return popularItemsTemplate;
-					}
+				if ( this._query.getTriples().length === 0 ) {
+					return popularItemsTemplate;
+				}
 
-					var template = '{PREFIXES}\n\
+				var template = '{PREFIXES}\n\
 						SELECT ?id ?label ?description ?property (?count as ?rank) WITH {\n\
 							{QUERY}\n\
 						} AS %query WITH {\n\
@@ -69,33 +69,34 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 							}\n\
 						}\n\
 						ORDER BY DESC(?count)',
-						variable = this._query.getBoundVariables().shift() || this._query.getTripleVariables().shift(),
-						query = this._query.clone().setLimit( 1000 )
-							.removeService( 'http://wikiba.se/ontology#label' )
-							.addVariable( variable )
-							.getQueryString(),
-						prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
+					variable = this._query.getBoundVariables().shift() || this._query.getTripleVariables().shift(),
+					query = this._query.clone().setLimit( 1000 )
+						.removeService( 'http://wikiba.se/ontology#label' )
+						.addVariable( variable )
+						.getQueryString(),
+					prefixes = query.match( /.*\bPREFIX\b(.*)/gi ).join( '\n' );
 
-					query = query.replace( /.*\bPREFIX\b.*/gi, '' );
-					return template.replace( '{QUERY}', query )
-						.replace( '{VARIABLE}', variable )
-						.replace( '{PREFIXES}', prefixes );
-				},
-				search: null,
-// Disable for now as requested by Smalyshev
-//					'SELECT ?id ?label ?description WHERE {\
-//						hint:Query hint:optimizer "None".\
-//							{\
-//								SELECT DISTINCT ?id WHERE { ?i <{PROPERTY_URI}> ?id. }\
-//							}\
-//						?id rdfs:label ?label.\
-//						?id schema:description ?description.\
-//						FILTER((LANG(?label)) = "{LANGUAGE}")\
-//						FILTER((LANG(?description)) = "{LANGUAGE}")\
-//						FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
-//					}\
-//					LIMIT 20',
-				instanceOf: // Find items that are used with property 'instance of'
+				query = query.replace( /.*\bPREFIX\b.*/gi, '' );
+				return template.replace( '{QUERY}', query )
+					.replace( '{VARIABLE}', variable )
+					.replace( '{PREFIXES}', prefixes );
+			},
+			search: null,
+			/* Disable for now as requested by Smalyshev
+					'SELECT ?id ?label ?description WHERE {\
+						hint:Query hint:optimizer "None".\
+							{\
+								SELECT DISTINCT ?id WHERE { ?i <{PROPERTY_URI}> ?id. }\
+							}\
+						?id rdfs:label ?label.\
+						?id schema:description ?description.\
+						FILTER((LANG(?label)) = "{LANGUAGE}")\
+						FILTER((LANG(?description)) = "{LANGUAGE}")\
+						FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
+					}\
+					LIMIT 20',
+			*/
+			instanceOf: // Find items that are used with property 'instance of'
 					'SELECT ?id ?label ?description WHERE {\
 					hint:Query hint:optimizer "None".\
 						{\
@@ -189,24 +190,25 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 					.replace( '{PREFIXES}', prefixes );
 			},
 			search: null,
-//			search:// Find properties that are most often used with a specific item and filter with term prefix
-//				'SELECT ?id ?label ?description WHERE {\
-//					{\
-//					SELECT ?id (COUNT(?id) AS ?count) WHERE {\
-//						?i ?prop <{ITEM_URI}>.\
-//						?id ?x ?prop.\
-//						?id rdf:type wikibase:Property.\
-//						}\
-//						GROUP BY ?id\
-//					}\
-//				?id rdfs:label ?label.\
-//				?id schema:description ?description.\
-//				FILTER((LANG(?label)) = "{LANGUAGE}")\
-//				FILTER((LANG(?description)) = "{LANGUAGE}")\
-//				FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
-//				}\
-//				ORDER BY DESC(?count)\
-//				LIMIT 20',
+			/* Find properties that are most often used with a specific item and filter with term prefix
+				'SELECT ?id ?label ?description WHERE {\
+					{\
+					SELECT ?id (COUNT(?id) AS ?count) WHERE {\
+						?i ?prop <{ITEM_URI}>.\
+						?id ?x ?prop.\
+						?id rdf:type wikibase:Property.\
+						}\
+						GROUP BY ?id\
+					}\
+				?id rdfs:label ?label.\
+				?id schema:description ?description.\
+				FILTER((LANG(?label)) = "{LANGUAGE}")\
+				FILTER((LANG(?description)) = "{LANGUAGE}")\
+				FILTER(STRSTARTS(LCASE(?label), LCASE("{TERM}")))\
+				}\
+				ORDER BY DESC(?count)\
+				LIMIT 20',
+			*/
 			seeAlso: // Read see also property from a specific property
 				'SELECT ?id ?label ?description WHERE {\
 					BIND( <{PROPERTY_URI}> as ?prop).\
@@ -299,14 +301,14 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 	 */
 	SELF.prototype.add = function ( $element, triple, listener, toolbar ) {
 		switch ( $element.data( 'type' ).toLowerCase() ) {
-		case 'number':
-			this._createInput( $element, listener, toolbar );
-			break;
-		case 'tagcloud':
-			this._createTagCloud( $element, triple, listener, toolbar );
-			break;
-		default:
-			this._createSelect( $element, triple, listener, toolbar );
+			case 'number':
+				this._createInput( $element, listener, toolbar );
+				break;
+			case 'tagcloud':
+				this._createTagCloud( $element, triple, listener, toolbar );
+				break;
+			default:
+				this._createSelect( $element, triple, listener, toolbar );
 		}
 	};
 
@@ -350,34 +352,34 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 				tags = [];
 
 				return self._searchEntitiesSparql( null, entity, triple, sparql ).then( function ( d ) {
-						d.forEach( function ( t ) {
-							tags.push( {
-								text: t.text,
-								weight: t.data.rank || ( Math.round( Math.random() * 10 ) > 9 ? 5 : Math
-										.round( Math.random() * 3 ) ),
-								link: '#',
-								html: {
-									title: t.data.description + ( t.data.rank ? ' (' + t.data.rank + ')' : '' ),
-									'data-id': t.id
-								},
-								handlers: {
-									click: function ( e ) {
+					d.forEach( function ( t ) {
+						tags.push( {
+							text: t.text,
+							weight: t.data.rank || ( Math.round( Math.random() * 10 ) > 9 ? 5 : Math
+								.round( Math.random() * 3 ) ),
+							link: '#',
+							html: {
+								title: t.data.description + ( t.data.rank ? ' (' + t.data.rank + ')' : '' ),
+								'data-id': t.id
+							},
+							handlers: {
+								click: function ( e ) {
 
-										if ( t.data.propertyId ) {
-											listener( t.id, t.text, t.data.propertyId );
-											return false;
-										}
-
-										self._suggestPropertyId( t.id ).always(
-												function ( propertyId ) {
-													listener( t.id, t.text, propertyId );
-												} );
+									if ( t.data.propertyId ) {
+										listener( t.id, t.text, t.data.propertyId );
 										return false;
 									}
+
+									self._suggestPropertyId( t.id ).always(
+										function ( propertyId ) {
+											listener( t.id, t.text, propertyId );
+										} );
+									return false;
 								}
-							} );
+							}
 						} );
 					} );
+				} );
 			};
 
 		createTags().then( function () {
@@ -457,13 +459,13 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 	 */
 	SELF.prototype._suggestPropertyId = function ( id ) {
 		var deferred = $.Deferred(),
-				query = 'SELECT ?id (COUNT(?id) AS ?count) WHERE { { SELECT ?id WHERE {\
-							?i ?prop wd:{ITEM_ID}.\
-							?id wikibase:directClaim ?prop.\
-							?id rdf:type wikibase:Property.\
-							}\
-							LIMIT 10000 } } GROUP BY ?id ORDER BY DESC(?count) LIMIT 1'
-					.replace( '{ITEM_ID}', id );
+			query = 'SELECT ?id (COUNT(?id) AS ?count) WHERE { { SELECT ?id WHERE {\
+						?i ?prop wd:{ITEM_ID}.\
+						?id wikibase:directClaim ?prop.\
+						?id rdf:type wikibase:Property.\
+					}\
+					LIMIT 10000 } } GROUP BY ?id ORDER BY DESC(?count) LIMIT 1'
+				.replace( '{ITEM_ID}', id );
 
 		this._sparqlApi.query( query, ( SPARQL_TIMEOUT / 2 ) ).done( function ( data ) {
 
@@ -521,7 +523,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 	 */
 	SELF.prototype._getCloseButton = function () {
 		return $( '<a href="#" data-dismiss="clickover">' ).append(
-				'<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' );
+			'<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' );
 	};
 
 	/**
@@ -558,29 +560,29 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 
 		return function ( params, success, failure ) {
 			$.when(
-					self._searchEntitiesSparql( params.data.term, type, triple, sparql ),
-					self._searchEntities( params.data.term, type )
-					).done( function ( r1, r2 ) {
+				self._searchEntitiesSparql( params.data.term, type, triple, sparql ),
+				self._searchEntities( params.data.term, type )
+			).done( function ( r1, r2 ) {
 
-					self._addItemMetaData( $element, r1.concat( r2 ) );
+				self._addItemMetaData( $element, r1.concat( r2 ) );
 
-					if ( r1.length > 0 ) {
-						r1 = [ {
-								text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-suggestions', 'Suggestions' ),
-								children: r1
-						} ];
-					}
+				if ( r1.length > 0 ) {
+					r1 = [ {
+						text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-suggestions', 'Suggestions' ),
+						children: r1
+					} ];
+				}
 
-					if ( r2.length > 0 && r1.length > 0 ) {
-						r2 = [ {
-							text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-other', 'Other' ),
-							children: r2
-						} ];
-					}
+				if ( r2.length > 0 && r1.length > 0 ) {
+					r2 = [ {
+						text: wikibase.queryService.ui.i18n.getMessage( 'wdqs-ve-sb-other', 'Other' ),
+						children: r2
+					} ];
+				}
 
-					success( {
-						results: r1.concat( r2 )
-					} );
+				success( {
+					results: r1.concat( r2 )
+				} );
 			} );
 		};
 	};
@@ -685,8 +687,8 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 		if ( query ) {
 			if ( triple ) {
 				query = query
-						.replace( '{PROPERTY_URI}', findFirstStringProperty( triple.predicate ) )
-						.replace( '{ITEM_URI}', triple.object );
+					.replace( '{PROPERTY_URI}', findFirstStringProperty( triple.predicate ) )
+					.replace( '{ITEM_URI}', triple.object );
 			}
 			if ( term ) {
 				query = query.replace( '{TERM}', term );

@@ -121,7 +121,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 			var uri = m[2].replace( /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&' );
 
 			var newQuery = cleanQuery.replace( new RegExp( '<' + uri + '([^/>#]+?)>', 'gi' ),
-					prefix + ':$1' );
+				prefix + ':$1' );
 
 			if ( cleanQuery !== newQuery ) {
 				cleanQuery = newQuery;
@@ -231,10 +231,10 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 		this._createTagCloud();
 
 		return $html.append(
-				this._createSection( $findTable, this._createFindButton( $findTable ) ),
-				this._createSection( $showTable, this._createShowButton( $showTable ) ),
-				this._getLimitSection()
-			);
+			this._createSection( $findTable, this._createFindButton( $findTable ) ),
+			this._createSection( $showTable, this._createShowButton( $showTable ) ),
+			this._getLimitSection()
+		);
 	};
 
 	/**
@@ -242,10 +242,10 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 	 */
 	SELF.prototype._createTagCloud = function () {
 		return; // T195384
-//		var $tagCloud = $( '.query-helper-tag-cloud' );
-//		if ( $tagCloud.length > 0 ) {
-//			$tagCloud.html( this._createSection( this._createTagCloudShow(), this._createTagCloudFilter() ) );
-//		}
+		// var $tagCloud = $( '.query-helper-tag-cloud' );
+		// if ( $tagCloud.length > 0 ) {
+		// 	$tagCloud.html( this._createSection( this._createTagCloudShow(), this._createTagCloudFilter() ) );
+		// }
 	};
 
 	/**
@@ -258,7 +258,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 				.attr( 'href', '#' )
 				.attr( 'id', 'query-helper-limit' )
 				.data( 'value', this._query.getLimit() )
-			.append( this._i18nSpan( 'wdqs-ve-limit', 'Limit' ) ),
+				.append( this._i18nSpan( 'wdqs-ve-limit', 'Limit' ) ),
 			$value = $( '<span>' )
 				.text( this._query.getLimit() || '' );
 
@@ -306,7 +306,7 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 	 */
 	SELF.prototype._createTagCloudShow = function () {
 		var self = this,
-		$tagCloud = $( '<div data-entity="property" data-type="tagCloud" class="tagCloud">' );
+			$tagCloud = $( '<div data-entity="property" data-type="tagCloud" class="tagCloud">' );
 
 		// SelectorBox
 		this._selectorBox.add( $tagCloud, null, function ( id, name, update ) {
@@ -374,8 +374,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 			.append( this._i18nSpan( 'wdqs-ve-filter', 'Filter' ) )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
-				.tooltip( {
-					title: 'Click to add new item'
+			.tooltip( {
+				title: 'Click to add new item'
 			} ).attr( 'id', 'query-helper-filter' )
 			.attr( 'data-type', 'item' ).attr( 'data-auto_open', true );
 
@@ -417,8 +417,8 @@ wikibase.queryService.ui.queryHelper.QueryHelper = ( function ( $, wikibase, _ )
 			.append( this._i18nSpan( 'wdqs-ve-show', 'Show' ) )
 			.attr( 'href', '#' ).prepend(
 				'<span class="fa fa-plus" aria-hidden="true"></span>', ' ' )
-				.tooltip( {
-					title: 'Click to add new property'
+			.tooltip( {
+				title: 'Click to add new property'
 			} ).attr( 'id', 'query-helper-show' )
 			.attr( 'data-type', 'property' ).attr( 'data-auto_open', true );
 
