@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agam Riyandana",
 			"Akmaie Ajam",
 			"ArlandGa",
 			"Beeyan",
@@ -58,6 +59,8 @@
 	"wdqs-app-footer-updated-ago": "Data diperbarui $1",
 	"wdqs-app-result-shorturl": "URL ringkas menuju hasil",
 	"wdqs-app-result-shorturl-title": "URL ringkas menuju hasil ini",
+	"wdqs-app-result-shorturl-query": "URL pendek untuk pertanyaan",
+	"wdqs-app-result-shorturl-query-title": "URL singkat ke kueri yang digunakan untuk mengambil hasil ini",
 	"wdqs-app-result-rawgraphs": "Buka di RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Buat grafik dengan data hasil pencarian terkini dengan menggunakan RAWGraphs.io",
 	"wdqs-app-result-embed": "Sematkan hasil",

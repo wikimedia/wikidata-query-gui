@@ -64,6 +64,8 @@
 	"wdqs-app-footer-updated-ago": "Данные обновлены $1",
 	"wdqs-app-result-shorturl": "Короткий URL результата",
 	"wdqs-app-result-shorturl-title": "Короткий URL для результата этого запроса",
+	"wdqs-app-result-shorturl-query": "Короткий URL для запроса",
+	"wdqs-app-result-shorturl-query-title": "Короткий URL-адрес запроса, который использовался для получения этого результата",
 	"wdqs-app-result-rawgraphs": "Открыть в RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Создать граф с текущим результатом с помощью RAWGraphs.io",
 	"wdqs-app-result-embed": "Встроить результаты",

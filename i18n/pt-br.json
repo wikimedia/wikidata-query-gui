@@ -62,6 +62,8 @@
 	"wdqs-app-footer-updated-ago": "Dados atualizados $1",
 	"wdqs-app-result-shorturl": "URL curta para o resultado",
 	"wdqs-app-result-shorturl-title": "URL curta para este resultado",
+	"wdqs-app-result-shorturl-query": "URL curto da consulta",
+	"wdqs-app-result-shorturl-query-title": "URL curto da consulta que foi usada para obter este resultado",
 	"wdqs-app-result-rawgraphs": "Abrir em RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Crie um gráfico com o dado de resultado atual usando RAWGraphs.io",
 	"wdqs-app-result-embed": "Incorporar resultado",
