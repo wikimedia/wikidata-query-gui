@@ -16,15 +16,6 @@
   ],
   rules: {
 #    compat/compat: error,
-#    indent: [
-#      error,
-#      tab,
-#      {
-#        CallExpression: {
-#          arguments: first
-#        }
-#      }
-#    ],
     no-jquery/no-global-selector: off,
     no-underscore-dangle: off,
 #    no-use-before-define: [
@@ -43,7 +34,6 @@
     comma-dangle: off,
     computed-property-spacing: off,
     es/no-math-trunc: off,
-    indent: off,
     mediawiki/class-doc: off,
     no-empty-character-class: off,
     no-implicit-globals: off,

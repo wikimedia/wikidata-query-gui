@@ -1,59 +1,59 @@
 /* globals exports */
 exports.config = {
-    //
-    // ====================
-    // Runner Configuration
-    // ====================
-    //
-    // WebdriverIO allows it to run your test in arbitrary locations (e.g. locally or
-    // on a remote machine).
-    runner: 'local',
+	//
+	// ====================
+	// Runner Configuration
+	// ====================
+	//
+	// WebdriverIO allows it to run your test in arbitrary locations (e.g. locally or
+	// on a remote machine).
+	runner: 'local',
 
-    //
-    // ==================
-    // Specify Test Files
-    // ==================
-    // Define which test specs should run. The pattern is relative to the directory
-    // from which `wdio` was called. Notice that, if you are calling `wdio` from an
-    // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
-    // directory is where your package.json resides, so `wdio` will be called from there.
-    //
-    specs: [
-        './tests/specs/**/*.js'
-    ],
-    // Patterns to exclude.
-    exclude: [
-    ],
+	//
+	// ==================
+	// Specify Test Files
+	// ==================
+	// Define which test specs should run. The pattern is relative to the directory
+	// from which `wdio` was called. Notice that, if you are calling `wdio` from an
+	// NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
+	// directory is where your package.json resides, so `wdio` will be called from there.
+	//
+	specs: [
+		'./tests/specs/**/*.js'
+	],
+	// Patterns to exclude.
+	exclude: [
+	],
 
-    maxInstances: 10,
+	maxInstances: 10,
 
-    capabilities: [ {
+	capabilities: [ {
 
-        maxInstances: 5,
-        browserName: 'chrome'
+		maxInstances: 5,
+		browserName: 'chrome'
 
-    } ],
+	} ],
 
-    logLevel: 'error',
+	logLevel: 'error',
 
-    bail: 0,
+	bail: 0,
 
-    baseUrl: 'http://localhost:8082',
+	baseUrl: 'http://localhost:8082',
 
-    waitforTimeout: 10000,
+	waitforTimeout: 10000,
 
-    connectionRetryTimeout: 90000,
+	connectionRetryTimeout: 90000,
 
-    connectionRetryCount: 3,
+	connectionRetryCount: 3,
 
-    services: [],
+	services: [],
 
-    framework: 'mocha',
+	framework: 'mocha',
 
-    reporters: [ 'dot', 'spec' ],
+	reporters: [ 'dot', 'spec' ],
 
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
-    }
+	mochaOpts: {
+		ui: 'bdd',
+		timeout: 60000
+	}
 };

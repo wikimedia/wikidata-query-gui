@@ -12,7 +12,7 @@ module.exports = function ( grunt ) {
 				jshintrc: true
 			},
 			all: [
-					'**/*.js', '!dist/**', '!' + buildFolder + '/**', '!target/**'
+				'**/*.js', '!dist/**', '!' + buildFolder + '/**', '!target/**'
 			]
 		},
 		eslint: {
@@ -20,7 +20,7 @@ module.exports = function ( grunt ) {
 		},
 		jsonlint: {
 			all: [
-					'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!' + buildFolder + '/**', '!polestar/**', '!target/**'
+				'**/*.json', '!node_modules/**', '!vendor/**', '!dist/**', '!' + buildFolder + '/**', '!polestar/**', '!target/**'
 			]
 		},
 		connect: {
@@ -72,24 +72,24 @@ module.exports = function ( grunt ) {
 		},
 		banana: {
 			all: 'i18n/',
-					options: {
-						disallowBlankTranslations: false,
-						requireKeyPrefix: 'wdqs-'
-					}
-				},
+			options: {
+				disallowBlankTranslations: false,
+				requireKeyPrefix: 'wdqs-'
+			}
+		},
 		clean: {
 			release: [
 				buildFolder
 			],
 			deploy: [
-					buildFolder + '/*',
-					'!' + buildFolder + '/custom-config.json',
-					'!' + buildFolder + '/.git/**'
+				buildFolder + '/*',
+				'!' + buildFolder + '/custom-config.json',
+				'!' + buildFolder + '/.git/**'
 			]
 		},
 		useminPrepare: {
 			html: [
-					'index.html', 'embed.html'
+				'index.html', 'embed.html'
 			],
 			options: {
 				dest: buildFolder
@@ -100,88 +100,88 @@ module.exports = function ( grunt ) {
 		copy: {
 			release: {
 				files: [
-						{ // bootstrap icons
-							expand: true,
-							flatten: true,
-							src: [
-								'**/*.{eot,ttf,woff,woff2}'
-							],
-							dest: buildFolder + '/fonts/',
-							filter: 'isFile'
-						},
-						{ // uls images
-							expand: true,
-							flatten: true,
-							src: [
-								'**/jquery.uls/images/*.{png,jpg,svg}'
-							],
-							dest: buildFolder + '/images/',
-							filter: 'isFile'
-						},
-						{ // jstree
-							expand: true,
-							flatten: true,
-							src: [
-								'**/jstree/**/*.{png,gif}'
-							],
-							dest: buildFolder + '/css/',
-							filter: 'isFile'
-						},
-						{ // leaflet fullscreen images
-							expand: true,
-							flatten: true,
-							src: [
-								'**/leaflet-fullscreen/**/*.png'
-							],
-							dest: buildFolder + '/css/',
-							filter: 'isFile'
-						},
-						{ // leaflet images
-							expand: true,
-							flatten: true,
-							src: [
-								'**/leaflet/dist/images/*.png',
-								'**/leaflet-minimap/dist/images/*.svg'
-							],
-							dest: buildFolder + '/css/images',
-							filter: 'isFile'
-						}, {
-							expand: true,
-							cwd: './',
-							src: [
-									'*.html',
-									'logo.svg', 'logo-embed.svg', 'robots.txt', 'favicon.*'
-							],
-							dest: buildFolder
-						}, {
-							expand: true,
-							src: [
-								'**/polestar/**'
-							],
-							dest: buildFolder
-						}, {
-							expand: true,
-							cwd: './node_modules/mathjax/es5/',
-							src: [
-								'output/chtml/fonts/woff-v2/*.woff'
-							],
-							dest: buildFolder + '/js'
-						}, {
-							expand: true,
-							src: [
-								'examples/code/*.txt'
-							],
-							dest: buildFolder,
-							filter: 'isFile'
-						},
-						{ // json config
-							expand: false,
-							src: [
-								'default-config.json'
-							],
-							dest: buildFolder + '/default-config.json',
-							filter: 'isFile'
-						}
+					{ // bootstrap icons
+						expand: true,
+						flatten: true,
+						src: [
+							'**/*.{eot,ttf,woff,woff2}'
+						],
+						dest: buildFolder + '/fonts/',
+						filter: 'isFile'
+					},
+					{ // uls images
+						expand: true,
+						flatten: true,
+						src: [
+							'**/jquery.uls/images/*.{png,jpg,svg}'
+						],
+						dest: buildFolder + '/images/',
+						filter: 'isFile'
+					},
+					{ // jstree
+						expand: true,
+						flatten: true,
+						src: [
+							'**/jstree/**/*.{png,gif}'
+						],
+						dest: buildFolder + '/css/',
+						filter: 'isFile'
+					},
+					{ // leaflet fullscreen images
+						expand: true,
+						flatten: true,
+						src: [
+							'**/leaflet-fullscreen/**/*.png'
+						],
+						dest: buildFolder + '/css/',
+						filter: 'isFile'
+					},
+					{ // leaflet images
+						expand: true,
+						flatten: true,
+						src: [
+							'**/leaflet/dist/images/*.png',
+							'**/leaflet-minimap/dist/images/*.svg'
+						],
+						dest: buildFolder + '/css/images',
+						filter: 'isFile'
+					}, {
+						expand: true,
+						cwd: './',
+						src: [
+							'*.html',
+							'logo.svg', 'logo-embed.svg', 'robots.txt', 'favicon.*'
+						],
+						dest: buildFolder
+					}, {
+						expand: true,
+						src: [
+							'**/polestar/**'
+						],
+						dest: buildFolder
+					}, {
+						expand: true,
+						cwd: './node_modules/mathjax/es5/',
+						src: [
+							'output/chtml/fonts/woff-v2/*.woff'
+						],
+						dest: buildFolder + '/js'
+					}, {
+						expand: true,
+						src: [
+							'examples/code/*.txt'
+						],
+						dest: buildFolder,
+						filter: 'isFile'
+					},
+					{ // json config
+						expand: false,
+						src: [
+							'default-config.json'
+						],
+						dest: buildFolder + '/default-config.json',
+						filter: 'isFile'
+					}
 				]
 			}
 		},
@@ -210,7 +210,7 @@ module.exports = function ( grunt ) {
 				files: [
 					{
 						src: [
-								buildFolder + '/js/*.js', buildFolder + '/css/*.css'
+							buildFolder + '/js/*.js', buildFolder + '/css/*.css'
 						]
 					}
 				]
@@ -218,7 +218,7 @@ module.exports = function ( grunt ) {
 		},
 		usemin: {
 			html: [
-					buildFolder + '/index.html', buildFolder + '/embed.html'
+				buildFolder + '/index.html', buildFolder + '/embed.html'
 			]
 		},
 		htmlmin: {
@@ -253,14 +253,14 @@ module.exports = function ( grunt ) {
 			},
 			commitDeploy: { // get gui commit message and use it for deploy commit
 				command: [
-						'lastrev=$(git rev-parse HEAD)',
-						'message=$(git log -1 --pretty=%B | grep -v Change-Id)',
-						'newmessage=$(cat <<END\nMerging from $lastrev:\n\n$message\nEND\n)',
-						'cd ' + buildFolder,
-						'curl -Lo .git/hooks/commit-msg https://<%= pkg.repository.deploy.gerrit %>/r/tools/hooks/commit-msg',
-						'chmod u+x .git/hooks/commit-msg',
-						'git add -A', 'git commit -m "$newmessage"',
-						'echo "$newmessage"'
+					'lastrev=$(git rev-parse HEAD)',
+					'message=$(git log -1 --pretty=%B | grep -v Change-Id)',
+					'newmessage=$(cat <<END\nMerging from $lastrev:\n\n$message\nEND\n)',
+					'cd ' + buildFolder,
+					'curl -Lo .git/hooks/commit-msg https://<%= pkg.repository.deploy.gerrit %>/r/tools/hooks/commit-msg',
+					'chmod u+x .git/hooks/commit-msg',
+					'git add -A', 'git commit -m "$newmessage"',
+					'echo "$newmessage"'
 				].join( '&&' )
 			},
 			formatPatchDeploy: { // generate patch file for deploy commit(s)
@@ -268,8 +268,8 @@ module.exports = function ( grunt ) {
 			},
 			review: {
 				command: [
-						'cd ' + buildFolder,
-						'git push ssh://<%= pkg.repository.deploy.gerrit %>:29418/<%= pkg.repository.deploy.repo %>.git HEAD:refs/publish/<%= pkg.repository.deploy.branch %>'
+					'cd ' + buildFolder,
+					'git push ssh://<%= pkg.repository.deploy.gerrit %>:29418/<%= pkg.repository.deploy.repo %>.git HEAD:refs/publish/<%= pkg.repository.deploy.branch %>'
 				].join( '&&' )
 			}
 		},
