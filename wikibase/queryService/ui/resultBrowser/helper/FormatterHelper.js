@@ -15,17 +15,17 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, 
 		DATATYPE_MATHML = 'http://www.w3.org/1998/Math/MathML';
 
 	var NUMBER_TYPES = [
-			'http://www.w3.org/2001/XMLSchema#double', 'http://www.w3.org/2001/XMLSchema#float',
-			'http://www.w3.org/2001/XMLSchema#decimal', 'http://www.w3.org/2001/XMLSchema#integer',
-			'http://www.w3.org/2001/XMLSchema#long', 'http://www.w3.org/2001/XMLSchema#int',
-			'http://www.w3.org/2001/XMLSchema#short',
-			'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
-			'http://www.w3.org/2001/XMLSchema#positiveInteger',
-			'http://www.w3.org/2001/XMLSchema#unsignedLong',
-			'http://www.w3.org/2001/XMLSchema#unsignedInt',
-			'http://www.w3.org/2001/XMLSchema#unsignedShort',
-			'http://www.w3.org/2001/XMLSchema#nonPositiveInteger',
-			'http://www.w3.org/2001/XMLSchema#negativeInteger'
+		'http://www.w3.org/2001/XMLSchema#double', 'http://www.w3.org/2001/XMLSchema#float',
+		'http://www.w3.org/2001/XMLSchema#decimal', 'http://www.w3.org/2001/XMLSchema#integer',
+		'http://www.w3.org/2001/XMLSchema#long', 'http://www.w3.org/2001/XMLSchema#int',
+		'http://www.w3.org/2001/XMLSchema#short',
+		'http://www.w3.org/2001/XMLSchema#nonNegativeInteger',
+		'http://www.w3.org/2001/XMLSchema#positiveInteger',
+		'http://www.w3.org/2001/XMLSchema#unsignedLong',
+		'http://www.w3.org/2001/XMLSchema#unsignedInt',
+		'http://www.w3.org/2001/XMLSchema#unsignedShort',
+		'http://www.w3.org/2001/XMLSchema#nonPositiveInteger',
+		'http://www.w3.org/2001/XMLSchema#negativeInteger'
 	];
 
 	/**
@@ -146,72 +146,72 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, 
 		}
 
 		switch ( data.datatype || data.type ) {
-		case TYPE_URI:
-			if ( /^javascript:/.test( value ) ) {
-				// don’t treat JavaScript URIs as URIs
-				data = $.extend( {}, data, { datatype: DATATYPE_STRING } );
-				return this.formatValue( data, title, embed );
-			}
+			case TYPE_URI:
+				if ( /^javascript:/.test( value ) ) {
+					// don’t treat JavaScript URIs as URIs
+					data = $.extend( {}, data, { datatype: DATATYPE_STRING } );
+					return this.formatValue( data, title, embed );
+				}
 
-			var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank', class: 'item-link', rel: 'noopener' } );
-			$html.append( $link );
+				var $link = $( '<a>' ).attr( { title: title, href: value, target: '_blank', class: 'item-link', rel: 'noopener' } );
+				$html.append( $link );
 
-			if ( this.isCommonsResource( value ) ) {
-				$link.attr( 'href', this.getCommonsResourceFullUrl( value ) );
-				$link.attr( 'title', title + ': commons:' + this.getCommonsResourceFileName( value ) );
-				if ( embed ) {
-					$link.click( this.handleCommonResourceItem );
-					$link.append(
+				if ( this.isCommonsResource( value ) ) {
+					$link.attr( 'href', this.getCommonsResourceFullUrl( value ) );
+					$link.attr( 'title', title + ': commons:' + this.getCommonsResourceFileName( value ) );
+					if ( embed ) {
+						$link.click( this.handleCommonResourceItem );
+						$link.append(
 							$( '<img>' ).attr( 'src',
-									this.getCommonsResourceThumbnailUrl( value, '120' ) ) )
+								this.getCommonsResourceThumbnailUrl( value, '120' ) ) )
 							.width( '120' );
-				} else {
-					$link.attr( { href: COMMONS_FILE_PATH_MEDIAVIEWER.replace( /{FILENAME}/g,
+					} else {
+						$link.attr( { href: COMMONS_FILE_PATH_MEDIAVIEWER.replace( /{FILENAME}/g,
 							this.getCommonsResourceFileName( value ) ) } );
-					$link.text( 'commons:' +
+						$link.text( 'commons:' +
 							decodeURIComponent( this.getCommonsResourceFileName( value ) ) );
-					$html.prepend( this.createGalleryButton( value, title ), ' ' );
-				}
-			} else {
-				$link.text( data.label || this.abbreviateUri( value ) );
+						$html.prepend( this.createGalleryButton( value, title ), ' ' );
+					}
+				} else {
+					$link.text( data.label || this.abbreviateUri( value ) );
 
-				if ( this.isEntityUri( value ) ) {
-					$html.prepend( this.createExploreButton( value ), ' ' );
+					if ( this.isEntityUri( value ) ) {
+						$html.prepend( this.createExploreButton( value ), ' ' );
+					}
 				}
-			}
-			break;
-		case DATATYPE_DATETIME:
-			if ( !title ) {
-				title = wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-result-formatter-title-datetime', 'Raw ISO timestamp' );
-			}
-			var $dateLabel = $( '<span>' ).text( this._formatDate( value ) );
-			$dateLabel.attr( 'title', title + ': ' + value );
-			$html.append( $dateLabel );
-			break;
-
-		case DATATYPE_MATHML:
-			try {
-				$html.append(
-					MathJax.mathml2chtml(
-						value
-							.replace( /caligraphic/g, 'calligraphic' ) // work around https://github.com/mathjax/MathJax/issues/2214
-					)
-				);
 				break;
-			} catch ( e ) {
-				window.console.error( 'Invalid MathML', e );
-				// fall through to default case, escaping and displaying the raw value
-			} // jshint ignore:line
+			case DATATYPE_DATETIME:
+				if ( !title ) {
+					title = wikibase.queryService.ui.i18n.getMessage( 'wdqs-app-result-formatter-title-datetime', 'Raw ISO timestamp' );
+				}
+				var $dateLabel = $( '<span>' ).text( this._formatDate( value ) );
+				$dateLabel.attr( 'title', title + ': ' + value );
+				$html.append( $dateLabel );
+				break;
+
+			case DATATYPE_MATHML:
+				try {
+					$html.append(
+						MathJax.mathml2chtml(
+							value
+								.replace( /caligraphic/g, 'calligraphic' ) // work around https://github.com/mathjax/MathJax/issues/2214
+						)
+					);
+					break;
+				} catch ( e ) {
+					window.console.error( 'Invalid MathML', e );
+					// fall through to default case, escaping and displaying the raw value
+				} // jshint ignore:line
 
 			// eslint-ignore-line no-fallthrough
-		default:
-			var $label = $( '<span>' ).text( value );
-			if ( data['xml:lang'] ) {
-				$label.attr( 'title', title + ': ' + value + '@' + data['xml:lang'] );
-			} else {
-				$label.attr( 'title', title + ': ' + value );
-			}
-			$html.append( $label );
+			default:
+				var $label = $( '<span>' ).text( value );
+				if ( data['xml:lang'] ) {
+					$label.attr( 'title', title + ': ' + value + '@' + data['xml:lang'] );
+				} else {
+					$label.attr( 'title', title + ': ' + value );
+				}
+				$html.append( $label );
 		}
 
 		return $html;
@@ -441,8 +441,8 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, 
 		} );
 		e.preventDefault();
 		var lang = $.i18n && $.i18n().locale || 'en',
-		query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
-		embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
+			query = 'SELECT ?item ?itemLabel WHERE { BIND( <' + url + '> as ?item ).	SERVICE wikibase:label { bd:serviceParam wikibase:language "' + lang + '" } }',
+			embedUrl = 'embed.html#' + encodeURIComponent( '#defaultView:Graph\n' + query );
 		var top = $( window ).scrollTop() + 200;
 		$dialog.children( 'div.explorer-body' ).html( $( '<iframe frameBorder="0" scrolling="no"></iframe>' ).attr( 'src', embedUrl ) );
 		$dialog.css( 'left', offsetCounter );
