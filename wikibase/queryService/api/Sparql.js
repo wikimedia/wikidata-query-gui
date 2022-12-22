@@ -110,12 +110,12 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 
 			var updateDate = new Date( data.results.bindings[0][data.head.vars[0]].value ),
 				dateText = updateDate.toLocaleTimeString( navigator.language, {
-						timeZoneName: 'short'
-					} ) + ', ' + updateDate.toLocaleDateString( navigator.language, {
-						month: 'short',
-						day: 'numeric',
-						year: 'numeric'
-					} ),
+					timeZoneName: 'short'
+				} ) + ', ' + updateDate.toLocaleDateString( navigator.language, {
+					month: 'short',
+					day: 'numeric',
+					year: 'numeric'
+				} ),
 				differenceInSeconds = Math.round( ( new Date() - updateDate ) / 1000 );
 
 			deferred.resolve( dateText, differenceInSeconds );
@@ -138,7 +138,7 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 
 		query = this._replaceAutoLanguage( query );
 		return this._replaceAutoCoordinates( query ).then( function ( query ) {
-				return self._query( query, timeout );
+			return self._query( query, timeout );
 		} );
 	};
 
@@ -224,9 +224,9 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 
 			if ( error.code === ERROR_CODES.UNKNOWN || error.code === ERROR_CODES.MALFORMED ) {
 				error.message = error.debug
-						.match(
-								/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ )
-						.pop().trim();
+					.match(
+						/(java\.util\.concurrent\.ExecutionException\:)+(.*)(Exception\:)+(.*)/ )
+					.pop().trim();
 			}
 		} catch ( e ) {
 		}
@@ -366,25 +366,25 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 		var $thead = $( '<thead>' );
 		var $tr = $( '<tr>' );
 		data.head.vars.forEach( function ( head ) {
-				$tr.append( '<th>' + head + '</th>' );
-				heading.push( head );
+			$tr.append( '<th>' + head + '</th>' );
+			heading.push( head );
 		} );
 		$thead.append( $tr );
 		$table.append( $thead );
 		var $tbody = $( '<tbody>' );
 		data.results.bindings.forEach( function ( result ) {
-				$tr = $( '<tr>' );
-				for ( var head in heading ) {
-					if ( result[heading[head]] ) {
-						var value = result[heading[head]].value.replace( /&/g, '&amp;' )
-											.replace( />/g, '&gt;' )
-											.replace( /</g, '&lt;' );
-						$tr.append( '<td>' + value + '</td>' );
-					} else {
-						$tr.append( '<td></td>' );
-					}
+			$tr = $( '<tr>' );
+			for ( var head in heading ) {
+				if ( result[heading[head]] ) {
+					var value = result[heading[head]].value.replace( /&/g, '&amp;' )
+						.replace( />/g, '&gt;' )
+						.replace( /</g, '&lt;' );
+					$tr.append( '<td>' + value + '</td>' );
+				} else {
+					$tr.append( '<td></td>' );
 				}
-				$tbody.append( $tr );
+			}
+			$tbody.append( $tr );
 		} );
 		$table.append( $tbody );
 		var $body = $( '<body>' ).append( $table );
@@ -430,24 +430,24 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 	SELF.prototype._renderValueTSV = function ( binding ) {
 		var value = binding.value.replace( /\t/g, '' );
 		switch ( binding.type ) {
-		case 'uri':
-			return '<' + value + '>';
-		case 'bnode':
-			return '_:' + value;
-		case 'literal':
-			var lvalue = JSON.stringify( value );
-			if ( binding['xml:lang'] ) {
-				return lvalue + '@' + binding['xml:lang'];
-			}
-			if ( binding.datatype ) {
-				if ( binding.datatype === 'http://www.w3.org/2001/XMLSchema#integer' ||
+			case 'uri':
+				return '<' + value + '>';
+			case 'bnode':
+				return '_:' + value;
+			case 'literal':
+				var lvalue = JSON.stringify( value );
+				if ( binding['xml:lang'] ) {
+					return lvalue + '@' + binding['xml:lang'];
+				}
+				if ( binding.datatype ) {
+					if ( binding.datatype === 'http://www.w3.org/2001/XMLSchema#integer' ||
 						binding.datatype === 'http://www.w3.org/2001/XMLSchema#decimal' ||
 						binding.datatype === 'http://www.w3.org/2001/XMLSchema#double' ) {
-					return value;
+						return value;
+					}
+					return lvalue + '^^<' + binding.datatype + '>';
 				}
-				return lvalue + '^^<' + binding.datatype + '>';
-			}
-			return lvalue;
+				return lvalue;
 		}
 		return value;
 	};
@@ -461,8 +461,8 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 		var self = this,
 			data = this._rawData,
 			output = data.head.vars.map( function ( vname ) {
-			return '?' + vname;
-		} ).join( '\t' ) + '\n';
+				return '?' + vname;
+			} ).join( '\t' ) + '\n';
 
 		output = this._processData( data, function ( row, out ) {
 			var rowOut = '';
@@ -534,7 +534,7 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 
 		if ( !navigator || !navigator.geolocation ||
 			!query.match( /\"\[AUTO_COORDINATES\]\"/g ) ) {
-				return $deferred.resolve( query ).promise();
+			return $deferred.resolve( query ).promise();
 		}
 
 		navigator.geolocation.getCurrentPosition( function ( position ) {

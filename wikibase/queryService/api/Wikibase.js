@@ -9,31 +9,31 @@ wikibase.queryService.api.Wikibase = ( function ( $ ) {
 	var LANGUAGE = 'en';
 
 	var SEARCH_ENTITES = {
-		action: 'wbsearchentities',
-		format: 'json',
-		limit: 50,
-		continue: 0,
-		language: LANGUAGE,
-		uselang: LANGUAGE
-	},
-	QUERY_LANGUGES = {
-		action: 'query',
-		meta: 'siteinfo',
-		format: 'json',
-		siprop: 'languages'
-	},
-	QUERY_LABELS = {
-		action: 'wbgetentities',
-		props: 'labels',
-		format: 'json',
-		languages: LANGUAGE,
-		languagefallback: '1'
-	},
-	QUERY_DATATYPE = {
-		action: 'wbgetentities',
-		props: 'datatype',
-		format: 'json'
-	};
+			action: 'wbsearchentities',
+			format: 'json',
+			limit: 50,
+			continue: 0,
+			language: LANGUAGE,
+			uselang: LANGUAGE
+		},
+		QUERY_LANGUGES = {
+			action: 'query',
+			meta: 'siteinfo',
+			format: 'json',
+			siprop: 'languages'
+		},
+		QUERY_LABELS = {
+			action: 'wbgetentities',
+			props: 'labels',
+			format: 'json',
+			languages: LANGUAGE,
+			languagefallback: '1'
+		},
+		QUERY_DATATYPE = {
+			action: 'wbgetentities',
+			props: 'datatype',
+			format: 'json'
+		};
 
 	/**
 	 * API for the Wikibase API
