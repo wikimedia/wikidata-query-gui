@@ -182,9 +182,9 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowser = ( function ( $, vis,
 				};
 				if ( rows[rowIndex] ) { // create new edge
 					edge = {
-							from: rows[rowIndex],
-							to: nodeId
-						};
+						from: rows[rowIndex],
+						to: nodeId
+					};
 					edges[ edge.from + edge.to ] = edge;
 					if ( !nodes[nodeId] ) { // create new node if not exist
 						nodes[nodeId] = node;

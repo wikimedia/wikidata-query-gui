@@ -4,8 +4,7 @@ wikibase.queryService.ui = wikibase.queryService.ui || {};
 wikibase.queryService.ui.resultBrowser = wikibase.queryService.ui.resultBrowser || {};
 window.mediaWiki = window.mediaWiki || {};
 
-wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser =
-	( function ( $, _, d3, window, dimple ) {
+wikibase.queryService.ui.resultBrowser.AbstractDimpleChartResultBrowser = ( function ( $, _, d3, window, dimple ) {
 	'use strict';
 
 	/**

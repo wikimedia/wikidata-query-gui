@@ -137,7 +137,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function 
 		var foreground = svg.append( 'g' ).attr( 'class', 'foreground' );
 
 		var axes = svg.selectAll( '.axis' ).data( dimensions ).enter().append( 'g' ).attr( 'class',
-				'axis' ).attr( 'transform', function ( d ) {
+			'axis' ).attr( 'transform', function ( d ) {
 			return 'translate(' + x( d.key ) + ')';
 		} );
 
@@ -150,7 +150,7 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function 
 		function draw( d ) {
 			return line( dimensions.map( function ( dim ) {
 				return [
-						x( dim.key ), dim.scale( d[dim.key] )
+					x( dim.key ), dim.scale( d[dim.key] )
 				];
 			} ) );
 		}
@@ -201,26 +201,26 @@ wikibase.queryService.ui.resultBrowser.MultiDimensionResultBrowser = ( function 
 		} );
 
 		foreground.selectAll( 'path' ).data( data ).enter().append( 'path' ).attr( 'd', draw )
-				.style( 'stroke', function ( d ) {
-					return '#6ac';
-				} );
+			.style( 'stroke', function ( d ) {
+				return '#6ac';
+			} );
 
 		axes.append( 'g' ).attr( 'class', 'axis' ).each( function ( d ) {
 			var renderAxis = ( d.axis && d.axis.scale( d.scale ) ) // custom axis
 				|| yAxis.scale( d.scale ); // default axis
 			d3.select( this ).call( renderAxis );
 		} ).append( 'text' ).attr( 'class', 'title' ).attr( 'text-anchor', 'start' ).text(
-				function ( d ) {
-					return d.description || d.key;
-				} );
+			function ( d ) {
+				return d.description || d.key;
+			} );
 
 		// Add and store a brush for each axis.
 		axes.append( 'g' ).attr( 'class', 'brush' ).each(
-				function ( d ) {
-					d3.select( this ).call(
-							d.brush = d3.svg.brush().y( d.scale ).on( 'brushstart', brushstart )
-									.on( 'brush', brush ) );
-				} ).selectAll( 'rect' ).attr( 'x', -8 ).attr( 'width', 16 );
+			function ( d ) {
+				d3.select( this ).call(
+					d.brush = d3.svg.brush().y( d.scale ).on( 'brushstart', brushstart )
+						.on( 'brush', brush ) );
+			} ).selectAll( 'rect' ).attr( 'x', -8 ).attr( 'width', 16 );
 	};
 
 	/**

@@ -104,8 +104,10 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 		var self = this;
 
 		return this._sparql.query(
-				SPARQL_ENTITES.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
-						propertyUri ) ).then( function () {
+			SPARQL_ENTITES
+				.replace( '{entityUri}', entityUri )
+				.replace( '{propertyUri}', propertyUri )
+		).then( function () {
 			var data = self._sparql.getResultRawData();
 			var result = [];
 
@@ -127,9 +129,11 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 		var self = this;
 
 		return this._sparql.query(
-				SPARQL_ENTITES_INCOMING.replace( '{entityUri}', entityUri ).replace( '{propertyUri}',
-						propertyUri ) ).then( function () {
-            var data = self._sparql.getResultRawData();
+			SPARQL_ENTITES_INCOMING
+				.replace( '{entityUri}', entityUri )
+				.replace( '{propertyUri}', propertyUri )
+		).then( function () {
+			var data = self._sparql.getResultRawData();
 			var result = [];
 
 			$.each( data.results.bindings, function ( i, row ) {
@@ -150,21 +154,21 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 		var self = this;
 
 		return this._sparql.query( SPARQL_PROPERTIES.replace( '{entityUri}', entityUri ) ).then(
-				function () {
-					var data = self._sparql.getResultRawData();
-					var result = [];
+			function () {
+				var data = self._sparql.getResultRawData();
+				var result = [];
 
-					$.each( data.results.bindings, function ( i, row ) {
-						result.push( {
-							id: row.p.value,
-							label: row.pl_.value,
-							count: row.count.value,
-							items: row.ol_.value
-						} );
+				$.each( data.results.bindings, function ( i, row ) {
+					result.push( {
+						id: row.p.value,
+						label: row.pl_.value,
+						count: row.count.value,
+						items: row.ol_.value
 					} );
-
-					return result;
 				} );
+
+				return result;
+			} );
 	};
 
 	/**
@@ -174,21 +178,21 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 		var self = this;
 
 		return this._sparql.query( SPARQL_PROPERTIES_INCOMING.replace( '{entityUri}', entityUri ) ).then(
-				function () {
-					var data = self._sparql.getResultRawData();
-					var result = [];
+			function () {
+				var data = self._sparql.getResultRawData();
+				var result = [];
 
-					$.each( data.results.bindings, function ( i, row ) {
-						result.push( {
-							id: row.p.value,
-							label: row.pl_.value,
-							count: row.count.value,
-							items: row.ol_.value
-						} );
+				$.each( data.results.bindings, function ( i, row ) {
+					result.push( {
+						id: row.p.value,
+						label: row.pl_.value,
+						count: row.count.value,
+						items: row.ol_.value
 					} );
-
-					return result;
 				} );
+
+				return result;
+			} );
 	};
 
 	/**
@@ -426,9 +430,9 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 * @param {string} nodeId
 	 */
 	SELF.prototype.browse = function ( nodeId, expandType ) {
-        if ( expandType === EXPAND_TYPE_OUTGOING ) {
-            this.handleOutgoingNodes( nodeId );
-        } else {
+		if ( expandType === EXPAND_TYPE_OUTGOING ) {
+			this.handleOutgoingNodes( nodeId );
+		} else {
 			this.handleIncomingNodes( nodeId );
 		}
 	};
@@ -438,22 +442,22 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 */
 	SELF.prototype.handleOutgoingNodes = function ( nodeId ) {
 		this._removeIncomingTemporaryNodes();
-			if ( nodeId === null ) {
-					this._removeTemporaryNodes();
-					return;
-			}
+		if ( nodeId === null ) {
+			this._removeTemporaryNodes();
+			return;
+		}
 
-			if ( this._temporaryNodes[nodeId] ) {
-				this._expandPropertyNode( nodeId );
-				this._removeTemporaryNodes();
-				return;
-			}
+		if ( this._temporaryNodes[nodeId] ) {
+			this._expandPropertyNode( nodeId );
+			this._removeTemporaryNodes();
+			return;
+		}
 
-			if ( this._selectedNodeId !== null && nodeId !== this._selectedNodeId ) {
-				this._removeTemporaryNodes();
-			}
-			this._expandEntityNode( nodeId );
-			this._selectedNodeId = nodeId;
+		if ( this._selectedNodeId !== null && nodeId !== this._selectedNodeId ) {
+			this._removeTemporaryNodes();
+		}
+		this._expandEntityNode( nodeId );
+		this._selectedNodeId = nodeId;
 	};
 
 	/**
@@ -461,22 +465,22 @@ wikibase.queryService.ui.resultBrowser.GraphResultBrowserNodeBrowser = ( functio
 	 */
 	SELF.prototype.handleIncomingNodes = function ( nodeId ) {
 		this._removeTemporaryNodes();
-			if ( nodeId === null ) {
-				this._removeIncomingTemporaryNodes();
-				return;
-			}
+		if ( nodeId === null ) {
+			this._removeIncomingTemporaryNodes();
+			return;
+		}
 
-			if ( this._incomingTemporaryNodes[nodeId] ) {
-				this._expandIncomingPropertyNode( nodeId );
-				this._removeIncomingTemporaryNodes();
-				return;
-			}
+		if ( this._incomingTemporaryNodes[nodeId] ) {
+			this._expandIncomingPropertyNode( nodeId );
+			this._removeIncomingTemporaryNodes();
+			return;
+		}
 
-			if ( this._selectedNodeId !== null && nodeId !== this._selectedNodeId ) {
-				this._removeIncomingTemporaryNodes();
-			}
-			this._expandIncomingEntityNode( nodeId );
-			this._selectedNodeId = nodeId;
+		if ( this._selectedNodeId !== null && nodeId !== this._selectedNodeId ) {
+			this._removeIncomingTemporaryNodes();
+		}
+		this._expandIncomingEntityNode( nodeId );
+		this._selectedNodeId = nodeId;
 	};
 
 	return SELF;

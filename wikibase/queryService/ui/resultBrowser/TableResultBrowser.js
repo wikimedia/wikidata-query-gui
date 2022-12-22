@@ -93,7 +93,7 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 
 			if ( f.isEntityUri( data1.value ) && f.isEntityUri( data2.value ) ) {
 				return this._sorter.number( Number( data1.value.replace( /[^0-9]/gi, '' ) ),
-						Number( data2.value.replace( /[^0-9]/gi, '' ) ) );
+					Number( data2.value.replace( /[^0-9]/gi, '' ) ) );
 			}
 
 			// default is string sorter

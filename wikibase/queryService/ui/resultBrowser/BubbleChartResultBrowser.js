@@ -115,12 +115,12 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 		} );
 
 		var node = svg.selectAll( '.node' ).data(
-				bubble.nodes( classes( root ) ).filter( function ( d ) {
-					return !d.children;
-				} ) ).enter().append( 'g' ).attr( 'class', 'node' ).attr( 'transform',
-				function ( d ) {
-					return 'translate(' + d.x + ',' + d.y + ')';
-				} );
+			bubble.nodes( classes( root ) ).filter( function ( d ) {
+				return !d.children;
+			} ) ).enter().append( 'g' ).attr( 'class', 'node' ).attr( 'transform',
+			function ( d ) {
+				return 'translate(' + d.x + ',' + d.y + ')';
+			} );
 
 		node.append( 'title' ).text( function ( d ) {
 			return d.className + ': ' + d.value;
@@ -133,9 +133,9 @@ wikibase.queryService.ui.resultBrowser.BubbleChartResultBrowser = ( function ( $
 		} );
 
 		node.append( 'text' ).attr( 'dy', '.3em' ).style( 'text-anchor', 'middle' ).text(
-				function ( d ) {
-					return d.className.substring( 0, d.r / 4 );
-				} ).on( 'click', function ( d ) {
+			function ( d ) {
+				return d.className.substring( 0, d.r / 4 );
+			} ).on( 'click', function ( d ) {
 			if ( d.url ) {
 				window.open( d.url, '_blank' );
 			}

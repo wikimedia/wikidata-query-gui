@@ -164,15 +164,15 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function ( $, _ ) 
 			items = this._queue.splice( 0, preloadNum ),
 			itemsLoaded = [ $.when() ];
 
-			items.forEach( function ( item, i ) {
-				var previousItem = itemsLoaded[i],
-					currentItem = $.when( self._preloadItem( item ), previousItem );
+		items.forEach( function ( item, i ) {
+			var previousItem = itemsLoaded[i],
+				currentItem = $.when( self._preloadItem( item ), previousItem );
 
-				itemsLoaded.push( currentItem );
-				currentItem.done( function ( item ) {
-					self._appendItem( item );
-				} );
+			itemsLoaded.push( currentItem );
+			currentItem.done( function ( item ) {
+				self._appendItem( item );
 			} );
+		} );
 
 		return itemsLoaded[ items.length ];
 	};
@@ -254,15 +254,15 @@ wikibase.queryService.ui.resultBrowser.ImageResultBrowser = ( function ( $, _ ) 
 			fixedHeight = this._lineHeight * item.find( '.summary' )[ 0 ].childElementCount,
 			img = item.find( '.item-img' );
 
-			img[ 0 ].onerror = function () {
-				img.attr( 'src', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg' );
-			};
-			img[ 0 ].onload = function () {
-				var aspectRatio = ( this.naturalWidth / this.naturalHeight );
-				itemLoaded.resolveWith( self, item.data( 'aspectRatio', aspectRatio ) );
-			};
-			item.data( 'fixedHeight', fixedHeight );
-			img.attr( 'src', url );
+		img[ 0 ].onerror = function () {
+			img.attr( 'src', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg' );
+		};
+		img[ 0 ].onload = function () {
+			var aspectRatio = ( this.naturalWidth / this.naturalHeight );
+			itemLoaded.resolveWith( self, item.data( 'aspectRatio', aspectRatio ) );
+		};
+		item.data( 'fixedHeight', fixedHeight );
+		img.attr( 'src', url );
 
 		return itemLoaded.promise();
 	};

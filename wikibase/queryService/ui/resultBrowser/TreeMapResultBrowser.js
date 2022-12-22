@@ -145,12 +145,12 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 			node;
 
 		var treemap = d3.layout.treemap().round( false ).size( [ chartWidth, chartHeight ] )
-				.sticky( true ).value( function ( d ) {
-					return d.size;
-				} );
+			.sticky( true ).value( function ( d ) {
+				return d.size;
+			} );
 
 		var chart = d3.select( $element[0] ).append( 'svg:svg' ).attr( 'width', chartWidth ).attr(
-				'height', chartHeight ).append( 'svg:g' );
+			'height', chartHeight ).append( 'svg:g' );
 
 		node = root = data;
 		var nodes = treemap.nodes( root );
@@ -167,14 +167,14 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 			return 'p-' + d.id;
 		} );
 		var parentEnterTransition = parentCells.enter().append( 'g' ).attr( 'class', 'cell parent' )
-				.on( 'click', function ( d ) {
-					zoom( d );
-				} );
+			.on( 'click', function ( d ) {
+				zoom( d );
+			} );
 		parentEnterTransition.append( 'rect' ).attr( 'width', function ( d ) {
 			return Math.max( 0.01, d.dx );
 		} ).attr( 'height', headerHeight ).style( 'fill', headerColor );
 		parentEnterTransition.append( 'foreignObject' ).attr( 'class', 'foreignObject' ).append(
-				'xhtml:body' ).attr( 'class', 'labelbody' ).append( 'div' ).attr( 'class', 'label' );
+			'xhtml:body' ).attr( 'class', 'labelbody' ).append( 'div' ).attr( 'class', 'label' );
 		// update transition
 		var parentUpdateTransition = parentCells.transition().duration( transitionDuration );
 		parentUpdateTransition.select( '.cell' ).attr( 'transform', function ( d ) {
@@ -197,13 +197,13 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 		} );
 		// enter transition
 		var childEnterTransition = childrenCells.enter().append( 'g' ).attr( 'class', 'cell child' )
-				.on( 'click', function ( d ) {
-					zoom( node === d.parent ? root : d.parent );
-				} );
+			.on( 'click', function ( d ) {
+				zoom( node === d.parent ? root : d.parent );
+			} );
 		childEnterTransition.append( 'rect' ).classed( 'background', true ).style( 'fill',
-				function ( d ) {
-					return color( d.parent.name );
-				} );
+			function ( d ) {
+				return color( d.parent.name );
+			} );
 		childEnterTransition.append( 'foreignObject' ).attr( {
 			'class': 'foreignObject',
 			width: function ( d ) {
@@ -213,7 +213,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 				return Math.max( 0.01, d.dy );
 			}
 		} ).append( 'xhtml:body' ).attr( 'class', 'labelbody' ).append( 'div' ).attr( 'class',
-				'label' ).text( function ( d ) {
+			'label' ).text( function ( d ) {
 			return d.name;
 		} ).on( 'click', function ( d ) {
 			if ( d.url ) {
@@ -318,7 +318,7 @@ wikibase.queryService.ui.resultBrowser.TreeMapResultBrowser = ( function ( $, d3
 			//		        }
 
 			var zoomTransition = chart.selectAll( 'g.cell' ).transition().duration(
-					transitionDuration ).attr( 'transform', function ( d ) {
+				transitionDuration ).attr( 'transform', function ( d ) {
 				return 'translate(' + xscale( d.x ) + ',' + yscale( d.y ) + ')';
 			} ).each( 'end', function ( d, i ) {
 				if ( !i && ( level !== self.root ) ) {
