@@ -577,7 +577,7 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 		// add namespaces to dropdowns
 		for ( category in namespaces ) {
 			select = $( '<select>' ).attr( 'class', 'form-control' ).append(
-					$( '<option>' ).text( category ) ).appendTo( container );
+				$( '<option>' ).text( category ) ).appendTo( container );
 			for ( ns in namespaces[category] ) {
 				select.append(
 					$( '<option>' ).text( ns ).attr( 'value', namespaces[category][ns] )
@@ -670,7 +670,7 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 		var self = this;
 		$( '#query-form' ).submit( $.proxy( this._handleQuerySubmit, this ) );
 		$( '.namespace-shortcuts' ).on( 'change', 'select',
-				$.proxy( this._handleNamespaceSelected, this ) );
+			$.proxy( this._handleNamespaceSelected, this ) );
 
 		$( '.addPrefixes' ).click( function () {
 			var standardPrefixes = wikibase.queryService.RdfNamespaces.STANDARD_PREFIXES,
@@ -831,8 +831,7 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 				} catch ( err ) {
 					// ignore
 				}
-			} )
-			.then( function () {
+			} ).then( function () {
 				$( '#execute-button' ).prop( 'disabled', false );
 			} );
 		}

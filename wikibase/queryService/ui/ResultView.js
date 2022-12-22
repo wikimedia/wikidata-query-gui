@@ -6,7 +6,7 @@ wikibase.queryService.ui.ResultView = ( function ( $, download, window ) {
 	'use strict';
 
 	var PREVIEW_TIMEOUT = 1000,
-        RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=',
+		RAWGRAPHS_BASE_URL = 'http://wikidata.rawgraphs.io/?url=',
 		PREVIEW_LIMIT = 20;
 
 	/**
@@ -371,18 +371,18 @@ wikibase.queryService.ui.ResultView = ( function ( $, download, window ) {
 			codes = this._sparqlApi.ERROR_CODES;
 
 		switch ( error.code ) {
-		case codes.TIMEOUT:
-			errorMessageKey = 'wdqs-action-timeout';
-			break;
-		case codes.MALFORMED:
-			errorMessageKey = 'wdqs-action-malformed-query';
-			break;
-		case codes.SERVER:
-			errorMessageKey = 'wdqs-action-server-error';
-			break;
-		default:
-			errorMessageKey = 'wdqs-action-unknow-error';
-			break;
+			case codes.TIMEOUT:
+				errorMessageKey = 'wdqs-action-timeout';
+				break;
+			case codes.MALFORMED:
+				errorMessageKey = 'wdqs-action-malformed-query';
+				break;
+			case codes.SERVER:
+				errorMessageKey = 'wdqs-action-server-error';
+				break;
+			default:
+				errorMessageKey = 'wdqs-action-unknow-error';
+				break;
 		}
 
 		if ( error.debug ) {
@@ -412,8 +412,8 @@ wikibase.queryService.ui.ResultView = ( function ( $, download, window ) {
 
 		$( '#execute-button' ).prop( 'disabled', false );
 		var uri = api.getQueryUri();
-        $( '.queryUri' ).attr( 'href', uri );
-        $( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + uri );
+		$( '.queryUri' ).attr( 'href', uri );
+		$( '.rawGraphsUri' ).attr( 'href', RAWGRAPHS_BASE_URL + uri );
 
 		var defaultBrowser = this._createResultBrowsers( api.getResultRawData() );
 		this._drawResult( defaultBrowser );
@@ -520,23 +520,23 @@ wikibase.queryService.ui.ResultView = ( function ( $, download, window ) {
 	SELF.prototype._initExamples = function () {
 		var self = this;
 		new wikibase.queryService.ui.dialog.QueryExampleDialog( $( '#QueryExamples' ),
-				this._querySamplesApi, function ( query, title ) {
-					if ( !query || !query.trim() ) {
-						return;
-					}
+			this._querySamplesApi, function ( query, title ) {
+				if ( !query || !query.trim() ) {
+					return;
+				}
 
-					if ( self._editor ) {
-						self._editor.setValue( '#' + title + '\n' + query );
-						$( '#QueryExamples' ).one( 'hidden.bs.modal', function () {
-							setTimeout( function () {
-								self._editor.focus();
-							}, 0 );
-						} );
-					} else {
-						self.draw( query );
-						window.location.hash = '#' + encodeURIComponent( '#' + title + '\n' + query );
-					}
-				}, this._wikibaseApi, this._queryBuilderUrl );
+				if ( self._editor ) {
+					self._editor.setValue( '#' + title + '\n' + query );
+					$( '#QueryExamples' ).one( 'hidden.bs.modal', function () {
+						setTimeout( function () {
+							self._editor.focus();
+						}, 0 );
+					} );
+				} else {
+					self.draw( query );
+					window.location.hash = '#' + encodeURIComponent( '#' + title + '\n' + query );
+				}
+			}, this._wikibaseApi, this._queryBuilderUrl );
 	};
 
 	/**
