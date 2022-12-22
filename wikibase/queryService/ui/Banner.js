@@ -67,7 +67,7 @@ wikibase.queryService.ui.Banner = ( function ( $, download, window ) {
 			.attr( {
 				class: 'close',
 				type: 'button',
-				'aria-label': 'Dismiss',
+				'aria-label': 'Dismiss'
 			} ).html( '<span aria-hidden="true">×</span>' ).on( 'click', ( function () {
 				this.dismiss();
 			} ).bind( this ) );

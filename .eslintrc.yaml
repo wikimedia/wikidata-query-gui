@@ -31,7 +31,6 @@
     wrap-iife: off,
 
 #    rules deactivated because they conflict with the current code
-    comma-dangle: off,
     computed-property-spacing: off,
     es/no-math-trunc: off,
     mediawiki/class-doc: off,
