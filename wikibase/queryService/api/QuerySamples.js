@@ -97,8 +97,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 *
 	 * @param {Element} element Header element
 	 * @return {null|Element} Header element
-     * @private
-     */
+	 * @private
+	 */
 	SELF.prototype._findPrevHeader = function ( element ) {
 		var tag = element.prop( 'tagName' );
 		if ( tag[0] !== 'H' && tag[0] !== 'h' ) {
@@ -113,8 +113,8 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @param {Element} element
 	 * @param {string} selector
 	 * @return {Element}
-     * @private
-     */
+	 * @private
+	 */
 	SELF.prototype._findPrev = function ( element, selector ) {
 		var prev = element.prev().filter( selector );
 		if ( prev.length > 0 ) {

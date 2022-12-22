@@ -51,7 +51,6 @@
     jsdoc/check-types: off,
     jsdoc/no-undefined-types: off,
     jsdoc/newline-after-description: off,
-    jsdoc/check-alignment: off,
     jsdoc/check-tag-names: off,
     jsdoc/valid-types: off,
     no-jquery/no-proxy: off,

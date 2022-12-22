@@ -56,9 +56,9 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 	SELF.prototype._tableNumber = false;
 
 	/**
- 	 * @property {boolean}
- 	 * @private
- 	 */
+	 * @property {boolean}
+	 * @private
+	 */
 	SELF.prototype._pageLoading = true;
 
 	/**
@@ -332,11 +332,11 @@ wikibase.queryService.ui.resultBrowser.TableResultBrowser = ( function ( $, wind
 	};
 
 	/**
- 	 * Copies the text of an element to clipboard
+	 * Copies the text of an element to clipboard
 	 *
- 	 * @private
- 	 * @param {jQuery} $element whose text to copy
- 	 */
+	 * @private
+	 * @param {jQuery} $element whose text to copy
+	 */
 	SELF.prototype.copyToClipboard = function ( $element ) {
 		var $temp = $( '<input>' );
 		$( 'body' ).append( $temp );
