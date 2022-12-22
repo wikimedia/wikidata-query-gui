@@ -104,12 +104,12 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 		}
 
 		$( '<div class="panel panel-info">' ).css( 'position', 'absolute' ).css( 'z-index', '100' )
-				.css( 'max-width', '200px' ).css( {
-					top: pos.y + 2,
-					left: pos.x + 2
-				} ).addClass( 'wikibaseRDFtoolTip' ).append(
-						$( '<div class="panel-body">' ).append( $content ).css( 'padding', '10px' ) )
-				.appendTo( 'body' ).fadeIn( 'slow' );
+			.css( 'max-width', '200px' ).css( {
+				top: pos.y + 2,
+				left: pos.x + 2
+			} ).addClass( 'wikibaseRDFtoolTip' ).append(
+				$( '<div class="panel-body">' ).append( $content ).css( 'padding', '10px' ) )
+			.appendTo( 'body' ).fadeIn( 'slow' );
 	};
 
 	SELF.prototype._extractPrefixes = function ( text ) {
@@ -135,18 +135,18 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function ( CodeMirror, $, _ ) {
 			deferred = $.Deferred();
 
 		this._api.searchEntities( term, type ).done(
-				function ( data ) {
-					$.each( data.search, function ( key, value ) {
-						entityList.push(
-							$()
-								.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
-								.add( $( '<br>' ) )
-								.add( $( '<small>' ).text( value.description || '' ) )
-						);
-					} );
-
-					deferred.resolve( entityList );
+			function ( data ) {
+				$.each( data.search, function ( key, value ) {
+					entityList.push(
+						$()
+							.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
+							.add( $( '<br>' ) )
+							.add( $( '<small>' ).text( value.description || '' ) )
+					);
 				} );
+
+				deferred.resolve( entityList );
+			} );
 
 		return deferred.promise();
 	};

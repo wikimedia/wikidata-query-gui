@@ -10,75 +10,75 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 	var MODULE = wb.queryService.ui.editor.hint;
 
 	var SPARQL_KEYWORDS = [
-			'SELECT', 'SELECT * WHERE {\n\n}', 'SELECT (COUNT(*) AS ?count) WHERE {\n\n}',
-			'SELECT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }\n}', 'OPTIONAL', 'OPTIONAL {\n\n}', 'WHERE',
-			'WHERE {\n\n}', 'ORDER', 'ORDER BY', 'DISTINCT', 'SERVICE',
-			'SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }', 'BASE',
-			'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING', 'UNION', 'SAMPLE',
-			'(SAMPLE() AS )', 'COUNT', '(COUNT() AS )', 'DESC', 'DESC()', 'ASC', 'ASC()',
-			'FILTER ()', 'FILTER NOT EXISTS', 'FILTER NOT EXISTS {\n\n}', 'UNION', 'UNION {\n\n}',
-			'BIND', 'BIND ()', 'GROUP_CONCAT', '(GROUP_CONCAT() as )', 'ORDER BY',
-			'#defaultView:Map', '#defaultView:ImageGrid', '#defaultView:Map', '#defaultView:BubbleChart',
-			'#defaultView:TreeMap', '#defaultView:Tree', '#defaultView:Timeline', '#defaultView:Dimensions', '#defaultView:Graph', '#defaultView:LineChart', '#defaultView:BarChart', '#defaultView:ScatterChart', '#defaultView:AreaChart',
-			'SERVICE wikibase:around {\n    ?place wdt:P625 ?location.\n    bd:serviceParam wikibase:center "[AUTO_COORDINATES]" .\n    bd:serviceParam wikibase:radius "1" .\n    bd:serviceParam wikibase:distance ?dist.\n  }',
-			'SERVICE wikibase:box {\n    ?place wdt:P625 ?location.\n    bd:serviceParam wikibase:cornerWest ? .\n    bd:serviceParam wikibase:cornerEast ? .\n  }',
-			'hint:Query hint:optimizer "None".',
-			'#TEMPLATE={ "template": { "en": "Textual description of template, referencing ?var" }, "variables": { "?var": { "query": "SELECT ?id WHERE { ?id wdt:P31 wd:Q146. }" } } }'
+		'SELECT', 'SELECT * WHERE {\n\n}', 'SELECT (COUNT(*) AS ?count) WHERE {\n\n}',
+		'SELECT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }\n}', 'OPTIONAL', 'OPTIONAL {\n\n}', 'WHERE',
+		'WHERE {\n\n}', 'ORDER', 'ORDER BY', 'DISTINCT', 'SERVICE',
+		'SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }', 'BASE',
+		'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING', 'UNION', 'SAMPLE',
+		'(SAMPLE() AS )', 'COUNT', '(COUNT() AS )', 'DESC', 'DESC()', 'ASC', 'ASC()',
+		'FILTER ()', 'FILTER NOT EXISTS', 'FILTER NOT EXISTS {\n\n}', 'UNION', 'UNION {\n\n}',
+		'BIND', 'BIND ()', 'GROUP_CONCAT', '(GROUP_CONCAT() as )', 'ORDER BY',
+		'#defaultView:Map', '#defaultView:ImageGrid', '#defaultView:Map', '#defaultView:BubbleChart',
+		'#defaultView:TreeMap', '#defaultView:Tree', '#defaultView:Timeline', '#defaultView:Dimensions', '#defaultView:Graph', '#defaultView:LineChart', '#defaultView:BarChart', '#defaultView:ScatterChart', '#defaultView:AreaChart',
+		'SERVICE wikibase:around {\n    ?place wdt:P625 ?location.\n    bd:serviceParam wikibase:center "[AUTO_COORDINATES]" .\n    bd:serviceParam wikibase:radius "1" .\n    bd:serviceParam wikibase:distance ?dist.\n  }',
+		'SERVICE wikibase:box {\n    ?place wdt:P625 ?location.\n    bd:serviceParam wikibase:cornerWest ? .\n    bd:serviceParam wikibase:cornerEast ? .\n  }',
+		'hint:Query hint:optimizer "None".',
+		'#TEMPLATE={ "template": { "en": "Textual description of template, referencing ?var" }, "variables": { "?var": { "query": "SELECT ?id WHERE { ?id wdt:P31 wd:Q146. }" } } }'
 	];
 
 	var SPARQL_PREDICATES = [
-			// wikibase:
-			// property predicates
-			'wikibase:rank', 'wikibase:badge', 'wikibase:propertyType', 'wikibase:directClaim',
-			'wikibase:claim', 'wikibase:statementProperty', 'wikibase:statementValue',
-			'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:reference', 'wikibase:referenceValue',
-			'wikibase:statementValueNormalized', 'wikibase:qualifierValueNormalized',
-			'wikibase:referenceValueNormalized', 'wikibase:novalue',
-			// entity types
-			'wikibase:Property', // 'wikibase:Item' disabled on WDQS for performance reasons
-			// data types
-			'wikibase:Reference', 'wikibase:Dump', // 'wikibase:Statement' disabled on WDQS for performance reasons
-			// ranks
-			'wikibase:PreferredRank', 'wikibase:NormalRank', 'wikibase:DeprecatedRank', 'wikibase:BestRank',
-			// value types
-			'wikibase:TimeValue', 'wikibase:QuantityValue', 'wikibase:GlobecoordinateValue',
-			// property types
-			'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:GlobeCoordinate',
-			'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
-			'wikibase:Url', 'wikibase:ExternalId', 'wikibase:WikibaseProperty', 'wikibase:Math',
-			// pageprops
-			'wikibase:statements', 'wikibase:sitelinks', 'wikibase:identifiers',
-			// time
-			'wikibase:timeValue', 'wikibase:timePrecision', 'wikibase:timeTimezone', 'wikibase:timeCalendarModel',
-			// quantity
-			'wikibase:quantityAmount', 'wikibase:quantityUpperBound', 'wikibase:quantityLowerBound',
-			'wikibase:quantityUnit', 'wikibase:quantityNormalized',
-			// coordinate
-			'wikibase:geoLatitude', 'wikibase:geoLongitude', 'wikibase:geoPrecision', 'wikibase:geoGlobe',
-			// other
-			'wikibase:wikiGroup',
-			// constraints
-			'wikibase:hasViolationForConstraint',
-			// schema: things
-			'schema:about', 'schema:name', 'schema:description', 'schema:dateModified',
-			'schema:Article', 'schema:inLanguage', 'schema:isPartOf',
-			// rdfs: things
-			'rdfs:label', 'rdf:type',
-			// skos: things
-			'skos:altLabel',
-			// xsd:
-			'xsd:dateTime', 'xsd:integer', 'xsd:double', 'xsd:decimal',
-			// geo:
-			'geo:wktLiteral',
-			// owl:
-			'owl:sameAs',
-			// prov:
-			'prov:wasDerivedFrom',
-			// Lexemes
-			'ontolex:LexicalEntry', 'ontolex:Form', 'ontolex:LexicalSense',
-			'ontolex:lexicalForm', 'ontolex:sense', 'ontolex:representation',
-			'wikibase:lemma', 'wikibase:lexicalCategory', 'wikibase:grammaticalFeature',
-			'dct:language'
+		// wikibase:
+		// property predicates
+		'wikibase:rank', 'wikibase:badge', 'wikibase:propertyType', 'wikibase:directClaim',
+		'wikibase:claim', 'wikibase:statementProperty', 'wikibase:statementValue',
+		'wikibase:qualifier', 'wikibase:qualifierValue', 'wikibase:reference', 'wikibase:referenceValue',
+		'wikibase:statementValueNormalized', 'wikibase:qualifierValueNormalized',
+		'wikibase:referenceValueNormalized', 'wikibase:novalue',
+		// entity types
+		'wikibase:Property', // 'wikibase:Item' disabled on WDQS for performance reasons
+		// data types
+		'wikibase:Reference', 'wikibase:Dump', // 'wikibase:Statement' disabled on WDQS for performance reasons
+		// ranks
+		'wikibase:PreferredRank', 'wikibase:NormalRank', 'wikibase:DeprecatedRank', 'wikibase:BestRank',
+		// value types
+		'wikibase:TimeValue', 'wikibase:QuantityValue', 'wikibase:GlobecoordinateValue',
+		// property types
+		'wikibase:WikibaseItem', 'wikibase:CommonsMedia', 'wikibase:GlobeCoordinate',
+		'wikibase:Monolingualtext', 'wikibase:Quantity', 'wikibase:String', 'wikibase:Time',
+		'wikibase:Url', 'wikibase:ExternalId', 'wikibase:WikibaseProperty', 'wikibase:Math',
+		// pageprops
+		'wikibase:statements', 'wikibase:sitelinks', 'wikibase:identifiers',
+		// time
+		'wikibase:timeValue', 'wikibase:timePrecision', 'wikibase:timeTimezone', 'wikibase:timeCalendarModel',
+		// quantity
+		'wikibase:quantityAmount', 'wikibase:quantityUpperBound', 'wikibase:quantityLowerBound',
+		'wikibase:quantityUnit', 'wikibase:quantityNormalized',
+		// coordinate
+		'wikibase:geoLatitude', 'wikibase:geoLongitude', 'wikibase:geoPrecision', 'wikibase:geoGlobe',
+		// other
+		'wikibase:wikiGroup',
+		// constraints
+		'wikibase:hasViolationForConstraint',
+		// schema: things
+		'schema:about', 'schema:name', 'schema:description', 'schema:dateModified',
+		'schema:Article', 'schema:inLanguage', 'schema:isPartOf',
+		// rdfs: things
+		'rdfs:label', 'rdf:type',
+		// skos: things
+		'skos:altLabel',
+		// xsd:
+		'xsd:dateTime', 'xsd:integer', 'xsd:double', 'xsd:decimal',
+		// geo:
+		'geo:wktLiteral',
+		// owl:
+		'owl:sameAs',
+		// prov:
+		'prov:wasDerivedFrom',
+		// Lexemes
+		'ontolex:LexicalEntry', 'ontolex:Form', 'ontolex:LexicalSense',
+		'ontolex:lexicalForm', 'ontolex:sense', 'ontolex:representation',
+		'wikibase:lemma', 'wikibase:lexicalCategory', 'wikibase:grammaticalFeature',
+		'dct:language'
 	];
 
 	var SPARQL_CUSTOM_FUNCTIONS = [
@@ -123,7 +123,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 		if ( currentWord.word.indexOf( '?' ) === 0 ) {
 			hintList = hintList.concat( this._getVariableHints( currentWord.word, this
-					._getDefinedVariables( editorContent ) ) );
+				._getDefinedVariables( editorContent ) ) );
 		}
 
 		hintList = hintList.concat( this._getSPARQLHints( currentWord.word ) );

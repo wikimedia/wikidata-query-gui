@@ -76,7 +76,7 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 				displayText: 'Unknown prefix \'' + prefix + ':\''
 			} ];
 			return deferred.resolve( this._getHintCompletion( lineNum, currentWord, prefix, list ) )
-					.promise();
+				.promise();
 		}
 
 		if ( term.length === 0 ) { // empty search term
@@ -85,15 +85,15 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 				displayText: 'Type to search for an entity'
 			} ];
 			return deferred.resolve( this._getHintCompletion( lineNum, currentWord, prefix, list ) )
-					.promise();
+				.promise();
 		}
 
 		if ( entityPrefixes[prefix] ) { // search entity
 			this._searchEntities( term, entityPrefixes[prefix] ).done(
-					function ( list ) {
-						return deferred.resolve( self._getHintCompletion( lineNum, currentWord,
-								prefix, list ) );
-					} );
+				function ( list ) {
+					return deferred.resolve( self._getHintCompletion( lineNum, currentWord,
+						prefix, list ) );
+				} );
 		}
 
 		return deferred.promise();

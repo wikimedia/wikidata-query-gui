@@ -146,23 +146,23 @@ wikibase.queryService.ui.editor.Editor = ( function ( $, wikibase, CodeMirror ) 
 		var self = this;
 
 		CodeMirror
-				.registerHelper(
-						'hint',
-						'sparql',
-						function ( editor, callback, options ) {
-							if ( editor !== self._editor ) {
-								return;
-							}
-							var lineContent = editor.getLine( editor.getCursor().line ),
-								editorContent = editor.doc.getValue(),
-								cursorPos = editor.getCursor().ch,
-								lineNum = editor.getCursor().line;
+			.registerHelper(
+				'hint',
+				'sparql',
+				function ( editor, callback, options ) {
+					if ( editor !== self._editor ) {
+						return;
+					}
+					var lineContent = editor.getLine( editor.getCursor().line ),
+						editorContent = editor.doc.getValue(),
+						cursorPos = editor.getCursor().ch,
+						lineNum = editor.getCursor().line;
 
-							self._getHints( editorContent, lineContent, lineNum, cursorPos ).done(
-									function ( hint ) {
-										callback( hint );
-									} );
+					self._getHints( editorContent, lineContent, lineNum, cursorPos ).done(
+						function ( hint ) {
+							callback( hint );
 						} );
+				} );
 
 		CodeMirror.hint.sparql.async = true;
 	};
