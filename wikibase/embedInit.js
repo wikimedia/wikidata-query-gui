@@ -1,10 +1,7 @@
 ( function ( $, CONFIG ) {
 	'use strict';
-	$.when(
-		$.ready,
-		CONFIG.getConfig()
-	)
-	.then( function ( documentReady, config ) {
+
+	$.when( CONFIG.getConfig(), $.ready ).then( function ( config ) {
 		function renderEdit( qh, query, $editor, callback ) {
 			qh.setChangeListener( _.debounce( function ( v ) {
 				callback( v.getQuery() );
@@ -111,9 +108,9 @@
 		$( '.header-toolbar' ).hover( function () {
 			$( '.header-toolbar' ).addClass( 'hovered' );
 			$( '.toolbar-label' ).css( 'display', 'block' );
-			}, function () {
-				$( '.toolbar-label' ).css( 'display', 'none' );
-				$( '.header-toolbar' ).removeClass( 'hovered' );
+		}, function () {
+			$( '.toolbar-label' ).css( 'display', 'none' );
+			$( '.header-toolbar' ).removeClass( 'hovered' );
 		} );
 
 		$( window ).on( 'hashchange', function ( e ) {
@@ -127,9 +124,9 @@
 			e.preventDefault();
 			$( '.toolbar-right' ).toggleClass( 'hovered' );
 		} ).popover( {
-				placement: 'bottom',
-				'html': true,
-				'content': $editor
+			placement: 'bottom',
+			'html': true,
+			'content': $editor
 		} );
 
 		$( '.download-dropdown' ).on( 'show.bs.dropdown', function () {

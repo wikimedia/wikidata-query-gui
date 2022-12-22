@@ -1,11 +1,7 @@
 ( function ( $, CONFIG, moment ) {
 	'use strict';
 
-	$.when(
-		$.ready,
-		CONFIG.getConfig()
-	)
-	.then( function ( _, config ) {
+	$.when( CONFIG.getConfig(), $.ready ).then( function ( config ) {
 		var wb = wikibase.queryService,
 			lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
 			app;
@@ -85,8 +81,8 @@
 		var isTopWindow = window.top === window;
 
 		var rdfHint = new wb.ui.editor.hint.Rdf( api ),
-				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
-				editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow } );
+			rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
+			editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow } );
 
 		if ( config.prefixes ) {
 			wb.RdfNamespaces.addPrefixes( config.prefixes );
