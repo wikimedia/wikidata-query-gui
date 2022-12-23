@@ -1,11 +1,11 @@
-( function( $, QUnit, sinon, wb ) {
+( function ( $, QUnit, sinon, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.ui.resultBrowser.helper.Options' );
 
 	var Options = wb.queryService.ui.resultBrowser.helper.Options;
 
-	QUnit.test( 'get', function( assert ) {
+	QUnit.test( 'get', function ( assert ) {
 		var options = new Options( {
 			test1: 'foo',
 			test2: [ 'bar' ],
@@ -18,10 +18,10 @@
 		assert.strictEqual( options.get( 'test3', 42.0 ), 42.0 );
 		assert.strictEqual( options.get( 'test4', 'value' ), undefined );
 
-		assert.throws( function() { options.get( 'test1' ); } );
+		assert.throws( function () { options.get( 'test1' ); } );
 	} );
 
-	QUnit.test( 'getArray', function( assert ) {
+	QUnit.test( 'getArray', function ( assert ) {
 		var options = new Options( {
 			test1: 'foo',
 			test2: [ 'bar' ]
@@ -32,10 +32,10 @@
 		assert.deepEqual( options.getArray( 'test2', undefined ), [ 'bar' ] );
 		assert.deepEqual( options.getArray( 'test3', 'default' ), [ 'default' ] );
 
-		assert.throws( function() { options.getArray( 'test1' ); } );
+		assert.throws( function () { options.getArray( 'test1' ); } );
 	} );
 
-	QUnit.test( 'getColumnNames', function( assert ) {
+	QUnit.test( 'getColumnNames', function ( assert ) {
 		var options = new Options( {
 			test1: '?foo',
 			test2: [ '?bar', '?baz' ],
@@ -53,7 +53,7 @@
 		assert.ok( window.console.warn.calledOnce );
 		window.console.warn = realWarn;
 
-		assert.throws( function() { options.getColumnNames( 'test1' ); } );
+		assert.throws( function () { options.getColumnNames( 'test1' ); } );
 	} );
 
 }( jQuery, QUnit, sinon, wikibase ) );

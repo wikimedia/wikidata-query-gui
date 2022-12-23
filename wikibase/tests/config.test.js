@@ -1,4 +1,4 @@
-( function( $, QUnit ) {
+( function ( $, QUnit ) {
 	'use strict';
 	var oldGetJson = $.getJSON;
 
@@ -12,21 +12,21 @@
 		}
 	);
 
-	QUnit.test( 'Default and custom config exist', function( assert ) {
+	QUnit.test( 'Default and custom config exist', function ( assert ) {
 		var done = assert.async();
 
-		$.getJSON = function( url ) {
+		$.getJSON = function ( url ) {
 			var deferred = $.Deferred();
 
 			if ( url === './default-config.json' ) {
 				deferred.resolve( {
-					aKey: "aValue",
-					anObject: { foo: "bar", wikidata: true },
+					aKey: 'aValue',
+					anObject: { foo: 'bar', wikidata: true },
 					notZero: 0
 				} );
 			} else if ( url === './custom-config.json' ) {
 				deferred.resolve( {
-					customKey: "customValue",
+					customKey: 'customValue',
 					anObject: { pie: true, wikidata: false },
 					notZero: 1
 				} );
@@ -36,13 +36,13 @@
 			return deferred.promise();
 		};
 
-		CONFIG.getConfig().then( function( actualConfig ) {
+		CONFIG.getConfig().then( function ( actualConfig ) {
 			var expected = {
-					aKey: "aValue",
-					customKey: "customValue",
-					anObject: { foo: "bar", pie: true, wikidata: false },
-					notZero: 1
-				};
+				aKey: 'aValue',
+				customKey: 'customValue',
+				anObject: { foo: 'bar', pie: true, wikidata: false },
+				notZero: 1
+			};
 
 			assert.equal( typeof actualConfig.language, 'string' );
 			assert.equal( typeof actualConfig.i18nLoad, 'function' );
@@ -56,7 +56,7 @@
 		} );
 	} );
 
-	QUnit.test( 'Default config exists, custom config does not', function( assert ) {
+	QUnit.test( 'Default config exists, custom config does not', function ( assert ) {
 		var done = assert.async(),
 			config = {
 				aKey: 'aValue',
@@ -64,7 +64,7 @@
 				notZero: 0
 			};
 
-		$.getJSON = function( url ) {
+		$.getJSON = function ( url ) {
 			var deferred = $.Deferred();
 
 			if ( url === './default-config.json' ) {
@@ -81,7 +81,7 @@
 			return deferred.promise();
 		};
 
-		CONFIG.getConfig().then( function( actualConfig ) {
+		CONFIG.getConfig().then( function ( actualConfig ) {
 			assert.equal( typeof actualConfig.language, 'string' );
 			assert.equal( typeof actualConfig.i18nLoad, 'function' );
 
@@ -94,16 +94,16 @@
 		} );
 	} );
 
-	QUnit.test( 'Failed loading default-config.json', function( assert ) {
+	QUnit.test( 'Failed loading default-config.json', function ( assert ) {
 		var done = assert.async(),
 			originalConsole = window.console;
 		window.console = {
-			error: function() {
+			error: function () {
 				// do nothing
 			}
 		};
 
-		$.getJSON = function( url ) {
+		$.getJSON = function ( url ) {
 			var deferred = $.Deferred();
 
 			if ( url === './default-config.json' ) {
@@ -124,11 +124,11 @@
 			return deferred.promise();
 		};
 
-		CONFIG.getConfig().fail( function( errorMessage ) {
+		CONFIG.getConfig().fail( function ( errorMessage ) {
 			assert.equal( errorMessage, 'Failed loading default-config.json: $.getJSON_ERROR' );
 
 			done();
-		} ).always( function() {
+		} ).always( function () {
 			window.console = originalConsole;
 		} );
 	} );

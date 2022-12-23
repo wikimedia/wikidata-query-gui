@@ -1,4 +1,4 @@
-( function( $, QUnit, sinon, wb ) {
+( function ( $, QUnit, sinon, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.api.CodeSamples' );
@@ -20,12 +20,12 @@
 		}
 	];
 
-	$.each( tests, function( index, test ) {
-		QUnit.test( test.name, function( assert ) {
+	$.each( tests, function ( index, test ) {
+		QUnit.test( test.name, function ( assert ) {
 			var done = assert.async();
 
 			function handleError( part ) {
-				return function() {
+				return function () {
 					assert.ok( false, 'could not load ' + part );
 					done();
 				};
@@ -33,15 +33,15 @@
 
 			$.get(
 				'queryService/api/code-examples/' + test.name + '/query.sparql',
-				function( query ) {
+				function ( query ) {
 					new CodeSamples( test.endpoint, test.root, test.index )
 						.getExamples( query )
-						.then( function( examples ) {
+						.then( function ( examples ) {
 							var promises = [];
-							$.each( examples, function( lang, data ) {
+							$.each( examples, function ( lang, data ) {
 								promises.push( $.get(
 									'queryService/api/code-examples/' + test.name + '/' + lang + '.txt',
-									function( expected ) {
+									function ( expected ) {
 										assert.strictEqual( data.code, expected, lang );
 									},
 									'text'

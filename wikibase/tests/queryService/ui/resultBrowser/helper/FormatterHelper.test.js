@@ -1,4 +1,4 @@
-( function( QUnit, wb ) {
+( function ( QUnit, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.ui.resultBrowser.helper' );
@@ -7,13 +7,13 @@
 
 	var helper = new wb.queryService.ui.resultBrowser.helper.FormatterHelper();
 
-	QUnit.test( 'Setup', function( assert ) {
+	QUnit.test( 'Setup', function ( assert ) {
 		assert.expect( 1 );
 
 		assert.ok( helper instanceof wb.queryService.ui.resultBrowser.helper.FormatterHelper );
 	} );
 
-	QUnit.test( 'parseDate', function( assert ) {
+	QUnit.test( 'parseDate', function ( assert ) {
 		var testCases = [
 			[ '2016-12-31', '2016-12-31' ],
 			[ '2016-12-31T00:00:00', '2016-12-31' ],
@@ -34,13 +34,13 @@
 
 		assert.expect( testCases.length );
 
-		testCases.forEach( function( testCase ) {
+		testCases.forEach( function ( testCase ) {
 			var result = helper.parseDate( testCase[0] );
 			assert.strictEqual( result.format( 'YYYY-MM-DD' ), testCase[1] );
 		} );
 	} );
 
-	QUnit.test( '_formatDate', function( assert ) {
+	QUnit.test( '_formatDate', function ( assert ) {
 		var testCases = [
 			[ '-1000000-12-31T00:00:00Z', '1000001 BCE' ],
 			[ '-275760-01-01T00:00:00Z', '275761 BCE' ],
@@ -61,12 +61,12 @@
 
 		assert.expect( testCases.length );
 
-		testCases.forEach( function( testCase ) {
+		testCases.forEach( function ( testCase ) {
 			assert.strictEqual( helper._formatDate( testCase[0] ), testCase[1] );
 		} );
 	} );
 
-	QUnit.test( 'abbreviateUri', function( assert ) {
+	QUnit.test( 'abbreviateUri', function ( assert ) {
 		var namespaces = wb.queryService.RdfNamespaces.NAMESPACE_SHORTCUTS,
 			testCases = [],
 			groupName, group, prefixName, prefixUri;
@@ -81,14 +81,14 @@
 
 		assert.expect( testCases.length + 1 );
 
-		assert.ok( testCases.length > 0, "should have at least one test case" );
+		assert.ok( testCases.length > 0, 'should have at least one test case' );
 
-		testCases.forEach( function( testCase ) {
+		testCases.forEach( function ( testCase ) {
 			assert.strictEqual( helper.abbreviateUri( testCase[0] ), testCase[1] );
 		} );
 	} );
 
-	QUnit.test( '_isHiddenField', function( assert ) {
+	QUnit.test( '_isHiddenField', function ( assert ) {
 		var Options = wb.queryService.ui.resultBrowser.helper.Options;
 
 		helper.setOptions( new Options( {} ) );

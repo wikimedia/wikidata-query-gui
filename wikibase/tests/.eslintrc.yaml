@@ -1,3 +1,4 @@
+# eslint-disable
 {
   env: {
     es2018: true,

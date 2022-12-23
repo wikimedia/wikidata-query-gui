@@ -5,22 +5,3 @@
 /vendor/
 /polestar/
 /wikibase/codemirror/addon/
-
-# ignore wikibase/tests for now, except for two files:
-# - /wikibase/tests/queryService/api/Wikibase.test.js
-# - /wikibase/tests/queryService/ui/editor/tooltip/TooltipRepository.test.js
-# because of the way eslint processes the ignore file, this gets annoyingly convoluted
-# (compare the very last example in `man gitignore`, which works the same way)
-/wikibase/tests/*
-!/wikibase/tests/queryService/
-/wikibase/tests/queryService/*
-!/wikibase/tests/queryService/api/
-/wikibase/tests/queryService/api/*
-!/wikibase/tests/queryService/api/Wikibase.test.js
-!/wikibase/tests/queryService/ui/
-/wikibase/tests/queryService/ui/*
-!/wikibase/tests/queryService/ui/editor/
-/wikibase/tests/queryService/ui/editor/*
-!/wikibase/tests/queryService/ui/editor/tooltip/
-/wikibase/tests/queryService/ui/editor/tooltip/*
-!/wikibase/tests/queryService/ui/editor/tooltip/TooltipRepository.test.js
