@@ -1,4 +1,4 @@
-( function( QUnit, sinon, $, wb ) {
+( function ( QUnit, sinon, $, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.ui.editor.tooltip.TooltipRepository' );
@@ -7,13 +7,13 @@
 
 	const getApiStub = ( id, fakeWikidataResponse ) => {
 		const fakeApiResponse = new Map( [ [ id, fakeWikidataResponse ] ] );
-		return sinon.stub().returns(Promise.resolve(fakeApiResponse));
+		return sinon.stub().returns( Promise.resolve( fakeApiResponse ) );
 	};
 
 	const getMissingEntityResponse = ( id ) => {
 		return {
 			id,
-			missing: ""
+			missing: ''
 		};
 	};
 
@@ -42,8 +42,8 @@
 		[
 			'Properties: returns null for missing Property',
 			'P7',
-			getMissingEntityResponse('P7'),
-			null,
+			getMissingEntityResponse( 'P7' ),
+			null
 		],
 		[
 			'Properties: returns null if the Property has neither Label nor Description',
@@ -54,7 +54,7 @@
 				labels: {},
 				descriptions: {}
 			},
-			null,
+			null
 		],
 		[
 			'Properties: Show only Label and (id) with missing Description',
@@ -69,9 +69,9 @@
 						'for-language': 'de-formal'
 					}
 				},
-				descriptions: {},
+				descriptions: {}
 			},
-			'<div><span><span lang="en">Label only</span> <span>(P72)</span></span><br><small></small></div>',
+			'<div><span><span lang="en">Label only</span> <span>(P72)</span></span><br><small></small></div>'
 		],
 		[
 			'Properties: Show only (id) and Description with missing Label',
@@ -88,7 +88,7 @@
 					}
 				}
 			},
-			'<div><span><span></span> <span>(P73)</span></span><br><small lang="de">nur Beschreibung</small></div>',
+			'<div><span><span></span> <span>(P73)</span></span><br><small lang="de">nur Beschreibung</small></div>'
 		],
 		[
 			'Properties: when label and descriptions are available, it creates and escapes the tooltip',
@@ -111,31 +111,31 @@
 					}
 				}
 			},
-			'<div><span><span lang="en">Label &lt;script&gt;alert("label is not escaped properly")&lt;/script&gt;</span> <span>(P74)</span></span><br><small lang="en">Description &lt;script&gt;alert("description is not escaped properly")&lt;/script&gt;</small></div>',
+			'<div><span><span lang="en">Label &lt;script&gt;alert("label is not escaped properly")&lt;/script&gt;</span> <span>(P74)</span></span><br><small lang="en">Description &lt;script&gt;alert("description is not escaped properly")&lt;/script&gt;</small></div>'
 		],
 		[
 			'Items: returns null for missing Item',
 			'Q99999999999999999',
 			getMissingEntityResponse( 'Q99999999999999999' ),
-			null,
+			null
 		],
 		[
 			'Items: returns null if the Item has neither Label nor Description',
 			'Q4965597199',
 			getItemResponse( 'Q4965597199', null, null ),
-			null,
+			null
 		],
 		[
 			'Items: Show only (id) and Description with missing Label',
 			'Q49655971',
-			getItemResponse( 'Q49655971', null, 'Wikimedia-Kategorie'),
-			'<div><span><span></span> <span>(Q49655971)</span></span><br><small lang="de">Wikimedia-Kategorie</small></div>',
+			getItemResponse( 'Q49655971', null, 'Wikimedia-Kategorie' ),
+			'<div><span><span></span> <span>(Q49655971)</span></span><br><small lang="de">Wikimedia-Kategorie</small></div>'
 		],
 		[
 			'Items: Show only Label and (id) with missing Description',
 			'Q93764220',
 			getItemResponse( 'Q93764220', 'TYC 7697-2157-1', null ),
-			'<div><span><span lang="de">TYC 7697-2157-1</span> <span>(Q93764220)</span></span><br><small></small></div>',
+			'<div><span><span lang="de">TYC 7697-2157-1</span> <span>(Q93764220)</span></span><br><small></small></div>'
 		],
 		[
 			'Items: when label and descriptions are available, it creates and escapes the tooltip',
@@ -145,19 +145,19 @@
 				'label <script>alert("label is not escaped properly")</script>',
 				'description <script>alert("description is not escaped properly")</script>'
 			),
-			'<div><span><span lang="de">label &lt;script&gt;alert("label is not escaped properly")&lt;/script&gt;</span> <span>(Q42)</span></span><br><small lang="de">description &lt;script&gt;alert("description is not escaped properly")&lt;/script&gt;</small></div>',
-		],
+			'<div><span><span lang="de">label &lt;script&gt;alert("label is not escaped properly")&lt;/script&gt;</span> <span>(Q42)</span></span><br><small lang="de">description &lt;script&gt;alert("description is not escaped properly")&lt;/script&gt;</small></div>'
+		]
 	];
 
 	testcases.forEach( ( [ message, id, fakeWikidataResponse, expectedTooltip ] ) => {
 		QUnit.test( message, async ( assert ) => {
-			const fakeApi = { getEntitiesData: getApiStub(id, fakeWikidataResponse) };
-			const tooltipRepository = tooltipRepositoryModule(fakeApi, 'de-formal', $);
+			const fakeApi = { getEntitiesData: getApiStub( id, fakeWikidataResponse ) };
+			const tooltipRepository = tooltipRepositoryModule( fakeApi, 'de-formal', $ );
 
 			const actualResponse = await tooltipRepository.getTooltipContentForId( id );
 
-			assert.strictEqual( actualResponse && actualResponse.prop('outerHTML'), expectedTooltip );
+			assert.strictEqual( actualResponse && actualResponse.prop( 'outerHTML' ), expectedTooltip );
 		} );
 	} );
 
-} ( QUnit, sinon, jQuery, wikibase ));
+}( QUnit, sinon, jQuery, wikibase ) );

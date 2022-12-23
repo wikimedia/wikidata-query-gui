@@ -11,9 +11,13 @@
     es-x/no-arrow-functions: off,
     es-x/no-async-functions: off,
     es-x/no-block-scoped-variables: off,
+    es-x/no-default-parameters: off,
+    es-x/no-destructuring: off,
     es-x/no-for-of-loops: off,
     es-x/no-generators: off,
+    es-x/no-map: off,
     es-x/no-promise: off,
+    es-x/no-property-shorthands: off,
     es-x/no-template-literals: off,
     promise/no-native: off,
   }

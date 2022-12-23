@@ -17,6 +17,7 @@
 !/wikibase/tests/queryService/api/
 /wikibase/tests/queryService/api/*
 !/wikibase/tests/queryService/api/Wikibase.test.js
+!/wikibase/tests/queryService/ui/
 /wikibase/tests/queryService/ui/*
 !/wikibase/tests/queryService/ui/editor/
 /wikibase/tests/queryService/ui/editor/*
