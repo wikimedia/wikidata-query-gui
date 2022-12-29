@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Afalau",
 			"Robin Owain"
 		]
 	},
-	"wdqs-app-button-examples": "Engreifftiau",
-	"wdqs-app-button-prefixes": "Rhagddodiad",
+	"wdqs-app-button-examples": "Enghreifftiau",
+	"wdqs-app-button-prefixes": "Rhagddodiaid",
 	"wdqs-app-button-more-tools": "Rhagor o daclau",
 	"wdqs-app-button-help": "Cymorth",
 	"wdqs-app-button-run": "Rhoi ar waith",
@@ -29,6 +30,7 @@
 	"wdqs-app-help-portal": "Y Porth Cymorth",
 	"wdqs-app-help-manual": "Cyfarwyddiadau i'r Defnyddiwr",
 	"wdqs-app-help-examples": "Mathau o Ymholiadau",
+	"wdqs-app-query-builder-name": "Crëwr Ymchwiliad",
 	"wdqs-app-help-datamodel": "Model data RDF",
 	"wdqs-app-help-prefixes": "Rhestr o'r rhagddodiaid (''List of prefixes'')",
 	"wdqs-app-help-copy": "Gwybodaeth am drwyddedi",
@@ -81,7 +83,7 @@
 	"wdqs-app-resultbrowser-timeline": "Llinell amser",
 	"wdqs-app-resultbrowser-dimensions": "Dimensiynau",
 	"wdqs-app-resultbrowser-graph": "Graff",
-	"wdqs-app-toast-leave-fullscreen": "Pwyswch [esc]] i adael y sgrin llawn",
+	"wdqs-app-toast-leave-fullscreen": "Pwyswch [esc] i adael sgrîn lawn",
 	"wdqs-app-urlshortener-bad-service": "Mae'r gwasanaeth byrhau'r URL wedi methu",
 	"wdqs-app-urlshortener-failed": "Methwyd lleihau'r URL",
 	"wdqs-app-urlshortener-loading": "Wrthi'n llwytho...",
@@ -93,11 +95,11 @@
 	"wdqs-dialog-key-shortcut-show-example": "Dangos engreifftiau",
 	"wdqs-dialog-key-shortcut-show-language": "Dangos y ddewislen iaith",
 	"wdqs-dialog-key-shortcut-close-button": "Cau",
-	"wdqs-ve-filter": "Ffiltr",
+	"wdqs-ve-filter": "Hidlo",
 	"wdqs-ve-show": "Arddangos",
 	"wdqs-ve-limit": "Cyfyngu",
 	"wdqs-ve-add-label-title": "Ychwanegwch newidyn sy'n cynnwys label endid",
-	"wdqs-ve-remove-row-title": "Diddymwch y rhes hon",
+	"wdqs-ve-remove-row-title": "Dileu'r rhes hon",
 	"wdqs-ve-with": "gyda",
 	"wdqs-ve-anything": "unrhyw beth",
 	"wdqs-ve-any": "unrhyw",
