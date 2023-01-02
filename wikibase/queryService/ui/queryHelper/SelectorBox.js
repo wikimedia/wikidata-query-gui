@@ -304,9 +304,6 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 			case 'number':
 				this._createInput( $element, listener, toolbar );
 				break;
-			case 'tagcloud':
-				this._createTagCloud( $element, triple, listener, toolbar );
-				break;
 			default:
 				this._createSelect( $element, triple, listener, toolbar );
 		}
@@ -338,62 +335,6 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 				listener( $input.val() );
 			}
 		} );
-	};
-
-	/**
-	 * @private
-	 */
-	SELF.prototype._createTagCloud = function ( $element, triple, listener, toolbar ) {
-		var self = this,
-			entity = $element.data( 'entity' ),
-			sparql = $element.data( 'sparql' ),
-			tags = [],
-			createTags = function () {
-				tags = [];
-
-				return self._searchEntitiesSparql( null, entity, triple, sparql ).then( function ( d ) {
-					d.forEach( function ( t ) {
-						tags.push( {
-							text: t.text,
-							weight: t.data.rank || ( Math.round( Math.random() * 10 ) > 9 ? 5 : Math
-								.round( Math.random() * 3 ) ),
-							link: '#',
-							html: {
-								title: t.data.description + ( t.data.rank ? ' (' + t.data.rank + ')' : '' ),
-								'data-id': t.id
-							},
-							handlers: {
-								click: function ( e ) {
-
-									if ( t.data.propertyId ) {
-										listener( t.id, t.text, t.data.propertyId );
-										return false;
-									}
-
-									self._suggestPropertyId( t.id ).always(
-										function ( propertyId ) {
-											listener( t.id, t.text, propertyId );
-										} );
-									return false;
-								}
-							}
-						} );
-					} );
-				} );
-			};
-
-		createTags().then( function () {
-			if ( tags.length === 0 ) {
-				$element.hide();
-				return;
-			}
-			$element.show();
-			$element.jQCloud( tags, {
-				delayedMode: true,
-				autoResize: true
-			} );
-		} );
-
 	};
 
 	/**
