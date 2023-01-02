@@ -85,7 +85,7 @@
 	"wdqs-app-resultbrowser-graph-builder": "Generator grafikonov",
 	"wdqs-app-resultbrowser-map": "Zemljevid",
 	"wdqs-app-resultbrowser-line-chart": "Črtni grafikon",
-	"wdqs-app-resultbrowser-bar-chart": "Stolpični grafikon",
+	"wdqs-app-resultbrowser-bar-chart": "Palični grafikon",
 	"wdqs-app-resultbrowser-scatter-chart": "Raztreseni grafikon",
 	"wdqs-app-resultbrowser-area-chart": "Površinski grafikon",
 	"wdqs-app-resultbrowser-bubble-chart": "Mehurčni grafikon",
