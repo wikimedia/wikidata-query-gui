@@ -1,4 +1,4 @@
-( function( $, QUnit, sinon, wb ) {
+( function ( $, QUnit, sinon, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.ui.resultBrowser' );
@@ -19,13 +19,13 @@
 		},
 		aspectRatio = 0.7558823529411764;
 
-	QUnit.test( 'When preloading an item the item should be returned', function( assert ) {
+	QUnit.test( 'When preloading an item the item should be returned', function ( assert ) {
 		assert.expect( 2 );
-		var check = function( item ) {
-			assert.equal( item.innerHTML , sampleItem );
+		var check = function ( item ) {
+			assert.equal( item.innerHTML, sampleItem );
 			assert.equal( $( item ).data( 'aspectRatio' ), aspectRatio );
 		};
-		return irb._preloadItem( sampleItemData ).done( function( x ) {
+		return irb._preloadItem( sampleItemData ).done( function ( x ) {
 			check( x );
 		} );
 	} );

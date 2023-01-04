@@ -1,15 +1,15 @@
-( function( $, QUnit, sinon, download, wb ) {
+( function ( $, QUnit, sinon, download, wb ) {
 	'use strict';
 
 	QUnit.module( 'wikibase.queryService.ui.App' );
 
-	QUnit.test( 'DownloadJS works with utf-8 ', function( assert ) {
+	QUnit.test( 'DownloadJS works with utf-8 ', function ( assert ) {
 
 		var stubAppendChild = sinon.stub( window.document.body, 'appendChild' ),
 			stubSetTimeout = sinon.stub( window, 'setTimeout' ),
 			data = '{ "foo": "testöäüРоссийская中华人民共和国😀🤩𝄞😈" }',
 			filename = 'file.json',
-			mimetype =  'application/json;charset=utf-8',
+			mimetype = 'application/json;charset=utf-8',
 			done = assert.async();
 
 		// download.js uses body.appendChild(), so stub that for our test
@@ -36,16 +36,16 @@
 		download( data, filename, mimetype );
 	} );
 
-	QUnit.test( '_updateTitle', function( assert ) {
+	QUnit.test( '_updateTitle', function ( assert ) {
 		var originalTitle = document.title;
 		try {
 			document.title = '_updateTitle test';
 			var app = Object.create( wb.queryService.ui.App.prototype );
 			var query = '';
 			app._editor = {
-				getValue: function() {
+				getValue: function () {
 					return query;
-				},
+				}
 			};
 			app._originalDocumentTitle = document.title;
 
