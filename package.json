@@ -7,8 +7,7 @@
     "grunt": "grunt",
     "test": "grunt test && npm run browser_test -- $@",
     "browser_test": "grunt browser_test",
-    "build": "grunt build",
-    "deploy": "grunt deploy"
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
