@@ -243,9 +243,6 @@ module.exports = function ( grunt ) {
 					shell: '/bin/sh'
 				}
 			},
-			updateRepo: { // updates the gui repo
-				command: 'git remote update && git pull'
-			},
 			cloneDeploy: { // clone gui deploy to build folder
 				command: 'git clone --branch <%= pkg.repository.deploy.branch %>' +
 						' --single-branch https://<%= pkg.repository.deploy.gerrit %>/r/<%= pkg.repository.deploy.repo %> ' +
@@ -265,12 +262,6 @@ module.exports = function ( grunt ) {
 			},
 			formatPatchDeploy: { // generate patch file for deploy commit(s)
 				command: 'git -C ' + buildFolder + ' format-patch --output-directory .. @{u}'
-			},
-			review: {
-				command: [
-					'cd ' + buildFolder,
-					'git push ssh://<%= pkg.repository.deploy.gerrit %>:29418/<%= pkg.repository.deploy.repo %>.git HEAD:refs/publish/<%= pkg.repository.deploy.branch %>'
-				].join( '&&' )
 			}
 		},
 		'auto_install': {
@@ -335,12 +326,6 @@ module.exports = function ( grunt ) {
 	] );
 	grunt.registerTask( 'only_build', [
 		'less', 'copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'filerev', 'usemin', 'htmlmin', 'merge-i18n'
-	] );
-	grunt.registerTask( 'build_for_deploy', [
-		'test', 'browser_test', 'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build'
-	] );
-	grunt.registerTask( 'deploy', [
-		'build_for_deploy', 'shell:commitDeploy', 'shell:review'
 	] );
 	grunt.registerTask( 'security', [
 		'clean', 'shell:cloneDeploy', 'clean:deploy', 'only_build', 'shell:commitDeploy', 'shell:formatPatchDeploy'

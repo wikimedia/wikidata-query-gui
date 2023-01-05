@@ -47,18 +47,20 @@ $ npm run build
 
 
 ## Deploy
-Create a build and push it to the deployment branch via git review.
+To deploy the GUI, [trigger a new build of the deploy repo on Jenkins](https://integration.wikimedia.org/ci/job/wikidata-query-gui-build/).
 
-```bash
-$ npm run deploy
-```
+![Screenshot of the Jenkins dashboard for the build repo. Highlighted are the build buttons in the sidebar with a "1" and the "Build" button in the main part with a "2"](docs/images/triggerDeployBuild.png)
 
+This creates a new open change in the deploy repository: https://gerrit.wikimedia.org/r/q/project:wikidata/query/gui-deploy+status:open
 
-Please make sure you have defined a gitreview username:
-```bash
-git config --global --add gitreview.username "[username]"
-```
+You can clone that repository and check out the change locally to test and verify it.
 
+As that repository does not have any CI, you need to manually merge the change.
+That means, giving +2 to both the Code Review as well as the Verified label, and then clicking the "Submit" button.
+
+The site will be deployed with the next puppet run, which should happen after at most 30 minutes.
+
+See also: https://wikitech.wikimedia.org/wiki/Wikidata_Query_Service#GUI_deployment_general_notes
 
 ## Components
 ### Editor
