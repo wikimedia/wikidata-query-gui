@@ -6,7 +6,8 @@
 			"Rockyfelle",
 			"Sabelöga",
 			"Sturban",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Exempel",
@@ -89,7 +90,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Trädkort",
 	"wdqs-app-resultbrowser-tree": "Träd",
 	"wdqs-app-resultbrowser-timeline": "Tidslinje",
-	"wdqs-app-resultbrowser-dimensions": "Dimensioner",
+	"wdqs-app-resultbrowser-dimensions": "Parallella koordinater",
 	"wdqs-app-resultbrowser-graph": "Graf",
 	"wdqs-app-toast-leave-fullscreen": "Tryck på [esc] för att lämna helskärmsläget",
 	"wdqs-app-urlshortener-bad-service": "Fel i konfigurationen av tjänsten för att korta ned webbadresser",

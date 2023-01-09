@@ -11,7 +11,8 @@
 			"VIGNERON",
 			"Vbhttb",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -96,7 +97,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Carte arborescence",
 	"wdqs-app-resultbrowser-tree": "Arbre",
 	"wdqs-app-resultbrowser-timeline": "Chronologie",
-	"wdqs-app-resultbrowser-dimensions": "Dimensions",
+	"wdqs-app-resultbrowser-dimensions": "Coordonnées parallèles",
 	"wdqs-app-resultbrowser-graph": "Graphe",
 	"wdqs-app-toast-leave-fullscreen": "Appuyez sur [Échap] pour quitter le mode plein écran",
 	"wdqs-app-urlshortener-bad-service": "Mauvais service de raccourcissement d’URL dans la configuration",

@@ -9,7 +9,8 @@
 			"SMAUG",
 			"Silvonen",
 			"Stryn",
-			"Surjection"
+			"Surjection",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Esimerkkejä",
@@ -92,7 +93,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Puukartta",
 	"wdqs-app-resultbrowser-tree": "Puu",
 	"wdqs-app-resultbrowser-timeline": "Aikajana",
-	"wdqs-app-resultbrowser-dimensions": "Mitat",
+	"wdqs-app-resultbrowser-dimensions": "Rinnakkaiskoordinaatit",
 	"wdqs-app-resultbrowser-graph": "Kaavio",
 	"wdqs-app-toast-leave-fullscreen": "Paina [esc] poistuaksesi kokoruututilasta",
 	"wdqs-app-urlshortener-bad-service": "Virheellinen URL-lyhennepalvelu määrityksissä",

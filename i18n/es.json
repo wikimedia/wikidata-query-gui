@@ -24,7 +24,8 @@
 			"Ryo567",
 			"SpikeShroom",
 			"SrCerberus",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Ejemplos",
@@ -107,7 +108,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Mapa de árbol",
 	"wdqs-app-resultbrowser-tree": "Árbol",
 	"wdqs-app-resultbrowser-timeline": "Cronología",
-	"wdqs-app-resultbrowser-dimensions": "Dimensiones",
+	"wdqs-app-resultbrowser-dimensions": "Coordenadas paralelas",
 	"wdqs-app-resultbrowser-graph": "Gráfico",
 	"wdqs-app-toast-leave-fullscreen": "Presiona [Esc] para salir de pantalla completa",
 	"wdqs-app-urlshortener-bad-service": "Mala configuración del servicio de acortador de URLs",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Metsavend",
 			"Pikne",
-			"Triinusingu"
+			"Triinusingu",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Näited",
@@ -81,7 +82,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Puukaart",
 	"wdqs-app-resultbrowser-tree": "Puu",
 	"wdqs-app-resultbrowser-timeline": "Ajatelg",
-	"wdqs-app-resultbrowser-dimensions": "Mõõtmed",
+	"wdqs-app-resultbrowser-dimensions": "Paralleelkoordinaadid",
 	"wdqs-app-resultbrowser-graph": "Graafik",
 	"wdqs-app-toast-leave-fullscreen": "Vajuta nuppu [esc], et lahkuda täisekraanilt",
 	"wdqs-app-urlshortener-bad-service": "Häälestuses vigane URL-i lühendamise teenus",

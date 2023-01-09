@@ -4,7 +4,8 @@
 			"Abuluntu",
 			"Danmichaelo",
 			"Event",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Eksempler",
@@ -89,7 +90,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Trediagram",
 	"wdqs-app-resultbrowser-tree": "Tre",
 	"wdqs-app-resultbrowser-timeline": "Tidslinje",
-	"wdqs-app-resultbrowser-dimensions": "Dimensjoner",
+	"wdqs-app-resultbrowser-dimensions": "Parallelle koordinater",
 	"wdqs-app-resultbrowser-graph": "Graf",
 	"wdqs-app-toast-leave-fullscreen": "Trykk [Esc] for å avslutte fullskjerm",
 	"wdqs-app-urlshortener-bad-service": "Feil URL-forkortelsestjeneste i konfigurasjonen",

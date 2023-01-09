@@ -15,7 +15,8 @@
 			"Pacha Tchernof",
 			"Redredsonia",
 			"Silovan",
-			"Vlad5250"
+			"Vlad5250",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Примеры",
@@ -100,7 +101,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Древовидная карта",
 	"wdqs-app-resultbrowser-tree": "Дерево",
 	"wdqs-app-resultbrowser-timeline": "Хронология",
-	"wdqs-app-resultbrowser-dimensions": "Размеры",
+	"wdqs-app-resultbrowser-dimensions": "Параллельные координаты",
 	"wdqs-app-resultbrowser-graph": "График",
 	"wdqs-app-toast-leave-fullscreen": "Нажмите [Esc], чтобы выйти из полноэкранного режима",
 	"wdqs-app-urlshortener-bad-service": "В конфигурации прописан проблемный сервис замены ссылок на короткие URL",

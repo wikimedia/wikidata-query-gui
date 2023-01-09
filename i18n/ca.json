@@ -12,7 +12,8 @@
 			"Ssola",
 			"Toniher",
 			"Townie",
-			"Vfc"
+			"Vfc",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Exemples",
@@ -95,7 +96,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Mapa d'arbre",
 	"wdqs-app-resultbrowser-tree": "Arbre",
 	"wdqs-app-resultbrowser-timeline": "Línia temporal",
-	"wdqs-app-resultbrowser-dimensions": "Dimensions",
+	"wdqs-app-resultbrowser-dimensions": "Coordenades paral·leles",
 	"wdqs-app-resultbrowser-graph": "Gràfic",
 	"wdqs-app-toast-leave-fullscreen": "Premeu [Esc] per a abandonar el mode de pantalla sencera",
 	"wdqs-app-urlshortener-bad-service": "Configuració incorrecta del servei d'escurçament d'URL",
