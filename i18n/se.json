@@ -28,6 +28,7 @@
 	"wdqs-app-result-csv": "CSV-fiila",
 	"wdqs-app-result-svg": "SVG-govva",
 	"wdqs-app-result-html": "HTML-tabealla",
+	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|bohtosa}} ohcan bisttii $2&nbsp;ms.",
 	"wdqs-app-resultbrowser-table": "Tabealla",
 	"wdqs-app-resultbrowser-map": "Kárta",
 	"wdqs-app-resultbrowser-line-chart": "Linnjádiagrámma",

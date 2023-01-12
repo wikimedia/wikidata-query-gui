@@ -14,7 +14,8 @@
 			"Mar(c)",
 			"Matěj Suchánek",
 			"Robby",
-			"Waldyrious"
+			"Waldyrious",
+			"Yupik"
 		]
 	},
 	"wdqs-app-button-examples": "Button to show examples dialog\n{{Identical|Example}}",
@@ -99,7 +100,7 @@
 	"wdqs-app-resultbrowser-tree-map": "Label of Tree map result view, which shows data as rectangles filling the more space the bigger the data is",
 	"wdqs-app-resultbrowser-tree": "Label of Tree result view",
 	"wdqs-app-resultbrowser-timeline": "Label of Timeline result view, which shows data on a time axis\n{{Identical|Timeline}}",
-	"wdqs-app-resultbrowser-dimensions": "Label of Dimensions result view",
+	"wdqs-app-resultbrowser-dimensions": "Label of the Dimensions result view. This refers to a parallel coordinate plot, not a size. For more information, see https://www.wikidata.org/wiki/Q932996",
 	"wdqs-app-resultbrowser-graph": "Label of Graph result view",
 	"wdqs-app-toast-leave-fullscreen": "Explanation how to exit fullscreen",
 	"wdqs-app-urlshortener-bad-service": "Error message when URL shortener service is misconfigured",
