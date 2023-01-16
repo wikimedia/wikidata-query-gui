@@ -51,6 +51,8 @@
 	"wdqs-app-footer-updated-ago": "Data kaanyarin $1",
 	"wdqs-app-result-shorturl": "URL acengan nuju hasil",
 	"wdqs-app-result-shorturl-title": "URL acengan nuju hasil puniki",
+	"wdqs-app-result-shorturl-query": "URL cutet antuk kuéri",
+	"wdqs-app-result-shorturl-query-title": "URL cutet nuju kuéri sané kaanggén antuk ngambil asil puniki",
 	"wdqs-app-result-rawgraphs": "Buka ring RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Kardi graphik nganggén data hasil parerehan sané mangkin nganggén RAWGraphs.io",
 	"wdqs-app-result-embed": "Reketang hasil",
