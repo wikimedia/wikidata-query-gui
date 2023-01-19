@@ -1,7 +1,0 @@
-### How to install the gui in windows
-Install the node.js LTS version from here: https://nodejs.org/en/. To verify installation, open the git bash command line tool (or your preferred command-line tool) and enter "node -v" followed by "npm -v".
-After that install the gui as instructed.
-
-### build the app
-Create a .npmrc file in the project root with this line: legacy-peer-deps=true
-First execute: npm install, then: npm audit fix --force, then npm audit fix, and: npm run build

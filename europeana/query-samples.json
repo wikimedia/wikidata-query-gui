@@ -1,0 +1,23 @@
+[
+	{
+		"category": "Simple queries",
+		"href": "Examples#Rights Statements of The European Library",
+		"query": "PREFIX edm: <http://www.europeana.eu/schemas/edm/>\n SELECT ?WebResource ?Rights\n WHERE {\n ?Aggregation edm:provider \"The European Library\" ;\n edm:rights ?Rights ;\n edm:isShownBy ?WebResource .\n }\n ORDER BY ?WebResource ?Rights\n LIMIT 3",
+		"tags": [ "edm:provider", "edm:rights", "edm:isShownBy" ],
+		"title": "Rights Statements of The European Library"
+	},
+	{
+		"category": "Agents",
+		"href": "Examples#Agents",
+		"query": "PREFIX edm: <http://www.europeana.eu/schemas/edm/>\n PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n SELECT ?Agent\n WHERE { ?Agent rdf:type edm:Agent }\n LIMIT 3\n",
+		"tags": [ "rdf:type", "edm:Agent" ],
+		"title": "Agents"
+	},
+	{
+		"category": "Places",
+		"href": "Examples#Places",
+		"query": "PREFIX edm: <http://www.europeana.eu/schemas/edm/>\n PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n SELECT ?Place\n WHERE { ?Place rdf:type edm:Place }\n LIMIT 3\n",
+		"tags": [ "rdf:type", "edm:Place" ],
+		"title": "Places"
+	}
+]

@@ -73,12 +73,20 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 				top: posY
 			} ) ).string;
 
-		if ( !token.match( /.+\:.+/ ) ) {
+		if ( !token.match( /.+\:(Q|P)[0-9]*/ ) ) {
+			return;
+		}
+
+		var prefixes = this._extractPrefixes( this._editor.doc.getValue() );
+		var prefix = token.split( ':', 1 )[0];
+		var entityId = token.split( ':' ).pop();
+
+		if ( !prefixes[prefix] ) {
 			return;
 		}
 
 		var self = this;
-		this._searchEntities( token ).done( function( list ) {
+		this._searchEntities( entityId, prefixes[prefix] ).done( function( list ) {
 			self._showToolTip( list.shift(), {
 				x: posX,
 				y: posY
@@ -129,20 +137,9 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 		this._api.searchEntities( term, type ).done(
 				function( data ) {
 					$.each( data.search, function( key, value ) {
-						var aTagOrText = null;					    
-					    if(value.reference) {
-							aTagOrText = document.createElement('a');
-							aTagOrText.target = '_blank';
-							aTagOrText.href = value.reference;
-							aTagOrText.innerText = value.label ? value.label + ' (' + value.id + ')' : value.id;
-						}
-						else {
-							aTagOrText = document.createTextNode(value.label ? value.label + ' (' + value.id + ')' : value.id);
-						}
-
 						entityList.push(
 							$()
-								.add( aTagOrText )
+								.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
 								.add( $( '<br>' ) )
 								.add( $( '<small>' ).text( value.description || '' ) )
 						);
