@@ -44,8 +44,6 @@
 	"wdqs-app-help-manual": "Button message in help dropdown",
 	"wdqs-app-help-examples": "Button message in help dropdown",
 	"wdqs-app-query-builder-name": "Name of Query Builder service",
-	"wdqs-app-query-builder-dd-title": "Headline for Query Builder in dropdown",
-	"wdqs-app-query-builder-dd-copy": "Description of Query Builder for dropdown",
 	"wdqs-app-query-builder-banner-content": "Message in Query Builder banner to link to the service.",
 	"wdqs-app-query-builder-example-banner-content": "Message in Query Builder banner to link to the service in examples dialog.",
 	"wdqs-app-help-datamodel": "Button message in help dropdown",
