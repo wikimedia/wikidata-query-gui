@@ -34,8 +34,6 @@
 	"wdqs-app-help-manual": "Brukermanual",
 	"wdqs-app-help-examples": "Eksempelspørringer",
 	"wdqs-app-query-builder-name": "Spørringsbygger",
-	"wdqs-app-query-builder-dd-title": "Lag spørringer uten SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Med noen få klikk kan du lage spørringer uten forhåndskunnskap om SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Trenger du hjelp til å opprette en spørring? Med den nye <a>spørringsbyggeren</a> kan du lage spørringer uten å skrive SPARQL selv.",
 	"wdqs-app-query-builder-example-banner-content": "Med <a>spørrebyggeren</a> kan du opprette spørringer uten å måtte skrive SPARQL.",
 	"wdqs-app-help-datamodel": "RDF-datamodell",

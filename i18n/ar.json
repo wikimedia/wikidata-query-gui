@@ -46,8 +46,6 @@
 	"wdqs-app-help-manual": "دليل المستخدم",
 	"wdqs-app-help-examples": "أمثلة للاستعلامات",
 	"wdqs-app-query-builder-name": "منشئ الاستعلام",
-	"wdqs-app-query-builder-dd-title": "بناء الاستعلامات بدون SPARQL",
-	"wdqs-app-query-builder-dd-copy": "قم بإنشاء استعلامات ببضع نقرات. لا يلزم معرفة SPARQL.",
 	"wdqs-app-query-builder-banner-content": "هل تحتاج إلى مساعدة في إنشاء استعلام؟ يمكنك إنشاء استعلامات دون الحاجة إلى كتابة SPARQL في <a>Query Builder</a> الجديد.",
 	"wdqs-app-query-builder-example-banner-content": "يمكنك إنشاء استعلامات دون الحاجة إلى كتابة SPARQL في <a>Query Builder</a>",
 	"wdqs-app-help-datamodel": "نموذج بيانات RDF",

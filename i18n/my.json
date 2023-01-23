@@ -33,8 +33,6 @@
 	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲစာအုပ်",
 	"wdqs-app-help-examples": "နမူနာ စုံစမ်းရှာဖွေမှုများ",
 	"wdqs-app-query-builder-name": "စုံစမ်းရှာဖွေမှု တည်ဆောက်သူ",
-	"wdqs-app-query-builder-dd-title": "SPARQL မပါဘဲ စုံစမ်းရှာဖွေမှုများ တည်ဆောက်ရန်",
-	"wdqs-app-query-builder-dd-copy": "ကလစ်အနည်းငယ်နှိပ်၍ စုံစမ်းရှာဖွေမှုများကို အမြင်ဖြင့် ဖန်တီးရန်။ SPARQL ဗဟုသုတရှိရန် မလိုပါ။",
 	"wdqs-app-query-builder-banner-content": "စုံစမ်းရှာဖွေမှုတစ်ခု ဖန်တီးရာတွင် အကူအညီလိုပါသလား? <a>စုံစမ်းရှာဖွေမှု တည်ဆာက်သူ</a> အသစ်တွင် SPARQL ကို ရေးသားခြင်းမပြုဘဲ စုံစမ်းရှာဖွေမှုများ တည်ဆောက်နိုင်သည်။",
 	"wdqs-app-query-builder-example-banner-content": "<a>စုံစမ်းရှာဖွေမှု တည်ဆာက်သူ</a>တွင် SPARQL ရေးသားခြင်းမပြုဘဲ စုံစမ်းရှာဖွေမှုများကို ဖန်တီးနိုင်သည်။",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",

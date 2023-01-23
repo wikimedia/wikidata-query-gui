@@ -47,8 +47,6 @@
 	"wdqs-app-help-manual": "利用者マニュアル",
 	"wdqs-app-help-examples": "クエリの例",
 	"wdqs-app-query-builder-name": "クエリビルダー",
-	"wdqs-app-query-builder-dd-title": "SPARQLなしでクエリを構築する",
-	"wdqs-app-query-builder-dd-copy": "数回のクリックでクエリを視覚的に作成できます。SPARQLの知識は必要ありません。",
 	"wdqs-app-query-builder-banner-content": "クエリの作成について助けが必要ですか？新しい<a>クエリビルダー</a>でSPARQLを記述することなく、クエリを作成することができます。",
 	"wdqs-app-query-builder-example-banner-content": "<a>クエリビルダー</a>でSPARQLを記述することなく、クエリを作成することができます。",
 	"wdqs-app-help-datamodel": "RDFデータモデル",

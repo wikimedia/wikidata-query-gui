@@ -50,8 +50,6 @@
 	"wdqs-app-help-manual": "Kullanım Kılavuzu",
 	"wdqs-app-help-examples": "Örnek Sorgular",
 	"wdqs-app-query-builder-name": "Sorgu Oluşturucu",
-	"wdqs-app-query-builder-dd-title": "SPARQL olmadan sorgu oluştur",
-	"wdqs-app-query-builder-dd-copy": "Birkaç tıklamayla görsel olarak sorgular oluşturun. SPARQL bilgisi gerekmez.",
 	"wdqs-app-query-builder-banner-content": "Sorgu oluşturmak için yardıma mı ihtiyacınız var? Yeni <a>Sorgu Oluşturucu</a>'da SPARQL yazmak zorunda kalmadan sorgular oluşturabilirsiniz.",
 	"wdqs-app-query-builder-example-banner-content": "<a>Sorgu Oluşturucu</a>'da SPARQL yazmak zorunda kalmadan sorgular oluşturabilirsiniz.",
 	"wdqs-app-help-datamodel": "RDF Veri Modeli",

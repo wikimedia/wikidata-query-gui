@@ -36,8 +36,6 @@
 	"wdqs-app-help-manual": "מדריך למשתמש",
 	"wdqs-app-help-examples": "שאילתות לדוגמה",
 	"wdqs-app-query-builder-name": "בונה השאילתות",
-	"wdqs-app-query-builder-dd-title": "בניית שאילתות בלי SPARQL",
-	"wdqs-app-query-builder-dd-copy": "יצירת שאילתות באופן חזותי בכמה לחיצות. לא נחוץ ידע ב־SPARQL.",
 	"wdqs-app-query-builder-banner-content": "נחוצה לך עזרה ביצירת שאילתה? באפשרותך לבנות שאילתות בלי צורך לכתוב SPARQL ב<a>בונה השאילתות</a> החדש.",
 	"wdqs-app-query-builder-example-banner-content": "באפשרותך לבנות שאילתות בלי צורך לכתוב SPARQL ב<a>בונה השאילתות</a>",
 	"wdqs-app-help-datamodel": "דגם נתונים ב־RDF",

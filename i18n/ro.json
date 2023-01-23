@@ -35,8 +35,6 @@
 	"wdqs-app-help-manual": "Manual de utilizare",
 	"wdqs-app-help-examples": "Exemplu de interogări",
 	"wdqs-app-query-builder-name": "Generator de interogări",
-	"wdqs-app-query-builder-dd-title": "Creați interogări fără SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Creați interogări vizuale cu câteva clicuri. Nu sunt necesare cunoștințe despre SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Aveți nevoie de ajutor cu crearea unui query? Puteți construi queryuri fără să scrieți SPARQL în noul <a>Query Builder</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Puteți construi queryuri fără să scrieți SPARQL în <a>Query Builder</a>.",
 	"wdqs-app-help-datamodel": "Modelul de date RDF",

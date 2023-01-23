@@ -25,8 +25,6 @@
 	"wdqs-app-help-portal": "Юрттэт портал",
 	"wdqs-app-help-manual": "Юзчи юрттос",
 	"wdqs-app-query-builder-name": "Курон Лэсьтон",
-	"wdqs-app-query-builder-dd-title": "SPARQL-тэк куронъёс лэсьтэ",
-	"wdqs-app-query-builder-dd-copy": "Ог-кык зӥбемен визуал сямен куронъёс лэсьтэ. SPARQL-эз тодыны кулэ ӧвӧл",
 	"wdqs-app-query-builder-banner-content": "Тӥледлы курон гожтыны юрттон кулэ? SPARQL гожъяно луытэк куронъёс лэсьтэмды луэ выленыз <a>Курон Лэсьтӥсен</a>.",
 	"wdqs-app-query-builder-example-banner-content": "SPARQL гожъяно луытэк куронъёс кылдытэмды луэ <a>Курон Лэсьтӥсен</a>",
 	"wdqs-app-help-datamodel": "RDF тодэт модель",

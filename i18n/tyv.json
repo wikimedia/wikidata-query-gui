@@ -28,8 +28,6 @@
 	"wdqs-app-help-portal": "Дуза порталы",
 	"wdqs-app-help-examples": "Чижек дилеглер",
 	"wdqs-app-query-builder-name": "Дилег тургузукчузу",
-	"wdqs-app-query-builder-dd-title": "SPARQL чокка дилег тургузар",
-	"wdqs-app-query-builder-dd-copy": "Дилеглерни каш тык-биле визуалдыг чаяаңар. SPARQL дугайында билиг херек чок.",
 	"wdqs-app-query-builder-banner-content": "Дилег чаяарынга дуза херек бе? Чаа <a>Дилег тургузукчузунга</a> дилеглер тургузуп болур силер, SPARQL бижиири ыяап эвес.",
 	"wdqs-app-query-builder-example-banner-content": "Чаа <a>Дилег тургузукчузунга</a> дилеглер тургузуп болур силер, SPARQL бижиири ыяап эвес.",
 	"wdqs-app-help-datamodel": "RDF медээлел модели",

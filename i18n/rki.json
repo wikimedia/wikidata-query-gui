@@ -32,8 +32,6 @@
 	"wdqs-app-help-manual": "အသုံးပြုသူလက်စွဲ",
 	"wdqs-app-help-examples": "နမူနာမီးခွန်းတိ",
 	"wdqs-app-query-builder-name": "မီးခွန်းတည်ဆောက်သူ",
-	"wdqs-app-query-builder-dd-title": "SPARQL မပါဘဲ မီးခွန်းတိကို တည်ဆောက်ပါ။",
-	"wdqs-app-query-builder-dd-copy": "ကလစ်စကေချေနန့် အမြင်အာရုံနန့် မီးမြန်းမှုတိကို ဖန်တီးပါ။  SPARQL ဗဟုသုတ မလိုအပ်ပါ။",
 	"wdqs-app-query-builder-banner-content": "မီးခွန်းတစ်ခုဖန်တီးရာတွင် အကူအညီလိုအပ်ပါ‌ရေလား။  <a>Query Builder</a> အသစ်တွင် SPARQL ကိုရေးစရာမလိုဘဲ မီးခွန်းတိတည်ဆောက်နိုင်ပါသည်။",
 	"wdqs-app-query-builder-example-banner-content": "<a>Query Builder</a> မှာ SPARQL ရေးဖို့မလိုပဲ မီးခွန်းတိဖန်တီးနိုင်ရေ။",
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",

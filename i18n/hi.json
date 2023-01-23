@@ -43,8 +43,6 @@
 	"wdqs-app-help-manual": "उपयोगकर्ता मैन्युअल",
 	"wdqs-app-help-examples": "उदाहरण क्वेरीज़",
 	"wdqs-app-query-builder-name": "क्वेरी रचनाकार",
-	"wdqs-app-query-builder-dd-title": "SPARQL के बिना क्वेरी बनाएँ",
-	"wdqs-app-query-builder-dd-copy": "कुछ क्लिक्स के देखते-देखते क्वेरी बनाएँ। SPARQL का कोई ज्ञान नहीं चाहिए।",
 	"wdqs-app-query-builder-banner-content": "क्या आपको क्वेरी बनाने में मदद चाहिए? आप नए <a>क्वेरी रचनाकार</a> पर SPARQL लिखे बिना क्वेरी बना सकते हैं।",
 	"wdqs-app-query-builder-example-banner-content": "आप नए <a>क्वेरी रचनाकार</a> पर SPARQL लिखे बिना क्वेरी बना सकते हैं।",
 	"wdqs-app-help-datamodel": "RDF डेटा मॉडल",

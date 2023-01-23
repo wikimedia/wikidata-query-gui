@@ -33,8 +33,6 @@
 	"wdqs-app-help-manual": "Brugervejledning",
 	"wdqs-app-help-examples": "Forespørgselseksempler",
 	"wdqs-app-query-builder-name": "Forespørgselsbygger",
-	"wdqs-app-query-builder-dd-title": "Byg forespørgsler uden SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Opret forespørgsler visuelt med et par klik. Intet kendskab til SPARQL påkrævet.",
 	"wdqs-app-query-builder-banner-content": "Har du brug for hjælp til at oprette en forespørgsel? Du kan bygge forespørgsler uden at skulle skrive SPARQL i den nye <a>Query Builder</a> .",
 	"wdqs-app-query-builder-example-banner-content": "Du kan oprette forespørgsler uden at skulle skrive SPARQL i <a>Query Builder</a>",
 	"wdqs-app-help-datamodel": "RDF-datamodel",

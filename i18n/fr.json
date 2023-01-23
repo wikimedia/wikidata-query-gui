@@ -41,8 +41,6 @@
 	"wdqs-app-help-manual": "Manuel utilisateur",
 	"wdqs-app-help-examples": "Exemples de requêtes",
 	"wdqs-app-query-builder-name": "Assistant de requêtes",
-	"wdqs-app-query-builder-dd-title": "Construire des requêtes sans SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Créer visuellement des requêtes en quelques clics. Aucune connaissance de SPARQL n’est nécessaire.",
 	"wdqs-app-query-builder-banner-content": "Avez-vous besoin d’aide pour créer une requête ? Vous pouvez construire des requêtes sans avoir à écrire du SPARQL dans le nouveau <a>Constructeur de requêtes</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Vous pouvez créer des requêtes sans avoir à écrire de SPARQL dans le <a>Constructeur de requêtes</a>.",
 	"wdqs-app-help-datamodel": "Modèle de données RDF",

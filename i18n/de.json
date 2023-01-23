@@ -33,8 +33,6 @@
 	"wdqs-app-help-manual": "Benutzerhandbuch",
 	"wdqs-app-help-examples": "Beispielabfragen",
 	"wdqs-app-query-builder-name": "Abfragegenerator",
-	"wdqs-app-query-builder-dd-title": "Abfragen erstellen ohne SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Erstelle Abfragen visuell mit ein paar Klicks. Es sind keine Kenntnisse von SPARQL erforderlich.",
 	"wdqs-app-query-builder-banner-content": "Brauchst du Hilfe bei der Erstellung einer Abfrage? Mit dem neuen <a>Query Builder</a> kannst du Abfragen erstellen, ohne Abfragen in SPARQL schreiben zu müssen.",
 	"wdqs-app-query-builder-example-banner-content": "Mit dem <a>Query Builder</a> kannst duu Abfragen erstellen, ohne SPARQL schreiben zu müssen",
 	"wdqs-app-help-datamodel": "RDF-Datenmodell",

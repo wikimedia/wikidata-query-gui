@@ -30,8 +30,6 @@
 	"wdqs-app-help-manual": "Упатство",
 	"wdqs-app-help-examples": "Примери за барања",
 	"wdqs-app-query-builder-name": "Срочувач на барања",
-	"wdqs-app-query-builder-dd-title": "Срочувајте барања со SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Нагледно создавајте барања со неколку стисоци. Не се бараат познавања од SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Ви треба помош да срочите барање? Можете да ги срочувате без да пишувате SPARQL со новиот <a>Срочувач на барања</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Можете да создавате барања без да пишувате SPARQL со <a>Срочувачот на барања</a>.",
 	"wdqs-app-help-datamodel": "Податочен модел RDF",

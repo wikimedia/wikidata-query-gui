@@ -32,7 +32,6 @@
 	"wdqs-app-help-manual": "Օգտագործողի Ուղեցոյց",
 	"wdqs-app-help-examples": "Հարցակէտներու Օրինակ",
 	"wdqs-app-query-builder-name": "Հարցակէտ Կառուցող",
-	"wdqs-app-query-builder-dd-title": "Առանց SPARQL-ի հարցակէտներ ստեղծել",
 	"wdqs-app-help-prefixes": "Նախամասնիկներու ցանկ",
 	"wdqs-app-help-copy": "Հրամանագիր տեղեկութիւններ",
 	"wdqs-app-help-queryhelper": "Հարցակէտի Օգնող",

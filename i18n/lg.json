@@ -31,8 +31,6 @@
 	"wdqs-app-help-manual": "Endagiriro",
 	"wdqs-app-help-examples": "Ebibuuzo ebirabirwako",
 	"wdqs-app-query-builder-name": "Ekikora Ekibuuzo",
-	"wdqs-app-query-builder-dd-title": "Kola Ebibuuzo nga toyina SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Tondaho Ebibuuzo ebirabibwa ng'onyize ekitono. Tewali magezi ga SPARQL agetagisibwa.",
 	"wdqs-app-query-builder-banner-content": "Wetaga obuyambi kukola Ekibuuzo? Osobora ku zimba Ebibuuzo nga toyina ku'wandika SPARQL mu <a>ekikora Ekibuuzo</a>",
 	"wdqs-app-query-builder-example-banner-content": "Osobora ku tondawo Ebibuuzo nga toyina ku'wandika SPARQL mu <a>Ekikora Ekibuuzo</a>",
 	"wdqs-app-help-datamodel": "Endaga byingi ebikwatibwako",

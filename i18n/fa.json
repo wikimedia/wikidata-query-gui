@@ -46,8 +46,6 @@
 	"wdqs-app-help-manual": "دستورالعمل",
 	"wdqs-app-help-examples": "مثال کوئری",
 	"wdqs-app-query-builder-name": "پرس‌وجوساز",
-	"wdqs-app-query-builder-dd-title": "بدون SPARQL پرس‌وجو بسازید",
-	"wdqs-app-query-builder-dd-copy": "از طریق واسط کاربری و با چند کلیک پرس‌وجو بسازید. نیازی به دانستن SPARQL نیست.",
 	"wdqs-app-query-builder-banner-content": "آیا برای ساخت پرس‌وجو کمک می‌خواهید؟ بدون اینکه مجبور باشید SPARQL بنویسید می‌توانید در <a>پرس‌وجوساز</a> جدید پرس‌وجو بسازید.",
 	"wdqs-app-query-builder-example-banner-content": "شما می‌توانید بدون اینکه مجبور به نوشتن SPARQL در <a>سازندۀ پرسمان</a> باشید پرسمان‌هایی ایجاد کنید.",
 	"wdqs-app-help-datamodel": "مدل داده RDF",

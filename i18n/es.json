@@ -54,8 +54,6 @@
 	"wdqs-app-help-manual": "Manual del usuario",
 	"wdqs-app-help-examples": "Consultas de ejemplo",
 	"wdqs-app-query-builder-name": "Constructor de consultas",
-	"wdqs-app-query-builder-dd-title": "Construir consultas sin SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Cree consultas visualmente con unos pocos clics. No se requiere conocimiento de SPARQL.",
 	"wdqs-app-query-builder-banner-content": "¿Necesita ayuda para crear una consulta? Puedes construir consultas sin tener que escribir SPARQL en el nuevo <a>Creador de Consultas</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Puedes crear consultas sin necesidad de escribir SPAQL en el <a>Constructor de Consultas </a>",
 	"wdqs-app-help-datamodel": "Modelo de datos de RDF",

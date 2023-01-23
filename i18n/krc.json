@@ -30,8 +30,6 @@
 	"wdqs-app-help-manual": "Къошулуучуну болушуучусу",
 	"wdqs-app-help-examples": "Излемлени юлгюлери",
 	"wdqs-app-query-builder-name": "Излем конструктор",
-	"wdqs-app-query-builder-dd-title": "SPARQL болмагъанлай излем къурашдыр",
-	"wdqs-app-query-builder-dd-copy": "Талай клик бла кёрюнме излемлены къурагъыз. SPARQL билги керек тюлдю.",
 	"wdqs-app-query-builder-banner-content": "Излем къурашдырыуда болушлукъму керекди? Джангы <a>Излем къурушдуруучу</a>да SPARQL джазаргъа зорлукъда къалмагъанлай къурашдырыргъа боллукъсуз.",
 	"wdqs-app-query-builder-example-banner-content": "<a>Излем конструктор</a>да SPARQL джазаргъа керек болмай, излемле къураргъа боллукъсуз.",
 	"wdqs-app-help-datamodel": "RDF билги модели",

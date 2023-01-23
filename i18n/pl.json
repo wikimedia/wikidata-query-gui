@@ -42,8 +42,6 @@
 	"wdqs-app-help-manual": "Podręcznik użytkownika",
 	"wdqs-app-help-examples": "Przykładowe zapytania",
 	"wdqs-app-query-builder-name": "Kreator zapytań",
-	"wdqs-app-query-builder-dd-title": "Twórz zapytania bez SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Twórz zapytania wizualnie za pomocą kilku kliknięć. Nie jest wymagana znajomość SPARQL.",
 	"wdqs-app-help-datamodel": "Model danych RDF",
 	"wdqs-app-help-prefixes": "Lista prefiksów",
 	"wdqs-app-help-copy": "Informacje o licencji",

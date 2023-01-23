@@ -32,8 +32,6 @@
 	"wdqs-app-help-manual": "Foydalanuvchi qoʻllanmasi",
 	"wdqs-app-help-examples": "Navbatlar namunasi",
 	"wdqs-app-query-builder-name": "Navbat tuzuvchi",
-	"wdqs-app-query-builder-dd-title": "SPARQLsiz navbatni tuzish",
-	"wdqs-app-query-builder-dd-copy": "Vizual ravishda bir necha marta bosish orqali navbatlar yarating. SPARQLni bilish shart emas.",
 	"wdqs-app-logout": "Chiqish",
 	"wdqs-app-tools-list-properties": "Xossalar roʻyxati",
 	"wdqs-app-result-json": "JSON fayl",

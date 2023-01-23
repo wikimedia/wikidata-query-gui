@@ -42,8 +42,6 @@
 	"wdqs-app-help-manual": "Manual d'usuari",
 	"wdqs-app-help-examples": "Consultes d'exemple",
 	"wdqs-app-query-builder-name": "Generador de consultes",
-	"wdqs-app-query-builder-dd-title": "Genereu consultes amb SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Genereu consultes de forma visual mitjançant uns pocs clics. No cal conèixer SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Us cal ajuda per a generar una consulta? Podeu preparar consultes sense escriure en SPARQL amb el nou <a>Generador de consultes</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Podeu generar consultes sense haver d'escriure-les en SPARQL amb el <a>Generador de consultes</a>",
 	"wdqs-app-help-datamodel": "Model de dades RDF",

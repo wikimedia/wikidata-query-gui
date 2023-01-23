@@ -33,8 +33,6 @@
 	"wdqs-app-help-manual": "使用者手冊",
 	"wdqs-app-help-examples": "範例查詢",
 	"wdqs-app-query-builder-name": "查詢建置器",
-	"wdqs-app-query-builder-dd-title": "不使用 SPARQL 的查詢建置器",
-	"wdqs-app-query-builder-dd-copy": "只需點擊幾下來建立視覺化查詢。可不需具備 SPARQL 相關知識。",
 	"wdqs-app-query-builder-banner-content": "您需要協助來建立查詢嗎？在新的<a>查詢建置器</a>您可以不必編寫 SPARQL 來建置查詢。",
 	"wdqs-app-query-builder-example-banner-content": "您可以不必在<a>查詢建置器</a>編寫 SPARQL 來建立查詢",
 	"wdqs-app-help-datamodel": "RDF 資料模型",

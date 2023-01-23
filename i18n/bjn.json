@@ -30,8 +30,6 @@
 	"wdqs-app-help-manual": "Panduan Pamakai",
 	"wdqs-app-help-examples": "Cuntuh kuéri (''query'')",
 	"wdqs-app-query-builder-name": "Pambangun Kuéri",
-	"wdqs-app-query-builder-dd-title": "Bangun kuéri kada pakai SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Ulah kuéri sacara visual lawan babarapa klik. Kada parlu mangatahui SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Apakah Pian parlu bantuan gasan maulah kuéri? Pian kawa mambangun kuéri kada musti harus manulis SPARQL di <a>Pambangun Kuéri</a> nang hanyar.",
 	"wdqs-app-help-datamodel": "Janis Data RDF",
 	"wdqs-app-help-prefixes": "Daptar awalan",

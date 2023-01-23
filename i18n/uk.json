@@ -42,8 +42,6 @@
 	"wdqs-app-help-manual": "Посібник користувача",
 	"wdqs-app-help-examples": "Приклади запитів",
 	"wdqs-app-query-builder-name": "Конструктор запитів",
-	"wdqs-app-query-builder-dd-title": "Створюйте запити без SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Створюйте запити візуально за кілька кліків. Знання SPARQL не потрібні.",
 	"wdqs-app-query-builder-banner-content": "Вам потрібна допомога у створенні запиту? Ви можете створювати запити без необхідності писати SPARQL у новому <a>конструкторі запитів</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Ви можете створювати запити без необхідності писати SPARQL у <a>конструкторі запитів</a>",
 	"wdqs-app-help-datamodel": "Модель даних RDF",

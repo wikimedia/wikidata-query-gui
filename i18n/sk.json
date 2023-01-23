@@ -33,8 +33,6 @@
 	"wdqs-app-help-manual": "Používateľská príručka",
 	"wdqs-app-help-examples": "Príklady dotazov",
 	"wdqs-app-query-builder-name": "Názov dopytovača",
-	"wdqs-app-query-builder-dd-title": "Dopytovač bez SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Vytvorte dopyty vizuálne pomocou niekoľkých kliknutí. Nevyžadujú sa žiadne vedomosti o SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Potrebujete pomôcť s vytvorením dopytu? V novom <a>Query Builder</a> dokážete vytvoriť dopyt bez použitia SPARQL.",
 	"wdqs-app-query-builder-example-banner-content": "V novom <a>Query Builder</a> dokážete vytvoriť dopyt bez použitia SPARQL.",
 	"wdqs-app-help-datamodel": "Dátový model RDF",

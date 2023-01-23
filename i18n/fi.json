@@ -39,8 +39,6 @@
 	"wdqs-app-help-manual": "Käyttöohje",
 	"wdqs-app-help-examples": "Esimerkkikyselyt",
 	"wdqs-app-query-builder-name": "Kyselyn rakennustyökalu",
-	"wdqs-app-query-builder-dd-title": "Tee kyselyitä ilman SPARQL:ää",
-	"wdqs-app-query-builder-dd-copy": "Luo kyselyitä visuaalisesti muutamalla klikkauksella. Tuntemusta SPARQL:stä ei tarvita.",
 	"wdqs-app-query-builder-banner-content": "Tarvitsetko apua kyselyn luomisessa? Voit tehdä kyselyitä ilman SPARQL:in kirjoitusta uudessa <a>Kyselyin rakennustyökalussa</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Voit luoda kyselyitä ilman SPARQL:in kirjoittamista <a>Kyselyn rakennustyökalussa</a>",
 	"wdqs-app-help-datamodel": "RDF-tietomalli",

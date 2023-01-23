@@ -40,8 +40,6 @@
 	"wdqs-app-help-manual": "사용자 매뉴얼",
 	"wdqs-app-help-examples": "예시 쿼리",
 	"wdqs-app-query-builder-name": "쿼리 빌더",
-	"wdqs-app-query-builder-dd-title": "SPARQL 없이 쿼리 만들기",
-	"wdqs-app-query-builder-dd-copy": "클릭 몇 번으로 쿼리를 시각적으로 만드세요. SPARQL을 알 필요가 없습니다.",
 	"wdqs-app-query-builder-banner-content": "쿼리 만들기에 도움이 필요하십니까? 새 <a>쿼리 빌더</a>에서 SPARQL을 작성하지 않고 쿼리를 만들 수 있습니다.",
 	"wdqs-app-help-datamodel": "RDF 데이터 모델",
 	"wdqs-app-help-prefixes": "접두사 목록",

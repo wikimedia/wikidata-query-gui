@@ -39,8 +39,6 @@
 	"wdqs-app-help-manual": "Panduan Pengguna",
 	"wdqs-app-help-examples": "Contoh Kueri",
 	"wdqs-app-query-builder-name": "Pembangun Kueri",
-	"wdqs-app-query-builder-dd-title": "Bangun kueri tanpa SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Buat kueri secara visual dengan beberapa klik. Tidak perlu mengetahui SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Apakah Anda butuh bantuan untuk membuat kueri? Anda bisa membangun kueri tanpa harus menulis SPARQL di <a>Pembangun Kueri</a> yang baru.",
 	"wdqs-app-query-builder-example-banner-content": "Anda bisa membuat kueri tanpa harus menulis SPARQL di <a>Pembangun Kueri</a>",
 	"wdqs-app-help-datamodel": "Jenis Data RDF",

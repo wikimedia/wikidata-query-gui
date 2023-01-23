@@ -31,8 +31,6 @@
 	"wdqs-app-help-manual": "Panduan Sang Anganggé",
 	"wdqs-app-help-examples": "Conto Kuéri",
 	"wdqs-app-query-builder-name": "Pawangun Kuéri",
-	"wdqs-app-query-builder-dd-title": "Pawangun kuéri tanpa SPARQL",
-	"wdqs-app-query-builder-dd-copy": "Kardi cingakan kuéri antuk makudang klik. Tan kaperluang kawikanan indik SPARQL.",
 	"wdqs-app-query-builder-banner-content": "Napiké ragané perlu wantuan antuk ngardi kuéri? Ragané prasida ngawangun kuéri tanpa perlu nyurat SPARQL ring <a>Pawangun Kuéri</a> sané anyar.",
 	"wdqs-app-query-builder-example-banner-content": "Ragané prasida ngardi kuéri tanpa nyurat SPARQL ring <a>Pawangun Kuéri</a>",
 	"wdqs-app-help-datamodel": "Modél Data RDF",
