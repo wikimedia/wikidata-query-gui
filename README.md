@@ -52,6 +52,8 @@ To deploy the GUI, [trigger a new build of the deploy repo on Jenkins](https://i
 ![Screenshot of the Jenkins dashboard for the build repo. Highlighted are the build buttons in the sidebar with a "1" and the "Build" button in the main part with a "2"](docs/images/triggerDeployBuild.png)
 
 This creates a new open change in the deploy repository: https://gerrit.wikimedia.org/r/q/project:wikidata/query/gui-deploy+status:open
+That change will be based on the [latest commit in the master branch](https://gerrit.wikimedia.org/r/plugins/gitiles/wikidata/query/gui/+log/refs/heads/master), and thus it will include all previous commits.
+Optionally, you can edit the commit message in the Gerrit UI to include the `Bug: Txxxxx` line, to emphasize to which task the change belongs.
 
 You can clone that repository and check out the change locally to test and verify it.
 
