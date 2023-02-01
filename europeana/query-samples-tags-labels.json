@@ -7,7 +7,7 @@
 			"labels": {
 				"en": {
 					"language":"en",
-					"value":"edm:provider"
+					"value":"Provider"
 				}
 			}
 		},
@@ -18,7 +18,7 @@
 			"labels": {
 				"en": {
 					"language":"en",
-					"value":"edm:rights"
+					"value":"Rights"
 				}
 			}
 		},
@@ -29,7 +29,7 @@
 			"labels": {
 				"en": {
 					"language":"en",
-					"value":"edm:isShownBy"
+					"value":"isShownBy"
 				}
 			}
 		},
@@ -40,7 +40,7 @@
 			"labels": {
 				"en": {
 					"language":"en",
-					"value":"rdf:type"
+					"value":"Type"
 				}
 			}
 		},
@@ -51,7 +51,7 @@
 			"labels": {
 				"en": {
 					"language":"en",
-					"value":"edm:Agent"
+					"value":"Agent"
 				}
 			}
 		},
@@ -62,7 +62,7 @@
 			"labels": {
 				"en": {
 					"language":"en",
-					"value":"edm:Place"
+					"value":"Place"
 				}
 			}
 		}
