@@ -1,0 +1,19 @@
+{
+		"cc": "PREFIX cc: <http://creativecommons.org/ns#>",
+		"ds": "PREFIX dc: <http://purl.org/dc/elements/1.1/>",
+		"dcterms": "PREFIX dcterms: <http://purl.org/dc/terms/>",
+		"dqv": "PREFIX dqv: <http://www.w3.org/ns/dqv#>",
+		"ebucore": "PREFIX ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>",
+		"edm": "PREFIX edm: <http://www.europeana.eu/schemas/edm/>",
+		"foaf": "PREFIX foaf: <http://xmlns.com/foaf/0.1/>",
+		"odrl": "PREFIX odrl: <http://www.w3.org/ns/odrl/2/>",
+		"ore": "PREFIX ore: <http://www.openarchives.org/ore/terms/>",
+		"owl": "PREFIX owl: <http://www.w3.org/2002/07/owl#>",
+		"rdaGr2": "PREFIX rdaGr2: <http://rdvocab.info/ElementsGr2/>",
+		"rdf": "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>",
+		"rdfs": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>",
+		"scvs": "PREFIX scvs: <http://rdfs.org/sioc/services#>",
+		"skos": "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>",
+		"wgs84pos": "PREFIX wgs84_pos:<http://www.w3.org/2003/01/geo/wgs84_pos#>",
+		"xsd": "PREFIX xsd: <http://www.w3.org/2001"
+}

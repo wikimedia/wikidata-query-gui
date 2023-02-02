@@ -54,19 +54,14 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	SELF.prototype.searchEntities = function( term, type, language ) {
 		var deferred = $.Deferred();
 
-		$.getJSON( TOOLTIPS_EDM_JSON )
-			.fail( function( jqXHR, textStatus, errorThrown ) {
-				console.error( 'Failed loading the tooltipc edm json: ' + textStatus + ", " + errorThrown );
-				deferred.reject();
-			} ).then(function( allTooltips ) {
+		$.getJSON( TOOLTIPS_EDM_JSON, function( allTooltips ) {
 				var tooltip=[];
 				$.each(allTooltips , function(index, item) { 
 					if(item.id.localeCompare(term)==0) {
 						tooltip.push(item);
 						return false;	
 					}
-				});		
-				
+				});
 				return deferred.resolve({"search":tooltip});			
 		});
 		
