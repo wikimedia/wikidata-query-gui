@@ -1,10 +1,10 @@
 {
   "api": {
-    "sparql": {
-      "uri": "http://sparql.europeana.eu/"
-    },
-    "examples": {
-      "jsonFile": "europeana/query-samples.json"
-    }
+	    "sparql": {
+    	  "uri": "https://sparql.europeana.eu/"
+    	},
+    	"examples": {
+      		"jsonFile": "europeana/query-samples.json"
+    	}
   }
 }

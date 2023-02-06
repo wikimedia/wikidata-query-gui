@@ -34,14 +34,10 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @return {jQuery.Promise} Object taking list of example queries { title:, query: }
 	 */
 	SELF.prototype.getExamples = function () {
-		return $.getJSON( this._jsonFile )
-			.fail( function( jqXHR, textStatus, errorThrown ) {
-				console.error( 'Failed loading the query samples json: ' + textStatus + ", " + errorThrown );
-				throw errorThrown;
-			} ).then(function( examples ) {
-				// group by category
-  				return _.flatten( _.toArray( _.groupBy( examples, 'category' ) ) );
-			});
+		return $.getJSON( this._jsonFile, function( examples ) {
+			// group by category
+  			return _.flatten( _.toArray( _.groupBy( examples, 'category' ) ) );
+		});
 	};
 
 	/**
