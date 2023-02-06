@@ -68,6 +68,8 @@
 	"wdqs-app-footer-updated-ago": "Veriler $1 güncellendi",
 	"wdqs-app-result-shorturl": "Sonuç için kısa URL",
 	"wdqs-app-result-shorturl-title": "Bu sonuç için kısa URL",
+	"wdqs-app-result-shorturl-query": "Sorgulanacak kısa URL",
+	"wdqs-app-result-shorturl-query-title": "Bu sonucu almak için kullanılan sorgunun kısa URL'si",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io'da aç",
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.io grafiklerini kullanarak geçerli sonuç verileriyle bir grafik oluştur",
 	"wdqs-app-result-embed": "Sonucu göm",

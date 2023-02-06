@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"wdqs-app-button-examples": "Asempi",
+	"wdqs-app-button-prefixes": "Prifissi",
+	"wdqs-app-button-more-tools": "Àutri strummenti",
+	"wdqs-app-button-help": "Aiutu",
+	"wdqs-app-button-download": "Scàrrica",
+	"wdqs-app-button-link": "Liami",
+	"wdqs-app-button-code": "Còdici",
+	"wdqs-app-help-portal": "Purtali di aiutu",
+	"wdqs-app-help-prefixes": "Elencu dî prifissi",
+	"wdqs-app-logout": "Nesci",
+	"wdqs-app-tools-enhance-ui": "Migghiura la ntirfaccia utenti",
+	"wdqs-app-result-json": "File JSON",
+	"wdqs-app-result-tsv": "File TSV",
+	"wdqs-app-result-csv": "File CSV",
+	"wdqs-app-result-svg": "Mmàggini SVG",
+	"wdqs-app-result-html": "Tabbella HTML",
+	"wdqs-app-resultbrowser-table": "Tabbella",
+	"wdqs-app-resultbrowser-image-grid": "Grigghia di mmàggini",
+	"wdqs-app-resultbrowser-map": "Mappa",
+	"wdqs-app-resultbrowser-tree": "Àrvulu",
+	"wdqs-dialog-key-shortcut-show-example": "Ammustra asempi.",
+	"wdqs-dialog-key-shortcut-show-language": "Ammustra lu menu dî lingui.",
+	"wdqs-dialog-key-shortcut-close-button": "Chiudi",
+	"wdqs-ve-show": "Ammustra",
+	"wdqs-ve-limit": "Lìmiti",
+	"wdqs-ve-with": "cu",
+	"wdqs-ve-anything": "quarsiasi cosa",
+	"wdqs-ve-any": "quarsiasi",
+	"wdqs-ve-or": "o",
+	"wdqs-ve-subtype": "suttatipu",
+	"wdqs-ve-sb-other": "Àutru",
+	"wdqs-action-unknow-error": "Erruri scanusciutu",
+	"wdqs-embed-button-edit-code": "Cancia SPARQL"
+}
