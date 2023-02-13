@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Les Meloures",
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"wdqs-app-button-examples": "Beispiller",
@@ -14,6 +15,8 @@
 	"wdqs-app-button-clear": "Eidel maachen",
 	"wdqs-app-button-clear-title": "Ufro eidelmaachen",
 	"wdqs-app-button-restore-title": "Vireg Ufro restauréieren",
+	"wdqs-app-button-format-title": "Ufro formatéieren",
+	"wdqs-app-button-query-helper": "Erklärung vun der Ufro weisen",
 	"wdqs-app-button-fullscreen-title": "Vollbildmodus vum Editeur wiesselen",
 	"wdqs-app-button-display": "Weisen",
 	"wdqs-app-button-display-title": "Resultat als Tabell, Bild, ... weisen",
