@@ -38,6 +38,8 @@
 	"wdqs-app-logout": "Ausloggen",
 	"wdqs-app-tools-edit-items": "Elementer änneren",
 	"wdqs-app-tools-visualize-data": "Date visualiséieren",
+	"wdqs-app-tools-list-properties": "Eegenschaften oplëschten",
+	"wdqs-app-tools-lexicographical-data": "Lexikographesch Daten",
 	"wdqs-app-tools-for-programmers": "Fir Programméierer",
 	"wdqs-app-footer-help": "Dréckt  <i>[CTRL-SPACE]</i> fir déi automatesch Vervollstännegung z'aktivéieren.",
 	"wdqs-app-footer-updated-ago": "Daten aktualiséiert $1",
