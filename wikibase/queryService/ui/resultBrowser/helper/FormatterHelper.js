@@ -396,7 +396,27 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, 
 		if ( longestNs ) {
 			return longestNs + ':' + uri.substr( length );
 		} else {
-			return '<' + uri + '>';
+			var forDisplay;
+			try {
+				var decoded = decodeURI( uri );
+				forDisplay = decoded.replace(
+					/* eslint-disable prefer-regex-literals, es-x/no-regexp-u-flag, es-x/no-regexp-unicode-property-escapes */
+					/*
+					 * use the RegExp constructor instead of a literal so that,
+					 * in browsers without /u support, we only get a runtime exception,
+					 * not a syntax error on the whole file;
+					 * because we catch this error and have a valid fallback for it,
+					 * using /u and \p{} is fine even if we still want to support IE11
+					 */
+					new RegExp( '\\p{Z}|\\p{C}', 'gu' ),
+					/* eslint-enable */
+					encodeURIComponent
+				);
+			} catch ( _ ) {
+				// e.g. decode error, or Unicode RegExp not supported (IE11)
+				forDisplay = uri;
+			}
+			return '<' + forDisplay + '>';
 		}
 	};
 
