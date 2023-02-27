@@ -410,7 +410,19 @@ wikibase.queryService.ui.resultBrowser.helper.FormatterHelper = ( function ( $, 
 					 */
 					new RegExp( '\\p{Z}|\\p{C}', 'gu' ),
 					/* eslint-enable */
-					encodeURIComponent
+					function ( codepoint ) {
+						if (
+							codepoint === '\u200B' || // U+200B ZERO WIDTH SPACE (ZWSP)
+							codepoint === '\u200C' || // U+200C ZERO WIDTH NON-JOINER (ZWNJ)
+							codepoint === '\u200D' // U+200D ZERO WIDTH JOINER (ZWJ)
+						) {
+							// don’t encode these, allow them in decoded form
+							return codepoint;
+						} else {
+							// don’t allow Separator or Other characters in decoded form
+							return encodeURIComponent( codepoint );
+						}
+					}
 				);
 			} catch ( _ ) {
 				// e.g. decode error, or Unicode RegExp not supported (IE11)
