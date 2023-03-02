@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Blackisnewyellow",
 			"Ерней",
 			"Ильнар"
 		]
@@ -31,6 +32,8 @@
 	"wdqs-app-help-manual": "Кулланма",
 	"wdqs-app-help-examples": "Сорау мисаллары",
 	"wdqs-app-query-builder-name": "Сорату төзүчесе",
+	"wdqs-app-query-builder-banner-content": "Сезгә сорашу төзер өчен ярдәм кирәкме? Сез яңа сорашулар ясау коралын SPARQLны белмичә дә куллана аласыз.",
+	"wdqs-app-query-builder-example-banner-content": "Сез яңа сорашулар төзүче коралда SPARQLны язмыйча сорашулар ясый аласыз.",
 	"wdqs-app-help-datamodel": "RDF мәгълүматлар моделе",
 	"wdqs-app-help-prefixes": "Алкушымчалар исемлеге",
 	"wdqs-app-help-copy": "Лицензияләү мәгълүматы",
@@ -47,6 +50,8 @@
 	"wdqs-app-footer-updated-ago": "Мәгълүматлар $1 яңартылды",
 	"wdqs-app-result-shorturl": "Нәтиҗәгә кыска URL",
 	"wdqs-app-result-shorturl-title": "Бу нәтиҗәгә кыска URL",
+	"wdqs-app-result-shorturl-query": "Сорашу өчен кыска URL",
+	"wdqs-app-result-shorturl-query-title": "Бу нәтиҗәне китерү өчен кулланылган сорашуның кыска URL юлламасы",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.io эчендә ачу",
 	"wdqs-app-result-rawgraphs-title": "Шушы нәтиҗә белән RAWGraphs.io ярдәмендә граф ясарга",
 	"wdqs-app-result-embed": "Нәтиҗәне кертү",
