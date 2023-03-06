@@ -3,6 +3,7 @@
 		"authors": [
 			"90-NS-FZ",
 			"Afaz",
+			"Christmas Wreath",
 			"Fryed-peach",
 			"Gulpin",
 			"Kkairri",
@@ -67,6 +68,7 @@
 	"wdqs-app-result-shorturl": "実行結果の短縮URL",
 	"wdqs-app-result-shorturl-title": "この実行結果の短縮URL",
 	"wdqs-app-result-shorturl-query": "クエリの短縮URL",
+	"wdqs-app-result-shorturl-query-title": "この結果を取得するために使用されたクエリへの短縮 URL",
 	"wdqs-app-result-rawgraphs": "RAWGraphs.ioで開く",
 	"wdqs-app-result-rawgraphs-title": "RAWGraphs.ioを使って現在の結果データからグラフを作成する",
 	"wdqs-app-result-embed": "実行結果を埋め込む",

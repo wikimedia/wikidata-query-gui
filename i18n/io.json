@@ -50,6 +50,8 @@
 	"wdqs-app-footer-updated-ago": "Donaji kargita $1 ante nun",
 	"wdqs-app-result-shorturl": "Montrez la URL de la rezulto",
 	"wdqs-app-result-shorturl-title": "Kurta URL por ica rezulto",
+	"wdqs-app-result-shorturl-query": "Kurta URL-ligilo a demando",
+	"wdqs-app-result-shorturl-query-title": "Kurta URL-ligilo a la demando, qua uzesis por obtenar ca rezulto",
 	"wdqs-app-result-rawgraphs": "Apertar en RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Krear grafiko kun la nuna dati per RAWGraphs.io",
 	"wdqs-app-result-embed": "Enkorpigar la rezulti",
