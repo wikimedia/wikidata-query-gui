@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
@@ -33,7 +34,7 @@
 	"wdqs-ve-any": "אַלע",
 	"wdqs-ve-or": "אדער",
 	"wdqs-ve-subtype": "אונטערטיפ",
-	"wdqs-ve-sb-suggestions": "הצעות",
+	"wdqs-ve-sb-suggestions": "פֿאָרשלאָגן",
 	"wdqs-ve-sb-other": "אַנדער",
 	"wdqs-action-render": "רענדער רעזולטאַט",
 	"wdqs-result-map-layers-all": "אלע שיכטעס"
