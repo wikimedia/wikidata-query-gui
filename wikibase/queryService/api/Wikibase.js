@@ -4,21 +4,36 @@ wikibase.queryService.api = wikibase.queryService.api || {};
 
 wikibase.queryService.api.Wikibase = ( function( $ ) {
 	'use strict';
+	
+	var API_ENDPOINT = 'https://www.wikidata.org/w/api.php';
+	var LANGUAGE = 'en';
 
-	var QUERY_SAMPLES_TAGS_LABELS_JSON = 'europeana/query-samples-tags-labels.json';
-	var TOOLTIPS_EDM_JSON = 'europeana/tooltips-edm.json';
-	var QUERY_LANGUGES = {
+	var SEARCH_ENTITES = {
+		action: 'wbsearchentities',
+		format: 'json',
+		limit: 50,
+		continue: 0,
+		language: LANGUAGE,
+		uselang: LANGUAGE
+	},
+	QUERY_LANGUGES = {
 		action: 'query',
 		meta: 'siteinfo',
 		format: 'json',
 		siprop: 'languages'
+	},
+	QUERY_LABELS = {
+		action: 'wbgetentities',
+		props: 'labels',
+		format: 'json',
+		languages: LANGUAGE,
+		languagefallback: '1'
 	},
 	QUERY_DATATYPE = {
 		action: 'wbgetentities',
 		props: 'datatype',
 		format: 'json'
 	};
-
 
 	/**
 	 * API for the Wikibase Europeana API
@@ -30,11 +45,40 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @constructor
 	 * @param {string} endpoint default: ''
 	 */
-	function SELF( endpoint, defaultLanguage ) {
+	function SELF( endpoint, defaultLanguage, sparqlUri, wikibaseConfig ) {
+		this._endpoint = API_ENDPOINT;
+
+		if ( endpoint ) {
+			this._endpoint = endpoint;
+		}
+
 		if ( defaultLanguage ) {
 			this._language = defaultLanguage;
 		}
+		
+		if ( !sparqlUri ) {
+			throw new Error( 'Invalid method call wikibase.queryService.api.Wikibase: sparqlUri parameter is missing!' );
+		}
+		this._sparqlUri = sparqlUri;
+		if(!this._sparqlUri.includes("wikidata.org") && !this._sparqlUri.includes("europeana.eu")) {
+			throw new Error( 'Invalid sparqlUri parameter in the method wikibase.queryService.api.Wikibase!' )
+		}
+
+		if(this._sparqlUri.includes("europeana.eu")) {
+			if ( !wikibaseConfig ) {
+				throw new Error( 'Invalid method call wikibase.queryService.api.Wikibase: wikibaseConfig parameter is missing!' );
+			}	
+			this._querySamplesTagLabelsJsonEuropeana = wikibaseConfig.querySamplesTagLabelsJsonEuropeana;
+			this._tooltipsEdmJsonEuropeana = wikibaseConfig.tooltipsEdmJsonEuropeana;
+		}
+
 	}
+
+	/**
+	 * @property {string}
+	 * @private
+	 */
+	SELF.prototype._endpoint = null;
 
 	/**
 	 * @property {string}
@@ -43,7 +87,7 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	SELF.prototype._language = null;
 
 	/**
-	 * Search an entity
+	 * Search an entity with using wbsearchentities
 	 *
 	 * @param {string} term search string
 	 * @param {string} type entity type to search for
@@ -52,21 +96,37 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.searchEntities = function( term, type, language ) {
-		var deferred = $.Deferred();
-
-		$.getJSON( TOOLTIPS_EDM_JSON, function( allTooltips ) {
-				var tooltip=[];
-				$.each(allTooltips , function(index, item) { 
-					if(item.id.localeCompare(term)==0) {
-						tooltip.push(item);
-						return false;	
-					}
-				});
-				return deferred.resolve({"search":tooltip});			
-		});
-		
-		return deferred.promise();
-			
+		if( this._sparqlUri.includes("wikidata.org") ) {
+			var query = SEARCH_ENTITES;
+			query.search = term;
+	
+			if ( type ) {
+				query.type = type;
+			}
+			if ( this._language || language ) {
+				query.language = language || this._language;
+				query.uselang = language || this._language;
+			} else {
+				query.language = LANGUAGE;
+				query.uselang = LANGUAGE;
+			}
+	
+			return this._query( query );
+		}
+		else if( this._sparqlUri.includes("europeana.eu") ) {
+			var deferred = $.Deferred();
+			$.getJSON( this._tooltipsEdmJsonEuropeana, function( allTooltips ) {
+					var tooltip=[];
+					$.each(allTooltips , function(index, item) { 
+						if(item.id.localeCompare(term)==0) {
+							tooltip.push(item);
+							return false;	
+						}
+					});
+					return deferred.resolve({"search":tooltip});			
+			});
+			return deferred.promise();
+		}			
 	};
 
 	/**
@@ -85,11 +145,27 @@ wikibase.queryService.api.Wikibase = ( function( $ ) {
 	 * @return {jQuery.Promise}
 	 */
 	SELF.prototype.getLabels = function( ids ) {
-		return $.getJSON( QUERY_SAMPLES_TAGS_LABELS_JSON )
-			.fail( function( jqXHR, textStatus, errorThrown ) {
-				console.error( 'Failed loading the query samples tags labels json: ' + textStatus + ", " + errorThrown );
-				throw errorThrown;
-			} );
+		if(this._sparqlUri.includes("wikidata.org")) {
+			if ( typeof ids === 'string' ) {
+				ids = [ ids ];
+			}
+	
+			var query = QUERY_LABELS;
+			query.ids = ids.join( '|' );
+	
+			if ( this._language  ) {
+				query.languages = this._language;
+			}
+	
+			return this._query( query );
+		}
+		if(this._sparqlUri.includes("europeana.eu")) {
+			return $.getJSON( this._querySamplesTagLabelsJsonEuropeana )
+				.fail( function( jqXHR, textStatus, errorThrown ) {
+					console.error( 'Failed loading the query samples tags labels json: ' + textStatus + ", " + errorThrown );
+					throw errorThrown;
+				} );			
+		}
 	};
 
 	/**

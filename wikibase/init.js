@@ -65,12 +65,13 @@
 		wb.ui.resultBrowser.helper.FormatterHelper.initMoment();
 
 		$( '#query-form' ).attr( 'action', config.api.sparql.uri );
-		var api = new wb.api.Wikibase( config.api.wikibase.uri, lang ),
+		var api = new wb.api.Wikibase( config.api.wikibase.uri, lang, config.api.sparql.uri, config.api.wikibase ),
 			sparqlApi = new wb.api.Sparql( config.api.sparql.uri, lang ),
 			sparqlApiHelper = new wb.api.Sparql( config.api.sparql.uri, lang ),
 			querySamplesApi = new wb.api.QuerySamples(
 				lang,
-				config.api.examples
+				config.api.examples,
+				config.api.sparql.uri
 			),
 			codeSamplesApi = new wb.api.CodeSamples(
 				config.api.sparql.uri,
@@ -85,13 +86,14 @@
 		var isTopWindow = window.top === window;
 
 		var rdfHint = new wb.ui.editor.hint.Rdf( api ),
-				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api ),
-				editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow } );
+				rdfTooltip = new wb.ui.editor.tooltip.Rdf( api, null, config.api.sparql.uri),
+				editor = new wb.ui.editor.Editor( rdfHint, null, rdfTooltip, { focus: isTopWindow }, config.api.sparql );
 
+		wb.RdfNamespaces.initBasedOnEnvironment ( config.api.sparql.uri, config.api.rdfNamespaces );
 		if ( config.prefixes ) {
 			wb.RdfNamespaces.addPrefixes( config.prefixes );
 		}
-
+		
 		function afterLanguageChange() {
 			editor.updatePlaceholder();
 		}

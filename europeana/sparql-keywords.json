@@ -1,0 +1,14 @@
+{
+	"sparqlKeywords": [
+		"SELECT", "SELECT * WHERE {\n\n}", "SELECT (COUNT(*) AS ?count) WHERE {\n\n}",
+		"OPTIONAL", "OPTIONAL {\n\n}", "WHERE", "WHERE {\n\n}", "ORDER", "ORDER BY", 
+		"DISTINCT", "SERVICE", "BASE", "PREFIX", "REDUCED", "FROM", "LIMIT", "OFFSET", 
+		"HAVING", "UNION", "SAMPLE", "(SAMPLE() AS )", "COUNT", "(COUNT() AS )", "DESC", 
+		"DESC()", "ASC", "ASC()", "FILTER ()", "FILTER NOT EXISTS", "FILTER NOT EXISTS {\n\n}", 
+		"UNION", "UNION {\n\n}", "BIND", "BIND ()", "GROUP_CONCAT", "(GROUP_CONCAT() as )", "ORDER BY",
+		"#defaultView:Map", "#defaultView:ImageGrid", "#defaultView:Map", "#defaultView:BubbleChart",
+		"#defaultView:TreeMap", "#defaultView:Tree", "#defaultView:Timeline", "#defaultView:Dimensions", 
+		"#defaultView:Graph", "#defaultView:LineChart", "#defaultView:BarChart", "#defaultView:ScatterChart", 
+		"#defaultView:AreaChart", "hint:Query hint:optimizer \"None\"."
+	]
+}

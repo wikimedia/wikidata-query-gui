@@ -1,10 +1,23 @@
 {
   "api": {
 	    "sparql": {
-    	  "uri": "https://sparql.europeana.eu/"
+    	  "uri": "https://sparql.europeana.eu/",
+    	  "sparqlKeywordsJsonEuropeana": "europeana/sparql-keywords.json",
+    	  "sparqlPredicatesJsonEuropeana": "europeana/sparql-predicates.json"
     	},
     	"examples": {
-      		"jsonFile": "europeana/query-samples.json"
+      		"jsonFileEuropeana": "europeana/query-samples.json"
+    	},
+    	"rdfNamespaces": {
+    		"shortcutsJsonEuropeana": "europeana/rdf-namespace-shortcuts.json",
+    		"standardPrefixesJsonEuropeana": "europeana/rdf-standard-prefixes.json"
+    	},
+    	"wikibase": {
+    		"querySamplesTagLabelsJsonEuropeana": "europeana/query-samples-tags-labels.json",
+    		"tooltipsEdmJsonEuropeana": "europeana/tooltips-edm.json"
     	}
+  },  
+  "brand": {
+    "title": "Sparql Query Service"
   }
 }

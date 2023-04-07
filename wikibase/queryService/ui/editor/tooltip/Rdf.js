@@ -17,7 +17,7 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	 * @constructor
 	 * @param {wikibase.queryService.api.Wikibase} api
 	 */
-	function SELF( api, rdfNamespaces ) {
+	function SELF( api, rdfNamespaces, sparqlUri ) {
 		this._api = api;
 		this._rdfNamespaces = rdfNamespaces;
 
@@ -27,6 +27,14 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 
 		if ( !this._rdfNamespaces ) {
 			this._rdfNamespaces = wikibase.queryService.RdfNamespaces;
+		}
+		
+		if ( !sparqlUri ) {
+			throw new Error( 'Invalid method call wikibase.queryService.ui.editor.tooltip.Rdf: sparqlUri parameter is missing!' );
+		}
+		this._sparqlUri=sparqlUri;
+		if(!this._sparqlUri.includes("wikidata.org") && !this._sparqlUri.includes("europeana.eu")) {
+			throw new Error( 'Invalid sparqlUri parameter in the method wikibase.queryService.ui.editor.tooltip.Rdf!' )
 		}
 	}
 
@@ -66,24 +74,55 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	};
 
 	SELF.prototype._createTooltip = function( e ) {
-		var posX = e.clientX,
-			posY = e.clientY + $( window ).scrollTop(),
-			token = this._editor.getTokenAt( this._editor.coordsChar( {
-				left: posX,
-				top: posY
-			} ) ).string;
-
-		if ( !token.match( /.+\:.+/ ) ) {
-			return;
-		}
-
-		var self = this;
-		this._searchEntities( token ).done( function( list ) {
-			self._showToolTip( list.shift(), {
-				x: posX,
-				y: posY
+		if(this._sparqlUri.includes("europeana.eu")) {
+			var posX = e.clientX,
+				posY = e.clientY + $( window ).scrollTop(),
+				token = this._editor.getTokenAt( this._editor.coordsChar( {
+					left: posX,
+					top: posY
+				} ) ).string;
+	
+			if ( !token.match( /.+\:.+/ ) ) {
+				return;
+			}
+	
+			var self = this;
+			this._searchEntities( token ).done( function( list ) {
+				self._showToolTip( list.shift(), {
+					x: posX,
+					y: posY
+				} );
 			} );
-		} );
+		}
+		else if(this._sparqlUri.includes("wikidata.org")) {
+			var posX = e.clientX,
+				posY = e.clientY + $( window ).scrollTop(),
+				token = this._editor.getTokenAt( this._editor.coordsChar( {
+					left: posX,
+					top: posY
+				} ) ).string;
+	
+			if ( !token.match( /.+\:(Q|P)[0-9]*/ ) ) {
+				return;
+			}
+	
+			var prefixes = this._extractPrefixes( this._editor.doc.getValue() );
+			var prefix = token.split( ':', 1 )[0];
+			var entityId = token.split( ':' ).pop();
+	
+			if ( !prefixes[prefix] ) {
+				return;
+			}
+	
+			var self = this;
+			this._searchEntities( entityId, prefixes[prefix] ).done( function( list ) {
+				self._showToolTip( list.shift(), {
+					x: posX,
+					y: posY
+				} );
+			} );
+
+		}
 	};
 
 	SELF.prototype._removeToolTip = function() {
@@ -123,35 +162,57 @@ wikibase.queryService.ui.editor.tooltip.Rdf = ( function( CodeMirror, $, _ ) {
 	};
 
 	SELF.prototype._searchEntities = function( term, type ) {
-		var entityList = [],
-			deferred = $.Deferred();
-
-		this._api.searchEntities( term, type ).done(
-				function( data ) {
-					$.each( data.search, function( key, value ) {
-						var aTagOrText = null;					    
-					    if(value.reference) {
-							aTagOrText = document.createElement('a');
-							aTagOrText.target = '_blank';
-							aTagOrText.href = value.reference;
-							aTagOrText.innerText = value.label ? value.label + ' (' + value.id + ')' : value.id;
-						}
-						else {
-							aTagOrText = document.createTextNode(value.label ? value.label + ' (' + value.id + ')' : value.id);
-						}
-
-						entityList.push(
-							$()
-								.add( aTagOrText )
-								.add( $( '<br>' ) )
-								.add( $( '<small>' ).text( value.description || '' ) )
-						);
+		if(this._sparqlUri.includes("europeana.eu")) {
+			var entityList = [],
+				deferred = $.Deferred();
+	
+			this._api.searchEntities( term, type ).done(
+					function( data ) {
+						$.each( data.search, function( key, value ) {
+							var aTagOrText = null;					    
+						    if(value.reference) {
+								aTagOrText = document.createElement('a');
+								aTagOrText.target = '_blank';
+								aTagOrText.href = value.reference;
+								aTagOrText.innerText = value.label ? value.label + ' (' + value.id + ')' : value.id;
+							}
+							else {
+								aTagOrText = document.createTextNode(value.label ? value.label + ' (' + value.id + ')' : value.id);
+							}
+	
+							entityList.push(
+								$()
+									.add( aTagOrText )
+									.add( $( '<br>' ) )
+									.add( $( '<small>' ).text( value.description || '' ) )
+							);
+						} );
+	
+						deferred.resolve( entityList );
 					} );
-
-					deferred.resolve( entityList );
-				} );
-
-		return deferred.promise();
+	
+			return deferred.promise();
+		}
+		else if(this._sparqlUri.includes("wikidata.org")) {
+			var entityList = [],
+				deferred = $.Deferred();
+	
+			this._api.searchEntities( term, type ).done(
+					function( data ) {
+						$.each( data.search, function( key, value ) {
+							entityList.push(
+								$()
+									.add( document.createTextNode( value.label + ' (' + value.id + ')' ) )
+									.add( $( '<br>' ) )
+									.add( $( '<small>' ).text( value.description || '' ) )
+							);
+						} );
+	
+						deferred.resolve( entityList );
+					} );
+	
+			return deferred.promise();			
+		}
 	};
 
 	return SELF;
