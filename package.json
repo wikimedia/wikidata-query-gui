@@ -87,7 +87,7 @@
     "karma-qunit": "^4.1.2",
     "load-grunt-tasks": "^5.1.0",
     "qunit": "^2.19.4",
-    "sinon": "^15.0.3",
+    "sinon": "^15.0.4",
     "stylelint": "^14.16.1",
     "stylelint-config-wikimedia": "^0.14.0"
   }
