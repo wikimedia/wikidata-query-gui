@@ -4,7 +4,8 @@
 			"Hello903hello",
 			"Obonggi",
 			"OmniBus",
-			"Z423x5c6"
+			"Z423x5c6",
+			"捍粵者"
 		]
 	},
 	"wdqs-app-button-examples": "例",
@@ -58,7 +59,7 @@
 	"wdqs-dialog-examples-preview-query": "預覽查詢",
 	"wdqs-dialog-examples-preview-result": "預覽結果",
 	"wdqs-dialog-key-shortcut-title": "鍵盤快捷鍵",
-	"wdqs-dialog-key-shortcut-run-query": "執行查詢。",
+	"wdqs-dialog-key-shortcut-run-query": "查詢。",
 	"wdqs-dialog-key-shortcut-close-button": "閂",
 	"wdqs-ve-filter": "過濾器",
 	"wdqs-ve-show": "顯示",
