@@ -41,7 +41,7 @@ wikibase.queryService.ui.resultBrowser.CoordinateResultBrowser = ( function ( $,
 			}
 		},
 		osm: {
-			url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+			url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 			options: {
 				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 			}
