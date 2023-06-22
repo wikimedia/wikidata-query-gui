@@ -40,6 +40,8 @@
 	"wdqs-app-help-manual": "Manuale utente",
 	"wdqs-app-help-examples": "Query di esempio",
 	"wdqs-app-query-builder-name": "Generatore di Query",
+	"wdqs-app-query-builder-banner-content": "Hai bisogno di aiuto nel creare una query? Puoi creare una query senza dover scrivere in SPARQL nel nuovo <a>Generatore di query</a> .",
+	"wdqs-app-query-builder-example-banner-content": "Puoi creare una query senza dover scrivere in SPARQL con il <a>Generatore di query</a>",
 	"wdqs-app-help-datamodel": "Modello dati RDF",
 	"wdqs-app-help-prefixes": "Elenco dei prefissi",
 	"wdqs-app-help-copy": "Informazioni sulla licenza",
