@@ -32,6 +32,7 @@ wikibase.queryService.VariableNames = {};
 	VariableNames.PrefixPattern = '[' + BASE_LETTERS + '](?:[' + NEXT_LETTERS + '.-]*[' + NEXT_LETTERS + '-])?';
 
 	// Regex to match invalid characters
+	// eslint-disable-next-line no-misleading-character-class
 	var InvalidCharactersRegex = new RegExp( '[^' + NEXT_LETTERS + ']', 'g' );
 
 	// Create a valid variable name from the input by replacing
