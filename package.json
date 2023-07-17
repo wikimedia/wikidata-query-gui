@@ -77,7 +77,7 @@
     "grunt-contrib-less": "^3.0.0",
     "grunt-contrib-qunit": "^6.2.1",
     "grunt-contrib-uglify": "^5.2.2",
-    "grunt-eslint": "^24.0.1",
+    "grunt-eslint": "^24.3.0",
     "grunt-filerev": "^2.3.1",
     "grunt-jsonlint": "^2.1.3",
     "grunt-shell": "^4.0.0",
