@@ -20,7 +20,7 @@
   },
   "//": "PLEASE DO NOT CHANGE downloadjs version until https://github.com/rndme/download/issues/56 is fixed",
   "dependencies": {
-    "@wikimedia/jquery.i18n": "^1.0.5",
+    "@wikimedia/jquery.i18n": "^1.0.9",
     "bootstrap": "^3.4.1",
     "bootstrap-table": "^1.21.1",
     "bootstrap-toggle": "^2.2.2",
