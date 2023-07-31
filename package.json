@@ -32,7 +32,7 @@
     "ekko-lightbox": "^5.3.0",
     "es6-shim": "^0.35.8",
     "font-awesome": "^4.7.0",
-    "gijgo": "1.9.13",
+    "gijgo": "1.9.14",
     "grunt-merge-i18n": "https://github.com/wikimedia/grunt-merge-i18n.git",
     "jqcloud2": "^2.0.3",
     "jquery": "^3.7.0",
