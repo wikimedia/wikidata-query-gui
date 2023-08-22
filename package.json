@@ -89,6 +89,6 @@
     "qunit": "^2.19.4",
     "sinon": "^15.2.0",
     "stylelint": "^15.10.3",
-    "stylelint-config-wikimedia": "^0.16.0"
+    "stylelint-config-wikimedia": "^0.16.1"
   }
 }
