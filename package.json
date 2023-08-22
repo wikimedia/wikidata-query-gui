@@ -55,7 +55,7 @@
     "wellknown": "^0.5.0"
   },
   "devDependencies": {
-    "@wdio/cli": "^7.32.3",
+    "@wdio/cli": "^7.32.4",
     "@wdio/dot-reporter": "^7.31.1",
     "@wdio/local-runner": "^7.32.3",
     "@wdio/mocha-framework": "^7.30.2",
