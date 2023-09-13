@@ -13,3 +13,4 @@ jobs:
             password: ${{ secrets.DEPENDABOT_GERRIT_PASSWORD }}
             user: Addbot
             email: addshorewiki+addbot-dependabot@gmail.com
+            sanitize_commit_message: true
