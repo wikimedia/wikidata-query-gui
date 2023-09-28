@@ -37,5 +37,6 @@
 	"wdqs-app-help-datamodel": "RDF ဒေတာမော်ဒယ်",
 	"wdqs-app-help-prefixes": "ရှေ့ဆက်တိစရင်း",
 	"wdqs-app-help-copy": "လိုင်စင်အချက်အလက်",
-	"wdqs-app-help-queryhelper": "မီးမြန်းမှု အကူအညီပီးသူ"
+	"wdqs-app-help-queryhelper": "မီးမြန်းမှု အကူအညီပီးသူ",
+	"wdqs-app-logout": "ထွက်လိုက်ပါ"
 }
