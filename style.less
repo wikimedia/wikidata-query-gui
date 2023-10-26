@@ -1,119 +1,37 @@
 // Query Service style.less file
 
+// Import Codex Design Tokens.
+// For a list of available tokens,
+// see: https://doc.wikimedia.org/codex/latest/design-tokens/overview.html
+@import ( reference ) 'node_modules/@wikimedia/codex-design-tokens/theme-wikimedia-ui.less';
+
 // == Colors =================================================================
-// WikimediaUI (WMUI) color palette
+// Codex “WikimediaUI” color palette
 // Don't use those variables directly, instead define your vars
 // referring to them as applied further below
 
-@wmui-color-base0:    #000;    // = HSB 0°, 0%, 0%
-@wmui-color-base10:   #222;    // = HSB 0°, 0%, 13%
-@wmui-color-base20:   #54595d; // = HSB 207°, 10%, 36%; WCAG 2.0 level AAA 7.09:1 contrast ratio on `#fff`
-@wmui-color-base30:   #72777d; // = HSB 210°, 9%, 49%; WCAG 2.0 level AA at 4.52:1 contrast ratio on `#fff`
-@wmui-color-base50:   #a2a9b1; // = HSB 212°, 8%, 69%
-@wmui-color-base70:   #c8ccd1; // = HSB 213°, 4%, 82%
-@wmui-color-base80:   #eaecf0; // = HSB 220°, 3%, 94%
-@wmui-color-base90:   #f8f9fa; // = HSB 210°, 1%, 98%
-@wmui-color-base100:  #fff;    // = HSB 0°, 0%, 100%
-
-@wmui-color-accent30: #2a4b8d; // = HSB 220°, 70%, 55%
-@wmui-color-accent50: #36c;    // = HSB 220°, 75%, 80%
-@wmui-color-accent90: #eaf3ff; // = HSB 214°, 8%, 100%
-
-@wmui-color-red30:    #b32424; // = HSB 360°, 80%, 70%
-@wmui-color-red50:    #d33;    // = HSB 360°, 77%, 87%
-@wmui-color-red90:    #fee7e6; // = HSB 3°, 9%, 100%
-
-@wmui-color-yellow30: #ac6600; // = HSB 36°, 100%, 67%
-@wmui-color-yellow50: #fc3;    // = HSB 45°, 80%, 100%
-@wmui-color-yellow90: #fef6e7; // = HSB 39°, 9%, 100%
-
-@wmui-color-green30:  #14866d; // = HSB 167°, 85%, 53%
-@wmui-color-green50:  #00af89; // = HSB 167°, 100%, 69%
-@wmui-color-green90:  #d5fdf4; // = HSB 166°, 16%, 99%
-
-// Background Colors
-@background-color-base:       @wmui-color-base100;
-@background-color-code:       @wmui-color-base90;
-@background-color-heading:    @wmui-color-base90;
-
-// 'Framed' UI elements (Framed Buttons, Dropdowns, ToggleSwitches...)
-@background-color-framed:     @wmui-color-base90;
-@background-color-framed--hover: @wmui-color-base100;
-@background-color-framed--active: @wmui-color-base70;
-
-// Tabs Navigation Background Color
-@background-color-tabs:       @wmui-color-base80;
-
-// Highlight Colors, RGBA Colors include hex fallback on `#fff` for IE 6/7/8
-@background-color-highlight:  rgba( 255, 182, 13, 0.4 );
-@background-color-highlight--fallback: #ffe29e;
-
-// Foreground Colors
-@color-base:                  @wmui-color-base10;
-@color-base--hover:           #444;
-@color-base--active:          @wmui-color-base0;
-@color-base--inverted:        @wmui-color-base100;
-@color-base--emphasized:      @wmui-color-base0;
-@color-base--subtle:          @wmui-color-base30;
-@color-base--disabled:        @wmui-color-base30;
-@color-filled--disabled:      @color-base--inverted;
-@color-placeholder:           @wmui-color-base30;
-
-// Primary 'Progressive' Color, Background Color and states
-@background-color-primary:    @wmui-color-accent90;
-@background-color-primary--hover: rgba( 41, 98, 204, 0.1 );
-@color-primary:               @wmui-color-accent50;
-@color-primary--hover:        #447ff5; // = `lighten( @color-primary, 3 )`
-@color-primary--active:       @wmui-color-accent30;
-@color-primary--focus:        @color-primary;
-@color-primary-90:            rgba( 51, 102, 204, 0.9 );
-@color-primary-80:            rgba( 51, 102, 204, 0.8 );
-@color-primary-75:            rgba( 51, 102, 204, 0.75 );
-@color-primary-70:            rgba( 51, 102, 204, 0.7 );
-@color-primary-65:            rgba( 51, 102, 204, 0.65 );
-@color-primary-60:            rgba( 51, 102, 204, 0.6 );
-@color-primary-55:            rgba( 51, 102, 204, 0.55 );
-@color-primary-50:            rgba( 51, 102, 204, 0.5 );
-@color-primary-45:            rgba( 51, 102, 204, 0.45 );
-
-// 'Destructive' Color, Background Color and states
-@background-color-destructive: @wmui-color-red90;
-@color-destructive:           @wmui-color-red50;
-@color-destructive--hover:    #ff4242;
-@color-destructive--active:   @wmui-color-red30;
-@color-destructive--focus:    @color-destructive;
-
-// Validation error feedback
-@color-erroneous:             @wmui-color-red50;
+// 'Progressive' Color, Background Color and states
+@color-progressive-90:            rgba( 51, 102, 204, 0.9 );
+@color-progressive-80:            rgba( 51, 102, 204, 0.8 );
+@color-progressive-75:            rgba( 51, 102, 204, 0.75 );
+@color-progressive-70:            rgba( 51, 102, 204, 0.7 );
+@color-progressive-65:            rgba( 51, 102, 204, 0.65 );
+@color-progressive-60:            rgba( 51, 102, 204, 0.6 );
+@color-progressive-55:            rgba( 51, 102, 204, 0.55 );
+@color-progressive-50:            rgba( 51, 102, 204, 0.5 );
+@color-progressive-45:            rgba( 51, 102, 204, 0.45 );
 
 // Border Colors
-@border-color-base:           @wmui-color-base50;
-@border-color-base--hover:    @wmui-color-base50;
-@border-color-base--active:   @wmui-color-base30;
-@border-color-base--disabled: @wmui-color-base70;
-@border-color-filled--disabled: @color-filled--disabled;
-@border-color-primary--active: #859dcc;
-@border-color-destructive--active: #b77c79;
-@border-color-inset--focus:   @color-base--inverted;
-@border-color-heading:        @wmui-color-base70;
-@border-color-soft:           @wmui-color-base80;
-@border-color-wikitable:      rgba( 84, 89, 93, 0.3 ); // See T168029
+@border-color-soft:               #eaecf0;
+@border-soft:                     @border-width-base @border-style-base @border-color-soft;
 
 // CodeMirror
-@codemirror-color-atom:       @wmui-color-accent30;
-@codemirror-color-builtin:    @wmui-color-red30;
-@codemirror-color-comment:    @wmui-color-base30;
+@codemirror-color-atom:       #2a4b8d;
+@codemirror-color-builtin:    #b32424;
+@codemirror-color-comment:    #72777d;
 @codemirror-color-keyword:    @codemirror-color-builtin;
-@codemirror-color-string:     @wmui-color-yellow30;
-@codemirror-color-variable-2: @wmui-color-green30;
-
-// Update
-@update-background-color-danger: @wmui-color-red90;
-@update-foreground-color-danger: @wmui-color-red30;
-@update-background-color-success: @wmui-color-green90;
-@update-foreground-color-success: @wmui-color-green30;
-@update-background-color-warning: @wmui-color-yellow90;
-@update-foreground-color-warning: @wmui-color-yellow30;
+@codemirror-color-string:     #ac6600;
+@codemirror-color-variable-2: #14866d;
 
 // == Rules ==================================================================
 
@@ -131,20 +49,20 @@ body {
 }
 
 pre {
-	background: @background-color-code;
-	border-radius: 2px;
+	background: @background-color-interactive-subtle;
+	border-radius: @border-radius-base;
 	color: @color-base;
 }
 
 a {
-	color: @color-primary;
+	color: @color-progressive;
 
 	&:hover {
-		color: @color-primary--hover;
+		color: @color-progressive--hover;
 	}
 
 	&:active {
-		color: @color-primary--active;
+		color: @color-progressive--active;
 	}
 }
 
@@ -161,8 +79,8 @@ a {
 }
 
 .banner {
-	background-color: @wmui-color-base80;
-	border: 1px solid @wmui-color-base70;
+	background-color: @background-color-interactive;
+	border: @border-subtle;
 	padding: 15px 25px;
 	display: flex;
 	align-items: center;
@@ -186,7 +104,6 @@ a {
 
 .navbar,
 .toolbar {
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	white-space: nowrap;
 }
@@ -195,15 +112,15 @@ a {
 	margin-bottom: 0;
 
 	.dropdown-menu {
-		background: @background-color-framed;
+		background: @background-color-interactive-subtle;
 		z-index: 1001; /* above the Leaflet control containers */
 		& > li > a {
-			border-radius: 2px;
+			border-radius: @border-radius-base;
 			padding: 5px 20px;
 		}
 
 		& > li > a:hover {
-			background: @background-color-framed--hover;
+			background: @background-color-base;
 		}
 	}
 
@@ -233,9 +150,9 @@ a {
 	}
 
 	&-default {
-		background: @background-color-heading;
-		border-bottom: 1px solid @border-color-heading;
-		border-radius: 2px;
+		background: @background-color-interactive-subtle;
+		border-bottom: @border-subtle;
+		border-radius: @border-radius-base;
 	}
 
 	&-right {
@@ -248,7 +165,7 @@ a {
 }
 
 a.disabled {
-	color: @color-base--disabled;
+	color: @color-disabled;
 }
 
 .btn:active {
@@ -256,24 +173,23 @@ a.disabled {
 }
 
 .btn-default {
-	-webkit-box-shadow: none;
-	background: @background-color-framed;
-	border-radius: 2px;
-	border: 1px solid @border-color-heading;
+	background: @background-color-interactive-subtle;
+	border-radius: @border-radius-base;
+	border: @border-subtle;
 	box-shadow: none;
 	text-shadow: none;
 
 	&:active {
-		background: @background-color-framed--active;
+		background: @background-color-interactive;
 	}
 
 	&:hover {
-		background: @background-color-framed--hover;
+		background: @background-color-base;
 	}
 }
 
 .form-control {
-	border-radius: 2px;
+	border-radius: @border-radius-base;
 }
 
 .wikibase-queryservice {
@@ -300,13 +216,13 @@ a.disabled {
 }
 
 #empty-query-error {
-	color: @color-erroneous;
+	color: @color-error;
 	font-size: 1.5em;
 	margin-top: 5%;
 }
 
 .error {
-	font-family: monospace;
+	font-family: @font-family-monospace--fallback;
 	margin: 20px;
 	overflow-x: scroll;
 	white-space: pre;
@@ -314,11 +230,11 @@ a.disabled {
 
 .label,
 .progress {
-	border-radius: 2px;
+	border-radius: @border-radius-base;
 }
 
 .label-danger {
-	background: @color-erroneous;
+	background: @color-error;
 }
 
 .graph-iframe {
@@ -334,19 +250,18 @@ a.disabled {
 }
 
 .error-line {
-	border-bottom: 2px dotted @color-erroneous;
+	border-bottom: @border-width-thick dotted @border-color-error;
 }
 
 .error-character {
-	background: @color-erroneous;
-	color: @color-base--inverted;
+	background: @background-color-error;
+	color: @color-inverted;
 }
 
 #execute-button {
-	-webkit-box-shadow: none;
-	background: @color-primary;
-	border-radius: 2px;
-	border: 2px solid @color-primary;
+	background: @background-color-progressive;
+	border-radius: @border-radius-base;
+	border: 2px @border-style-base @border-color-progressive;
 	box-shadow: none;
 	margin-bottom: 5px;
 	padding-bottom: 7px;
@@ -354,13 +269,13 @@ a.disabled {
 	width: 46px;
 
 	&:hover {
-		background: @color-primary--hover;
-		border-color: @color-primary--hover;
+		background: @background-color-progressive--hover;
+		border-color: @border-color-progressive--hover;
 	}
 
 	&:active {
-		background: @color-primary--active;
-		border-color: @color-primary--active;
+		background: @background-color-progressive--active;
+		border-color: @border-color-progressive--active;
 	}
 }
 
@@ -371,7 +286,7 @@ a.disabled {
 		background-color: inherit;
 		border: 0;
 		display: inline;
-		font-family: serif;
+		font-family: @font-family-serif--fallback;
 		font-size: 12px;
 		margin: 10px 30px;
 		overflow: auto;
@@ -414,25 +329,25 @@ a.disabled {
 
 		&-default .jstree-wholerow {
 			&-hovered {
-				background: @color-primary--hover;
-				border-radius: 2px;
-				color: @color-base--inverted;
+				background: @background-color-progressive--hover;
+				border-radius: @border-radius-base;
+				color: @color-inverted;
 			}
 
 			&-clicked {
-				background: @color-primary;
-				border-radius: 2px;
-				color: @color-base--inverted;
+				background: @background-color-progressive;
+				border-radius: @border-radius-base;
+				color: @color-inverted;
 			}
 		}
 
 		a.jstree-anchor.jstree-clicked {
-			color: @color-base--inverted;
+			color: @color-inverted;
 		}
 	}
 	/* Treemap */
 	.labelbody {
-		background: transparent;
+		background: @background-color-transparent;
 		cursor: pointer;
 		overflow: hidden;
 	}
@@ -466,7 +381,7 @@ a.disabled {
 }
 
 .table-cell-selected {
-	background-color: @background-color-primary;
+	background-color: @background-color-progressive;
 }
 
 .fixed-table-pagination {
@@ -478,7 +393,7 @@ a.item-link {
 }
 
 .CodeMirror {
-	border-left: 1px solid @border-color-heading;
+	border-left: @border-subtle;
 	border: 0;
 	height: 100%;
 
@@ -533,7 +448,7 @@ pre.CodeMirror-placeholder {
 
 .queryEditor {
 	border: 0;
-	font-family: monospace;
+	font-family: @font-family-monospace--fallback;
 	min-height: 273px;
 	padding: 0;
 	width: 100%;
@@ -559,7 +474,7 @@ div.shortUrl {
 }
 
 .dropdown-menu {
-	border-radius: 2px;
+	border-radius: @border-radius-base;
 }
 
 .query-main {
@@ -589,33 +504,33 @@ div.shortUrl {
 	position: relative;
 
 	.status {
-		color: @color-base--subtle;
+		color: @color-subtle;
 		font-size: 12px;
 		margin-bottom: 5px;
 		min-height: 25px;
 		padding: 3px;
 
 		.badge {
-			border-radius: 2px;
-			border: 1px solid @border-color-soft;
+			border-radius: @border-radius-base;
+			border: @border-soft;
 		}
 
 		.list-group-item-danger {
-			background-color: @update-background-color-danger;
-			color: @update-foreground-color-danger;
-			text-decoration-color: @update-foreground-color-danger;
+			background-color: @background-color-destructive-subtle;
+			color: @color-notice;
+			text-decoration-color: @color-notice;
 		}
 
 		.list-group-item-success {
-			background-color: @update-background-color-success;
-			color: @update-foreground-color-success;
-			text-decoration-color: @update-foreground-color-success;
+			background-color: @background-color-success-subtle;
+			color: @color-notice;
+			text-decoration-color: @color-notice;
 		}
 
 		.list-group-item-warning {
-			background-color: @update-background-color-warning;
-			color: @update-foreground-color-warning;
-			text-decoration-color: @update-foreground-color-warning;
+			background-color: @background-color-warning-subtle;
+			color: @color-notice;
+			text-decoration-color: @color-notice;
 		}
 	}
 
@@ -624,7 +539,7 @@ div.shortUrl {
 	}
 
 	.toolbar {
-		border-right: 1px solid @border-color-heading;
+		border-right: @border-subtle;
 
 		.fa {
 			font-size: 1.5em;
@@ -666,7 +581,7 @@ div.shortUrl {
 }
 
 .splitter {
-	background-color: @background-color-primary;
+	background-color: @background-color-progressive;
 	background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAhCAQAAABOpSL+AAAAIklEQVR4AWMwbb/PdR+JZDD9f1/oPhI5sgVGBSruc9xHIgGdSQqqQJGkRgAAAABJRU5ErkJggg== ); /* node_modules/jquery-resizable-dom/assets/vsizegrip.png */
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -684,13 +599,13 @@ div.shortUrl {
 }
 
 .popover {
-	border-radius: 2px;
+	border-radius: @border-radius-base;
 	max-width: 80vw;
 	width: auto;
 }
 
 .popover-title {
-	border-radius: 2px;
+	border-radius: @border-radius-base;
 }
 
 .dropdown-toggle {
@@ -705,7 +620,7 @@ div.shortUrl {
 }
 
 .nav-tabs > li > a {
-	border-radius: 2px 2px 0 0;
+	border-radius: @border-radius-base @border-radius-base 0 0;
 }
 
 /**
@@ -724,10 +639,9 @@ div.shortUrl {
 		}
 
 		&-nav .open .dropdown-menu {
-			-webkit-box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.175 );
 			background-color: @background-color-base;
-			border: 1px solid @border-color-soft;
-			box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.175 );
+			border: @border-soft;
+			box-shadow: @box-shadow-drop-medium;
 			position: absolute;
 			width: auto;
 		}
@@ -746,7 +660,7 @@ div.shortUrl {
 	editor hint style
 */
 .wikibase-rdf-hint {
-	border-bottom: 1px solid @border-color-heading;
+	border-bottom: @border-subtle;
 	white-space: normal;
 }
 
@@ -764,18 +678,18 @@ div.shortUrl {
 **/
 .QueryExamples {
 	.modal-content {
-		border-radius: 2px;
+		border-radius: @border-radius-base;
 		padding: 20px 15px;
 
 		.tag {
-			background-color: @color-primary;
+			background-color: @background-color-progressive;
 			background-image: none;
 			padding: 0.4em 0.6em;
 			text-shadow: none;
 
 			&:hover,
 			&:active {
-				background: @color-primary;
+				background: @background-color-progressive;
 			}
 		}
 
@@ -793,7 +707,7 @@ div.shortUrl {
 		}
 
 		.exampleTable {
-			border: 1px solid @border-color-base;
+			border: @border-base;
 			max-height: 500px;
 			overflow-x: hidden;
 			overflow-y: auto;
@@ -808,14 +722,14 @@ div.shortUrl {
 		}
 
 		.input-group-addon {
-			border-radius: 2px;
-			border: 1px solid @border-color-base;
+			border-radius: @border-radius-base;
+			border: @border-base;
 		}
 	}
 }
 
 .modal-content {
-	border-radius: 2px;
+	border-radius: @border-radius-base;
 }
 
 .explorer-dialog {
@@ -876,64 +790,62 @@ div.shortUrl {
 	word-wrap: break-word;
 }
 
-/* Tag cloud, words are more transparent when less important */
+/* Tag cloud, words are more @background-color-transparent when less important */
 div.jqcloud {
-	color: @color-primary;
+	color: @color-progressive;
 
 	a {
 		color: inherit;
 	}
 
 	a:hover {
-		color: @color-primary--hover;
+		color: @color-progressive--hover;
 	}
 
 	span.w10 {
-		color: @color-primary;
+		color: @color-progressive;
 	}
 
 	span.w9 {
-		color: @color-primary-90;
+		color: @color-progressive-90;
 	}
 
 	span.w8 {
-		color: @color-primary-80;
+		color: @color-progressive-80;
 	}
 
 	span.w7 {
-		color: @color-primary-75;
+		color: @color-progressive-75;
 	}
 
 	span.w6 {
-		color: @color-primary-70;
+		color: @color-progressive-70;
 	}
 
 	span.w5 {
-		color: @color-primary-65;
+		color: @color-progressive-65;
 	}
 
 	span.w4 {
-		color: @color-primary-60;
+		color: @color-progressive-60;
 	}
 
 	span.w3 {
-		color: @color-primary-55;
+		color: @color-progressive-55;
 	}
 
 	span.w2 {
-		color: @color-primary-50;
+		color: @color-progressive-50;
 	}
 
 	span.w1 {
-		color: @color-primary-45;
+		color: @color-progressive-45;
 	}
 }
 
 .item {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	background: @background-color-base;
-	box-shadow: 2px 2px 4px 0 #ccc;
+	box-shadow: @box-shadow-drop-medium;
 	box-sizing: border-box;
 	display: inline-block;
 	margin: 0 0.75em 1.5em;
@@ -980,7 +892,7 @@ div.jqcloud {
 
 /* loading spinner */
 #loading-spinner {
-	color: @color-base--subtle;
+	color: @color-subtle;
 
 	& > .fa-spinner {
 		display: block;
@@ -999,13 +911,12 @@ div.jqcloud {
 	z-index: 100;
 
 	.panel {
-		-webkit-box-shadow: none;
 		border: 0;
 		box-shadow: none;
 
 		&-heading {
 			background: @background-color-base;
-			border-bottom: 1px solid @border-color-soft;
+			border-bottom: @border-soft;
 			padding: 8px 10px;
 		}
 
@@ -1057,7 +968,7 @@ div.jqcloud {
 				}
 
 				.query-helper-section {
-					border-bottom: 1px solid @border-color-soft;
+					border-bottom: @border-soft;
 					height: 3em;
 					padding: 10px 0;
 					width: 100%;
@@ -1095,8 +1006,8 @@ div.jqcloud {
 	margin: 2px;
 
 	.select2-dropdown {
-		border-radius: 0 0 2px 2px;
-		background: @background-color-framed;
+		border-radius: 0 0 @border-radius-base @border-radius-base;
+		background: @background-color-interactive-subtle;
 	}
 
 	.select2-results__option[ aria-selected='true' ] {
@@ -1104,12 +1015,12 @@ div.jqcloud {
 	}
 
 	.select2-results__option--highlighted[ aria-selected ] {
-		background: @background-color-framed--hover;
+		background: @background-color-base;
 		color: @color-base;
 	}
 
 	.select2-selection--single {
-		border-radius: 2px;
+		border-radius: @border-radius-base;
 
 		.select2-selection__rendered {
 			color: @color-base;
@@ -1138,14 +1049,14 @@ div.jqcloud {
 }
 
 .vis-item.vis-selected {
-	background: @background-color-framed--active;
+	background: @background-color-interactive;
 	border-color: @border-color-base;
-	color: @color-base--active;
+	color: @color-emphasized;
 }
 
 .vis-item,
 .vis-item.vis-line {
-	background: @background-color-framed;
+	background: @background-color-interactive-subtle;
 	border-color: @border-color-base;
 }
 
@@ -1163,7 +1074,7 @@ div.jqcloud {
 @media ( max-width: 900px ) {
 	.CodeMirror {
 		border: 0;
-		border-top: 1px solid @border-color-heading;
+		border-top: @border-subtle;
 	}
 
 	.CodeMirror-scroll {
