@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Dishual",
 			"Fulup",
 			"Gwenn-Ael",
@@ -51,6 +52,7 @@
 	"wdqs-app-footer-updated-ago": "Roadennoù hizivaet $1",
 	"wdqs-app-result-shorturl": "URL berr war-zu an disoc'h",
 	"wdqs-app-result-shorturl-title": "URL berr war-zu an disoc'h-se",
+	"wdqs-app-result-shorturl-query": "URL berr etrezek ar reked",
 	"wdqs-app-result-rawgraphs": "Digeriñ e RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Krouiñ ur graf gant roadennoù disoc'het dre RAWGraphs.io",
 	"wdqs-app-result-embed": "Enframmañ an disoc'h",
