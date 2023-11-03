@@ -89,7 +89,7 @@
     "load-grunt-tasks": "^5.1.0",
     "qunit": "^2.20.0",
     "sinon": "^16.1.0",
-    "stylelint": "^15.10.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-wikimedia": "^0.16.1"
   }
 }
