@@ -3,6 +3,7 @@
 		"authors": [
 			"Druesenfieber",
 			"Metalhead64",
+			"Nintendofan885",
 			"TMg",
 			"Umherirrender"
 		]
@@ -34,7 +35,7 @@
 	"wdqs-app-help-examples": "Beispielabfragen",
 	"wdqs-app-query-builder-name": "Abfragegenerator",
 	"wdqs-app-query-builder-banner-content": "Brauchst du Hilfe bei der Erstellung einer Abfrage? Mit dem neuen <a>Query Builder</a> kannst du Abfragen erstellen, ohne Abfragen in SPARQL schreiben zu müssen.",
-	"wdqs-app-query-builder-example-banner-content": "Mit dem <a>Query Builder</a> kannst duu Abfragen erstellen, ohne SPARQL schreiben zu müssen",
+	"wdqs-app-query-builder-example-banner-content": "Mit dem <a>Query Builder</a> kannst du Abfragen erstellen, ohne SPARQL schreiben zu müssen",
 	"wdqs-app-help-datamodel": "RDF-Datenmodell",
 	"wdqs-app-help-prefixes": "Liste der Präfixe",
 	"wdqs-app-help-copy": "Lizenzinformationen",
