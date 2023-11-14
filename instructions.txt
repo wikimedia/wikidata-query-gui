@@ -14,6 +14,8 @@ the "-Europeana" part (similarly to the name of the files with the "-Wikidata" p
 that have that. In case there are no files with the "-Wikidata" part in its name, then start with the files with the "-Europeana" part in its name
 and do the oposite changing.
 
+In the custom-config.json override the api.sparql.uri property to be: "https://sparql.europeana.eu/", instead of "https://query.wikidata.org/sparql".
+
 ### Code location
 The code is located in the /opt/sparql-ui/sparql-ui dir.
 

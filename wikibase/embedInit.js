@@ -43,11 +43,12 @@
 		}
 
 		var lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
-			api = new wikibase.queryService.api.Wikibase( config.api.wikibase.uri, lang ),
+			api = new wikibase.queryService.api.Wikibase( config.api.wikibase.uri, lang, config.api.sparql.uri, config.api.wikibase ),
 			sparqlApi = new wikibase.queryService.api.Sparql( config.api.sparql.uri, lang ),
 			querySamplesApi = new wikibase.queryService.api.QuerySamples(
 				lang,
-				config.api.examples
+				config.api.examples,
+				config.api.sparql.uri
 			),
 			codeSamplesApi = null,
 			shortenApi = new wikibase.queryService.api.UrlShortener( config.api.urlShortener ),

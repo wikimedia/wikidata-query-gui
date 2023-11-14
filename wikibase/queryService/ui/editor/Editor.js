@@ -58,16 +58,17 @@ wikibase.queryService.ui.editor.Editor = ( function( $, wikibase, CodeMirror ) {
 	 * @param {wikibase.queryService.ui.editor.tooltip.Rdf} rdfTooltip
 	 * @param {Object} [options]
 	 * @param {boolean} [options.focus=true] Whether to automatically focus
+	 * @param {Object} sparqlConfig
 	 * the editor when it is created (fromTextArea).
 	 */
-	function SELF( rdfHint, sparqlHint, rdfTooltip, options ) {
+	function SELF( rdfHint, sparqlHint, rdfTooltip, options, sparqlConfig ) {
 		this._rdfHint = rdfHint;
 		this._sparqlHint = sparqlHint;
 		this._rdfTooltip = rdfTooltip;
 		this._focus = ( options || {} ).focus;
 
 		if ( !this._sparqlHint ) {
-			this._sparqlHint = new wikibase.queryService.ui.editor.hint.Sparql();
+			this._sparqlHint = new wikibase.queryService.ui.editor.hint.Sparql(sparqlConfig);
 		}
 		if ( !this._rdfHint ) {
 			this._rdfHint = new wikibase.queryService.ui.editor.hint.Rdf();

@@ -1,0 +1,11 @@
+{
+	"sparqlPredicates": [
+        "edm:rights", "edm:country", "edm:year", "edm:language", "edm:object", "edm:isShownBy",
+        "rdf:type", "edm:europeanaProxy", "edm:provider", "edm:dataProvider", "edm:aggregatedCHO",
+        "edm:hasView", "ore:proxyIn", "ore:proxyFor", "dc:creator", "dc:contributor", "dc:type",
+        "dc:subject", "dcterms:spatial", "dcterms:temporal", "dc:coverage",
+        "edm:InformationResource", "edm:NonInformationResource", "edm:EuropeanaObject", "edm:EuropeanaAggregation",
+        "edm:ProvidedCHO", "edm:PhysicalThing", "edm:WebResource", "edm:Event", "edm:Agent", "edm:TimeSpan",
+        "edm:Place", "skos:Concept", "ore:Proxy", "ore:Aggregation", "scvs:Service", "cc:License", "dqv:QualityAnnotation"	
+	]
+}
