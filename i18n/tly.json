@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Patriot Kor",
+			"Гусейн",
 			"Джалиль"
 		]
 	},
@@ -32,7 +33,7 @@
 	"wdqs-app-query-builder-example-banner-content": "Šymə bəznejon syvoli soxtej be SPARQL nyvyštej bə nujə syvolon konstruktorədə",
 	"wdqs-app-help-datamodel": "model məlumat RDF",
 	"wdqs-app-help-prefixes": "prefiksiron siyohi",
-	"wdqs-app-help-copy": "lisensijə barədə",
+	"wdqs-app-help-copy": "Lisensijə barədə",
 	"wdqs-app-help-queryhelper": "syvoli dastəkəvon",
 	"wdqs-app-logout": "Beşi",
 	"wdqs-app-tools-query-data": "Syvoli mәlumot",
