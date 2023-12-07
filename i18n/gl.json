@@ -7,6 +7,7 @@
 			"Elisardojm",
 			"Iváns",
 			"Maria zaos",
+			"O Breixo",
 			"Toliño"
 		]
 	},
@@ -70,7 +71,7 @@
 	"wdqs-app-result-svg": "Imaxe SVG",
 	"wdqs-app-result-html": "Táboa HTML",
 	"wdqs-app-shorturl-page-title": "Enderezo URL curto a esta páxina",
-	"wdqs-app-editor-placeholder": "(Indique unha consulta SPARQL ou escolla unha consulta de exemplo)",
+	"wdqs-app-editor-placeholder": "(Indique unha consulta SPARQL ou escolla un exemplo de consulta)",
 	"wdqs-app-editor-addprefixes": "Engadir prefixos estándar",
 	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|resultado|resultados}} en $2&nbsp;ms",
 	"wdqs-app-resultbrowser-stabilize": "Estabilizar rede",
@@ -104,8 +105,8 @@
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Amosar a axuda sobre os atallos de teclado para a páxina actual.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Seleccionar a área de texto da consulta.",
 	"wdqs-dialog-key-shortcut-jump-to-result": "Saltar ao resultado da consulta.",
-	"wdqs-dialog-key-shortcut-focus-filter": "Foco no botón \"Filtrar\" do asistente de consultas.",
-	"wdqs-dialog-key-shortcut-focus-show": "Foco no botón \"Amosar\" do asistente de consultas.",
+	"wdqs-dialog-key-shortcut-focus-filter": "Fíxese no botón \"Filtrar\" no asistente de consultas.",
+	"wdqs-dialog-key-shortcut-focus-show": "Fíxese no botón \"Amosar\" no asistente de consultas.",
 	"wdqs-dialog-key-shortcut-focus-limit": "Premer no botón \"Límite\" do asistente de consultas.",
 	"wdqs-dialog-key-shortcut-show-example": "Amosar os exemplos.",
 	"wdqs-dialog-key-shortcut-help-menu": "Mostrar ou agochar o menú de axuda.",
