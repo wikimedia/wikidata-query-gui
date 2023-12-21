@@ -87,6 +87,8 @@
 	"wdqs-app-urlshortener-loading": "Lueden...",
 	"wdqs-dialog-examples-preview-query": "Simulatioun vun der Ufro",
 	"wdqs-dialog-examples-preview-result": "Simulatioun vum Resultat",
+	"wdqs-dialog-key-shortcut-run-query": "Ufro lafe loossen.",
+	"wdqs-dialog-key-shortcut-jump-to-result": "Bei d'Restulater vun der Ufro sprangen.",
 	"wdqs-dialog-key-shortcut-show-example": "Beispiller weisen.",
 	"wdqs-dialog-key-shortcut-show-language": "Sproochemenü weisen.",
 	"wdqs-dialog-key-shortcut-close-button": "Zoumaachen",
@@ -107,6 +109,7 @@
 	"wdqs-action-error-display": "D'Resultat kann net gewise ginn",
 	"wdqs-action-timeout": "Zäitlimitt fir eng Ufro gouf erreecht",
 	"wdqs-action-malformed-query": "D'Ufro ass schlecht formuléiert",
+	"wdqs-action-empty-query": "Gitt eng gülteg SPARQL-Ufro an oder wielt eng Beispillufro",
 	"wdqs-action-server-error": "Feeler vum Server",
 	"wdqs-action-unknow-error": "Onbekannte Feeler",
 	"wdqs-action-preview": "Resultat kucken",
@@ -115,6 +118,7 @@
 	"wdqs-embed-button-edit-query": "Visuell änneren",
 	"wdqs-embed-button-edit-query-title": "Dës Ufro mam Assistent fir Ufroen änneren",
 	"wdqs-embed-button-edit-code": "SPARQL änneren",
+	"wdqs-embed-button-edit-code-title": "Dës Ufro mam SPARQL-Editeur änneren",
 	"wdqs-embed-explorer-button-incoming": "Linke weisen, déi erakommen",
 	"wdqs-embed-explorer-button-outgoing": "Linke weisen, déi erausginn"
 }
