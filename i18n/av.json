@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Augustus A C",
 			"Omarov M."
 		]
 	},
 	"wdqs-app-button-examples": "Мисалал",
 	"wdqs-app-button-prefixes": "Префиксал",
 	"wdqs-app-button-more-tools": "ЦӀикӀкӀун алатал",
-	"wdqs-app-button-help": "Кумек",
+	"wdqs-app-button-help": "Квекел",
 	"wdqs-app-button-run": "Биччазе",
 	"wdqs-app-button-run-title": "ЦӀехей тӀубазе (CTRL + ENTER)",
 	"wdqs-app-button-clear": "БацӀцӀине",
