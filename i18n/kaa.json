@@ -32,6 +32,8 @@
 	"wdqs-app-help-examples": "Náwbetler úlgisi",
 	"wdqs-app-query-builder-name": "Náwbet dúziwshi",
 	"wdqs-app-query-builder-banner-content": "Sizge náwbet jaratıwda járdem kerek pe? Jańadan qáliplesken <a>Náwbet dúziwshi</a>de siz SPARQL jazbastan náwbetler jaratıwıńız múmkin.",
+	"wdqs-app-query-builder-example-banner-content": "Siz <a>Soraw dúziwshi</a>de SPARQL jazbastan sorawlar jaratıwıńız múmkin",
+	"wdqs-app-help-datamodel": "RDF maǵlıwmatlar modeli",
 	"wdqs-app-help-prefixes": "Prefiksler dizimi",
 	"wdqs-app-help-copy": "Maǵlıwmatlardı licenziyalaw",
 	"wdqs-app-help-queryhelper": "Náwbet járdemshisi",
