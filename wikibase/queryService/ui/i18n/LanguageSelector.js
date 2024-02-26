@@ -81,7 +81,8 @@ wikibase.queryService.ui.i18n.LanguageSelector = ( function ( $, wikibase ) {
 						self._changeListener( lang );
 					}
 				},
-				languages: langs
+				languages: langs,
+				searchAPI: self._api._endpoint + '?origin=*&action=languagesearch&format=json&formatversion=2'
 			// quickList: langs
 			} ).click( function () {
 				$( '.uls-menu' ).addClass( 'uls-mobile' ).css( 'left', '' ).css( 'right', '2.5%' );
