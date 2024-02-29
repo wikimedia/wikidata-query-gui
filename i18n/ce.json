@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Исмаил Садуев",
 			"Умар"
 		]
 	},
@@ -39,7 +40,7 @@
 	"wdqs-ve-limit": "Доза тохар",
 	"wdqs-ve-remove-row-title": "ДIабаккха хӀара могӀа",
 	"wdqs-ve-with": "дуьйна",
-	"wdqs-ve-anything": "цхьа-хӀума",
+	"wdqs-ve-anything": "цхьа хӏума",
 	"wdqs-ve-any": "муьлха а",
 	"wdqs-ve-or": "йа",
 	"wdqs-ve-sb-suggestions": "Хьехарш",
