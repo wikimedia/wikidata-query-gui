@@ -321,6 +321,20 @@ wikibase.queryService.ui.ResultView = ( function ( $, download, window ) {
 	};
 
 	/**
+	 * Render a given SPARQL query
+	 */
+	SELF.prototype.cancel = function () {
+		var request = this._sparqlApi.getRequest();
+		request.abort();
+
+		this._actionBar.show( 'wdqs-action-stop-query', '', 'default', false );
+
+		$( '#query-result' ).empty().hide();
+		$( '.result' ).hide();
+		$( '#query-error' ).hide();
+	};
+
+	/**
 	 * Render a preview of the given SPARQL query
 	 *
 	 * @param {String} query

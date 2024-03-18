@@ -55,6 +55,11 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 	SELF.prototype._executionTime = null;
 
 	/**
+	 * @private
+	 */
+	SELF.prototype._request = null;
+
+	/**
 	 * @property {Object}
 	 * @private
 	 */
@@ -178,7 +183,10 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 		this._queryUri = this._serviceUri + '?' + settings.data;
 
 		this._executionTime = Date.now();
-		$.ajax( this._serviceUri, settings ).done( done ).fail( function ( request, options, exception ) {
+		var ajaxRequest = $.ajax( this._serviceUri, settings ).done( done ).fail( function ( request, options, exception ) {
+			if ( request.statusText === 'abort' ) { // Aborted by user, do nothing
+				return;
+			}
 			if (
 				request.getAllResponseHeaders() === '' || // browser did not send the request
 					request.status === 414 || // URI Too Long
@@ -191,7 +199,7 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 				fail.apply( this, arguments );
 			}
 		} );
-
+		this._request = ajaxRequest;
 		return deferred;
 	};
 
@@ -241,6 +249,10 @@ wikibase.queryService.api.Sparql = ( function ( $ ) {
 	 */
 	SELF.prototype.getExecutionTime = function () {
 		return this._executionTime;
+	};
+
+	SELF.prototype.getRequest = function () {
+		return this._request;
 	};
 
 	/**

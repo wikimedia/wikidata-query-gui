@@ -4,6 +4,7 @@
 // For a list of available tokens,
 // see: https://doc.wikimedia.org/codex/latest/design-tokens/overview.html
 @import ( reference ) 'node_modules/@wikimedia/codex-design-tokens/theme-wikimedia-ui.less';
+@import ( reference ) './css-icon.less';
 
 // == Colors =================================================================
 // Codex “WikimediaUI” color palette
@@ -188,6 +189,16 @@ a.disabled {
 	}
 }
 
+.cdx-css-icon {
+	&--play {
+		.cdx-mixin-css-icon( @cdx-icon-play, @param-fill-color: @color-inverted );
+	}
+
+	&--stop {
+		.cdx-mixin-css-icon( @cdx-icon-stop, @param-fill-color: @color-inverted );
+	}
+}
+
 .form-control {
 	border-radius: @border-radius-base;
 }
@@ -258,24 +269,37 @@ a.disabled {
 	color: @color-inverted;
 }
 
-#execute-button {
-	background: @background-color-progressive;
-	border-radius: @border-radius-base;
-	border: 2px @border-style-base @border-color-progressive;
-	box-shadow: none;
-	margin-bottom: 5px;
-	padding-bottom: 7px;
-	padding-top: 7px;
-	width: 46px;
+.cdx-button {
+	&--action-progressive {
+		background: @background-color-progressive;
+		border-radius: @border-radius-base;
+		border: 2px @border-style-base @border-color-progressive;
 
-	&:hover {
-		background: @background-color-progressive--hover;
-		border-color: @border-color-progressive--hover;
+		&:hover {
+			background: @background-color-progressive--hover;
+			border-color: @border-color-progressive--hover;
+		}
+
+		&:active {
+			background: @background-color-progressive--active;
+			border-color: @border-color-progressive--active;
+		}
 	}
 
-	&:active {
-		background: @background-color-progressive--active;
-		border-color: @border-color-progressive--active;
+	&--action-destructive {
+		background: @background-color-destructive;
+		border-radius: @border-radius-base;
+		border: 2px @border-style-base @border-color-destructive;
+
+		&:hover {
+			background: @background-color-destructive--hover;
+			border-color: @border-color-destructive--hover;
+		}
+
+		&:active {
+			background: @background-color-destructive--active;
+			border-color: @border-color-destructive--active;
+		}
 	}
 }
 
@@ -550,9 +574,25 @@ div.shortUrl {
 			padding-bottom: 0.2em;
 			padding-top: 1em;
 			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
 			.fa {
 				font-size: 1.8em;
+			}
+
+			.cdx-button {
+				box-shadow: none;
+				margin-bottom: 5px;
+				padding-bottom: 7px;
+				padding-top: 7px;
+				width: 46px;
+
+				&:disabled {
+					background-color: @background-color-disabled;
+					border-color: @background-color-disabled;
+				}
 			}
 		}
 
