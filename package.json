@@ -20,6 +20,7 @@
   },
   "//": "PLEASE DO NOT CHANGE downloadjs version until https://github.com/rndme/download/issues/56 is fixed",
   "dependencies": {
+    "@wikimedia/codex": "^1.3.3",
     "@wikimedia/codex-design-tokens": "^1.0.0",
     "@wikimedia/jquery.i18n": "^1.0.9",
     "bootstrap": "^3.4.1",
