@@ -353,6 +353,12 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 			return false;
 		}
 
+		if ( ( e.ctrlKey || e.metaKey ) && e.key === 'Escape' && !$( 'button#cancel-button' ).prop( 'disabled' ) ) {
+			// e.metaKey is used for Mac (https://stackoverflow.com/a/21996827)
+			$( 'button#cancel-button' ).click();
+			return false;
+		}
+
 		if ( $( document.activeElement ).is( 'textarea, input' ) ||
 			$( document.activeElement ).hasClass( 'CodeMirror-code' ) ) {
 			if ( e.key === 'Escape' ) {
