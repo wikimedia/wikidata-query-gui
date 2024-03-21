@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Diralik",
+			"Dirruw'o",
 			"Edible Melon",
 			"Eugenia.Chudinova",
 			"Facenapalm",
@@ -25,6 +26,9 @@
 	"wdqs-app-button-help": "Справка",
 	"wdqs-app-button-run": "Запустить",
 	"wdqs-app-button-run-title": "Выполнить запрос (CTRL + ENTER)",
+	"wdqs-app-button-run-aria-label": "Кнопка «Выполнить запрос»",
+	"wdqs-app-button-cancel-title": "Остановить запрос (CTRL + ESC)",
+	"wdqs-app-button-cancel-aria-label": "Кнопка отмены запроса",
 	"wdqs-app-button-clear": "Очистить",
 	"wdqs-app-button-clear-title": "Очистить запрос",
 	"wdqs-app-button-restore-title": "Восстановить предыдущий запрос",
@@ -133,6 +137,7 @@
 	"wdqs-ve-sb-suggestions": "Подсказки",
 	"wdqs-ve-sb-other": "Другое",
 	"wdqs-action-query": "Выполнение запроса",
+	"wdqs-action-stop-query": "Кнопка для отмены",
 	"wdqs-action-render": "Обработка результата",
 	"wdqs-action-error-display": "Не удаётся отобразить результат",
 	"wdqs-action-timeout": "Запрос занял слишком много времени",

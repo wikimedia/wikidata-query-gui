@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"ANDROBETA",
+			"Cristina S",
 			"KlaudiuMihaila",
 			"MSClaudiu",
 			"NGC 54",
@@ -15,6 +16,9 @@
 	"wdqs-app-button-help": "Ajutor",
 	"wdqs-app-button-run": "Pornire",
 	"wdqs-app-button-run-title": "Execută interogare (CTRL + ENTER)",
+	"wdqs-app-button-run-aria-label": "Executați butonul de interogare",
+	"wdqs-app-button-cancel-title": "Opriți interogarea (CTRL + ESC)",
+	"wdqs-app-button-cancel-aria-label": "Anulați interogarea",
 	"wdqs-app-button-clear": "Curăță",
 	"wdqs-app-button-clear-title": "Șterge interogarea",
 	"wdqs-app-button-restore-title": "Restaurați interogarea anterioară",
@@ -121,6 +125,7 @@
 	"wdqs-ve-sb-suggestions": "Sugestii",
 	"wdqs-ve-sb-other": "Altele",
 	"wdqs-action-query": "Rularea interogării",
+	"wdqs-action-stop-query": "Interogarea a fost anulată",
 	"wdqs-action-render": "Rezultatul obținerii",
 	"wdqs-action-error-display": "Rezultatul nu poate fi afișat",
 	"wdqs-action-timeout": "Limita de expirare a interogării a atins",
