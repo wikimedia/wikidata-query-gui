@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dimitris131",
 			"Evropi",
 			"GR",
 			"Geraki",
@@ -21,6 +22,9 @@
 	"wdqs-app-button-help": "Βοήθεια",
 	"wdqs-app-button-run": "Εκτέλεση",
 	"wdqs-app-button-run-title": "Εκτέλεση ερωτήματος (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-aria-label": "Κουμπί εκτέλεσης ερωτήματος",
+	"wdqs-app-button-cancel-title": "Διακοπής ερωτήματος (CTRL + ESC)",
+	"wdqs-app-button-cancel-aria-label": "Κουμπί ακύρωσης ερωτήματος",
 	"wdqs-app-button-clear": "Εκκαθάριση",
 	"wdqs-app-button-clear-title": "Εκκαθάριση ερωτήματος",
 	"wdqs-app-button-restore-title": "Αποκατάσταση προηγούμενης καταχώρησης",
@@ -33,7 +37,7 @@
 	"wdqs-app-button-download-title": "Κατεβάστε το αποτέλεσμα",
 	"wdqs-app-button-link": "Σύνδεσμος",
 	"wdqs-app-button-link-title": "Πάρτε σύνδεσμο προς το ερώτημα",
-	"wdqs-app-button-code": "Κωδικός",
+	"wdqs-app-button-code": "Κώδικας",
 	"wdqs-app-button-code-title": "Προβολή παραδειγμάτων κώδικα",
 	"wdqs-app-help-feedback": "Δώστε ανατροφοδότηση!",
 	"wdqs-app-help-request-query": "Ζητήστε ένα ερώτημα",
@@ -59,6 +63,8 @@
 	"wdqs-app-footer-updated-ago": "Τα δεδομένα ενημερώθηκαν",
 	"wdqs-app-result-shorturl": "Σύντομο URL για το αποτέλεσμα",
 	"wdqs-app-result-shorturl-title": "Σύντομο URL σε αυτό το αποτέλεσμα",
+	"wdqs-app-result-shorturl-query": "Σύντομο URL για το ερώτημα",
+	"wdqs-app-result-shorturl-query-title": "Σύντομο URL για το ερώτημα που χρησιμοποιήθηκε για να βρεθεί αυτό το αποτέλεσμα",
 	"wdqs-app-result-rawgraphs": "Ανοίξτε στο RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Δημιουργήστε ένα γράφημα με τα τρέχοντα αποτελέσματα δεδομένων χρησιμοποιώντας το RAWGraphs.io",
 	"wdqs-app-result-embed": "Ενσωμάτωση αποτελέσματος",
@@ -127,6 +133,7 @@
 	"wdqs-ve-sb-suggestions": "Προτάσεις",
 	"wdqs-ve-sb-other": "Άλλο",
 	"wdqs-action-query": "Εκτελούμενο ερώτημα",
+	"wdqs-action-stop-query": "Το ερώτημα ακυρώθηκε",
 	"wdqs-action-render": "Παραγωγή αποτελέσματος",
 	"wdqs-action-error-display": "Αδυναμία προβολής αποτελέσματος",
 	"wdqs-action-timeout": "Έφτασε το χρονικό όριο του ερωτήματος",
