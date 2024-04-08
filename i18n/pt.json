@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Athena in Wonderland",
+			"B3rnas",
 			"CaiusSPQR",
 			"GoEThe",
 			"Hamilton Abreu",
@@ -16,6 +17,9 @@
 	"wdqs-app-button-help": "Ajuda",
 	"wdqs-app-button-run": "Executar",
 	"wdqs-app-button-run-title": "Executar consulta (CTRL + ENTER)",
+	"wdqs-app-button-run-aria-label": "Botão Executar consulta",
+	"wdqs-app-button-cancel-title": "Parar consulta (CTRL + ESC)",
+	"wdqs-app-button-cancel-aria-label": "Botão cancelar consulta",
 	"wdqs-app-button-clear": "Limpar",
 	"wdqs-app-button-clear-title": "Limpar consulta",
 	"wdqs-app-button-restore-title": "Restaurar a consulta anterior",
@@ -124,6 +128,7 @@
 	"wdqs-ve-sb-suggestions": "Sugestões",
 	"wdqs-ve-sb-other": "Outro",
 	"wdqs-action-query": "A executar consulta",
+	"wdqs-action-stop-query": "A consulta foi cancelada",
 	"wdqs-action-render": "A compor o resultado",
 	"wdqs-action-error-display": "Não é possível apresentar o resultado",
 	"wdqs-action-timeout": "O tempo limite da consulta foi atingido",
