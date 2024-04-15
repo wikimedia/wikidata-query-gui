@@ -10,7 +10,8 @@
 			"Pebaryan",
 			"RXerself",
 			"Rachmat04",
-			"Sonic Speedy"
+			"Sonic Speedy",
+			"Zulf"
 		]
 	},
 	"wdqs-app-button-examples": "Contoh",
@@ -19,6 +20,9 @@
 	"wdqs-app-button-help": "Bantuan",
 	"wdqs-app-button-run": "Jalankan",
 	"wdqs-app-button-run-title": "Jalankan kueri (CTRL + ENTER)",
+	"wdqs-app-button-run-aria-label": "Tombol Jalankan kueri",
+	"wdqs-app-button-cancel-title": "Hentikan kueri (CTRL + ESC)",
+	"wdqs-app-button-cancel-aria-label": "Tombol batalkan kueri",
 	"wdqs-app-button-clear": "Kosongkan",
 	"wdqs-app-button-clear-title": "Hapus kueri",
 	"wdqs-app-button-restore-title": "Pulihkan kueri sebelumnya",
