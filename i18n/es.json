@@ -118,6 +118,7 @@
 	"wdqs-dialog-examples-preview-result": "Vista previa del resultado",
 	"wdqs-dialog-key-shortcut-title": "Atajos de teclado",
 	"wdqs-dialog-key-shortcut-run-query": "Ejecutar la consulta.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Cancelar consulta.",
 	"wdqs-dialog-key-shortcut-esc": "Abandonar espacio de texto actual.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mostrar ayuda sobre los atajos de teclado de la página actual.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Seleccionar el área de entrada de texto.",

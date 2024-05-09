@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"21 little ducks",
 			"Druesenfieber",
 			"Metalhead64",
 			"Nintendofan885",
@@ -122,6 +123,7 @@
 	"wdqs-ve-sb-suggestions": "Vorschläge",
 	"wdqs-ve-sb-other": "Andere",
 	"wdqs-action-query": "Führe Abfrage aus",
+	"wdqs-action-stop-query": "Die Anfrage wurde abgebrochen",
 	"wdqs-action-render": "Verarbeite Ergebnis",
 	"wdqs-action-error-display": "Ergebnis konnte nicht angezeigt werden",
 	"wdqs-action-timeout": "Zeitüberschreitungsgrenze erreicht",
