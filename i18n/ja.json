@@ -29,7 +29,7 @@
 	"wdqs-app-button-help": "ヘルプ",
 	"wdqs-app-button-run": "実行",
 	"wdqs-app-button-run-title": "クエリを実行 (CTRL + ENTER)",
-	"wdqs-app-button-cancel-title": "クエリを停止 (CTRL + ESC)",
+	"wdqs-app-button-cancel-title": "クエリを中止 (CTRL + ESC)",
 	"wdqs-app-button-clear": "消去",
 	"wdqs-app-button-clear-title": "クエリを消去",
 	"wdqs-app-button-restore-title": "以前のクエリを復元",
