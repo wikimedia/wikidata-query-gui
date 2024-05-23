@@ -3,6 +3,7 @@
 		"authors": [
 			"21 little ducks",
 			"Druesenfieber",
+			"Mcliquid",
 			"Metalhead64",
 			"Nintendofan885",
 			"TMg",
@@ -15,6 +16,7 @@
 	"wdqs-app-button-help": "Hilfe",
 	"wdqs-app-button-run": "Ausführen",
 	"wdqs-app-button-run-title": "Abfrage ausführen (STRG + EINGABE)",
+	"wdqs-app-button-cancel-title": "Abfrage abbrechen (STRG + ESC)",
 	"wdqs-app-button-clear": "Leeren",
 	"wdqs-app-button-clear-title": "Abfrage löschen",
 	"wdqs-app-button-restore-title": "Vorherige Abfrage wiederherstellen",
@@ -99,6 +101,7 @@
 	"wdqs-dialog-examples-preview-result": "Vorschau des Ergebnisses",
 	"wdqs-dialog-key-shortcut-title": "Tastaturkürzel",
 	"wdqs-dialog-key-shortcut-run-query": "Abfrage ausführen.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Abfrage abbrechen.",
 	"wdqs-dialog-key-shortcut-esc": "Aktuelles Eingabefeld verlassen.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Hilfe zu Tastaturkürzeln für die aktuelle Seite anzeigen.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Abfrage-Textbereich fokussieren.",
