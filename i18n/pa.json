@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cabal",
 			"Jimidar",
 			"Kuldeepburjbhalaike",
 			"Tow",
@@ -12,6 +13,7 @@
 	"wdqs-app-button-more-tools": "ਹੋਰ ਸੰਦ",
 	"wdqs-app-button-help": "ਮਦਦ",
 	"wdqs-app-button-run": "ਚਲਾਉ",
+	"wdqs-app-button-run-title": "ਪੁੱਛਗਿੱਛ ਚਲਾਓ (CTRL + ENTER)",
 	"wdqs-app-button-clear": "ਸਾਫ਼ ਕਰੋ",
 	"wdqs-app-button-display": "ਨੁਮਾਇਸ਼",
 	"wdqs-app-button-download": "ਡਾਊਨਲੋਡ",
@@ -58,6 +60,6 @@
 	"wdqs-ve-sb-suggestions": "ਸਲਾਹਾਂ",
 	"wdqs-ve-sb-other": "ਹੋਰ",
 	"wdqs-action-server-error": "ਸਰਵਰ ਵਿੱਚ ਗ਼ਲਤੀ",
-	"wdqs-action-unknow-error": "ਅਣਜਾਣ ਗਲਤੀ",
+	"wdqs-action-unknow-error": "ਅਣਜਾਣ ਗ਼ਲਤੀ",
 	"wdqs-result-map-progress": "ਮੈਪ ਡਾਟਾ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ: $1%"
 }
