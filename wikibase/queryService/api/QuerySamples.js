@@ -100,11 +100,11 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 	 * @private
 	 */
 	SELF.prototype._findPrevHeader = function ( element ) {
-		var tag = element.prop( 'tagName' );
+		var tag = element.children( ':first' ).prop( 'tagName' );
 		if ( tag[0] !== 'H' && tag[0] !== 'h' ) {
 			return null;
 		}
-		return this._findPrev( element, 'h' + ( tag.substr( 1 ) - 1 ) );
+		return this._findPrev( element, '.mw-heading' + ( tag.substr( 1 ) - 1 ) );
 	};
 
 	/**
@@ -153,14 +153,12 @@ wikibase.queryService.api.QuerySamples = ( function ( $ ) {
 			$this.find( '.lineno' ).remove();
 
 			var query = $this.text().trim();
-
 			// Find preceding title element
-			var titleEl = self._findPrev( $this, 'h2,h3,h4,h5,h6,h7' );
+			var titleEl = self._findPrev( $this, '.mw-heading2,.mw-heading3,.mw-heading4,.mw-heading5,.mw-heading6,.mw-heading7' );
 			if ( !titleEl || !titleEl.length ) {
 				return null;
 			}
-			var title = titleEl.text().trim();
-
+			var title = titleEl.children( ':first' ).text().trim();
 			return {
 				title: title,
 				query: query,
