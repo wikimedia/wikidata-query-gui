@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Baba Tabita",
+			"Raychep",
 			"Yasen igra"
 		]
 	},
@@ -9,18 +10,23 @@
 	"wdqs-app-button-prefixes": "Viambishi",
 	"wdqs-app-button-more-tools": "Vifaa zaidi",
 	"wdqs-app-button-help": "Msaada",
+	"wdqs-app-button-run": "Kimbia",
 	"wdqs-app-button-clear": "Futa",
 	"wdqs-app-button-clear-title": "Futa utafutaji",
 	"wdqs-app-button-display": "Onesha",
+	"wdqs-app-button-display-title": "Onyesha matokeo kama jedwali, picha, ...",
 	"wdqs-app-button-download": "Pakua",
 	"wdqs-app-button-download-title": "Pakua matokeo",
 	"wdqs-app-button-link": "Kiungo",
 	"wdqs-app-button-link-title": "Pata kiungo kwa utafutaji",
 	"wdqs-app-help-feedback": "Toa maoni!",
+	"wdqs-app-help-request-query": "Omba swali",
 	"wdqs-app-help-portal": "Lango la msaada",
 	"wdqs-app-help-manual": "Mwongozo kwa watumiaji",
+	"wdqs-app-help-examples": "Mfano Maswali",
 	"wdqs-app-help-prefixes": "Orodha ya viambishi",
 	"wdqs-app-help-copy": "Habari kuhusu hati",
+	"wdqs-app-logout": "Toka",
 	"wdqs-app-result-shorturl": "URL fupi kwa matokeo",
 	"wdqs-app-result-shorturl-title": "URL fupi kwa matokeo hayo",
 	"wdqs-app-result-embed": "Ingiza matokeo",
