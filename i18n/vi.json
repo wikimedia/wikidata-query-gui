@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Anhdonald",
+			"FunnyYellowDog",
 			"Leducthn",
 			"Minh Nguyen",
 			"Nguyenphutrong2",
@@ -16,6 +17,7 @@
 	"wdqs-app-button-help": "Giúp đỡ",
 	"wdqs-app-button-run": "Chạy",
 	"wdqs-app-button-run-title": "Thực thi truy vấn (Ctrl+Enter)",
+	"wdqs-app-button-cancel-title": "Hủy truy vấn (CTRL + ESC)",
 	"wdqs-app-button-clear": "Tẩy trống",
 	"wdqs-app-button-clear-title": "Xóa sạch truy vấn",
 	"wdqs-app-button-restore-title": "Khôi phục truy vấn trước",
@@ -100,6 +102,7 @@
 	"wdqs-dialog-examples-preview-result": "Xem trước kết quả",
 	"wdqs-dialog-key-shortcut-title": "Phím tắt",
 	"wdqs-dialog-key-shortcut-run-query": "Chạy truy vấn.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Hủy truy vấn.",
 	"wdqs-dialog-key-shortcut-esc": "Thoát hộp văn bản hiện tại.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Xem trợ giúp phím tắt của trang hiện tại.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Đặt tiêu điểm vào hộp truy vấn.",
@@ -124,6 +127,7 @@
 	"wdqs-ve-sb-suggestions": "Gợi ý",
 	"wdqs-ve-sb-other": "Khác",
 	"wdqs-action-query": "Đang chạy truy vấn",
+	"wdqs-action-stop-query": "Truy vấn đã bị hủy",
 	"wdqs-action-render": "Đang kết xuất kết quả",
 	"wdqs-action-error-display": "Không thể hiển thị kết quả",
 	"wdqs-action-timeout": "Truy vấn đã hết hạn",
