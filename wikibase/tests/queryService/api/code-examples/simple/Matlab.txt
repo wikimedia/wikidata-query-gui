@@ -1,7 +1,7 @@
 %https://github.com/cbdavis/MatlabSPARQL/blob/master/sparql.m
 
 endpointUrl = 'http://sparql.example/endpoint';
-sparqlQuery = '# cats\nSELECT ?cat ?catLabel WHERE {\n  ?cat wdt:P31 wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }\n}\n';
+sparqlQuery = '# cats\nSELECT ?cat ?catLabel WHERE {\n  ?cat wdt:P31 wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }\n}\n';
 
 url_head = strcat(endpointUrl,'?query=');
 url_query = urlencode(sparqlQuery);

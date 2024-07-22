@@ -20,7 +20,7 @@ public class App
         String querySelect = "# cats\n" +
                 "SELECT ?cat ?catLabel WHERE {\n" +
                 "  ?cat wdt:P31 wd:Q146.\n" +
-                "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n" +
+                "  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n" +
                 "}\n" +
                 "";
 

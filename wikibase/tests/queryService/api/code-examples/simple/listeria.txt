@@ -1,7 +1,7 @@
 {{Wikidata list|sparql=# cats
 SELECT ?cat ?catLabel WHERE {
   ?cat wdt:P31 wd:Q146.
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
 }
 
 |columns=label:Article,description,p131:Place,P580,P582,p625,P18

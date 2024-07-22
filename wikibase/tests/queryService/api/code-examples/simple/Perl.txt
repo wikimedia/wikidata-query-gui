@@ -20,7 +20,7 @@ $agent = "WDQS-example "; # TODO adjust this; see https://w.wiki/CX6
 $query = <<'_SPARQL_QUERY_';
 SELECT ?cat ?catLabel WHERE {
   ?cat wdt:P31 wd:Q146.
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
 }
 
 _SPARQL_QUERY_

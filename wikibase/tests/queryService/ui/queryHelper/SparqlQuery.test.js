@@ -14,7 +14,7 @@
 		SUBQUERIES: 'SELECT * WHERE {  {SELECT * WHERE { {SELECT * WHERE {}} }} }',
 		BOUND: 'PREFIX : <http://a.test/> SELECT * WHERE { ?bound :P :O.  OPTIONAL{ :S1 ?x ?bound2 }  :S2 :P2 :O2.}',
 		COMMENTS: '#foo:bar\n#6*9=42\nSELECT * WHERE {  }',
-		LABEL_SERVICE: 'PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX bd: <http://www.bigdata.com/rdf#> SELECT * WHERE { SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" } }'
+		LABEL_SERVICE: 'PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX bd: <http://www.bigdata.com/rdf#> SELECT * WHERE { SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en" } }'
 	};
 
 	QUnit.test( 'When instantiating new SparqlQuery then', function ( assert ) {
