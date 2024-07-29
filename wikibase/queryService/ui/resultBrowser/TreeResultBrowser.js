@@ -17,7 +17,7 @@ wikibase.queryService.ui.resultBrowser.TreeResultBrowser = ( function ( $, _, wi
 		'         OPTIONAL { BIND(?value AS ?valueItem).  FILTER(STRSTARTS(STR(?value), STR(wd:))) }  ' +
 		'       }  ' +
 		'     }  ' +
-		'     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }  ' +
+		'     SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }  ' +
 		'  }  ';
 
 	/**

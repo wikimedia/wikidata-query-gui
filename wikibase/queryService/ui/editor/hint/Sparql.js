@@ -11,9 +11,9 @@ wikibase.queryService.ui.editor.hint = wikibase.queryService.ui.editor.hint || {
 
 	var SPARQL_KEYWORDS = [
 		'SELECT', 'SELECT * WHERE {\n\n}', 'SELECT (COUNT(*) AS ?count) WHERE {\n\n}',
-		'SELECT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }\n}', 'OPTIONAL', 'OPTIONAL {\n\n}', 'WHERE',
+		'SELECT ?item ?itemLabel WHERE {\n  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }\n}', 'OPTIONAL', 'OPTIONAL {\n\n}', 'WHERE',
 		'WHERE {\n\n}', 'ORDER', 'ORDER BY', 'DISTINCT', 'SERVICE',
-		'SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }', 'BASE',
+		'SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }', 'BASE',
 		'PREFIX', 'REDUCED', 'FROM', 'LIMIT', 'OFFSET', 'HAVING', 'UNION', 'SAMPLE',
 		'(SAMPLE() AS )', 'COUNT', '(COUNT() AS )', 'DESC', 'DESC()', 'ASC', 'ASC()',
 		'FILTER ()', 'FILTER NOT EXISTS', 'FILTER NOT EXISTS {\n\n}', 'UNION', 'UNION {\n\n}',

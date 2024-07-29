@@ -37,7 +37,7 @@ if __name__ == '__main__':
     query = """# cats
 SELECT ?cat ?catLabel WHERE {
   ?cat wdt:P31 wd:Q146.
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". }
 }
 """
     site = pywikibot.Site()

@@ -6,7 +6,7 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 	'use strict';
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
-		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
+		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en". } } LIMIT 100';
 
 	var COOKIE_SHOW_QUERY_HELPER = 'query-helper-show';
 

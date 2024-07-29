@@ -64,7 +64,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 							INCLUDE %values.\n\
 							BIND(?value AS ?id).\n\
 							SERVICE wikibase:label {\n\
-								bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".\n\
+								bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en".\n\
 								?id rdfs:label ?label; schema:description ?description.\n\
 							}\n\
 						}\n\
@@ -171,7 +171,7 @@ wikibase.queryService.ui.queryHelper.SelectorBox = ( function ( $, wikibase ) {
 						INCLUDE %properties.\n\
 						BIND(?property AS ?id).\n\
 						SERVICE wikibase:label {\n\
-							bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".\n\
+							bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en".\n\
 							?id rdfs:label ?label; schema:description ?description.\n\
 						}\n\
 					}\n\

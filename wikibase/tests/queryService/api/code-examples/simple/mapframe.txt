@@ -3,6 +3,6 @@
 {
   "type": "ExternalData",
   "service": "geopoint",
-  "query": "# cats\nSELECT ?cat ?catLabel WHERE {\n  ?cat wdt:P31 wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],en\". }\n}\n"
+  "query": "# cats\nSELECT ?cat ?catLabel WHERE {\n  ?cat wdt:P31 wd:Q146.\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"[AUTO_LANGUAGE],mul,en\". }\n}\n"
 }
 </mapframe>
