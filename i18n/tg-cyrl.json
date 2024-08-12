@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Farorud",
 			"ToJack",
 			"Vashgird"
 		]
@@ -32,6 +33,7 @@
 	"wdqs-app-help-prefixes": "Рӯйхати префиксҳо",
 	"wdqs-app-help-copy": "Маълумоти иҷозатӣ",
 	"wdqs-app-help-queryhelper": "Ёрдамчии дархост",
+	"wdqs-app-logout": "Баромад",
 	"wdqs-app-tools-edit-items": "Иловаи унвон",
 	"wdqs-app-tools-query-data": "Маълумоти дархост",
 	"wdqs-app-tools-enhance-ui": "Интерфейси корбариро беҳтар намудан",
@@ -42,6 +44,7 @@
 	"wdqs-app-editor-addprefixes": "Иловаи пешвандҳои стандартӣ",
 	"wdqs-app-resultbrowser-map": "Харита",
 	"wdqs-app-resultbrowser-tree": "Дарахт",
+	"wdqs-app-resultbrowser-graph": "График",
 	"wdqs-app-urlshortener-loading": "Бор шуда истодааст...",
 	"wdqs-dialog-key-shortcut-close-button": "Пӯшидан",
 	"wdqs-ve-filter": "Филтр",
