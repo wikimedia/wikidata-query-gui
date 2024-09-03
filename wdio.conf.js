@@ -50,7 +50,7 @@ exports.config = {
 
 	framework: 'mocha',
 
-	reporters: [ 'dot', 'spec' ],
+	reporters: [ 'spec' ],
 
 	mochaOpts: {
 		ui: 'bdd',
