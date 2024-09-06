@@ -27,6 +27,18 @@
     "root": "./",
     "index": "./index.html"
   },
-  "showBanner": false,
+  "banners": {
+    "query-builder": {
+      "default": "Do you need help creating a query? You can build queries without having to write SPARQL in the new <a>Query Builder</a>.",
+      "storageKey": "survey2021Banner",
+      "i18nKey": "wdqs-app-query-builder-banner-content"
+    },
+    "graph-split": {
+      "default": "Does your query include Items describing scientific articles? The upcoming graph split will affect you. Please learn more about it in <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">this announcement</a>.",
+      "storageKey": "graphSplitBanner",
+      "i18nKey": "wdqs-app-graph-split-banner-content"
+    }
+  },
+  "bannerName": "",
   "prefixes": {}
 }

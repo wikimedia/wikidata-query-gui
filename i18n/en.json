@@ -141,5 +141,6 @@
 	"wdqs-embed-button-edit-code": "Edit SPARQL",
 	"wdqs-embed-button-edit-code-title": "Edit this query with the SPARQL editor",
 	"wdqs-embed-explorer-button-incoming": "Show incoming links",
-	"wdqs-embed-explorer-button-outgoing": "Show outgoing links"
+	"wdqs-embed-explorer-button-outgoing": "Show outgoing links",
+	"wdqs-app-graph-split-banner-content": "Does your query include Items describing scientific articles? The upcoming graph split will affect you. Please learn more about it in <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">this announcement</a>."
 }

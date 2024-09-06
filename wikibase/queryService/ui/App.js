@@ -29,7 +29,14 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 	 * @param {wikibase.queryService.api.CodeSamples} codeSamplesApi
 	 * @param {wikibase.queryService.api.UrlShortener} shortUrlApi
 	 * @param {string} queryBuilderUrl
-	 * @param {boolean} showBanner
+	 * @param {object|null} banner Banner configuration from the (default or custom) config,
+	 * with the properties (if set):
+	 * @param {string} banner.default Default contents of the banner (HTML),
+	 * before i18n has been loaded.
+	 * @param {string} banner.storageKey Cookie name where to store
+	 * whether the banner was dismissed previously.
+	 * @param {string} banner.i18nKey Name of an i18n message with the banner contents (HTML).
+	 * The message key is also reused as the class attribute of the banner element in the DOM.
 	 */
 	function SELF(
 		$element,
@@ -41,7 +48,7 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 		codeSamplesApi,
 		shortUrlApi,
 		queryBuilderUrl,
-		showBanner
+		banner
 	) {
 		this._$element = $element;
 		this._editor = editor;
@@ -52,7 +59,7 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 		this._codeSamplesApi = codeSamplesApi;
 		this._shorten = shortUrlApi;
 		this._queryBuilderUrl = queryBuilderUrl;
-		this._showBanner = showBanner;
+		this._banner = banner;
 
 		this._init();
 	}
@@ -234,14 +241,13 @@ wikibase.queryService.ui.App = ( function ( $, window, _, Cookies, moment ) {
 		}
 
 		// render the banner
-		if ( this._showBanner ) {
+		if ( this._banner ) {
 			var bannerContent = $( '<span>' )
-				.attr( 'data-i18n', '[html]wdqs-app-query-builder-banner-content' )
-				.addClass( 'wdqs-app-query-builder-banner-content' )
-				.html( 'Do you need help creating a query? You can build queries without ' +
-					'having to write SPARQL in the new <a>Query Builder</a>.' );
+				.attr( 'data-i18n', '[html]' + this._banner.i18nKey )
+				.addClass( this._banner.i18nKey )
+				.html( this._banner.default );
 			new wikibase.queryService.ui.Banner(
-				'survey2021Banner',
+				this._banner.storageKey,
 				renderBanner,
 				onBannerDismiss,
 				true,

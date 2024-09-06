@@ -151,5 +151,6 @@
 	"wdqs-embed-button-edit-code": "Label for button to edit the query with the SPARQL editor in embed",
 	"wdqs-embed-button-edit-code-title": "Title for the Edit Code button in embed",
 	"wdqs-embed-explorer-button-incoming": "Title for button to show incoming links",
-	"wdqs-embed-explorer-button-outgoing": "Title for button to show outgoing links"
+	"wdqs-embed-explorer-button-outgoing": "Title for button to show outgoing links",
+	"wdqs-app-graph-split-banner-content": "Message in a banner about the graph split, linking to the announcement."
 }
