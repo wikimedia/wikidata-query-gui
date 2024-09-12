@@ -3,7 +3,8 @@
 		"authors": [
 			"Enolp",
 			"Tokvo",
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -12,6 +13,7 @@
 	"wdqs-app-button-help": "Ayuda",
 	"wdqs-app-button-run": "Executar",
 	"wdqs-app-button-run-title": "Executar consulta (CTRL + ENTER)",
+	"wdqs-app-button-cancel-title": "Detener la consulta (CTRL + ESC)",
 	"wdqs-app-button-clear": "Llimpiar",
 	"wdqs-app-button-clear-title": "Llimpiar consulta",
 	"wdqs-app-button-restore-title": "Restaurar la consulta anterior",
