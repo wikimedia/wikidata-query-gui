@@ -4,6 +4,7 @@
 	$.when( CONFIG.getConfig(), $.ready ).then( function ( config ) {
 		var wb = wikibase.queryService,
 			lang = Cookies.get( 'lang' ) ? Cookies.get( 'lang' ) : config.language,
+			banner = config.banners[config.bannerName] || null,
 			app;
 
 		function setExamplesHelpLink( url ) {
@@ -43,11 +44,20 @@
 			).done( function () {
 				$( '.wikibase-queryservice' ).i18n();
 				$( '#keyboardShortcutHelpModal' ).i18n();
-				$( '.wdqs-app-query-builder-banner-content' ).i18n();
-				$( '.wdqs-app-query-builder-banner-content a' ).attr(
-					'href',
-					$( '.query-builder-toggle' ).attr( 'href' )
-				);
+
+				if ( banner ) {
+					$( '.' + banner.i18nKey ).i18n();
+				}
+
+				if ( config.bannerName === 'query-builder' ) {
+					// If the query builder banner message exists, update the link to the correct
+					// language of query builder
+					$( '.wdqs-app-query-builder-banner-content a' ).attr(
+						'href',
+						$( '.query-builder-toggle' ).attr( 'href' )
+					);
+				}
+
 				$( 'html' ).attr( { lang: lang, dir: $.uls.data.getDir( lang ) } );
 				app.resizeNavbar();
 				if ( callback ) {
@@ -114,7 +124,7 @@
 			codeSamplesApi,
 			shortenApi,
 			config.api['query-builder'].server,
-			config.showBanner
+			banner
 		);
 	} );
 
