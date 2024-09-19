@@ -139,5 +139,6 @@
 	"wdqs-embed-button-edit-code": "編輯 SPARQL",
 	"wdqs-embed-button-edit-code-title": "以 SPARQL 編輯器來編輯此查詢",
 	"wdqs-embed-explorer-button-incoming": "顯示導入連結",
-	"wdqs-embed-explorer-button-outgoing": "顯示導出連結"
+	"wdqs-embed-explorer-button-outgoing": "顯示導出連結",
+	"wdqs-app-graph-split-banner-content": "您的查詢項目是否包含描述科學內容的條目？即將出現的圖表分割會對此產生影響。請透過<a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">此公告</a>來了解更多。"
 }

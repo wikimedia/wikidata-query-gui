@@ -146,5 +146,6 @@
 	"wdqs-embed-button-edit-code": "Muokkaa SPARQLia",
 	"wdqs-embed-button-edit-code-title": "Muokkaa tätä kyselyä SPARQL-muokkaimella",
 	"wdqs-embed-explorer-button-incoming": "Näytä saapuvat linkit",
-	"wdqs-embed-explorer-button-outgoing": "Näytä lähtevät linkit"
+	"wdqs-embed-explorer-button-outgoing": "Näytä lähtevät linkit",
+	"wdqs-app-graph-split-banner-content": "Sisältääkö kyselysi tieteellisiä artikkeleita kuvaavia kohteita? Tuleva graafin jako tulee vaikuttamaan sinuun. Lisätietoja löytyy <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">tästä ilmoituksesta</a>."
 }
