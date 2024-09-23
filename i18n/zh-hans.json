@@ -12,6 +12,7 @@
 			"Lantianjialiang",
 			"LittlePaw365",
 			"Liuxinyu970226",
+			"Midleading",
 			"Phenolla",
 			"Stang",
 			"Suesue",
@@ -155,5 +156,6 @@
 	"wdqs-embed-button-edit-code": "编辑SPARQL",
 	"wdqs-embed-button-edit-code-title": "使用SPARQL编辑器编辑此查询",
 	"wdqs-embed-explorer-button-incoming": "显示传入链接",
-	"wdqs-embed-explorer-button-outgoing": "显示传出链接"
+	"wdqs-embed-explorer-button-outgoing": "显示传出链接",
+	"wdqs-app-graph-split-banner-content": "您的查询是否包含描述科学论文的项目？即将出现的图分割会对此产生影响。请透过<a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">此公告</a>来了解更多。"
 }

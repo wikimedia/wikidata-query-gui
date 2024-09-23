@@ -3,7 +3,9 @@
 		"authors": [
 			"Amara-Amaziɣ",
 			"Aslmad mohamed belarhzali",
+			"Brahim-essaidi",
 			"Hakim1bal",
+			"Reda Tris",
 			"ⵕⴰⵊⵉ"
 		]
 	},
@@ -11,6 +13,8 @@
 	"wdqs-app-button-prefixes": "ⵉⵣⵡⵉⵔⵏ",
 	"wdqs-app-button-more-tools": "ⵓⴳⴳⴰⵔ ⵉⵎⴰⵙⵙⵏ",
 	"wdqs-app-button-help": "ⵜⵉⵡⵉⵙⵉ",
+	"wdqs-app-button-run": "ⵣⵣⴳⵉⵔ",
+	"wdqs-app-button-run-title": "ⴰⵙⵎⵓⵜⵜⴳ ⵏ ⵓⵙⵓⵜⴳ (CTRL + ENTER)",
 	"wdqs-app-button-clear": "ⵙⴼⴹ",
 	"wdqs-app-button-display": "ⵙⴽⵏ",
 	"wdqs-app-button-download": "ⴰⴳⵎ",

@@ -143,5 +143,6 @@
 	"wdqs-embed-button-edit-code": "Editar SPARQL",
 	"wdqs-embed-button-edit-code-title": "Editar esta consulta co editor SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Amosar ligazóns entrantes",
-	"wdqs-embed-explorer-button-outgoing": "Amosar ligazóns saíntes"
+	"wdqs-embed-explorer-button-outgoing": "Amosar ligazóns saíntes",
+	"wdqs-app-graph-split-banner-content": "A túa consulta inclúe elementos que describen artigos científicos? A próxima división do gráfico vai afectarche. Obtén máis información <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">neste anuncio</a>."
 }

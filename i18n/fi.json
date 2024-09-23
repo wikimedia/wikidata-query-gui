@@ -131,7 +131,7 @@
 	"wdqs-ve-sb-other": "Muu",
 	"wdqs-action-query": "Suoritetaan kyselyä",
 	"wdqs-action-stop-query": "Kysely peruttiin",
-	"wdqs-action-render": "Renderöintitulos",
+	"wdqs-action-render": "Renderöidään tulosta",
 	"wdqs-action-error-display": "Ei voi näyttää tulosta",
 	"wdqs-action-timeout": "Kyselyn aikakatkaisuraja saavutettu",
 	"wdqs-action-malformed-query": "Kysely on virheellinen",
