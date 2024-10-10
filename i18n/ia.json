@@ -137,5 +137,6 @@
 	"wdqs-embed-button-edit-code": "Modificar SPARQL",
 	"wdqs-embed-button-edit-code-title": "Modificar iste consulta con le editor SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Monstrar ligamines entrante",
-	"wdqs-embed-explorer-button-outgoing": "Monstrar ligamines sortiente"
+	"wdqs-embed-explorer-button-outgoing": "Monstrar ligamines sortiente",
+	"wdqs-app-graph-split-banner-content": "Include tu consulta elementos que describe articulos scientific? Le imminente separation del graphicos te concernera. Per favor lege plus sur illo in <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">iste annuncio</a>."
 }

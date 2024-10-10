@@ -3,6 +3,7 @@
 		"authors": [
 			"Dimitris131",
 			"Evropi",
+			"FocalPoint",
 			"GR",
 			"Geraki",
 			"GhotuoIncubator",
@@ -22,7 +23,7 @@
 	"wdqs-app-button-help": "Βοήθεια",
 	"wdqs-app-button-run": "Εκτέλεση",
 	"wdqs-app-button-run-title": "Εκτέλεση ερωτήματος (<CTRL> + <ENTER>)",
-	"wdqs-app-button-cancel-title": "Διακοπής ερωτήματος (CTRL + ESC)",
+	"wdqs-app-button-cancel-title": "Ακύρωση ερωτήματος (CTRL + ESC)",
 	"wdqs-app-button-clear": "Εκκαθάριση",
 	"wdqs-app-button-clear-title": "Εκκαθάριση ερωτήματος",
 	"wdqs-app-button-restore-title": "Αποκατάσταση προηγούμενης καταχώρησης",
@@ -107,6 +108,7 @@
 	"wdqs-dialog-examples-preview-result": "Προεπισκόπηση αποτελέσματος",
 	"wdqs-dialog-key-shortcut-title": "Συντομεύσεις Πληκτρολογίου",
 	"wdqs-dialog-key-shortcut-run-query": "Εκτέλεση ερωτήματος.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Ακύρωση ερωτήματος.",
 	"wdqs-dialog-key-shortcut-esc": "Αφήστε το τρέχων πεδίο/περιοχή κειμένου εισαγωγής.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Εμφάνιση βοήθειας συντόμευσης πληκτρολογίου για την τρέχουσα σελίδα.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Συγκεντρωθείτε στην περιοχή κειμένου του ερωτήματος.",
@@ -147,5 +149,6 @@
 	"wdqs-embed-button-edit-code": "Επεξεργασία SPARQL",
 	"wdqs-embed-button-edit-code-title": "Επεξεργασία καταχώρησης με τον επεξεργαστή SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Εμφάνιση ερχόμενων συνδέσμων",
-	"wdqs-embed-explorer-button-outgoing": "Εμφάνιση εξωτερικών συνδέσμων"
+	"wdqs-embed-explorer-button-outgoing": "Εμφάνιση εξωτερικών συνδέσμων",
+	"wdqs-app-graph-split-banner-content": "Το ερώτημά σας περιλαμβάνει στοιχεία που περιγράφουν επιστημονικά άρθρα; Ο επερχόμενος διαχωρισμός γραφήματος θα σας επηρεάσει. Μάθετε περισσότερα σχετικά με <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">αυτήν την ανακοίνωση</a> ."
 }

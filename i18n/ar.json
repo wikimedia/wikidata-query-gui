@@ -154,5 +154,6 @@
 	"wdqs-embed-button-edit-code": "تعديل سباركل",
 	"wdqs-embed-button-edit-code-title": "تعديل هذا الاستعلام بمحرر سباركل",
 	"wdqs-embed-explorer-button-incoming": "عرض الروابط الواردة",
-	"wdqs-embed-explorer-button-outgoing": "إظهار الروابط الصادرة"
+	"wdqs-embed-explorer-button-outgoing": "إظهار الروابط الصادرة",
+	"wdqs-app-graph-split-banner-content": "هل تتضمن استفساراتك عناصر تصف مقالات علمية؟ الانقسام القادم للرسوم البيانية سيؤثر عليك. يرجى معرفة المزيد حول هذا الأمر في <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">هذا الإعلان</a>."
 }

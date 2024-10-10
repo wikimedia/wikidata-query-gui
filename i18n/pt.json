@@ -8,7 +8,8 @@
 			"Hamilton Abreu",
 			"MokaAkashiyaPT",
 			"Tark",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Waldyrious"
 		]
 	},
 	"wdqs-app-button-examples": "Exemplos",
@@ -37,9 +38,9 @@
 	"wdqs-app-help-portal": "Portal de ajuda",
 	"wdqs-app-help-manual": "Manual do utilizador",
 	"wdqs-app-help-examples": "Consultas de exemplo",
-	"wdqs-app-query-builder-name": "Assistente de consultas",
-	"wdqs-app-query-builder-banner-content": "Precisa de ajuda para criar uma consulta? Pode criar consultas sem ter de escrever SPARQL no novo <a>Assistente de Consultas</a>.",
-	"wdqs-app-query-builder-example-banner-content": "Pode criar consultas sem ter de escrever SPARQL no <a>Assistente de Consultas</a>.",
+	"wdqs-app-query-builder-name": "Construtor de Consultas",
+	"wdqs-app-query-builder-banner-content": "Precisa de ajuda para criar uma consulta? Pode criar consultas sem ter de escrever SPARQL no novo <a>Construtor de Consultas</a>.",
+	"wdqs-app-query-builder-example-banner-content": "Pode criar consultas sem ter de escrever SPARQL no <a>Construtor de Consultas</a>.",
 	"wdqs-app-help-datamodel": "Modelo de dados RDF",
 	"wdqs-app-help-prefixes": "Lista de prefixos",
 	"wdqs-app-help-copy": "Informação de licença",

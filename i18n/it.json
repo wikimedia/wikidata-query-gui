@@ -5,6 +5,7 @@
 			"Albe Albe460",
 			"Anto",
 			"Beta16",
+			"Egidio24",
 			"Greis",
 			"IrsY",
 			"Lollo",
@@ -20,6 +21,7 @@
 	"wdqs-app-button-help": "Aiuto",
 	"wdqs-app-button-run": "Esegui",
 	"wdqs-app-button-run-title": "Esegui query (CTRL + ENTER)",
+	"wdqs-app-button-cancel-title": "Annulla query (CTRL + ESC)",
 	"wdqs-app-button-clear": "Pulisci",
 	"wdqs-app-button-clear-title": "Pulisci query",
 	"wdqs-app-button-restore-title": "Ripristina query precedente",
@@ -104,6 +106,7 @@
 	"wdqs-dialog-examples-preview-result": "Anteprima risultato",
 	"wdqs-dialog-key-shortcut-title": "Scorciatoie da tastiera",
 	"wdqs-dialog-key-shortcut-run-query": "Esegui query.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Annulla la query.",
 	"wdqs-dialog-key-shortcut-esc": "Lascia il campo di testo attuale / area di testo.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Mostra aiuto sulle scorciatoie di tastiera per la pagina attuale.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Concentrarsi sulla query textarea.",
@@ -128,6 +131,7 @@
 	"wdqs-ve-sb-suggestions": "Suggerimenti",
 	"wdqs-ve-sb-other": "Altro",
 	"wdqs-action-query": "Esecuzione della query",
+	"wdqs-action-stop-query": "La query è stata annullata",
 	"wdqs-action-render": "Rappresentazione dei risultati",
 	"wdqs-action-error-display": "Impossibile visualizzare il risultato",
 	"wdqs-action-timeout": "Limite timeout per la query raggiunto",
@@ -143,5 +147,6 @@
 	"wdqs-embed-button-edit-code": "Modifica SPARQL",
 	"wdqs-embed-button-edit-code-title": "Modifica questa richiesta con l’editor SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Mostra collegamenti in entrata",
-	"wdqs-embed-explorer-button-outgoing": "Mostra collegamenti in uscita"
+	"wdqs-embed-explorer-button-outgoing": "Mostra collegamenti in uscita",
+	"wdqs-app-graph-split-banner-content": "La tua query include Elementi che descrivono articoli scientifici? La prossima divisione del grafico ti interesserà. Per saperne di più, leggi <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">questo annuncio</a> ."
 }

@@ -142,5 +142,6 @@
 	"wdqs-embed-button-edit-code": "SPARQL bearbeiten",
 	"wdqs-embed-button-edit-code-title": "Diese Abfrage mit dem SPARQL-Editor bearbeiten",
 	"wdqs-embed-explorer-button-incoming": "Eingehende Links anzeigen",
-	"wdqs-embed-explorer-button-outgoing": "Ausgehende Links anzeigen"
+	"wdqs-embed-explorer-button-outgoing": "Ausgehende Links anzeigen",
+	"wdqs-app-graph-split-banner-content": "Enthält deine Abfrage Elemente, die wissenschaftliche Artikel beschreiben? Der bevorstehende Graph-Split wird dich betreffen. Bitte erfahre mehr darüber in <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">dieser Ankündigung</a>."
 }

@@ -127,7 +127,7 @@
 	"wdqs-action-stop-query": "Interogarea a fost anulată",
 	"wdqs-action-render": "Rezultatul obținerii",
 	"wdqs-action-error-display": "Rezultatul nu poate fi afișat",
-	"wdqs-action-timeout": "Limita de expirare a interogării a atins",
+	"wdqs-action-timeout": "Limita de timp a interogării a fost atinsă",
 	"wdqs-action-malformed-query": "Interogarea este incorectă",
 	"wdqs-action-empty-query": "Introduceți o interogare SPARQL validă sau alegeți o interogare de exemplu",
 	"wdqs-action-server-error": "Eroare de server",
