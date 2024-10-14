@@ -5,6 +5,7 @@
 			"Kusavica",
 			"Luky001",
 			"Oujon",
+			"Spider 001757",
 			"Yardom78"
 		]
 	},
@@ -124,10 +125,11 @@
 	"wdqs-ve-sb-suggestions": "Návrhy",
 	"wdqs-ve-sb-other": "Iné",
 	"wdqs-action-query": "Prebiehajúci dotaz",
-	"wdqs-action-render": "Vykresľovanie výsledká",
+	"wdqs-action-stop-query": "Dopyt bol zrušený",
+	"wdqs-action-render": "Výsledok vykreslenia",
 	"wdqs-action-error-display": "Výsledok nie je možné zobraziť",
 	"wdqs-action-timeout": "Bol dosiahnutý časový limit dotazu",
-	"wdqs-action-malformed-query": "Dotaz je poškodený",
+	"wdqs-action-malformed-query": "Dopyt je poškodený",
 	"wdqs-action-empty-query": "Zadajte platný dotaz SPARQL alebo vyberte ukážku dotazu",
 	"wdqs-action-server-error": "Chyba servera",
 	"wdqs-action-unknow-error": "Neznáma chyba",
