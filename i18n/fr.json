@@ -6,6 +6,7 @@
 			"Gomoko",
 			"Graineahumus",
 			"Kenjiraw",
+			"Mahabarata",
 			"McDutchie",
 			"TomT0m",
 			"Tubezlob",
@@ -148,5 +149,6 @@
 	"wdqs-embed-button-edit-code": "Modifier SPARQL",
 	"wdqs-embed-button-edit-code-title": "Modifier cette requête avec l’éditeur SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Afficher les liens entrants",
-	"wdqs-embed-explorer-button-outgoing": "Afficher les liens sortants"
+	"wdqs-embed-explorer-button-outgoing": "Afficher les liens sortants",
+	"wdqs-app-graph-split-banner-content": "Votre requête inclut-elle des éléments décrivant des articles scientifiques ? La division du graphique à venir vous concernera. Veuillez en apprendre plus à ce sujet dans <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">cette annonce</a> ."
 }

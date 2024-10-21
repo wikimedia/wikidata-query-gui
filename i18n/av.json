@@ -67,5 +67,11 @@
 	"wdqs-app-editor-addprefixes": "Стандартиял префиксал тӀадежуразе",
 	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|хӀасил|хӀасил|хӀасил}} ($2&nbsp;мс)",
 	"wdqs-app-resultbrowser-stabilize": "Гьин стабилгъинабие",
-	"wdqs-app-resultbrowser-hierarchical-lr": "Гьиерархикияб гӀуж-гӀалама квегӀидаса квараниде"
+	"wdqs-app-resultbrowser-hierarchical-lr": "Гьиерархикияб гӀуж-гӀалама квегӀидаса квараниде",
+	"wdqs-ve-filter": "Филтер",
+	"wdqs-ve-show": "Бихьизабизе",
+	"wdqs-ve-limit": "Лимит",
+	"wdqs-ve-or": "яги",
+	"wdqs-ve-subtype": "субтип",
+	"wdqs-ve-sb-other": "Цогидаб"
 }
