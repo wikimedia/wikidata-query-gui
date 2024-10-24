@@ -1,14 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"Gmelfi"
 		]
 	},
 	"wdqs-app-button-examples": "Asempi",
 	"wdqs-app-button-prefixes": "Prifissi",
 	"wdqs-app-button-more-tools": "Àutri strummenti",
 	"wdqs-app-button-help": "Aiutu",
+	"wdqs-app-button-run": "Và esegui",
+	"wdqs-app-button-run-title": "Esegui la dumanna (CTRL + ENTER)",
+	"wdqs-app-button-cancel-title": "Annulla la dumanna (CTRL + ESC)",
+	"wdqs-app-button-clear": "Svacanta",
+	"wdqs-app-button-clear-title": "Cancalla la dumanna",
+	"wdqs-app-button-restore-title": "Ristabbilisci la dumanna pricidenti",
+	"wdqs-app-button-format-title": "Formatta la dumanna",
+	"wdqs-app-button-query-helper": "Ammuscia la spiegazzioni dâ dumanna",
+	"wdqs-app-button-fullscreen-title": "Cancia la modalità di visualizzazioni a schermu sanu di l'editor",
+	"wdqs-app-button-display": "Aspettu",
+	"wdqs-app-button-display-title": "Visualizza lu risurtatu comu tabbella, mmàggini, ...",
 	"wdqs-app-button-download": "Scàrrica",
+	"wdqs-app-button-download-title": "Scaricari lu risultatu",
 	"wdqs-app-button-link": "Liami",
 	"wdqs-app-button-code": "Còdici",
 	"wdqs-app-help-portal": "Purtali di aiutu",

@@ -141,5 +141,6 @@
 	"wdqs-embed-button-edit-code": "Upraviť SPARQL",
 	"wdqs-embed-button-edit-code-title": "Upraviť tento dotaz pomocou editora SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Zobraziť prichádzajúce odkazy",
-	"wdqs-embed-explorer-button-outgoing": "Zobraziť odchádzajúce odkazy"
+	"wdqs-embed-explorer-button-outgoing": "Zobraziť odchádzajúce odkazy",
+	"wdqs-app-graph-split-banner-content": "Obsahuje váš dopyt položky popisujúce vedecké články? Nadchádzajúce rozdelenie grafu vás ovplyvní. Viac sa o tom dozviete v <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">tomto oznámení</a> ."
 }
