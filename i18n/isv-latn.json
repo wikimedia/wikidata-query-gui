@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"IJzeren Jan"
+			"IJzeren Jan",
+			"Polda18"
 		]
 	},
 	"wdqs-app-button-examples": "Priklady",
@@ -56,6 +57,7 @@
 	"wdqs-app-result-embed": "Vložiti rezultat",
 	"wdqs-app-result-endpoint": "Točka dostupa SPARQL",
 	"wdqs-app-result-endpoint-title": "Link na točku dostupa SPARQL, ktora vračaje rezultat",
+	"wdqs-app-result-formatter-title-datetime": "Časovo označenje vo formatu ISO",
 	"wdqs-app-result-json": "JSON-fajl",
 	"wdqs-app-result-json-verbose": "JSON-fajl (podrobny)",
 	"wdqs-app-result-tsv": "TSV-fajl",
@@ -67,5 +69,27 @@
 	"wdqs-app-editor-placeholder": "(Vvedite SPARQL-zapyt ili izberite priklad zapyta)",
 	"wdqs-app-editor-addprefixes": "Dodati standardne prědstavky",
 	"wdqs-app-resultbrowser-response-summary": "$1 {{PLURAL:$1|rezultat|rezultaty|rezultatov}} za $2&nbsp;ms",
-	"wdqs-app-resultbrowser-stabilize": "Stabilizovati sět"
+	"wdqs-app-resultbrowser-stabilize": "Stabilizovati sět",
+	"wdqs-app-resultbrowser-hierarchical-lr": "Hierarhičny razklad polěv vpravo",
+	"wdqs-app-resultbrowser-hierarchical-ud": "Hierarhičny razklad svrhu vdol",
+	"wdqs-app-resultbrowser-hierarchical-rl": "Hierarhičny razklad poprav vlěvo",
+	"wdqs-app-resultbrowser-non-hierarchical": "Ne hierarhičny razklad",
+	"wdqs-app-resultbrowser-table": "Tabela",
+	"wdqs-app-resultbrowser-image-grid": "Rešetka obrazkov",
+	"wdqs-app-resultbrowser-graph-builder": "Generator grafov",
+	"wdqs-app-resultbrowser-map": "Mapa",
+	"wdqs-app-resultbrowser-line-chart": "Črčny graf",
+	"wdqs-app-resultbrowser-bar-chart": "Stolpny graf",
+	"wdqs-app-resultbrowser-scatter-chart": "Punktovy graf",
+	"wdqs-app-resultbrowser-area-chart": "Plosky graf",
+	"wdqs-app-resultbrowser-bubble-chart": "Bublinovy graf",
+	"wdqs-app-resultbrowser-tree-map": "Drěvny graf",
+	"wdqs-app-resultbrowser-tree": "Drěvo",
+	"wdqs-app-resultbrowser-timeline": "Časova os",
+	"wdqs-app-resultbrowser-dimensions": "Razměry",
+	"wdqs-app-resultbrowser-graph": "Graf",
+	"wdqs-app-urlshortener-failed": "Skračanje URL hybilo",
+	"wdqs-app-urlshortener-loading": "Načitanje...",
+	"wdqs-dialog-examples-preview-query": "Podgled pytanja",
+	"wdqs-dialog-examples-preview-result": "Podgled rezultata"
 }

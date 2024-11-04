@@ -19,6 +19,7 @@
 	"wdqs-app-button-help": "Nápověda",
 	"wdqs-app-button-run": "Spustit",
 	"wdqs-app-button-run-title": "Spustit dotaz (CTRL + ENTER)",
+	"wdqs-app-button-cancel-title": "Zrušit dotaz (CTRL + ESC)",
 	"wdqs-app-button-clear": "Vymazat",
 	"wdqs-app-button-clear-title": "Vymazat dotaz",
 	"wdqs-app-button-restore-title": "Obnovit předchozí dotaz",
@@ -38,6 +39,7 @@
 	"wdqs-app-help-portal": "Nápověda",
 	"wdqs-app-help-manual": "Uživatelská příručka",
 	"wdqs-app-help-examples": "Příklady dotazů",
+	"wdqs-app-query-builder-name": "Tvůrce dotazů",
 	"wdqs-app-query-builder-banner-content": "Potřebujete pomoc s tvorbou dotazu? Dotazy můžete skládat bez nutnosti psaní SPARQLu v novém <a>Query Builderu</a>.",
 	"wdqs-app-query-builder-example-banner-content": "Dotazy můžete tvořit bez nutnosti psaní SPARQLu v <a>Query Builderu</a>",
 	"wdqs-app-help-datamodel": "Datový model RDF",
@@ -102,6 +104,7 @@
 	"wdqs-dialog-examples-preview-result": "Náhled výsledku",
 	"wdqs-dialog-key-shortcut-title": "Klávesové zkratky",
 	"wdqs-dialog-key-shortcut-run-query": "Spustit dotaz.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Zrušit dotaz.",
 	"wdqs-dialog-key-shortcut-esc": "Opustit aktuální editační pole.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Zobrazit nápovědu klávesových zkratek pro aktuální stránku.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Přepnout na editační pole dotazu.",
@@ -126,6 +129,7 @@
 	"wdqs-ve-sb-suggestions": "Návrhy",
 	"wdqs-ve-sb-other": "Další",
 	"wdqs-action-query": "Probíhá dotaz...",
+	"wdqs-action-stop-query": "Dotaz byl zrušen",
 	"wdqs-action-render": "Vykresluje se výsledek",
 	"wdqs-action-error-display": "Nelze zobrazit výsledek",
 	"wdqs-action-timeout": "Vypršel časový limit pro dotaz",
@@ -141,5 +145,6 @@
 	"wdqs-embed-button-edit-code": "Editovat kód SPARQL",
 	"wdqs-embed-button-edit-code-title": "Editovat tento dotaz v editoru SPARQL",
 	"wdqs-embed-explorer-button-incoming": "Zobrazit příchozí odkazy",
-	"wdqs-embed-explorer-button-outgoing": "Zobrazit odchozí odkazy"
+	"wdqs-embed-explorer-button-outgoing": "Zobrazit odchozí odkazy",
+	"wdqs-app-graph-split-banner-content": "Obsahuje váš dotaz položky popisující vědecké články? Bude se vás týkat nadcházející rozdělení grafu. Přečtěte si prosím více informací v <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">tomto oznámení</a>."
 }

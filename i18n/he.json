@@ -142,5 +142,6 @@
 	"wdqs-embed-button-edit-code": "עריכת SPARQL",
 	"wdqs-embed-button-edit-code-title": "עריכת השאילתה עם עורך SPARQL",
 	"wdqs-embed-explorer-button-incoming": "הצגת קישורים נכנסים",
-	"wdqs-embed-explorer-button-outgoing": "הצגת קישורים יוצאים"
+	"wdqs-embed-explorer-button-outgoing": "הצגת קישורים יוצאים",
+	"wdqs-app-graph-split-banner-content": "האם השאילתה שלך כוללת פריטים שמתארים מאמרים מדעיים? פיצול הגרף, שיקרה בעתיד הקרוב, ישפיע עליך. אפשר לקרוא עוד על הנושא ב<a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">הכרזה הזאת</a>."
 }
