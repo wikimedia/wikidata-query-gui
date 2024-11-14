@@ -3,6 +3,7 @@
 		"authors": [
 			"Fwolff",
 			"Naudefj",
+			"Rooiratel",
 			"Taalvalk",
 			"Winstonza"
 		]
@@ -70,6 +71,8 @@
 	"wdqs-app-resultbrowser-line-chart": "Lyngrafiek",
 	"wdqs-app-resultbrowser-bar-chart": "Staafgrafiek",
 	"wdqs-app-resultbrowser-scatter-chart": "Spreidingsgrafiek",
+	"wdqs-app-resultbrowser-tree-map": "Boomkaart",
+	"wdqs-app-resultbrowser-tree": "Boom",
 	"wdqs-app-resultbrowser-timeline": "Tydlyn",
 	"wdqs-app-resultbrowser-dimensions": "Dimensies",
 	"wdqs-app-resultbrowser-graph": "Grafiek",
