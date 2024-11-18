@@ -10,7 +10,7 @@
 	"wdqs-app-button-help": "Болушлукъ",
 	"wdqs-app-button-run": "Ишлет",
 	"wdqs-app-button-run-title": "Излемни ишлет (CTRL + ENTER)",
-	"wdqs-app-button-cancel-title": "Излемни тохтат (CTRL + ESC)",
+	"wdqs-app-button-cancel-title": "Излемни кери ал (CTRL + ESC)",
 	"wdqs-app-button-clear": "Тазала",
 	"wdqs-app-button-clear-title": "Излемни кетер",
 	"wdqs-app-button-restore-title": "Аллындагъы излемни кери джюкле",
@@ -95,6 +95,7 @@
 	"wdqs-dialog-examples-preview-result": "Эсебге ал къарау",
 	"wdqs-dialog-key-shortcut-title": "Тиеклени комбинациясы",
 	"wdqs-dialog-key-shortcut-run-query": "Излемни ишлет.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Излемни кери ал.",
 	"wdqs-dialog-key-shortcut-esc": "Баргъан кириу/текст къырны къоюб чыкъ.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Баргъан бет ючюн тиек къысха джолну кёргюз.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Фокусну излем къыргъа сал.",
@@ -135,5 +136,6 @@
 	"wdqs-embed-button-edit-code": "SPARQL-ны тюзет",
 	"wdqs-embed-button-edit-code-title": "Бу излемни SPARQL редактор бла тюзет",
 	"wdqs-embed-explorer-button-incoming": "Келген джибериулени кёргюз",
-	"wdqs-embed-explorer-button-outgoing": "Кетген джибериулени кёргюз"
+	"wdqs-embed-explorer-button-outgoing": "Кетген джибериулени кёргюз",
+	"wdqs-app-graph-split-banner-content": "Излемигизге илму статьяланы хапарлагъан элементле киремидиле? Графикни боллукъ бёлюнюую сизни эткилерикди. Буну юсюнден къошакъ информацияны <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">бу билдируде</a> табаргъа боллукъду."
 }
