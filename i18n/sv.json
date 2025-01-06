@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Jopparn",
+			"Listz3",
 			"Mjälten",
 			"Rockyfelle",
 			"Sabelöga",
@@ -16,6 +17,7 @@
 	"wdqs-app-button-help": "Hjälp",
 	"wdqs-app-button-run": "Kör",
 	"wdqs-app-button-run-title": "Utför förfrågan (CTRL + ENTER)",
+	"wdqs-app-button-cancel-title": "Avbryt fråga (CTRL + ESC)",
 	"wdqs-app-button-clear": "Rensa",
 	"wdqs-app-button-clear-title": "Rensa förfrågan",
 	"wdqs-app-button-restore-title": "Återställ föregående fråga",
@@ -54,6 +56,8 @@
 	"wdqs-app-footer-updated-ago": "Data uppdaterades $1",
 	"wdqs-app-result-shorturl": "Kort webbadress till resultatet",
 	"wdqs-app-result-shorturl-title": "Kort webbadress till detta resultat",
+	"wdqs-app-result-shorturl-query": "Förkortad URL till fråga",
+	"wdqs-app-result-shorturl-query-title": "Förkortad URL till frågan som användes för att hämta detta resultat",
 	"wdqs-app-result-rawgraphs": "Öppna i RAWGraphs.io",
 	"wdqs-app-result-rawgraphs-title": "Skapa ett diagram med aktuellt resultatdata i RAWGraphs.io",
 	"wdqs-app-result-embed": "Bädda in resultat",
@@ -98,6 +102,7 @@
 	"wdqs-dialog-examples-preview-result": "Förhandsvisa resultat",
 	"wdqs-dialog-key-shortcut-title": "Kortkommandon",
 	"wdqs-dialog-key-shortcut-run-query": "Kör fråga.",
+	"wdqs-dialog-key-shortcut-cancel-query": "Avbryt fråga.",
 	"wdqs-dialog-key-shortcut-esc": "Lämna aktuellt inmatningsfält/textruta.",
 	"wdqs-dialog-key-shortcut-show-shortcut-help": "Visa kortkommandohjälp för aktuell sida.",
 	"wdqs-dialog-key-shortcut-focus-textarea": "Fokusera på textruta för fråga.",
@@ -137,5 +142,6 @@
 	"wdqs-embed-button-edit-code": "Redigera SPARQL",
 	"wdqs-embed-button-edit-code-title": "Redigera denna fråga med SPARQL-redigeraren",
 	"wdqs-embed-explorer-button-incoming": "Visa inkommande länkar",
-	"wdqs-embed-explorer-button-outgoing": "Visa utgående länkar"
+	"wdqs-embed-explorer-button-outgoing": "Visa utgående länkar",
+	"wdqs-app-graph-split-banner-content": "Innehåller din fråga artiklar som beskriver vetenskapliga artiklar? Den kommande grafdelningen kommer att påverka dig. Läs mer om det i <a href=\"https://www.wikidata.org/wiki/Special:MyLanguage/Wikidata:SPARQL_query_service/WDQS_backend_update/September_2024_scaling_update\">detta tillkännagivande</a> ."
 }
