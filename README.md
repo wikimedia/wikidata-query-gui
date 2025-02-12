@@ -3,7 +3,7 @@ This repository contains the source code for the [Europeana SPARQL console](http
 
 ## Attribution to Wikidata Query Service GUI
 
-The service was developed on top of the [Wikibase Query Service GUI](https://query.wikidata.org/), see [Github repository](https://github.com/wikimedia/wikidata-query-gui).
+This service was developed on top of the [Wikibase Query Service GUI](https://query.wikidata.org/), see [Github repository](https://github.com/wikimedia/wikidata-query-gui) and is distributed under [EUPLv1.2](LICENSE.md) (compatible with [Apache License 2.0](https://github.com/wikimedia/wikidata-query-gui/blob/master/LICENSE) of the original work). 
 
 It includes the following changes to the orginal source code:
 * Changed SPARQL endpoint to use https://api.europeana.eu/sparql instead of Wikidata SPARQL
