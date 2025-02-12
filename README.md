@@ -1,8 +1,20 @@
-# Wikibase Query Service GUI
+# Europeana SPARQL console
+This repository contains the source code for the [Europeana SPARQL console](https://api.europeana.eu/console/sparql).
 
-This repository contains the GUI for the [Wikidata Query Service](https://query.wikidata.org/).
+## Attribution to Wikidata Query Service GUI
 
-Please see more details about the service in the [User Manual](https://www.mediawiki.org/wiki/Special:MyLanguage/Wikidata_Query_Service/User_Manual).
+The service was developed on top of the [Wikibase Query Service GUI](https://query.wikidata.org/), see [Github repository](https://github.com/wikimedia/wikidata-query-gui).
+
+It includes the following changes to the orginal source code:
+* Changed SPARQL endpoint to use https://api.europeana.eu/sparql instead of Wikidata SPARQL
+* Changed Wikidata ontology by the Europeana Data Model
+* Changed examples to reflect the change in ontology
+* Changed menus to point to different resources
+* Added feedback button
+
+## Manual
+
+We are developing a user manual of our version but in the meantime, you can discover some of the functionality of the service in Wikidata's [User Manual](https://www.mediawiki.org/wiki/Special:MyLanguage/Wikidata_Query_Service/User_Manual).
 
 ## Download & setup
 
