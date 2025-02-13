@@ -47,8 +47,13 @@
 	<!-- endbuild -->
 
 	<style id="MJX-CHTML-styles">/* placeholder for MathJax */</style>
+	<!--europeana feedback widget -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@europeana/feedback-widget@0.3.2-rc.2/dist/europeana-feedback-widget.css">
 </head>
 <body>
+	<!--europeana feedback widget-->
+	<div id="europeana-feedback-widget"></div>
+	    
 	<div class="wikibase-queryservice container-fluid">
 		<div class="row">
 			<!-- Editor Navbar -->
@@ -126,11 +131,14 @@
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right" id="right-navbar">
-						<li>
-							<a href="#" class="uls-trigger" id="language-toggle" data-toggle="tooltip"></a>
-						</li>
-					</ul>
-				</div>
+					  <li style="display: none;">
+							<a href="#" class="uls-trigger" id="language-toggle" data-toggle="tooltip" style="display: block;">English</a>
+					  </li>
+					  <li>
+					        <a target="_blank" style="display: block;background: url(https://www.wikidata.org/static/images/project-logos/wikidatawiki-2x.png) no-repeat right center;background-size: 40px auto; padding-right: 40px;" href="https://github.com/europeana/sparql-ui/edit/master/README.md#attribution-to-wikidata-query-service-gui">Made with </a>
+					  </li>
+					</ul>				
+			</div>
 			</nav>
 
 			<div id="query-box">
@@ -552,6 +560,13 @@
 	<script src="wikibase/queryService/RdfNamespaces.js"></script>
 	<script src="wikibase/queryService/ui/Banner.js"></script>
 	<script src="wikibase/init.js"></script>
+	<!--europeana feedback widget-->
+	<script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@europeana/feedback-widget@0.3.2-rc.2/dist/europeana-feedback-widget.js"
+      integrity="sha384-xV5RJoIJv97kgg9LQlYymCa5k/KowArkyzGs/YPNAJ/u5r+dww9T2LulYRGV9y0M">
+  	</script>
+
 	<!-- endbuild -->
 
 </body>

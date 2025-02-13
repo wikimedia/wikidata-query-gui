@@ -6,7 +6,10 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 	'use strict';
 
 	var TRACKING_NAMESPACE = 'wikibase.queryService.ui.app.',
-		DEFAULT_QUERY = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100';
+		DEFAULT_QUERY_WIKIDATA = 'SELECT * WHERE {  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } } LIMIT 100',
+		DEFAULT_QUERY_EUROPEANA = 'PREFIX edm: <http://www.europeana.eu/schemas/edm/>' +
+		 'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>' +
+		 'SELECT ?Agent WHERE { ?Agent rdf:type edm:Agent } LIMIT 3';
 
 	var COOKIE_SHOW_QUERY_HELPER = 'query-helper-show';
 
@@ -501,7 +504,12 @@ wikibase.queryService.ui.App = ( function( $, window, _, Cookies, moment ) {
 
 	SELF.prototype._drawQueryHelper = function() {
 		try {
-			this._queryHelper.setQuery( this._editor.getValue() || DEFAULT_QUERY );
+			var defaultQuery = DEFAULT_QUERY_EUROPEANA;
+			if(this._sparqlApi.getServiceUri().includes("wikidata.org")) {
+				defaultQuery = DEFAULT_QUERY_WIKIDATA;
+			}
+			
+			this._queryHelper.setQuery( this._editor.getValue() || defaultQuery );
 			this._queryHelper.draw( $( '.query-helper .panel-body' ) );
 			$( '.query-helper' ).css( 'min-width', '' );
 			this._setUnparsable( false );

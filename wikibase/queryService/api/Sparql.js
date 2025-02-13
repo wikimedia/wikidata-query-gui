@@ -562,6 +562,10 @@ wikibase.queryService.api.Sparql = ( function( $ ) {
 		this._language = language;
 	};
 
+	SELF.prototype.getServiceUri = function() {
+		return this._serviceUri;
+	}; 
+
 	return SELF;
 
 }( jQuery ) );
