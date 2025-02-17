@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"INNERLMNT",
 			"Liridon"
 		]
 	},
@@ -9,7 +10,7 @@
 	"wdqs-app-button-more-tools": "Më shumë mjete",
 	"wdqs-app-button-help": "Ndihmë",
 	"wdqs-app-button-run": "Llësho",
-	"wdqs-app-button-run-title": "Ekzekutoni pyetjen (<CTRL> + <ENTER>)",
+	"wdqs-app-button-run-title": "Ekzekutoni pyetjen (CTRL + ENTER)",
 	"wdqs-app-button-clear": "Pastro",
 	"wdqs-app-button-clear-title": "Pastro pyetjen",
 	"wdqs-app-button-restore-title": "Rivendosni pyetjen e mëparshme",
